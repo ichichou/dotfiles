@@ -34,12 +34,12 @@ set nowritebackup
 " --------------------
 " Appearance
 " --------------------
-colorscheme hybrid
-" hybrid iceberg japanesque tender deep-space nord gruvbox
+colorscheme iceberg
+" hybrid iceberg japanesque tender deep-space nord gruvbox onedark
 
-let g:lightline = { 'colorscheme': 'hybrid' }
+let g:lightline = { 'colorscheme': 'iceberg' }
 " powerline wombat jellybeans solarized PaperColor seoul256 Dracula one landscape
-" hybrid iceberg tender tenderplus deepspace nord gruvbox
+" hybrid iceberg tender tenderplus deepspace nord gruvbox onedark
 
 set background=dark
 "set termguicolors
@@ -69,12 +69,13 @@ set ambiwidth=double
 
 set guioptions+=c
 set guioptions-=e
+set guioptions-=m
+set guioptions-=T
 set guioptions-=r
 set guioptions-=R
 set guioptions-=l
 set guioptions-=L
-" set guioptions-=m
-" set guioptions-=T
+set guioptions-=b
 
 
 " --------------------
@@ -125,8 +126,6 @@ set pumheight=10
 " let mapleader = ','
 " noremap \ ,
 
-" inoremap <ESC> <ESC><kana>
-
 nnoremap ; :
 nnoremap : ;
 
@@ -137,13 +136,10 @@ noremap k gk
 noremap gj j
 noremap gk k
 
-" noremap <Space>h ^
-" noremap <Space>l $
-
 nnoremap + <C-a>
 nnoremap - <C-x>
 
-nnoremap <silent> <ESC><ESC> :nohlsearch<CR>
+nnoremap <silent> <ESC><ESC> :<C-u>nohlsearch<CR>
 nnoremap <Space>h :<C-u>vertical belowright help<Space>
 
 noremap <Up> <Nop>
@@ -179,6 +175,8 @@ Plug 'tyru/open-browser.vim'
 Plug 'Townk/vim-autoclose'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'LeafCage/yankround.vim'
 
 Plug 'w0ng/vim-hybrid', {'do': 'cp colors/* ~/.vim/colors/'}
 Plug 'cocopon/iceberg.vim', {'do': 'cp colors/* ~/.vim/colors/'}
@@ -198,14 +196,40 @@ call plug#end()
 let g:vaffle_auto_cd = 1
 let g:vaffle_show_hidden_files = 1
 
+
 " vim-better-whitespace
 highlight ExtraWhitespace ctermbg=DarkRed
 highlight ExtraWhitespace guibg=DarkRed
 
+
 " open-browser.vim
 let g:netrw_nogx = 1
+
 nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
 
+
 " vim-autoclose
+" let b:AutoClosePairs = AutoClose#DefaultPairsModified("", "")
+
+
+" ctrlp.vim
+" let g:ctrlp_use_migemo = 1
+
+
+" yankround.vim
+let g:yankround_max_history = 30
+let g:yankround_use_region_hl = 0
+
+nmap p <Plug>(yankround-p)
+nmap P <Plug>(yankround-P)
+nmap gp <Plug>(yankround-gp)
+nmap gP <Plug>(yankround-gP)
+nmap <C-p> <Plug>(yankround-prev)
+nmap <C-n> <Plug>(yankround-next)
+
+nnoremap <silent> <SID>(ctrlp) :<C-u>CtrlP<CR>
+nmap <expr> <C-p> yankround#is_active() ? "\<Plug>(yankround-prev)" : "<SID>(ctrlp)"
+
+nnoremap <silent> g<C-p> :<C-u>CtrlPYankRound<CR>
 
