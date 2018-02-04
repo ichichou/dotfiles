@@ -1,9 +1,9 @@
 " colorscheme tender
 " set background=dark
 
-set guifont=MyricaM:h14
+set guifont=SourceHanCodeJP:h12
 " set guifontwide=
 
 set columns=160
-set lines=60
+set lines=50
 
