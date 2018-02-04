@@ -8,8 +8,6 @@ syntax enable
 " --------------------
 " Memo
 " --------------------
-" Markdown のシンタックスハイライトを試す
-" https://rcmdnk.com/rawhtml/vim-markdown/rcmdnk-vim-markdown-20141030.html
 
 
 " --------------------
@@ -22,22 +20,20 @@ set switchbuf=usetab
 set splitbelow
 set splitright
 
-" set shellslash
-
-set helplang=ja,en
-
 set noswapfile
 set nobackup
 set nowritebackup
+
+set helplang=ja,en
 
 
 " --------------------
 " Appearance
 " --------------------
-colorscheme iceberg
+colorscheme tender
 " hybrid iceberg japanesque tender deep-space nord gruvbox onedark
 
-let g:lightline = { 'colorscheme': 'iceberg' }
+let g:lightline = { 'colorscheme': 'tender' }
 " powerline wombat jellybeans solarized PaperColor seoul256 Dracula one landscape
 " hybrid iceberg tender tenderplus deepspace nord gruvbox onedark
 
@@ -50,18 +46,17 @@ set cursorline
 set showmatch
 set matchtime=1
 
+" set showtabline=2
 set laststatus=2
 set ruler
 set showcmd
 set noshowmode
-" set showtabline=2
 
 set display=lastline
 set scrolloff=5
 set breakindent
 
 set belloff=all
-" set noerrorbells
 
 set list
 set listchars=eol:¬,tab:»\ ,trail:\ ,extends:>,precedes:<,nbsp:%
@@ -117,7 +112,7 @@ set history=10000
 
 set completeopt=menu,menuone,preview
 set infercase
-set pumheight=10
+" set pumheight=10
 
 
 " --------------------
@@ -151,6 +146,8 @@ noremap ZZ <Nop>
 noremap ZQ <Nop>
 noremap Q <Nop>
 
+" Tab Page, Buffer, Window
+
 
 " --------------------
 " vim-plug
@@ -177,6 +174,8 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'LeafCage/yankround.vim'
+Plug 'rcmdnk/vim-markdown'
+Plug 'joker1007/vim-markdown-quote-syntax'
 
 Plug 'w0ng/vim-hybrid', {'do': 'cp colors/* ~/.vim/colors/'}
 Plug 'cocopon/iceberg.vim', {'do': 'cp colors/* ~/.vim/colors/'}
@@ -195,6 +194,16 @@ call plug#end()
 " Vaffle
 let g:vaffle_auto_cd = 1
 let g:vaffle_show_hidden_files = 1
+
+" rcmdnk/vim-markdown
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_frontmatter=1
+let g:vim_markdown_math=1
+au BufRead,BufNewFile *.{txt,text} set filetype=markdown
+
+hi link htmlItalic LineNr
+hi link htmlBold WarningMsg
+hi link htmlBoldItalic ErrorMsg
 
 
 " vim-better-whitespace
