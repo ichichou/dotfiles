@@ -5,5 +5,5 @@ set guifont=SourceHanCodeJP:h12
 " set guifontwide=
 
 set columns=160
-set lines=50
+set lines=60
 
