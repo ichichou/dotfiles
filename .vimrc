@@ -228,6 +228,8 @@ Plug 'tpope/vim-repeat'
 Plug 'LeafCage/yankround.vim'
 Plug 'rcmdnk/vim-markdown'
 Plug 'joker1007/vim-markdown-quote-syntax'
+Plug 'easymotion/vim-easymotion'
+Plug 'glidenote/memolist.vim'
 
 Plug 'w0ng/vim-hybrid', {'do': 'cp colors/* ~/.vim/colors/'}
 Plug 'cocopon/iceberg.vim', {'do': 'cp colors/* ~/.vim/colors/'}
@@ -292,4 +294,10 @@ nmap <C-n> <Plug>(yankround-next)
 " nnoremap <silent> <SID>(ctrlp) :<C-u>CtrlP<CR>
 " nmap <expr> <C-p> yankround#is_active() ? "\<Plug>(yankround-prev)" : "<SID>(ctrlp)"
 " nnoremap <silent> g<C-p> :<C-u>CtrlPYankRound<CR>
+
+
+" vim-easymotion
+
+
+" memolist.vim
 
