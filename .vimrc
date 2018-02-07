@@ -81,7 +81,7 @@ set shiftround
 set autoindent
 set smartindent
 
-set virtualedit=block
+set virtualedit=onemore
 set backspace=indent,eol,start
 set clipboard=unnamed
 
@@ -113,8 +113,8 @@ set infercase
 " ----------------------------------------
 " Keymap
 " ----------------------------------------
-" let mapleader = ','
-" noremap \ ,
+let mapleader = ','
+noremap \ ,
 
 noremap ; :
 noremap : ;
@@ -148,30 +148,16 @@ nnoremap [WINDOW]o :<C-u>edit<space>
 nnoremap [WINDOW]t :<C-u>tabedit<space>
 
 nnoremap [WINDOW]O :<C-u>Vaffle<CR>
-" nnoremap <expr> [WINDOW]O ':<C-u>edit ' . GetRelativePath()
-" nnoremap <expr> [WINDOW]T ':<C-u>tabedit ' . GetRelativePath()
 
 nnoremap [WINDOW]c :<C-u>tabclose<CR>
 nnoremap [WINDOW]d :<C-w>bdelete<CR>
 nnoremap [WINDOW]b :<C-u>buffers<CR>
 
-function! GetRelativePath()
-    let path = expand('%:~:.:h')
-    if path == '.'
-        return ""
-    else
-        return path . '/'
-    endif
-endfunction
-
 """ バッファ移動
-nnoremap [WINDOW]N :<C-u>bnext<CR>
-nnoremap [WINDOW]P :<C-u>bprevious<CR>
+nnoremap [WINDOW]n :<C-u>bnext<CR>
+nnoremap [WINDOW]p :<C-u>bprevious<CR>
 
 """ タブ移動
-nnoremap [WINDOW]n :<C-u>tabnext<CR>
-nnoremap [WINDOW]p :<C-u>tabprevious<CR>
-
 nnoremap [WINDOW]mn :<C-u>tabmove +1<CR>
 nnoremap [WINDOW]mp :<C-u>tabmove -1<CR>
 nnoremap [WINDOW]m0 :<C-u>tabmove 0<CR>
@@ -189,12 +175,8 @@ nnoremap [WINDOW]K <C-w>K
 nnoremap [WINDOW]L <C-w>L
 
 """ ウィンドウサイズ
-nnoremap [WINDOW]\ <C-w>_<C-w>|
+" nnoremap [WINDOW]\ <C-w>_<C-w>|
 nnoremap [WINDOW]= <C-w>=
-nnoremap [WINDOW]> <C-w>>
-nnoremap [WINDOW]< <C-w><
-nnoremap [WINDOW]+ <C-w>+
-nnoremap [WINDOW]- <C-w>-
 
 """ ドキュメント
 nnoremap [WINDOW]/ :<C-u>vertical belowright help<space>
@@ -297,6 +279,40 @@ nmap <C-n> <Plug>(yankround-next)
 
 
 " vim-easymotion
+let g:EasyMotion_do_mapping = 0
+
+let g:EasyMotion_smartcase = 1
+let g:EasyMotion_use_migemo = 1
+
+let g:EasyMotion_startofline = 0
+let g:EasyMotion_enter_jump_first = 1
+let g:EasyMotion_space_jump_first = 1
+
+let g:EasyMotion_use_upper = 1
+let g:EasyMotion_keys = ';HKLYUIOPNM,QWERTASDGZXCVBJF'
+
+""" 1-key Find Motion
+map  <Leader>f <Plug>(easymotion-bd-f)
+nmap <Leader>f <Plug>(easymotion-overwin-f)
+
+""" 2-key Find Motion
+nmap s <Plug>(easymotion-overwin-f2)
+
+""" JK Motion / Within Line Motion
+map <Leader>j <Plug>(easymotion-j)
+map <leader>k <Plug>(easymotion-k)
+map <Leader>l <Plug>(easymotion-lineanywhere)
+
+map <Leader>L <Plug>(easymotion-bd-jk)
+nmap <Leader>L <Plug>(easymotion-overwin-line)
+
+""" Word Motion
+map  <Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader>w <Plug>(easymotion-overwin-w)
+
+map  <Leader>W <Plug>(easymotion-bd-W)
+
+""" n-key Find Motion
 
 
 " memolist.vim
