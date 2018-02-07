@@ -191,19 +191,23 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'vim-jp/vimdoc-ja'
 Plug 'itchyny/lightline.vim'
-Plug 'cocopon/lightline-hybrid.vim'
 Plug 'cocopon/vaffle.vim'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'tyru/open-browser.vim'
-Plug 'Townk/vim-autoclose'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
-" Plug 'ctrlpvim/ctrlp.vim'
-Plug 'LeafCage/yankround.vim'
+Plug 'cocopon/lightline-hybrid.vim'
 Plug 'rcmdnk/vim-markdown'
 Plug 'joker1007/vim-markdown-quote-syntax'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'tyru/open-browser.vim'
+Plug 'Townk/vim-autoclose'
+Plug 'LeafCage/yankround.vim'
 Plug 'easymotion/vim-easymotion'
+Plug 'haya14busa/incsearch.vim'
+Plug 'haya14busa/incsearch-migemo.vim'
+Plug 'haya14busa/incsearch-easymotion.vim'
+Plug 'haya14busa/vim-migemo'
 Plug 'glidenote/memolist.vim'
+" Plug 'Shougo/vimproc.vim', {'do': 'make'}
 
 Plug 'w0ng/vim-hybrid', {'do': 'cp colors/* ~/.vim/colors/'}
 Plug 'cocopon/iceberg.vim', {'do': 'cp colors/* ~/.vim/colors/'}
@@ -250,10 +254,6 @@ vmap gx <Plug>(openbrowser-smart-search)
 " let b:AutoClosePairs = AutoClose#DefaultPairsModified("", "")
 
 
-" ctrlp.vim
-" let g:ctrlp_use_migemo = 1
-
-
 " yankround.vim
 let g:yankround_max_history = 30
 let g:yankround_use_region_hl = 0
@@ -264,10 +264,6 @@ nmap gp <Plug>(yankround-gp)
 nmap gP <Plug>(yankround-gP)
 nmap <C-p> <Plug>(yankround-prev)
 nmap <C-n> <Plug>(yankround-next)
-
-" nnoremap <silent> <SID>(ctrlp) :<C-u>CtrlP<CR>
-" nmap <expr> <C-p> yankround#is_active() ? "\<Plug>(yankround-prev)" : "<SID>(ctrlp)"
-" nnoremap <silent> g<C-p> :<C-u>CtrlPYankRound<CR>
 
 
 " vim-easymotion
@@ -305,6 +301,44 @@ nmap <Leader>w <Plug>(easymotion-overwin-w)
 map  <Leader>W <Plug>(easymotion-bd-W)
 
 """ n-key Find Motion
+
+
+" incsearch.vim
+let g:incsearch#auto_nohlsearch = 1
+
+map n  <Plug>(incsearch-nohl-n)
+map N  <Plug>(incsearch-nohl-N)
+map *  <Plug>(incsearch-nohl-*)
+map #  <Plug>(incsearch-nohl-#)
+map g* <Plug>(incsearch-nohl-g*)
+map g# <Plug>(incsearch-nohl-g#)
+
+""" incsearch-easymotion
+function! s:incsearch_config(...) abort
+  return incsearch#util#deepextend(deepcopy({
+  \   'modules': [incsearch#config#easymotion#module({'overwin': 1})],
+  \   'keymap': {"\<C-l>": '<Over>(easymotion)'},
+  \   'is_expr': 0
+  \ }), get(a:, 1, {}))
+endfunction
+
+noremap <silent><expr> /  incsearch#go(<SID>incsearch_config())
+noremap <silent><expr> ?  incsearch#go(<SID>incsearch_config({'command': '?'}))
+noremap <silent><expr> g/ incsearch#go(<SID>incsearch_config({'is_stay': 1}))
+
+""" incsearch.vim x migemo x vim-easymotion
+" function! s:config_migemo(...) abort
+"   return extend(copy({
+"   \   'converters': [incsearch#config#migemo#converter()],
+"   \   'modules': [incsearch#config#easymotion#module({'overwin': 1})],
+"   \   'keymap': {"\<C-l>": '<Over>(easymotion)'},
+"   \   'is_expr': 0,
+"   \ }), get(a:, 1, {}))
+" endfunction
+"
+" noremap <silent><expr> m/ incsearch#go(<SID>config_migemo())
+" noremap <silent><expr> m? incsearch#go(<SID>config_migemo({'command': '?'}))
+" noremap <silent><expr> mg/ incsearch#go(<SID>config_migemo({'is_stay': 1}))
 
 
 " memolist.vim
