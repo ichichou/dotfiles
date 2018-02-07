@@ -146,16 +146,7 @@ nmap t [WINDOW]
 """ 開く・閉じる
 nnoremap [WINDOW]o :<C-u>edit<space>
 nnoremap [WINDOW]t :<C-u>tabedit<space>
-
-nnoremap [WINDOW]O :<C-u>Vaffle<CR>
-
-nnoremap [WINDOW]c :<C-u>tabclose<CR>
-nnoremap [WINDOW]d :<C-w>bdelete<CR>
-nnoremap [WINDOW]b :<C-u>buffers<CR>
-
-""" バッファ移動
-nnoremap [WINDOW]n :<C-u>bnext<CR>
-nnoremap [WINDOW]p :<C-u>bprevious<CR>
+nnoremap [WINDOW]d :<C-u>tabclose<CR>
 
 """ タブ移動
 nnoremap [WINDOW]mn :<C-u>tabmove +1<CR>
@@ -175,7 +166,8 @@ nnoremap [WINDOW]K <C-w>K
 nnoremap [WINDOW]L <C-w>L
 
 """ ウィンドウサイズ
-" nnoremap [WINDOW]\ <C-w>_<C-w>|
+nnoremap [WINDOW]\ <C-w>|
+nnoremap [WINDOW]- <C-w>_
 nnoremap [WINDOW]= <C-w>=
 
 """ ドキュメント
