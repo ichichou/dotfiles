@@ -118,8 +118,6 @@ noremap \ ,
 
 noremap ; :
 noremap : ;
-noremap! ; :
-noremap! : ;
 
 noremap Y y$
 
@@ -208,6 +206,7 @@ Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'haya14busa/vim-migemo'
 Plug 'glidenote/memolist.vim'
 " Plug 'Shougo/vimproc.vim', {'do': 'make'}
+Plug 'Shougo/denite.nvim'
 
 Plug 'w0ng/vim-hybrid', {'do': 'cp colors/* ~/.vim/colors/'}
 Plug 'cocopon/iceberg.vim', {'do': 'cp colors/* ~/.vim/colors/'}
