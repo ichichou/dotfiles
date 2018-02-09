@@ -197,7 +197,6 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tyru/open-browser.vim'
-Plug 'Townk/vim-autoclose'
 Plug 'LeafCage/yankround.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'haya14busa/incsearch.vim'
@@ -207,6 +206,7 @@ Plug 'haya14busa/vim-migemo'
 Plug 'glidenote/memolist.vim'
 " Plug 'Shougo/vimproc.vim', {'do': 'make'}
 Plug 'Shougo/denite.nvim'
+Plug 'cohama/lexima.vim'
 
 Plug 'w0ng/vim-hybrid', {'do': 'cp colors/* ~/.vim/colors/'}
 Plug 'cocopon/iceberg.vim', {'do': 'cp colors/* ~/.vim/colors/'}
@@ -247,10 +247,6 @@ let g:netrw_nogx = 1
 
 nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
-
-
-" vim-autoclose
-" let b:AutoClosePairs = AutoClose#DefaultPairsModified("", "")
 
 
 " yankround.vim
@@ -341,4 +337,10 @@ noremap <silent><expr> g/ incsearch#go(<SID>incsearch_config({'is_stay': 1}))
 
 
 " memolist.vim
+
+
+" lexima.vim
+" call lexima#add_rule({'char': '$', 'input_after': '$', 'filetype': 'latex'})
+" call lexima#add_rule({'char': '$', 'at': '\%#\$', 'leave': 1, 'filetype': 'latex'})
+" call lexima#add_rule({'char': '<BS>', 'at': '\$\%#\$', 'delete': 1, 'filetype': 'latex'})
 
