@@ -57,6 +57,18 @@ set list
 set listchars=eol:¬,tab:»\ ,trail:\ ,extends:>,precedes:<,nbsp:%
 set ambiwidth=double
 
+
+" GUI Options
+if has('gui_macvim')
+
+set guifont=Myrica\ Monospace:h14
+" set guifontwide=
+
+set columns=160
+set lines=50
+
+set linespace=2
+
 set guioptions+=c
 set guioptions-=e
 set guioptions-=m
@@ -66,6 +78,8 @@ set guioptions-=R
 set guioptions-=l
 set guioptions-=L
 set guioptions-=b
+
+endif
 
 
 " ----------------------------------------
@@ -295,8 +309,6 @@ nmap <Leader>w <Plug>(easymotion-overwin-w)
 
 map  <Leader>W <Plug>(easymotion-bd-W)
 
-""" n-key Find Motion
-
 
 " incsearch.vim
 let g:incsearch#auto_nohlsearch = 1
@@ -343,4 +355,7 @@ noremap <silent><expr> g/ incsearch#go(<SID>incsearch_config({'is_stay': 1}))
 " call lexima#add_rule({'char': '$', 'input_after': '$', 'filetype': 'latex'})
 " call lexima#add_rule({'char': '$', 'at': '\%#\$', 'leave': 1, 'filetype': 'latex'})
 " call lexima#add_rule({'char': '<BS>', 'at': '\$\%#\$', 'delete': 1, 'filetype': 'latex'})
+
+
+" denite.nvim
 
