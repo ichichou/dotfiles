@@ -1,3 +1,6 @@
+" ========================================
+" .vimrc
+" ========================================
 set encoding=utf-8
 scriptencoding utf-8
 
@@ -43,9 +46,8 @@ set matchtime=1
 
 set showtabline=2
 set laststatus=2
-set ruler
-set showcmd
 set noshowmode
+set ruler
 
 set display=lastline
 set scrolloff=5
@@ -59,6 +61,7 @@ set ambiwidth=double
 
 
 " GUI Options
+" --------------------
 if has('gui_macvim')
 
 set guifont=Myrica\ Monospace:h14
@@ -66,18 +69,17 @@ set guifont=Myrica\ Monospace:h14
 
 set columns=160
 set lines=50
-
 set linespace=2
 
 set guioptions+=c
 set guioptions-=e
 set guioptions-=m
-set guioptions-=T
 set guioptions-=r
-set guioptions-=R
-set guioptions-=l
 set guioptions-=L
-set guioptions-=b
+set guioptions-=t
+set guioptions-=T
+
+set guicursor+=a:blinkon0
 
 endif
 
@@ -120,8 +122,8 @@ set wildmode=list:longest,full
 set history=10000
 
 set completeopt=menu,menuone,preview
-set infercase
 " set pumheight=10
+set infercase
 
 
 " ----------------------------------------
@@ -134,6 +136,7 @@ noremap ; :
 noremap : ;
 
 noremap Y y$
+" noremap x “_x
 
 noremap j gj
 noremap k gk
@@ -151,47 +154,46 @@ noremap Q <Nop>
 
 
 " Window, Tab Page, Buffer
+" --------------------
 nnoremap t <Nop>
-nnoremap [WINDOW] <Nop>
-nmap t [WINDOW]
+nnoremap [window] <Nop>
+nmap t [window]
 
 """ 開く・閉じる
-nnoremap [WINDOW]o :<C-u>edit<space>
-nnoremap [WINDOW]t :<C-u>tabedit<space>
-nnoremap [WINDOW]d :<C-u>tabclose<CR>
+nnoremap [window]o :<C-u>edit<space>
+nnoremap [window]t :<C-u>tabedit<space>
+nnoremap [window]d :<C-u>tabclose<CR>
 
 """ タブ移動
-nnoremap [WINDOW]mn :<C-u>tabmove +1<CR>
-nnoremap [WINDOW]mp :<C-u>tabmove -1<CR>
-nnoremap [WINDOW]m0 :<C-u>tabmove 0<CR>
-nnoremap [WINDOW]m$ :<C-u>tabmove<CR>
+nnoremap [window]mn :<C-u>tabmove +1<CR>
+nnoremap [window]mp :<C-u>tabmove -1<CR>
+nnoremap [window]m0 :<C-u>tabmove 0<CR>
+nnoremap [window]m$ :<C-u>tabmove<CR>
 
 """ ウィンドウ移動
-nnoremap [WINDOW]h <C-w>h
-nnoremap [WINDOW]j <C-w>j
-nnoremap [WINDOW]k <C-w>k
-nnoremap [WINDOW]l <C-w>l
+nnoremap [window]h <C-w>h
+nnoremap [window]j <C-w>j
+nnoremap [window]k <C-w>k
+nnoremap [window]l <C-w>l
 
-nnoremap [WINDOW]H <C-w>H
-nnoremap [WINDOW]J <C-w>J
-nnoremap [WINDOW]K <C-w>K
-nnoremap [WINDOW]L <C-w>L
+nnoremap [window]H <C-w>H
+nnoremap [window]J <C-w>J
+nnoremap [window]K <C-w>K
+nnoremap [window]L <C-w>L
 
 """ ウィンドウサイズ
-nnoremap [WINDOW]\ <C-w>|
-nnoremap [WINDOW]- <C-w>_
-nnoremap [WINDOW]= <C-w>=
+nnoremap [window]\ <C-w>|
+nnoremap [window]- <C-w>_
+nnoremap [window]= <C-w>=
 
 """ ドキュメント
-nnoremap [WINDOW]/ :<C-u>vertical belowright help<space>
-nnoremap [WINDOW]? :<C-u>tab help<space>
+nnoremap [window]/ :<C-u>vertical belowright help<space>
+nnoremap [window]? :<C-u>tab help<space>
 
 
 " ----------------------------------------
 " vim-plug
 " ----------------------------------------
-" :PlugInstall, :PlugStatus, :PlugUpdate, :PlugClean
-
 if empty(glob('~/.vim/autoload/plug.vim'))
   call system('mkdir -p ~/.vim/colors')
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -213,14 +215,11 @@ Plug 'tpope/vim-repeat'
 Plug 'tyru/open-browser.vim'
 Plug 'LeafCage/yankround.vim'
 Plug 'easymotion/vim-easymotion'
-Plug 'haya14busa/incsearch.vim'
-Plug 'haya14busa/incsearch-migemo.vim'
-Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'haya14busa/vim-migemo'
 Plug 'glidenote/memolist.vim'
-" Plug 'Shougo/vimproc.vim', {'do': 'make'}
 Plug 'Shougo/denite.nvim'
 Plug 'cohama/lexima.vim'
+Plug 'airblade/vim-gitgutter'
 
 Plug 'w0ng/vim-hybrid', {'do': 'cp colors/* ~/.vim/colors/'}
 Plug 'cocopon/iceberg.vim', {'do': 'cp colors/* ~/.vim/colors/'}
@@ -236,11 +235,15 @@ call plug#end()
 " ----------------------------------------
 " Plugin Settings
 " ----------------------------------------
+
 " Vaffle
+" --------------------
 let g:vaffle_auto_cd = 1
 let g:vaffle_show_hidden_files = 1
 
+
 " rcmdnk/vim-markdown
+" --------------------
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_frontmatter=1
 let g:vim_markdown_math=1
@@ -252,11 +255,13 @@ hi link htmlBoldItalic ErrorMsg
 
 
 " vim-better-whitespace
+" --------------------
 highlight ExtraWhitespace ctermbg=DarkRed
 highlight ExtraWhitespace guibg=DarkRed
 
 
 " open-browser.vim
+" --------------------
 let g:netrw_nogx = 1
 
 nmap gx <Plug>(openbrowser-smart-search)
@@ -264,6 +269,7 @@ vmap gx <Plug>(openbrowser-smart-search)
 
 
 " yankround.vim
+" --------------------
 let g:yankround_max_history = 30
 let g:yankround_use_region_hl = 0
 
@@ -276,6 +282,7 @@ nmap <C-n> <Plug>(yankround-next)
 
 
 " vim-easymotion
+" --------------------
 let g:EasyMotion_do_mapping = 0
 
 let g:EasyMotion_smartcase = 1
@@ -294,68 +301,35 @@ nmap <Leader>f <Plug>(easymotion-overwin-f)
 
 """ 2-key Find Motion
 nmap s <Plug>(easymotion-overwin-f2)
+vmap s <Plug>(easymotion-bd-f2)
 
-""" JK Motion / Within Line Motion
+""" JK Motion
 map <Leader>j <Plug>(easymotion-j)
 map <leader>k <Plug>(easymotion-k)
-map <Leader>l <Plug>(easymotion-lineanywhere)
-
-map <Leader>L <Plug>(easymotion-bd-jk)
-nmap <Leader>L <Plug>(easymotion-overwin-line)
+map <Leader>l <Plug>(easymotion-bd-jk)
+nmap <Leader>l <Plug>(easymotion-overwin-line)
 
 """ Word Motion
 map  <Leader>w <Plug>(easymotion-bd-w)
 nmap <Leader>w <Plug>(easymotion-overwin-w)
-
 map  <Leader>W <Plug>(easymotion-bd-W)
 
 
-" incsearch.vim
-let g:incsearch#auto_nohlsearch = 1
-
-map n  <Plug>(incsearch-nohl-n)
-map N  <Plug>(incsearch-nohl-N)
-map *  <Plug>(incsearch-nohl-*)
-map #  <Plug>(incsearch-nohl-#)
-map g* <Plug>(incsearch-nohl-g*)
-map g# <Plug>(incsearch-nohl-g#)
-
-""" incsearch-easymotion
-function! s:incsearch_config(...) abort
-  return incsearch#util#deepextend(deepcopy({
-  \   'modules': [incsearch#config#easymotion#module({'overwin': 1})],
-  \   'keymap': {"\<C-l>": '<Over>(easymotion)'},
-  \   'is_expr': 0
-  \ }), get(a:, 1, {}))
-endfunction
-
-noremap <silent><expr> /  incsearch#go(<SID>incsearch_config())
-noremap <silent><expr> ?  incsearch#go(<SID>incsearch_config({'command': '?'}))
-noremap <silent><expr> g/ incsearch#go(<SID>incsearch_config({'is_stay': 1}))
-
-""" incsearch.vim x migemo x vim-easymotion
-" function! s:config_migemo(...) abort
-"   return extend(copy({
-"   \   'converters': [incsearch#config#migemo#converter()],
-"   \   'modules': [incsearch#config#easymotion#module({'overwin': 1})],
-"   \   'keymap': {"\<C-l>": '<Over>(easymotion)'},
-"   \   'is_expr': 0,
-"   \ }), get(a:, 1, {}))
-" endfunction
-"
-" noremap <silent><expr> m/ incsearch#go(<SID>config_migemo())
-" noremap <silent><expr> m? incsearch#go(<SID>config_migemo({'command': '?'}))
-" noremap <silent><expr> mg/ incsearch#go(<SID>config_migemo({'is_stay': 1}))
-
-
 " memolist.vim
+" --------------------
 
 
 " lexima.vim
+" --------------------
 " call lexima#add_rule({'char': '$', 'input_after': '$', 'filetype': 'latex'})
 " call lexima#add_rule({'char': '$', 'at': '\%#\$', 'leave': 1, 'filetype': 'latex'})
 " call lexima#add_rule({'char': '<BS>', 'at': '\$\%#\$', 'delete': 1, 'filetype': 'latex'})
 
 
 " denite.nvim
+" --------------------
+
+
+" vim-gitgutter
+" --------------------
 
