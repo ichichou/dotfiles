@@ -62,7 +62,7 @@ set ambiwidth=double
 
 " GUI Options
 " --------------------
-if has('gui_macvim')
+if has('gui_running')
 
 set guifont=Myrica\ Monospace:h14
 " set guifontwide=
@@ -146,27 +146,27 @@ noremap gk k
 nnoremap + <C-a>
 nnoremap - <C-x>
 
-nnoremap <silent> <ESC><ESC> :<C-u>nohlsearch<CR>
+nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR>
 
 noremap ZZ <Nop>
 noremap ZQ <Nop>
 noremap Q <Nop>
 
 
-" Window, Tab Page, Buffer
+" Window, Tab Page
 " --------------------
 nnoremap t <Nop>
 nnoremap [window] <Nop>
 nmap t [window]
 
 """ 開く・閉じる
-nnoremap [window]o :<C-u>edit<space>
-nnoremap [window]t :<C-u>tabedit<space>
+nnoremap [window]o :<C-u>edit<Space>
+nnoremap [window]t :<C-u>tabedit<Space>
 nnoremap [window]d :<C-u>tabclose<CR>
 
 """ タブ移動
-nnoremap [window]mn :<C-u>tabmove +1<CR>
-nnoremap [window]mp :<C-u>tabmove -1<CR>
+nnoremap [window]ml :<C-u>tabmove +1<CR>
+nnoremap [window]mh :<C-u>tabmove -1<CR>
 nnoremap [window]m0 :<C-u>tabmove 0<CR>
 nnoremap [window]m$ :<C-u>tabmove<CR>
 
@@ -182,13 +182,13 @@ nnoremap [window]K <C-w>K
 nnoremap [window]L <C-w>L
 
 """ ウィンドウサイズ
-nnoremap [window]\ <C-w>|
-nnoremap [window]- <C-w>_
+nnoremap [window]<Bar> <C-w>|
+nnoremap [window]_ <C-w>_
 nnoremap [window]= <C-w>=
 
 """ ドキュメント
-nnoremap [window]/ :<C-u>vertical belowright help<space>
-nnoremap [window]? :<C-u>tab help<space>
+nnoremap [window]/ :<C-u>vertical belowright help<Space>
+nnoremap [window]? :<C-u>tab help<Space>
 
 
 " ----------------------------------------
