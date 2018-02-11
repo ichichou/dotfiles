@@ -215,6 +215,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tyru/open-browser.vim'
 Plug 'LeafCage/yankround.vim'
 Plug 'easymotion/vim-easymotion'
+Plug 'haya14busa/is.vim'
 Plug 'haya14busa/vim-migemo'
 Plug 'glidenote/memolist.vim'
 Plug 'Shougo/denite.nvim'
@@ -327,9 +328,5 @@ map  <Leader>W <Plug>(easymotion-bd-W)
 
 
 " denite.nvim
-" --------------------
-
-
-" vim-gitgutter
 " --------------------
 
