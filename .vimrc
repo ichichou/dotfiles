@@ -47,6 +47,7 @@ set matchtime=1
 set showtabline=2
 set laststatus=2
 set noshowmode
+set showcmd
 set ruler
 
 set display=lastline
@@ -261,6 +262,13 @@ highlight ExtraWhitespace ctermbg=DarkRed
 highlight ExtraWhitespace guibg=DarkRed
 
 
+" lexima.vim
+" --------------------
+" call lexima#add_rule({'char': '$', 'input_after': '$', 'filetype': 'latex'})
+" call lexima#add_rule({'char': '$', 'at': '\%#\$', 'leave': 1, 'filetype': 'latex'})
+" call lexima#add_rule({'char': '<BS>', 'at': '\$\%#\$', 'delete': 1, 'filetype': 'latex'})
+
+
 " open-browser.vim
 " --------------------
 let g:netrw_nogx = 1
@@ -271,7 +279,7 @@ vmap gx <Plug>(openbrowser-smart-search)
 
 " yankround.vim
 " --------------------
-let g:yankround_max_history = 30
+let g:yankround_max_history = 50
 let g:yankround_use_region_hl = 0
 
 nmap p <Plug>(yankround-p)
@@ -280,6 +288,21 @@ nmap gp <Plug>(yankround-gp)
 nmap gP <Plug>(yankround-gP)
 nmap <C-p> <Plug>(yankround-prev)
 nmap <C-n> <Plug>(yankround-next)
+
+
+" memolist.vim
+" --------------------
+let g:memolist_path = "$HOME/Dropbox/memolist"
+let g:memolist_template_dir_path = "$HOME/Dropbox/memolist"
+let g:memolist_memo_suffix = "md"
+
+" let g:memolist_denite = 1
+" let g:memolist_denite_source = "anything"
+" let g:memolist_denite_option = "anything"
+
+nmap <Leader>mn  :<C-u>MemoNew<CR>
+nmap <Leader>ml  :<C-u>MemoList<CR>
+nmap <Leader>mg  :<C-u>MemoGrep<CR>
 
 
 " vim-easymotion
@@ -316,17 +339,8 @@ nmap <Leader>w <Plug>(easymotion-overwin-w)
 map  <Leader>W <Plug>(easymotion-bd-W)
 
 
-" memolist.vim
-" --------------------
-
-
-" lexima.vim
-" --------------------
-" call lexima#add_rule({'char': '$', 'input_after': '$', 'filetype': 'latex'})
-" call lexima#add_rule({'char': '$', 'at': '\%#\$', 'leave': 1, 'filetype': 'latex'})
-" call lexima#add_rule({'char': '<BS>', 'at': '\$\%#\$', 'delete': 1, 'filetype': 'latex'})
-
-
 " denite.nvim
 " --------------------
+nnoremap [Denite] <Nop>
+nmap <Space>u [Denite]
 
