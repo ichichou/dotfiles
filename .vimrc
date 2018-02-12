@@ -1,5 +1,7 @@
-" - lightline にファイルの行数を表示。
-" - 
+" lightline にファイルの行数を表示。
+" ファイル全体を表すテキストオブジェクト
+" インサートモードに入らず空行を挿入
+" surround.vim で **a** の設定
 
 " ========================================
 " .vimrc
@@ -222,6 +224,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'haya14busa/is.vim'
 Plug 'haya14busa/vim-migemo'
 Plug 'glidenote/memolist.vim'
+" Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Shougo/denite.nvim'
 Plug 'cohama/lexima.vim'
 Plug 'airblade/vim-gitgutter'
@@ -283,7 +286,7 @@ vmap gx <Plug>(openbrowser-smart-search)
 " yankround.vim
 " --------------------
 let g:yankround_max_history = 50
-let g:yankround_use_region_hl = 0
+let g:yankround_use_region_hl = 1
 
 nmap p <Plug>(yankround-p)
 nmap P <Plug>(yankround-P)
@@ -291,6 +294,10 @@ nmap gp <Plug>(yankround-gp)
 nmap gP <Plug>(yankround-gP)
 nmap <C-p> <Plug>(yankround-prev)
 nmap <C-n> <Plug>(yankround-next)
+
+""" ctrlp.vim
+" nnoremap <silent> <SID>(ctrlp) :<C-u>CtrlP<CR>
+" nmap <expr> <C-p> yankround#is_active() ? "\<Plug>(yankround-prev)" : "<SID>(ctrlp)"
 
 
 " memolist.vim
@@ -342,8 +349,17 @@ nmap <Leader>w <Plug>(easymotion-overwin-w)
 map  <Leader>W <Plug>(easymotion-bd-W)
 
 
+" ctrlp.vim
+" --------------------
+" yankround.vim と干渉するため無効。
+" let g:ctrlp_use_migemo = 1
+" let g:ctrlp_clear_cache_on_exit = 0
+
+
 " denite.nvim
 " --------------------
-nnoremap [Denite] <Nop>
-nmap <Space>u [Denite]
+call denite#custom#option('default', 'prompt', '>')
+
+nnoremap [denite] <Nop>
+nmap <Space>u [denite]
 
