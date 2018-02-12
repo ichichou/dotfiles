@@ -1,3 +1,6 @@
+" - lightline にファイルの行数を表示。
+" - 
+
 " ========================================
 " .vimrc
 " ========================================
@@ -163,13 +166,13 @@ nmap t [window]
 """ 開く・閉じる
 nnoremap [window]o :<C-u>edit<Space>
 nnoremap [window]t :<C-u>tabedit<Space>
-nnoremap [window]d :<C-u>tabclose<CR>
+nnoremap <silent> [window]d :<C-u>tabclose<CR>
 
 """ タブ移動
-nnoremap [window]ml :<C-u>tabmove +1<CR>
-nnoremap [window]mh :<C-u>tabmove -1<CR>
-nnoremap [window]m0 :<C-u>tabmove 0<CR>
-nnoremap [window]m$ :<C-u>tabmove<CR>
+nnoremap <silent> [window]ml :<C-u>tabmove +1<CR>
+nnoremap <silent> [window]mh :<C-u>tabmove -1<CR>
+nnoremap <silent> [window]m0 :<C-u>tabmove 0<CR>
+nnoremap <silent> [window]m$ :<C-u>tabmove<CR>
 
 """ ウィンドウ移動
 nnoremap [window]h <C-w>h
@@ -183,12 +186,12 @@ nnoremap [window]K <C-w>K
 nnoremap [window]L <C-w>L
 
 """ ウィンドウサイズ
-nnoremap [window]<Bar> <C-w>|
+nnoremap [window]<Bar> <C-w><Bar>
 nnoremap [window]_ <C-w>_
 nnoremap [window]= <C-w>=
 
 """ ドキュメント
-nnoremap [window]/ :<C-u>vertical belowright help<Space>
+nnoremap [window]/ :<C-u>vertical help<Space>
 nnoremap [window]? :<C-u>tab help<Space>
 
 
