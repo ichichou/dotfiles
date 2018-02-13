@@ -1,6 +1,6 @@
 " lightline にファイルの行数を表示。
-" ファイル全体を表すテキストオブジェクト
 " surround.vim で **a** の設定
+" easymotion のヒントの色を変更
 
 " センテンスの定義に句読点を追加
 " マッチする括弧のペアを追加
@@ -138,6 +138,17 @@ set infercase
 " ----------------------------------------
 " Keymap
 " ----------------------------------------
+
+"        Normal  Insert  Command  Visual
+"        ------  ------  -------  -------
+"  map   x                        x
+"  map!          x       x
+"  nmap  x
+"  imap          x
+"  cmap                  x
+"  vmap                           x
+
+
 let mapleader = ','
 noremap \ ,
 
@@ -218,7 +229,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-" Common
+" Generals
 " --------------------
 Plug 'vim-jp/vimdoc-ja'
 Plug 'itchyny/lightline.vim'
@@ -240,7 +251,7 @@ Plug 'Shougo/denite.nvim'
 Plug 'cohama/lexima.vim'
 Plug 'airblade/vim-gitgutter'
 
-" Operator/Text Object
+" Operator/Text Objects
 " --------------------
 Plug 'kana/vim-operator-user'
 Plug 'kana/vim-textobj-user'
@@ -263,7 +274,7 @@ call plug#end()
 
 
 " ----------------------------------------
-" Plugins - Common
+" Plugins
 " ----------------------------------------
 
 " Vaffle
@@ -284,52 +295,45 @@ hi link htmlBold WarningMsg
 hi link htmlBoldItalic ErrorMsg
 
 
-" vim-better-whitespace
+" better-whitespace
 " --------------------
 highlight ExtraWhitespace ctermbg=DarkRed
 highlight ExtraWhitespace guibg=DarkRed
 
 
-" lexima.vim
+" lexima
 " --------------------
 " call lexima#add_rule({'char': '$', 'input_after': '$', 'filetype': 'latex'})
 " call lexima#add_rule({'char': '$', 'at': '\%#\$', 'leave': 1, 'filetype': 'latex'})
 " call lexima#add_rule({'char': '<BS>', 'at': '\$\%#\$', 'delete': 1, 'filetype': 'latex'})
 
 
-" open-browser.vim
+" open-browser
 " --------------------
 let g:netrw_nogx = 1
-
-nmap gx <Plug>(openbrowser-smart-search)
-vmap gx <Plug>(openbrowser-smart-search)
+map gx <Plug>(openbrowser-smart-search)
 
 
-" yankround.vim
+" yankround
 " --------------------
 let g:yankround_max_history = 50
 let g:yankround_use_region_hl = 1
 
-nmap p <Plug>(yankround-p)
-nmap P <Plug>(yankround-P)
-nmap gp <Plug>(yankround-gp)
-nmap gP <Plug>(yankround-gP)
-
-vmap p <Plug>(yankround-p)
-vmap P <Plug>(yankround-P)
-vmap gp <Plug>(yankround-gp)
-vmap gP <Plug>(yankround-gP)
+map p <Plug>(yankround-p)
+map P <Plug>(yankround-P)
+map gp <Plug>(yankround-gp)
+map gP <Plug>(yankround-gP)
 
 nmap <C-p> <Plug>(yankround-prev)
 nmap <C-n> <Plug>(yankround-next)
 
 
-""" ctrlp.vim
+""" ctrlp との共存
 " nnoremap <silent> <SID>(ctrlp) :<C-u>CtrlP<CR>
 " nmap <expr> <C-p> yankround#is_active() ? "\<Plug>(yankround-prev)" : "<SID>(ctrlp)"
 
 
-" memolist.vim
+" memolist
 " --------------------
 let g:memolist_path = "$HOME/Dropbox/memolist"
 let g:memolist_template_dir_path = "$HOME/Dropbox/memolist"
@@ -344,7 +348,7 @@ nmap <Leader>ml  :<C-u>MemoList<CR>
 nmap <Leader>mg  :<C-u>MemoGrep<CR>
 
 
-" vim-easymotion
+" easymotion
 " --------------------
 let g:EasyMotion_do_mapping = 0
 
@@ -363,8 +367,8 @@ map  <Leader>f <Plug>(easymotion-bd-f)
 nmap <Leader>f <Plug>(easymotion-overwin-f)
 
 """ 2-key Find Motion
+map s <Plug>(easymotion-bd-f2)
 nmap s <Plug>(easymotion-overwin-f2)
-vmap s <Plug>(easymotion-bd-f2)
 
 """ JK Motion
 map <Leader>j <Plug>(easymotion-j)
@@ -378,39 +382,28 @@ nmap <Leader>w <Plug>(easymotion-overwin-w)
 map  <Leader>W <Plug>(easymotion-bd-W)
 
 
-" ctrlp.vim
+" ctrlp
 " --------------------
 " yankround.vim と干渉するため無効。
 " let g:ctrlp_use_migemo = 1
 " let g:ctrlp_clear_cache_on_exit = 0
 
 
-" denite.nvim
+" operator-replace
 " --------------------
-call denite#custom#option('default', 'prompt', '>')
-
-nnoremap [denite] <Nop>
-nmap <Space>u [denite]
+map R <Plug>(operator-replace)
 
 
-" ----------------------------------------
-" Plugins - Operator/Text Object
-" ----------------------------------------
-
-" vim-operator-replace
-" --------------------
-
-
-" vim-operator-flashy
+" operator-flashy
 " --------------------
 map y <Plug>(operator-flashy)
 nmap Y <Plug>(operator-flashy)$
 
 
-" vim-textobj-entire
+" denite
 " --------------------
+call denite#custom#option('default', 'prompt', '>')
 
-
-" vim-textobj-line
-" --------------------
+nnoremap [denite] <Nop>
+nmap <Space>u [denite]
 
