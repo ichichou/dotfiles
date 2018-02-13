@@ -218,6 +218,8 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
+" Common
+" --------------------
 Plug 'vim-jp/vimdoc-ja'
 Plug 'itchyny/lightline.vim'
 Plug 'cocopon/vaffle.vim'
@@ -238,6 +240,17 @@ Plug 'Shougo/denite.nvim'
 Plug 'cohama/lexima.vim'
 Plug 'airblade/vim-gitgutter'
 
+" Operator/Text Object
+" --------------------
+Plug 'kana/vim-operator-user'
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-operator-replace'
+Plug 'haya14busa/vim-operator-flashy'
+Plug 'kana/vim-textobj-entire'
+Plug 'kana/vim-textobj-line'
+
+" Colorscheme
+" --------------------
 Plug 'w0ng/vim-hybrid', {'do': 'cp colors/* ~/.vim/colors/'}
 Plug 'cocopon/iceberg.vim', {'do': 'cp colors/* ~/.vim/colors/'}
 Plug 'aereal/vim-colors-japanesque', {'do': 'cp colors/* ~/.vim/colors/'}
@@ -250,7 +263,7 @@ call plug#end()
 
 
 " ----------------------------------------
-" Plugin Settings
+" Plugins - Common
 " ----------------------------------------
 
 " Vaffle
@@ -301,8 +314,15 @@ nmap p <Plug>(yankround-p)
 nmap P <Plug>(yankround-P)
 nmap gp <Plug>(yankround-gp)
 nmap gP <Plug>(yankround-gP)
+
+vmap p <Plug>(yankround-p)
+vmap P <Plug>(yankround-P)
+vmap gp <Plug>(yankround-gp)
+vmap gP <Plug>(yankround-gP)
+
 nmap <C-p> <Plug>(yankround-prev)
 nmap <C-n> <Plug>(yankround-next)
+
 
 """ ctrlp.vim
 " nnoremap <silent> <SID>(ctrlp) :<C-u>CtrlP<CR>
@@ -371,4 +391,26 @@ call denite#custom#option('default', 'prompt', '>')
 
 nnoremap [denite] <Nop>
 nmap <Space>u [denite]
+
+
+" ----------------------------------------
+" Plugins - Operator/Text Object
+" ----------------------------------------
+
+" vim-operator-replace
+" --------------------
+
+
+" vim-operator-flashy
+" --------------------
+map y <Plug>(operator-flashy)
+nmap Y <Plug>(operator-flashy)$
+
+
+" vim-textobj-entire
+" --------------------
+
+
+" vim-textobj-line
+" --------------------
 
