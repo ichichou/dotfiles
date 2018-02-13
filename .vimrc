@@ -1,7 +1,10 @@
 " lightline にファイルの行数を表示。
 " ファイル全体を表すテキストオブジェクト
-" インサートモードに入らず空行を挿入
 " surround.vim で **a** の設定
+
+" センテンスの定義に句読点を追加
+" マッチする括弧のペアを追加
+" 括弧の補完を追加
 
 " ========================================
 " .vimrc
@@ -159,6 +162,12 @@ noremap ZQ <Nop>
 noremap Q <Nop>
 
 
+" 空行の挿入
+" --------------------
+nnoremap <silent> go :<C-u>for i in range(1, v:count1) \| call append(line('.'), '') \| endfor \| silent! call repeat#set("go", v:count1)<CR>
+nnoremap <silent> gO :<C-u>for i in range(1, v:count1) \| call append(line('.')-1, '') \| endfor \| silent! call repeat#set("gO", v:count1)<CR>
+
+
 " Window, Tab Page
 " --------------------
 nnoremap t <Nop>
@@ -306,7 +315,7 @@ let g:memolist_path = "$HOME/Dropbox/memolist"
 let g:memolist_template_dir_path = "$HOME/Dropbox/memolist"
 let g:memolist_memo_suffix = "md"
 
-" let g:memolist_denite = 1
+let g:memolist_denite = 1
 " let g:memolist_denite_source = "anything"
 " let g:memolist_denite_option = "anything"
 
