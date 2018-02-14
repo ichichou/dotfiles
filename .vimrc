@@ -275,10 +275,6 @@ call plug#end()
 
 " lightline
 " --------------------
-let g:lightline = { 'colorscheme': 'iceberg' }
-" powerline wombat jellybeans solarized PaperColor seoul256 Dracula one landscape
-" hybrid iceberg tender tenderplus deepspace nord gruvbox onedark
-
 let g:lightline = {
     \ 'active': {
     \   'left': [ ['mode', 'paste'], ['readonly', 'filename', 'modified'] ]
@@ -290,6 +286,10 @@ let g:lightline = {
     \ }
     \ }
 
+let g:lightline = { 'colorscheme': 'iceberg' }
+" powerline wombat jellybeans solarized PaperColor seoul256 Dracula one landscape
+" hybrid iceberg tender tenderplus deepspace nord gruvbox onedark
+
 
 " vaffle
 " --------------------
@@ -299,10 +299,11 @@ let g:vaffle_show_hidden_files = 1
 
 " rcmdnk/vim-markdown
 " --------------------
+autocmd BufRead,BufNewFile *.{txt,text} set filetype=markdown
+
 let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_frontmatter=1
-let g:vim_markdown_math=1
-au BufRead,BufNewFile *.{txt,text} set filetype=markdown
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_math = 1
 
 hi link htmlItalic LineNr
 hi link htmlBold WarningMsg
@@ -317,12 +318,37 @@ highlight ExtraWhitespace guibg=DarkRed
 
 " lexima
 " --------------------
+call lexima#add_rule({'char': '<', 'input_after': '>'})
+call lexima#add_rule({'char': '*', 'at': '*\%#', 'input_after': '**'})
 " call lexima#add_rule({'char': '（', 'input_after': '）'})
+" call lexima#add_rule({'char': '「', 'input_after': '」'})
+" call lexima#add_rule({'char': '『', 'input_after': '』'})
+" call lexima#add_rule({'char': '〈', 'input_after': '〉'})
+" call lexima#add_rule({'char': '【', 'input_after': '】'})
+" call lexima#add_rule({'char': '［', 'input_after': '］'})
+" call lexima#add_rule({'char': '〔', 'input_after': '〕'})
+
+call lexima#add_rule({'char': '>', 'at': '\%#>', 'leave': 1})
 " call lexima#add_rule({'char': '）', 'at': '\%#）', 'leave': 1})
+" call lexima#add_rule({'char': '」', 'at': '\%#」', 'leave': 1})
+" call lexima#add_rule({'char': '』', 'at': '\%#』', 'leave': 1})
+" call lexima#add_rule({'char': '〉', 'at': '\%#〉', 'leave': 1})
+" call lexima#add_rule({'char': '】', 'at': '\%#】', 'leave': 1})
+" call lexima#add_rule({'char': '］', 'at': '\%#］', 'leave': 1})
+" call lexima#add_rule({'char': '〕', 'at': '\%#〕', 'leave': 1})
 
 call lexima#add_rule({'char': '<BS>', 'at': '(\%#)', 'input': '<BS>', 'delete': 1})
 call lexima#add_rule({'char': '<BS>', 'at': '[\%#]', 'input': '<BS>', 'delete': 1})
 call lexima#add_rule({'char': '<BS>', 'at': '{\%#}', 'input': '<BS>', 'delete': 1})
+call lexima#add_rule({'char': '<BS>', 'at': '<\%#>', 'input': '<BS>', 'delete': 1})
+call lexima#add_rule({'char': '<BS>', 'at': '*\%#*', 'input': '<BS>', 'delete': 1})
+" call lexima#add_rule({'char': '<BS>', 'at': '（\%#）', 'input': '<BS>', 'delete': 1})
+" call lexima#add_rule({'char': '<BS>', 'at': '「\%#」', 'input': '<BS>', 'delete': 1})
+" call lexima#add_rule({'char': '<BS>', 'at': '『\%#』', 'input': '<BS>', 'delete': 1})
+" call lexima#add_rule({'char': '<BS>', 'at': '〈\%#〉', 'input': '<BS>', 'delete': 1})
+" call lexima#add_rule({'char': '<BS>', 'at': '【\%#】', 'input': '<BS>', 'delete': 1})
+" call lexima#add_rule({'char': '<BS>', 'at': '［\%#］', 'input': '<BS>', 'delete': 1})
+" call lexima#add_rule({'char': '<BS>', 'at': '〔\%#〕', 'input': '<BS>', 'delete': 1})
 
 
 " open-browser
