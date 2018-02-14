@@ -1,6 +1,4 @@
 " lightline にファイルの行数を表示。
-" surround.vim で **a** の設定
-" easymotion のヒントの色を変更
 
 " センテンスの定義に句読点を追加
 " マッチする括弧のペアを追加
@@ -36,15 +34,15 @@ set helplang=ja,en
 " ----------------------------------------
 " Appearance
 " ----------------------------------------
-colorscheme hybrid
-" hybrid iceberg japanesque tender deep-space nord gruvbox onedark
+colorscheme iceberg
+" hybrid iceberg japanesque tender deep-space nord gruvbox onedark seoul256
 
-let g:lightline = { 'colorscheme': 'hybrid' }
+let g:lightline = { 'colorscheme': 'iceberg' }
 " powerline wombat jellybeans solarized PaperColor seoul256 Dracula one landscape
 " hybrid iceberg tender tenderplus deepspace nord gruvbox onedark
 
 set background=dark
-"set termguicolors
+" set termguicolors
 
 set title
 set number
@@ -72,24 +70,27 @@ set ambiwidth=double
 " GUI Options
 " --------------------
 if has('gui_running')
+    set guifont=Myrica\ Monospace:h14
+    " set guifontwide=
 
-set guifont=Myrica\ Monospace:h14
-" set guifontwide=
+    set columns=160
+    set lines=50
+    set linespace=2
 
-set columns=160
-set lines=50
-set linespace=2
+    set guioptions+=c
+    set guioptions-=e
+    set guioptions-=m
+    set guioptions-=r
+    set guioptions-=L
+    set guioptions-=t
+    set guioptions-=T
 
-set guioptions+=c
-set guioptions-=e
-set guioptions-=m
-set guioptions-=r
-set guioptions-=L
-set guioptions-=t
-set guioptions-=T
+    set guicursor+=a:blinkon0
+endif
 
-set guicursor+=a:blinkon0
-
+if has('gui_macvim')
+    let g:macvim_skip_colorscheme=1
+    let g:no_gvimrc_example=1
 endif
 
 
@@ -117,7 +118,7 @@ set ttymouse=xterm2
 
 
 " ----------------------------------------
-" Search / Completion
+" Search/Completion
 " ----------------------------------------
 set wrapscan
 set incsearch
@@ -221,10 +222,10 @@ nnoremap [window]? :<C-u>tab help<Space>
 " vim-plug
 " ----------------------------------------
 if empty(glob('~/.vim/autoload/plug.vim'))
-  call system('mkdir -p ~/.vim/colors')
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    call system('mkdir -p ~/.vim/colors')
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 call plug#begin('~/.vim/plugged')
@@ -238,7 +239,6 @@ Plug 'cocopon/lightline-hybrid.vim'
 Plug 'rcmdnk/vim-markdown'
 Plug 'joker1007/vim-markdown-quote-syntax'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tyru/open-browser.vim'
 Plug 'LeafCage/yankround.vim'
@@ -256,6 +256,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'kana/vim-operator-user'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-operator-replace'
+Plug 'rhysd/vim-operator-surround'
 Plug 'haya14busa/vim-operator-flashy'
 Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-line'
@@ -269,6 +270,8 @@ Plug 'jacoborus/tender.vim', {'do': 'cp colors/* ~/.vim/colors/'}
 Plug 'tyrannicaltoucan/vim-deep-space', {'do': 'cp colors/* ~/.vim/colors/'}
 Plug 'arcticicestudio/nord-vim', {'do': 'cp colors/* ~/.vim/colors/'}
 Plug 'morhetz/gruvbox', {'do': 'cp colors/* ~/.vim/colors/'}
+Plug 'joshdick/onedark.vim', {'do': 'cp colors/* ~/.vim/colors/'}
+Plug 'junegunn/seoul256.vim', {'do': 'cp colors/* ~/.vim/colors/'}
 
 call plug#end()
 
@@ -277,7 +280,7 @@ call plug#end()
 " Plugins
 " ----------------------------------------
 
-" Vaffle
+" vaffle
 " --------------------
 let g:vaffle_auto_cd = 1
 let g:vaffle_show_hidden_files = 1
@@ -382,6 +385,19 @@ nmap <Leader>w <Plug>(easymotion-overwin-w)
 map  <Leader>W <Plug>(easymotion-bd-W)
 
 
+""" Custom Highlighting
+" hi link EasyMotionTarget ErrorMsg
+" (Default: bold red)
+" hi link EasyMotionTarget2First MatchParen
+" hi link EasyMotionTarget2Second MatchParen
+
+" hi link EasyMotionShade  Comment
+" (Default: dark gray)
+
+" hi link EasyMotionIncSearch Search
+" hi link EasyMotionMoveHL Search
+
+
 " ctrlp
 " --------------------
 " yankround.vim と干渉するため無効。
@@ -394,6 +410,20 @@ map  <Leader>W <Plug>(easymotion-bd-W)
 map R <Plug>(operator-replace)
 
 
+" operator-surround
+" --------------------
+map Sa <Plug>(operator-surround-append)
+map Sd <Plug>(operator-surround-delete)
+map Sr <Plug>(operator-surround-replace)
+
+let g:operator#surround#blocks =
+    \ {
+    \   '-' : [
+    \     { 'block' : ['**', '**'], 'motionwise' : ['char', 'line', 'block'], 'keys' : ['*'] },
+    \   ]
+    \ }
+
+
 " operator-flashy
 " --------------------
 map y <Plug>(operator-flashy)
@@ -404,6 +434,17 @@ nmap Y <Plug>(operator-flashy)$
 " --------------------
 call denite#custom#option('default', 'prompt', '>')
 
+""" Custon Map
+call denite#custom#map('insert', "<C-j>", '<denite:move_to_next_line>')
+call denite#custom#map('insert', "<C-k>", '<denite:move_to_previous_line>')
+
+call denite#custom#map('normal', "v", '<denite:do_action:vsplit>')
+call denite#custom#map('insert', "<C-t>", '<denite:do_action:tabopen>')
+call denite#custom#map('insert', "<C-v>", '<denite:do_action:vsplit>')
+
+""" Keymap
 nnoremap [denite] <Nop>
 nmap <Space>u [denite]
+
+nnoremap <silent> [denite]o :<C-u>Denite file_rec<CR>
 
