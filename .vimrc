@@ -1,8 +1,5 @@
-" lightline にファイルの行数を表示。
-
 " センテンスの定義に句読点を追加
 " マッチする括弧のペアを追加
-" 括弧の補完を追加
 
 " ========================================
 " .vimrc
@@ -36,10 +33,6 @@ set helplang=ja,en
 " ----------------------------------------
 colorscheme iceberg
 " hybrid iceberg japanesque tender deep-space nord gruvbox onedark seoul256
-
-let g:lightline = { 'colorscheme': 'iceberg' }
-" powerline wombat jellybeans solarized PaperColor seoul256 Dracula one landscape
-" hybrid iceberg tender tenderplus deepspace nord gruvbox onedark
 
 set background=dark
 " set termguicolors
@@ -280,6 +273,24 @@ call plug#end()
 " Plugins
 " ----------------------------------------
 
+" lightline
+" --------------------
+let g:lightline = { 'colorscheme': 'iceberg' }
+" powerline wombat jellybeans solarized PaperColor seoul256 Dracula one landscape
+" hybrid iceberg tender tenderplus deepspace nord gruvbox onedark
+
+let g:lightline = {
+    \ 'active': {
+    \   'left': [ ['mode', 'paste'], ['readonly', 'filename', 'modified'] ]
+    \ },
+    \ 'component': {
+    \   'lineinfo': '%3l:%L'
+    \ },
+    \ 'component_function': {
+    \ }
+    \ }
+
+
 " vaffle
 " --------------------
 let g:vaffle_auto_cd = 1
@@ -306,9 +317,12 @@ highlight ExtraWhitespace guibg=DarkRed
 
 " lexima
 " --------------------
-" call lexima#add_rule({'char': '$', 'input_after': '$', 'filetype': 'latex'})
-" call lexima#add_rule({'char': '$', 'at': '\%#\$', 'leave': 1, 'filetype': 'latex'})
-" call lexima#add_rule({'char': '<BS>', 'at': '\$\%#\$', 'delete': 1, 'filetype': 'latex'})
+" call lexima#add_rule({'char': '（', 'input_after': '）'})
+" call lexima#add_rule({'char': '）', 'at': '\%#）', 'leave': 1})
+
+call lexima#add_rule({'char': '<BS>', 'at': '(\%#)', 'input': '<BS>', 'delete': 1})
+call lexima#add_rule({'char': '<BS>', 'at': '[\%#]', 'input': '<BS>', 'delete': 1})
+call lexima#add_rule({'char': '<BS>', 'at': '{\%#}', 'input': '<BS>', 'delete': 1})
 
 
 " open-browser
@@ -387,12 +401,10 @@ map  <Leader>W <Plug>(easymotion-bd-W)
 
 """ Custom Highlighting
 " hi link EasyMotionTarget ErrorMsg
-" (Default: bold red)
+" hi link EasyMotionShade  Comment
+
 " hi link EasyMotionTarget2First MatchParen
 " hi link EasyMotionTarget2Second MatchParen
-
-" hi link EasyMotionShade  Comment
-" (Default: dark gray)
 
 " hi link EasyMotionIncSearch Search
 " hi link EasyMotionMoveHL Search
@@ -416,11 +428,10 @@ map Sa <Plug>(operator-surround-append)
 map Sd <Plug>(operator-surround-delete)
 map Sr <Plug>(operator-surround-replace)
 
-let g:operator#surround#blocks =
-    \ {
-    \   '-' : [
-    \     { 'block' : ['**', '**'], 'motionwise' : ['char', 'line', 'block'], 'keys' : ['*'] },
-    \   ]
+let g:operator#surround#blocks = {
+    \ '-' : [
+    \   { 'block': ['**', '**'], 'motionwise': ['char', 'line', 'block'], 'keys': ['*'] },
+    \ ]
     \ }
 
 
