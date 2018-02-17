@@ -151,6 +151,7 @@ noremap : ;
 
 noremap Y y$
 " noremap x “_x
+" noremap X “_X
 
 noremap j gj
 noremap k gk
@@ -230,6 +231,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'cocopon/vaffle.vim'
 Plug 'cocopon/lightline-hybrid.vim'
 Plug 'rcmdnk/vim-markdown'
+Plug 'kannokanno/previm'
 Plug 'joker1007/vim-markdown-quote-syntax'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-repeat'
@@ -283,10 +285,9 @@ let g:lightline = {
     \   'lineinfo': '%3l:%L'
     \ },
     \ 'component_function': {
+    \ },
+    \ 'colorscheme': 'iceberg'
     \ }
-    \ }
-
-let g:lightline = { 'colorscheme': 'iceberg' }
 " powerline wombat jellybeans solarized PaperColor seoul256 Dracula one landscape
 " hybrid iceberg tender tenderplus deepspace nord gruvbox onedark
 
@@ -295,6 +296,8 @@ let g:lightline = { 'colorscheme': 'iceberg' }
 " --------------------
 let g:vaffle_auto_cd = 1
 let g:vaffle_show_hidden_files = 1
+
+nnoremap <Leader>v :<C-u>Vaffle<CR>
 
 
 " rcmdnk/vim-markdown
@@ -308,6 +311,16 @@ let g:vim_markdown_math = 1
 hi link htmlItalic LineNr
 hi link htmlBold WarningMsg
 hi link htmlBoldItalic ErrorMsg
+
+
+" previm
+" --------------------
+let g:previm_enable_realtime = 1
+let g:previm_show_header = 0
+let g:previm_disable_default_css = 0
+" let g:previm_custom_css_path = ''
+
+nnoremap <Leader>p :<C-u>PrevimOpen<CR>
 
 
 " better-whitespace
@@ -354,6 +367,7 @@ call lexima#add_rule({'char': '<BS>', 'at': '*\%#*', 'input': '<BS>', 'delete': 
 " open-browser
 " --------------------
 let g:netrw_nogx = 1
+
 map gx <Plug>(openbrowser-smart-search)
 
 
@@ -382,13 +396,15 @@ let g:memolist_path = "$HOME/Dropbox/memolist"
 let g:memolist_template_dir_path = "$HOME/Dropbox/memolist"
 let g:memolist_memo_suffix = "md"
 
-let g:memolist_denite = 1
+" let g:memolist_denite = 1
 " let g:memolist_denite_source = "anything"
 " let g:memolist_denite_option = "anything"
 
-nmap <Leader>mn  :<C-u>MemoNew<CR>
-nmap <Leader>ml  :<C-u>MemoList<CR>
-nmap <Leader>mg  :<C-u>MemoGrep<CR>
+nnoremap [memolist] <Nop>
+nmap <Leader>m [memolist]
+nnoremap [memolist]n :<C-u>MemoNew<CR>
+nnoremap [memolist]l :<C-u>MemoList<CR>
+nnoremap [memolist]g :<C-u>MemoGrep<CR>
 
 
 " easymotion
@@ -406,7 +422,7 @@ let g:EasyMotion_use_upper = 1
 let g:EasyMotion_keys = ';HKLYUIOPNM,QWERTASDGZXCVBJF'
 
 """ 1-key Find Motion
-map  <Leader>f <Plug>(easymotion-bd-f)
+map <Leader>f <Plug>(easymotion-bd-f)
 nmap <Leader>f <Plug>(easymotion-overwin-f)
 
 """ 2-key Find Motion
@@ -420,14 +436,13 @@ map <Leader>l <Plug>(easymotion-bd-jk)
 nmap <Leader>l <Plug>(easymotion-overwin-line)
 
 """ Word Motion
-map  <Leader>w <Plug>(easymotion-bd-w)
+map <Leader>w <Plug>(easymotion-bd-w)
 nmap <Leader>w <Plug>(easymotion-overwin-w)
-map  <Leader>W <Plug>(easymotion-bd-W)
-
+map <Leader>W <Plug>(easymotion-bd-W)
 
 """ Custom Highlighting
 " hi link EasyMotionTarget ErrorMsg
-" hi link EasyMotionShade  Comment
+" hi link EasyMotionShade Comment
 
 " hi link EasyMotionTarget2First MatchParen
 " hi link EasyMotionTarget2Second MatchParen
