@@ -245,8 +245,9 @@ Plug 'glidenote/memolist.vim'
 Plug 'Shougo/denite.nvim'
 Plug 'cohama/lexima.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 
-" Operator/Text Objects
+" Operator/Text Object
 " --------------------
 Plug 'kana/vim-operator-user'
 Plug 'kana/vim-textobj-user'
