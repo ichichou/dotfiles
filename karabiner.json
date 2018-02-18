@@ -14,7 +14,7 @@
                 },
                 "rules": [
                     {
-                        "description": "[Chrome] LCommand-N -> LCommand-T",
+                        "description": "[Chrome] Left_Command-N -> Left_Command-T",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -46,7 +46,7 @@
                         ]
                     },
                     {
-                        "description": "[Chrome] LCommand-T -> LCommand-LShift-T",
+                        "description": "[Chrome] Left_Command-T -> Left_Command-Left_Shift-T",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -79,7 +79,7 @@
                         ]
                     },
                     {
-                        "description": "[Chrome] LCommand-Q -> LCommand-LShift-Q",
+                        "description": "[Chrome] Left_Command-Q -> Left_Command-Left_Shift-Q",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -112,7 +112,7 @@
                         ]
                     },
                     {
-                        "description": "[Vim/Terminal] ESC/Control-[ -> Eisu, ESC",
+                        "description": "[Vim/Terminal] ESC/Left_Control-[ -> ESC, Eisu, ESC",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -274,7 +274,7 @@
                         ]
                     },
                     {
-                        "description": "LCommand-Space -> Return",
+                        "description": "Left_Command-Space -> Return",
                         "manipulators": [
                             {
                                 "from": {
@@ -298,7 +298,7 @@
                         ]
                     },
                     {
-                        "description": "LCommand-RCommand -> ESC",
+                        "description": "Left_Command-Right_Command -> ESC",
                         "manipulators": [
                             {
                                 "from": {
@@ -351,7 +351,7 @@
                         ]
                     },
                     {
-                        "description": "LCommand-H/J/K/L -> Left/Down/Up/Right",
+                        "description": "Left_Command-H/J/K/L -> Left/Down/Up/Right",
                         "manipulators": [
                             {
                                 "from": {
@@ -432,7 +432,7 @@
                         ]
                     },
                     {
-                        "description": "LCommand-U/O -> Delete/Fn-Delete",
+                        "description": "Left_Command-U/O -> Delete/Fn-Delete",
                         "manipulators": [
                             {
                                 "from": {
@@ -475,7 +475,7 @@
                         ]
                     },
                     {
-                        "description": "LCommand/RCommand -> Eisu/Kana",
+                        "description": "Left_Command/Right_Command -> Eisu/Kana",
                         "manipulators": [
                             {
                                 "from": {
@@ -550,7 +550,7 @@
                         ]
                     },
                     {
-                        "description": "Caps Lock -> ESC/Control",
+                        "description": "Caps Lock -> ESC/Left_Control",
                         "manipulators": [
                             {
                                 "from": {
