@@ -376,7 +376,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "control"
+                                        "key_code": "left_control"
                                     }
                                 ],
                                 "to_if_alone": [
@@ -456,7 +456,7 @@
                                     "key_code": "open_bracket",
                                     "modifiers": {
                                         "mandatory": [
-                                            "control"
+                                            "left_control"
                                         ]
                                     }
                                 },
