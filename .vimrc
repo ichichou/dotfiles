@@ -31,7 +31,7 @@ set helplang=ja,en
 " ----------------------------------------
 " Appearance
 " ----------------------------------------
-colorscheme iceberg
+colorscheme hybrid
 " hybrid iceberg japanesque tender deep-space nord gruvbox onedark seoul256
 
 set background=dark
@@ -286,7 +286,7 @@ let g:lightline = {
     \ },
     \ 'component_function': {
     \ },
-    \ 'colorscheme': 'iceberg'
+    \ 'colorscheme': 'hybrid'
     \ }
 " powerline wombat jellybeans solarized PaperColor seoul256 Dracula one landscape
 " hybrid iceberg tender tenderplus deepspace nord gruvbox onedark
