@@ -14,10 +14,269 @@
                 },
                 "rules": [
                     {
+                        "description": "[Chrome] LCommand-N -> LCommand-T",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com.google.Chrome"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "n",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "t",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "[Chrome] LCommand-T -> LCommand-LShift-T",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com.google.Chrome"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "t",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "t",
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "[Chrome] LCommand-Q -> LCommand-LShift-Q",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com.google.Chrome"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "q",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "w",
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "[Vim/Terminal] ESC/Control-[ -> Eisu, ESC",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^org.vim.MacVim",
+                                            "^com.apple.Terminal"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    },
+                                    {
+                                        "input_sources": [
+                                            {
+                                                "language": "ja"
+                                            }
+                                        ],
+                                        "type": "input_source_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "escape"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "escape"
+                                    },
+                                    {
+                                        "key_code": "japanese_eisuu"
+                                    },
+                                    {
+                                        "key_code": "escape"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^org.vim.MacVim",
+                                            "^com.apple.Terminal"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    },
+                                    {
+                                        "input_sources": [
+                                            {
+                                                "language": "ja"
+                                            }
+                                        ],
+                                        "type": "input_source_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "open_bracket",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "escape"
+                                    },
+                                    {
+                                        "key_code": "japanese_eisuu"
+                                    },
+                                    {
+                                        "key_code": "escape"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^org.vim.MacVim",
+                                            "^com.apple.Terminal"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    },
+                                    {
+                                        "input_sources": [
+                                            {
+                                                "language": "ja"
+                                            }
+                                        ],
+                                        "type": "input_source_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "left_command",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_command"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "escape"
+                                    },
+                                    {
+                                        "key_code": "japanese_eisuu"
+                                    },
+                                    {
+                                        "key_code": "escape"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^org.vim.MacVim",
+                                            "^com.apple.Terminal"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    },
+                                    {
+                                        "input_sources": [
+                                            {
+                                                "language": "ja"
+                                            }
+                                        ],
+                                        "type": "input_source_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "right_command",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "escape"
+                                    },
+                                    {
+                                        "key_code": "japanese_eisuu"
+                                    },
+                                    {
+                                        "key_code": "escape"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "LCommand-Space -> Return",
                         "manipulators": [
                             {
-                                "type": "basic",
                                 "from": {
                                     "key_code": "spacebar",
                                     "modifiers": {
@@ -33,7 +292,8 @@
                                     {
                                         "key_code": "return_or_enter"
                                     }
-                                ]
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
@@ -41,7 +301,6 @@
                         "description": "LCommand-RCommand -> ESC",
                         "manipulators": [
                             {
-                                "type": "basic",
                                 "from": {
                                     "key_code": "left_command",
                                     "modifiers": {
@@ -62,10 +321,10 @@
                                     {
                                         "key_code": "left_command"
                                     }
-                                ]
+                                ],
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "from": {
                                     "key_code": "right_command",
                                     "modifiers": {
@@ -86,7 +345,8 @@
                                     {
                                         "key_code": "right_command"
                                     }
-                                ]
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
@@ -94,7 +354,6 @@
                         "description": "LCommand-H/J/K/L -> Left/Down/Up/Right",
                         "manipulators": [
                             {
-                                "type": "basic",
                                 "from": {
                                     "key_code": "h",
                                     "modifiers": {
@@ -110,10 +369,10 @@
                                     {
                                         "key_code": "left_arrow"
                                     }
-                                ]
+                                ],
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "from": {
                                     "key_code": "j",
                                     "modifiers": {
@@ -129,10 +388,10 @@
                                     {
                                         "key_code": "down_arrow"
                                     }
-                                ]
+                                ],
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "from": {
                                     "key_code": "k",
                                     "modifiers": {
@@ -148,10 +407,10 @@
                                     {
                                         "key_code": "up_arrow"
                                     }
-                                ]
+                                ],
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "from": {
                                     "key_code": "l",
                                     "modifiers": {
@@ -167,7 +426,8 @@
                                     {
                                         "key_code": "right_arrow"
                                     }
-                                ]
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
@@ -175,7 +435,6 @@
                         "description": "LCommand-U/O -> Delete/Fn-Delete",
                         "manipulators": [
                             {
-                                "type": "basic",
                                 "from": {
                                     "key_code": "u",
                                     "modifiers": {
@@ -191,10 +450,10 @@
                                     {
                                         "key_code": "delete_or_backspace"
                                     }
-                                ]
+                                ],
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "from": {
                                     "key_code": "o",
                                     "modifiers": {
@@ -210,105 +469,8 @@
                                     {
                                         "key_code": "delete_forward"
                                     }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        "description": "[Chrome] LCommand-Q -> LCommand-LShift-Q",
-                        "manipulators": [
-                            {
-                                "type": "basic",
-                                "from": {
-                                    "key_code": "q",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_command"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "w",
-                                        "modifiers": [
-                                            "left_command",
-                                            "left_shift"
-                                        ]
-                                    }
                                 ],
-                                "conditions": [
-                                    {
-                                        "type": "frontmost_application_if",
-                                        "bundle_identifiers": [
-                                            "^com.google.Chrome"
-                                        ]
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        "description": "[Chrome] LCommand-N -> LCommand-T",
-                        "manipulators": [
-                            {
-                                "type": "basic",
-                                "from": {
-                                    "key_code": "n",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_command"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "t",
-                                        "modifiers": [
-                                            "left_command"
-                                        ]
-                                    }
-                                ],
-                                "conditions": [
-                                    {
-                                        "type": "frontmost_application_if",
-                                        "bundle_identifiers": [
-                                            "^com.google.Chrome"
-                                        ]
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        "description": "[Chrome] LCommand-T -> LCommand-LShift-T",
-                        "manipulators": [
-                            {
-                                "type": "basic",
-                                "from": {
-                                    "key_code": "t",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_command"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "t",
-                                        "modifiers": [
-                                            "left_command",
-                                            "left_shift"
-                                        ]
-                                    }
-                                ],
-                                "conditions": [
-                                    {
-                                        "type": "frontmost_application_if",
-                                        "bundle_identifiers": [
-                                            "^com.google.Chrome"
-                                        ]
-                                    }
-                                ]
+                                "type": "basic"
                             }
                         ]
                     },
@@ -316,7 +478,6 @@
                         "description": "LCommand/RCommand -> Eisu/Kana",
                         "manipulators": [
                             {
-                                "type": "basic",
                                 "from": {
                                     "key_code": "left_command",
                                     "modifiers": {
@@ -335,10 +496,10 @@
                                     {
                                         "key_code": "japanese_eisuu"
                                     }
-                                ]
+                                ],
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "from": {
                                     "key_code": "right_command",
                                     "modifiers": {
@@ -357,33 +518,8 @@
                                     {
                                         "key_code": "japanese_kana"
                                     }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Caps Lock -> ESC/Control",
-                        "manipulators": [
-                            {
-                                "type": "basic",
-                                "from": {
-                                    "key_code": "caps_lock",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_control"
-                                    }
                                 ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "escape"
-                                    }
-                                ]
+                                "type": "basic"
                             }
                         ]
                     },
@@ -391,7 +527,6 @@
                         "description": "SandS",
                         "manipulators": [
                             {
-                                "type": "basic",
                                 "from": {
                                     "key_code": "spacebar",
                                     "modifiers": {
@@ -409,94 +544,18 @@
                                     {
                                         "key_code": "spacebar"
                                     }
-                                ]
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
                     {
-                        "description": "[Vim/Terminal] ESC/Control-[ -> Eisu, ESC",
+                        "description": "Caps Lock -> ESC/Control",
                         "manipulators": [
                             {
-                                "type": "basic",
                                 "from": {
-                                    "key_code": "escape"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "escape"
-                                    },
-                                    {
-                                        "key_code": "japanese_eisuu"
-                                    },
-                                    {
-                                        "key_code": "escape"
-                                    }
-                                ],
-                                "conditions": [
-                                    {
-                                        "type": "frontmost_application_if",
-                                        "bundle_identifiers": [
-                                            "^org.vim.MacVim",
-                                            "^com.apple.Terminal"
-                                        ]
-                                    },
-                                    {
-                                        "type": "input_source_if",
-                                        "input_sources": [
-                                            {
-                                                "language": "ja"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "basic",
-                                "from": {
-                                    "key_code": "open_bracket",
+                                    "key_code": "caps_lock",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "left_control"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "escape"
-                                    },
-                                    {
-                                        "key_code": "japanese_eisuu"
-                                    },
-                                    {
-                                        "key_code": "escape"
-                                    }
-                                ],
-                                "conditions": [
-                                    {
-                                        "type": "frontmost_application_if",
-                                        "bundle_identifiers": [
-                                            "^org.vim.MacVim",
-                                            "^com.apple.Terminal"
-                                        ]
-                                    },
-                                    {
-                                        "type": "input_source_if",
-                                        "input_sources": [
-                                            {
-                                                "language": "ja"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "basic",
-                                "from": {
-                                    "key_code": "left_command",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "right_command"
-                                        ],
                                         "optional": [
                                             "any"
                                         ]
@@ -504,74 +563,15 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "escape"
-                                    },
-                                    {
-                                        "key_code": "japanese_eisuu"
-                                    },
+                                        "key_code": "left_control"
+                                    }
+                                ],
+                                "to_if_alone": [
                                     {
                                         "key_code": "escape"
                                     }
                                 ],
-                                "conditions": [
-                                    {
-                                        "type": "frontmost_application_if",
-                                        "bundle_identifiers": [
-                                            "^org.vim.MacVim",
-                                            "^com.apple.Terminal"
-                                        ]
-                                    },
-                                    {
-                                        "type": "input_source_if",
-                                        "input_sources": [
-                                            {
-                                                "language": "ja"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "basic",
-                                "from": {
-                                    "key_code": "right_command",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_command"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "escape"
-                                    },
-                                    {
-                                        "key_code": "japanese_eisuu"
-                                    },
-                                    {
-                                        "key_code": "escape"
-                                    }
-                                ],
-                                "conditions": [
-                                    {
-                                        "type": "frontmost_application_if",
-                                        "bundle_identifiers": [
-                                            "^org.vim.MacVim",
-                                            "^com.apple.Terminal"
-                                        ]
-                                    },
-                                    {
-                                        "type": "input_source_if",
-                                        "input_sources": [
-                                            {
-                                                "language": "ja"
-                                            }
-                                        ]
-                                    }
-                                ]
+                                "type": "basic"
                             }
                         ]
                     }
