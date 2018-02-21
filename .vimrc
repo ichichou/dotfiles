@@ -1,6 +1,3 @@
-" センテンスの定義に句読点を追加
-" マッチする括弧のペアを追加
-
 " ========================================
 " .vimrc
 " ========================================
@@ -40,8 +37,10 @@ set background=dark
 set title
 set number
 set cursorline
+
 set showmatch
 set matchtime=1
+set matchpairs+=（:）,「:」,『:』,〈:〉,【:】,［:］,〔:〕,《:》,‘:’,“:”
 
 set showtabline=2
 set laststatus=2
@@ -100,7 +99,7 @@ set shiftround
 set autoindent
 set smartindent
 
-set virtualedit=onemore
+" set virtualedit=onemore
 set backspace=indent,eol,start
 set clipboard=unnamed
 
@@ -241,11 +240,11 @@ Plug 'easymotion/vim-easymotion'
 Plug 'haya14busa/is.vim'
 Plug 'haya14busa/vim-migemo'
 Plug 'glidenote/memolist.vim'
-" Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Shougo/denite.nvim'
 Plug 'cohama/lexima.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+Plug 'deton/jasentence.vim'
 
 " Operator/Text Object
 " --------------------
@@ -386,11 +385,6 @@ nmap <C-p> <Plug>(yankround-prev)
 nmap <C-n> <Plug>(yankround-next)
 
 
-""" ctrlp との共存
-" nnoremap <silent> <SID>(ctrlp) :<C-u>CtrlP<CR>
-" nmap <expr> <C-p> yankround#is_active() ? "\<Plug>(yankround-prev)" : "<SID>(ctrlp)"
-
-
 " memolist
 " --------------------
 let g:memolist_path = "$HOME/Dropbox/memolist"
@@ -450,13 +444,6 @@ map <Leader>W <Plug>(easymotion-bd-W)
 
 " hi link EasyMotionIncSearch Search
 " hi link EasyMotionMoveHL Search
-
-
-" ctrlp
-" --------------------
-" yankround.vim と干渉するため無効。
-" let g:ctrlp_use_migemo = 1
-" let g:ctrlp_clear_cache_on_exit = 0
 
 
 " operator-replace
