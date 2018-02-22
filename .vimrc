@@ -4,8 +4,15 @@
 set encoding=utf-8
 scriptencoding utf-8
 
+set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fileformats=unix,dos,mac
+
 filetype plugin indent on
 syntax enable
+
+augroup vimrc
+    autocmd!
+augroup END
 
 
 " ----------------------------------------
@@ -142,7 +149,7 @@ set infercase
 "  vmap                           x
 
 
-let mapleader = ','
+let g:mapleader = ','
 noremap \ ,
 
 noremap ; :
@@ -302,7 +309,7 @@ nnoremap <Leader>v :<C-u>Vaffle<CR>
 
 " rcmdnk/vim-markdown
 " --------------------
-autocmd BufRead,BufNewFile *.{txt,text} set filetype=markdown
+autocmd vimrc BufRead,BufNewFile *.{txt,text} set filetype=markdown
 
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_frontmatter = 1
