@@ -112,7 +112,7 @@
                         ]
                     },
                     {
-                        "description": "[Vim/Terminal] ESC/Left_Control-[ -> ESC, Eisu, ESC",
+                        "description": "[Vim/Terminal] ESC/Left_Control-[ -> ESC, ESC, Eisu",
                         "manipulators": [
                             {
                                 "conditions": [
