@@ -62,7 +62,7 @@ set breakindent
 set belloff=all
 
 set list
-set listchars=eol:¬,tab:»\ ,trail:\ ,extends:>,precedes:<,nbsp:%
+set listchars=eol:¬,tab:»\ ,trail:\ ,extends:>,precedes:<,nbsp:~
 set ambiwidth=double
 
 
@@ -70,7 +70,7 @@ set ambiwidth=double
 " --------------------
 if has('gui_running')
     set guifont=Myrica\ Monospace:h14
-    " set guifontwide=
+"    set guifontwide=
 
     set columns=160
     set lines=50
@@ -174,6 +174,13 @@ noremap ZQ <Nop>
 noremap Q <Nop>
 
 
+" SKK
+" --------------------
+" inoremap <C-j> <Nop>
+" inoremap <C-l> <Nop>
+" inoremap <C-g> <Nop>
+
+
 " 空行の挿入
 " --------------------
 nnoremap <silent> go :<C-u>for i in range(1, v:count1) \| call append(line('.'), '') \| endfor \| silent! call repeat#set("go", v:count1)<CR>
@@ -196,6 +203,10 @@ nnoremap <silent> [window]ml :<C-u>tabmove +1<CR>
 nnoremap <silent> [window]mh :<C-u>tabmove -1<CR>
 nnoremap <silent> [window]m0 :<C-u>tabmove 0<CR>
 nnoremap <silent> [window]m$ :<C-u>tabmove<CR>
+
+""" ウィンドウ分割
+nnoremap [window]s :<C-u>split<CR>
+nnoremap [window]v :<C-u>vsplit<CR>
 
 """ ウィンドウ移動
 nnoremap [window]h <C-w>h
@@ -289,7 +300,7 @@ let g:lightline = {
     \   'left': [ ['mode', 'paste'], ['readonly', 'filename', 'modified'] ]
     \ },
     \ 'component': {
-    \   'lineinfo': '%3l:%L'
+    \   'lineinfo': '%3l/%L'
     \ },
     \ 'component_function': {
     \ },
@@ -402,6 +413,7 @@ let g:memolist_memo_suffix = "md"
 " let g:memolist_denite_source = "anything"
 " let g:memolist_denite_option = "anything"
 
+nnoremap <Leader>m <Nop>
 nnoremap [memolist] <Nop>
 nmap <Leader>m [memolist]
 nnoremap [memolist]n :<C-u>MemoNew<CR>
@@ -490,8 +502,10 @@ call denite#custom#map('insert', "<C-t>", '<denite:do_action:tabopen>')
 call denite#custom#map('insert', "<C-v>", '<denite:do_action:vsplit>')
 
 """ Keymap
+nnoremap <Space>u <Nop>
 nnoremap [denite] <Nop>
 nmap <Space>u [denite]
 
 nnoremap <silent> [denite]o :<C-u>Denite file_rec<CR>
+nnoremap <silent> [denite]c :<C-u>Denite colorscheme<CR>
 
