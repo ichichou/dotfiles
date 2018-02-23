@@ -168,6 +168,7 @@ nnoremap + <C-a>
 nnoremap - <C-x>
 
 nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR>
+nnoremap <silent> <Leader>r :<C-u>redraw!<CR>
 
 noremap ZZ <Nop>
 noremap ZQ <Nop>
