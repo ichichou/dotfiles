@@ -1,3 +1,8 @@
+" japanesesentence の設定。！や？など。
+" karabiner: [chrome]command-q -> q に変更
+" karabiner: [vim/terminal]ESC -> ESC, Eisu, ESC を ESC, Eisu に変更。ESC キーは外す。
+
+
 " ========================================
 " .vimrc
 " ========================================
@@ -9,10 +14,6 @@ set fileformats=unix,dos,mac
 
 filetype plugin indent on
 syntax enable
-
-augroup vimrc
-    autocmd!
-augroup END
 
 
 " ----------------------------------------
@@ -321,7 +322,7 @@ nnoremap <Leader>v :<C-u>Vaffle<CR>
 
 " rcmdnk/vim-markdown
 " --------------------
-autocmd vimrc BufRead,BufNewFile *.{txt,text} set filetype=markdown
+autocmd BufRead,BufNewFile *.{txt,text} set filetype=markdown
 
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_frontmatter = 1
