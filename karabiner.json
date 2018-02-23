@@ -80,7 +80,7 @@
                         ]
                     },
                     {
-                        "description": "[Chrome] Left_Command-Q -> Left_Command-Left_Shift-Q",
+                        "description": "[Chrome] Left_Command-Q -> Q",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -101,11 +101,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "w",
-                                        "modifiers": [
-                                            "left_command",
-                                            "left_shift"
-                                        ]
+                                        "key_code": "q"
                                     }
                                 ],
                                 "type": "basic"
