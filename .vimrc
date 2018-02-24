@@ -178,9 +178,9 @@ noremap Q <Nop>
 
 " SKK
 " --------------------
-" inoremap <C-j> <Nop>
-" inoremap <C-l> <Nop>
-" inoremap <C-g> <Nop>
+inoremap <C-j> <Nop>
+inoremap <C-l> <Nop>
+inoremap <C-g> <Nop>
 
 
 " 空行の挿入
