@@ -106,6 +106,7 @@ set autoindent
 set smartindent
 
 " set virtualedit=onemore
+set textwidth=0
 set backspace=indent,eol,start
 set clipboard=unnamed
 
