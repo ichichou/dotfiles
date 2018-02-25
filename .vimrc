@@ -1,6 +1,4 @@
 " japanesesentence の設定。！や？など。
-" karabiner: [chrome]command-q -> q に変更
-" karabiner: [vim/terminal]ESC -> ESC, Eisu, ESC を ESC, Eisu に変更。ESC キーは外す。
 
 
 " ========================================
@@ -37,7 +35,7 @@ set helplang=ja,en
 " Appearance
 " ----------------------------------------
 colorscheme hybrid
-" hybrid iceberg japanesque tender deep-space nord gruvbox onedark seoul256
+" hybrid iceberg japanesque tender deep-space nord gruvbox onedark seoul256 tomorrow
 
 set background=dark
 " set termguicolors
@@ -48,7 +46,7 @@ set cursorline
 
 set showmatch
 set matchtime=1
-set matchpairs+=（:）,「:」,『:』,〈:〉,【:】,［:］,〔:〕,《:》,‘:’,“:”
+set matchpairs+=（:）,「:」,『:』,〈:〉,【:】,［:］,〔:〕,‘:’,“:”
 
 set showtabline=2
 set laststatus=2
@@ -245,6 +243,7 @@ call plug#begin('~/.vim/plugged')
 
 " Generals
 " --------------------
+Plug 'junegunn/vim-plug', {'dir': '~/.vim/plugged/vim-plug/autoload'}
 Plug 'vim-jp/vimdoc-ja'
 Plug 'itchyny/lightline.vim'
 Plug 'cocopon/vaffle.vim'
@@ -287,6 +286,7 @@ Plug 'arcticicestudio/nord-vim', {'do': 'cp colors/* ~/.vim/colors/'}
 Plug 'morhetz/gruvbox', {'do': 'cp colors/* ~/.vim/colors/'}
 Plug 'joshdick/onedark.vim', {'do': 'cp colors/* ~/.vim/colors/'}
 Plug 'junegunn/seoul256.vim', {'do': 'cp colors/* ~/.vim/colors/'}
+Plug 'chriskempson/vim-tomorrow-theme', {'do': 'cp colors/* ~/.vim/colors/'}
 
 call plug#end()
 
@@ -353,35 +353,35 @@ highlight ExtraWhitespace guibg=DarkRed
 " --------------------
 call lexima#add_rule({'char': '<', 'input_after': '>'})
 call lexima#add_rule({'char': '*', 'at': '*\%#', 'input_after': '**'})
-" call lexima#add_rule({'char': '（', 'input_after': '）'})
-" call lexima#add_rule({'char': '「', 'input_after': '」'})
-" call lexima#add_rule({'char': '『', 'input_after': '』'})
-" call lexima#add_rule({'char': '〈', 'input_after': '〉'})
-" call lexima#add_rule({'char': '【', 'input_after': '】'})
-" call lexima#add_rule({'char': '［', 'input_after': '］'})
-" call lexima#add_rule({'char': '〔', 'input_after': '〕'})
+call lexima#add_rule({'char': '（', 'input_after': '）'})
+call lexima#add_rule({'char': '「', 'input_after': '」'})
+call lexima#add_rule({'char': '『', 'input_after': '』'})
+call lexima#add_rule({'char': '〈', 'input_after': '〉'})
+call lexima#add_rule({'char': '【', 'input_after': '】'})
+call lexima#add_rule({'char': '［', 'input_after': '］'})
+call lexima#add_rule({'char': '〔', 'input_after': '〕'})
 
 call lexima#add_rule({'char': '>', 'at': '\%#>', 'leave': 1})
-" call lexima#add_rule({'char': '）', 'at': '\%#）', 'leave': 1})
-" call lexima#add_rule({'char': '」', 'at': '\%#」', 'leave': 1})
-" call lexima#add_rule({'char': '』', 'at': '\%#』', 'leave': 1})
-" call lexima#add_rule({'char': '〉', 'at': '\%#〉', 'leave': 1})
-" call lexima#add_rule({'char': '】', 'at': '\%#】', 'leave': 1})
-" call lexima#add_rule({'char': '］', 'at': '\%#］', 'leave': 1})
-" call lexima#add_rule({'char': '〕', 'at': '\%#〕', 'leave': 1})
+call lexima#add_rule({'char': '）', 'at': '\%#）', 'leave': 1})
+call lexima#add_rule({'char': '」', 'at': '\%#」', 'leave': 1})
+call lexima#add_rule({'char': '』', 'at': '\%#』', 'leave': 1})
+call lexima#add_rule({'char': '〉', 'at': '\%#〉', 'leave': 1})
+call lexima#add_rule({'char': '】', 'at': '\%#】', 'leave': 1})
+call lexima#add_rule({'char': '］', 'at': '\%#］', 'leave': 1})
+call lexima#add_rule({'char': '〕', 'at': '\%#〕', 'leave': 1})
 
 call lexima#add_rule({'char': '<BS>', 'at': '(\%#)', 'input': '<BS>', 'delete': 1})
 call lexima#add_rule({'char': '<BS>', 'at': '[\%#]', 'input': '<BS>', 'delete': 1})
 call lexima#add_rule({'char': '<BS>', 'at': '{\%#}', 'input': '<BS>', 'delete': 1})
 call lexima#add_rule({'char': '<BS>', 'at': '<\%#>', 'input': '<BS>', 'delete': 1})
 call lexima#add_rule({'char': '<BS>', 'at': '*\%#*', 'input': '<BS>', 'delete': 1})
-" call lexima#add_rule({'char': '<BS>', 'at': '（\%#）', 'input': '<BS>', 'delete': 1})
-" call lexima#add_rule({'char': '<BS>', 'at': '「\%#」', 'input': '<BS>', 'delete': 1})
-" call lexima#add_rule({'char': '<BS>', 'at': '『\%#』', 'input': '<BS>', 'delete': 1})
-" call lexima#add_rule({'char': '<BS>', 'at': '〈\%#〉', 'input': '<BS>', 'delete': 1})
-" call lexima#add_rule({'char': '<BS>', 'at': '【\%#】', 'input': '<BS>', 'delete': 1})
-" call lexima#add_rule({'char': '<BS>', 'at': '［\%#］', 'input': '<BS>', 'delete': 1})
-" call lexima#add_rule({'char': '<BS>', 'at': '〔\%#〕', 'input': '<BS>', 'delete': 1})
+call lexima#add_rule({'char': '<BS>', 'at': '（\%#）', 'input': '<BS>', 'delete': 1})
+call lexima#add_rule({'char': '<BS>', 'at': '「\%#」', 'input': '<BS>', 'delete': 1})
+call lexima#add_rule({'char': '<BS>', 'at': '『\%#』', 'input': '<BS>', 'delete': 1})
+call lexima#add_rule({'char': '<BS>', 'at': '〈\%#〉', 'input': '<BS>', 'delete': 1})
+call lexima#add_rule({'char': '<BS>', 'at': '【\%#】', 'input': '<BS>', 'delete': 1})
+call lexima#add_rule({'char': '<BS>', 'at': '［\%#］', 'input': '<BS>', 'delete': 1})
+call lexima#add_rule({'char': '<BS>', 'at': '〔\%#〕', 'input': '<BS>', 'delete': 1})
 
 
 " open-browser
