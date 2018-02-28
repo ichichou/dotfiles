@@ -74,7 +74,7 @@ if has('gui_running')
 
     set columns=160
     set lines=50
-    set linespace=2
+    set linespace=3
 
     set guioptions+=c
     set guioptions-=e
