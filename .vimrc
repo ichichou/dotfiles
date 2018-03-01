@@ -1,7 +1,3 @@
-" jsesentence の設定。！や？など。
-" Karabiner、[Grobal] Caps Lock -> Control-g の設定
-
-
 " ========================================
 " .vimrc
 " ========================================
@@ -35,7 +31,7 @@ set helplang=ja,en
 " ----------------------------------------
 " Appearance
 " ----------------------------------------
-colorscheme hybrid
+colorscheme iceberg
 " hybrid iceberg japanesque tender deep-space nord gruvbox onedark seoul256 tomorrow
 
 set background=dark
@@ -178,9 +174,9 @@ noremap Q <Nop>
 
 " SKK
 " --------------------
-inoremap <C-j> <Nop>
-inoremap <C-l> <Nop>
-inoremap <C-g> <Nop>
+" inoremap <C-j> <Nop>
+" inoremap <C-l> <Nop>
+" inoremap <C-g> <Nop>
 
 
 " 空行の挿入
@@ -261,11 +257,15 @@ Plug 'easymotion/vim-easymotion'
 Plug 'haya14busa/is.vim'
 Plug 'haya14busa/vim-migemo'
 Plug 'glidenote/memolist.vim'
-Plug 'Shougo/denite.nvim'
 Plug 'cohama/lexima.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'deton/jasentence.vim'
+
+" Denite sources
+" --------------------
+Plug 'Shougo/denite.nvim'
+Plug 'Shougo/neomru.vim'
 
 " Operator/Text Object
 " --------------------
@@ -308,7 +308,7 @@ let g:lightline = {
     \ },
     \ 'component_function': {
     \ },
-    \ 'colorscheme': 'hybrid'
+    \ 'colorscheme': 'iceberg'
     \ }
 " powerline wombat jellybeans solarized PaperColor seoul256 Dracula one landscape
 " hybrid iceberg tender tenderplus deepspace nord gruvbox onedark
@@ -414,9 +414,9 @@ let g:memolist_path = "$HOME/Dropbox/memolist"
 let g:memolist_template_dir_path = "$HOME/Dropbox/memolist"
 let g:memolist_memo_suffix = "md"
 
-" let g:memolist_denite = 1
-" let g:memolist_denite_source = "anything"
-" let g:memolist_denite_option = "anything"
+let g:memolist_denite = 1
+" let g:memolist_denite_source = ""
+" let g:memolist_denite_option = ""
 
 nnoremap <Leader>m <Nop>
 nnoremap [memolist] <Nop>
@@ -513,4 +513,8 @@ nmap <Space>u [denite]
 
 nnoremap <silent> [denite]o :<C-u>Denite file_rec<CR>
 nnoremap <silent> [denite]c :<C-u>Denite colorscheme<CR>
+nnoremap <silent> [denite]m :<C-u>Denite file_mru -auto-preview<CR>
+
+" call denite#custom#source('file_rec', 'matchers', 'matcher_migemo')
+" call denite#custom#source('file_mru', 'matchers', 'matcher_migemo')
 
