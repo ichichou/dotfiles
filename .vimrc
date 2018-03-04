@@ -36,7 +36,7 @@ set helplang=ja,en
 " Appearance
 " ----------------------------------------
 colorscheme gruvbox
-" hybrid iceberg japanesque tender deep-space nord gruvbox onedark seoul256 tomorrow
+" hybrid iceberg japanesque tender deep-space nord gruvbox tomorrow
 
 set background=dark
 " set t_Co=256
