@@ -10,6 +10,10 @@ set fileformats=unix,dos,mac
 filetype plugin indent on
 syntax enable
 
+augroup vimrc
+    autocmd!
+augroup END
+
 
 " ----------------------------------------
 " File
@@ -31,10 +35,11 @@ set helplang=ja,en
 " ----------------------------------------
 " Appearance
 " ----------------------------------------
-colorscheme iceberg
+colorscheme gruvbox
 " hybrid iceberg japanesque tender deep-space nord gruvbox onedark seoul256 tomorrow
 
 set background=dark
+" set t_Co=256
 " set termguicolors
 
 set title
@@ -66,10 +71,10 @@ set ambiwidth=double
 " --------------------
 if has('gui_running')
     set guifont=Myrica\ Monospace:h14
-"    set guifontwide=
+    " set guifontwide=
 
     set columns=160
-    set lines=50
+    set lines=40
     set linespace=3
 
     set guioptions+=c
@@ -102,7 +107,6 @@ set shiftround
 set autoindent
 set smartindent
 
-" set virtualedit=onemore
 set textwidth=0
 set backspace=indent,eol,start
 set clipboard=unnamed
@@ -128,7 +132,7 @@ set wildmode=list:longest,full
 set history=10000
 
 set completeopt=menu,menuone,preview
-" set pumheight=10
+set pumheight=20
 set infercase
 
 
@@ -161,22 +165,15 @@ noremap k gk
 noremap gj j
 noremap gk k
 
-nnoremap + <C-a>
-nnoremap - <C-x>
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
 
 nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR>
-nnoremap <silent> <Leader>r :<C-u>redraw!<CR>
+nnoremap <silent> <Space>r :<C-u>redraw!<CR>
 
 noremap ZZ <Nop>
 noremap ZQ <Nop>
 noremap Q <Nop>
-
-
-" SKK
-" --------------------
-" inoremap <C-j> <Nop>
-" inoremap <C-l> <Nop>
-" inoremap <C-g> <Nop>
 
 
 " 空行の挿入
@@ -203,8 +200,8 @@ nnoremap <silent> [window]m0 :<C-u>tabmove 0<CR>
 nnoremap <silent> [window]m$ :<C-u>tabmove<CR>
 
 """ ウィンドウ分割
-nnoremap [window]s :<C-u>split<CR>
-nnoremap [window]v :<C-u>vsplit<CR>
+nnoremap <silent> [window]s :<C-u>split<CR>
+nnoremap <silent> [window]v :<C-u>vsplit<CR>
 
 """ ウィンドウ移動
 nnoremap [window]h <C-w>h
@@ -244,11 +241,11 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-plug', {'dir': '~/.vim/plugged/vim-plug/autoload'}
 Plug 'vim-jp/vimdoc-ja'
 Plug 'itchyny/lightline.vim'
-Plug 'cocopon/vaffle.vim'
 Plug 'cocopon/lightline-hybrid.vim'
+Plug 'cocopon/vaffle.vim'
 Plug 'rcmdnk/vim-markdown'
-Plug 'kannokanno/previm'
 Plug 'joker1007/vim-markdown-quote-syntax'
+Plug 'kannokanno/previm'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-repeat'
 Plug 'tyru/open-browser.vim'
@@ -259,7 +256,6 @@ Plug 'haya14busa/vim-migemo'
 Plug 'glidenote/memolist.vim'
 Plug 'cohama/lexima.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
 Plug 'deton/jasentence.vim'
 
 " Denite sources
@@ -286,8 +282,6 @@ Plug 'jacoborus/tender.vim', {'do': 'cp colors/* ~/.vim/colors/'}
 Plug 'tyrannicaltoucan/vim-deep-space', {'do': 'cp colors/* ~/.vim/colors/'}
 Plug 'arcticicestudio/nord-vim', {'do': 'cp colors/* ~/.vim/colors/'}
 Plug 'morhetz/gruvbox', {'do': 'cp colors/* ~/.vim/colors/'}
-Plug 'joshdick/onedark.vim', {'do': 'cp colors/* ~/.vim/colors/'}
-Plug 'junegunn/seoul256.vim', {'do': 'cp colors/* ~/.vim/colors/'}
 Plug 'chriskempson/vim-tomorrow-theme', {'do': 'cp colors/* ~/.vim/colors/'}
 
 call plug#end()
@@ -308,10 +302,10 @@ let g:lightline = {
     \ },
     \ 'component_function': {
     \ },
-    \ 'colorscheme': 'iceberg'
+    \ 'colorscheme': 'gruvbox'
     \ }
 " powerline wombat jellybeans solarized PaperColor seoul256 Dracula one landscape
-" hybrid iceberg tender tenderplus deepspace nord gruvbox onedark
+" hybrid iceberg tender tenderplus deepspace nord gruvbox
 
 
 " vaffle
@@ -319,12 +313,12 @@ let g:lightline = {
 let g:vaffle_auto_cd = 1
 let g:vaffle_show_hidden_files = 1
 
-nnoremap <Leader>v :<C-u>Vaffle<CR>
+nnoremap <silent> <Leader>v :<C-u>Vaffle<CR>
 
 
 " rcmdnk/vim-markdown
 " --------------------
-autocmd BufRead,BufNewFile *.{txt,text} set filetype=markdown
+autocmd vimrc BufRead,BufNewFile *.{txt,text} set filetype=markdown
 
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_frontmatter = 1
@@ -342,7 +336,7 @@ let g:previm_show_header = 0
 let g:previm_disable_default_css = 0
 " let g:previm_custom_css_path = ''
 
-nnoremap <Leader>p :<C-u>PrevimOpen<CR>
+nnoremap <silent> <Leader>p :<C-u>PrevimOpen<CR>
 
 
 " better-whitespace
@@ -414,7 +408,7 @@ let g:memolist_path = "$HOME/Dropbox/memolist"
 let g:memolist_template_dir_path = "$HOME/Dropbox/memolist"
 let g:memolist_memo_suffix = "md"
 
-let g:memolist_denite = 1
+" let g:memolist_denite = 1
 " let g:memolist_denite_source = ""
 " let g:memolist_denite_option = ""
 
@@ -453,11 +447,6 @@ map <Leader>j <Plug>(easymotion-j)
 map <leader>k <Plug>(easymotion-k)
 map <Leader>l <Plug>(easymotion-bd-jk)
 nmap <Leader>l <Plug>(easymotion-overwin-line)
-
-""" Word Motion
-map <Leader>w <Plug>(easymotion-bd-w)
-nmap <Leader>w <Plug>(easymotion-overwin-w)
-map <Leader>W <Plug>(easymotion-bd-W)
 
 """ Custom Highlighting
 " hi link EasyMotionTarget ErrorMsg
