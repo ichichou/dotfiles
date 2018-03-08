@@ -3,8 +3,7 @@
 " ========================================
 set encoding=utf-8
 scriptencoding utf-8
-
-" set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+" set fileencodings=iso-2022-jp,euc-jp,sjis
 set fileformats=unix,dos,mac
 
 filetype plugin indent on
@@ -36,7 +35,7 @@ set helplang=ja,en
 " Appearance
 " ----------------------------------------
 colorscheme gruvbox
-" hybrid iceberg japanesque tender deep-space nord gruvbox tomorrow
+" hybrid iceberg tender deep-space nord gruvbox tomorrow-night
 
 set background=dark
 " set t_Co=256
@@ -74,7 +73,7 @@ if has('gui_running')
     " set guifontwide=
 
     set columns=160
-    set lines=40
+    set lines=50
     set linespace=3
 
     set guioptions+=c
@@ -109,6 +108,7 @@ set smartindent
 
 set textwidth=0
 set backspace=indent,eol,start
+" set whichwrap=b,s,h,l,<,>,[,]
 set clipboard=unnamed
 
 set nrformats-=octal
