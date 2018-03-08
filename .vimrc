@@ -241,8 +241,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-plug', {'dir': '~/.vim/plugged/vim-plug/autoload'}
 Plug 'vim-jp/vimdoc-ja'
 Plug 'itchyny/lightline.vim'
-Plug 'cocopon/lightline-hybrid.vim'
+Plug 'itchyny/vim-highlighturl'
 Plug 'cocopon/vaffle.vim'
+Plug 'cocopon/lightline-hybrid.vim'
 Plug 'rcmdnk/vim-markdown'
 Plug 'joker1007/vim-markdown-quote-syntax'
 Plug 'kannokanno/previm'
@@ -277,7 +278,6 @@ Plug 'kana/vim-textobj-line'
 " --------------------
 Plug 'w0ng/vim-hybrid', {'do': 'cp colors/* ~/.vim/colors/'}
 Plug 'cocopon/iceberg.vim', {'do': 'cp colors/* ~/.vim/colors/'}
-Plug 'aereal/vim-colors-japanesque', {'do': 'cp colors/* ~/.vim/colors/'}
 Plug 'jacoborus/tender.vim', {'do': 'cp colors/* ~/.vim/colors/'}
 Plug 'tyrannicaltoucan/vim-deep-space', {'do': 'cp colors/* ~/.vim/colors/'}
 Plug 'arcticicestudio/nord-vim', {'do': 'cp colors/* ~/.vim/colors/'}
@@ -370,14 +370,14 @@ highlight ExtraWhitespace guibg=DarkRed
 " lexima
 " --------------------
 call lexima#add_rule({'char': '<', 'input_after': '>'})
-call lexima#add_rule({'char': '（', 'input_after': '）'})
-call lexima#add_rule({'char': '［', 'input_after': '］'})
-call lexima#add_rule({'char': '｛', 'input_after': '｝'})
-call lexima#add_rule({'char': '「', 'input_after': '」'})
-call lexima#add_rule({'char': '『', 'input_after': '』'})
-call lexima#add_rule({'char': '〈', 'input_after': '〉'})
-call lexima#add_rule({'char': '【', 'input_after': '】'})
-call lexima#add_rule({'char': '〔', 'input_after': '〕'})
+" call lexima#add_rule({'char': '（', 'input_after': '）'})
+" call lexima#add_rule({'char': '［', 'input_after': '］'})
+" call lexima#add_rule({'char': '｛', 'input_after': '｝'})
+" call lexima#add_rule({'char': '「', 'input_after': '」'})
+" call lexima#add_rule({'char': '『', 'input_after': '』'})
+" call lexima#add_rule({'char': '〈', 'input_after': '〉'})
+" call lexima#add_rule({'char': '【', 'input_after': '】'})
+" call lexima#add_rule({'char': '〔', 'input_after': '〕'})
 
 call lexima#add_rule({'char': '<BS>', 'at': '(\%#)', 'input': '<BS>', 'delete': 1})
 call lexima#add_rule({'char': '<BS>', 'at': '[\%#]', 'input': '<BS>', 'delete': 1})
@@ -494,7 +494,7 @@ map Sr <Plug>(operator-surround-replace)
 
 let g:operator#surround#blocks = {
     \ '-' : [
-    \   { 'block': ['**', '**'], 'motionwise': ['char', 'line', 'block'], 'keys': ['*'] },
+    \   { 'block': [ '**', '**' ], 'motionwise': [ 'char', 'line', 'block' ], 'keys': [ '*' ] },
     \ ]
     \ }
 
