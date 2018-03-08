@@ -293,19 +293,41 @@ call plug#end()
 
 " lightline
 " --------------------
-let g:lightline = {
-    \ 'active': {
-    \   'left': [ ['mode', 'paste'], ['readonly', 'filename', 'modified'] ]
-    \ },
-    \ 'component': {
-    \   'lineinfo': '%3l/%L'
-    \ },
-    \ 'component_function': {
-    \ },
-    \ 'colorscheme': 'gruvbox'
-    \ }
+""" Colorscheme
 " powerline wombat jellybeans solarized PaperColor seoul256 Dracula one landscape
 " hybrid iceberg tender tenderplus deepspace nord gruvbox
+
+let g:lightline = {
+    \ 'colorscheme': 'gruvbox',
+    \ 'active': {
+    \   'left': [
+    \       [ 'mode', 'paste' ],
+    \       [ 'readonly', 'filepath', 'modified' ] ],
+    \   'right': [
+    \       [ 'lineinfo' ],
+    \       [ 'linecount' ],
+    \       [ 'fileformat', 'fileencoding', 'filetype' ] ]
+    \ },
+    \ 'component': {
+    \   'linecount': '%LL'
+    \ },
+    \ 'component_function': {
+    \   'filepath': 'FilePath'
+    \ }
+    \ }
+
+function! FilePath()
+    if winwidth(0) > 70
+        return expand('%:s')
+    else
+        return expand('%:t')
+    endif
+endfunction
+
+let g:lightline.tabline = {
+    \ 'left': [ [ 'tabs' ] ],
+    \ 'right': [ [ '' ] ]
+    \ }
 
 
 " vaffle
