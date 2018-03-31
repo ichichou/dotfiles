@@ -556,6 +556,20 @@ nnoremap [memolist]l :<C-u>MemoList<CR>
 nnoremap [memolist]g :<C-u>MemoGrep<CR>
 
 
-" QFixHowm
+" qfixhowm
 " --------------------
+let QFixHowm_Key = 'g'
+let QFixHowm_FileType = 'markdown'
+let QFixHowm_Title = '#'
+
+let QFixHowm_Wiki = 1
+" let QFixHowm_HolidayFile = '<休日定義ファイル Sche-Hd-0000-00-00-000000.utf8 までのパス>'
+
+let howm_dir = '$HOME/Dropbox/Memo'
+" let howm_filename = '%Y/%m/%Y-%m-%d-%H%M%S.md'
+let howm_fileencoding = 'utf-8'
+let howm_fileformat = 'unix'
+
+" let QFixWin_EnableMode = 1
+let QFix_UseLocationList = 1
 
