@@ -3,7 +3,7 @@
 " ========================================
 set encoding=utf-8
 scriptencoding utf-8
-" set fileencodings=iso-2022-jp,euc-jp,sjis
+set fileencodings=iso-2022-jp,euc-jp,sjis
 set fileformats=unix,dos,mac
 
 filetype plugin indent on
@@ -171,6 +171,8 @@ cnoremap <C-n> <Down>
 nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR>
 nnoremap <silent> <Space>r :<C-u>redraw!<CR>
 
+nnoremap / /\v
+
 noremap ZZ <Nop>
 noremap ZQ <Nop>
 noremap Q <Nop>
@@ -243,21 +245,22 @@ Plug 'vim-jp/vimdoc-ja'
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-highlighturl'
 Plug 'cocopon/vaffle.vim'
-Plug 'cocopon/lightline-hybrid.vim'
 Plug 'rcmdnk/vim-markdown'
 Plug 'joker1007/vim-markdown-quote-syntax'
 Plug 'kannokanno/previm'
+Plug 'tyru/open-browser.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-repeat'
-Plug 'tyru/open-browser.vim'
+Plug 'cohama/lexima.vim'
 Plug 'LeafCage/yankround.vim'
+Plug 'airblade/vim-gitgutter'
 Plug 'easymotion/vim-easymotion'
 Plug 'haya14busa/is.vim'
 Plug 'haya14busa/vim-migemo'
 Plug 'glidenote/memolist.vim'
-Plug 'cohama/lexima.vim'
-Plug 'airblade/vim-gitgutter'
+Plug 'fuenor/qfixhowm'
 Plug 'deton/jasentence.vim'
+Plug 'deton/jasegment.vim'
 
 " Denite sources
 " --------------------
@@ -291,6 +294,11 @@ call plug#end()
 " Plugins
 " ----------------------------------------
 
+" hybrid
+" --------------------
+let g:hybrid_custom_term_colors = 1
+
+
 " lightline
 " --------------------
 """ Colorscheme
@@ -305,14 +313,14 @@ let g:lightline = {
     \       [ 'readonly', 'filepath', 'modified' ] ],
     \   'right': [
     \       [ 'lineinfo' ],
-    \       [ 'linecount' ],
+    \       [ 'percent' ],
     \       [ 'fileformat', 'fileencoding', 'filetype' ] ]
     \ },
     \ 'component': {
-    \   'linecount': '%LL'
+    \   'percent': '%3p%% [%LL]'
     \ },
     \ 'component_function': {
-    \   'filepath': 'FilePath'
+    \   'filepath': 'FilePath',
     \ }
     \ }
 
@@ -361,10 +369,30 @@ let g:previm_disable_default_css = 0
 nnoremap <silent> <Leader>p :<C-u>PrevimOpen<CR>
 
 
+" open-browser
+" --------------------
+let g:netrw_nogx = 1
+
+map gx <Plug>(openbrowser-smart-search)
+
+
 " better-whitespace
 " --------------------
 highlight ExtraWhitespace ctermbg=DarkRed
 highlight ExtraWhitespace guibg=DarkRed
+
+
+" jasegment
+" --------------------
+call jasegment#define(
+    \ 'nonblank', {
+    \   'move-n': 'gW',
+    \   'move-p': 'gB',
+    \   'move-N': 'gE',
+    \   'select-i': 'iE',
+    \   'select-a': 'aE',
+    \ }
+    \ )
 
 
 " lexima
@@ -392,22 +420,20 @@ call lexima#add_rule({'char': '<BS>', 'at': '<\%#>', 'input': '<BS>', 'delete': 
 " call lexima#add_rule({'char': '<BS>', 'at': '【\%#】', 'input': '<BS>', 'delete': 1})
 " call lexima#add_rule({'char': '<BS>', 'at': '〔\%#〕', 'input': '<BS>', 'delete': 1})
 
-call lexima#add_rule({'char': '>', 'at': '\%#>', 'leave': 1})
-" call lexima#add_rule({'char': '）', 'at': '\%#）', 'leave': 1})
-" call lexima#add_rule({'char': '］', 'at': '\%#］', 'leave': 1})
-" call lexima#add_rule({'char': '｝', 'at': '\%#｝', 'leave': 1})
-" call lexima#add_rule({'char': '」', 'at': '\%#」', 'leave': 1})
-" call lexima#add_rule({'char': '』', 'at': '\%#』', 'leave': 1})
-" call lexima#add_rule({'char': '〉', 'at': '\%#〉', 'leave': 1})
-" call lexima#add_rule({'char': '】', 'at': '\%#】', 'leave': 1})
-" call lexima#add_rule({'char': '〕', 'at': '\%#〕', 'leave': 1})
-
-
-" open-browser
-" --------------------
-let g:netrw_nogx = 1
-
-map gx <Plug>(openbrowser-smart-search)
+call lexima#add_rule({'char': '<TAB>', 'at': '\%#)', 'leave': 1})
+call lexima#add_rule({'char': '<TAB>', 'at': '\%#]', 'leave': 1})
+call lexima#add_rule({'char': '<TAB>', 'at': '\%#}', 'leave': 1})
+call lexima#add_rule({'char': '<TAB>', 'at': '\%#''', 'leave': 1})
+call lexima#add_rule({'char': '<TAB>', 'at': '\%#"', 'leave': 1})
+call lexima#add_rule({'char': '<TAB>', 'at': '\%#>', 'leave': 1})
+" call lexima#add_rule({'char': '<TAB>', 'at': '\%#）', 'leave': 1})
+" call lexima#add_rule({'char': '<TAB>', 'at': '\%#］', 'leave': 1})
+" call lexima#add_rule({'char': '<TAB>', 'at': '\%#｝', 'leave': 1})
+" call lexima#add_rule({'char': '<TAB>', 'at': '\%#」', 'leave': 1})
+" call lexima#add_rule({'char': '<TAB>', 'at': '\%#』', 'leave': 1})
+" call lexima#add_rule({'char': '<TAB>', 'at': '\%#〉', 'leave': 1})
+" call lexima#add_rule({'char': '<TAB>', 'at': '\%#】', 'leave': 1})
+" call lexima#add_rule({'char': '<TAB>', 'at': '\%#〕', 'leave': 1})
 
 
 " yankround
@@ -422,24 +448,6 @@ map gP <Plug>(yankround-gP)
 
 nmap <C-p> <Plug>(yankround-prev)
 nmap <C-n> <Plug>(yankround-next)
-
-
-" memolist
-" --------------------
-let g:memolist_path = "$HOME/Dropbox/memolist"
-let g:memolist_template_dir_path = "$HOME/Dropbox/memolist"
-let g:memolist_memo_suffix = "md"
-
-" let g:memolist_denite = 1
-" let g:memolist_denite_source = ""
-" let g:memolist_denite_option = ""
-
-nnoremap <Leader>m <Nop>
-nnoremap [memolist] <Nop>
-nmap <Leader>m [memolist]
-nnoremap [memolist]n :<C-u>MemoNew<CR>
-nnoremap [memolist]l :<C-u>MemoList<CR>
-nnoremap [memolist]g :<C-u>MemoGrep<CR>
 
 
 " easymotion
@@ -505,27 +513,49 @@ map y <Plug>(operator-flashy)
 nmap Y <Plug>(operator-flashy)$
 
 
-" denite
+" " denite
+" " --------------------
+" call denite#custom#option('default', 'prompt', '>')
+"
+" """ Custon Map
+" call denite#custom#map('insert', "<C-j>", '<denite:move_to_next_line>')
+" call denite#custom#map('insert', "<C-k>", '<denite:move_to_previous_line>')
+"
+" call denite#custom#map('normal', "v", '<denite:do_action:vsplit>')
+" call denite#custom#map('insert', "<C-t>", '<denite:do_action:tabopen>')
+" call denite#custom#map('insert', "<C-v>", '<denite:do_action:vsplit>')
+"
+" """ Keymap
+" nnoremap <Space>u <Nop>
+" nnoremap [denite] <Nop>
+" nmap <Space>u [denite]
+"
+" nnoremap <silent> [denite]o :<C-u>Denite file_rec<CR>
+" nnoremap <silent> [denite]c :<C-u>Denite colorscheme<CR>
+" nnoremap <silent> [denite]m :<C-u>Denite file_mru -auto-preview<CR>
+"
+" " call denite#custom#source('file_rec', 'matchers', 'matcher_migemo')
+" " call denite#custom#source('file_mru', 'matchers', 'matcher_migemo')
+
+
+" memolist
 " --------------------
-call denite#custom#option('default', 'prompt', '>')
+let g:memolist_path = "$HOME/Dropbox/Memo"
+let g:memolist_template_dir_path = "$HOME/Dropbox/Memo"
+let g:memolist_memo_suffix = "md"
 
-""" Custon Map
-call denite#custom#map('insert', "<C-j>", '<denite:move_to_next_line>')
-call denite#custom#map('insert', "<C-k>", '<denite:move_to_previous_line>')
+" let g:memolist_denite = 1
+" let g:memolist_denite_source = ""
+" let g:memolist_denite_option = ""
 
-call denite#custom#map('normal', "v", '<denite:do_action:vsplit>')
-call denite#custom#map('insert', "<C-t>", '<denite:do_action:tabopen>')
-call denite#custom#map('insert', "<C-v>", '<denite:do_action:vsplit>')
+nnoremap <Leader>m <Nop>
+nnoremap [memolist] <Nop>
+nmap <Leader>m [memolist]
+nnoremap [memolist]n :<C-u>MemoNew<CR>
+nnoremap [memolist]l :<C-u>MemoList<CR>
+nnoremap [memolist]g :<C-u>MemoGrep<CR>
 
-""" Keymap
-nnoremap <Space>u <Nop>
-nnoremap [denite] <Nop>
-nmap <Space>u [denite]
 
-nnoremap <silent> [denite]o :<C-u>Denite file_rec<CR>
-nnoremap <silent> [denite]c :<C-u>Denite colorscheme<CR>
-nnoremap <silent> [denite]m :<C-u>Denite file_mru -auto-preview<CR>
-
-" call denite#custom#source('file_rec', 'matchers', 'matcher_migemo')
-" call denite#custom#source('file_mru', 'matchers', 'matcher_migemo')
+" QFixHowm
+" --------------------
 
