@@ -385,7 +385,7 @@
                         ]
                     },
                     {
-                        "description": "Caps Lock -> Left_Control/Control-g",
+                        "description": "Caps Lock -> Left_Control/ESC",
                         "manipulators": [
                             {
                                 "from": {
@@ -403,10 +403,7 @@
                                 ],
                                 "to_if_alone": [
                                     {
-                                        "key_code": "g",
-                                        "modifiers": [
-                                            "left_control"
-                                        ]
+                                        "key_code": "escape"
                                     }
                                 ],
                                 "type": "basic"
