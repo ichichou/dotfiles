@@ -49,7 +49,7 @@ set showmatch
 set matchtime=1
 set matchpairs+=（:）,［:］,｛:｝,「:」,『:』,〈:〉,【:】,〔:〕,‘:’,“:”
 
-set showtabline=2
+set showtabline=1
 set laststatus=2
 set noshowmode
 set showcmd
@@ -108,7 +108,7 @@ set smartindent
 
 set textwidth=0
 set backspace=indent,eol,start
-" set whichwrap=b,s,h,l,<,>,[,]
+set whichwrap=b,s,h,l,<,>,[,]
 set clipboard=unnamed
 
 set nrformats-=octal
@@ -193,7 +193,13 @@ nmap t [window]
 """ 開く・閉じる
 nnoremap [window]o :<C-u>edit<Space>
 nnoremap [window]t :<C-u>tabedit<Space>
-nnoremap <silent> [window]d :<C-u>tabclose<CR>
+
+" バッファ操作
+nnoremap [window]a :<C-u>buffers<CR>
+nnoremap [window]b :<C-u>buffer<space>
+nnoremap [window]0 :<C-u>buffer #<CR>
+nnoremap [window]n :<C-u>bnext<CR>
+nnoremap [window]p :<C-u>bprevious<CR>
 
 """ タブ移動
 nnoremap <silent> [window]ml :<C-u>tabmove +1<CR>
@@ -217,9 +223,9 @@ nnoremap [window]K <C-w>K
 nnoremap [window]L <C-w>L
 
 """ ウィンドウサイズ
-nnoremap [window]<Bar> <C-w><Bar>
-nnoremap [window]_ <C-w>_
 nnoremap [window]= <C-w>=
+" nnoremap [window]<Bar> <C-w><Bar>
+" nnoremap [window]_ <C-w>_
 
 """ ドキュメント
 nnoremap [window]/ :<C-u>vertical help<Space>
@@ -251,21 +257,16 @@ Plug 'kannokanno/previm'
 Plug 'tyru/open-browser.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-repeat'
-Plug 'cohama/lexima.vim'
 Plug 'LeafCage/yankround.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'easymotion/vim-easymotion'
 Plug 'haya14busa/is.vim'
 Plug 'haya14busa/vim-migemo'
 Plug 'glidenote/memolist.vim'
-Plug 'fuenor/qfixhowm'
 Plug 'deton/jasentence.vim'
 Plug 'deton/jasegment.vim'
-
-" Denite sources
-" --------------------
-Plug 'Shougo/denite.nvim'
-Plug 'Shougo/neomru.vim'
+" Plug 'Shougo/denite.nvim'
+" Plug 'Shougo/neomru.vim'
 
 " Operator/Text Object
 " --------------------
@@ -294,12 +295,12 @@ call plug#end()
 " Plugins
 " ----------------------------------------
 
-" hybrid
+" Hybrid
 " --------------------
 let g:hybrid_custom_term_colors = 1
 
 
-" lightline
+" Lightline
 " --------------------
 """ Colorscheme
 " powerline wombat jellybeans solarized PaperColor seoul256 Dracula one landscape
@@ -320,7 +321,7 @@ let g:lightline = {
     \   'percent': '%3p%% [%LL]'
     \ },
     \ 'component_function': {
-    \   'filepath': 'FilePath',
+    \   'filepath': 'FilePath'
     \ }
     \ }
 
@@ -338,7 +339,7 @@ let g:lightline.tabline = {
     \ }
 
 
-" vaffle
+" Vaffle
 " --------------------
 let g:vaffle_auto_cd = 1
 let g:vaffle_show_hidden_files = 1
@@ -359,7 +360,7 @@ hi link htmlBold WarningMsg
 hi link htmlBoldItalic ErrorMsg
 
 
-" previm
+" Previm
 " --------------------
 let g:previm_enable_realtime = 1
 let g:previm_show_header = 0
@@ -395,47 +396,6 @@ call jasegment#define(
     \ )
 
 
-" lexima
-" --------------------
-call lexima#add_rule({'char': '<', 'input_after': '>'})
-" call lexima#add_rule({'char': '（', 'input_after': '）'})
-" call lexima#add_rule({'char': '［', 'input_after': '］'})
-" call lexima#add_rule({'char': '｛', 'input_after': '｝'})
-" call lexima#add_rule({'char': '「', 'input_after': '」'})
-" call lexima#add_rule({'char': '『', 'input_after': '』'})
-" call lexima#add_rule({'char': '〈', 'input_after': '〉'})
-" call lexima#add_rule({'char': '【', 'input_after': '】'})
-" call lexima#add_rule({'char': '〔', 'input_after': '〕'})
-
-call lexima#add_rule({'char': '<BS>', 'at': '(\%#)', 'input': '<BS>', 'delete': 1})
-call lexima#add_rule({'char': '<BS>', 'at': '[\%#]', 'input': '<BS>', 'delete': 1})
-call lexima#add_rule({'char': '<BS>', 'at': '{\%#}', 'input': '<BS>', 'delete': 1})
-call lexima#add_rule({'char': '<BS>', 'at': '<\%#>', 'input': '<BS>', 'delete': 1})
-" call lexima#add_rule({'char': '<BS>', 'at': '（\%#）', 'input': '<BS>', 'delete': 1})
-" call lexima#add_rule({'char': '<BS>', 'at': '［\%#］', 'input': '<BS>', 'delete': 1})
-" call lexima#add_rule({'char': '<BS>', 'at': '｛\%#｝', 'input': '<BS>', 'delete': 1})
-" call lexima#add_rule({'char': '<BS>', 'at': '「\%#」', 'input': '<BS>', 'delete': 1})
-" call lexima#add_rule({'char': '<BS>', 'at': '『\%#』', 'input': '<BS>', 'delete': 1})
-" call lexima#add_rule({'char': '<BS>', 'at': '〈\%#〉', 'input': '<BS>', 'delete': 1})
-" call lexima#add_rule({'char': '<BS>', 'at': '【\%#】', 'input': '<BS>', 'delete': 1})
-" call lexima#add_rule({'char': '<BS>', 'at': '〔\%#〕', 'input': '<BS>', 'delete': 1})
-
-call lexima#add_rule({'char': '<TAB>', 'at': '\%#)', 'leave': 1})
-call lexima#add_rule({'char': '<TAB>', 'at': '\%#]', 'leave': 1})
-call lexima#add_rule({'char': '<TAB>', 'at': '\%#}', 'leave': 1})
-call lexima#add_rule({'char': '<TAB>', 'at': '\%#''', 'leave': 1})
-call lexima#add_rule({'char': '<TAB>', 'at': '\%#"', 'leave': 1})
-call lexima#add_rule({'char': '<TAB>', 'at': '\%#>', 'leave': 1})
-" call lexima#add_rule({'char': '<TAB>', 'at': '\%#）', 'leave': 1})
-" call lexima#add_rule({'char': '<TAB>', 'at': '\%#］', 'leave': 1})
-" call lexima#add_rule({'char': '<TAB>', 'at': '\%#｝', 'leave': 1})
-" call lexima#add_rule({'char': '<TAB>', 'at': '\%#」', 'leave': 1})
-" call lexima#add_rule({'char': '<TAB>', 'at': '\%#』', 'leave': 1})
-" call lexima#add_rule({'char': '<TAB>', 'at': '\%#〉', 'leave': 1})
-" call lexima#add_rule({'char': '<TAB>', 'at': '\%#】', 'leave': 1})
-" call lexima#add_rule({'char': '<TAB>', 'at': '\%#〕', 'leave': 1})
-
-
 " yankround
 " --------------------
 let g:yankround_max_history = 50
@@ -450,7 +410,7 @@ nmap <C-p> <Plug>(yankround-prev)
 nmap <C-n> <Plug>(yankround-next)
 
 
-" easymotion
+" Easymotion
 " --------------------
 let g:EasyMotion_do_mapping = 0
 
@@ -513,7 +473,23 @@ map y <Plug>(operator-flashy)
 nmap Y <Plug>(operator-flashy)$
 
 
-" " denite
+" Memolist
+" --------------------
+let g:memolist_path = "$HOME/Dropbox/Memos"
+let g:memolist_template_dir_path = "$HOME/Dropbox/Memos"
+let g:memolist_memo_suffix = "md"
+let g:memolist_memo_date = "%Y-%m-%d %H:%M"
+
+" let g:memolist_denite = 1
+" let g:memolist_denite_source = "file_mru"
+" let g:memolist_denite_option = ""
+
+nnoremap <Leader>mn :<C-u>MemoNew<CR>
+nnoremap <Leader>ml :<C-u>MemoList<CR>
+nnoremap <Leader>mg :<C-u>MemoGrep<CR>
+
+
+" " Denite
 " " --------------------
 " call denite#custom#option('default', 'prompt', '>')
 "
@@ -536,40 +512,4 @@ nmap Y <Plug>(operator-flashy)$
 "
 " " call denite#custom#source('file_rec', 'matchers', 'matcher_migemo')
 " " call denite#custom#source('file_mru', 'matchers', 'matcher_migemo')
-
-
-" memolist
-" --------------------
-let g:memolist_path = "$HOME/Dropbox/Memo"
-let g:memolist_template_dir_path = "$HOME/Dropbox/Memo"
-let g:memolist_memo_suffix = "md"
-
-" let g:memolist_denite = 1
-" let g:memolist_denite_source = ""
-" let g:memolist_denite_option = ""
-
-nnoremap <Leader>m <Nop>
-nnoremap [memolist] <Nop>
-nmap <Leader>m [memolist]
-nnoremap [memolist]n :<C-u>MemoNew<CR>
-nnoremap [memolist]l :<C-u>MemoList<CR>
-nnoremap [memolist]g :<C-u>MemoGrep<CR>
-
-
-" qfixhowm
-" --------------------
-let QFixHowm_Key = 'g'
-let QFixHowm_FileType = 'markdown'
-let QFixHowm_Title = '#'
-
-let QFixHowm_Wiki = 1
-" let QFixHowm_HolidayFile = '<休日定義ファイル Sche-Hd-0000-00-00-000000.utf8 までのパス>'
-
-let howm_dir = '$HOME/Dropbox/Memo'
-" let howm_filename = '%Y/%m/%Y-%m-%d-%H%M%S.md'
-let howm_fileencoding = 'utf-8'
-let howm_fileformat = 'unix'
-
-" let QFixWin_EnableMode = 1
-let QFix_UseLocationList = 1
 
