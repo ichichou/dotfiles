@@ -35,7 +35,7 @@ set helplang=ja,en
 " Appearance
 " ----------------------------------------
 colorscheme iceberg
-" hybrid iceberg tender deep-space nord gruvbox tomorrow-night
+" Default: hybrid iceberg tender deep-space nord gruvbox tomorrow-night
 
 set background=dark
 set termguicolors
@@ -280,8 +280,8 @@ let g:hybrid_custom_term_colors = 1
 " Lightline
 " --------------------
 """ Colorscheme
-" powerline wombat jellybeans solarized PaperColor seoul256 Dracula one landscape
-" hybrid iceberg tender tenderplus deepspace nord gruvbox
+" Default: powerline wombat jellybeans solarized PaperColor seoul256 Dracula one landscape
+" Additional: hybrid iceberg tender tenderplus deepspace nord gruvbox
 
 let g:lightline = {
   \ 'colorscheme': 'iceberg',
@@ -476,66 +476,4 @@ command! -bang -nargs=* Rg
 "   \   <bang>0 ? fzf#vim#with_preview('up:60%')
 "   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
 "   \   <bang>0)
-
-
-"" QFixGrep
-"" --------------------
-"" g,e  Grep
-"" g,re RGrep
-"" g,b  Buffer Grep
-"
-"let g:QFixWin_EnableMode = 1
-"let g:QFix_UseLocationList = 1
-"
-"" let g:mygrepprg = 'ag'
-"
-"let g:MyGrep_Key  = 'g'
-"let g:MyGrep_KeyB = ','
-"let g:MyGrep_DefaultSearchWord = 0
-"
-"
-"" Denite
-"" --------------------
-"call denite#custom#option('default', 'prompt', '>')
-"
-"" call denite#custom#source('file/rec', 'matchers', ['matcher_migemo'])
-"" call denite#custom#source('file_mru', 'matchers', ['matcher_migemo'])
-"
-"""" Ag command
-"call denite#custom#var('file/rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
-"call denite#custom#var('grep', 'command', ['ag'])
-"call denite#custom#var('grep', 'default_opts', ['-i', '--vimgrep'])
-"call denite#custom#var('grep', 'recursive_opts', [])
-"call denite#custom#var('grep', 'pattern_opt', [])
-"call denite#custom#var('grep', 'separator', ['--'])
-"call denite#custom#var('grep', 'final_opts', [])
-"
-"""" Ripgrep command
-"" call denite#custom#var('file/rec', 'command', ['rg', '--files', '--glob', '!.git'])
-"" call denite#custom#var('grep', 'command', ['rg'])
-"" call denite#custom#var('grep', 'default_opts', ['--vimgrep', '--no-heading'])
-"" call denite#custom#var('grep', 'recursive_opts', [])
-"" call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
-"" call denite#custom#var('grep', 'separator', ['--'])
-"" call denite#custom#var('grep', 'final_opts', [])
-"
-"""" Custom Mappings
-"call denite#custom#map('insert', '<C-j>', '<denite:move_to_next_line>', 'noremap')
-"call denite#custom#map('insert', '<C-k>', '<denite:move_to_previous_line>', 'noremap')
-"
-"call denite#custom#map('insert', '<C-v>', '<denite:do_action:vsplit>')
-"call denite#custom#map('normal', '<C-v>', '<denite:do_action:vsplit>')
-"call denite#custom#map('insert', '<C-t>', '<denite:do_action:tabopen>')
-"
-"""" Keymap
-"nnoremap <Space>u <Nop>
-"nnoremap [denite] <Nop>
-"nmap <Space>u [denite]
-"
-"nnoremap <silent> [denite]b :<C-u>Denite buffer<CR>
-"nnoremap <silent> [denite]o :<C-u>Denite file/rec<CR>
-"nnoremap <silent> [denite]m :<C-u>Denite file_mru -auto-preview<CR>
-"nnoremap <silent> [denite]c :<C-u>Denite colorscheme<CR>
-"" nnoremap <silent> [denite]g :<C-u>Denite grep<CR>
-"" nnoremap <silent> [denite]y :<C-u>Denite neoyank<CR>
 
