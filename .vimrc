@@ -116,8 +116,9 @@ set mouse=a
 set ttymouse=xterm2
 
 augroup fileTypeIndent
-    autocmd!
-    autocmd FileType markdown setlocal tabstop=4 softtabstop=4 shiftwidth=4
+  autocmd!
+  autocmd FileType vim setlocal tabstop=2 softtabstop=2 shiftwidth=2
+  autocmd FileType markdown setlocal tabstop=4 softtabstop=4 shiftwidth=4
 augroup END
 
 
