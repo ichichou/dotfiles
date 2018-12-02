@@ -3,14 +3,14 @@
 " ========================================
 set encoding=utf-8
 scriptencoding utf-8
-set fileencodings=iso-2022-jp,euc-jp,sjis
+set fileencodings=iso-2022-jp,euc-jp,sjis,cp932
 set fileformats=unix,dos,mac
 
 filetype plugin indent on
 syntax enable
 
 augroup vimrc
-    autocmd!
+  autocmd!
 augroup END
 
 
@@ -34,12 +34,11 @@ set helplang=ja,en
 " ----------------------------------------
 " Appearance
 " ----------------------------------------
-colorscheme gruvbox
+colorscheme iceberg
 " hybrid iceberg tender deep-space nord gruvbox tomorrow-night
 
 set background=dark
-" set t_Co=256
-" set termguicolors
+set termguicolors
 
 set title
 set number
@@ -47,7 +46,7 @@ set cursorline
 
 set showmatch
 set matchtime=1
-set matchpairs+=（:）,［:］,｛:｝,「:」,『:』,〈:〉,【:】,〔:〕,‘:’,“:”
+set matchpairs+=（:）,［:］,｛:｝,「:」,『:』,〈:〉,【:】,〔:〕
 
 set showtabline=1
 set laststatus=2
@@ -69,27 +68,27 @@ set ambiwidth=double
 " GUI Options
 " --------------------
 if has('gui_running')
-    set guifont=Myrica\ Monospace:h14
-    " set guifontwide=
+  set guifont=Myrica\ Monospace:h14
+  " set guifontwide=Myrica\ Monospace:h14
 
-    set columns=160
-    set lines=50
-    set linespace=3
+  set columns=160
+  set lines=50
+  set linespace=3
 
-    set guioptions+=c
-    set guioptions-=e
-    set guioptions-=m
-    set guioptions-=r
-    set guioptions-=L
-    set guioptions-=t
-    set guioptions-=T
+  set guioptions+=c
+  set guioptions-=e
+  set guioptions-=m
+  set guioptions-=r
+  set guioptions-=L
+  set guioptions-=t
+  set guioptions-=T
 
-    set guicursor+=a:blinkon0
+  set guicursor+=a:blinkon0
 endif
 
 if has('gui_macvim')
-    let g:macvim_skip_colorscheme=1
-    let g:no_gvimrc_example=1
+  let g:macvim_skip_colorscheme=1
+  let g:no_gvimrc_example=1
 endif
 
 
@@ -98,13 +97,13 @@ endif
 " ----------------------------------------
 set tabstop=4
 set softtabstop=4
+set shiftwidth=4
+
 set expandtab
 set smarttab
-
-set shiftwidth=4
-set shiftround
 set autoindent
 set smartindent
+set shiftround
 
 set textwidth=0
 set backspace=indent,eol,start
@@ -169,7 +168,9 @@ cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
 nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR>
-nnoremap <silent> <Space>r :<C-u>redraw!<CR>
+nnoremap <silent> <Leader>r :<C-u>redraw!<CR>
+nnoremap <silent> <Leader><Leader> :<C-u>edit ~/.vimrc<CR>
+" nnoremap <silent> <Leader>w :<C-u>write | source %<CR>
 
 nnoremap / /\v
 
@@ -190,28 +191,14 @@ nnoremap t <Nop>
 nnoremap [window] <Nop>
 nmap t [window]
 
-""" 開く・閉じる
 nnoremap [window]o :<C-u>edit<Space>
-nnoremap [window]t :<C-u>tabedit<Space>
+nnoremap [window]/ :<C-u>vertical help<Space>
 
-" バッファ操作
-nnoremap [window]a :<C-u>buffers<CR>
-nnoremap [window]b :<C-u>buffer<space>
-nnoremap [window]0 :<C-u>buffer #<CR>
-nnoremap [window]n :<C-u>bnext<CR>
-nnoremap [window]p :<C-u>bprevious<CR>
-
-""" タブ移動
-nnoremap <silent> [window]ml :<C-u>tabmove +1<CR>
-nnoremap <silent> [window]mh :<C-u>tabmove -1<CR>
-nnoremap <silent> [window]m0 :<C-u>tabmove 0<CR>
-nnoremap <silent> [window]m$ :<C-u>tabmove<CR>
-
-""" ウィンドウ分割
 nnoremap <silent> [window]s :<C-u>split<CR>
 nnoremap <silent> [window]v :<C-u>vsplit<CR>
 
-""" ウィンドウ移動
+nnoremap [window]= <C-w>=
+
 nnoremap [window]h <C-w>h
 nnoremap [window]j <C-w>j
 nnoremap [window]k <C-w>k
@@ -222,37 +209,27 @@ nnoremap [window]J <C-w>J
 nnoremap [window]K <C-w>K
 nnoremap [window]L <C-w>L
 
-""" ウィンドウサイズ
-nnoremap [window]= <C-w>=
-" nnoremap [window]<Bar> <C-w><Bar>
-" nnoremap [window]_ <C-w>_
-
-""" ドキュメント
-nnoremap [window]/ :<C-u>vertical help<Space>
-nnoremap [window]? :<C-u>tab help<Space>
 
 
 " ----------------------------------------
 " vim-plug
 " ----------------------------------------
 if empty(glob('~/.vim/autoload/plug.vim'))
-    call system('mkdir -p ~/.vim/colors')
-    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+  \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 call plug#begin('~/.vim/plugged')
 
 " Generals
 " --------------------
-Plug 'junegunn/vim-plug', {'dir': '~/.vim/plugged/vim-plug/autoload'}
 Plug 'vim-jp/vimdoc-ja'
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-highlighturl'
 Plug 'cocopon/vaffle.vim'
-Plug 'rcmdnk/vim-markdown'
-Plug 'joker1007/vim-markdown-quote-syntax'
+Plug 'gabrielelana/vim-markdown'
+Plug 'godlygeek/tabular'
 Plug 'kannokanno/previm'
 Plug 'tyru/open-browser.vim'
 Plug 'ntpeters/vim-better-whitespace'
@@ -265,8 +242,8 @@ Plug 'haya14busa/vim-migemo'
 Plug 'glidenote/memolist.vim'
 Plug 'deton/jasentence.vim'
 Plug 'deton/jasegment.vim'
-" Plug 'Shougo/denite.nvim'
-" Plug 'Shougo/neomru.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " Operator/Text Object
 " --------------------
@@ -307,36 +284,35 @@ let g:hybrid_custom_term_colors = 1
 " hybrid iceberg tender tenderplus deepspace nord gruvbox
 
 let g:lightline = {
-    \ 'colorscheme': 'gruvbox',
-    \ 'active': {
-    \   'left': [
-    \       [ 'mode', 'paste' ],
-    \       [ 'readonly', 'filepath', 'modified' ] ],
-    \   'right': [
-    \       [ 'lineinfo' ],
-    \       [ 'percent' ],
-    \       [ 'fileformat', 'fileencoding', 'filetype' ] ]
-    \ },
-    \ 'component': {
-    \   'percent': '%3p%% [%LL]'
-    \ },
-    \ 'component_function': {
-    \   'filepath': 'FilePath'
-    \ }
-    \ }
+  \ 'colorscheme': 'iceberg',
+  \ 'active': {
+  \   'left': [
+  \     [ 'mode', 'paste' ],
+  \     [ 'readonly', 'filepath', 'modified' ] ],
+  \   'right': [
+  \     [ 'lineinfo' ],
+  \     [ 'percent' ],
+  \     [ 'fileformat', 'fileencoding', 'filetype' ] ]
+  \ },
+  \ 'component': {
+  \   'percent': '%3p%% [%LL]'
+  \ },
+  \ 'component_function': {
+  \   'filepath': 'FilePath'
+  \ }}
 
 function! FilePath()
-    if winwidth(0) > 70
-        return expand('%:s')
-    else
-        return expand('%:t')
-    endif
+  if winwidth(0) > 70
+    return expand('%:s')
+  else
+    return expand('%:t')
+  endif
 endfunction
 
 let g:lightline.tabline = {
-    \ 'left': [ [ 'tabs' ] ],
-    \ 'right': [ [ '' ] ]
-    \ }
+  \ 'left': [ [ 'tabs' ] ],
+  \ 'right': [ [ '' ] ]
+  \ }
 
 
 " Vaffle
@@ -347,17 +323,13 @@ let g:vaffle_show_hidden_files = 1
 nnoremap <silent> <Leader>v :<C-u>Vaffle<CR>
 
 
-" rcmdnk/vim-markdown
+" gabrielelana/vim-markdown
 " --------------------
-autocmd vimrc BufRead,BufNewFile *.{txt,text} set filetype=markdown
+let g:markdown_enable_spell_checking = 0
 
-let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_frontmatter = 1
-let g:vim_markdown_math = 1
-
-hi link htmlItalic LineNr
-hi link htmlBold WarningMsg
-hi link htmlBoldItalic ErrorMsg
+" highlight link htmlItalic LineNr
+" highlight link htmlBold WarningMsg
+" highlight link htmlBoldItalic ErrorMsg
 
 
 " Previm
@@ -386,14 +358,13 @@ highlight ExtraWhitespace guibg=DarkRed
 " jasegment
 " --------------------
 call jasegment#define(
-    \ 'nonblank', {
-    \   'move-n': 'gW',
-    \   'move-p': 'gB',
-    \   'move-N': 'gE',
-    \   'select-i': 'iE',
-    \   'select-a': 'aE',
-    \ }
-    \ )
+  \ 'nonblank', {
+  \   'move-n': 'gW',
+  \   'move-p': 'gB',
+  \   'move-N': 'gE',
+  \   'select-i': 'iE',
+  \   'select-a': 'aE',
+  \ })
 
 
 " yankround
@@ -439,14 +410,14 @@ map <Leader>l <Plug>(easymotion-bd-jk)
 nmap <Leader>l <Plug>(easymotion-overwin-line)
 
 """ Custom Highlighting
-" hi link EasyMotionTarget ErrorMsg
-" hi link EasyMotionShade Comment
+" highlight link EasyMotionTarget ErrorMsg
+" highlight link EasyMotionShade Comment
 
-" hi link EasyMotionTarget2First MatchParen
-" hi link EasyMotionTarget2Second MatchParen
+" highlight link EasyMotionTarget2First MatchParen
+" highlight link EasyMotionTarget2Second MatchParen
 
-" hi link EasyMotionIncSearch Search
-" hi link EasyMotionMoveHL Search
+" highlight link EasyMotionIncSearch Search
+" highlight link EasyMotionMoveHL Search
 
 
 " operator-replace
@@ -461,10 +432,9 @@ map Sd <Plug>(operator-surround-delete)
 map Sr <Plug>(operator-surround-replace)
 
 let g:operator#surround#blocks = {
-    \ '-' : [
-    \   { 'block': [ '**', '**' ], 'motionwise': [ 'char', 'line', 'block' ], 'keys': [ '*' ] },
-    \ ]
-    \ }
+  \ '-' : [
+  \   { 'block': [ '**', '**' ], 'motionwise': [ 'char', 'line', 'block' ], 'keys': [ '*' ] },
+  \ ]}
 
 
 " operator-flashy
@@ -476,40 +446,96 @@ nmap Y <Plug>(operator-flashy)$
 " Memolist
 " --------------------
 let g:memolist_path = "$HOME/Dropbox/Memos"
-let g:memolist_template_dir_path = "$HOME/Dropbox/Memos"
+let g:memolist_template_dir_path = "$HOME/dotfiles"
 let g:memolist_memo_suffix = "md"
 let g:memolist_memo_date = "%Y-%m-%d %H:%M"
 
-" let g:memolist_denite = 1
-" let g:memolist_denite_source = "file_mru"
-" let g:memolist_denite_option = ""
+" let g:memolist_fzf = 1
 
 nnoremap <Leader>mn :<C-u>MemoNew<CR>
 nnoremap <Leader>ml :<C-u>MemoList<CR>
 nnoremap <Leader>mg :<C-u>MemoGrep<CR>
 
 
-" " Denite
-" " --------------------
-" call denite#custom#option('default', 'prompt', '>')
+" fzf.vim
+" --------------------
+nnoremap <Leader>b :<C-u>Buffers<CR>
+nnoremap <Leader>g :<C-u>Rg<Space>
+
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg  --line-number --no-heading --color=auto --smart-case '.shellescape(<q-args>), 0,
+  \   fzf#vim#with_preview('right:50%:wrap'))
+
+" command! -bang -nargs=? -complete=dir Files
+"   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+
+" command! -bang -nargs=* Rg
+"   \ call fzf#vim#grep(
+"   \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+"   \   <bang>0 ? fzf#vim#with_preview('up:60%')
+"   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+"   \   <bang>0)
+
+
+"" QFixGrep
+"" --------------------
+"" g,e  Grep
+"" g,re RGrep
+"" g,b  Buffer Grep
 "
-" """ Custon Map
-" call denite#custom#map('insert', "<C-j>", '<denite:move_to_next_line>')
-" call denite#custom#map('insert', "<C-k>", '<denite:move_to_previous_line>')
+"let g:QFixWin_EnableMode = 1
+"let g:QFix_UseLocationList = 1
 "
-" call denite#custom#map('normal', "v", '<denite:do_action:vsplit>')
-" call denite#custom#map('insert', "<C-t>", '<denite:do_action:tabopen>')
-" call denite#custom#map('insert', "<C-v>", '<denite:do_action:vsplit>')
+"" let g:mygrepprg = 'ag'
 "
-" """ Keymap
-" nnoremap <Space>u <Nop>
-" nnoremap [denite] <Nop>
-" nmap <Space>u [denite]
+"let g:MyGrep_Key  = 'g'
+"let g:MyGrep_KeyB = ','
+"let g:MyGrep_DefaultSearchWord = 0
 "
-" nnoremap <silent> [denite]o :<C-u>Denite file_rec<CR>
-" nnoremap <silent> [denite]c :<C-u>Denite colorscheme<CR>
-" nnoremap <silent> [denite]m :<C-u>Denite file_mru -auto-preview<CR>
 "
-" " call denite#custom#source('file_rec', 'matchers', 'matcher_migemo')
-" " call denite#custom#source('file_mru', 'matchers', 'matcher_migemo')
+"" Denite
+"" --------------------
+"call denite#custom#option('default', 'prompt', '>')
+"
+"" call denite#custom#source('file/rec', 'matchers', ['matcher_migemo'])
+"" call denite#custom#source('file_mru', 'matchers', ['matcher_migemo'])
+"
+"""" Ag command
+"call denite#custom#var('file/rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
+"call denite#custom#var('grep', 'command', ['ag'])
+"call denite#custom#var('grep', 'default_opts', ['-i', '--vimgrep'])
+"call denite#custom#var('grep', 'recursive_opts', [])
+"call denite#custom#var('grep', 'pattern_opt', [])
+"call denite#custom#var('grep', 'separator', ['--'])
+"call denite#custom#var('grep', 'final_opts', [])
+"
+"""" Ripgrep command
+"" call denite#custom#var('file/rec', 'command', ['rg', '--files', '--glob', '!.git'])
+"" call denite#custom#var('grep', 'command', ['rg'])
+"" call denite#custom#var('grep', 'default_opts', ['--vimgrep', '--no-heading'])
+"" call denite#custom#var('grep', 'recursive_opts', [])
+"" call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
+"" call denite#custom#var('grep', 'separator', ['--'])
+"" call denite#custom#var('grep', 'final_opts', [])
+"
+"""" Custom Mappings
+"call denite#custom#map('insert', '<C-j>', '<denite:move_to_next_line>', 'noremap')
+"call denite#custom#map('insert', '<C-k>', '<denite:move_to_previous_line>', 'noremap')
+"
+"call denite#custom#map('insert', '<C-v>', '<denite:do_action:vsplit>')
+"call denite#custom#map('normal', '<C-v>', '<denite:do_action:vsplit>')
+"call denite#custom#map('insert', '<C-t>', '<denite:do_action:tabopen>')
+"
+"""" Keymap
+"nnoremap <Space>u <Nop>
+"nnoremap [denite] <Nop>
+"nmap <Space>u [denite]
+"
+"nnoremap <silent> [denite]b :<C-u>Denite buffer<CR>
+"nnoremap <silent> [denite]o :<C-u>Denite file/rec<CR>
+"nnoremap <silent> [denite]m :<C-u>Denite file_mru -auto-preview<CR>
+"nnoremap <silent> [denite]c :<C-u>Denite colorscheme<CR>
+"" nnoremap <silent> [denite]g :<C-u>Denite grep<CR>
+"" nnoremap <silent> [denite]y :<C-u>Denite neoyank<CR>
 
