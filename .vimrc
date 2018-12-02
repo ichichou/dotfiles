@@ -185,7 +185,7 @@ nnoremap <silent> go :<C-u>for i in range(1, v:count1) \| call append(line('.'),
 nnoremap <silent> gO :<C-u>for i in range(1, v:count1) \| call append(line('.')-1, '') \| endfor \| silent! call repeat#set("gO", v:count1)<CR>
 
 
-" Window, Tab Page
+" Window
 " --------------------
 nnoremap t <Nop>
 nnoremap [window] <Nop>
@@ -237,6 +237,7 @@ Plug 'tpope/vim-repeat'
 Plug 'LeafCage/yankround.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'easymotion/vim-easymotion'
+Plug 'haya14busa/vim-edgemotion'
 Plug 'haya14busa/is.vim'
 Plug 'haya14busa/vim-migemo'
 Plug 'glidenote/memolist.vim'
@@ -404,20 +405,26 @@ map s <Plug>(easymotion-bd-f2)
 nmap s <Plug>(easymotion-overwin-f2)
 
 """ JK Motion
-map <Leader>j <Plug>(easymotion-j)
-map <leader>k <Plug>(easymotion-k)
-map <Leader>l <Plug>(easymotion-bd-jk)
-nmap <Leader>l <Plug>(easymotion-overwin-line)
+" map <Leader>j <Plug>(easymotion-j)
+" map <leader>k <Plug>(easymotion-k)
+" map <Leader>l <Plug>(easymotion-bd-jk)
+" nmap <Leader>l <Plug>(easymotion-overwin-line)
 
 """ Custom Highlighting
 " highlight link EasyMotionTarget ErrorMsg
 " highlight link EasyMotionShade Comment
-
+"
 " highlight link EasyMotionTarget2First MatchParen
 " highlight link EasyMotionTarget2Second MatchParen
-
-" highlight link EasyMotionIncSearch Search
+"
 " highlight link EasyMotionMoveHL Search
+" highlight link EasyMotionIncSearch Search
+
+
+" vim-edgemotion
+" --------------------
+map <C-j> <Plug>(edgemotion-j)
+map <C-k> <Plug>(edgemotion-k)
 
 
 " operator-replace
