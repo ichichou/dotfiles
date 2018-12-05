@@ -30,13 +30,14 @@ set nowritebackup
 
 set helplang=ja,en
 
+if has('win64')
+  set shellslash
+endif
+
 
 " ----------------------------------------
 " Appearance
 " ----------------------------------------
-colorscheme iceberg
-" Default: hybrid iceberg tender deep-space nord gruvbox tomorrow-night
-
 set background=dark
 set termguicolors
 
@@ -69,7 +70,7 @@ set ambiwidth=double
 " --------------------
 if has('gui_running')
   set guifont=Myrica\ Monospace:h14
-  " set guifontwide=Myrica\ Monospace:h14
+  " set guifontwide=
 
   set columns=160
   set lines=50
@@ -84,6 +85,10 @@ if has('gui_running')
   set guioptions-=T
 
   set guicursor+=a:blinkon0
+endif
+
+if has('win64')
+  set renderoptions=type:directx,renmode:5
 endif
 
 if has('gui_macvim')
@@ -154,7 +159,6 @@ set infercase
 "  cmap                  x
 "  vmap                           x
 
-
 let g:mapleader = ','
 noremap \ ,
 
@@ -175,8 +179,7 @@ cnoremap <C-n> <Down>
 
 nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR>
 nnoremap <silent> <Leader>r :<C-u>redraw!<CR>
-nnoremap <silent> <Leader><Leader> :<C-u>edit ~/.vimrc<CR>
-" nnoremap <silent> <Leader>w :<C-u>write | source %<CR>
+nnoremap <silent> <Leader><Leader> :<C-u>edit $MYVIMRC<CR>
 
 nnoremap / /\v
 
@@ -234,6 +237,7 @@ Plug 'vim-jp/vimdoc-ja'
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-highlighturl'
 Plug 'cocopon/vaffle.vim'
+Plug 'cocopon/lightline-hybrid.vim'
 Plug 'gabrielelana/vim-markdown'
 Plug 'godlygeek/tabular'
 Plug 'kannokanno/previm'
@@ -269,8 +273,7 @@ Plug 'cocopon/iceberg.vim', {'do': 'cp colors/* ~/.vim/colors/'}
 Plug 'jacoborus/tender.vim', {'do': 'cp colors/* ~/.vim/colors/'}
 Plug 'tyrannicaltoucan/vim-deep-space', {'do': 'cp colors/* ~/.vim/colors/'}
 Plug 'arcticicestudio/nord-vim', {'do': 'cp colors/* ~/.vim/colors/'}
-Plug 'morhetz/gruvbox', {'do': 'cp colors/* ~/.vim/colors/'}
-Plug 'chriskempson/vim-tomorrow-theme', {'do': 'cp colors/* ~/.vim/colors/'}
+Plug 'ajh17/Spacegray.vim', {'do': 'cp colors/* ~/.vim/colors/'}
 
 call plug#end()
 
@@ -279,16 +282,22 @@ call plug#end()
 " Plugins
 " ----------------------------------------
 
-" Hybrid
+" Colorschemes
 " --------------------
+colorscheme iceberg
+" hybrid iceberg tender deep-space nord spacegray
+
 let g:hybrid_custom_term_colors = 1
+" let g:lightline_hybrid_style = 'plain'
+
+let g:spacegray_use_italics = 1
+let g:spacegray_underline_search = 1
 
 
 " Lightline
 " --------------------
-""" Colorscheme
 " Default: powerline wombat jellybeans solarized PaperColor seoul256 Dracula one landscape
-" Additional: hybrid iceberg tender tenderplus deepspace nord gruvbox
+" Additional: hybrid iceberg tender tenderplus deepspace nord
 
 let g:lightline = {
   \ 'colorscheme': 'iceberg',
@@ -358,6 +367,8 @@ map gx <Plug>(openbrowser-smart-search)
 
 " better-whitespace
 " --------------------
+let g:better_whitespace_filetypes_blacklist = [ 'diff', 'gitcommit', 'help' ]
+
 highlight ExtraWhitespace ctermbg=DarkRed
 highlight ExtraWhitespace guibg=DarkRed
 
@@ -388,7 +399,7 @@ nmap <C-p> <Plug>(yankround-prev)
 nmap <C-n> <Plug>(yankround-next)
 
 
-" Easymotion
+" EasyMotion
 " --------------------
 let g:EasyMotion_do_mapping = 0
 
@@ -409,12 +420,6 @@ nmap <Leader>f <Plug>(easymotion-overwin-f)
 """ 2-key Find Motion
 map s <Plug>(easymotion-bd-f2)
 nmap s <Plug>(easymotion-overwin-f2)
-
-""" JK Motion
-" map <Leader>j <Plug>(easymotion-j)
-" map <leader>k <Plug>(easymotion-k)
-" map <Leader>l <Plug>(easymotion-bd-jk)
-" nmap <Leader>l <Plug>(easymotion-overwin-line)
 
 """ Custom Highlighting
 " highlight link EasyMotionTarget ErrorMsg
@@ -458,7 +463,7 @@ nmap Y <Plug>(operator-flashy)$
 
 " Memolist
 " --------------------
-let g:memolist_path = "$HOME/Dropbox/Memos"
+let g:memolist_path = "$HOME/Dropbox/memos"
 let g:memolist_template_dir_path = "$HOME/dotfiles"
 let g:memolist_memo_suffix = "md"
 let g:memolist_memo_date = "%Y-%m-%d %H:%M"
