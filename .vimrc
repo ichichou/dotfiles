@@ -69,13 +69,6 @@ set ambiwidth=double
 " GUI Options
 " --------------------
 if has('gui_running')
-  set guifont=Myrica\ Monospace:h14
-  " set guifontwide=
-
-  set columns=160
-  set lines=50
-  set linespace=3
-
   set guioptions+=c
   set guioptions-=e
   set guioptions-=m
@@ -85,10 +78,26 @@ if has('gui_running')
   set guioptions-=T
 
   set guicursor+=a:blinkon0
-endif
 
-if has('win64')
-  set renderoptions=type:directx,renmode:5
+  if has('mac')
+    set guifont=Myrica\ Monospace:h14
+    " set guifontwide=
+
+    set columns=160
+    set lines=50
+    set linespace=3
+  endif
+
+  if has('win64')
+    set guifont=Myrica\ Monospace:h12
+    " set guifontwide=
+
+    set columns=100
+    set lines=50
+    set linespace=3
+
+    set renderoptions=type:directx,renmode:5
+  endif
 endif
 
 if has('gui_macvim')
@@ -208,6 +217,7 @@ nnoremap <silent> [window]v :<C-u>vsplit<CR>
 
 nnoremap [window]= <C-w>=
 
+nnoremap [window]t <C-w><C-w>
 nnoremap [window]h <C-w>h
 nnoremap [window]j <C-w>j
 nnoremap [window]k <C-w>k
@@ -223,10 +233,12 @@ nnoremap [window]L <C-w>L
 " ----------------------------------------
 " vim-plug
 " ----------------------------------------
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-  \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+if has('mac')
+  if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  endif
 endif
 
 call plug#begin('~/.vim/plugged')
