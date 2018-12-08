@@ -30,7 +30,7 @@ set nowritebackup
 
 set helplang=ja,en
 
-if has('win64')
+if has('win64') || has('win32')
   set shellslash
 endif
 
@@ -76,27 +76,21 @@ if has('gui_running')
   set guioptions-=L
   set guioptions-=t
   set guioptions-=T
-
   set guicursor+=a:blinkon0
 
-  if has('mac')
-    set guifont=Myrica\ Monospace:h14
-    " set guifontwide=
-
-    set columns=160
-    set lines=50
-    set linespace=3
-  endif
-
-  if has('win64')
+  if has('win64') || has('win32')
     set guifont=Myrica\ Monospace:h12
     " set guifontwide=
-
     set columns=100
     set lines=50
     set linespace=3
-
     set renderoptions=type:directx,renmode:5
+  else
+    set guifont=Myrica\ Monospace:h14
+    " set guifontwide=
+    set columns=160
+    set lines=50
+    set linespace=3
   endif
 endif
 
@@ -113,6 +107,12 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 
+augroup fileTypeIndent
+  autocmd!
+  autocmd FileType vim setlocal tabstop=2 softtabstop=2 shiftwidth=2
+  autocmd FileType markdown setlocal tabstop=4 softtabstop=4 shiftwidth=4
+augroup END
+
 set expandtab
 set smarttab
 set autoindent
@@ -128,12 +128,6 @@ set nrformats-=octal
 
 set mouse=a
 set ttymouse=xterm2
-
-augroup fileTypeIndent
-  autocmd!
-  autocmd FileType vim setlocal tabstop=2 softtabstop=2 shiftwidth=2
-  autocmd FileType markdown setlocal tabstop=4 softtabstop=4 shiftwidth=4
-augroup END
 
 
 " ----------------------------------------
@@ -189,12 +183,14 @@ cnoremap <C-n> <Down>
 nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR>
 nnoremap <silent> <Leader>r :<C-u>redraw!<CR>
 nnoremap <silent> <Leader><Leader> :<C-u>edit $MYVIMRC<CR>
+nnoremap <silent> <Leader>. :<C-u>source $MYVIMRC<CR>
 
 nnoremap / /\v
 
 noremap ZZ <Nop>
 noremap ZQ <Nop>
 noremap Q <Nop>
+noremap gQ <Nop>
 
 
 " 空行の挿入
@@ -250,8 +246,9 @@ Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-highlighturl'
 Plug 'cocopon/vaffle.vim'
 Plug 'cocopon/lightline-hybrid.vim'
-Plug 'gabrielelana/vim-markdown'
 Plug 'godlygeek/tabular'
+Plug 'gabrielelana/vim-markdown'
+" Plug 'plasticboy/vim-markdown'
 Plug 'kannokanno/previm'
 Plug 'tyru/open-browser.vim'
 Plug 'ntpeters/vim-better-whitespace'
@@ -267,6 +264,7 @@ Plug 'deton/jasentence.vim'
 Plug 'deton/jasegment.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'cohama/lexima.vim'
 
 " Operator/Text Object
 " --------------------
@@ -308,8 +306,8 @@ let g:spacegray_underline_search = 1
 
 " Lightline
 " --------------------
-" Default: powerline wombat jellybeans solarized PaperColor seoul256 Dracula one landscape
-" Additional: hybrid iceberg tender tenderplus deepspace nord
+" powerline wombat jellybeans solarized PaperColor seoul256 Dracula one landscape
+" hybrid iceberg tender tenderplus deepspace nord
 
 let g:lightline = {
   \ 'colorscheme': 'iceberg',
@@ -379,7 +377,7 @@ map gx <Plug>(openbrowser-smart-search)
 
 " better-whitespace
 " --------------------
-let g:better_whitespace_filetypes_blacklist = [ 'diff', 'gitcommit', 'help' ]
+let g:better_whitespace_filetypes_blacklist = [ 'diff', 'gitcommit', 'help' ]   " 機能していない？
 
 highlight ExtraWhitespace ctermbg=DarkRed
 highlight ExtraWhitespace guibg=DarkRed
@@ -490,7 +488,7 @@ nnoremap <Leader>mg :<C-u>MemoGrep<CR>
 " fzf.vim
 " --------------------
 nnoremap <Leader>b :<C-u>Buffers<CR>
-nnoremap <Leader>g :<C-u>Rg<Space>
+" nnoremap <Leader>g :<C-u>Rg<Space>
 
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
@@ -506,4 +504,34 @@ command! -bang -nargs=* Rg
 "   \   <bang>0 ? fzf#vim#with_preview('up:60%')
 "   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
 "   \   <bang>0)
+
+
+" lexima
+" --------------------
+call lexima#add_rule({'char': '（', 'input': '（', 'input_after': '）'})
+call lexima#add_rule({'char': '［', 'input': '［', 'input_after': '］'})
+call lexima#add_rule({'char': '｛', 'input': '｛', 'input_after': '｝'})
+call lexima#add_rule({'char': '「', 'input': '「', 'input_after': '」'})
+call lexima#add_rule({'char': '『', 'input': '『', 'input_after': '』'})
+call lexima#add_rule({'char': '〈', 'input': '〈', 'input_after': '〉'})
+call lexima#add_rule({'char': '【', 'input': '【', 'input_after': '】'})
+call lexima#add_rule({'char': '〔', 'input': '〔', 'input_after': '〕'})
+
+call lexima#add_rule({'char': '）', 'at': '\%#）', 'leave': 1})
+call lexima#add_rule({'char': '］', 'at': '\%#］', 'leave': 1})
+call lexima#add_rule({'char': '｝', 'at': '\%#｝', 'leave': 1})
+call lexima#add_rule({'char': '」', 'at': '\%#」', 'leave': 1})
+call lexima#add_rule({'char': '』', 'at': '\%#』', 'leave': 1})
+call lexima#add_rule({'char': '〉', 'at': '\%#〉', 'leave': 1})
+call lexima#add_rule({'char': '】', 'at': '\%#】', 'leave': 1})
+call lexima#add_rule({'char': '〕', 'at': '\%#〕', 'leave': 1})
+
+call lexima#add_rule({'char': '<BS>', 'at': '（\%#）', 'input': '<BS>', 'delete' : 1})
+call lexima#add_rule({'char': '<BS>', 'at': '［\%#］', 'input': '<BS>', 'delete' : 1})
+call lexima#add_rule({'char': '<BS>', 'at': '｛\%#｝', 'input': '<BS>', 'delete' : 1})
+call lexima#add_rule({'char': '<BS>', 'at': '「\%#」', 'input': '<BS>', 'delete' : 1})
+call lexima#add_rule({'char': '<BS>', 'at': '『\%#』', 'input': '<BS>', 'delete' : 1})
+call lexima#add_rule({'char': '<BS>', 'at': '〈\%#〉', 'input': '<BS>', 'delete' : 1})
+call lexima#add_rule({'char': '<BS>', 'at': '【\%#】', 'input': '<BS>', 'delete' : 1})
+call lexima#add_rule({'char': '<BS>', 'at': '〔\%#〕', 'input': '<BS>', 'delete' : 1})
 
