@@ -499,7 +499,7 @@ nnoremap [fzf]b :<C-u>Buffers<CR>
 nnoremap [fzf]l :<C-u>Lines<CR>
 nnoremap [fzf]h :<C-u>History<CR>
 nnoremap [fzf]m :<C-u>Marks<CR>
-nnoremap [fzf]g :<C-u>Rg<CR>
+nnoremap [fzf]g :<C-u>Rg<Space>
 
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
