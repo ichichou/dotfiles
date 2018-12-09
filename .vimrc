@@ -120,6 +120,7 @@ set smartindent
 set shiftround
 
 set textwidth=0
+" set virtualedit=onemore
 set backspace=indent,eol,start
 set whichwrap=b,s,h,l,<,>,[,]
 set clipboard=unnamed
@@ -141,7 +142,7 @@ set smartcase
 set gdefault
 
 set wildmenu
-set wildmode=list:longest,full
+set wildmode=longest:full,full
 set history=10000
 
 set completeopt=menu,menuone,preview
@@ -172,10 +173,10 @@ noremap Y y$
 " noremap x “_x
 " noremap X “_X
 
-noremap j gj
-noremap k gk
-noremap gj j
-noremap gk k
+noremap <silent> j gj
+noremap <silent> k gk
+noremap <silent> gj j
+noremap <silent> gk k
 
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
@@ -213,7 +214,7 @@ nnoremap <silent> [window]v :<C-u>vsplit<CR>
 
 nnoremap [window]= <C-w>=
 
-nnoremap [window]t <C-w><C-w>
+nnoremap [window]t <C-w>w
 nnoremap [window]h <C-w>h
 nnoremap [window]j <C-w>j
 nnoremap [window]k <C-w>k
@@ -265,6 +266,8 @@ Plug 'deton/jasegment.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'cohama/lexima.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'gregsexton/gitv', { 'on': [ 'Gitv' ] }
 
 " Operator/Text Object
 " --------------------
@@ -278,12 +281,12 @@ Plug 'kana/vim-textobj-line'
 
 " Colorscheme
 " --------------------
-Plug 'w0ng/vim-hybrid', {'do': 'cp colors/* ~/.vim/colors/'}
-Plug 'cocopon/iceberg.vim', {'do': 'cp colors/* ~/.vim/colors/'}
-Plug 'jacoborus/tender.vim', {'do': 'cp colors/* ~/.vim/colors/'}
-Plug 'tyrannicaltoucan/vim-deep-space', {'do': 'cp colors/* ~/.vim/colors/'}
-Plug 'arcticicestudio/nord-vim', {'do': 'cp colors/* ~/.vim/colors/'}
-Plug 'ajh17/Spacegray.vim', {'do': 'cp colors/* ~/.vim/colors/'}
+Plug 'w0ng/vim-hybrid', { 'do': 'cp colors/* ~/.vim/colors/' }
+Plug 'cocopon/iceberg.vim', { 'do': 'cp colors/* ~/.vim/colors/' }
+Plug 'jacoborus/tender.vim', { 'do': 'cp colors/* ~/.vim/colors/' }
+Plug 'tyrannicaltoucan/vim-deep-space', { 'do': 'cp colors/* ~/.vim/colors/' }
+Plug 'arcticicestudio/nord-vim', { 'do': 'cp colors/* ~/.vim/colors/' }
+Plug 'ajh17/Spacegray.vim', { 'do': 'cp colors/* ~/.vim/colors/' }
 
 call plug#end()
 
@@ -377,7 +380,7 @@ map gx <Plug>(openbrowser-smart-search)
 
 " better-whitespace
 " --------------------
-let g:better_whitespace_filetypes_blacklist = [ 'diff', 'gitcommit', 'help' ]   " 機能していない？
+let g:better_whitespace_filetypes_blacklist = [ 'diff', 'gitcommit', 'help' ]
 
 highlight ExtraWhitespace ctermbg=DarkRed
 highlight ExtraWhitespace guibg=DarkRed
@@ -423,13 +426,12 @@ let g:EasyMotion_space_jump_first = 1
 let g:EasyMotion_use_upper = 1
 let g:EasyMotion_keys = ';HKLYUIOPNM,QWERTASDGZXCVBJF'
 
-""" 1-key Find Motion
-map <Leader>f <Plug>(easymotion-bd-f)
-nmap <Leader>f <Plug>(easymotion-overwin-f)
-
 """ 2-key Find Motion
 map s <Plug>(easymotion-bd-f2)
 nmap s <Plug>(easymotion-overwin-f2)
+
+""" 1-key Find Motion (Within Line)
+map <Leader>f <Plug>(easymotion-bd-fl)
 
 """ Custom Highlighting
 " highlight link EasyMotionTarget ErrorMsg
@@ -478,8 +480,6 @@ let g:memolist_template_dir_path = "$HOME/dotfiles"
 let g:memolist_memo_suffix = "md"
 let g:memolist_memo_date = "%Y-%m-%d %H:%M"
 
-" let g:memolist_fzf = 1
-
 nnoremap <Leader>mn :<C-u>MemoNew<CR>
 nnoremap <Leader>ml :<C-u>MemoList<CR>
 nnoremap <Leader>mg :<C-u>MemoGrep<CR>
@@ -487,23 +487,30 @@ nnoremap <Leader>mg :<C-u>MemoGrep<CR>
 
 " fzf.vim
 " --------------------
-nnoremap <Leader>b :<C-u>Buffers<CR>
-" nnoremap <Leader>g :<C-u>Rg<Space>
+let g:fzf_layout = { 'down': '~50%' }
+let g:fzf_buffers_jump = 1
+
+nnoremap <Leader>g <Nop>
+nnoremap [fzf] <Nop>
+nmap <Leader>g [fzf]
+
+nnoremap [fzf]b :<C-u>Files<CR>
+nnoremap [fzf]b :<C-u>Buffers<CR>
+nnoremap [fzf]l :<C-u>Lines<CR>
+nnoremap [fzf]h :<C-u>History<CR>
+nnoremap [fzf]m :<C-u>Marks<CR>
+nnoremap [fzf]g :<C-u>Rg<CR>
+
+command! -bang -nargs=? -complete=dir Files
+  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+
+command! -bang Colors
+  \ call fzf#vim#colors({'left': '15%', 'options': '--reverse --margin 30%,0'}, <bang>0)
 
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
   \   'rg  --line-number --no-heading --color=auto --smart-case '.shellescape(<q-args>), 0,
   \   fzf#vim#with_preview('right:50%:wrap'))
-
-" command! -bang -nargs=? -complete=dir Files
-"   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
-
-" command! -bang -nargs=* Rg
-"   \ call fzf#vim#grep(
-"   \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
-"   \   <bang>0 ? fzf#vim#with_preview('up:60%')
-"   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
-"   \   <bang>0)
 
 
 " lexima
@@ -534,4 +541,12 @@ call lexima#add_rule({'char': '<BS>', 'at': '『\%#』', 'input': '<BS>', 'delet
 call lexima#add_rule({'char': '<BS>', 'at': '〈\%#〉', 'input': '<BS>', 'delete' : 1})
 call lexima#add_rule({'char': '<BS>', 'at': '【\%#】', 'input': '<BS>', 'delete' : 1})
 call lexima#add_rule({'char': '<BS>', 'at': '〔\%#〕', 'input': '<BS>', 'delete' : 1})
+
+
+" fugitive.vim
+" --------------------
+
+
+" gitv
+" --------------------
 
