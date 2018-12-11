@@ -258,7 +258,6 @@ Plug 'tpope/vim-repeat'
 Plug 'LeafCage/yankround.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'easymotion/vim-easymotion'
-Plug 'haya14busa/vim-edgemotion'
 Plug 'haya14busa/is.vim'
 Plug 'haya14busa/vim-migemo'
 Plug 'glidenote/memolist.vim'
@@ -443,12 +442,6 @@ map <Leader>s <Plug>(easymotion-bd-fl)
 "
 " highlight link EasyMotionMoveHL Search
 " highlight link EasyMotionIncSearch Search
-
-
-" vim-edgemotion
-" --------------------
-map <C-j> <Plug>(edgemotion-j)
-map <C-k> <Plug>(edgemotion-k)
 
 
 " operator-replace
