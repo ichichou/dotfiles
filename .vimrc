@@ -432,7 +432,7 @@ map s <Plug>(easymotion-bd-f2)
 nmap s <Plug>(easymotion-overwin-f2)
 
 """ 1-key Find Motion (Within Line)
-map <Leader>f <Plug>(easymotion-bd-fl)
+map <Leader>s <Plug>(easymotion-bd-fl)
 
 """ Custom Highlighting
 " highlight link EasyMotionTarget ErrorMsg
@@ -458,6 +458,8 @@ map R <Plug>(operator-replace)
 
 " operator-surround
 " --------------------
+nnoremap S <Nop>
+
 map Sa <Plug>(operator-surround-append)
 map Sd <Plug>(operator-surround-delete)
 map Sr <Plug>(operator-surround-replace)
@@ -491,16 +493,16 @@ nnoremap <Leader>mg :<C-u>MemoGrep<CR>
 let g:fzf_layout = { 'down': '~60%' }
 let g:fzf_buffers_jump = 1
 
-nnoremap <Leader>g <Nop>
+nnoremap <Leader>f <Nop>
 nnoremap [fzf] <Nop>
-nmap <Leader>g [fzf]
+nmap <Leader>f [fzf]
 
 nnoremap [fzf]b :<C-u>Files<CR>
 nnoremap [fzf]b :<C-u>Buffers<CR>
-nnoremap [fzf]l :<C-u>Lines<CR>
+nnoremap [fzf]l :<C-u>BLines<CR>
 nnoremap [fzf]h :<C-u>History<CR>
 nnoremap [fzf]m :<C-u>Marks<CR>
-nnoremap [fzf]g :<C-u>Rg<Space>
+nnoremap [fzf]r :<C-u>Rg<Space>
 
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)

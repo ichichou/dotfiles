@@ -13,5 +13,6 @@
 [alias]
     st = status
     df = diff
+    di = diff
     cm = commit
 
