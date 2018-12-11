@@ -183,8 +183,9 @@ cnoremap <C-n> <Down>
 
 nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR>
 nnoremap <silent> <Leader>r :<C-u>redraw!<CR>
-nnoremap <silent> <Leader><Leader> :<C-u>edit $MYVIMRC<CR>
+nnoremap <silent> <Leader>t :<C-u>vertical terminal fish<CR>
 nnoremap <silent> <Leader>. :<C-u>source $MYVIMRC<CR>
+nnoremap <silent> <Leader><Leader> :<C-u>edit $MYVIMRC<CR>
 
 nnoremap / /\v
 
@@ -487,7 +488,7 @@ nnoremap <Leader>mg :<C-u>MemoGrep<CR>
 
 " fzf.vim
 " --------------------
-let g:fzf_layout = { 'down': '~50%' }
+let g:fzf_layout = { 'down': '~60%' }
 let g:fzf_buffers_jump = 1
 
 nnoremap <Leader>g <Nop>
