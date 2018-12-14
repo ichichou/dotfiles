@@ -170,8 +170,8 @@ noremap ; :
 noremap : ;
 
 noremap Y y$
-" noremap x “_x
-" noremap X “_X
+noremap x “_x
+noremap X “_X
 
 noremap <silent> j gj
 noremap <silent> k gk
@@ -355,6 +355,9 @@ nnoremap <silent> <Leader>v :<C-u>Vaffle<CR>
 " gabrielelana/vim-markdown
 " --------------------
 let g:markdown_enable_spell_checking = 0
+
+imap <D-]> <Tab>
+imap <D-[> <S-Tab>
 
 " highlight link htmlItalic LineNr
 " highlight link htmlBold WarningMsg
