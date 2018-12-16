@@ -154,20 +154,22 @@ set infercase
 " Keymap
 " ----------------------------------------
 
-"        Normal  Insert  Command  Visual
-"        ------  ------  -------  -------
+"        Normal  Insert  Command  Visual  Terminal
+"        ------  ------  -------  ------  --------
 "  map   x                        x
 "  map!          x       x
 "  nmap  x
 "  imap          x
 "  cmap                  x
 "  vmap                           x
+"  tmap                                   x
 
 let g:mapleader = ','
 noremap \ ,
 
 noremap ; :
 noremap : ;
+noremap / /\v
 
 noremap Y y$
 noremap x "_x
@@ -181,13 +183,14 @@ noremap <silent> gk k
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
+set termwinkey=<C-l>
+tnoremap <F1> <C-\><C-n>
+
 nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR>
 nnoremap <silent> <Leader>r :<C-u>redraw!<CR>
 nnoremap <silent> <Leader>t :<C-u>vertical terminal fish<CR>
 nnoremap <silent> <Leader>. :<C-u>source $MYVIMRC<CR>
 nnoremap <silent> <Leader><Leader> :<C-u>edit $MYVIMRC<CR>
-
-nnoremap / /\v
 
 noremap ZZ <Nop>
 noremap ZQ <Nop>
