@@ -170,8 +170,8 @@ noremap ; :
 noremap : ;
 
 noremap Y y$
-noremap x “_x
-noremap X “_X
+noremap x "_x
+noremap X "_X
 
 noremap <silent> j gj
 noremap <silent> k gk
