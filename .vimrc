@@ -81,16 +81,16 @@ if has('gui_running')
   if has('win64') || has('win32')
     set guifont=Myrica\ Monospace:h12
     " set guifontwide=
-    set columns=100
+    set columns=140
     set lines=50
-    set linespace=3
+    set linespace=2
     set renderoptions=type:directx,renmode:5
   else
     set guifont=Myrica\ Monospace:h14
     " set guifontwide=
-    set columns=160
+    set columns=140
     set lines=50
-    set linespace=3
+    set linespace=2
   endif
 endif
 
