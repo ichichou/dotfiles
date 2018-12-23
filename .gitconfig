@@ -4,15 +4,19 @@
 
 [core]
     editor = vim
-	pager = less -cm
+    pager = less -cm
     quotepath = false
+    excludesfile = ~/.gitignore_global
 
 [color]
-    ui = true
+    ui = auto
 
 [alias]
     st = status
     df = diff
     di = diff
     cm = commit
+    lg = log
+    ad = add
+    ps = push
 
