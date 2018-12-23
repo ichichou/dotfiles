@@ -496,7 +496,7 @@ nnoremap <Leader>f <Nop>
 nnoremap [fzf] <Nop>
 nmap <Leader>f [fzf]
 
-nnoremap [fzf]b :<C-u>Files<CR>
+nnoremap [fzf]f :<C-u>Files<CR>
 nnoremap [fzf]b :<C-u>Buffers<CR>
 nnoremap [fzf]l :<C-u>BLines<CR>
 nnoremap [fzf]h :<C-u>History<CR>
