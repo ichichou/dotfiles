@@ -1,4 +1,2 @@
-if [ -f ~/.bashrc ]; then
-    . ~/.bashrc
-fi
+test -r ~/.bashrc && . ~/.bashrc
 
