@@ -15,7 +15,7 @@
         },
         "rules": [
           {
-            "description": "[Chrome] Left_Command-N -> Left_Command-T",
+            "description": "[Chrome] L_Cmd-N → L_Cmd-T",
             "manipulators": [
               {
                 "conditions": [
@@ -47,7 +47,7 @@
             ]
           },
           {
-            "description": "[Chrome] Left_Command-T -> Left_Command-Left_Shift-T",
+            "description": "[Chrome] L_Cmd-T → L_Cmd-L_Shift-T",
             "manipulators": [
               {
                 "conditions": [
@@ -80,7 +80,7 @@
             ]
           },
           {
-            "description": "[Chrome] Left_Command-Q -> Q",
+            "description": "[Chrome] L_Cmd-Q → Q",
             "manipulators": [
               {
                 "conditions": [
@@ -109,7 +109,7 @@
             ]
           },
           {
-            "description": "Left_Command-Space -> Return",
+            "description": "L_Cmd-Space → Return",
             "manipulators": [
               {
                 "from": {
@@ -133,7 +133,7 @@
             ]
           },
           {
-            "description": "Left_Command-Right_Command -> ESC",
+            "description": "L_Cmd-R_Cmd → ESC",
             "manipulators": [
               {
                 "from": {
@@ -186,7 +186,7 @@
             ]
           },
           {
-            "description": "Left_Command-H/J/K/L -> Left/Down/Up/Right",
+            "description": "L_Cmd-H/J/K/L → Left/Down/Up/Right",
             "manipulators": [
               {
                 "from": {
@@ -251,10 +251,10 @@
                   "modifiers": {
                     "mandatory": [
                       "left_command"
-                                        ],
-                                        "optional": [
-                                          "any"
-                                        ]
+                    ],
+                    "optional": [
+                      "any"
+                    ]
                   }
                 },
                 "to": [
@@ -267,7 +267,7 @@
             ]
           },
           {
-            "description": "Left_Command-U/O -> Delete/Fn-Delete",
+            "description": "L_Cmd-U/O → Delete/Fn-Delete",
             "manipulators": [
               {
                 "from": {
@@ -310,7 +310,7 @@
             ]
           },
           {
-            "description": "Left_Command/Right_Command -> Eisu/Kana",
+            "description": "L_Cmd/R_Cmd → Eisu/Kana",
             "manipulators": [
               {
                 "from": {
@@ -385,7 +385,7 @@
             ]
           },
           {
-            "description": "Caps Lock -> Left_Control/ESC",
+            "description": "Caps Lock → L_Control/ESC",
             "manipulators": [
               {
                 "from": {
