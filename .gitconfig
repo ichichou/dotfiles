@@ -18,5 +18,6 @@
     cm = commit
     lg = log
     ad = add
-    ps = push
+    ph = push
+    pl = pull
 
