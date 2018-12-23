@@ -1,7 +1,5 @@
 ## Options
 
-set fish_greeting
-
 ## Aliases
 
 alias rm 'rmtrash'
