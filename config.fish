@@ -4,10 +4,9 @@ set fish_greeting
 
 ## Aliases
 
-alias rm 'rmtrash'
-
-alias mv 'mv -i'
 alias cp 'cp -i'
+alias mv 'mv -i'
+alias rm 'rmtrash'
 
 alias g 'git'
 
