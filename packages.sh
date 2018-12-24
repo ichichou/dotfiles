@@ -2,8 +2,11 @@
 
 set -eu
 
-# git clone https://github.com/b4b4r07/enhancd
-# source /path/to/enhancd/init.sh
+curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
+fisher add jethrokuan/fzf
+fisher add jethrokuan/z
+fisher add rafaelrinaldi/pure
+# fisher add matchai/spacefish
 
 gem update --system
 gem install asciidoctor
@@ -16,10 +19,4 @@ npm install -g gitbook
 npm install -g gitbook-cli
 npm install -g mermaid
 npm install -g mermaid.cli
-
-curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
-fisher add jethrokuan/fzf
-fisher add jethrokuan/z
-fisher add rafaelrinaldi/pure
-# fisher add matchai/spacefish
 
