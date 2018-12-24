@@ -4,9 +4,9 @@ set -eu
 
 curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
 fisher self-update
+fisher add brandonweiss/pure.fish
 fisher add jethrokuan/fzf
 fisher add jethrokuan/z
-fisher add rafaelrinaldi/pure
 
 gem update --system
 gem install asciidoctor
