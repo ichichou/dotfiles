@@ -8,16 +8,31 @@
     quotepath = false
     excludesfile = ~/.gitignore_global
 
+[diff]
+    renames = true
+
 [color]
     ui = auto
 
 [alias]
-    st = status
-    df = diff
-    di = diff
+    a = add
+    aa = add --all
+    br = branch
+    cl = clone
     cm = commit
+    cmm = commit -m
+    co = checkout
+    cob = checkout -b
+    d = diff
+    fc = fetch
     lg = log
-    ad = add
-    ph = push
+    lgg = log --graph --oneline --decorate
+    lgp = log -p
+    mg = merge
     pl = pull
+    ps = push
+    rl = reflog
+    s = status --short --branch
+    sh = show
+    ss = status
 
