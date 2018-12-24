@@ -143,7 +143,7 @@ set smartcase
 set gdefault
 
 set wildmenu
-set wildmode=longest:full,full
+set wildmode=full
 set history=10000
 
 set completeopt=menu,menuone,preview
