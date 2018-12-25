@@ -15,7 +15,6 @@ gem install asciidoctor-pdf --pre
 gem install asciidoctor-pdf-cjk
 
 npm update -g npm
-npm install -g gitbook
 npm install -g gitbook-cli
 npm install -g mermaid
 npm install -g mermaid.cli
