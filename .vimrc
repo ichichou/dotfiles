@@ -112,6 +112,7 @@ augroup fileTypeIndent
   autocmd!
   autocmd FileType vim setlocal tabstop=2 softtabstop=2 shiftwidth=2
   autocmd FileType markdown setlocal tabstop=4 softtabstop=4 shiftwidth=4
+  autocmd FileType javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2
   autocmd FileType json setlocal tabstop=2 softtabstop=2 shiftwidth=2
 augroup END
 
@@ -122,7 +123,7 @@ set smartindent
 set shiftround
 
 set textwidth=0
-" set virtualedit=onemore
+set virtualedit=onemore
 set backspace=indent,eol,start
 set whichwrap=b,s,h,l,<,>,[,]
 set clipboard=unnamed
