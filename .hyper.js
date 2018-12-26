@@ -113,7 +113,7 @@ module.exports = {
     env: {},
 
     // set to `false` for no bell
-    bell: 'SOUND',
+    bell: 'false',
 
     // if `true` (without backticks and without quotes), selected text will automatically be copied to the clipboard
     copyOnSelect: false,
@@ -137,7 +137,14 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: [],
+  plugins: [
+    // 'hyper-material-theme',
+    'nord-hyper',
+    'hyper-statusline',
+    'hyper-search',
+    'hypercwd',
+    'hyper-tabs-enhanced'
+  ],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
