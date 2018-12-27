@@ -139,11 +139,11 @@ module.exports = {
   //   `project#1.0.1`
   plugins: [
     // 'hyper-material-theme',
-    'nord-hyper',
-    'hyper-statusline',
     'hyper-search',
-    'hypercwd',
+    'hyper-statusline',
     'hyper-tabs-enhanced'
+    'hypercwd',
+    'nord-hyper'
   ],
 
   // in development, you can create a directory under
