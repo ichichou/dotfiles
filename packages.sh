@@ -7,6 +7,7 @@ fisher self-update
 fisher add brandonweiss/pure.fish
 fisher add jethrokuan/fzf
 fisher add jethrokuan/z
+fisher add jorgebucaran/fish-spin
 
 gem update --system
 gem install asciidoctor
