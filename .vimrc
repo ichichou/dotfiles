@@ -292,6 +292,7 @@ Plug 'jacoborus/tender.vim', { 'do': 'cp colors/* ~/.vim/colors/' }
 Plug 'tyrannicaltoucan/vim-deep-space', { 'do': 'cp colors/* ~/.vim/colors/' }
 Plug 'arcticicestudio/nord-vim', { 'do': 'cp colors/* ~/.vim/colors/' }
 Plug 'ajh17/Spacegray.vim', { 'do': 'cp colors/* ~/.vim/colors/' }
+Plug 'joshdick/onedark.vim', { 'do': 'cp colors/* ~/.vim/colors/' }
 
 call plug#end()
 
@@ -303,10 +304,18 @@ call plug#end()
 " Colorschemes
 " --------------------
 colorscheme iceberg
-" hybrid iceberg tender deep-space nord spacegray
+" hybrid iceberg tender deep-space nord onedark spacegray
 
 let g:hybrid_custom_term_colors = 1
 " let g:lightline_hybrid_style = 'plain'
+
+let g:nord_italic = 1
+let g:nord_underline = 1
+let g:nord_italic_comments = 1
+let g:nord_uniform_status_lines = 1
+let g:nord_comment_brightness = 15
+let g:nord_uniform_diff_background = 1
+let g:nord_cursor_line_number_background = 1
 
 let g:spacegray_use_italics = 1
 let g:spacegray_underline_search = 1
@@ -315,7 +324,7 @@ let g:spacegray_underline_search = 1
 " Lightline
 " --------------------
 " powerline wombat jellybeans solarized PaperColor seoul256 Dracula one landscape
-" hybrid iceberg tender tenderplus deepspace nord
+" hybrid iceberg tender tenderplus deepspace nord onedark
 
 let g:lightline = {
   \ 'colorscheme': 'iceberg',
