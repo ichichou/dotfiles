@@ -40,7 +40,7 @@ endif
 " Appearance
 " ----------------------------------------
 set background=dark
-set termguicolors
+" set termguicolors
 
 set title
 set number
