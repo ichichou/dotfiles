@@ -1,19 +1,19 @@
 [user]
     name = ichichou
     email = flower.sun.rain.silver@gmail.com
-
 [core]
     editor = vim
     pager = less -cm
     quotepath = false
     excludesfile = ~/.gitignore_global
-
 [diff]
     renames = true
-
+[merge]
+    ff = false
+[pull]
+    ff = only
 [color]
     ui = auto
-
 [alias]
     a = add
     aa = add --all
