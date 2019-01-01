@@ -24,6 +24,7 @@ module.exports = {
     showHamburgerMenu: '',
     showWindowControls: '',
     padding: '12px 14px',
+
     colors: {
       black: '#000000',
       red: '#C51E14',
@@ -42,15 +43,32 @@ module.exports = {
       lightCyan: '#68FDFE',
       lightWhite: '#FFFFFF',
     },
+
+    MaterialTheme: {
+        theme: '', // OPTIONS: 'Darker', 'Palenight', 'Ocean', ''
+        backgroundOpacity: '0.5', // OPTIONS: From 0.1 to 1
+        accentColor: '#64FFDA',
+        vibrancy: 'dark' // OPTIONS: 'dark', 'ultra-dark', 'bright'
+    },
+
     shell: '',
     shellArgs: ['--login'],
     env: {},
-    bell: 'SOUND',
+    bell: 'false',
     copyOnSelect: false,
     defaultSSHApp: true,
   },
 
-  plugins: [],
+  plugins: [
+    // 'hyper-iceberg',
+    // 'nord-hyper',
+    // 'hyper-chesterish',
+    'hyper-material-theme',
+    'hyper-statusline',
+    'hyper-tabs-enhanced',
+    'hyper-search',
+    'hypercwd'
+  ],
 
   localPlugins: [],
 
