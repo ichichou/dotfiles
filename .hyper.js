@@ -46,7 +46,7 @@ module.exports = {
 
     MaterialTheme: {
         theme: '', // OPTIONS: 'Darker', 'Palenight', 'Ocean', ''
-        backgroundOpacity: '0.5', // OPTIONS: From 0.1 to 1
+        backgroundOpacity: '0.7', // OPTIONS: From 0.1 to 1
         accentColor: '#64FFDA',
         vibrancy: 'dark' // OPTIONS: 'dark', 'ultra-dark', 'bright'
     },
