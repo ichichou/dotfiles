@@ -259,7 +259,7 @@ Plug 'gabrielelana/vim-markdown'
 Plug 'kannokanno/previm'
 Plug 'tyru/open-browser.vim'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'tpope/vim-repeat'
+" Plug 'tpope/vim-repeat'
 Plug 'LeafCage/yankround.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'easymotion/vim-easymotion'
@@ -273,6 +273,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'cohama/lexima.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'gregsexton/gitv', { 'on': [ 'Gitv' ] }
+Plug 'kana/vim-repeat'
+Plug 'tyru/caw.vim'
 
 " Operator/Text Object
 " --------------------
@@ -562,4 +564,10 @@ call lexima#add_rule({'char': '<BS>', 'at': '〔\%#〕', 'input': '<BS>', 'delet
 
 " gitv
 " --------------------
+
+
+" caw.vim
+" --------------------
+map <Leader>c <Plug>(caw:hatpos:toggle)
+map <Leader>0 <Plug>(caw:zeropos:toggle)
 
