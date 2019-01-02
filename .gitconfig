@@ -31,14 +31,14 @@
     cm = commit
     cma = commit --all
     cmm = commit --message
-    cmp = commit -p
+    cmp = commit --patch
     co = checkout
     cob = checkout -b
     d = diff
     f = fetch
     lg = log
     lgg = log --graph --oneline --decorate
-    lgp = log -p
+    lgp = log --patch
     mg = merge
     pl = pull
     ps = push
