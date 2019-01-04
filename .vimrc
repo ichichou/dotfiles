@@ -255,7 +255,8 @@ Plug 'itchyny/vim-highlighturl'
 Plug 'cocopon/vaffle.vim'
 Plug 'cocopon/lightline-hybrid.vim'
 Plug 'godlygeek/tabular'
-Plug 'gabrielelana/vim-markdown'
+Plug 'joker1007/vim-markdown-quote-syntax'
+Plug 'rcmdnk/vim-markdown'
 Plug 'kannokanno/previm'
 Plug 'tyru/open-browser.vim'
 Plug 'ntpeters/vim-better-whitespace'
@@ -368,16 +369,13 @@ let g:vaffle_show_hidden_files = 1
 nnoremap <silent> <Leader>v :<C-u>Vaffle<CR>
 
 
-" gabrielelana/vim-markdown
+" rcmdnk/vim-markdown
 " --------------------
-let g:markdown_enable_spell_checking = 0
+highlight link htmlItalic LineNr
+highlight link htmlBold WarningMsg
+highlight link htmlBoldItalic ErrorMsg
 
-imap <D-]> <Tab>
-imap <D-[> <S-Tab>
-
-" highlight link htmlItalic LineNr
-" highlight link htmlBold WarningMsg
-" highlight link htmlBoldItalic ErrorMsg
+let g:vim_markdown_folding_disabled = 1
 
 
 " Previm
