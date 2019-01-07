@@ -6,7 +6,6 @@ curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fi
 fisher self-update
 fisher add jethrokuan/fzf
 fisher add jethrokuan/z
-fisher add jorgebucaran/fish-spin
 fisher add rafaelrinaldi/pure
 
 gem update --system
