@@ -1,6 +1,6 @@
 [user]
     name = ichichou
-    email = flower.sun.rain.silver@gmail.com
+    email = 35998815+ichichou@users.noreply.github.com
 
 [core]
     editor = vim
@@ -35,13 +35,14 @@
     co = checkout
     cob = checkout -b
     d = diff
-    f = fetch
+    fc = fetch
     lg = log
     lgg = log --graph --oneline --decorate
     lgp = log --patch
     mg = merge
     pl = pull
     ps = push
+    psu = push --set-upstream
     rl = reflog
     s = status --short --branch
     sh = show
