@@ -40,7 +40,7 @@ endif
 " Appearance
 " ----------------------------------------
 set background=dark
-" set termguicolors
+set termguicolors
 
 set title
 set number
@@ -276,6 +276,7 @@ Plug 'cohama/lexima.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'gregsexton/gitv', { 'on': [ 'Gitv' ] }
 Plug 'tyru/caw.vim'
+Plug 'chriskempson/base16-vim'
 
 " Operator/Text Object
 " --------------------
@@ -306,8 +307,15 @@ call plug#end()
 
 " Colorschemes
 " --------------------
-colorscheme iceberg
-" hybrid iceberg tender deep-space nord onedark spacegray
+if has('gui_running')
+  colorscheme iceberg
+  " hybrid iceberg tender deep-space nord onedark spacegray
+else
+  if filereadable(expand("~/.vimrc_background"))
+    let base16colorspace=256
+    source ~/.vimrc_background
+  endif
+endif
 
 let g:hybrid_custom_term_colors = 1
 " let g:lightline_hybrid_style = 'plain'
