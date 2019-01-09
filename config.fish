@@ -1,31 +1,36 @@
-## Options
-
-set fish_greeting
-
 ## Aliases
-
 alias cp 'cp -i'
 alias mv 'mv -i'
 alias rm 'rmtrash'
 
+alias b 'brew'
 alias g 'git'
 alias gu 'gitup'
 alias j 'z'
 alias tree 'tree -NC'
 
-alias b 'brew'
-alias bc 'brew cask'
-alias bcd 'brew cask doctor'
-alias bci 'brew cask info'
-alias bcl 'brew cask list'
-alias bcu 'brew cleanup -s'
-alias bcupg 'brew cask upgrade'
-alias bd 'brew doctor'
-alias bi 'brew info'
-alias bl 'brew list'
-alias bo 'brew options'
-alias bp 'brew prune'
-alias bs 'brew search'
-alias bup 'brew update'
-alias bupg 'brew upgrade'
+
+## Functions
+function ls
+    command ls -aG $argv
+end
+
+function ll
+    command ls -1aG $argv
+end
+
+
+## Options
+
+### Fish
+set fish_greeting
+
+### Fzf
+set -U FZF_LEGACY_KEYBINDINGS 0
+
+### Base16
+if status --is-interactive
+    set BASE16_SHELL "$HOME/.config/base16-shell"
+    source "$BASE16_SHELL/profile_helper.fish"
+end
 
