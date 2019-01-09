@@ -44,31 +44,36 @@ module.exports = {
       lightWhite: '#FFFFFF',
     },
 
-    MaterialTheme: {
-        theme: '', // OPTIONS: 'Darker', 'Palenight', 'Ocean', ''
-        backgroundOpacity: '0.7', // OPTIONS: From 0.1 to 1
-        accentColor: '#64FFDA',
-        vibrancy: 'dark' // OPTIONS: 'dark', 'ultra-dark', 'bright'
-    },
-
     shell: '',
     shellArgs: ['--login'],
     env: {},
     bell: 'false',
     copyOnSelect: false,
     defaultSSHApp: true,
+
+    // base16: {
+    //   scheme: 'tomorrow-night'
+    //   base00: '#000000'
+    // },
+
+    // MaterialTheme: {
+    //   theme: '', // OPTIONS: 'Darker', 'Palenight', 'Ocean', ''
+    //   backgroundOpacity: '0.7', // OPTIONS: From 0.1 to 1
+    //   accentColor: '#64FFDA',
+    //   vibrancy: 'dark' // OPTIONS: 'dark', 'ultra-dark', 'bright'
+    // }
   },
 
   plugins: [
-    // 'hyper-iceberg',
-    // 'nord-hyper',
-    // 'hyper-chesterish',
-    // 'hyper-tomorrow',
-    'hyper-material-theme',
     'hyper-statusline',
     'hyper-tabs-enhanced',
     'hyper-search',
-    'hypercwd'
+    'hypercwd',
+    // "hypersixteen",
+    // "hyper-material-theme",
+    // "nord-hyper",
+    // "hyperterm-hybrid",
+    "hyper-tomorrow-night"
   ],
 
   localPlugins: [],
