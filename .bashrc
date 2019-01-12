@@ -6,6 +6,7 @@ alias rm='rmtrash'
 alias ls='ls -aG'
 alias la='ls -alG'
 alias ll='ls -1aG'
+alias lla='exa -al --git'
 
 alias b='brew'
 alias bc='brew cask'

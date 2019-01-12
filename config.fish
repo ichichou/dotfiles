@@ -22,6 +22,10 @@ function ll
     command ls -1aG $argv
 end
 
+function lla
+    command exa -al --git $argv
+end
+
 
 ## Plugins
 ### Fish
