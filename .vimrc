@@ -178,6 +178,9 @@ noremap Y y$
 noremap x "_x
 noremap X "_X
 
+noremap + <C-a>
+noremap - <C-x>
+
 noremap <silent> j gj
 noremap <silent> k gk
 noremap <silent> gj j
@@ -201,7 +204,7 @@ noremap Q <Nop>
 noremap gQ <Nop>
 
 
-" 空行の挿入
+" Insert blank row
 " --------------------
 nnoremap <silent> go :<C-u>for i in range(1, v:count1) \| call append(line('.'), '') \| endfor \| silent! call repeat#set("go", v:count1)<CR>
 nnoremap <silent> gO :<C-u>for i in range(1, v:count1) \| call append(line('.')-1, '') \| endfor \| silent! call repeat#set("gO", v:count1)<CR>
@@ -285,7 +288,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'dahu/vim-asciidoc', { 'for': 'asciidoc' }
 " Plug 'dagwieers/asciidoc-vim', { 'for': 'asciidoc' }
 
-" Operator/Text Object
+" Operator / Text Object
 " --------------------
 Plug 'kana/vim-operator-user'
 Plug 'kana/vim-textobj-user'
@@ -339,7 +342,7 @@ let g:spacegray_use_italics = 1
 let g:spacegray_underline_search = 1
 
 
-" Lightline
+" lightline
 " --------------------
 " powerline wombat jellybeans solarized PaperColor seoul256 Dracula one landscape
 " hybrid iceberg tender tenderplus deepspace nord onedark
@@ -376,7 +379,7 @@ let g:lightline.tabline = {
   \ }
 
 
-" Vaffle
+" vaffle
 " --------------------
 let g:vaffle_auto_cd = 1
 let g:vaffle_show_hidden_files = 1
@@ -393,7 +396,7 @@ highlight link htmlBoldItalic ErrorMsg
 let g:vim_markdown_folding_disabled = 1
 
 
-" Previm
+" previm
 " --------------------
 let g:previm_enable_realtime = 1
 let g:previm_show_header = 0
@@ -449,7 +452,7 @@ nmap <C-p> <Plug>(yankround-prev)
 nmap <C-n> <Plug>(yankround-next)
 
 
-" EasyMotion
+" easymotion
 " --------------------
 let g:EasyMotion_do_mapping = 0
 
@@ -506,7 +509,7 @@ map y <Plug>(operator-flashy)
 nmap Y <Plug>(operator-flashy)$
 
 
-" Memolist
+" memolist
 " --------------------
 let g:memolist_path = "$HOME/Dropbox/memos"
 let g:memolist_template_dir_path = "$HOME/dotfiles"
