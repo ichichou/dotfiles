@@ -255,9 +255,10 @@ Plug 'itchyny/vim-highlighturl'
 Plug 'cocopon/vaffle.vim'
 Plug 'cocopon/lightline-hybrid.vim'
 Plug 'godlygeek/tabular'
-Plug 'joker1007/vim-markdown-quote-syntax'
-Plug 'rcmdnk/vim-markdown'
-Plug 'kannokanno/previm'
+Plug 'joker1007/vim-markdown-quote-syntax', { 'for': 'markdown' }
+Plug 'rcmdnk/vim-markdown', { 'for': 'markdown' }
+Plug 'kannokanno/previm', { 'for': 'markdown' }
+Plug 'suan/vim-instant-markdown', { 'for': 'markdown' }
 Plug 'tyru/open-browser.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-repeat'
@@ -272,11 +273,17 @@ Plug 'deton/jasentence.vim'
 Plug 'deton/jasegment.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'cohama/lexima.vim'
+" Plug 'cohama/lexima.vim'
+Plug 'kana/vim-smartinput'
+Plug 'cohama/vim-smartinput-endwise'
 Plug 'tpope/vim-fugitive'
-Plug 'gregsexton/gitv', { 'on': [ 'Gitv' ] }
+Plug 'gregsexton/gitv', { 'on': 'Gitv' }
+" Plug 'cohama/agit.vim'
 Plug 'tyru/caw.vim'
 Plug 'chriskempson/base16-vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'dahu/vim-asciidoc', { 'for': 'asciidoc' }
+" Plug 'dagwieers/asciidoc-vim', { 'for': 'asciidoc' }
 
 " Operator/Text Object
 " --------------------
@@ -394,6 +401,11 @@ let g:previm_disable_default_css = 0
 " let g:previm_custom_css_path = ''
 
 nnoremap <silent> <Leader>p :<C-u>PrevimOpen<CR>
+
+
+" vim-instant-markdown
+" --------------------
+let g:instant_markdown_autostart = 0
 
 
 " open-browser
@@ -536,32 +548,32 @@ command! -bang -nargs=* Rg
 
 " lexima
 " --------------------
-call lexima#add_rule({'char': '（', 'input': '（', 'input_after': '）'})
-call lexima#add_rule({'char': '［', 'input': '［', 'input_after': '］'})
-call lexima#add_rule({'char': '｛', 'input': '｛', 'input_after': '｝'})
-call lexima#add_rule({'char': '「', 'input': '「', 'input_after': '」'})
-call lexima#add_rule({'char': '『', 'input': '『', 'input_after': '』'})
-call lexima#add_rule({'char': '〈', 'input': '〈', 'input_after': '〉'})
-call lexima#add_rule({'char': '【', 'input': '【', 'input_after': '】'})
-call lexima#add_rule({'char': '〔', 'input': '〔', 'input_after': '〕'})
-
-call lexima#add_rule({'char': '）', 'at': '\%#）', 'leave': 1})
-call lexima#add_rule({'char': '］', 'at': '\%#］', 'leave': 1})
-call lexima#add_rule({'char': '｝', 'at': '\%#｝', 'leave': 1})
-call lexima#add_rule({'char': '」', 'at': '\%#」', 'leave': 1})
-call lexima#add_rule({'char': '』', 'at': '\%#』', 'leave': 1})
-call lexima#add_rule({'char': '〉', 'at': '\%#〉', 'leave': 1})
-call lexima#add_rule({'char': '】', 'at': '\%#】', 'leave': 1})
-call lexima#add_rule({'char': '〕', 'at': '\%#〕', 'leave': 1})
-
-call lexima#add_rule({'char': '<BS>', 'at': '（\%#）', 'input': '<BS>', 'delete' : 1})
-call lexima#add_rule({'char': '<BS>', 'at': '［\%#］', 'input': '<BS>', 'delete' : 1})
-call lexima#add_rule({'char': '<BS>', 'at': '｛\%#｝', 'input': '<BS>', 'delete' : 1})
-call lexima#add_rule({'char': '<BS>', 'at': '「\%#」', 'input': '<BS>', 'delete' : 1})
-call lexima#add_rule({'char': '<BS>', 'at': '『\%#』', 'input': '<BS>', 'delete' : 1})
-call lexima#add_rule({'char': '<BS>', 'at': '〈\%#〉', 'input': '<BS>', 'delete' : 1})
-call lexima#add_rule({'char': '<BS>', 'at': '【\%#】', 'input': '<BS>', 'delete' : 1})
-call lexima#add_rule({'char': '<BS>', 'at': '〔\%#〕', 'input': '<BS>', 'delete' : 1})
+" call lexima#add_rule({'char': '（', 'input': '（', 'input_after': '）'})
+" call lexima#add_rule({'char': '［', 'input': '［', 'input_after': '］'})
+" call lexima#add_rule({'char': '｛', 'input': '｛', 'input_after': '｝'})
+" call lexima#add_rule({'char': '「', 'input': '「', 'input_after': '」'})
+" call lexima#add_rule({'char': '『', 'input': '『', 'input_after': '』'})
+" call lexima#add_rule({'char': '〈', 'input': '〈', 'input_after': '〉'})
+" call lexima#add_rule({'char': '【', 'input': '【', 'input_after': '】'})
+" call lexima#add_rule({'char': '〔', 'input': '〔', 'input_after': '〕'})
+"
+" call lexima#add_rule({'char': '）', 'at': '\%#）', 'leave': 1})
+" call lexima#add_rule({'char': '］', 'at': '\%#］', 'leave': 1})
+" call lexima#add_rule({'char': '｝', 'at': '\%#｝', 'leave': 1})
+" call lexima#add_rule({'char': '」', 'at': '\%#」', 'leave': 1})
+" call lexima#add_rule({'char': '』', 'at': '\%#』', 'leave': 1})
+" call lexima#add_rule({'char': '〉', 'at': '\%#〉', 'leave': 1})
+" call lexima#add_rule({'char': '】', 'at': '\%#】', 'leave': 1})
+" call lexima#add_rule({'char': '〕', 'at': '\%#〕', 'leave': 1})
+"
+" call lexima#add_rule({'char': '<BS>', 'at': '（\%#）', 'input': '<BS>', 'delete' : 1})
+" call lexima#add_rule({'char': '<BS>', 'at': '［\%#］', 'input': '<BS>', 'delete' : 1})
+" call lexima#add_rule({'char': '<BS>', 'at': '｛\%#｝', 'input': '<BS>', 'delete' : 1})
+" call lexima#add_rule({'char': '<BS>', 'at': '「\%#」', 'input': '<BS>', 'delete' : 1})
+" call lexima#add_rule({'char': '<BS>', 'at': '『\%#』', 'input': '<BS>', 'delete' : 1})
+" call lexima#add_rule({'char': '<BS>', 'at': '〈\%#〉', 'input': '<BS>', 'delete' : 1})
+" call lexima#add_rule({'char': '<BS>', 'at': '【\%#】', 'input': '<BS>', 'delete' : 1})
+" call lexima#add_rule({'char': '<BS>', 'at': '〔\%#〕', 'input': '<BS>', 'delete' : 1})
 
 
 " fugitive.vim
@@ -576,4 +588,9 @@ call lexima#add_rule({'char': '<BS>', 'at': '〔\%#〕', 'input': '<BS>', 'delet
 " --------------------
 map <Leader>c <Plug>(caw:hatpos:toggle)
 map <Leader>0 <Plug>(caw:zeropos:toggle)
+
+
+" vim-polyglot
+" --------------------
+let g:polyglot_disabled = ['markdown']
 
