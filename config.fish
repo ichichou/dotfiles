@@ -10,6 +10,7 @@ alias gu 'gitup'
 alias j 'z'
 alias tree 'tree -NC'
 alias v 'vim'
+alias vi 'vim'
 
 
 ## Functions

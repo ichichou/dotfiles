@@ -11,6 +11,7 @@ alias b='brew'
 alias bc='brew cask'
 alias g='git'
 alias v='vim'
+alias vi='vim'
 
 # Fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
