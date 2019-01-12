@@ -1,13 +1,15 @@
 ## Aliases
-alias cp 'cp -i'
-alias mv 'mv -i'
+alias cp 'cp -iv'
+alias mv 'mv -iv'
 alias rm 'rmtrash'
 
 alias b 'brew'
+alias bc 'brew cask'
 alias g 'git'
 alias gu 'gitup'
 alias j 'z'
 alias tree 'tree -NC'
+alias v 'vim'
 
 
 ## Functions
@@ -20,8 +22,7 @@ function ll
 end
 
 
-## Options
-
+## Plugins
 ### Fish
 set fish_greeting
 
