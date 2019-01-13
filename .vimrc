@@ -67,7 +67,7 @@ set listchars=eol:¬,tab:»\ ,trail:\ ,extends:>,precedes:<,nbsp:~
 set ambiwidth=double
 
 
-" GUI Options
+" GUI options
 " --------------------
 if has('gui_running')
   set guioptions+=c
@@ -102,7 +102,7 @@ endif
 
 
 " ----------------------------------------
-" Edit
+" Editting
 " ----------------------------------------
 set tabstop=4
 set softtabstop=4
@@ -204,19 +204,18 @@ noremap Q <Nop>
 noremap gQ <Nop>
 
 
-" Insert blank row
+" Insert blank line
 " --------------------
 nnoremap <silent> go :<C-u>for i in range(1, v:count1) \| call append(line('.'), '') \| endfor \| silent! call repeat#set("go", v:count1)<CR>
 nnoremap <silent> gO :<C-u>for i in range(1, v:count1) \| call append(line('.')-1, '') \| endfor \| silent! call repeat#set("gO", v:count1)<CR>
 
 
-" Window
+" Window control
 " --------------------
 nnoremap t <Nop>
 nnoremap [window] <Nop>
 nmap t [window]
 
-nnoremap [window]o :<C-u>edit<Space>
 nnoremap [window]/ :<C-u>vertical help<Space>
 
 nnoremap <silent> [window]s :<C-u>split<CR>
@@ -250,61 +249,76 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-" Generals
+" Editting
 " --------------------
-Plug 'vim-jp/vimdoc-ja'
-Plug 'itchyny/lightline.vim'
-Plug 'itchyny/vim-highlighturl'
-Plug 'cocopon/vaffle.vim'
-Plug 'cocopon/lightline-hybrid.vim'
-Plug 'godlygeek/tabular'
-Plug 'joker1007/vim-markdown-quote-syntax', { 'for': 'markdown' }
-Plug 'rcmdnk/vim-markdown', { 'for': 'markdown' }
-Plug 'kannokanno/previm', { 'for': 'markdown' }
-Plug 'suan/vim-instant-markdown', { 'for': 'markdown' }
-Plug 'tyru/open-browser.vim'
-Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-repeat'
 " Plug 'kana/vim-repeat'
-Plug 'LeafCage/yankround.vim'
-Plug 'airblade/vim-gitgutter'
-Plug 'easymotion/vim-easymotion'
-Plug 'haya14busa/is.vim'
-Plug 'haya14busa/vim-migemo'
-Plug 'glidenote/memolist.vim'
-Plug 'deton/jasentence.vim'
-Plug 'deton/jasegment.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-" Plug 'cohama/lexima.vim'
 Plug 'kana/vim-smartinput'
 Plug 'cohama/vim-smartinput-endwise'
-Plug 'tpope/vim-fugitive'
-Plug 'gregsexton/gitv', { 'on': 'Gitv' }
-" Plug 'cohama/agit.vim'
+" Plug 'cohama/lexima.vim'
+Plug 'LeafCage/yankround.vim'
 Plug 'tyru/caw.vim'
-Plug 'chriskempson/base16-vim'
+Plug 'godlygeek/tabular'
+Plug 'glidenote/memolist.vim'
+
+" Movement
+" --------------------
+Plug 'cocopon/vaffle.vim'
+Plug 'tyru/open-browser.vim'
+Plug 'haya14busa/is.vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
+" Language
+" --------------------
 Plug 'sheerun/vim-polyglot'
+Plug 'joker1007/vim-markdown-quote-syntax', { 'for': 'markdown' }
+Plug 'rcmdnk/vim-markdown', { 'for': 'markdown' }
+Plug 'suan/vim-instant-markdown', { 'for': 'markdown' }
+" Plug 'kannokanno/previm', { 'for': 'markdown' }
 Plug 'dahu/vim-asciidoc', { 'for': 'asciidoc' }
 " Plug 'dagwieers/asciidoc-vim', { 'for': 'asciidoc' }
 
-" Operator / Text Object
+" Operator / Text object
 " --------------------
 Plug 'kana/vim-operator-user'
-Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-operator-replace'
 Plug 'rhysd/vim-operator-surround'
 Plug 'haya14busa/vim-operator-flashy'
+Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-line'
+
+" Git
+" --------------------
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'gregsexton/gitv', { 'on': 'Gitv' }
+" Plug 'cohama/agit.vim', { 'on': 'Agit' }
+
+" Japanese
+" --------------------
+Plug 'vim-jp/vimdoc-ja'
+Plug 'haya14busa/vim-migemo'
+Plug 'deton/jasegment.vim'
+Plug 'deton/jasentence.vim'
+
+" Appearance
+" --------------------
+Plug 'chriskempson/base16-vim'
+Plug 'itchyny/lightline.vim'
+Plug 'itchyny/vim-highlighturl'
+Plug 'cocopon/lightline-hybrid.vim'
+Plug 'ntpeters/vim-better-whitespace'
 
 " Colorscheme
 " --------------------
 Plug 'w0ng/vim-hybrid', { 'do': 'cp colors/* ~/.vim/colors/' }
 Plug 'cocopon/iceberg.vim', { 'do': 'cp colors/* ~/.vim/colors/' }
+Plug 'arcticicestudio/nord-vim', { 'do': 'cp colors/* ~/.vim/colors/' }
 Plug 'jacoborus/tender.vim', { 'do': 'cp colors/* ~/.vim/colors/' }
 Plug 'tyrannicaltoucan/vim-deep-space', { 'do': 'cp colors/* ~/.vim/colors/' }
-Plug 'arcticicestudio/nord-vim', { 'do': 'cp colors/* ~/.vim/colors/' }
 Plug 'ajh17/Spacegray.vim', { 'do': 'cp colors/* ~/.vim/colors/' }
 Plug 'joshdick/onedark.vim', { 'do': 'cp colors/* ~/.vim/colors/' }
 
@@ -340,7 +354,6 @@ let g:nord_cursor_line_number_background = 1
 
 let g:spacegray_use_italics = 1
 let g:spacegray_underline_search = 1
-
 
 " lightline
 " --------------------
@@ -378,14 +391,12 @@ let g:lightline.tabline = {
   \ 'right': [ [ '' ] ]
   \ }
 
-
 " vaffle
 " --------------------
 let g:vaffle_auto_cd = 1
 let g:vaffle_show_hidden_files = 1
 
 nnoremap <silent> <Leader>v :<C-u>Vaffle<CR>
-
 
 " rcmdnk/vim-markdown
 " --------------------
@@ -395,21 +406,18 @@ highlight link htmlBoldItalic ErrorMsg
 
 let g:vim_markdown_folding_disabled = 1
 
-
-" previm
-" --------------------
-let g:previm_enable_realtime = 1
-let g:previm_show_header = 0
-let g:previm_disable_default_css = 0
-" let g:previm_custom_css_path = ''
-
-nnoremap <silent> <Leader>p :<C-u>PrevimOpen<CR>
-
-
 " vim-instant-markdown
 " --------------------
 let g:instant_markdown_autostart = 0
 
+" previm
+" --------------------
+" let g:previm_enable_realtime = 1
+" let g:previm_show_header = 0
+" let g:previm_disable_default_css = 0
+" " let g:previm_custom_css_path = ''
+"
+" nnoremap <silent> <Leader>p :<C-u>PrevimOpen<CR>
 
 " open-browser
 " --------------------
@@ -417,14 +425,12 @@ let g:netrw_nogx = 1
 
 map gx <Plug>(openbrowser-smart-search)
 
-
 " better-whitespace
 " --------------------
 let g:better_whitespace_filetypes_blacklist = [ 'diff', 'gitcommit', 'help' ]
 
 highlight ExtraWhitespace ctermbg=DarkRed
 highlight ExtraWhitespace guibg=DarkRed
-
 
 " jasegment
 " --------------------
@@ -436,7 +442,6 @@ call jasegment#define(
   \   'select-i': 'iE',
   \   'select-a': 'aE',
   \ })
-
 
 " yankround
 " --------------------
@@ -450,7 +455,6 @@ map gP <Plug>(yankround-gP)
 
 nmap <C-p> <Plug>(yankround-prev)
 nmap <C-n> <Plug>(yankround-next)
-
 
 " easymotion
 " --------------------
@@ -466,14 +470,14 @@ let g:EasyMotion_space_jump_first = 1
 let g:EasyMotion_use_upper = 1
 let g:EasyMotion_keys = ';HKLYUIOPNM,QWERTASDGZXCVBJF'
 
-""" 2-key Find Motion
+""" 2-key find motion
 map s <Plug>(easymotion-bd-f2)
 nmap s <Plug>(easymotion-overwin-f2)
 
-""" 1-key Find Motion (Within Line)
+""" 1-key find motion (within line)
 map <Leader>s <Plug>(easymotion-bd-fl)
 
-""" Custom Highlighting
+""" Custom highlighting
 " highlight link EasyMotionTarget ErrorMsg
 " highlight link EasyMotionShade Comment
 "
@@ -483,11 +487,9 @@ map <Leader>s <Plug>(easymotion-bd-fl)
 " highlight link EasyMotionMoveHL Search
 " highlight link EasyMotionIncSearch Search
 
-
 " operator-replace
 " --------------------
 map R <Plug>(operator-replace)
-
 
 " operator-surround
 " --------------------
@@ -502,12 +504,10 @@ let g:operator#surround#blocks = {
   \   { 'block': [ '**', '**' ], 'motionwise': [ 'char', 'line', 'block' ], 'keys': [ '*' ] },
   \ ]}
 
-
 " operator-flashy
 " --------------------
 map y <Plug>(operator-flashy)
 nmap Y <Plug>(operator-flashy)$
-
 
 " memolist
 " --------------------
@@ -519,7 +519,6 @@ let g:memolist_memo_date = "%Y-%m-%d %H:%M"
 nnoremap <Leader>mn :<C-u>MemoNew<CR>
 nnoremap <Leader>ml :<C-u>MemoList<CR>
 nnoremap <Leader>mg :<C-u>MemoGrep<CR>
-
 
 " fzf.vim
 " --------------------
@@ -547,7 +546,6 @@ command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
   \   'rg  --line-number --no-heading --color=auto --smart-case '.shellescape(<q-args>), 0,
   \   fzf#vim#with_preview('right:50%:wrap'))
-
 
 " lexima
 " --------------------
@@ -578,20 +576,24 @@ command! -bang -nargs=* Rg
 " call lexima#add_rule({'char': '<BS>', 'at': '【\%#】', 'input': '<BS>', 'delete' : 1})
 " call lexima#add_rule({'char': '<BS>', 'at': '〔\%#〕', 'input': '<BS>', 'delete' : 1})
 
-
 " fugitive.vim
 " --------------------
+nnoremap <Leader>g <Nop>
+nnoremap [fugitive] <Nop>
+nmap <Leader>g [fugitive]
 
+nnoremap [fugitive]s :<C-u>Gstatus<CR>
+nnoremap [fugitive]d :<C-u>Gdiff<CR>
+nnoremap [fugitive]a :<C-u>Gwrite<CR>
+nnoremap [fugitive]C :<C-u>Gcommit<CR>
 
 " gitv
 " --------------------
-
 
 " caw.vim
 " --------------------
 map <Leader>c <Plug>(caw:hatpos:toggle)
 map <Leader>0 <Plug>(caw:zeropos:toggle)
-
 
 " vim-polyglot
 " --------------------
