@@ -63,9 +63,8 @@ set breakindent
 set belloff=all
 
 set list
-set listchars=eol:¬,tab:»\ ,trail:\ ,extends:>,precedes:<,nbsp:~
+set listchars=eol:¬,tab:»\-,trail:\ ,extends:>,precedes:<,nbsp:~
 set ambiwidth=double
-
 
 " GUI options
 " --------------------
