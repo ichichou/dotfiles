@@ -264,8 +264,8 @@ Plug 'glidenote/memolist.vim'
 " --------------------
 Plug 'cocopon/vaffle.vim'
 Plug 'tyru/open-browser.vim'
-Plug 'haya14busa/is.vim'
 Plug 'easymotion/vim-easymotion'
+Plug 'haya14busa/is.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
@@ -276,7 +276,6 @@ Plug 'joker1007/vim-markdown-quote-syntax', { 'for': 'markdown' }
 Plug 'rcmdnk/vim-markdown', { 'for': 'markdown' }
 Plug 'suan/vim-instant-markdown', { 'for': 'markdown' }
 " Plug 'kannokanno/previm', { 'for': 'markdown' }
-Plug 'dahu/vim-asciidoc', { 'for': 'asciidoc' }
 " Plug 'dagwieers/asciidoc-vim', { 'for': 'asciidoc' }
 
 " Operator / Text object
