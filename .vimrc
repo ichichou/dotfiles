@@ -358,7 +358,8 @@ let g:spacegray_underline_search = 1
 " powerline wombat jellybeans solarized PaperColor seoul256 Dracula one landscape
 " hybrid iceberg tender tenderplus deepspace nord onedark
 
-let g:lightline = {
+if has('gui_running')
+  let g:lightline = {
   \ 'colorscheme': 'iceberg',
   \ 'active': {
   \   'left': [
@@ -375,6 +376,25 @@ let g:lightline = {
   \ 'component_function': {
   \   'filepath': 'FilePath'
   \ }}
+else
+  let g:lightline = {
+  \ 'colorscheme': 'hybrid',
+  \ 'active': {
+  \   'left': [
+  \     [ 'mode', 'paste' ],
+  \     [ 'readonly', 'filepath', 'modified' ] ],
+  \   'right': [
+  \     [ 'lineinfo' ],
+  \     [ 'percent' ],
+  \     [ 'fileformat', 'fileencoding', 'filetype' ] ]
+  \ },
+  \ 'component': {
+  \   'percent': '%3p%% [%LL]'
+  \ },
+  \ 'component_function': {
+  \   'filepath': 'FilePath'
+  \ }}
+endif
 
 function! FilePath()
   if winwidth(0) > 70
