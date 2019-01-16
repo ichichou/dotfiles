@@ -312,6 +312,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-highlighturl'
 Plug 'cocopon/lightline-hybrid.vim'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'Yggdroot/indentLine'
 
 " Colorscheme
 " --------------------
@@ -440,20 +441,28 @@ let g:instant_markdown_autostart = 0
 "
 " nnoremap <silent> <Leader>p :<C-u>PrevimOpen<CR>
 
-" open-browser
+" Open-browser
 " --------------------
 let g:netrw_nogx = 1
 
 map gx <Plug>(openbrowser-smart-search)
 
-" better-whitespace
+" Better-whitespace
 " --------------------
 let g:better_whitespace_filetypes_blacklist = [ 'diff', 'gitcommit', 'help' ]
 
 highlight ExtraWhitespace ctermbg=DarkRed
 highlight ExtraWhitespace guibg=DarkRed
 
-" jasegment
+" indentLine
+" --------------------
+" let g:indentLine_setColors = 0
+" let g:indentLine_color_term =
+" let g:indentLine_color_gui = ''
+" let g:indentLine_char = ''
+let g:indentLine_fileTypeExclude = ['help', 'markdown', 'asciidoc']
+
+" Jasegment
 " --------------------
 call jasegment#define(
   \ 'nonblank', {
