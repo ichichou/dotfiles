@@ -357,7 +357,7 @@ let g:nord_cursor_line_number_background = 1
 let g:spacegray_use_italics = 1
 let g:spacegray_underline_search = 1
 
-" lightline
+" Lightline
 " --------------------
 " powerline wombat jellybeans solarized PaperColor seoul256 Dracula one landscape
 " hybrid iceberg tender tenderplus deepspace nord onedark
@@ -413,7 +413,7 @@ let g:lightline.tabline = {
   \ 'right': [ [ '' ] ]
   \ }
 
-" vaffle
+" Vaffle
 " --------------------
 let g:vaffle_auto_cd = 1
 let g:vaffle_show_hidden_files = 1
@@ -432,7 +432,7 @@ let g:vim_markdown_folding_disabled = 1
 " --------------------
 let g:instant_markdown_autostart = 0
 
-" previm
+" Previm
 " --------------------
 " let g:previm_enable_realtime = 1
 " let g:previm_show_header = 0
@@ -473,7 +473,7 @@ call jasegment#define(
   \   'select-a': 'aE',
   \ })
 
-" yankround
+" Yankround
 " --------------------
 let g:yankround_max_history = 50
 let g:yankround_use_region_hl = 1
@@ -486,7 +486,7 @@ map gP <Plug>(yankround-gP)
 nmap <C-p> <Plug>(yankround-prev)
 nmap <C-n> <Plug>(yankround-next)
 
-" easymotion
+" Easymotion
 " --------------------
 let g:EasyMotion_do_mapping = 0
 
@@ -517,11 +517,11 @@ map <Leader>s <Plug>(easymotion-bd-fl)
 " highlight link EasyMotionMoveHL Search
 " highlight link EasyMotionIncSearch Search
 
-" operator-replace
+" Operator-replace
 " --------------------
 map R <Plug>(operator-replace)
 
-" operator-surround
+" Operator-surround
 " --------------------
 nnoremap S <Nop>
 
@@ -534,12 +534,12 @@ let g:operator#surround#blocks = {
   \   { 'block': [ '**', '**' ], 'motionwise': [ 'char', 'line', 'block' ], 'keys': [ '*' ] },
   \ ]}
 
-" operator-flashy
+" Operator-flashy
 " --------------------
 map y <Plug>(operator-flashy)
 nmap Y <Plug>(operator-flashy)$
 
-" memolist
+" Memolist
 " --------------------
 let g:memolist_path = "$HOME/Dropbox/memos"
 let g:memolist_template_dir_path = "$HOME/dotfiles"
@@ -550,7 +550,7 @@ nnoremap <Leader>mn :<C-u>MemoNew<CR>
 nnoremap <Leader>ml :<C-u>MemoList<CR>
 nnoremap <Leader>mg :<C-u>MemoGrep<CR>
 
-" fzf.vim
+" Fzf
 " --------------------
 let g:fzf_layout = { 'down': '~60%' }
 let g:fzf_buffers_jump = 1
@@ -577,7 +577,7 @@ command! -bang -nargs=* Rg
   \   'rg  --line-number --no-heading --color=auto --smart-case '.shellescape(<q-args>), 0,
   \   fzf#vim#with_preview('right:50%:wrap'))
 
-" lexima
+" Lexima
 " --------------------
 " call lexima#add_rule({'char': '（', 'input': '（', 'input_after': '）'})
 " call lexima#add_rule({'char': '［', 'input': '［', 'input_after': '］'})
@@ -606,7 +606,7 @@ command! -bang -nargs=* Rg
 " call lexima#add_rule({'char': '<BS>', 'at': '【\%#】', 'input': '<BS>', 'delete' : 1})
 " call lexima#add_rule({'char': '<BS>', 'at': '〔\%#〕', 'input': '<BS>', 'delete' : 1})
 
-" fugitive.vim
+" Fugitive.vim
 " --------------------
 nnoremap <Leader>g <Nop>
 nnoremap [fugitive] <Nop>
@@ -617,10 +617,10 @@ nnoremap [fugitive]d :<C-u>Gdiff<CR>
 nnoremap [fugitive]a :<C-u>Gwrite<CR>
 nnoremap [fugitive]C :<C-u>Gcommit<CR>
 
-" gitv
+" Gitv
 " --------------------
 
-" caw.vim
+" Caw.vim
 " --------------------
 map <Leader>c <Plug>(caw:hatpos:toggle)
 map <Leader>0 <Plug>(caw:zeropos:toggle)
@@ -628,4 +628,22 @@ map <Leader>0 <Plug>(caw:zeropos:toggle)
 " vim-polyglot
 " --------------------
 let g:polyglot_disabled = ['markdown']
+
+" Tabular
+" --------------------
+map <Leader>a= :Tabularize /=<CR>
+map <Leader>a: :Tabularize /:\zs<CR>
+
+inoremap <silent> <Bar> <Bar><Esc>:call <SID>align()<CR>a
+
+function! s:align()
+  let p = '^\s*|\s.*\s|\s*$'
+  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+    Tabularize/|/l1
+    normal! 0
+    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+  endif
+endfunction
 
