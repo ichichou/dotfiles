@@ -12,11 +12,11 @@ if [[ ! -e ${DOT_DIR} ]]; then
 fi
 
 cd ${DOT_DIR}
-for f in .??*; do
-    [[ ${f} == ".git" ]] && continue
-    [[ ${f} == ".gitignore" ]] && continue
-    [[ ${f} == ".DS_Store" ]] && continue
-    ln -snfv ${DOT_DIR}/${f} ${HOME}/${f}
+for i in .??*; do
+    [[ ${i} == ".git" ]] && continue
+    [[ ${i} == ".gitignore" ]] && continue
+    [[ ${i} == ".DS_Store" ]] && continue
+    ln -snfv ${DOT_DIR}/${i} ${HOME}/${i}
 done
 
 mkdir -p ${CONFIG_DIR}/fish ${CONFIG_DIR}/karabiner
