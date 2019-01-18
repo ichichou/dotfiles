@@ -125,7 +125,7 @@ set smartindent
 set shiftround
 
 set textwidth=0
-set virtualedit=onemore
+" set virtualedit=onemore
 set backspace=indent,eol,start
 set whichwrap=b,s,h,l,<,>,[,]
 set clipboard=unnamed
@@ -559,12 +559,14 @@ nnoremap <Leader>f <Nop>
 nnoremap [fzf] <Nop>
 nmap <Leader>f [fzf]
 
-nnoremap [fzf]f :<C-u>Files<CR>
 nnoremap [fzf]b :<C-u>Buffers<CR>
-nnoremap [fzf]l :<C-u>BLines<CR>
+nnoremap [fzf]c :<C-u>Colors<CR>
+nnoremap [fzf]f :<C-u>Files<CR>
 nnoremap [fzf]h :<C-u>History<CR>
+nnoremap [fzf]l :<C-u>BLines<CR>
 nnoremap [fzf]m :<C-u>Marks<CR>
 nnoremap [fzf]r :<C-u>Rg<Space>
+nnoremap [fzf]t :<C-u>Filetypes<CR>
 
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
@@ -576,35 +578,6 @@ command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
   \   'rg  --line-number --no-heading --color=auto --smart-case '.shellescape(<q-args>), 0,
   \   fzf#vim#with_preview('right:50%:wrap'))
-
-" Lexima
-" --------------------
-" call lexima#add_rule({'char': '（', 'input': '（', 'input_after': '）'})
-" call lexima#add_rule({'char': '［', 'input': '［', 'input_after': '］'})
-" call lexima#add_rule({'char': '｛', 'input': '｛', 'input_after': '｝'})
-" call lexima#add_rule({'char': '「', 'input': '「', 'input_after': '」'})
-" call lexima#add_rule({'char': '『', 'input': '『', 'input_after': '』'})
-" call lexima#add_rule({'char': '〈', 'input': '〈', 'input_after': '〉'})
-" call lexima#add_rule({'char': '【', 'input': '【', 'input_after': '】'})
-" call lexima#add_rule({'char': '〔', 'input': '〔', 'input_after': '〕'})
-"
-" call lexima#add_rule({'char': '）', 'at': '\%#）', 'leave': 1})
-" call lexima#add_rule({'char': '］', 'at': '\%#］', 'leave': 1})
-" call lexima#add_rule({'char': '｝', 'at': '\%#｝', 'leave': 1})
-" call lexima#add_rule({'char': '」', 'at': '\%#」', 'leave': 1})
-" call lexima#add_rule({'char': '』', 'at': '\%#』', 'leave': 1})
-" call lexima#add_rule({'char': '〉', 'at': '\%#〉', 'leave': 1})
-" call lexima#add_rule({'char': '】', 'at': '\%#】', 'leave': 1})
-" call lexima#add_rule({'char': '〕', 'at': '\%#〕', 'leave': 1})
-"
-" call lexima#add_rule({'char': '<BS>', 'at': '（\%#）', 'input': '<BS>', 'delete' : 1})
-" call lexima#add_rule({'char': '<BS>', 'at': '［\%#］', 'input': '<BS>', 'delete' : 1})
-" call lexima#add_rule({'char': '<BS>', 'at': '｛\%#｝', 'input': '<BS>', 'delete' : 1})
-" call lexima#add_rule({'char': '<BS>', 'at': '「\%#」', 'input': '<BS>', 'delete' : 1})
-" call lexima#add_rule({'char': '<BS>', 'at': '『\%#』', 'input': '<BS>', 'delete' : 1})
-" call lexima#add_rule({'char': '<BS>', 'at': '〈\%#〉', 'input': '<BS>', 'delete' : 1})
-" call lexima#add_rule({'char': '<BS>', 'at': '【\%#】', 'input': '<BS>', 'delete' : 1})
-" call lexima#add_rule({'char': '<BS>', 'at': '〔\%#〕', 'input': '<BS>', 'delete' : 1})
 
 " Fugitive.vim
 " --------------------
