@@ -1,9 +1,14 @@
 advanced-open-file
+asciidoc-image-helper
+asciidoc-preview
 auto-encoding
+autocomplete-asciidoc
 file-icons
 highlight-line
 highlight-selected
+japanese-menu
 japanese-word-selection
+language-asciidoc
 language-gfm-enhanced
 markdown-preview-enhanced
 markdown-writer
@@ -18,13 +23,8 @@ show-ideographic-space
 sort-lines
 split-diff
 trailing-spaces
-wordcount
-
 vim-mode-plus
-asciidoc-image-helper
-asciidoc-preview
-autocomplete-asciidoc
-language-asciidoc
+wordcount
 
 ariake-dark-syntax
 atom-material-syntax

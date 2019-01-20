@@ -3,6 +3,7 @@ auto-encoding
 file-icons
 highlight-line
 highlight-selected
+japanese-menu
 japanese-word-selection
 language-gfm-enhanced
 markdown-preview-enhanced
@@ -20,21 +21,5 @@ split-diff
 trailing-spaces
 wordcount
 
-vim-mode-plus
-asciidoc-image-helper
-asciidoc-preview
-autocomplete-asciidoc
-language-asciidoc
-
-ariake-dark-syntax
-atom-material-syntax
-iceberg-syntax
-newbound-dark-syntax
-newbound-warm-syntax
-nord-atom-syntax
-nord-atom-ui
-northem-atom-syntax
-northem-atom-ui
-nucleus-dark-ui
 pen-paper-coffee-syntax
 
