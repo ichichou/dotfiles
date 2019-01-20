@@ -255,12 +255,13 @@ call plug#begin('~/.vim/plugged')
 " --------------------
 Plug 'tpope/vim-repeat'
 " Plug 'kana/vim-repeat'
+Plug 'LeafCage/yankround.vim'
 Plug 'kana/vim-smartinput'
 Plug 'cohama/vim-smartinput-endwise'
 " Plug 'cohama/lexima.vim'
-Plug 'LeafCage/yankround.vim'
 Plug 'tyru/caw.vim'
 Plug 'godlygeek/tabular'
+Plug 'mattn/emmet-vim'
 Plug 'glidenote/memolist.vim'
 
 " Movement
@@ -432,6 +433,8 @@ let g:vim_markdown_folding_disabled = 1
 " --------------------
 let g:instant_markdown_autostart = 0
 
+nnoremap <silent> <Leader>p :<C-u>InstantMarkdownPreview<CR>
+
 " Previm
 " --------------------
 " let g:previm_enable_realtime = 1
@@ -500,20 +503,15 @@ let g:EasyMotion_space_jump_first = 1
 let g:EasyMotion_use_upper = 1
 let g:EasyMotion_keys = ';HKLYUIOPNM,QWERTASDGZXCVBJF'
 
-""" 2-key find motion
 map s <Plug>(easymotion-bd-f2)
 nmap s <Plug>(easymotion-overwin-f2)
-
-""" 1-key find motion (within line)
 map <Leader>s <Plug>(easymotion-bd-fl)
 
 """ Custom highlighting
 " highlight link EasyMotionTarget ErrorMsg
 " highlight link EasyMotionShade Comment
-"
 " highlight link EasyMotionTarget2First MatchParen
 " highlight link EasyMotionTarget2Second MatchParen
-"
 " highlight link EasyMotionMoveHL Search
 " highlight link EasyMotionIncSearch Search
 
