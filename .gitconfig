@@ -35,6 +35,7 @@
     cob = checkout -b
     d = diff
     fc = fetch
+    fcp = fetch --prune
     g = grep
     lg = log
     lgg = log --graph --oneline --decorate
@@ -42,6 +43,7 @@
     mg = merge
     pl = pull
     ps = push
+    psd = push --delete
     psu = push --set-upstream
     rl = reflog
     s = status --short --branch
