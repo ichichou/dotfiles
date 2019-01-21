@@ -428,6 +428,7 @@ highlight link htmlBold WarningMsg
 highlight link htmlBoldItalic ErrorMsg
 
 let g:vim_markdown_folding_disabled = 1
+" let g:vim_markdown_conceal = 0
 
 " vim-instant-markdown
 " --------------------
@@ -459,11 +460,9 @@ highlight ExtraWhitespace guibg=DarkRed
 
 " indentLine
 " --------------------
-" let g:indentLine_setColors = 0
-" let g:indentLine_color_term =
-" let g:indentLine_color_gui = ''
-" let g:indentLine_char = ''
-let g:indentLine_fileTypeExclude = ['help', 'markdown', 'asciidoc']
+" let g:indentLine_enabled = 0
+let g:indentLine_fileTypeExclude = [ 'text', 'markdown', 'asciidoc' ]
+let g:indentLine_bufTypeExclude = [ 'help', 'terminal' ]
 
 " Jasegment
 " --------------------
