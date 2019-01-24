@@ -296,8 +296,7 @@ Plug 'kana/vim-textobj-line'
 " --------------------
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
-Plug 'gregsexton/gitv', { 'on': 'Gitv' }
-" Plug 'cohama/agit.vim', { 'on': 'Agit' }
+Plug 'cohama/agit.vim', { 'on': 'Agit' }
 
 " Japanese
 " --------------------
@@ -587,7 +586,7 @@ nnoremap [fugitive]d :<C-u>Gdiff<CR>
 nnoremap [fugitive]a :<C-u>Gwrite<CR>
 nnoremap [fugitive]C :<C-u>Gcommit<CR>
 
-" Gitv
+" Agit
 " --------------------
 
 " Caw.vim
