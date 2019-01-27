@@ -7,11 +7,18 @@ alias b 'brew'
 alias bc 'brew cask'
 alias g 'git'
 alias gu 'gitup'
-alias j 'z'
 alias tree 'tree -NC'
-alias v 'vim'
 alias vi 'vim'
 
+alias a 'fasd -a'
+alias s 'fasd -si'
+alias d 'fasd -d'
+alias f 'fasd -f'
+alias sd 'fasd -sid'
+alias sf 'fasd -sif'
+alias j 'fasd_cd -d'
+alias jj 'fasd_cd -d -i'
+alias v 'fasd -f -e vim'
 
 ## Functions
 function ls
