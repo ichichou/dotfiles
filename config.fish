@@ -10,17 +10,18 @@ alias gu 'gitup'
 alias tree 'tree -NC'
 alias vi 'vim'
 
-alias a 'fasd -a'
-alias s 'fasd -si'
-alias d 'fasd -d'
-alias f 'fasd -f'
-alias sd 'fasd -sid'
-alias sf 'fasd -sif'
+alias a='fasd -a'
+alias s='fasd -si'
+alias d='fasd -d'
+alias f='fasd -f'
+alias sd='fasd -sid'
+alias sf='fasd -sif'
 alias j 'fasd_cd -d'
 alias jj 'fasd_cd -d -i'
 alias v 'fasd -f -e vim'
 
 ## Functions
+### ls
 function ls
     command ls -aG $argv
 end
@@ -33,6 +34,7 @@ function lla
     command exa -al --git $argv
 end
 
+### git
 
 ## Plugins
 ### Fish
