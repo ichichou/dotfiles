@@ -36,6 +36,9 @@ function lla
 end
 
 ### git
+function gcmm
+    command git commit $argv --message $argv
+end
 
 ## Plugins
 ### Fish
