@@ -11,14 +11,14 @@ alias tree 'tree -NC'
 alias vi 'vim'
 
 ### fasd
-alias a 'fasd -a'
-alias s 'fasd -si'
-alias d 'fasd -d'
-alias f 'fasd -f'
-alias sd 'fasd -sid'
-alias sf 'fasd -sif'
-alias j 'fasd_cd -d'
-alias jj 'fasd_cd -d -i'
+# alias a 'fasd -a'
+# alias s 'fasd -si'
+# alias d 'fasd -d'
+# alias f 'fasd -f'
+# alias sd 'fasd -sid'
+# alias sf 'fasd -sif'
+# alias j 'fasd_cd -d'
+# alias jj 'fasd_cd -d -i'
 alias v 'fasd -f -e vim'
 
 ## Functions
@@ -37,7 +37,7 @@ end
 
 ### git
 function gcmm
-    command git commit $argv --message $argv
+    command git commit $argv[1] --message $argv[2]
 end
 
 ## Plugins
