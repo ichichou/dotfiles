@@ -10,6 +10,17 @@ alias gu 'gitup'
 alias tree 'tree -NC'
 alias vi 'vim'
 
+### ls/exa
+if test -e "/usr/local/bin/exa"
+    alias ls 'exa -a'
+    alias ll 'exa -1a'
+    alias la 'exa -al --git'
+else
+    alias ls 'ls -aG'
+    alias ll 'ls -1aG'
+    alias la 'ls -alG'
+end
+
 ### fasd
 # alias a 'fasd -a'
 # alias s 'fasd -si'
@@ -22,19 +33,6 @@ alias vi 'vim'
 alias v 'fasd -f -e vim'
 
 ## Functions
-### ls
-function ls
-    command ls -aG $argv
-end
-
-function ll
-    command ls -1aG $argv
-end
-
-function lla
-    command exa -al --git $argv
-end
-
 ### git
 function gcmm
     command git commit $argv[1] --message $argv[2]
