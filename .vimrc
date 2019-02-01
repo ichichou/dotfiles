@@ -503,7 +503,8 @@ let g:EasyMotion_keys = ';HKLYUIOPNM,QWERTASDGZXCVBJF'
 
 map s <Plug>(easymotion-bd-f2)
 nmap s <Plug>(easymotion-overwin-f2)
-map <Leader>s <Plug>(easymotion-bd-fl)
+" map f <Plug>(easymotion-bd-fl)
+map F <Plug>(easymotion-bd-fl)
 
 """ Custom highlighting
 " highlight link EasyMotionTarget ErrorMsg
