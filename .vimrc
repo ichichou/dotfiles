@@ -263,6 +263,7 @@ Plug 'tyru/caw.vim'
 Plug 'godlygeek/tabular'
 Plug 'mattn/emmet-vim'
 Plug 'glidenote/memolist.vim'
+Plug 'qpkorr/vim-renamer'
 
 " Movement
 " --------------------
