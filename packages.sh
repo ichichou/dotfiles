@@ -4,7 +4,6 @@ set -eu
 
 curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
 fisher self-update
-fisher add fishgretel/fasd
 fisher add jethrokuan/fzf
 fisher add jethrokuan/z
 fisher add rafaelrinaldi/pure
