@@ -183,6 +183,10 @@ noremap X "_X
 noremap + <C-a>
 noremap - <C-x>
 
+noremap い i
+noremap あ a
+noremap お o
+
 noremap <silent> j gj
 noremap <silent> k gk
 noremap <silent> gj j
