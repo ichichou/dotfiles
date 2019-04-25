@@ -317,7 +317,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-highlighturl'
 Plug 'cocopon/lightline-hybrid.vim'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'Yggdroot/indentLine'
 
 " Colorscheme
 " --------------------
@@ -325,9 +324,6 @@ Plug 'w0ng/vim-hybrid', { 'do': 'cp colors/* ~/.vim/colors/' }
 Plug 'cocopon/iceberg.vim', { 'do': 'cp colors/* ~/.vim/colors/' }
 Plug 'arcticicestudio/nord-vim', { 'do': 'cp colors/* ~/.vim/colors/' }
 Plug 'jacoborus/tender.vim', { 'do': 'cp colors/* ~/.vim/colors/' }
-Plug 'tyrannicaltoucan/vim-deep-space', { 'do': 'cp colors/* ~/.vim/colors/' }
-Plug 'ajh17/Spacegray.vim', { 'do': 'cp colors/* ~/.vim/colors/' }
-Plug 'joshdick/onedark.vim', { 'do': 'cp colors/* ~/.vim/colors/' }
 
 call plug#end()
 
@@ -340,7 +336,7 @@ call plug#end()
 " --------------------
 if has('gui_running')
   colorscheme iceberg
-  " hybrid iceberg tender deep-space nord onedark spacegray
+  " hybrid iceberg tender nord
 else
   if filereadable(expand("~/.vimrc_background"))
     let base16colorspace=256
@@ -365,7 +361,7 @@ let g:spacegray_underline_search = 1
 " Lightline
 " --------------------
 " powerline wombat jellybeans solarized PaperColor seoul256 Dracula one landscape
-" hybrid iceberg tender tenderplus deepspace nord onedark
+" hybrid iceberg tender tenderplus nord
 
 if has('gui_running')
   let g:lightline = {
@@ -462,12 +458,6 @@ let g:better_whitespace_filetypes_blacklist = [ 'diff', 'gitcommit', 'help' ]
 highlight ExtraWhitespace ctermbg=DarkRed
 highlight ExtraWhitespace guibg=DarkRed
 
-" indentLine
-" --------------------
-" let g:indentLine_enabled = 0
-let g:indentLine_fileTypeExclude = [ 'text', 'markdown', 'asciidoc' ]
-let g:indentLine_bufTypeExclude = [ 'help', 'terminal' ]
-
 " Jasegment
 " --------------------
 call jasegment#define(
@@ -543,7 +533,7 @@ nmap Y <Plug>(operator-flashy)$
 
 " Memolist
 " --------------------
-let g:memolist_path = "$HOME/Dropbox/memos"
+let g:memolist_path = "$HOME/Box/memos"
 let g:memolist_template_dir_path = "$HOME/dotfiles"
 let g:memolist_memo_suffix = "md"
 let g:memolist_memo_date = "%Y-%m-%d %H:%M"
