@@ -499,7 +499,7 @@ let g:EasyMotion_keys = ';HKLYUIOPNM,QWERTASDGZXCVBJF'
 map s <Plug>(easymotion-bd-f2)
 nmap s <Plug>(easymotion-overwin-f2)
 " map f <Plug>(easymotion-bd-fl)
-map F <Plug>(easymotion-bd-fl)
+" map F <Plug>(easymotion-bd-fl)
 
 """ Custom highlighting
 " highlight link EasyMotionTarget ErrorMsg
@@ -533,7 +533,7 @@ nmap Y <Plug>(operator-flashy)$
 
 " Memolist
 " --------------------
-let g:memolist_path = "$HOME/Box/memos"
+let g:memolist_path = "$HOME/Box/Memos"
 let g:memolist_template_dir_path = "$HOME/dotfiles"
 let g:memolist_memo_suffix = "md"
 let g:memolist_memo_date = "%Y-%m-%d %H:%M"
