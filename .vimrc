@@ -186,6 +186,7 @@ noremap - <C-x>
 noremap い i
 noremap あ a
 noremap お o
+noremap う u
 
 noremap <silent> j gj
 noremap <silent> k gk
