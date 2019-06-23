@@ -263,10 +263,8 @@ Plug 'tpope/vim-repeat'
 Plug 'LeafCage/yankround.vim'
 Plug 'kana/vim-smartinput'
 Plug 'cohama/vim-smartinput-endwise'
-" Plug 'cohama/lexima.vim'
 Plug 'tyru/caw.vim'
 Plug 'godlygeek/tabular'
-Plug 'mattn/emmet-vim'
 Plug 'glidenote/memolist.vim'
 Plug 'qpkorr/vim-renamer'
 
@@ -313,7 +311,7 @@ Plug 'deton/jasentence.vim'
 
 " Appearance
 " --------------------
-Plug 'chriskempson/base16-vim'
+" Plug 'chriskempson/base16-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-highlighturl'
 Plug 'cocopon/lightline-hybrid.vim'
