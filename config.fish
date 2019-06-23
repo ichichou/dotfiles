@@ -9,6 +9,7 @@ alias g 'git'
 alias gu 'gitup'
 alias tree 'tree -NC'
 alias vi 'vim'
+alias j 'z'
 
 ### ls/exa
 if test -e "/usr/local/bin/exa"
