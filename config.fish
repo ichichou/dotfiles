@@ -30,7 +30,7 @@ end
 # alias sf 'fasd -sif'
 # alias j 'fasd_cd -d'
 # alias jj 'fasd_cd -d -i'
-alias v 'fasd -f -e vim'
+# alias v 'fasd -f -e vim'
 
 ## Functions
 ### git
@@ -46,8 +46,8 @@ set fish_greeting
 set -U FZF_LEGACY_KEYBINDINGS 0
 
 ### Base16
-if status --is-interactive
-    set BASE16_SHELL "$HOME/.config/base16-shell"
-    source "$BASE16_SHELL/profile_helper.fish"
-end
+# if status --is-interactive
+#     set BASE16_SHELL "$HOME/.config/base16-shell"
+#     source "$BASE16_SHELL/profile_helper.fish"
+# end
 
