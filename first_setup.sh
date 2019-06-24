@@ -28,6 +28,7 @@ ln -snfv ${DOT}/config.fish ${CONFIG}/fish/config.fish
 
 ln -snfv ${SETTING}/AquaSKK/kana-rule.conf ${Aqua}/kana-rule.conf
 ln -snfv ${SETTING}/AquaSKK/keymap.conf ${Aqua}/keymap.conf
+ln -snfv ${SETTING}/AquaSKK/skk-jisyo.utf8 ${Aqua}/skk-jisyo.utf8
 
 defaults write -g InitialKeyRepeat -int 10
 defaults write -g KeyRepeat -int 1
