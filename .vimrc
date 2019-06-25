@@ -516,13 +516,16 @@ map R <Plug>(operator-replace)
 " --------------------
 nnoremap S <Nop>
 
-map Sa <Plug>(operator-surround-append)
-map Sd <Plug>(operator-surround-delete)
-map Sr <Plug>(operator-surround-replace)
+map S <Plug>(operator-surround-append)
+" map Sa <Plug>(operator-surround-append)
+" map Sd <Plug>(operator-surround-delete)
+" map Sr <Plug>(operator-surround-replace)
 
 let g:operator#surround#blocks = {
   \ '-' : [
   \   { 'block': [ '**', '**' ], 'motionwise': [ 'char', 'line', 'block' ], 'keys': [ '*' ] },
+  \   { 'block': [ '（', '）' ], 'motionwise': [ 'char', 'line', 'block' ], 'keys': [ '（', '）' ] },
+  \   { 'block': [ '「', '」' ], 'motionwise': [ 'char', 'line', 'block' ], 'keys': [ '「', '」' ] }
   \ ]}
 
 " Operator-flashy
