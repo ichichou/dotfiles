@@ -4,7 +4,6 @@ set -eu
 
 DOT="${HOME}/dotfiles"
 CONFIG="${HOME}/.config"
-
 SETTING="${HOME}/Box/Setting_files"
 Aqua="${HOME}/Library/Application\ Support/AquaSKK"
 
@@ -22,12 +21,14 @@ for i in .??*; do
     ln -snfv ${DOT}/${i} ${HOME}/${i}
 done
 
-mkdir -p ${CONFIG}/karabiner ${CONFIG}/fish
+mkdir -p ${CONFIG}/karabiner
 ln -snfv ${DOT}/karabiner.json ${CONFIG}/karabiner/karabiner.json
+
+mkdir -p ${CONFIG}/fish
 ln -snfv ${DOT}/config.fish ${CONFIG}/fish/config.fish
 
-ln -snfv ${SETTING}/AquaSKK/kana-rule.conf ${Aqua}/kana-rule.conf
-ln -snfv ${SETTING}/AquaSKK/keymap.conf ${Aqua}/keymap.conf
+ln -snfv ${DOT}/kana-rule.conf ${Aqua}/kana-rule.conf
+ln -snfv ${DOT}/keymap.conf ${Aqua}/keymap.conf
 ln -snfv ${SETTING}/AquaSKK/skk-jisyo.utf8 ${Aqua}/skk-jisyo.utf8
 
 defaults write -g InitialKeyRepeat -int 10
