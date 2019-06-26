@@ -284,12 +284,12 @@ call plug#begin('~/.vim/plugged')
 " Plug 'tpope/vim-fugitive'
 " Plug 'cohama/agit.vim', { 'on': 'Agit' }
 
-" " Japanese
-" " --------------------
-" Plug 'vim-jp/vimdoc-ja'
-" Plug 'haya14busa/vim-migemo'
-" Plug 'deton/jasegment.vim'
-" Plug 'deton/jasentence.vim'
+" Japanese
+" --------------------
+Plug 'vim-jp/vimdoc-ja'
+Plug 'haya14busa/vim-migemo'
+Plug 'deton/jasegment.vim'
+Plug 'deton/jasentence.vim'
 
 " Appearance
 " --------------------
