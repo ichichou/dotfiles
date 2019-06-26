@@ -51,7 +51,18 @@ module.exports = {
     // webGLRenderer: true,
   },
 
-  plugins: ["hyper-statusline"],
+  plugins: [
+    'hyper-pane',
+    'hyper-search',
+    'hyper-statusline',
+    'hyper-tabs-enhanced',
+    'hypercwd',
+
+    'hyper-iceberg',
+    // 'hyperterm-hybrid',
+    // 'hyperterm-tomorrow-night',
+    // 'nord-hyper',
+  ],
 
   localPlugins: [],
 
