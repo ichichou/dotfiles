@@ -291,19 +291,19 @@ call plug#begin('~/.vim/plugged')
 " Plug 'deton/jasegment.vim'
 " Plug 'deton/jasentence.vim'
 
-" " Appearance
-" " --------------------
-" Plug 'itchyny/lightline.vim'
-" Plug 'itchyny/vim-highlighturl'
-" Plug 'cocopon/lightline-hybrid.vim'
-" Plug 'ntpeters/vim-better-whitespace'
+" Appearance
+" --------------------
+Plug 'itchyny/lightline.vim'
+Plug 'itchyny/vim-highlighturl'
+Plug 'cocopon/lightline-hybrid.vim'
+Plug 'ntpeters/vim-better-whitespace'
 
-" " Colorscheme
-" " --------------------
-" Plug 'w0ng/vim-hybrid', { 'do': 'cp colors/* ~/.vim/colors/' }
-" Plug 'cocopon/iceberg.vim', { 'do': 'cp colors/* ~/.vim/colors/' }
-" Plug 'arcticicestudio/nord-vim', { 'do': 'cp colors/* ~/.vim/colors/' }
-" Plug 'jacoborus/tender.vim', { 'do': 'cp colors/* ~/.vim/colors/' }
+" Colorscheme
+" --------------------
+Plug 'w0ng/vim-hybrid', { 'do': 'cp colors/* ~/.vim/colors/' }
+Plug 'cocopon/iceberg.vim', { 'do': 'cp colors/* ~/.vim/colors/' }
+Plug 'arcticicestudio/nord-vim', { 'do': 'cp colors/* ~/.vim/colors/' }
+Plug 'jacoborus/tender.vim', { 'do': 'cp colors/* ~/.vim/colors/' }
 
 call plug#end()
 
