@@ -321,7 +321,7 @@ else
 endif
 " hybrid iceberg tender nord
 
-let g:hybrid_custom_term_colors = 1
+" let g:hybrid_custom_term_colors = 1
 " let g:lightline_hybrid_style = 'plain'
 
 let g:nord_italic = 1
