@@ -227,16 +227,16 @@ nnoremap [window]K <C-w>K
 nnoremap [window]L <C-w>L
 
 
-" " ----------------------------------------
-" " vim-plug
-" " ----------------------------------------
-" if empty(glob('~/.vim/autoload/plug.vim'))
-"   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-"   \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-"   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-" endif
-" 
-" call plug#begin('~/.vim/plugged')
+" ----------------------------------------
+" vim-plug
+" ----------------------------------------
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+  \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
 
 " " Editting
 " " --------------------
@@ -305,7 +305,7 @@ nnoremap [window]L <C-w>L
 " Plug 'arcticicestudio/nord-vim', { 'do': 'cp colors/* ~/.vim/colors/' }
 " Plug 'jacoborus/tender.vim', { 'do': 'cp colors/* ~/.vim/colors/' }
 
-" call plug#end()
+call plug#end()
 
 
 " " ----------------------------------------
