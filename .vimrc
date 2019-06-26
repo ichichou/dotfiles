@@ -308,89 +308,86 @@ Plug 'jacoborus/tender.vim', { 'do': 'cp colors/* ~/.vim/colors/' }
 call plug#end()
 
 
-" " ----------------------------------------
-" " Plugins
-" " ----------------------------------------
-" 
-" " Colorschemes
-" " --------------------
-" if has('gui_running')
-"   colorscheme iceberg
-" else
-"   colorscheme hybrid
-" endif
-" " hybrid iceberg tender nord
-" 
-" let g:hybrid_custom_term_colors = 1
-" " let g:lightline_hybrid_style = 'plain'
-" 
-" let g:nord_italic = 1
-" let g:nord_underline = 1
-" let g:nord_italic_comments = 1
-" let g:nord_uniform_status_lines = 1
-" let g:nord_comment_brightness = 15
-" let g:nord_uniform_diff_background = 1
-" let g:nord_cursor_line_number_background = 1
-" 
-" let g:spacegray_use_italics = 1
-" let g:spacegray_underline_search = 1
-" 
-" " Lightline
-" " --------------------
-" " powerline wombat jellybeans solarized PaperColor seoul256 Dracula one landscape
-" " hybrid iceberg tender tenderplus nord
-" 
-" if has('gui_running')
-"   let g:lightline = {
-"   \ 'colorscheme': 'iceberg',
-"   \ 'active': {
-"   \   'left': [
-"   \     [ 'mode', 'paste' ],
-"   \     [ 'readonly', 'filepath', 'modified' ] ],
-"   \   'right': [
-"   \     [ 'lineinfo' ],
-"   \     [ 'percent' ],
-"   \     [ 'fileformat', 'fileencoding', 'filetype' ] ]
-"   \ },
-"   \ 'component': {
-"   \   'percent': '%3p%% [%LL]'
-"   \ },
-"   \ 'component_function': {
-"   \   'filepath': 'FilePath'
-"   \ }}
-" else
-"   let g:lightline = {
-"   \ 'colorscheme': 'hybrid',
-"   \ 'active': {
-"   \   'left': [
-"   \     [ 'mode', 'paste' ],
-"   \     [ 'readonly', 'filepath', 'modified' ] ],
-"   \   'right': [
-"   \     [ 'lineinfo' ],
-"   \     [ 'percent' ],
-"   \     [ 'fileformat', 'fileencoding', 'filetype' ] ]
-"   \ },
-"   \ 'component': {
-"   \   'percent': '%3p%% [%LL]'
-"   \ },
-"   \ 'component_function': {
-"   \   'filepath': 'FilePath'
-"   \ }}
-" endif
-" 
-" function! FilePath()
-"   if winwidth(0) > 70
-"     return expand('%:s')
-"   else
-"     return expand('%:t')
-"   endif
-" endfunction
-" 
-" let g:lightline.tabline = {
-"   \ 'left': [ [ 'tabs' ] ],
-"   \ 'right': [ [ '' ] ]
-"   \ }
-" 
+" ----------------------------------------
+" Plugins
+" ----------------------------------------
+
+" Colorschemes
+" --------------------
+if has('gui_running')
+  colorscheme iceberg
+else
+  colorscheme hybrid
+endif
+" hybrid iceberg tender nord
+
+let g:hybrid_custom_term_colors = 1
+" let g:lightline_hybrid_style = 'plain'
+
+let g:nord_italic = 1
+let g:nord_underline = 1
+let g:nord_italic_comments = 1
+let g:nord_uniform_status_lines = 1
+let g:nord_comment_brightness = 15
+let g:nord_uniform_diff_background = 1
+let g:nord_cursor_line_number_background = 1
+
+" Lightline
+" --------------------
+" powerline wombat jellybeans solarized PaperColor seoul256 Dracula one landscape
+" hybrid iceberg tender tenderplus nord
+
+if has('gui_running')
+  let g:lightline = {
+  \ 'colorscheme': 'iceberg',
+  \ 'active': {
+  \   'left': [
+  \     [ 'mode', 'paste' ],
+  \     [ 'readonly', 'filepath', 'modified' ] ],
+  \   'right': [
+  \     [ 'lineinfo' ],
+  \     [ 'percent' ],
+  \     [ 'fileformat', 'fileencoding', 'filetype' ] ]
+  \ },
+  \ 'component': {
+  \   'percent': '%3p%% [%LL]'
+  \ },
+  \ 'component_function': {
+  \   'filepath': 'FilePath'
+  \ }}
+else
+  let g:lightline = {
+  \ 'colorscheme': 'hybrid',
+  \ 'active': {
+  \   'left': [
+  \     [ 'mode', 'paste' ],
+  \     [ 'readonly', 'filepath', 'modified' ] ],
+  \   'right': [
+  \     [ 'lineinfo' ],
+  \     [ 'percent' ],
+  \     [ 'fileformat', 'fileencoding', 'filetype' ] ]
+  \ },
+  \ 'component': {
+  \   'percent': '%3p%% [%LL]'
+  \ },
+  \ 'component_function': {
+  \   'filepath': 'FilePath'
+  \ }}
+endif
+
+function! FilePath()
+  if winwidth(0) > 70
+    return expand('%:s')
+  else
+    return expand('%:t')
+  endif
+endfunction
+
+let g:lightline.tabline = {
+  \ 'left': [ [ 'tabs' ] ],
+  \ 'right': [ [ '' ] ]
+  \ }
+
 " " Vaffle
 " " --------------------
 " let g:vaffle_auto_cd = 1
