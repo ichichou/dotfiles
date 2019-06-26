@@ -31,10 +31,6 @@ set nowritebackup
 
 set helplang=ja,en
 
-if has('win64') || has('win32')
-  set shellslash
-endif
-
 
 " ----------------------------------------
 " Appearance
@@ -66,7 +62,7 @@ set list
 set listchars=eol:¬,tab:»\ ,trail:\ ,extends:>,precedes:<,nbsp:~
 set ambiwidth=double
 
-" GUI options
+" GUI Options
 " --------------------
 if has('gui_running')
   set guioptions+=c
@@ -78,20 +74,11 @@ if has('gui_running')
   set guioptions-=T
   set guicursor+=a:blinkon0
 
-  if has('win64') || has('win32')
-    set guifont=Myrica\ Monospace:h12
-    " set guifontwide=
-    set columns=140
-    set lines=50
-    set linespace=2
-    set renderoptions=type:directx,renmode:5
-  else
-    set guifont=Myrica\ Monospace:h14
-    " set guifontwide=
-    set columns=140
-    set lines=50
-    set linespace=2
-  endif
+  set guifont=Myrica\ Monospace:h14
+  " set guifontwide=
+  set columns=140
+  set lines=50
+  set linespace=2
 endif
 
 if has('gui_macvim')
@@ -210,14 +197,12 @@ noremap ZQ <Nop>
 noremap Q <Nop>
 noremap gQ <Nop>
 
-
-" Insert blank line
+" Insert Blank Line
 " --------------------
 nnoremap <silent> go :<C-u>for i in range(1, v:count1) \| call append(line('.'), '') \| endfor \| silent! call repeat#set("go", v:count1)<CR>
 nnoremap <silent> gO :<C-u>for i in range(1, v:count1) \| call append(line('.')-1, '') \| endfor \| silent! call repeat#set("gO", v:count1)<CR>
 
-
-" Window control
+" Window Control
 " --------------------
 nnoremap t <Nop>
 nnoremap [window] <Nop>
@@ -242,16 +227,13 @@ nnoremap [window]K <C-w>K
 nnoremap [window]L <C-w>L
 
 
-
 " ----------------------------------------
 " vim-plug
 " ----------------------------------------
-if has('mac')
-  if empty(glob('~/.vim/autoload/plug.vim'))
-    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-  endif
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+  \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 call plug#begin('~/.vim/plugged')
@@ -286,7 +268,7 @@ Plug 'suan/vim-instant-markdown', { 'for': 'markdown' }
 " Plug 'kannokanno/previm', { 'for': 'markdown' }
 " Plug 'dagwieers/asciidoc-vim', { 'for': 'asciidoc' }
 
-" Operator / Text object
+" Operator / Text Object
 " --------------------
 Plug 'kana/vim-operator-user'
 Plug 'kana/vim-operator-replace'
@@ -311,7 +293,6 @@ Plug 'deton/jasentence.vim'
 
 " Appearance
 " --------------------
-" Plug 'chriskempson/base16-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-highlighturl'
 Plug 'cocopon/lightline-hybrid.vim'
@@ -335,13 +316,10 @@ call plug#end()
 " --------------------
 if has('gui_running')
   colorscheme iceberg
-  " hybrid iceberg tender nord
 else
-  if filereadable(expand("~/.vimrc_background"))
-    let base16colorspace=256
-    source ~/.vimrc_background
-  endif
+  colorscheme hybrid
 endif
+" hybrid iceberg tender nord
 
 let g:hybrid_custom_term_colors = 1
 " let g:lightline_hybrid_style = 'plain'
