@@ -43,6 +43,7 @@ module.exports = {
     // shell: '',
     // shellArgs: ['--login'],
     // env: {},
+    // windowSize: [540, 380],
     bell: 'false',
     // copyOnSelect: false,
     // defaultSSHApp: true,
