@@ -239,26 +239,26 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-" " Editting
-" " --------------------
-" Plug 'tpope/vim-repeat'
-" " Plug 'kana/vim-repeat'
-" Plug 'LeafCage/yankround.vim'
-" Plug 'kana/vim-smartinput'
-" Plug 'cohama/vim-smartinput-endwise'
-" Plug 'tyru/caw.vim'
-" Plug 'godlygeek/tabular'
-" Plug 'glidenote/memolist.vim'
-" Plug 'qpkorr/vim-renamer'
+" Editting
+" --------------------
+Plug 'tpope/vim-repeat'
+" Plug 'kana/vim-repeat'
+Plug 'LeafCage/yankround.vim'
+Plug 'kana/vim-smartinput'
+Plug 'cohama/vim-smartinput-endwise'
+Plug 'tyru/caw.vim'
+Plug 'godlygeek/tabular'
+Plug 'glidenote/memolist.vim'
+Plug 'qpkorr/vim-renamer'
 
-" " Movement
-" " --------------------
-" Plug 'cocopon/vaffle.vim'
-" Plug 'tyru/open-browser.vim'
-" Plug 'easymotion/vim-easymotion'
-" Plug 'haya14busa/is.vim'
-" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-" Plug 'junegunn/fzf.vim'
+" Movement
+" --------------------
+Plug 'cocopon/vaffle.vim'
+Plug 'tyru/open-browser.vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'haya14busa/is.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " Language
 " --------------------
@@ -269,21 +269,21 @@ Plug 'suan/vim-instant-markdown', { 'for': 'markdown' }
 " Plug 'kannokanno/previm', { 'for': 'markdown' }
 " Plug 'dagwieers/asciidoc-vim', { 'for': 'asciidoc' }
 
-" " Operator / Text Object
-" " --------------------
-" Plug 'kana/vim-operator-user'
-" Plug 'kana/vim-operator-replace'
-" Plug 'rhysd/vim-operator-surround'
-" Plug 'haya14busa/vim-operator-flashy'
-" Plug 'kana/vim-textobj-user'
-" Plug 'kana/vim-textobj-entire'
-" Plug 'kana/vim-textobj-line'
+" Operator / Text Object
+" --------------------
+Plug 'kana/vim-operator-user'
+Plug 'kana/vim-operator-replace'
+Plug 'rhysd/vim-operator-surround'
+Plug 'haya14busa/vim-operator-flashy'
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-entire'
+Plug 'kana/vim-textobj-line'
 
-" " Git
-" " --------------------
-" Plug 'airblade/vim-gitgutter'
-" Plug 'tpope/vim-fugitive'
-" Plug 'cohama/agit.vim', { 'on': 'Agit' }
+" Git
+" --------------------
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'cohama/agit.vim', { 'on': 'Agit' }
 
 " Japanese
 " --------------------
