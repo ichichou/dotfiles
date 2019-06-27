@@ -56,12 +56,12 @@ module.exports = {
     'hyper-pane',
     'hyper-search',
     'hyper-statusline',
-    'hypercwd',
     // 'hyper-tabs-enhanced',
+    'hypercwd',
 
-    // 'hyperterm-tomorrow-night',
     // 'hyper-iceberg',
-    // 'hyperterm-hybrid',
+    'hyperterm-hybrid',
+    // 'hyperterm-tomorrow-night',
     // 'nord-hyper',
   ],
 
