@@ -259,14 +259,14 @@ call plug#begin('~/.vim/plugged')
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " Plug 'junegunn/fzf.vim'
 
-" " Language
-" " --------------------
-" Plug 'sheerun/vim-polyglot'
-" Plug 'joker1007/vim-markdown-quote-syntax', { 'for': 'markdown' }
-" Plug 'rcmdnk/vim-markdown', { 'for': 'markdown' }
-" Plug 'suan/vim-instant-markdown', { 'for': 'markdown' }
-" " Plug 'kannokanno/previm', { 'for': 'markdown' }
-" " Plug 'dagwieers/asciidoc-vim', { 'for': 'asciidoc' }
+" Language
+" --------------------
+Plug 'sheerun/vim-polyglot'
+Plug 'joker1007/vim-markdown-quote-syntax', { 'for': 'markdown' }
+Plug 'rcmdnk/vim-markdown', { 'for': 'markdown' }
+Plug 'suan/vim-instant-markdown', { 'for': 'markdown' }
+" Plug 'kannokanno/previm', { 'for': 'markdown' }
+" Plug 'dagwieers/asciidoc-vim', { 'for': 'asciidoc' }
 
 " " Operator / Text Object
 " " --------------------
