@@ -170,15 +170,19 @@ noremap X "_X
 noremap + <C-a>
 noremap - <C-x>
 
-noremap い i
 noremap あ a
-noremap お o
+noremap い i
 noremap う u
+noremap え e
+noremap お o
 
 noremap <silent> j gj
 noremap <silent> k gk
 noremap <silent> gj j
 noremap <silent> gk k
+
+noremap <silent> gh ^
+noremap <silent> gl $
 
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
