@@ -9,7 +9,7 @@ alias g 'git'
 alias gu 'gitup'
 alias j 'z'
 alias mvi 'mvim'
-alias tree 'tree -NC'
+alias v 'vim'
 alias vi 'vim'
 
 ### ls/exa
