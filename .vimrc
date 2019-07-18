@@ -53,7 +53,7 @@ set showcmd
 set ruler
 
 set display=lastline
-set scrolloff=5
+set scrolloff=3
 set breakindent
 
 set belloff=all
