@@ -55,6 +55,7 @@ set ruler
 set display=lastline
 set scrolloff=3
 set breakindent
+set nofoldenable
 
 set belloff=all
 
