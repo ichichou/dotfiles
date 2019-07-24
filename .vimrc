@@ -526,6 +526,8 @@ nnoremap <Leader>mg :<C-u>MemoGrep<CR>
 let g:fzf_layout = { 'down': '~60%' }
 let g:fzf_buffers_jump = 1
 
+nnoremap <Leader>b :<C-u>Buffers<CR>
+
 nnoremap <Leader>f <Nop>
 nnoremap [fzf] <Nop>
 nmap <Leader>f [fzf]
@@ -549,6 +551,26 @@ command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
   \   'rg  --line-number --no-heading --color=auto --smart-case '.shellescape(<q-args>), 0,
   \   fzf#vim#with_preview('right:50%:wrap'))
+
+" Gitgutter
+" --------------------
+set updatetime=250
+
+nnoremap <Leader>hs <Nop>
+nnoremap <Leader>hu <Nop>
+
+nmap ]h <Plug>GitGutterNextHunk
+nmap [h <Plug>GitGutterPrevHunk
+
+nnoremap <Leader>h <Nop>
+nnoremap [gitgutter] <Nop>
+nmap <Leader>h [gitgutter]
+
+nnoremap [gitgutter]j :<C-u>GitGutterNextHunk<CR>
+nnoremap [gitgutter]k :<C-u>GitGutterPrevHunk<CR>
+
+nnoremap [gitgutter]h :<C-u>GitGutterLineHighlightsToggle<CR>
+nnoremap [gitgutter]p :<C-u>GitGutterPreviewHunk<CR>
 
 " Fugitive.vim
 " --------------------
