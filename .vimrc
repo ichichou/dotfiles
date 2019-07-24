@@ -214,9 +214,6 @@ nmap t [window]
 
 nnoremap [window]/ :<C-u>vertical help<Space>
 
-nnoremap <silent> [window]s :<C-u>split<CR>
-nnoremap <silent> [window]v :<C-u>vsplit<CR>
-
 nnoremap [window]= <C-w>=
 
 nnoremap [window]t <C-w>w
