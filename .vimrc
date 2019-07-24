@@ -579,9 +579,10 @@ nnoremap [fugitive] <Nop>
 nmap <Leader>g [fugitive]
 
 nnoremap [fugitive]s :<C-u>Gstatus<CR>
-nnoremap [fugitive]d :<C-u>Gdiff<CR>
 nnoremap [fugitive]a :<C-u>Gwrite<CR>
 nnoremap [fugitive]C :<C-u>Gcommit<CR>
+nnoremap [fugitive]d :<C-u>Gdiff<CR>
+nnoremap [fugitive]l :<C-u>Glog<CR>
 
 " agit
 " --------------------
