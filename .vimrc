@@ -314,7 +314,7 @@ call plug#end()
 " Plugins
 " ----------------------------------------
 
-" Colorschemes
+" colorschemes
 " --------------------
 if has('gui_running')
   colorscheme iceberg
@@ -334,7 +334,7 @@ let g:nord_comment_brightness = 15
 let g:nord_uniform_diff_background = 1
 let g:nord_cursor_line_number_background = 1
 
-" Lightline
+" lightline
 " --------------------
 " powerline wombat jellybeans solarized PaperColor seoul256 Dracula one landscape
 " hybrid iceberg tender tenderplus nord
@@ -390,7 +390,7 @@ let g:lightline.tabline = {
   \ 'right': [ [ '' ] ]
   \ }
 
-" Vaffle
+" vaffle
 " --------------------
 let g:vaffle_auto_cd = 1
 let g:vaffle_show_hidden_files = 1
@@ -412,7 +412,7 @@ let g:instant_markdown_autostart = 0
 
 nnoremap <silent> <Leader>p :<C-u>InstantMarkdownPreview<CR>
 
-" Previm
+" previm
 " --------------------
 " let g:previm_enable_realtime = 1
 " let g:previm_show_header = 0
@@ -421,20 +421,20 @@ nnoremap <silent> <Leader>p :<C-u>InstantMarkdownPreview<CR>
 "
 " nnoremap <silent> <Leader>p :<C-u>PrevimOpen<CR>
 
-" Open-browser
+" open-browser
 " --------------------
 let g:netrw_nogx = 1
 
 map gx <Plug>(openbrowser-smart-search)
 
-" Better-whitespace
+" better-whitespace
 " --------------------
 let g:better_whitespace_filetypes_blacklist = [ 'diff', 'gitcommit', 'help' ]
 
 highlight ExtraWhitespace ctermbg=DarkRed
 highlight ExtraWhitespace guibg=DarkRed
 
-" Jasegment
+" jasegment
 " --------------------
 call jasegment#define(
   \ 'nonblank', {
@@ -445,7 +445,7 @@ call jasegment#define(
   \   'select-a': 'aE',
   \ })
 
-" Yankround
+" yankround
 " --------------------
 let g:yankround_max_history = 50
 let g:yankround_use_region_hl = 1
@@ -458,7 +458,7 @@ map gP <Plug>(yankround-gP)
 nmap <C-p> <Plug>(yankround-prev)
 nmap <C-n> <Plug>(yankround-next)
 
-" Easymotion
+" easymotion
 " --------------------
 let g:EasyMotion_do_mapping = 0
 
@@ -485,11 +485,11 @@ nmap s <Plug>(easymotion-overwin-f2)
 " highlight link EasyMotionMoveHL Search
 " highlight link EasyMotionIncSearch Search
 
-" Operator-replace
+" operator-replace
 " --------------------
 map R <Plug>(operator-replace)
 
-" Operator-surround
+" operator-surround
 " --------------------
 nnoremap S <Nop>
 
@@ -505,12 +505,12 @@ let g:operator#surround#blocks = {
   \   { 'block': [ '「', '」' ], 'motionwise': [ 'char', 'line', 'block' ], 'keys': [ '「', '」' ] }
   \ ]}
 
-" Operator-flashy
+" operator-flashy
 " --------------------
 map y <Plug>(operator-flashy)
 nmap Y <Plug>(operator-flashy)$
 
-" Memolist
+" memolist
 " --------------------
 let g:memolist_path = "$HOME/Box/Memos"
 let g:memolist_template_dir_path = "$HOME/dotfiles"
@@ -521,7 +521,7 @@ nnoremap <Leader>mn :<C-u>MemoNew<CR>
 nnoremap <Leader>ml :<C-u>MemoList<CR>
 nnoremap <Leader>mg :<C-u>MemoGrep<CR>
 
-" Fzf
+" fzf
 " --------------------
 let g:fzf_layout = { 'down': '~60%' }
 let g:fzf_buffers_jump = 1
@@ -552,7 +552,7 @@ command! -bang -nargs=* Rg
   \   'rg  --line-number --no-heading --color=auto --smart-case '.shellescape(<q-args>), 0,
   \   fzf#vim#with_preview('right:50%:wrap'))
 
-" Gitgutter
+" gitgutter
 " --------------------
 set updatetime=250
 
@@ -572,7 +572,7 @@ nnoremap [gitgutter]k :<C-u>GitGutterPrevHunk<CR>
 nnoremap [gitgutter]h :<C-u>GitGutterLineHighlightsToggle<CR>
 nnoremap [gitgutter]p :<C-u>GitGutterPreviewHunk<CR>
 
-" Fugitive.vim
+" fugitive
 " --------------------
 nnoremap <Leader>g <Nop>
 nnoremap [fugitive] <Nop>
@@ -583,10 +583,10 @@ nnoremap [fugitive]d :<C-u>Gdiff<CR>
 nnoremap [fugitive]a :<C-u>Gwrite<CR>
 nnoremap [fugitive]C :<C-u>Gcommit<CR>
 
-" Agit
+" agit
 " --------------------
 
-" Caw.vim
+" caw.vim
 " --------------------
 map <Leader>c <Plug>(caw:hatpos:toggle)
 map <Leader>0 <Plug>(caw:zeropos:toggle)
@@ -595,7 +595,7 @@ map <Leader>0 <Plug>(caw:zeropos:toggle)
 " --------------------
 let g:polyglot_disabled = ['markdown']
 
-" Tabular
+" tabular
 " --------------------
 map <Leader>a= :Tabularize /=<CR>
 map <Leader>a: :Tabularize /:\zs<CR>
