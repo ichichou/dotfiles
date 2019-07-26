@@ -104,6 +104,7 @@ augroup fileTypeIndent
   autocmd FileType json setlocal tabstop=2 softtabstop=2 shiftwidth=2
   autocmd FileType html setlocal tabstop=2 softtabstop=2 shiftwidth=2
   autocmd FileType r setlocal tabstop=2 softtabstop=2 shiftwidth=2
+  autocmd FileType sh setlocal tabstop=2 softtabstop=2 shiftwidth=2
 augroup END
 
 set expandtab
