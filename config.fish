@@ -9,6 +9,7 @@ alias g 'git'
 alias gu 'gitup'
 alias j 'z'
 alias mvi 'mvim'
+alias noti 'terminal-notifier -message "🤘Done!" -sound glass'
 alias v 'vim'
 alias vi 'vim'
 
