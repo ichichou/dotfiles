@@ -33,7 +33,7 @@
     cm = commit
     cmm = commit --message
     co = checkout
-    cob = checkout --branch
+    cob = checkout -b
     di = diff
     fe = fetch
     fep = fetch --prune
