@@ -11,6 +11,9 @@
 [diff]
     renames = true
 
+[fetch]
+    prune = true
+
 [merge]
     ff = false
 
