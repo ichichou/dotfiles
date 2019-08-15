@@ -98,13 +98,13 @@ set shiftwidth=2
 augroup fileTypeIndent
   autocmd!
   autocmd FileType markdown setlocal tabstop=4 softtabstop=4 shiftwidth=4
-  autocmd FileType asciidoc setlocal tabstop=2 softtabstop=2 shiftwidth=2
-  autocmd FileType vim setlocal tabstop=2 softtabstop=2 shiftwidth=2
-  autocmd FileType javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2
-  autocmd FileType json setlocal tabstop=2 softtabstop=2 shiftwidth=2
-  autocmd FileType html setlocal tabstop=2 softtabstop=2 shiftwidth=2
-  autocmd FileType r setlocal tabstop=2 softtabstop=2 shiftwidth=2
-  autocmd FileType sh setlocal tabstop=2 softtabstop=2 shiftwidth=2
+  " autocmd FileType asciidoc setlocal tabstop=2 softtabstop=2 shiftwidth=2
+  " autocmd FileType vim setlocal tabstop=2 softtabstop=2 shiftwidth=2
+  " autocmd FileType javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2
+  " autocmd FileType json setlocal tabstop=2 softtabstop=2 shiftwidth=2
+  " autocmd FileType html setlocal tabstop=2 softtabstop=2 shiftwidth=2
+  " autocmd FileType r setlocal tabstop=2 softtabstop=2 shiftwidth=2
+  " autocmd FileType sh setlocal tabstop=2 softtabstop=2 shiftwidth=2
 augroup END
 
 set expandtab
