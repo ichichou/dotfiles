@@ -27,11 +27,16 @@
     a = add
     aa = add --all
     br = branch
+    bra = branch --all
+    brd = branch --delete
     cl = clone
     cm = commit
+    cmm = commit --message
     co = checkout
+    cob = checkout --branch
     di = diff
-    fc = fetch
+    fe = fetch
+    fep = fetch --prune
     lg = log
     lgg = log --graph --oneline --decorate
     lgp = log --patch
