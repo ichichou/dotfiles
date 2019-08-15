@@ -33,10 +33,4 @@ fish_vi_key_bindings
 set -U FZF_LEGACY_KEYBINDINGS 0
 
 ## Functions
-### Git Commit with Message
-function gcmm
-  command git commit $argv[1] --message $argv[2]
-end
-
-### Auto ls
 
