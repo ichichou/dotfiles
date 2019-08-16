@@ -1,52 +1,52 @@
 [user]
-    name = ichichou
-    email = 35998815+ichichou@users.noreply.github.com
+  name = ichichou
+  email = 35998815+ichichou@users.noreply.github.com
 
 [core]
-    editor = vim
-    pager = less -M
-    quotepath = false
-    excludesfile = ~/.gitignore_global
+  editor = vim
+  pager = less -M
+  quotepath = false
+  excludesfile = ~/.gitignore_global
 
 [diff]
-    renames = true
+  renames = true
 
 [fetch]
-    prune = true
+  prune = true
 
 [merge]
-    ff = false
+  ff = false
 
 [pull]
-    ff = only
+  ff = only
 
 [color]
-    ui = auto
+  ui = auto
 
 [alias]
-    a = add
-    aa = add --all
-    br = branch
-    bra = branch --all
-    brd = branch --delete
-    cl = clone
-    cm = commit
-    cmm = commit --message
-    co = checkout
-    cob = checkout -b
-    di = diff
-    fe = fetch
-    fep = fetch --prune
-    lg = log
-    lgg = log --graph --oneline --decorate
-    lgp = log --patch
-    mg = merge
-    pl = pull
-    ps = push
-    psd = push --delete
-    psu = push --set-upstream
-    rl = reflog
-    s = status --short --branch
-    sh = show
-    ss = status
+  a = add
+  aa = add --all
+  br = branch
+  bra = branch --all
+  brd = branch --delete
+  cl = clone
+  cm = commit
+  cmm = commit --message
+  co = checkout
+  cob = checkout -b
+  di = diff
+  fe = fetch
+  fep = fetch --prune
+  lg = log
+  lgg = log --graph --oneline --decorate
+  lgp = log --patch
+  mg = merge
+  pl = pull
+  ps = push
+  psd = push --delete
+  psu = push --set-upstream
+  rl = reflog
+  s = status --short --branch
+  sh = show
+  ss = status
 
