@@ -75,11 +75,13 @@ if has('gui_running')
   set guioptions-=T
   set guicursor+=a:blinkon0
 
-  set guifont=Myrica\ Monospace:h14
+  " set guifont=Myrica\ Monospace:h14
+  set guifont=Cica:h14
   " set guifontwide=
+  " set linespace=2
+  set linespace=0
   set columns=140
   set lines=50
-  set linespace=2
 endif
 
 if has('gui_macvim')
@@ -268,7 +270,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'joker1007/vim-markdown-quote-syntax', { 'for': 'markdown' }
 Plug 'rcmdnk/vim-markdown', { 'for': 'markdown' }
-Plug 'suan/vim-instant-markdown', { 'for': 'markdown' }
 " Plug 'kannokanno/previm', { 'for': 'markdown' }
 " Plug 'dagwieers/asciidoc-vim', { 'for': 'asciidoc' }
 
@@ -460,7 +461,7 @@ map gP <Plug>(yankround-gP)
 nmap <C-p> <Plug>(yankround-prev)
 nmap <C-n> <Plug>(yankround-next)
 
-" easymotion
+" vim-easymotion
 " --------------------
 let g:EasyMotion_do_mapping = 0
 
@@ -615,4 +616,14 @@ function! s:align()
     call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
   endif
 endfunction
+
+" vim-smartinput
+" --------------------
+call smartinput#define_rule({'at': '\%#', 'char': '（', 'input': '（）<Left>'})
+call smartinput#define_rule({'at': '\%#', 'char': '「', 'input': '「」<Left>'})
+call smartinput#define_rule({'at': '\%#', 'char': '『', 'input': '『』<Left>'})
+call smartinput#define_rule({'at': '\%#', 'char': '〈', 'input': '〈〉<Left>'})
+call smartinput#define_rule({'at': '\%#', 'char': '【', 'input': '【】<Left>'})
+call smartinput#define_rule({'at': '\%#', 'char': '［', 'input': '［］<Left>'})
+call smartinput#define_rule({'at': '\%#', 'char': '｛', 'input': '｛｝<Left>'})
 
