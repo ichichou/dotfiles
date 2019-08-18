@@ -27,7 +27,6 @@ end
 ## Settings
 ### Fish
 set fish_greeting
-fish_vi_key_bindings
 
 ### Fzf
 set -U FZF_LEGACY_KEYBINDINGS 0
