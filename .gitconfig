@@ -6,7 +6,6 @@
   editor = vim
   pager = less -M
   quotepath = false
-  excludesfile = ~/.gitignore_global
 
 [diff]
   renames = true
