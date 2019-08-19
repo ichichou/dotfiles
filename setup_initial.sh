@@ -27,6 +27,9 @@ ln -snfv ${DOT}/karabiner.json ${CONFIG}/karabiner/karabiner.json
 mkdir -p ${CONFIG}/fish
 ln -snfv ${DOT}/config.fish ${CONFIG}/fish/config.fish
 
+mkdir -p ${CONFIG}/git
+ln -snfv ${DOT}/ignore ${CONFIG}/git/ignore
+
 mkdir -p "${AQUA}"
 ln -snfv ${DOT}/kana-rule.conf "${AQUA}/kana-rule.conf"
 ln -snfv ${DOT}/keymap.conf "${AQUA}/keymap.conf"
