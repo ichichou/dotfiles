@@ -75,11 +75,9 @@ if has('gui_running')
   set guioptions-=T
   set guicursor+=a:blinkon0
 
-  " set guifont=Myrica\ Monospace:h14
-  set guifont=Cica:h14
+  set guifont=Myrica\ Monospace:h14
   " set guifontwide=
-  " set linespace=2
-  set linespace=0
+  set linespace=2
   set columns=140
   set lines=50
 endif
