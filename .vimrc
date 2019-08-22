@@ -46,6 +46,10 @@ set showmatch
 set matchtime=1
 set matchpairs+=（:）,［:］,｛:｝,「:」,『:』,〈:〉,【:】,〔:〕
 
+source $VIMRUNTIME/macros/matchit.vim
+let b:match_ignorecase = 1
+" let b:match_words = "if:endif"
+
 set showtabline=1
 set laststatus=2
 set noshowmode
