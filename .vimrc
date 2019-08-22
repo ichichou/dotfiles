@@ -411,12 +411,6 @@ highlight link htmlBoldItalic ErrorMsg
 let g:vim_markdown_folding_disabled = 1
 " let g:vim_markdown_conceal = 0
 
-" vim-instant-markdown
-" --------------------
-let g:instant_markdown_autostart = 0
-
-nnoremap <silent> <Leader>p :<C-u>InstantMarkdownPreview<CR>
-
 " previm
 " --------------------
 " let g:previm_enable_realtime = 1
