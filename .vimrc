@@ -257,6 +257,11 @@ Plug 'tyru/caw.vim'
 Plug 'godlygeek/tabular'
 Plug 'glidenote/memolist.vim'
 Plug 'qpkorr/vim-renamer'
+Plug 'alvan/vim-closetag'
+Plug 'prettier/vim-prettier', {
+  "\ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html']
+  \ }
 
 " Movement
 " --------------------
@@ -622,4 +627,10 @@ call smartinput#define_rule({'at': '\%#', 'char': '〈', 'input': '〈〉<Left>'
 call smartinput#define_rule({'at': '\%#', 'char': '【', 'input': '【】<Left>'})
 call smartinput#define_rule({'at': '\%#', 'char': '［', 'input': '［］<Left>'})
 call smartinput#define_rule({'at': '\%#', 'char': '｛', 'input': '｛｝<Left>'})
+
+" vim-prettier
+" --------------------
+let g:prettier#exec_cmd_path = "/usr/local/bin/prettier"
+let g:prettier#autoformat = 0
+" let g:prettier#quickfix_enabled = 0
 
