@@ -48,7 +48,7 @@ set matchpairs+=（:）,［:］,｛:｝,「:」,『:』,〈:〉,【:】,〔:〕
 
 source $VIMRUNTIME/macros/matchit.vim
 let b:match_ignorecase = 1
-" let b:match_words = "if:endif"
+" let b:match_words = "<if>:<endif>"
 
 set showtabline=1
 set laststatus=2
@@ -581,8 +581,8 @@ nmap <Leader>g [fugitive]
 
 nnoremap [fugitive]s :<C-u>Gstatus<CR>
 nnoremap [fugitive]a :<C-u>Gwrite<CR>
-nnoremap [fugitive]C :<C-u>Gcommit<CR>
-nnoremap [fugitive]d :<C-u>Gdiff<CR>
+nnoremap [fugitive]c :<C-u>Gcommit<CR>
+nnoremap [fugitive]d :<C-u>Gvdiffsplit<CR>
 nnoremap [fugitive]l :<C-u>Glog<CR>
 
 " agit
@@ -629,6 +629,7 @@ call smartinput#define_rule({'at': '\%#', 'char': '｛', 'input': '｛｝<Left>'
 " --------------------
 let g:prettier#exec_cmd_path = "/usr/local/bin/prettier"
 let g:prettier#autoformat = 0
-" let g:prettier#exec_cmd_async = 1
 " let g:prettier#quickfix_enabled = 0
+let g:prettier#quickfix_auto_focus = 0
+" let g:prettier#exec_cmd_async = 1
 
