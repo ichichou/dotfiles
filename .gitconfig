@@ -36,8 +36,10 @@
   bra = branch --all
   brd = branch --delete
   cl = clone
-  cm = commit
-  cmm = commit --message
+  cm = commit --verbose
+  cma = commit --verbose --all
+  cmam = commit --verbose --all --message
+  cmm = commit --verbose --message
   co = checkout
   cob = checkout -b
   di = diff
