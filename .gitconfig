@@ -38,8 +38,8 @@
   cl = clone
   cm = commit --verbose
   cma = commit --verbose --all
-  cmam = commit --verbose --all --message
-  cmm = commit --verbose --message
+  cmam = commit --all --message
+  cmm = commit --message
   co = checkout
   cob = checkout -b
   di = diff
