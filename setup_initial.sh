@@ -33,6 +33,9 @@ mkdir -p "${APP}/AquaSKK"
 ln -snfv ${DOT}/kana-rule.conf "${APP}/AquaSKK/kana-rule.conf"
 ln -snfv ${DOT}/keymap.conf "${APP}AquaSKK/keymap.conf"
 
+mkdir -p "${APP}/Code/User"
+ln -snfv ${DOT}/setting.json "${APP}/Code/User/setting.json"
+
 defaults write -g InitialKeyRepeat -int 10
 defaults write -g KeyRepeat -int 1
 
