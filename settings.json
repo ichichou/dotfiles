@@ -19,8 +19,5 @@
   "search.smartCase": true,
   "workbench.colorTheme": "Atom One Light",
   "workbench.iconTheme": "vscode-icons",
-  "[markdown]": {
-    "editor.tabSize": 4,
-    "editor.insertSpaces": true
-  },
 }
+
