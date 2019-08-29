@@ -1,0 +1,25 @@
+{
+  "copyMarkdownAsHtml.breaks": true,
+  "copyMarkdownAsHtml.linkify": true,
+  "editor.fontFamily": "Hack, monospace",
+  "editor.minimap.enabled": false,
+  "editor.renderControlCharacters": true,
+  "editor.renderWhitespace": "all",
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "files.defaultLanguage": "markdown",
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "html.format.endWithNewline": true,
+  "html.format.wrapLineLength": 0,
+  "japanese-proofreading.textlint.全角文字と半角文字の間": false,
+  "markdown.preview.breaks": true,
+  "search.smartCase": true,
+  "workbench.colorTheme": "Atom One Light",
+  "workbench.iconTheme": "vscode-icons",
+  "[markdown]": {
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true
+  },
+}
