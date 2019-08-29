@@ -39,13 +39,13 @@ ln -snfv ${DOT}/setting.json "${APP}/Code/User/setting.json"
 defaults write -g InitialKeyRepeat -int 10
 defaults write -g KeyRepeat -int 1
 
-rm ${HOME}/Applications/.localized
-rm ${HOME}/Desktop/.localized
-rm ${HOME}/Documents/.localized
-rm ${HOME}/Downloads/.localized
-rm ${HOME}/Library/.localized
-rm ${HOME}/Movies/.localized
-rm ${HOME}/Music/.localized
-rm ${HOME}/Pictures/.localized
-rm ${HOME}/Public/.localized
+rm ${HOME}/Applications/.localized \
+  ${HOME}/Desktop/.localized \
+  ${HOME}/Documents/.localized \
+  ${HOME}/Downloads/.localized \
+  ${HOME}/Library/.localized \
+  ${HOME}/Movies/.localized \
+  ${HOME}/Music/.localized \
+  ${HOME}/Pictures/.localized \
+  ${HOME}/Public/.localized \
 
