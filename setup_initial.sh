@@ -4,8 +4,7 @@ set -eu
 
 DOT="${HOME}/dotfiles"
 CONFIG="${HOME}/.config"
-SETTING="${HOME}/Box/Setting_files"
-AQUA="${HOME}/Library/Application Support/AquaSKK"
+APP="${HOME}/Library/Application Support"
 
 if [[ ! -e ${DOT} ]]; then
   mkdir -p ${DOT}
@@ -30,9 +29,9 @@ ln -snfv ${DOT}/config.fish ${CONFIG}/fish/config.fish
 mkdir -p ${CONFIG}/git
 ln -snfv ${DOT}/ignore ${CONFIG}/git/ignore
 
-mkdir -p "${AQUA}"
-ln -snfv ${DOT}/kana-rule.conf "${AQUA}/kana-rule.conf"
-ln -snfv ${DOT}/keymap.conf "${AQUA}/keymap.conf"
+mkdir -p "${APP}/AquaSKK"
+ln -snfv ${DOT}/kana-rule.conf "${APP}/AquaSKK/kana-rule.conf"
+ln -snfv ${DOT}/keymap.conf "${APP}AquaSKK/keymap.conf"
 
 defaults write -g InitialKeyRepeat -int 10
 defaults write -g KeyRepeat -int 1
