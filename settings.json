@@ -14,6 +14,7 @@
   "html.format.endWithNewline": true,
   "html.format.wrapLineLength": 0,
   "japanese-proofreading.textlint.全角文字と半角文字の間": false,
+  "markdown.extension.list.indentationSize": "inherit",
   "markdown.preview.breaks": true,
   "search.smartCase": true,
   "workbench.colorTheme": "Atom One Light",
