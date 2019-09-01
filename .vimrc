@@ -212,7 +212,7 @@ noremap gQ <Nop>
 nnoremap <silent> go :<C-u>for i in range(1, v:count1) \| call append(line('.'), '') \| endfor \| silent! call repeat#set("go", v:count1)<CR>
 nnoremap <silent> gO :<C-u>for i in range(1, v:count1) \| call append(line('.')-1, '') \| endfor \| silent! call repeat#set("gO", v:count1)<CR>
 
-" Window Control
+" Window/Tabpage Control
 " --------------------
 nnoremap t <Nop>
 nnoremap [window] <Nop>
@@ -222,7 +222,6 @@ nnoremap [window]/ :<C-u>vertical help<Space>
 
 nnoremap [window]= <C-w>=
 
-nnoremap [window]t <C-w>w
 nnoremap [window]h <C-w>h
 nnoremap [window]j <C-w>j
 nnoremap [window]k <C-w>k
@@ -232,6 +231,13 @@ nnoremap [window]H <C-w>H
 nnoremap [window]J <C-w>J
 nnoremap [window]K <C-w>K
 nnoremap [window]L <C-w>L
+
+nnoremap <silent> [window]t :<C-u>tabnew<CR>
+nnoremap <silent> [window]q :<C-u>tabclose<CR>
+nnoremap [window]n gt
+nnoremap [window]p gT
+nnoremap <silent> [window]N :<C-u>+tabmove<CR>
+nnoremap <silent> [window]P :<C-u>-tabmove<CR>
 
 
 " ----------------------------------------
