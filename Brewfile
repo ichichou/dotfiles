@@ -2,6 +2,8 @@ cask_args appdir: '/Applications'
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 
+brew "python"
+brew "python@2"
 brew "r"
 brew "ruby"
 cask "java"
