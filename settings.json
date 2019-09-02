@@ -16,8 +16,12 @@
   "japanese-proofreading.textlint.全角文字と半角文字の間": false,
   "markdown.extension.list.indentationSize": "inherit",
   "markdown.preview.breaks": true,
+  "material-icon-theme.showWelcomeMessage": false,
   "search.smartCase": true,
   "workbench.colorTheme": "Atom One Light",
-  "workbench.iconTheme": "vscode-icons",
+  "workbench.iconTheme": "material-icon-theme",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
 }
 
