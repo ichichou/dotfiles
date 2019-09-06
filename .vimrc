@@ -639,3 +639,7 @@ let g:prettier#autoformat = 0
 let g:prettier#quickfix_auto_focus = 0
 " let g:prettier#exec_cmd_async = 1
 
+" vim-closetag
+" --------------------
+let g:closetag_filetypes = 'html,xhtml,phtml,xml,markdown'
+
