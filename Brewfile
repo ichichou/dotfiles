@@ -30,6 +30,7 @@ brew "rmtrash"
 brew "tig"
 brew "z"
 
+cask "alacritty"
 cask "alfred"
 cask "appcleaner"
 cask "aquaskk"
