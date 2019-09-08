@@ -1,7 +1,7 @@
 {
   "copyMarkdownAsHtml.breaks": true,
   "copyMarkdownAsHtml.linkify": true,
-  "editor.fontFamily": "Hack, monospace",
+  "editor.fontFamily": "Hack, Noto Sans Mono CJK JP, monospace",
   "editor.minimap.enabled": false,
   "editor.renderControlCharacters": true,
   "editor.renderWhitespace": "all",
@@ -23,5 +23,9 @@
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[markdown]": {
+    "editor.tabSize": 4,
+    "editor.quickSuggestions": true,
+    "editor.snippetSuggestions": "top"
+  }
 }
-
