@@ -257,7 +257,9 @@ Plug 'godlygeek/tabular'
 Plug 'glidenote/memolist.vim'
 Plug 'qpkorr/vim-renamer'
 Plug 'alvan/vim-closetag'
-Plug 'prettier/vim-prettier', { 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+Plug 'mattn/emmet-vim'
+Plug 'prettier/vim-prettier', { 'for': [
+  \ 'html', 'markdown', 'yaml', 'css', 'less', 'scss', 'javascript', 'json', ] }
 
 " Movement
 " --------------------
@@ -393,7 +395,7 @@ endfunction
 
 let g:lightline.tabline = {
   \ 'left': [ [ 'tabs' ] ],
-  \ 'right': [ [ '' ] ]
+  \ 'right': [ [ '' ] ],
   \ }
 
 " vaffle
