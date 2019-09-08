@@ -49,6 +49,7 @@
   lgg = log --graph --oneline --decorate
   lgp = log --patch
   mg = merge
+  mv = mv --verbose
   pl = pull
   ps = push
   psd = push --delete
