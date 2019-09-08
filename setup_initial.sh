@@ -6,6 +6,8 @@ DOT="${HOME}/dotfiles"
 CONFIG="${HOME}/.config"
 APP="${HOME}/Library/Application Support"
 
+# dotfiles
+
 if [[ ! -e ${DOT} ]]; then
   mkdir -p ${DOT}
   cd ${HOME}
@@ -15,29 +17,42 @@ fi
 cd ${DOT}
 for i in .??*; do
   [[ ${i} == ".git" ]] && continue
+  [[ ${i} == ".config" ]] && continue
   [[ ${i} == ".gitignore" ]] && continue
   [[ ${i} == ".DS_Store" ]] && continue
     ln -snfv ${DOT}/${i} ${HOME}/${i}
 done
 
-mkdir -p ${CONFIG}/karabiner
-ln -snfv ${DOT}/karabiner.json ${CONFIG}/karabiner/karabiner.json
+# .config
+
+mkdir -p ${CONFIG}/alacritty
+ln -snfv ${DOT}/.config/alacritty/alacritty.yml ${CONFIG}/alacritty/alacritty.yml
 
 mkdir -p ${CONFIG}/fish
-ln -snfv ${DOT}/config.fish ${CONFIG}/fish/config.fish
+ln -snfv ${DOT}/.config/fish/config.fish ${CONFIG}/fish/config.fish
+ln -snfv ${DOT}/.config/fish/fishfile ${CONFIG}/fish/fishfile
 
 mkdir -p ${CONFIG}/git
-ln -snfv ${DOT}/ignore ${CONFIG}/git/ignore
+ln -snfv ${DOT}/.config/git/ignore ${CONFIG}/git/ignore
+
+mkdir -p ${CONFIG}/karabiner
+ln -snfv ${DOT}/.config/karabiner/karabiner.json ${CONFIG}/karabiner/karabiner.json
+
+# Application Support
 
 mkdir -p "${APP}/AquaSKK"
-ln -snfv ${DOT}/kana-rule.conf "${APP}/AquaSKK/kana-rule.conf"
-ln -snfv ${DOT}/keymap.conf "${APP}AquaSKK/keymap.conf"
+ln -snfv ${DOT}/aquaskk/kana-rule.conf "${APP}/AquaSKK/kana-rule.conf"
+ln -snfv ${DOT}/aquaskk/keymap.conf "${APP}/AquaSKK/keymap.conf"
 
 mkdir -p "${APP}/Code/User"
-ln -snfv ${DOT}/setting.json "${APP}/Code/User/setting.json"
+ln -snfv ${DOT}/vscode/setting.json "${APP}/Code/User/setting.json"
+
+# Key Repeat
 
 defaults write -g InitialKeyRepeat -int 10
 defaults write -g KeyRepeat -int 1
+
+# .localized
 
 rm ${HOME}/Applications/.localized \
   ${HOME}/Desktop/.localized \
