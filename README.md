@@ -14,8 +14,8 @@
 
 ## setup.sh & packages.sh
 
-`$ bash -c "$(curl -L https://raw.githubusercontent.com/ichichou/dotfiles/master/setup.sh)"`
-`$ bash -c "$(curl -L https://raw.githubusercontent.com/ichichou/dotfiles/master/packages.sh)"`
+1. `$ bash -c "$(curl -L https://raw.githubusercontent.com/ichichou/dotfiles/master/setup.sh)"`
+2. `$ bash -c "$(curl -L https://raw.githubusercontent.com/ichichou/dotfiles/master/packages.sh)"`
 
 ## Mackup
 
