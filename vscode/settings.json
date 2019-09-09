@@ -16,7 +16,6 @@
   "japanese-proofreading.textlint.全角文字と半角文字の間": false,
   "markdown.extension.list.indentationSize": "inherit",
   "markdown.preview.breaks": true,
-  "material-icon-theme.showWelcomeMessage": false,
   "search.smartCase": true,
   "workbench.colorTheme": "Verdandi",
   "workbench.iconTheme": "verdandi",
