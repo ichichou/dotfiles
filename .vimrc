@@ -33,6 +33,7 @@ set helplang=ja,en
 
 autocmd vimrc FileType help,qf,man,ref nnoremap <silent> <buffer> q :q!<CR>
 
+
 " ----------------------------------------
 " Appearance
 " ----------------------------------------
@@ -61,6 +62,7 @@ set display=lastline
 set scrolloff=3
 set breakindent
 set nofoldenable
+autocmd vimrc FileType vim setlocal foldmethod=marker
 
 set belloff=all
 
@@ -100,8 +102,7 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 
-augroup fileTypeIndent
-  autocmd!
+augroup vimrc
   autocmd FileType markdown setlocal tabstop=4 softtabstop=4 shiftwidth=4
 augroup END
 
@@ -167,8 +168,8 @@ noremap Y y$
 noremap x "_x
 noremap X "_X
 
-noremap + <C-a>
-noremap - <C-x>
+" noremap + <C-a>
+" noremap - <C-x>
 
 noremap あ a
 noremap い i
@@ -181,20 +182,20 @@ noremap <silent> k gk
 noremap <silent> gj j
 noremap <silent> gk k
 
-noremap <silent> gh ^
-noremap <silent> gl $
+noremap gh ^
+noremap gl $
 
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
-set termwinkey=<C-l>
-tnoremap <F1> <C-\><C-n>
+" set termwinkey=<C-l>
+" tnoremap <F1> <C-\><C-n>
 
 nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR>
 nnoremap <silent> <Leader>r :<C-u>redraw!<CR>
 nnoremap <silent> <Leader>t :<C-u>vertical terminal fish<CR>
-nnoremap <silent> <Leader>. :<C-u>source $MYVIMRC<CR>
-nnoremap <silent> <Leader><Leader> :<C-u>edit $MYVIMRC<CR>
+nnoremap <silent> <Leader>. :<C-u>source ~/dotfiles/.vimrc<CR>
+nnoremap <silent> <Leader><Leader> :<C-u>edit ~/dotfiles/.vimrc<CR>
 
 noremap ZZ <Nop>
 noremap ZQ <Nop>
@@ -203,8 +204,12 @@ noremap gQ <Nop>
 
 " Insert Blank Line
 " --------------------
-nnoremap <silent> go :<C-u>for i in range(1, v:count1) \| call append(line('.'), '') \| endfor \| silent! call repeat#set("go", v:count1)<CR>
-nnoremap <silent> gO :<C-u>for i in range(1, v:count1) \| call append(line('.')-1, '') \| endfor \| silent! call repeat#set("gO", v:count1)<CR>
+nnoremap <silent> go :<C-u>for i in range(1, v:count1) \|
+  \ call append(line('.'), '') \| endfor \|
+  \ silent! call repeat#set("go", v:count1)<CR>
+nnoremap <silent> gO :<C-u>for i in range(1, v:count1) \|
+  \ call append(line('.')-1, '') \| endfor \|
+  \ silent! call repeat#set("gO", v:count1)<CR>
 
 " Window/Tabpage Control
 " --------------------
@@ -276,7 +281,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'joker1007/vim-markdown-quote-syntax', { 'for': 'markdown' }
 Plug 'rcmdnk/vim-markdown', { 'for': 'markdown' }
-" Plug 'kannokanno/previm', { 'for': 'markdown' }
 " Plug 'dagwieers/asciidoc-vim', { 'for': 'asciidoc' }
 Plug 'dense-analysis/ale'
 
@@ -415,15 +419,6 @@ highlight link htmlBoldItalic ErrorMsg
 
 let g:vim_markdown_folding_disabled = 1
 " let g:vim_markdown_conceal = 0
-
-" previm
-" --------------------
-" let g:previm_enable_realtime = 1
-" let g:previm_show_header = 0
-" let g:previm_disable_default_css = 0
-" " let g:previm_custom_css_path = ''
-"
-" nnoremap <silent> <Leader>p :<C-u>PrevimOpen<CR>
 
 " open-browser
 " --------------------
@@ -588,6 +583,8 @@ nnoremap [fugitive]l :<C-u>Glog<CR>
 
 " agit
 " --------------------
+" let g:agit_enable_auto_show_commit = 0
+" let g:agit_enable_auto_refresh = 1
 
 " caw.vim
 " --------------------
