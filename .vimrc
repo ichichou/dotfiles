@@ -671,7 +671,7 @@ autocmd vimrc FileType qf nnoremap <silent> <buffer> q :let g:ale_open_list = 0<
 autocmd vimrc FileType help,qf,man,ref let b:ale_enabled = 0
 
 nmap <silent> <Leader>a <Plug>(ale_toggle)
-nmap <silent> <C-n> <Plug>(ale_next_wrap)
-nmap <silent> <C-p> <Plug>(ale_previous_wrap)
+nmap <silent> <C-n> <Plug>(ale_next)
+nmap <silent> <C-p> <Plug>(ale_previous)
 
 
