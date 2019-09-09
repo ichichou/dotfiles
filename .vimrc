@@ -582,7 +582,7 @@ nmap <Leader>g [fugitive]
 
 nnoremap [fugitive]s :<C-u>Gstatus<CR>
 nnoremap [fugitive]a :<C-u>Gwrite<CR>
-nnoremap [fugitive]c :<C-u>Gcommit<CR>
+nnoremap [fugitive]c :<C-u>Gcommit --verbose<CR>
 nnoremap [fugitive]d :<C-u>Gvdiffsplit<CR>
 nnoremap [fugitive]l :<C-u>Glog<CR>
 
