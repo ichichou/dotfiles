@@ -31,6 +31,7 @@ set nowritebackup
 
 set helplang=ja,en
 
+autocmd vimrc FileType help,qf,man,ref nnoremap <silent> <buffer> q :q!<CR>
 
 " ----------------------------------------
 " Appearance
@@ -277,6 +278,7 @@ Plug 'joker1007/vim-markdown-quote-syntax', { 'for': 'markdown' }
 Plug 'rcmdnk/vim-markdown', { 'for': 'markdown' }
 " Plug 'kannokanno/previm', { 'for': 'markdown' }
 " Plug 'dagwieers/asciidoc-vim', { 'for': 'asciidoc' }
+Plug 'dense-analysis/ale'
 
 " Operator / Text Object
 " --------------------
@@ -624,6 +626,10 @@ call smartinput#define_rule({'at': '\%#', 'char': '【', 'input': '【】<Left>'
 call smartinput#define_rule({'at': '\%#', 'char': '［', 'input': '［］<Left>'})
 call smartinput#define_rule({'at': '\%#', 'char': '｛', 'input': '｛｝<Left>'})
 
+" vim-closetag
+" --------------------
+let g:closetag_filetypes = 'html,xhtml,phtml,xml,markdown'
+
 " vim-prettier
 " --------------------
 let g:prettier#exec_cmd_path = "/usr/local/bin/prettier"
@@ -632,7 +638,43 @@ let g:prettier#autoformat = 0
 let g:prettier#quickfix_auto_focus = 0
 " let g:prettier#exec_cmd_async = 1
 
-" vim-closetag
+" ale
 " --------------------
-let g:closetag_filetypes = 'html,xhtml,phtml,xml,markdown'
+let g:ale_lint_on_enter = 0
+" let g:ale_lint_on_filetype_changed = 0
+" let g:ale_lint_on_save = 0
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 1
+
+" let g:ale_sign_column_always = 1
+" let g:ale_sign_error = '!'
+" g:ale_sign_warning = '?'
+
+" let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+" let g:ale_echo_msg_error_str = 'E'
+" let g:ale_echo_msg_warning_str = 'W'
+" let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+
+let g:ale_linters = {
+  \ 'html': [ 'htmlhint' ],
+  \ }
+
+" let g:ale_fixers = {
+"  \ 'html': [ '' ],
+"  \ }
+
+function! s:ale_list()
+  let g:ale_open_list = 1
+  call ale#Queue(0, 'lint_file')
+endfunction
+command! ALEList call s:ale_list()
+nnoremap <silent> <Leader>l :ALEList<CR>
+
+autocmd vimrc FileType qf nnoremap <silent> <buffer> q :let g:ale_open_list = 0<CR>:q!<CR>
+autocmd vimrc FileType help,qf,man,ref let b:ale_enabled = 0
+
+nmap <silent> <Leader>a <Plug>(ale_toggle)
+nmap <silent> <C-n> <Plug>(ale_next_wrap)
+nmap <silent> <C-p> <Plug>(ale_previous_wrap)
+
 
