@@ -1,4 +1,4 @@
-## Aliases
+## aliases
 alias cp 'cp -iv'
 alias mv 'mv -iv'
 alias rm 'rmtrash'
@@ -12,7 +12,6 @@ alias mvi 'mvim'
 alias noti 'terminal-notifier -message "🤘Done!" -sound glass'
 alias vi 'vim'
 
-### ls/exa
 if test -e "/usr/local/bin/exa"
   alias ls 'exa -a'
   alias ll 'exa -1a'
@@ -23,12 +22,17 @@ else
   alias la 'ls -alG'
 end
 
-## Settings
-### Fish
+## functions
+
+functions --copy cd standard_cd
+
+function cd
+  standard_cd $argv; and la
+end
+
+## fish
 set fish_greeting
 
-### Fzf
+## fzf
 set -U FZF_LEGACY_KEYBINDINGS 0
-
-## Functions
 
