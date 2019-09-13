@@ -8,14 +8,10 @@
   quotepath = false
   ignorecase = false
 
-[color]
-  ui = auto
-
 [commit]
   verbose = true
 
 [diff]
-  renames = true
 
 [fetch]
   prune = true
