@@ -28,7 +28,9 @@ set nowritebackup
 
 set helplang=ja,en
 
-autocmd vimrc FileType help,qf,man,ref nnoremap <silent> <buffer> q :q!<CR>
+augroup vimrc
+  autocmd FileType help,qf,man,ref nnoremap <silent> <buffer> q :q!<CR>
+augroup END
 
 
 " ----------------------------------------
@@ -59,7 +61,9 @@ set display=lastline
 set scrolloff=3
 set breakindent
 set nofoldenable
-autocmd vimrc FileType vim setlocal foldmethod=marker
+augroup vimrc
+  autocmd FileType vim setlocal foldmethod=marker
+augroup END
 
 set belloff=all
 
@@ -74,6 +78,19 @@ set scrollbind
 " Diff
 " --------------------
 set diffopt=internal,filler,vertical,indent-heuristic,algorithm:histogram
+
+function! SetDiffMode()
+  if &diff
+    setlocal nospell
+    setlocal wrap<
+  endif
+endfunction
+
+augroup vimrc
+  autocmd VimEnter,FilterWritePre * call SetDiffMode()
+  autocmd WinEnter * if(winnr('$') == 1) && (getbufvar(winbufnr(0), '&diff')) == 1 | diffoff | endif
+augroup END
+
 command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
   \ | wincmd p | diffthis
 
@@ -674,11 +691,12 @@ endfunction
 command! ALEList call s:ale_list()
 nnoremap <silent> <Leader>l :ALEList<CR>
 
-autocmd vimrc FileType qf nnoremap <silent> <buffer> q :let g:ale_open_list = 0<CR>:q!<CR>
-autocmd vimrc FileType help,qf,man,ref let b:ale_enabled = 0
+augroup vimrc
+  autocmd FileType qf nnoremap <silent> <buffer> q :let g:ale_open_list = 0<CR>:q!<CR>
+  autocmd FileType help,qf,man,ref let b:ale_enabled = 0
+augroup END
 
 nmap <silent> <Leader>a <Plug>(ale_toggle)
 nmap <silent> <C-n> <Plug>(ale_next)
 nmap <silent> <C-p> <Plug>(ale_previous)
-
 
