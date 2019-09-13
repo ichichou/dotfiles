@@ -22,9 +22,6 @@ set hidden
 set autoread
 set switchbuf=usetab
 
-set splitbelow
-set splitright
-
 set noswapfile
 set nobackup
 set nowritebackup
@@ -69,6 +66,16 @@ set belloff=all
 set list
 set listchars=eol:¬,tab:»\ ,trail:\ ,extends:>,precedes:<,nbsp:~
 set ambiwidth=double
+
+set splitbelow
+set splitright
+set scrollbind
+
+" Diff
+" --------------------
+set diffopt=internal,filler,vertical,indent-heuristic,algorithm:histogram
+command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
+  \ | wincmd p | diffthis
 
 " GUI Options
 " --------------------
