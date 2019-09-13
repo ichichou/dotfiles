@@ -12,6 +12,8 @@
   verbose = true
 
 [diff]
+  algorithm = histogram
+  tool = vimdiff
 
 [fetch]
   prune = true
@@ -42,6 +44,7 @@
   co = checkout
   cob = checkout -b
   di = diff
+  dit = difftool
   fe = fetch
   fep = fetch --prune
   lg = log
