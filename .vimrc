@@ -73,7 +73,6 @@ set ambiwidth=double
 
 set splitbelow
 set splitright
-" set scrollbind
 
 " Diff
 " --------------------
@@ -186,17 +185,17 @@ noremap \ ,
 
 noremap ; :
 noremap : ;
-noremap / /\v
+" noremap / /\v
 
 noremap Y y$
 noremap x "_x
 noremap X "_X
 
-noremap あ a
-noremap い i
-noremap う u
-noremap え e
-noremap お o
+" noremap あ a
+" noremap い i
+" noremap う u
+" noremap え e
+" noremap お o
 
 noremap j gj
 noremap k gk
@@ -229,7 +228,7 @@ nnoremap <silent> gO :<C-u>for i in range(1, v:count1) \|
   \ call append(line('.')-1, '') \| endfor \|
   \ silent! call repeat#set("gO", v:count1)<CR>
 
-" Window/Tabpage Control
+" Window/Tabpage
 " --------------------
 nnoremap t <Nop>
 nnoremap [window] <Nop>
@@ -494,7 +493,6 @@ nmap s <Plug>(easymotion-overwin-f2)
 " map f <Plug>(easymotion-bd-fl)
 " map F <Plug>(easymotion-bd-fl)
 
-""" Custom highlighting
 " highlight link EasyMotionTarget ErrorMsg
 " highlight link EasyMotionShade Comment
 " highlight link EasyMotionTarget2First MatchParen
