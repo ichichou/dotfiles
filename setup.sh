@@ -38,6 +38,9 @@ ln -snfv ${DOT}/.config/git/ignore ${CONFIG}/git/ignore
 mkdir -p ${CONFIG}/karabiner
 ln -snfv ${DOT}/.config/karabiner/karabiner.json ${CONFIG}/karabiner/karabiner.json
 
+mkdir -p ${CONFIG}/micro
+ln -snfv ${DOT}/.config/micro/setting.json ${CONFIG}/micro/setting.json
+
 # Application Support
 
 mkdir -p "${APP}/AquaSKK"
