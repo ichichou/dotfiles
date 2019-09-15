@@ -14,7 +14,6 @@ augroup vimrc
   autocmd!
 augroup END
 
-
 " ----------------------------------------
 " File
 " ----------------------------------------
@@ -31,7 +30,6 @@ set helplang=ja,en
 augroup vimrc
   autocmd FileType help,qf,man,ref nnoremap <silent> <buffer> q :q!<CR>
 augroup END
-
 
 " ----------------------------------------
 " Appearance
@@ -87,7 +85,8 @@ endfunction
 
 augroup vimrc
   autocmd VimEnter,FilterWritePre * call SetDiffMode()
-  autocmd WinEnter * if(winnr('$') == 1) && (getbufvar(winbufnr(0), '&diff')) == 1 | diffoff | endif
+  autocmd WinEnter * if(winnr('$') == 1) &&
+  \ (getbufvar(winbufnr(0), '&diff')) == 1 | diffoff | endif
 augroup END
 
 command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
@@ -117,7 +116,6 @@ if has('gui_macvim')
   let g:no_gvimrc_example = 1
 endif
 
-
 " ----------------------------------------
 " Editting
 " ----------------------------------------
@@ -146,7 +144,6 @@ set nrformats-=octal
 set mouse=a
 set ttymouse=xterm2
 
-
 " ----------------------------------------
 " Search/Completion
 " ----------------------------------------
@@ -164,7 +161,6 @@ set history=10000
 set completeopt=menu,menuone,preview
 set pumheight=20
 set infercase
-
 
 " ----------------------------------------
 " Keymap
@@ -255,7 +251,6 @@ nnoremap [window]p gT
 nnoremap <silent> [window]N :<C-u>+tabmove<CR>
 nnoremap <silent> [window]P :<C-u>-tabmove<CR>
 
-
 " ----------------------------------------
 " vim-plug
 " ----------------------------------------
@@ -339,7 +334,6 @@ Plug 'arcticicestudio/nord-vim', { 'do': 'cp colors/* ~/.vim/colors/' }
 Plug 'jacoborus/tender.vim', { 'do': 'cp colors/* ~/.vim/colors/' }
 
 call plug#end()
-
 
 " ----------------------------------------
 " Plugins
@@ -619,7 +613,8 @@ inoremap <silent> <Bar> <Bar><Esc>:call <SID>align()<CR>a
 
 function! s:align()
   let p = '^\s*|\s.*\s|\s*$'
-  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+  if exists(':Tabularize') && getline('.') =~# '^\s*|' &&
+  \ (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
     let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
     let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
     Tabularize/|/l1
