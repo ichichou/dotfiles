@@ -2,6 +2,7 @@
 alias cp 'cp -iv'
 alias mv 'mv -iv'
 alias rm 'rmtrash'
+alias symln 'ln -snfv'
 
 alias b 'brew'
 alias bc 'brew cask'
@@ -23,11 +24,10 @@ else
 end
 
 ## functions
-
 functions --copy cd standard_cd
 
 function cd
-  standard_cd $argv; and la
+  standard_cd $argv; and ls
 end
 
 ## fish
