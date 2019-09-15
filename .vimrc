@@ -73,7 +73,7 @@ set ambiwidth=double
 
 set splitbelow
 set splitright
-set scrollbind
+" set scrollbind
 
 " Diff
 " --------------------
@@ -192,22 +192,16 @@ noremap Y y$
 noremap x "_x
 noremap X "_X
 
-" noremap + <C-a>
-" noremap - <C-x>
-
 noremap あ a
 noremap い i
 noremap う u
 noremap え e
 noremap お o
 
-noremap <silent> j gj
-noremap <silent> k gk
-noremap <silent> gj j
-noremap <silent> gk k
-
-noremap gh ^
-noremap gl $
+noremap j gj
+noremap k gk
+noremap gj j
+noremap gk k
 
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
@@ -538,29 +532,29 @@ let g:memolist_template_dir_path = "$HOME/dotfiles/memolist"
 let g:memolist_memo_suffix = "md"
 let g:memolist_memo_date = "%Y-%m-%d %H:%M"
 
-nnoremap <Leader>mn :<C-u>MemoNew<CR>
-nnoremap <Leader>ml :<C-u>MemoList<CR>
-nnoremap <Leader>mg :<C-u>MemoGrep<CR>
+nnoremap <silent> <Leader>mn :<C-u>MemoNew<CR>
+nnoremap <silent> <Leader>ml :<C-u>MemoList<CR>
+nnoremap <silent> <Leader>mg :<C-u>MemoGrep<CR>
 
 " fzf
 " --------------------
 let g:fzf_layout = { 'down': '~60%' }
 let g:fzf_buffers_jump = 1
 
-nnoremap <Leader>b :<C-u>Buffers<CR>
+nnoremap <silent> <Leader>b :<C-u>Buffers<CR>
 
 nnoremap <Leader>f <Nop>
 nnoremap [fzf] <Nop>
 nmap <Leader>f [fzf]
 
-nnoremap [fzf]b :<C-u>Buffers<CR>
-nnoremap [fzf]c :<C-u>Colors<CR>
-nnoremap [fzf]f :<C-u>Files<CR>
-nnoremap [fzf]h :<C-u>History<CR>
-nnoremap [fzf]l :<C-u>BLines<CR>
-nnoremap [fzf]m :<C-u>Marks<CR>
+nnoremap <silent> [fzf]b :<C-u>Buffers<CR>
+nnoremap <silent> [fzf]c :<C-u>Colors<CR>
+nnoremap <silent> [fzf]f :<C-u>Files<CR>
+nnoremap <silent> [fzf]h :<C-u>History<CR>
+nnoremap <silent> [fzf]l :<C-u>BLines<CR>
+nnoremap <silent> [fzf]m :<C-u>Marks<CR>
+nnoremap <silent> [fzf]t :<C-u>Filetypes<CR>
 nnoremap [fzf]r :<C-u>Rg<Space>
-nnoremap [fzf]t :<C-u>Filetypes<CR>
 
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
@@ -570,7 +564,7 @@ command! -bang Colors
 
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
-  \   'rg  --line-number --no-heading --color=auto --smart-case '.shellescape(<q-args>), 0,
+  \   'rg --line-number --no-heading --color=auto --smart-case '.shellescape(<q-args>), 0,
   \   fzf#vim#with_preview('right:50%:wrap'))
 
 " gitgutter
@@ -580,18 +574,17 @@ set updatetime=250
 nnoremap <Leader>hs <Nop>
 nnoremap <Leader>hu <Nop>
 
-nmap ]h <Plug>GitGutterNextHunk
-nmap [h <Plug>GitGutterPrevHunk
+nmap ]h <Plug>(GitGutterNextHunk)
+nmap [h <Plug>(GitGutterPrevHunk)
 
 nnoremap <Leader>h <Nop>
 nnoremap [gitgutter] <Nop>
 nmap <Leader>h [gitgutter]
 
-nnoremap [gitgutter]j :<C-u>GitGutterNextHunk<CR>
-nnoremap [gitgutter]k :<C-u>GitGutterPrevHunk<CR>
-
-nnoremap [gitgutter]h :<C-u>GitGutterLineHighlightsToggle<CR>
-nnoremap [gitgutter]p :<C-u>GitGutterPreviewHunk<CR>
+nnoremap <silent> [gitgutter]j :<C-u>GitGutterNextHunk<CR>
+nnoremap <silent> [gitgutter]k :<C-u>GitGutterPrevHunk<CR>
+nnoremap <silent> [gitgutter]h :<C-u>GitGutterLineHighlightsToggle<CR>
+nnoremap <silent> [gitgutter]p :<C-u>GitGutterPreviewHunk<CR>
 
 " fugitive
 " --------------------
@@ -599,11 +592,11 @@ nnoremap <Leader>g <Nop>
 nnoremap [fugitive] <Nop>
 nmap <Leader>g [fugitive]
 
-nnoremap [fugitive]s :<C-u>Gstatus<CR>
-nnoremap [fugitive]a :<C-u>Gwrite<CR>
-nnoremap [fugitive]c :<C-u>Gcommit<CR>
-nnoremap [fugitive]d :<C-u>Gvdiffsplit<CR>
-nnoremap [fugitive]l :<C-u>Glog<CR>
+nnoremap <silent> [fugitive]s :<C-u>Gstatus<CR>
+nnoremap <silent> [fugitive]a :<C-u>Gwrite<CR>
+nnoremap <silent> [fugitive]c :<C-u>Gcommit<CR>
+nnoremap <silent> [fugitive]d :<C-u>Gvdiffsplit<CR>
+nnoremap <silent> [fugitive]l :<C-u>Glog<CR>
 
 " agit
 " --------------------
@@ -696,7 +689,7 @@ augroup vimrc
   autocmd FileType help,qf,man,ref let b:ale_enabled = 0
 augroup END
 
-nmap <silent> <Leader>a <Plug>(ale_toggle)
-nmap <silent> <C-n> <Plug>(ale_next)
-nmap <silent> <C-p> <Plug>(ale_previous)
+nmap <Leader>a <Plug>(ale_toggle)
+nmap ]a <Plug>(ale_next)
+nmap [a <Plug>(ale_previous)
 
