@@ -113,8 +113,8 @@ if has('gui_running')
 endif
 
 if has('gui_macvim')
-  let g:macvim_skip_colorscheme=1
-  let g:no_gvimrc_example=1
+  let g:macvim_skip_colorscheme = 1
+  let g:no_gvimrc_example = 1
 endif
 
 
