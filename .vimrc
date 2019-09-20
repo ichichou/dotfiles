@@ -526,14 +526,13 @@ let g:memolist_memo_date = "%Y-%m-%d %H:%M"
 
 nnoremap <silent> <Leader>mn :<C-u>MemoNew<CR>
 nnoremap <silent> <Leader>ml :<C-u>MemoList<CR>
-nnoremap <silent> <Leader>mg :<C-u>MemoGrep<CR>
+" nnoremap <silent> <Leader>mg :<C-u>MemoGrep<CR>
+nnoremap <silent> <Leader>mg :execute "FZF" g:memolist_path<CR>
 
 " fzf
 " --------------------
 let g:fzf_layout = { 'down': '~60%' }
 let g:fzf_buffers_jump = 1
-
-nnoremap <silent> <Leader>b :<C-u>Buffers<CR>
 
 nnoremap <Leader>f <Nop>
 nnoremap [fzf] <Nop>
@@ -547,6 +546,8 @@ nnoremap <silent> [fzf]l :<C-u>BLines<CR>
 nnoremap <silent> [fzf]m :<C-u>Marks<CR>
 nnoremap <silent> [fzf]t :<C-u>Filetypes<CR>
 nnoremap [fzf]r :<C-u>Rg<Space>
+
+nnoremap <silent> <Leader>b :<C-u>Buffers<CR>
 
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
