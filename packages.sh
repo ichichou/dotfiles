@@ -8,9 +8,11 @@ fisehr
 
 set -U fish_user_paths /usr/local/opt/ruby/bin $fish_user_paths
 
-# gem update --system
-# gem install asciidoctor
-# gem install asciidoctor-pdf --pre
-# gem install asciidoctor-pdf-cjk
-# gem install asciidoctor-diagram
+npm -g install npm
+npm -g install htmlhint
 
+gem update --system
+gem install asciidoctor
+gem install asciidoctor-pdf --pre
+gem install asciidoctor-pdf-cjk
+gem install asciidoctor-diagram

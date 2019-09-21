@@ -20,7 +20,7 @@ for i in .??*; do
   [[ ${i} == ".config" ]] && continue
   [[ ${i} == ".gitignore" ]] && continue
   [[ ${i} == ".DS_Store" ]] && continue
-    ln -snfv ${DOT}/${i} ${HOME}/${i}
+  ln -snfv ${DOT}/${i} ${HOME}/${i}
 done
 
 # .config
@@ -66,4 +66,3 @@ rm ${HOME}/Applications/.localized \
   ${HOME}/Music/.localized \
   ${HOME}/Pictures/.localized \
   ${HOME}/Public/.localized \
-
