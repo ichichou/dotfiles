@@ -1,16 +1,22 @@
 ## aliases
 alias cp 'cp -iv'
 alias mv 'mv -iv'
-alias rm 'rmtrash'
 alias symln 'ln -snfv'
+
+if test -e "/usr/local/bin/rmtrash"
+  alias rm 'rmtrash'
+else
+  alias rm 'rm -iv'
+end
 
 alias b 'brew'
 alias bc 'brew cask'
 alias g 'git'
 alias gu 'gitup'
 alias j 'z'
+alias mozj 'mozcjpeg -optimize'
 alias mvi 'mvim'
-alias noti 'terminal-notifier -message "🤘Done!" -sound glass'
+alias notif 'terminal-notifier -message "🤘Done!" -sound glass'
 alias vi 'vim'
 
 if test -e "/usr/local/bin/exa"
@@ -25,9 +31,15 @@ end
 
 ## functions
 functions --copy cd standard_cd
-
 function cd
   standard_cd $argv; and ls
+end
+
+function mozjall
+  mkdir -p mozjpeg
+  for i in *.jpg
+    mozcjpeg -optimize $i > mozjpeg/$i
+  end
 end
 
 ## fish
@@ -35,4 +47,3 @@ set fish_greeting
 
 ## fzf
 set -U FZF_LEGACY_KEYBINDINGS 0
-
