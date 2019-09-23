@@ -587,9 +587,13 @@ nmap <Leader>g [fugitive]
 
 nnoremap <silent> [fugitive]s :<C-u>Gstatus<CR>
 nnoremap <silent> [fugitive]a :<C-u>Gwrite<CR>
-nnoremap <silent> [fugitive]c :<C-u>Gcommit<CR>
+nnoremap <silent> [fugitive]c :<C-u>Gcommit -v<CR>
 nnoremap <silent> [fugitive]d :<C-u>Gvdiffsplit<CR>
 nnoremap <silent> [fugitive]l :<C-u>Glog<CR>
+
+augroup vimrc
+  autocmd FileType fugitive nnoremap <silent> <buffer> q <C-w>q
+augroup END
 
 " agit
 " --------------------
