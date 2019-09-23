@@ -3,4 +3,4 @@ Thumbs.db
 .vscode/
 *.swap
 *~
-
+*.log
