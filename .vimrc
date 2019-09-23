@@ -27,8 +27,14 @@ set nowritebackup
 
 set helplang=ja,en
 
+if executable("rg")
+  set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
+  set grepformat=%f:%l:%c:%m,%f:%l:%m
+endif
+
 augroup vimrc
   autocmd FileType help,qf,man,ref nnoremap <silent> <buffer> q :q!<CR>
+  autocmd QuickFixCmdPost *grep*,make if len(getqflist()) != 0 | cwindow | endif
 augroup END
 
 " ----------------------------------------
