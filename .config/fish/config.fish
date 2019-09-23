@@ -17,6 +17,7 @@ alias j 'z'
 alias mozj 'mozcjpeg -optimize'
 alias mvi 'mvim'
 alias notif 'terminal-notifier -message "🤘Done!" -sound glass'
+alias t 'tmux'
 alias vi 'vim'
 
 if test -e "/usr/local/bin/exa"
