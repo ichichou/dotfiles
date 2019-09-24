@@ -33,6 +33,7 @@ brew "ripgrep"
 brew "rmtrash"
 brew "terminal-notifier"
 brew "tig"
+brew "tmux"
 brew "z"
 
 cask "alacritty"
@@ -75,4 +76,3 @@ mas "Textwell", id: 905944937
 mas "The Unarchiver", id: 425424353
 mas "Tweetbot 3 for Twitter", id: 1384080005
 mas "Yoink", id: 457622435
-
