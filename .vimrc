@@ -140,7 +140,7 @@ set smartindent
 set shiftround
 
 set textwidth=0
-" set virtualedit=onemore
+set virtualedit=onemore
 set backspace=indent,eol,start
 set whichwrap=b,s,h,l,<,>,[,]
 set clipboard=unnamed
