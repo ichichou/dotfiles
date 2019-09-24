@@ -1,6 +1,7 @@
 ## aliases
 alias cp 'cp -iv'
 alias mv 'mv -iv'
+alias reload 'exec fish'
 alias symln 'ln -snfv'
 
 if test -e "/usr/local/bin/rmtrash"
