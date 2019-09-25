@@ -753,3 +753,10 @@ nmap <Leader>a <Plug>(ale_toggle)
 nmap ]a <Plug>(ale_next)
 nmap [a <Plug>(ale_previous)
 
+" emmet.vim
+" --------------------
+" let g:user_emmet_leader_key='<C-E>'
+let g:user_emmet_install_global = 0
+augroup vimrc
+  autocmd FileType html,css,markdown EmmetInstall
+augroup END
