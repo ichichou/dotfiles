@@ -238,6 +238,8 @@ nmap t [window]
 
 nnoremap [window]/ :<C-u>vertical help<Space>
 
+nnoremap [window]s <C-w>s
+nnoremap [window]v <C-w>v
 nnoremap [window]= <C-w>=
 
 nnoremap [window]h <C-w>h
@@ -302,7 +304,7 @@ Plug 'rcmdnk/vim-markdown', { 'for': 'markdown' }
 " Plug 'dagwieers/asciidoc-vim', { 'for': 'asciidoc' }
 Plug 'dense-analysis/ale'
 
-" Operator / Text Object
+" Operator/Objects
 " --------------------
 Plug 'kana/vim-operator-user'
 Plug 'kana/vim-operator-replace'
@@ -617,11 +619,6 @@ let g:polyglot_disabled = ['markdown']
 
 " tabular
 " --------------------
-map <Leader>a= :Tabularize /=<CR>
-map <Leader>a: :Tabularize /:\zs<CR>
-
-inoremap <silent> <Bar> <Bar><Esc>:call <SID>align()<CR>a
-
 function! s:align()
   let p = '^\s*|\s.*\s|\s*$'
   if exists(':Tabularize') && getline('.') =~# '^\s*|' &&
@@ -633,6 +630,10 @@ function! s:align()
     call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
   endif
 endfunction
+inoremap <silent> <Bar> <Bar><Esc>:call <SID>align()<CR>a
+
+" map <Leader>a= :Tabularize /=<CR>
+" map <Leader>a: :Tabularize /:\zs<CR>
 
 " vim-smartinput
 " --------------------
@@ -652,10 +653,10 @@ call smartinput#map_to_trigger('i', '】', '】', '】')
 call smartinput#map_to_trigger('i', '］', '］', '］')
 call smartinput#map_to_trigger('i', '｝', '｝', '｝')
 
-call smartinput#define_rule({'at': '(\%#)', 'char': '<Space>', 'input': '<Space><Space><Left>'})
-call smartinput#define_rule({'at': '{\%#}', 'char': '<Space>', 'input': '<Space><Space><Left>'})
-call smartinput#define_rule({'at': '[\%#]', 'char': '<Space>', 'input': '<Space><Space><Left>'})
-call smartinput#define_rule({'at': '<\%#>', 'char': '<Space>', 'input': '<Space><Space><Left>'})
+" call smartinput#define_rule({'at': '(\%#)', 'char': '<Space>', 'input': '<Space><Space><Left>'})
+" call smartinput#define_rule({'at': '{\%#}', 'char': '<Space>', 'input': '<Space><Space><Left>'})
+" call smartinput#define_rule({'at': '[\%#]', 'char': '<Space>', 'input': '<Space><Space><Left>'})
+" call smartinput#define_rule({'at': '<\%#>', 'char': '<Space>', 'input': '<Space><Space><Left>'})
 
 " call smartinput#define_rule({'at': '( \%# )', 'char': '<BS>', 'input': '<Del><BS>'})
 " call smartinput#define_rule({'at': '{ \%# }', 'char': '<BS>', 'input': '<Del><BS>'})
