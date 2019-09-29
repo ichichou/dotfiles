@@ -10,9 +10,9 @@ set -U fish_user_paths /usr/local/opt/ruby/bin $fish_user_paths
 
 npm -g install npm
 npm -g install eslint
+npm -g install eslint-plugin-prettier
 npm -g install htmlhint
 npm -g install prettier
-npm -g install --save-dev prettier-eslint-cli
 
 gem update --system
 gem install asciidoctor
