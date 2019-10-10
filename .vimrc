@@ -96,7 +96,7 @@ augroup vimrc
 augroup END
 
 command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-  \ | wincmd p | diffthis
+\ | wincmd p | diffthis
 
 " GUI Options
 " --------------------
@@ -220,15 +220,16 @@ noremap ZZ <Nop>
 noremap ZQ <Nop>
 noremap Q <Nop>
 noremap gQ <Nop>
+noremap <Del> <Nop>
 
 " Insert Blank Line
 " --------------------
 nnoremap <silent> go :<C-u>for i in range(1, v:count1) \|
-  \ call append(line('.'), '') \| endfor \|
-  \ silent! call repeat#set("go", v:count1)<CR>
+\ call append(line('.'), '') \| endfor \|
+\ silent! call repeat#set("go", v:count1)<CR>
 nnoremap <silent> gO :<C-u>for i in range(1, v:count1) \|
-  \ call append(line('.')-1, '') \| endfor \|
-  \ silent! call repeat#set("gO", v:count1)<CR>
+\ call append(line('.')-1, '') \| endfor \|
+\ silent! call repeat#set("gO", v:count1)<CR>
 
 " Window/Tabpage
 " --------------------
@@ -284,8 +285,7 @@ Plug 'glidenote/memolist.vim'
 Plug 'qpkorr/vim-renamer'
 Plug 'alvan/vim-closetag'
 Plug 'mattn/emmet-vim'
-Plug 'prettier/vim-prettier', { 'for': [
-  \ 'html', 'markdown', 'yaml', 'css', 'less', 'scss', 'javascript', 'json', ] }
+Plug 'prettier/vim-prettier', { 'for': [ 'html', 'markdown', 'yaml', 'css', 'less', 'scss', 'javascript', 'json', ] }
 
 " Movement
 " --------------------
@@ -448,6 +448,9 @@ map gx <Plug>(openbrowser-smart-search)
 " better-whitespace
 " --------------------
 " let g:better_whitespace_filetypes_blacklist = [ 'diff', 'gitcommit', 'qf', 'help' ]
+augroup vimrc
+  autocmd FileType diff,gitcommit,qf,help DisableWhitespace
+augroup END
 
 highlight ExtraWhitespace ctermbg=DarkRed
 highlight ExtraWhitespace guibg=DarkRed
@@ -455,13 +458,13 @@ highlight ExtraWhitespace guibg=DarkRed
 " jasegment
 " --------------------
 call jasegment#define(
-  \ 'nonblank', {
-  \   'move-n': 'gW',
-  \   'move-p': 'gB',
-  \   'move-N': 'gE',
-  \   'select-i': 'iE',
-  \   'select-a': 'aE',
-  \ })
+\ 'nonblank', {
+\   'move-n': 'gW',
+\   'move-p': 'gB',
+\   'move-N': 'gE',
+\   'select-i': 'iE',
+\   'select-a': 'aE',
+\ })
 
 " yankround
 " --------------------
@@ -558,15 +561,15 @@ nnoremap [fzf]r :<C-u>Rg<Space>
 nnoremap <silent> <Leader>b :<C-u>Buffers<CR>
 
 command! -bang -nargs=? -complete=dir Files
-  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+\ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
 command! -bang Colors
-  \ call fzf#vim#colors({'left': '15%', 'options': '--reverse --margin 30%,0'}, <bang>0)
+\ call fzf#vim#colors({'left': '15%', 'options': '--reverse --margin 30%,0'}, <bang>0)
 
 command! -bang -nargs=* Rg
-  \ call fzf#vim#grep(
-  \   'rg --line-number --no-heading --color=auto --smart-case '.shellescape(<q-args>), 0,
-  \   fzf#vim#with_preview('right:50%:wrap'))
+\ call fzf#vim#grep(
+\ 'rg --line-number --no-heading --color=auto --smart-case '.shellescape(<q-args>), 0,
+\ fzf#vim#with_preview('right:50%:wrap'))
 
 " gitgutter
 " --------------------
@@ -731,13 +734,13 @@ let g:ale_lint_on_insert_leave = 1
 " let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 let g:ale_linters = {
- \ 'html': [ 'htmlhint' ],
- \ 'javascript': [ 'eslint' ],
- \ }
+  \ 'html': [ 'htmlhint' ],
+  \ 'javascript': [ 'eslint' ],
+  \ }
 let g:ale_fixers = {
- \ 'html': [ 'prettier' ],
- \ 'javascript': [ 'eslint' ],
- \ }
+  \ 'html': [ 'prettier' ],
+  \ 'javascript': [ 'eslint' ],
+  \ }
 
 function! s:ale_list()
   let g:ale_open_list = 1
