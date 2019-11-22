@@ -522,6 +522,7 @@ let g:operator#surround#blocks = {
   \   { 'block': [ '**', '**' ], 'motionwise': [ 'char', 'line', 'block' ], 'keys': [ '*' ] },
   \   { 'block': [ '（', '）' ], 'motionwise': [ 'char', 'line', 'block' ], 'keys': [ '（', '）', 'm' ] },
   \   { 'block': [ '「', '」' ], 'motionwise': [ 'char', 'line', 'block' ], 'keys': [ '「', '」', 'k' ] },
+  \   { 'block': [ '『', '』' ], 'motionwise': [ 'char', 'line', 'block' ], 'keys': [ '『', '』', 'K' ] },
   \ ]}
 
 " operator-flashy
