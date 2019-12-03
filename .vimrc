@@ -303,6 +303,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'joker1007/vim-markdown-quote-syntax', { 'for': 'markdown' }
 Plug 'rcmdnk/vim-markdown', { 'for': 'markdown' }
 " Plug 'dagwieers/asciidoc-vim', { 'for': 'asciidoc' }
+Plug 'mechatroner/rainbow_csv'
 Plug 'dense-analysis/ale'
 
 " Operator/Objects
@@ -619,7 +620,7 @@ map <Leader>0 <Plug>(caw:zeropos:toggle)
 
 " vim-polyglot
 " --------------------
-let g:polyglot_disabled = ['markdown']
+let g:polyglot_disabled = ['markdown', 'csv']
 
 " tabular
 " --------------------
