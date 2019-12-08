@@ -43,6 +43,7 @@ cask "aquaskk"
 cask "bettertouchtool"
 cask "bitwarden"
 cask "box-drive"
+cask "coteditor"
 cask "dash"
 cask "github"
 cask "gitup"
@@ -54,6 +55,7 @@ cask "kindle"
 cask "rstudio"
 cask "scroll-reverser"
 cask "teamviewer"
+cask "the-unarchiver"
 cask "visual-studio-code"
 cask "vlc"
 
@@ -69,10 +71,7 @@ cask "font-source-code-pro"
 cask "font-source-han-code-jp"
 
 mas "Amphetamine", id: 937984704
-mas "CotEditor", id: 1024640650
 mas "LINE", id: 539883307
 mas "Pages", id: 409201541
 mas "Textwell", id: 905944937
-mas "The Unarchiver", id: 425424353
-mas "Tweetbot 3 for Twitter", id: 1384080005
 mas "Yoink", id: 457622435
