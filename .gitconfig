@@ -1,74 +1,73 @@
 [user]
-  name = ichichou
-  email = 35998815+ichichou@users.noreply.github.com
+    name = ichichou
+    email = 35998815+ichichou@users.noreply.github.com
 
 [core]
-  editor = vim
-  pager = less -MS
-  quotepath = false
-  ignorecase = false
+    editor = vim
+    pager = less -MS
+    quotepath = false
+    ignorecase = false
 
 [commit]
-  verbose = true
+    verbose = true
 
 [diff]
-  algorithm = histogram
-  compactionHeuristic = true
-  tool = vimdiff
+    algorithm = histogram
+    compactionHeuristic = true
+    tool = vimdiff
 
 [fetch]
-  prune = true
+    prune = true
 
 [merge]
-  ff = false
-  tool = vimdiff
+    ff = false
+    tool = vimdiff
 
 [pull]
-  ff = only
+    ff = only
 
 [pager]
-  log = diff-highlight | less
-  show = diff-highlight | less
-  diff = diff-highlight | less
+    log = diff-highlight | less
+    show = diff-highlight | less
+    diff = diff-highlight | less
 
 [interactive]
-  diffFilter = diff-highlight
+    diffFilter = diff-highlight
 
 [filter "lfs"]
-  clean = git-lfs clean -- %f
-  smudge = git-lfs smudge -- %f
-  process = git-lfs filter-process
-  required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
 
 [alias]
-  a = add
-  aa = add --all
-  br = branch
-  bra = branch --all
-  brd = branch --delete
-  cl = clone
-  cm = commit
-  cma = commit --all
-  cmam = commit --all --message
-  cmm = commit --message
-  co = checkout
-  cob = checkout -b
-  di = diff
-  dit = difftool
-  fe = fetch
-  fep = fetch --prune
-  lg = log
-  lgg = log --graph --oneline --decorate
-  lgp = log --patch
-  mg = merge
-  mgt = mergetool
-  mv = mv --verbose
-  pl = pull
-  ps = push
-  psd = push --delete
-  psu = push --set-upstream
-  rl = reflog
-  s = status --short --branch
-  sh = show
-  ss = status
-
+    a = add
+    aa = add --all
+    br = branch
+    bra = branch --all
+    brd = branch --delete
+    cl = clone
+    cm = commit
+    cma = commit --all
+    cmam = commit --all --message
+    cmm = commit --message
+    co = checkout
+    cob = checkout -b
+    di = diff
+    dit = difftool
+    fe = fetch
+    fep = fetch --prune
+    lg = log
+    lgg = log --graph --oneline --decorate
+    lgp = log --patch
+    mg = merge
+    mgt = mergetool
+    mv = mv --verbose
+    pl = pull
+    ps = push
+    psd = push --delete
+    psu = push --set-upstream
+    rl = reflog
+    s = status --short --branch
+    sh = show
+    ss = status

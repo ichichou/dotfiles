@@ -22,4 +22,3 @@ fi
 
 # Fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
