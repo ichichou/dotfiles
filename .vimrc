@@ -11,7 +11,7 @@ filetype plugin indent on
 syntax enable
 
 augroup vimrc
-  autocmd!
+    autocmd!
 augroup END
 
 " ----------------------------------------
@@ -28,13 +28,13 @@ set nowritebackup
 set helplang=ja,en
 
 if executable("rg")
-  set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
-  set grepformat=%f:%l:%c:%m,%f:%l:%m
+    set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
+    set grepformat=%f:%l:%c:%m,%f:%l:%m
 endif
 
 augroup vimrc
-  autocmd FileType help,qf,man,ref nnoremap <silent> <buffer> q :q!<CR>
-  autocmd QuickFixCmdPost *grep*,make if len(getqflist()) != 0 | cwindow | endif
+    autocmd FileType help,qf,man,ref nnoremap <silent> <buffer> q :q!<CR>
+    autocmd QuickFixCmdPost *grep*,make if len(getqflist()) != 0 | cwindow | endif
 augroup END
 
 " ----------------------------------------
@@ -66,7 +66,7 @@ set scrolloff=3
 set breakindent
 set nofoldenable
 augroup vimrc
-  autocmd FileType vim setlocal foldmethod=marker
+    autocmd FileType vim setlocal foldmethod=marker
 augroup END
 
 set belloff=all
@@ -83,16 +83,16 @@ set splitright
 set diffopt=internal,filler,vertical,indent-heuristic,algorithm:histogram
 
 function! SetDiffMode()
-  if &diff
-    setlocal nospell
-    setlocal wrap<
-  endif
+    if &diff
+        setlocal nospell
+        setlocal wrap<
+    endif
 endfunction
 
 augroup vimrc
-  autocmd VimEnter,FilterWritePre * call SetDiffMode()
-  autocmd WinEnter * if(winnr('$') == 1) &&
-  \ (getbufvar(winbufnr(0), '&diff')) == 1 | diffoff | endif
+    autocmd VimEnter,FilterWritePre * call SetDiffMode()
+    autocmd WinEnter * if(winnr('$') == 1) &&
+    \ (getbufvar(winbufnr(0), '&diff')) == 1 | diffoff | endif
 augroup END
 
 command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
@@ -101,25 +101,25 @@ command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 " GUI Options
 " --------------------
 if has('gui_running')
-  set guioptions+=c
-  set guioptions-=e
-  set guioptions-=m
-  set guioptions-=r
-  set guioptions-=L
-  set guioptions-=t
-  set guioptions-=T
-  set guicursor+=a:blinkon0
+    set guioptions+=c
+    set guioptions-=e
+    set guioptions-=m
+    set guioptions-=r
+    set guioptions-=L
+    set guioptions-=t
+    set guioptions-=T
+    set guicursor+=a:blinkon0
 
-  set guifont=Myrica\ Monospace:h14
-  " set guifontwide=
-  set linespace=2
-  set columns=140
-  set lines=50
+    set guifont=Myrica\ Monospace:h14
+    " set guifontwide=
+    set linespace=2
+    set columns=140
+    set lines=50
 endif
 
 if has('gui_macvim')
-  let g:macvim_skip_colorscheme = 1
-  let g:no_gvimrc_example = 1
+    let g:macvim_skip_colorscheme = 1
+    let g:no_gvimrc_example = 1
 endif
 
 " ----------------------------------------
@@ -130,7 +130,7 @@ set softtabstop=4
 set shiftwidth=4
 
 augroup vimrc
-  autocmd FileType json setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd FileType json setlocal tabstop=2 softtabstop=2 shiftwidth=2
 augroup END
 
 set expandtab
@@ -264,10 +264,10 @@ nnoremap <silent> [window]P :<C-u>-tabmove<CR>
 " vim-plug
 " ----------------------------------------
 if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-  \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  silent !mkdir -p ~/.vim/colors
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    silent !mkdir -p ~/.vim/colors
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 call plug#begin('~/.vim/plugged')
@@ -351,9 +351,9 @@ call plug#end()
 " colorschemes
 " --------------------
 if has('gui_running')
-  colorscheme iceberg
+    colorscheme iceberg
 else
-  colorscheme hybrid
+    colorscheme hybrid
 endif
 " hybrid iceberg tender nord
 
@@ -374,41 +374,47 @@ let g:nord_cursor_line_number_background = 1
 " hybrid iceberg tender tenderplus nord
 
 if has('gui_running')
-  let g:lightline = {
-  \ 'colorscheme': 'iceberg',
-  \ 'active': {
-  \   'left': [
-  \     [ 'mode', 'paste' ],
-  \     [ 'readonly', 'filepath', 'modified' ] ],
-  \   'right': [
-  \     [ 'lineinfo' ],
-  \     [ 'percent' ],
-  \     [ 'fileformat', 'fileencoding', 'filetype' ] ]
-  \ },
-  \ 'component': {
-  \   'percent': '%3p%% [%LL]'
-  \ },
-  \ 'component_function': {
-  \   'filepath': 'FilePath'
-  \ }}
+    let g:lightline = {
+        \ 'colorscheme': 'iceberg',
+        \ 'active': {
+            \ 'left': [
+                \ [ 'mode', 'paste' ],
+                \ [ 'readonly', 'filepath', 'modified' ]
+            \ ],
+            \ 'right': [
+                \ [ 'lineinfo' ],
+                \ [ 'percent' ],
+                \ [ 'fileformat', 'fileencoding', 'filetype' ]
+            \ ]
+        \ },
+        \ 'component': {
+            \ 'percent': '%3p%% [%LL]'
+        \ },
+        \ 'component_function': {
+            \ 'filepath': 'FilePath'
+        \ }
+    \ }
 else
-  let g:lightline = {
-  \ 'colorscheme': 'hybrid',
-  \ 'active': {
-  \   'left': [
-  \     [ 'mode', 'paste' ],
-  \     [ 'readonly', 'filepath', 'modified' ] ],
-  \   'right': [
-  \     [ 'lineinfo' ],
-  \     [ 'percent' ],
-  \     [ 'fileformat', 'fileencoding', 'filetype' ] ]
-  \ },
-  \ 'component': {
-  \   'percent': '%3p%% [%LL]'
-  \ },
-  \ 'component_function': {
-  \   'filepath': 'FilePath'
-  \ }}
+    let g:lightline = {
+        \ 'colorscheme': 'hybrid',
+        \ 'active': {
+            \ 'left': [
+                \ [ 'mode', 'paste' ],
+                \ [ 'readonly', 'filepath', 'modified' ]
+            \ ],
+            \ 'right': [
+                \ [ 'lineinfo' ],
+                \ [ 'percent' ],
+                \ [ 'fileformat', 'fileencoding', 'filetype' ]
+            \ ]
+        \ },
+        \ 'component': {
+            \ 'percent': '%3p%% [%LL]'
+        \ },
+        \ 'component_function': {
+            \ 'filepath': 'FilePath'
+        \ }
+    \ }
 endif
 
 function! FilePath()
@@ -420,9 +426,9 @@ function! FilePath()
 endfunction
 
 let g:lightline.tabline = {
-  \ 'left': [ [ 'tabs' ] ],
-  \ 'right': [ [ '' ] ],
-  \ }
+    \ 'left': [ [ 'tabs' ] ],
+    \ 'right': [ [ '' ] ],
+\ }
 
 " vaffle
 " --------------------
@@ -450,7 +456,7 @@ map gx <Plug>(openbrowser-smart-search)
 " --------------------
 " let g:better_whitespace_filetypes_blacklist = [ 'diff', 'gitcommit', 'qf', 'help' ]
 augroup vimrc
-  autocmd FileType diff,gitcommit,qf,help DisableWhitespace
+    autocmd FileType diff,gitcommit,qf,help DisableWhitespace
 augroup END
 
 highlight ExtraWhitespace ctermbg=DarkRed
@@ -459,13 +465,14 @@ highlight ExtraWhitespace guibg=DarkRed
 " jasegment
 " --------------------
 call jasegment#define(
-\ 'nonblank', {
-\   'move-n': 'gW',
-\   'move-p': 'gB',
-\   'move-N': 'gE',
-\   'select-i': 'iE',
-\   'select-a': 'aE',
-\ })
+    \'nonblank', {
+        \ 'move-n': 'gW',
+        \ 'move-p': 'gB',
+        \ 'move-N': 'gE',
+        \ 'select-i': 'iE',
+        \ 'select-a': 'aE',
+    \ }
+\ )
 
 " yankround
 " --------------------
@@ -517,13 +524,28 @@ map S <Plug>(operator-surround-append)
 map Sd <Plug>(operator-surround-delete)
 map Sr <Plug>(operator-surround-replace)
 
-let g:operator#surround#blocks = {
-  \ '-' : [
-  \   { 'block': [ '**', '**' ], 'motionwise': [ 'char', 'line', 'block' ], 'keys': [ '*' ] },
-  \   { 'block': [ '（', '）' ], 'motionwise': [ 'char', 'line', 'block' ], 'keys': [ '（', '）', 'm' ] },
-  \   { 'block': [ '「', '」' ], 'motionwise': [ 'char', 'line', 'block' ], 'keys': [ '「', '」', 'k' ] },
-  \   { 'block': [ '『', '』' ], 'motionwise': [ 'char', 'line', 'block' ], 'keys': [ '『', '』', 'K' ] },
-  \ ]}
+let g:operator#surround#blocks = { '-' : [
+    \ {
+        \ 'block': [ '**', '**' ],
+        \ 'motionwise': [ 'char', 'line', 'block' ],
+        \ 'keys': [ '*' ]
+    \ },
+    \ {
+        \ 'block': [ '（', '）' ],
+        \ 'motionwise': [ 'char', 'line', 'block' ],
+        \ 'keys': [ '（', '）', 'm' ]
+    \ },
+    \ {
+        \ 'block': [ '「', '」' ],
+        \ 'motionwise': [ 'char', 'line', 'block' ],
+        \ 'keys': [ '「', '」', 'k' ]
+    \ },
+    \ {
+        \ 'block': [ '『', '』' ],
+        \ 'motionwise': [ 'char', 'line', 'block' ],
+        \ 'keys': [ '『', '』', 'K' ]
+    \ },
+\ ] }
 
 " operator-flashy
 " --------------------
@@ -566,7 +588,7 @@ command! -bang -nargs=? -complete=dir Files
 \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
 command! -bang Colors
-\ call fzf#vim#colors({'left': '15%', 'options': '--reverse --margin 30%,0'}, <bang>0)
+\ call fzf#vim#colors({ 'left': '15%', 'options': '--reverse --margin 30%,0' }, <bang>0)
 
 command! -bang -nargs=* Rg
 \ call fzf#vim#grep(
@@ -604,7 +626,7 @@ nnoremap <silent> [fugitive]d :<C-u>Gvdiffsplit<CR>
 nnoremap <silent> [fugitive]l :<C-u>Glog<CR>
 
 augroup vimrc
-  autocmd FileType fugitive nnoremap <silent> <buffer> q <C-w>q
+    autocmd FileType fugitive nnoremap <silent> <buffer> q <C-w>q
 augroup END
 
 " agit
@@ -619,20 +641,20 @@ map <Leader>0 <Plug>(caw:zeropos:toggle)
 
 " vim-polyglot
 " --------------------
-let g:polyglot_disabled = ['markdown', 'csv']
+let g:polyglot_disabled = [ 'markdown', 'csv' ]
 
 " tabular
 " --------------------
 function! s:align()
-  let p = '^\s*|\s.*\s|\s*$'
-  if exists(':Tabularize') && getline('.') =~# '^\s*|' &&
-  \ (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
-    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
-    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
-    Tabularize/|/l1
-    normal! 0
-    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
-  endif
+    let p = '^\s*|\s.*\s|\s*$'
+    if exists(':Tabularize') && getline('.') =~# '^\s*|' &&
+    \ (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+        let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+        let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+        Tabularize/|/l1
+        normal! 0
+        call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+    endif
 endfunction
 inoremap <silent> <Bar> <Bar><Esc>:call <SID>align()<CR>a
 
@@ -658,10 +680,10 @@ call smartinput#map_to_trigger('i', '］', '］', '］')
 call smartinput#map_to_trigger('i', '｝', '｝', '｝')
 
 call smartinput#define_rule({
-  \ 'at': '\s\+\%#',
-  \ 'char': '<CR>',
-  \ 'input': "<C-o>:call setline('.', substitute(getline('.'), '\\s\\+$', '', ''))<CR><CR>",
-  \ })
+    \ 'at': '\s\+\%#',
+    \ 'char': '<CR>',
+    \ 'input': "<C-o>:call setline('.', substitute(getline('.'), '\\s\\+$', '', ''))<CR><CR>",
+\ })
 
 call smartinput#define_rule({'at': '(\%#)', 'char': '<Space>', 'input': '<Space><Space><Left>'})
 call smartinput#define_rule({'at': '{\%#}', 'char': '<Space>', 'input': '<Space><Space><Left>'})
@@ -735,24 +757,24 @@ let g:ale_lint_on_insert_leave = 1
 " let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 let g:ale_linters = {
-  \ 'html': [ 'htmlhint' ],
-  \ 'javascript': [ 'eslint' ],
-  \ }
+    \ 'html': [ 'htmlhint' ],
+    \ 'javascript': [ 'eslint' ],
+\ }
 let g:ale_fixers = {
-  \ 'html': [ 'prettier' ],
-  \ 'javascript': [ 'eslint' ],
-  \ }
+    \ 'html': [ 'prettier' ],
+    \ 'javascript': [ 'eslint' ],
+\ }
 
 function! s:ale_list()
-  let g:ale_open_list = 1
-  call ale#Queue(0, 'lint_file')
+    let g:ale_open_list = 1
+    call ale#Queue(0, 'lint_file')
 endfunction
 command! ALEList call s:ale_list()
 nnoremap <silent> <Leader>l :ALEList<CR>
 
 augroup vimrc
-  autocmd FileType qf nnoremap <silent> <buffer> q :let g:ale_open_list = 0<CR>:q!<CR>
-  autocmd FileType help,qf,man,ref let b:ale_enabled = 0
+    autocmd FileType qf nnoremap <silent> <buffer> q :let g:ale_open_list = 0<CR>:q!<CR>
+    autocmd FileType help,qf,man,ref let b:ale_enabled = 0
 augroup END
 
 nmap <Leader>a <Plug>(ale_toggle)
@@ -764,5 +786,5 @@ nmap [a <Plug>(ale_previous)
 " let g:user_emmet_leader_key='<C-E>'
 let g:user_emmet_install_global = 0
 augroup vimrc
-  autocmd FileType html,css,markdown EmmetInstall
+    autocmd FileType html,css,markdown EmmetInstall
 augroup END
