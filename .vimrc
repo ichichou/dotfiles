@@ -222,6 +222,19 @@ noremap Q <Nop>
 noremap gQ <Nop>
 noremap <Del> <Nop>
 
+inoremap <D-0> <Nop>
+inoremap <D-1> <Nop>
+inoremap <D-2> <Nop>
+inoremap <D-3> <Nop>
+inoremap <D-4> <Nop>
+inoremap <D-5> <Nop>
+inoremap <D-6> <Nop>
+inoremap <D-7> <Nop>
+inoremap <D-8> <Nop>
+inoremap <D-9> <Nop>
+inoremap <D-a> <Nop>
+inoremap <D-i> <Nop>
+
 " Insert Blank Line
 " --------------------
 nnoremap <silent> go :<C-u>for i in range(1, v:count1) \|
