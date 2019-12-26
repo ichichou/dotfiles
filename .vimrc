@@ -298,7 +298,7 @@ Plug 'glidenote/memolist.vim'
 Plug 'qpkorr/vim-renamer'
 Plug 'alvan/vim-closetag'
 Plug 'mattn/emmet-vim'
-Plug 'prettier/vim-prettier', { 'for': [ 'html', 'markdown', 'yaml', 'css', 'less', 'scss', 'javascript', 'json', ] }
+Plug 'prettier/vim-prettier', {'for': ['html', 'markdown', 'yaml', 'css', 'less', 'scss', 'javascript', 'json',]}
 
 " Movement
 " --------------------
@@ -306,15 +306,15 @@ Plug 'cocopon/vaffle.vim'
 Plug 'tyru/open-browser.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'haya14busa/is.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
 Plug 'junegunn/fzf.vim'
 
 " Language
 " --------------------
 Plug 'sheerun/vim-polyglot'
-Plug 'joker1007/vim-markdown-quote-syntax', { 'for': 'markdown' }
-Plug 'rcmdnk/vim-markdown', { 'for': 'markdown' }
-" Plug 'dagwieers/asciidoc-vim', { 'for': 'asciidoc' }
+Plug 'joker1007/vim-markdown-quote-syntax', {'for': 'markdown'}
+Plug 'rcmdnk/vim-markdown', {'for': 'markdown'}
+" Plug 'dagwieers/asciidoc-vim', {'for': 'asciidoc'}
 Plug 'mechatroner/rainbow_csv'
 Plug 'dense-analysis/ale'
 
@@ -332,7 +332,7 @@ Plug 'kana/vim-textobj-line'
 " --------------------
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
-Plug 'cohama/agit.vim', { 'on': 'Agit' }
+Plug 'cohama/agit.vim', {'on': 'Agit'}
 
 " Japanese
 " --------------------
@@ -350,10 +350,10 @@ Plug 'ntpeters/vim-better-whitespace'
 
 " Colorscheme
 " --------------------
-Plug 'w0ng/vim-hybrid', { 'do': 'cp colors/* ~/.vim/colors/' }
-Plug 'cocopon/iceberg.vim', { 'do': 'cp colors/* ~/.vim/colors/' }
-Plug 'arcticicestudio/nord-vim', { 'do': 'cp colors/* ~/.vim/colors/' }
-Plug 'jacoborus/tender.vim', { 'do': 'cp colors/* ~/.vim/colors/' }
+Plug 'w0ng/vim-hybrid', {'do': 'cp colors/* ~/.vim/colors/'}
+Plug 'cocopon/iceberg.vim', {'do': 'cp colors/* ~/.vim/colors/'}
+Plug 'arcticicestudio/nord-vim', {'do': 'cp colors/* ~/.vim/colors/'}
+Plug 'jacoborus/tender.vim', {'do': 'cp colors/* ~/.vim/colors/'}
 
 call plug#end()
 
@@ -391,43 +391,31 @@ if has('gui_running')
         \ 'colorscheme': 'iceberg',
         \ 'active': {
             \ 'left': [
-                \ [ 'mode', 'paste' ],
-                \ [ 'readonly', 'filepath', 'modified' ]
-            \ ],
+                \ ['mode', 'paste'],
+                \ ['readonly', 'filepath', 'modified']],
             \ 'right': [
-                \ [ 'lineinfo' ],
-                \ [ 'percent' ],
-                \ [ 'fileformat', 'fileencoding', 'filetype' ]
-            \ ]
-        \ },
+                \ ['lineinfo'],
+                \ ['percent'],
+                \ ['fileformat', 'fileencoding', 'filetype']]},
         \ 'component': {
-            \ 'percent': '%3p%% [%LL]'
-        \ },
+            \ 'percent': '%3p%% [%LL]'},
         \ 'component_function': {
-            \ 'filepath': 'FilePath'
-        \ }
-    \ }
+            \ 'filepath': 'FilePath'}}
 else
     let g:lightline = {
         \ 'colorscheme': 'hybrid',
         \ 'active': {
             \ 'left': [
-                \ [ 'mode', 'paste' ],
-                \ [ 'readonly', 'filepath', 'modified' ]
-            \ ],
+                \ ['mode', 'paste'],
+                \ ['readonly', 'filepath', 'modified']],
             \ 'right': [
-                \ [ 'lineinfo' ],
-                \ [ 'percent' ],
-                \ [ 'fileformat', 'fileencoding', 'filetype' ]
-            \ ]
-        \ },
+                \ ['lineinfo'],
+                \ ['percent'],
+                \ ['fileformat', 'fileencoding', 'filetype']]},
         \ 'component': {
-            \ 'percent': '%3p%% [%LL]'
-        \ },
+            \ 'percent': '%3p%% [%LL]'},
         \ 'component_function': {
-            \ 'filepath': 'FilePath'
-        \ }
-    \ }
+            \ 'filepath': 'FilePath'}}
 endif
 
 function! FilePath()
@@ -439,9 +427,8 @@ function! FilePath()
 endfunction
 
 let g:lightline.tabline = {
-    \ 'left': [ [ 'tabs' ] ],
-    \ 'right': [ [ '' ] ],
-\ }
+    \ 'left': [['tabs']],
+    \ 'right': [['']],}
 
 " vaffle
 " --------------------
@@ -467,7 +454,7 @@ map gx <Plug>(openbrowser-smart-search)
 
 " better-whitespace
 " --------------------
-" let g:better_whitespace_filetypes_blacklist = [ 'diff', 'gitcommit', 'qf', 'help' ]
+" let g:better_whitespace_filetypes_blacklist = ['diff', 'gitcommit', 'qf', 'help']
 augroup vimrc
     autocmd FileType diff,gitcommit,qf,help DisableWhitespace
 augroup END
@@ -483,9 +470,7 @@ call jasegment#define(
         \ 'move-p': 'gB',
         \ 'move-N': 'gE',
         \ 'select-i': 'iE',
-        \ 'select-a': 'aE',
-    \ }
-\ )
+        \ 'select-a': 'aE',})
 
 " yankround
 " --------------------
@@ -537,28 +522,24 @@ map S <Plug>(operator-surround-append)
 map Sd <Plug>(operator-surround-delete)
 map Sr <Plug>(operator-surround-replace)
 
-let g:operator#surround#blocks = { '-' : [
+let g:operator#surround#blocks = {'-' : [
     \ {
-        \ 'block': [ '**', '**' ],
-        \ 'motionwise': [ 'char', 'line', 'block' ],
-        \ 'keys': [ '*' ]
-    \ },
+        \ 'block': ['**', '**'],
+        \ 'motionwise': ['char', 'line', 'block'],
+        \ 'keys': ['*']},
     \ {
-        \ 'block': [ '（', '）' ],
-        \ 'motionwise': [ 'char', 'line', 'block' ],
-        \ 'keys': [ '（', '）', 'm' ]
-    \ },
+        \ 'block': ['（', '）'],
+        \ 'motionwise': ['char', 'line', 'block'],
+        \ 'keys': ['（', '）', 'm']},
     \ {
-        \ 'block': [ '「', '」' ],
-        \ 'motionwise': [ 'char', 'line', 'block' ],
-        \ 'keys': [ '「', '」', 'k' ]
-    \ },
+        \ 'block': ['「', '」'],
+        \ 'motionwise': ['char', 'line', 'block'],
+        \ 'keys': ['「', '」', 'k']},
     \ {
-        \ 'block': [ '『', '』' ],
-        \ 'motionwise': [ 'char', 'line', 'block' ],
-        \ 'keys': [ '『', '』', 'K' ]
-    \ },
-\ ] }
+        \ 'block': ['『', '』'],
+        \ 'motionwise': ['char', 'line', 'block'],
+        \ 'keys': ['『', '』', 'K']},
+\ ]}
 
 " operator-flashy
 " --------------------
@@ -579,7 +560,7 @@ nnoremap <silent> <Leader>mg :execute "FZF" g:memolist_path<CR>
 
 " fzf
 " --------------------
-let g:fzf_layout = { 'down': '~60%' }
+let g:fzf_layout = {'down': '~60%'}
 let g:fzf_buffers_jump = 1
 
 nnoremap <Leader>f <Nop>
@@ -601,7 +582,7 @@ command! -bang -nargs=? -complete=dir Files
 \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
 command! -bang Colors
-\ call fzf#vim#colors({ 'left': '15%', 'options': '--reverse --margin 30%,0' }, <bang>0)
+\ call fzf#vim#colors({'left': '15%', 'options': '--reverse --margin 30%,0'}, <bang>0)
 
 command! -bang -nargs=* Rg
 \ call fzf#vim#grep(
@@ -654,7 +635,7 @@ map <Leader>0 <Plug>(caw:zeropos:toggle)
 
 " vim-polyglot
 " --------------------
-let g:polyglot_disabled = [ 'markdown', 'csv' ]
+let g:polyglot_disabled = ['markdown', 'csv']
 
 " tabular
 " --------------------
@@ -695,8 +676,7 @@ call smartinput#map_to_trigger('i', '｝', '｝', '｝')
 call smartinput#define_rule({
     \ 'at': '\s\+\%#',
     \ 'char': '<CR>',
-    \ 'input': "<C-o>:call setline('.', substitute(getline('.'), '\\s\\+$', '', ''))<CR><CR>",
-\ })
+    \ 'input': "<C-o>:call setline('.', substitute(getline('.'), '\\s\\+$', '', ''))<CR><CR>",})
 
 call smartinput#define_rule({'at': '(\%#)', 'char': '<Space>', 'input': '<Space><Space><Left>'})
 call smartinput#define_rule({'at': '{\%#}', 'char': '<Space>', 'input': '<Space><Space><Left>'})
@@ -764,19 +744,17 @@ let g:ale_lint_on_insert_leave = 1
 " let g:ale_sign_error = '!'
 " g:ale_sign_warning = '?'
 
-" let g:ale_statusline_format = [ '⨉ %d', '⚠ %d', '⬥ ok' ]
+" let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 " let g:ale_echo_msg_error_str = 'E'
 " let g:ale_echo_msg_warning_str = 'W'
 " let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 let g:ale_linters = {
-    \ 'html': [ 'htmlhint' ],
-    \ 'javascript': [ 'eslint' ],
-\ }
+    \ 'html': ['htmlhint'],
+    \ 'javascript': ['eslint'],}
 let g:ale_fixers = {
-    \ 'html': [ 'prettier' ],
-    \ 'javascript': [ 'eslint' ],
-\ }
+    \ 'html': ['prettier'],
+    \ 'javascript': ['eslint'],}
 
 function! s:ale_list()
     let g:ale_open_list = 1
