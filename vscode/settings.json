@@ -1,11 +1,9 @@
 {
-  "copyMarkdownAsHtml.breaks": true,
   "copyMarkdownAsHtml.linkify": true,
   "editor.fontFamily": "Hack, Noto Sans Mono CJK JP, monospace",
   "editor.minimap.enabled": false,
   "editor.renderControlCharacters": true,
   "editor.renderWhitespace": "all",
-  "editor.tabSize": 2,
   "editor.wordWrap": "on",
   "files.defaultLanguage": "markdown",
   "files.eol": "\n",
@@ -19,12 +17,27 @@
   "search.smartCase": true,
   "workbench.colorTheme": "Verdandi",
   "workbench.iconTheme": "verdandi",
+  "vsicons.dontShowNewVersionMessage": true,
+  "copyMarkdownAsHtml.breaks": true,
+  "vim.cursorStylePerMode.insert": "line",
+  "vim.cursorStylePerMode.normal": "block",
+  "vim.cursorStylePerMode.replace": "block",
+  "vim.cursorStylePerMode.visual": "block",
+  "vim.cursorStylePerMode.visualblock": "block",
+  "vim.cursorStylePerMode.visualline": "block",
+  "vim.easymotion": true,
+  "vim.easymotionMarkerFontFamily": "Hack, Noto Sans Mono CJK JP, monospace",
+  "vim.gdefault": true,
+  "vim.highlightedyank.enable": true,
+  "vim.history": 1000,
+  "vim.leader": ",",
+  "vim.useSystemClipboard": true,
+  "editor.cursorBlinking": "solid",
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[markdown]": {
-    "editor.tabSize": 4,
     "editor.quickSuggestions": true,
     "editor.snippetSuggestions": "top"
-  }
+  },
 }
