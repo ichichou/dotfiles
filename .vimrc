@@ -299,6 +299,7 @@ Plug 'qpkorr/vim-renamer'
 Plug 'alvan/vim-closetag'
 Plug 'mattn/emmet-vim'
 Plug 'prettier/vim-prettier', {'for': ['html', 'markdown', 'yaml', 'css', 'less', 'scss', 'javascript', 'json',]}
+Plug 'ervandew/supertab'
 
 " Movement
 " --------------------
@@ -317,6 +318,7 @@ Plug 'rcmdnk/vim-markdown', {'for': 'markdown'}
 " Plug 'dagwieers/asciidoc-vim', {'for': 'asciidoc'}
 Plug 'mechatroner/rainbow_csv'
 Plug 'dense-analysis/ale'
+Plug 'davidhalter/jedi-vim'
 
 " Operator/Objects
 " --------------------
@@ -779,3 +781,30 @@ let g:user_emmet_install_global = 0
 augroup vimrc
     autocmd FileType html,css,markdown EmmetInstall
 augroup END
+
+" jedi-vim
+" --------------------
+augroup vimrc
+    autocmd FileType python setlocal completeopt-=preview
+augroup END
+
+" let g:jedi#auto_initialization = 0
+" let g:jedi#auto_vim_configuration = 0
+" let g:jedi#use_tabs_not_buffers = 1
+" let g:jedi#use_splits_not_buffers = 'right'
+let g:jedi#popup_on_dot = 0
+let g:jedi#popup_select_first = 0
+let g:jedi#show_call_signatures = 0
+
+let g:jedi#goto_command = '<leader>jd'
+let g:jedi#goto_assignments_command = '<leader>jg'
+let g:jedi#goto_definitions_command = ''
+let g:jedi#documentation_command = '<Leader>jk'
+let g:jedi#usages_command = '<leader>jn'
+let g:jedi#completions_command = '<C-n>'
+let g:jedi#rename_command = '<leader>jr'
+
+" supertab
+" --------------------
+let g:SuperTabDefaultCompletionType = '<C-n>'
+let g:SuperTabContextDefaultCompletionType = '<C-n>'
