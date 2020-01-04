@@ -753,10 +753,15 @@ let g:ale_lint_on_insert_leave = 1
 
 let g:ale_linters = {
     \ 'html': ['htmlhint'],
-    \ 'javascript': ['eslint'],}
+    \ 'javascript': ['eslint'],
+    \ 'python': ['flake8'],}
 let g:ale_fixers = {
     \ 'html': ['prettier'],
-    \ 'javascript': ['eslint'],}
+    \ 'javascript': ['eslint'],
+    \ 'python': ['black', 'isort'],}
+
+let g:ale_python_flake8_options = ''
+let g:ale_python_black_options = '--skip-string-normalization'
 
 function! s:ale_list()
     let g:ale_open_list = 1
