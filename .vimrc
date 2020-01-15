@@ -789,10 +789,6 @@ augroup END
 
 " jedi-vim
 " --------------------
-augroup vimrc
-    autocmd FileType python setlocal completeopt-=preview
-augroup END
-
 " let g:jedi#auto_initialization = 0
 " let g:jedi#auto_vim_configuration = 0
 " let g:jedi#use_tabs_not_buffers = 1
@@ -800,6 +796,10 @@ augroup END
 let g:jedi#popup_on_dot = 0
 let g:jedi#popup_select_first = 0
 let g:jedi#show_call_signatures = 0
+
+augroup vimrc
+    autocmd FileType python setlocal completeopt-=preview
+augroup END
 
 let g:jedi#goto_command = '<leader>jd'
 let g:jedi#goto_assignments_command = '<leader>jg'
