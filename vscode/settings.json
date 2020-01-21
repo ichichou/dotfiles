@@ -40,4 +40,10 @@
     "editor.quickSuggestions": true,
     "editor.snippetSuggestions": "top"
   },
+  "python.jediEnabled": false,
+  "python.dataScience.askForKernelRestart": false,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
 }
