@@ -476,7 +476,7 @@ call jasegment#define(
 
 " yankround
 " --------------------
-let g:yankround_max_history = 50
+let g:yankround_max_history = 100
 let g:yankround_use_region_hl = 1
 
 map p <Plug>(yankround-p)
@@ -737,10 +737,10 @@ let g:prettier#quickfix_auto_focus = 0
 " ale
 " --------------------
 let g:ale_lint_on_enter = 0
-" let g:ale_lint_on_filetype_changed = 0
-" let g:ale_lint_on_save = 0
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 1
+" let g:ale_lint_on_filetype_changed = 0
+" let g:ale_lint_on_save = 0
 
 " let g:ale_sign_column_always = 1
 " let g:ale_sign_error = '!'
@@ -761,23 +761,31 @@ let g:ale_fixers = {
     \ 'python': ['black', 'isort'],}
 
 let g:ale_python_flake8_options = ''
-let g:ale_python_black_options = '--skip-string-normalization'
+let g:ale_python_black_options = ''
 
 function! s:ale_list()
     let g:ale_open_list = 1
     call ale#Queue(0, 'lint_file')
 endfunction
 command! ALEList call s:ale_list()
-nnoremap <silent> <Leader>l :ALEList<CR>
+
+nnoremap <Leader>a <Nop>
+nnoremap [ale] <Nop>
+nmap <Leader>a [ale]
+
+nmap <silent> [ale]t <Plug>(ale_toggle)
+nmap <silent> [ale]f <Plug>(ale_fix)
+nnoremap <silent> [ale]l :ALEList<CR>
+
+nmap <silent> [ale]] <Plug>(ale_next)
+nmap <silent> [ale][ <Plug>(ale_previous)
+nmap ]a <Plug>(ale_next)
+nmap [a <Plug>(ale_previous)
 
 augroup vimrc
     autocmd FileType qf nnoremap <silent> <buffer> q :let g:ale_open_list = 0<CR>:q!<CR>
     autocmd FileType help,qf,man,ref let b:ale_enabled = 0
 augroup END
-
-nmap <Leader>a <Plug>(ale_toggle)
-nmap ]a <Plug>(ale_next)
-nmap [a <Plug>(ale_previous)
 
 " emmet.vim
 " --------------------
