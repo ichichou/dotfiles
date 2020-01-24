@@ -217,11 +217,14 @@ cnoremap <C-n> <Down>
 " set termwinkey=<C-g>
 " tnoremap <F1> <C-\><C-n>
 
+" nnoremap <silent> <Leader><Leader> :<C-u>edit ~/dotfiles/.vimrc<CR>
+" nnoremap <silent> <Leader>. :<C-u>source ~/dotfiles/.vimrc<CR>
+nnoremap <silent> <Leader><Leader> :<C-u>edit $MYVIMRC<CR>
+nnoremap <silent> <Leader>. :<C-u>source $MYVIMRC<CR> :source $MYGVIMRC<CR>
+
 nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR>
 nnoremap <silent> <Leader>r :<C-u>redraw!<CR>
 nnoremap <silent> <Leader>t :<C-u>vertical terminal ++close<CR>
-nnoremap <silent> <Leader>. :<C-u>source ~/dotfiles/.vimrc<CR>
-nnoremap <silent> <Leader><Leader> :<C-u>edit ~/dotfiles/.vimrc<CR>
 
 noremap ZZ <Nop>
 noremap ZQ <Nop>
