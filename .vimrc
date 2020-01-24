@@ -52,6 +52,7 @@ set cursorline
 
 set showmatch
 set matchtime=1
+set matchpairs&
 set matchpairs+=（:）,［:］,｛:｝,「:」,『:』,〈:〉,【:】,〔:〕
 
 source $VIMRUNTIME/macros/matchit.vim
@@ -68,9 +69,7 @@ set display=lastline
 set scrolloff=3
 set breakindent
 set nofoldenable
-augroup vimrc
-    autocmd FileType vim setlocal foldmethod=marker
-augroup END
+autocmd vimrc FileType vim setlocal foldmethod=marker
 
 set belloff=all
 
@@ -98,12 +97,13 @@ augroup vimrc
     \ (getbufvar(winbufnr(0), '&diff')) == 1 | diffoff | endif
 augroup END
 
-command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
+command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 \ | wincmd p | diffthis
 
 " GUI Options
 " --------------------
 if has('gui_running')
+    set guioptions&
     set guioptions+=c
     set guioptions-=e
     set guioptions-=m
@@ -111,8 +111,8 @@ if has('gui_running')
     set guioptions-=L
     set guioptions-=t
     set guioptions-=T
+    set guicursor&
     set guicursor+=a:blinkon0
-
     set guifont=Myrica\ Monospace:h14
     " set guifontwide=
     set linespace=2
@@ -149,6 +149,7 @@ set whichwrap=b,s,h,l,<,>,[,]
 set clipboard&
 set clipboard^=unnamedplus
 
+set nrformats&
 set nrformats-=octal
 
 set mouse=a
@@ -463,9 +464,7 @@ map gx <Plug>(openbrowser-smart-search)
 " better-whitespace
 " --------------------
 " let g:better_whitespace_filetypes_blacklist = ['diff', 'gitcommit', 'qf', 'help']
-augroup vimrc
-    autocmd FileType diff,gitcommit,qf,help DisableWhitespace
-augroup END
+autocmd vimrc FileType diff,gitcommit,qf,help DisableWhitespace
 
 highlight ExtraWhitespace ctermbg=DarkRed
 highlight ExtraWhitespace guibg=DarkRed
@@ -627,9 +626,7 @@ nnoremap <silent> [fugitive]c :<C-u>Gcommit -v<CR>
 nnoremap <silent> [fugitive]d :<C-u>Gvdiffsplit<CR>
 nnoremap <silent> [fugitive]l :<C-u>Glog<CR>
 
-augroup vimrc
-    autocmd FileType fugitive nnoremap <silent> <buffer> q <C-w>q
-augroup END
+autocmd vimrc FileType fugitive nnoremap <silent> <buffer> q <C-w>q
 
 " agit
 " --------------------
@@ -797,9 +794,7 @@ augroup END
 " --------------------
 " let g:user_emmet_leader_key='<C-E>'
 let g:user_emmet_install_global = 0
-augroup vimrc
-    autocmd FileType html,css,markdown EmmetInstall
-augroup END
+autocmd vimrc FileType html,css,markdown EmmetInstall
 
 " jedi-vim
 " --------------------
@@ -811,9 +806,7 @@ let g:jedi#popup_on_dot = 0
 let g:jedi#popup_select_first = 0
 let g:jedi#show_call_signatures = 0
 
-augroup vimrc
-    autocmd FileType python setlocal completeopt-=preview
-augroup END
+autocmd vimrc FileType python setlocal completeopt-=preview
 
 let g:jedi#goto_command = '<leader>jd'
 let g:jedi#goto_assignments_command = '<leader>jg'
