@@ -35,7 +35,7 @@ end
 ## functions
 functions --copy cd standard_cd
 function cd
-    standard_cd $argv; and la
+    standard_cd $argv; and ls
 end
 
 function mozjall
