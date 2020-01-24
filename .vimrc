@@ -1,6 +1,9 @@
 " ========================================
 " .vimrc
 " ========================================
+unlet! skip_defaults_vim
+source $VIMRUNTIME/defaults.vim
+
 set encoding=utf-8
 scriptencoding utf-8
 set fileencodings=utf-8,euc-jp,sjis
