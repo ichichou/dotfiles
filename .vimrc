@@ -213,12 +213,12 @@ noremap gk k
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
-" set termwinkey=<C-l>
+" set termwinkey=<C-g>
 " tnoremap <F1> <C-\><C-n>
 
 nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR>
 nnoremap <silent> <Leader>r :<C-u>redraw!<CR>
-nnoremap <silent> <Leader>t :<C-u>vertical terminal fish<CR>
+nnoremap <silent> <Leader>t :<C-u>vertical terminal ++close<CR>
 nnoremap <silent> <Leader>. :<C-u>source ~/dotfiles/.vimrc<CR>
 nnoremap <silent> <Leader><Leader> :<C-u>edit ~/dotfiles/.vimrc<CR>
 
