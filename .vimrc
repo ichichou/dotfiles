@@ -146,12 +146,15 @@ set textwidth=0
 set virtualedit=onemore
 set backspace=indent,eol,start
 set whichwrap=b,s,h,l,<,>,[,]
-set clipboard=unnamed
+set clipboard&
+set clipboard^=unnamedplus
 
 set nrformats-=octal
 
 set mouse=a
 set ttymouse=xterm2
+
+set shell=fish
 
 " ----------------------------------------
 " Search/Completion
