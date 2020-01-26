@@ -46,4 +46,8 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "diffEditor.ignoreTrimWhitespace": false,
+  "explorer.confirmDelete": false,
+  "plantuml.exportFormat": "png",
+  "plantuml.render": "PlantUMLServer",
+  "plantuml.server": "http://localhost:8080/",
 }
