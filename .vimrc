@@ -325,6 +325,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'joker1007/vim-markdown-quote-syntax', {'for': 'markdown'}
 Plug 'rcmdnk/vim-markdown', {'for': 'markdown'}
+Plug 'previm/previm'
 " Plug 'dagwieers/asciidoc-vim', {'for': 'asciidoc'}
 Plug 'mechatroner/rainbow_csv'
 Plug 'dense-analysis/ale'
@@ -457,6 +458,15 @@ highlight link htmlBoldItalic ErrorMsg
 
 let g:vim_markdown_folding_disabled = 1
 " let g:vim_markdown_conceal = 0
+
+" previm
+" --------------------
+let g:previm_open_cmd = 'open -a Google\ Chrome'
+" let g:previm_disable_default_css = 1
+" let g:previm_custom_css_path = ''
+" let g:previm_show_header = 0
+
+nnoremap <silent> <Leader>p :<C-u>PrevimOpen<CR>
 
 " open-browser
 " --------------------
