@@ -147,7 +147,7 @@ set virtualedit=onemore
 set backspace=indent,eol,start
 set whichwrap=b,s,h,l,<,>,[,]
 set clipboard&
-set clipboard^=unnamedplus
+set clipboard^=unnamed,unnamedplus
 
 set nrformats&
 set nrformats-=octal
