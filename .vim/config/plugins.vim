@@ -2,17 +2,6 @@
 " Plugins
 " ----------------------------------------
 
-let g:hybrid_custom_term_colors = 1
-" let g:lightline_hybrid_style = 'plain'
-
-let g:nord_italic = 1
-let g:nord_underline = 1
-let g:nord_italic_comments = 1
-let g:nord_uniform_status_lines = 1
-let g:nord_comment_brightness = 15
-let g:nord_uniform_diff_background = 1
-let g:nord_cursor_line_number_background = 1
-
 " lightline
 " --------------------
 " powerline wombat jellybeans solarized PaperColor seoul256 Dracula one landscape
@@ -264,11 +253,6 @@ nnoremap <silent> [fugitive]l :<C-u>Glog<CR>
 
 autocmd vimrc FileType fugitive nnoremap <silent> <buffer> q <C-w>q
 
-" agit
-" --------------------
-" let g:agit_enable_auto_show_commit = 0
-" let g:agit_enable_auto_refresh = 1
-
 " caw.vim
 " --------------------
 map <Leader>c <Plug>(caw:hatpos:toggle)
@@ -431,31 +415,6 @@ augroup END
 " let g:user_emmet_leader_key='<C-E>'
 let g:user_emmet_install_global = 0
 autocmd vimrc FileType html,css,markdown EmmetInstall
-
-" jedi-vim
-" --------------------
-" let g:jedi#auto_initialization = 0
-" let g:jedi#auto_vim_configuration = 0
-" let g:jedi#use_tabs_not_buffers = 1
-" let g:jedi#use_splits_not_buffers = 'right'
-let g:jedi#popup_on_dot = 0
-let g:jedi#popup_select_first = 0
-let g:jedi#show_call_signatures = 0
-
-autocmd vimrc FileType python setlocal completeopt-=preview
-
-let g:jedi#goto_command = '<leader>jd'
-let g:jedi#goto_assignments_command = '<leader>jg'
-let g:jedi#goto_definitions_command = ''
-let g:jedi#documentation_command = '<Leader>jk'
-let g:jedi#usages_command = '<leader>jn'
-let g:jedi#completions_command = '<C-n>'
-let g:jedi#rename_command = '<leader>jr'
-
-" supertab
-" --------------------
-let g:SuperTabDefaultCompletionType = '<C-n>'
-let g:SuperTabContextDefaultCompletionType = '<C-n>'
 
 " vim-asterisk
 " --------------------
