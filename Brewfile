@@ -59,6 +59,7 @@ cask "visual-studio-code"
 cask "vlc"
 
 cask "font-cantarell"
+cask "font-dejavu-sans"
 cask "font-hack"
 cask "font-inconsolata"
 cask "font-lato"
