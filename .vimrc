@@ -23,6 +23,26 @@ let g:no_gvimrc_example = 1
 if has('gui_macvim')
     let g:macvim_skip_colorscheme = 1
 endif
+
+let g:loaded_gzip               = 1
+let g:loaded_tar                = 1
+let g:loaded_tarPlugin          = 1
+let g:loaded_zip                = 1
+let g:loaded_zipPlugin          = 1
+let g:loaded_rrhelper           = 1
+let g:loaded_vimball            = 1
+let g:loaded_vimballPlugin      = 1
+let g:loaded_getscript          = 1
+let g:loaded_getscriptPlugin    = 1
+let g:loaded_netrw              = 1
+let g:loaded_netrwPlugin        = 1
+let g:loaded_netrwSettings      = 1
+let g:loaded_netrwFileHandlers  = 1
+let g:did_install_default_menus = 1
+let g:skip_loading_mswin        = 1
+let g:did_install_syntax_menu   = 1
+let g:loaded_2html_plugin       = 1
+
 " ----------------------------------------
 " File
 " ----------------------------------------
