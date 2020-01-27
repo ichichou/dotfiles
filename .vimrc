@@ -433,11 +433,11 @@ else
 endif
 
 function! FilePath()
-  if winwidth(0) > 70
-    return expand('%:s')
-  else
-    return expand('%:t')
-  endif
+    if winwidth(0) > 70
+        return expand('%:s')
+    else
+        return expand('%:t')
+    endif
 endfunction
 
 let g:lightline.tabline = {
