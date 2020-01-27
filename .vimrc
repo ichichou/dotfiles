@@ -318,6 +318,7 @@ Plug 'cocopon/vaffle.vim'
 Plug 'tyru/open-browser.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'haya14busa/is.vim'
+Plug 'haya14busa/vim-asterisk'
 Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
 Plug 'junegunn/fzf.vim'
 
@@ -838,3 +839,12 @@ let g:jedi#rename_command = '<leader>jr'
 " --------------------
 let g:SuperTabDefaultCompletionType = '<C-n>'
 let g:SuperTabContextDefaultCompletionType = '<C-n>'
+
+" vim-asterisk
+" --------------------
+map * <Plug>(asterisk-z*)
+map # <Plug>(asterisk-z#)
+map g* <Plug>(asterisk-gz*)
+map g# <Plug>(asterisk-gz#)
+
+" let g:asterisk#keeppos = 1
