@@ -123,6 +123,10 @@ set matchtime=1
 set matchpairs&
 set matchpairs+=（:）,［:］,｛:｝,「:」,『:』,〈:〉,【:】,〔:〕
 
+source $VIMRUNTIME/macros/matchit.vim
+let b:match_ignorecase = 1
+" let b:match_words = "<if>:<endif>"
+
 " ----------------------------------------
 " Search/Completion
 " ----------------------------------------
@@ -153,8 +157,6 @@ augroup END
 " ----------------------------------------
 " Plugins
 " ----------------------------------------
-
-source $VIMRUNTIME/macros/matchit.vim
 
 " vim-plug
 " --------------------
