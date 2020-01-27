@@ -1,9 +1,6 @@
 " ========================================
 " .vimrc
 " ========================================
-unlet! skip_defaults_vim
-source $VIMRUNTIME/defaults.vim
-
 set encoding=utf-8
 scriptencoding utf-8
 set fileencoding=utf-8
@@ -18,6 +15,14 @@ augroup vimrc
     autocmd!
 augroup END
 
+unlet! skip_defaults_vim
+source $VIMRUNTIME/defaults.vim
+
+let g:no_vimrc_example = 1
+let g:no_gvimrc_example = 1
+if has('gui_macvim')
+    let g:macvim_skip_colorscheme = 1
+endif
 " ----------------------------------------
 " File
 " ----------------------------------------
@@ -124,11 +129,6 @@ if has('gui_running')
         set columns=140
         set lines=50
     endif
-endif
-
-if has('gui_macvim')
-    let g:macvim_skip_colorscheme = 1
-    let g:no_gvimrc_example = 1
 endif
 
 
