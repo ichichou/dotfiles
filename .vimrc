@@ -6,6 +6,7 @@ source $VIMRUNTIME/defaults.vim
 
 set encoding=utf-8
 scriptencoding utf-8
+set fileencoding=utf-8
 set fileencodings=utf-8,euc-jp,sjis
 " set fileencodings=iso-2022-jp,cp932,euc-jp,sjis,utf=8
 set fileformats=unix,dos,mac
@@ -49,6 +50,7 @@ set background=dark
 set title
 set number
 set cursorline
+set nocursorcolumn
 
 set showmatch
 set matchtime=1
@@ -75,7 +77,6 @@ set belloff=all
 
 set list
 set listchars=eol:¬,tab:»\ ,space:\ ,trail:\ ,extends:>,precedes:<,nbsp:~
-set ambiwidth=double
 
 set splitbelow
 set splitright
@@ -114,16 +115,22 @@ if has('gui_running')
     set guicursor&
     set guicursor+=a:blinkon0
     set guifont=Myrica\ Monospace:h14
-    " set guifontwide=
+    " set guifont=Hack:h14
+    " set guifontwide=Noto\ Sans\ Mono\ CJK\ JP:h14
+    set ambiwidth=double
     set linespace=2
-    set columns=140
-    set lines=50
+
+    if has('vim_starting')
+        set columns=140
+        set lines=50
+    endif
 endif
 
 if has('gui_macvim')
     let g:macvim_skip_colorscheme = 1
     let g:no_gvimrc_example = 1
 endif
+
 
 " ----------------------------------------
 " Editting
@@ -138,9 +145,9 @@ augroup END
 
 set expandtab
 set smarttab
+set shiftround
 set autoindent
 set smartindent
-set shiftround
 
 set textwidth=0
 set virtualedit=onemore
@@ -191,25 +198,18 @@ set infercase
 
 let g:mapleader = ','
 noremap \ ,
-
 noremap ; :
 noremap : ;
 " noremap / /\v
-
-noremap Y y$
-noremap x "_x
-noremap X "_X
-
-" noremap あ a
-" noremap い i
-" noremap う u
-" noremap え e
-" noremap お o
 
 noremap j gj
 noremap k gk
 noremap gj j
 noremap gk k
+
+noremap Y y$
+noremap x "_x
+noremap X "_X
 
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
@@ -217,8 +217,6 @@ cnoremap <C-n> <Down>
 " set termwinkey=<C-g>
 " tnoremap <F1> <C-\><C-n>
 
-" nnoremap <silent> <Leader><Leader> :<C-u>edit ~/dotfiles/.vimrc<CR>
-" nnoremap <silent> <Leader>. :<C-u>source ~/dotfiles/.vimrc<CR>
 nnoremap <silent> <Leader><Leader> :<C-u>edit $MYVIMRC<CR>
 nnoremap <silent> <Leader>. :<C-u>source $MYVIMRC<CR> :source $MYGVIMRC<CR>
 
@@ -254,7 +252,7 @@ nnoremap <silent> gO :<C-u>for i in range(1, v:count1) \|
 \ call append(line('.')-1, '') \| endfor \|
 \ silent! call repeat#set("gO", v:count1)<CR>
 
-" Window/Tabpage
+" Window/Tabpage/Buffer
 " --------------------
 nnoremap t <Nop>
 nnoremap [window] <Nop>
@@ -282,6 +280,9 @@ nnoremap [window]n gt
 nnoremap [window]p gT
 nnoremap <silent> [window]N :<C-u>+tabmove<CR>
 nnoremap <silent> [window]P :<C-u>-tabmove<CR>
+
+nnoremap <silent> [window]] :<C-u>bnext<CR>
+nnoremap <silent> [window][ :<C-u>bprevious<CR>
 
 " ----------------------------------------
 " vim-plug
@@ -546,19 +547,23 @@ let g:operator#surround#blocks = {'-' : [
     \ {
         \ 'block': ['**', '**'],
         \ 'motionwise': ['char', 'line', 'block'],
-        \ 'keys': ['*']},
+        \ 'keys': ['*']
+    \ },
     \ {
         \ 'block': ['（', '）'],
         \ 'motionwise': ['char', 'line', 'block'],
-        \ 'keys': ['（', '）', 'm']},
+        \ 'keys': ['（', '）', 'm']
+    \ },
     \ {
         \ 'block': ['「', '」'],
         \ 'motionwise': ['char', 'line', 'block'],
-        \ 'keys': ['「', '」', 'k']},
+        \ 'keys': ['「', '」', 'k']
+    \ },
     \ {
         \ 'block': ['『', '』'],
         \ 'motionwise': ['char', 'line', 'block'],
-        \ 'keys': ['『', '』', 'K']},
+        \ 'keys': ['『', '』', 'K']
+    \ },
 \ ]}
 
 " operator-flashy
