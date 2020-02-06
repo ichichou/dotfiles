@@ -12,9 +12,8 @@ set background=dark
 colorscheme hybrid
 " hybrid iceberg nord tender
 
-set guifont=Myrica\ Monospace:h14
-" set guifont=Hack:h14
-" set guifontwide=Noto\ Sans\ Mono\ CJK\ JP:h14
+set guifont=Hack-Regular:h14
+set guifontwide=NotoSansMonoCJKjp-Regular:h14
 
 set ambiwidth=double
 set linespace=2
