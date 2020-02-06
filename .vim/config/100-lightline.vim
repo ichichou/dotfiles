@@ -1,4 +1,4 @@
-if empty(globpath(&runtimepath, 'autoload/bar.vim'))
+if empty(globpath(&runtimepath, 'autoload/lightline.vim'))
     finish
 endif
 
