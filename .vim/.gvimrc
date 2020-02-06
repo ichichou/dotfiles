@@ -9,7 +9,7 @@ if has('gui_macvim')
 endif
 
 set background=dark
-colorscheme iceberg
+colorscheme hybrid
 " hybrid iceberg nord tender
 
 set guifont=Myrica\ Monospace:h14

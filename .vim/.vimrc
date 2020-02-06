@@ -90,7 +90,7 @@ augroup END
 
 " set termguicolors
 set background=dark
-colorscheme hybrid
+colorscheme iceberg
 " hybrid iceberg nord tender
 
 set list
