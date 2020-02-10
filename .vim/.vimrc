@@ -158,81 +158,91 @@ augroup END
 " Plugins
 " ----------------------------------------
 
-" vim-plug
-" --------------------
-if empty(glob('~/.vim/autoload/plug.vim'))
-    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    silent !mkdir -p ~/.vim/colors
-    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+if exists('*minpac#init')
+    call minpac#init()
+    call minpac#add('k-takata/minpac', {'type': 'opt'})
+
+    " General
+    " --------------------
+    call minpac#add('LeafCage/yankround.vim')
+    call minpac#add('airblade/vim-gitgutter')
+    call minpac#add('alvan/vim-closetag')
+    call minpac#add('cocopon/lightline-hybrid.vim')
+    call minpac#add('cocopon/vaffle.vim')
+    call minpac#add('easymotion/vim-easymotion')
+    call minpac#add('glidenote/memolist.vim')
+    call minpac#add('godlygeek/tabular')
+    call minpac#add('haya14busa/is.vim')
+    call minpac#add('haya14busa/vim-asterisk')
+    call minpac#add('itchyny/lightline.vim')
+    call minpac#add('itchyny/vim-highlighturl')
+    call minpac#add('junegunn/fzf.vim')
+    call minpac#add('ntpeters/vim-better-whitespace')
+    call minpac#add('tpope/vim-fugitive')
+    call minpac#add('tpope/vim-repeat')
+    call minpac#add('tyru/caw.vim')
+    call minpac#add('tyru/open-browser.vim')
+    " call minpac#add('kana/vim-repeat')
+
+    call minpac#add('kana/vim-smartinput')
+    call minpac#add('cohama/vim-smartinput-endwise')
+
+    " Operator / Text Object
+    " --------------------
+    call minpac#add('kana/vim-operator-user')
+    call minpac#add('haya14busa/vim-operator-flashy')
+    call minpac#add('kana/vim-operator-replace')
+    call minpac#add('rhysd/vim-operator-surround')
+
+    call minpac#add('kana/vim-textobj-user')
+    call minpac#add('kana/vim-textobj-entire')
+    call minpac#add('kana/vim-textobj-line')
+
+    " Language
+    " --------------------
+    call minpac#add('sheerun/vim-polyglot')
+    call minpac#add('dense-analysis/ale')
+    call minpac#add('mattn/emmet-vim')
+    call minpac#add('aklt/plantuml-syntax', {'type': 'opt'})
+    call minpac#add('mechatroner/rainbow_csv', {'type': 'opt'})
+    call minpac#add('prettier/vim-prettier', {'type': 'opt'})
+    call minpac#add('previm/previm', {'type': 'opt'})
+    call minpac#add('vim-jp/syntax-vim-ex', {'type': 'opt'})
+    " call minpac#add('dagwieers/asciidoc-vim', {'type': 'opt'})
+
+    call minpac#add('joker1007/vim-markdown-quote-syntax', {'type': 'opt'})
+    call minpac#add('rcmdnk/vim-markdown', {'type': 'opt'})
+
+    " Japanese Support
+    " --------------------
+    call minpac#add('deton/jasegment.vim')
+    call minpac#add('deton/jasentence.vim')
+    call minpac#add('haya14busa/vim-migemo')
+    call minpac#add('vim-jp/vimdoc-ja')
+
+    " Colorscheme
+    " --------------------
+    call minpac#add('arcticicestudio/nord-vim', {'type': 'opt'})
+    call minpac#add('cocopon/iceberg.vim', {'type': 'opt'})
+    call minpac#add('jacoborus/tender.vim', {'type': 'opt'})
+    call minpac#add('kristijanhusak/vim-hybrid-material', {'type': 'opt'})
+    call minpac#add('w0ng/vim-hybrid', {'type': 'opt'})
+
 endif
 
-call plug#begin('~/.vim/plugged')
+augroup vimrc
+    autocmd FileType csv packadd rainbow_csv
+    autocmd FileType html,json,javascript,yaml,markdown packadd vim-prettier
+    autocmd FileType markdown packadd previm
+    autocmd FileType markdown packadd vim-markdown
+    autocmd FileType markdown packadd vim-markdown-quote-syntax
+    autocmd FileType plantuml packadd plantuml-syntax
+    autocmd FileType vim packadd syntax-vim-ex
+    " autocmd FileType asciidoc packadd asciidoc-vim
+augroup END
 
-" General
-" --------------------
-Plug 'LeafCage/yankround.vim'
-Plug 'airblade/vim-gitgutter'
-Plug 'alvan/vim-closetag'
-Plug 'cocopon/lightline-hybrid.vim'
-Plug 'cocopon/vaffle.vim'
-Plug 'easymotion/vim-easymotion'
-Plug 'glidenote/memolist.vim'
-Plug 'godlygeek/tabular'
-Plug 'haya14busa/is.vim'
-Plug 'haya14busa/vim-asterisk'
-Plug 'itchyny/lightline.vim'
-Plug 'itchyny/vim-highlighturl'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-repeat'
-Plug 'tyru/caw.vim'
-Plug 'tyru/open-browser.vim'
-" Plug 'kana/vim-repeat'
-
-Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
-Plug 'junegunn/fzf.vim'
-Plug 'kana/vim-smartinput'
-Plug 'cohama/vim-smartinput-endwise'
-
-" Operator / Text Objects
-" --------------------
-Plug 'kana/vim-operator-user'
-Plug 'haya14busa/vim-operator-flashy'
-Plug 'kana/vim-operator-replace'
-Plug 'rhysd/vim-operator-surround'
-
-Plug 'kana/vim-textobj-user'
-Plug 'kana/vim-textobj-entire'
-Plug 'kana/vim-textobj-line'
-
-" Language
-" --------------------
-Plug 'dense-analysis/ale'
-Plug 'mattn/emmet-vim'
-Plug 'mechatroner/rainbow_csv'
-Plug 'prettier/vim-prettier', {'for': ['html', 'markdown', 'yaml', 'css', 'less', 'scss', 'javascript', 'json',]}
-Plug 'previm/previm'
-Plug 'sheerun/vim-polyglot'
-" Plug 'dagwieers/asciidoc-vim', {'for': 'asciidoc'}
-
-Plug 'joker1007/vim-markdown-quote-syntax', {'for': 'markdown'}
-Plug 'rcmdnk/vim-markdown', {'for': 'markdown'}
-
-" Japanese Support
-" --------------------
-Plug 'deton/jasegment.vim'
-Plug 'deton/jasentence.vim'
-Plug 'haya14busa/vim-migemo'
-Plug 'vim-jp/vimdoc-ja'
-
-" Colorscheme
-" --------------------
-Plug 'arcticicestudio/nord-vim', {'do': 'cp colors/* ~/.vim/colors/'}
-Plug 'cocopon/iceberg.vim', {'do': 'cp colors/* ~/.vim/colors/'}
-Plug 'jacoborus/tender.vim', {'do': 'cp colors/* ~/.vim/colors/'}
-Plug 'w0ng/vim-hybrid', {'do': 'cp colors/* ~/.vim/colors/'}
-
-call plug#end()
+command! PackUpdate packadd minpac | source $MYVIMRC | call minpac#update('', {'do': 'call minpac#status()'})
+command! PackClean  packadd minpac | source $MYVIMRC | call minpac#clean()
+command! PackStatus packadd minpac | source $MYVIMRC | call minpac#status()
 
 call map(sort(split(globpath(&runtimepath, 'config/*.vim'))), {->[execute('exec "so" v:val')]})
