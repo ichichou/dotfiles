@@ -65,4 +65,4 @@ rm ${HOME}/Applications/.localized \
     ${HOME}/Movies/.localized \
     ${HOME}/Music/.localized \
     ${HOME}/Pictures/.localized \
-    ${HOME}/Public/.localized \
+    ${HOME}/Public/.localized
