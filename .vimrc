@@ -236,4 +236,4 @@ Plug 'w0ng/vim-hybrid', {'do': 'cp colors/* ~/.vim/colors/'}
 
 call plug#end()
 
-call map(sort(split(globpath(&runtimepath, 'config/*.vim'))), {->[execute('exec "so" v:val')]})
+runtime! config/*.vim
