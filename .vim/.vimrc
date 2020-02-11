@@ -158,6 +158,11 @@ augroup END
 " Plugins
 " ----------------------------------------
 
+if empty(glob('~/.vim/pack/minpac/opt/minpac'))
+    silent !git clone https://github.com/k-takata/minpac.git
+    \ ~/.vim/pack/minpac/opt/minpac
+endif
+
 if exists('*minpac#init')
     call minpac#init()
     call minpac#add('k-takata/minpac', {'type': 'opt'})
@@ -227,7 +232,6 @@ if exists('*minpac#init')
     call minpac#add('jacoborus/tender.vim', {'type': 'opt'})
     call minpac#add('kristijanhusak/vim-hybrid-material', {'type': 'opt'})
     call minpac#add('w0ng/vim-hybrid', {'type': 'opt'})
-
 endif
 
 augroup vimrc
