@@ -19,6 +19,7 @@ for i in .??*; do
     [[ ${i} == ".git" ]] && continue
     [[ ${i} == ".config" ]] && continue
     [[ ${i} == ".gitignore" ]] && continue
+    [[ ${i} == ".vimrc" ]] && continue
     [[ ${i} == ".DS_Store" ]] && continue
     ln -snfv ${DOT}/${i} ${HOME}/${i}
 done
