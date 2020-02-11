@@ -2,9 +2,9 @@
 " Colorschemes
 " ========================================
 
-" iceberg hybrid hybrid_material nord tender
+" hybrid iceberg nord tender
 if has('gui_running')
-    colorscheme hybrid_material
+    colorscheme hybrid
 else
     colorscheme iceberg
 endif
@@ -13,12 +13,6 @@ endif
 " ----------
 let g:hybrid_custom_term_colors = 1
 " let g:lightline_hybrid_style = 'plain'
-
-" hybrid material
-" ----------
-let g:enable_bold_font = 1
-let g:enable_italic_font = 1
-" let g:hybrid_transparent_background = 1
 
 " nord
 " ----------

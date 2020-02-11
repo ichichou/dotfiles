@@ -229,7 +229,6 @@ Plug 'vim-jp/vimdoc-ja'
 Plug 'arcticicestudio/nord-vim', {'do': 'cp colors/* ~/.vim/colors/'}
 Plug 'cocopon/iceberg.vim', {'do': 'cp colors/* ~/.vim/colors/'}
 Plug 'jacoborus/tender.vim', {'do': 'cp colors/* ~/.vim/colors/'}
-Plug 'kristijanhusak/vim-hybrid-material', {'do': 'cp colors/* ~/.vim/colors/'}
 Plug 'w0ng/vim-hybrid', {'do': 'cp colors/* ~/.vim/colors/'}
 
 call plug#end()
