@@ -18,6 +18,7 @@ cd ${DOT}
 for i in .??*; do
     [[ ${i} == ".git" ]] && continue
     [[ ${i} == ".config" ]] && continue
+    [[ ${i} == ".vim" ]] && continue
     [[ ${i} == ".gitignore" ]] && continue
     [[ ${i} == ".vimrc" ]] && continue
     [[ ${i} == ".DS_Store" ]] && continue
