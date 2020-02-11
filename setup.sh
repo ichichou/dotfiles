@@ -41,6 +41,13 @@ ln -snfv ${DOT}/.config/karabiner/karabiner.json ${CONFIG}/karabiner/karabiner.j
 mkdir -p ${CONFIG}/micro
 ln -snfv ${DOT}/.config/micro/setting.json ${CONFIG}/micro/setting.json
 
+# .vim
+
+mkdir -p ${HOME}/.vim
+ln -snfv ${DOT}/.vim/.vimrc ${HOME}/.vim/.vimrc
+ln -snfv ${DOT}/.vim/.gvimrc ${HOME}/.vim/.gvimrc
+ln -snfv ${DOT}/.vim/config ${HOME}/.vim/config
+
 # Application Support
 
 mkdir -p "${APP}/AquaSKK"
