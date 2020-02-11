@@ -1,6 +1,7 @@
 " ========================================
 " .vimrc
 " ========================================
+
 set encoding=utf-8
 scriptencoding utf-8
 set fileencoding=utf-8
@@ -20,9 +21,6 @@ source $VIMRUNTIME/defaults.vim
 
 let g:no_vimrc_example = 1
 let g:no_gvimrc_example = 1
-if has('gui_macvim')
-    let g:macvim_skip_colorscheme = 1
-endif
 
 let g:loaded_gzip               = 1
 let g:loaded_tar                = 1
@@ -44,8 +42,9 @@ let g:did_install_syntax_menu   = 1
 let g:loaded_2html_plugin       = 1
 
 " ----------------------------------------
-" File
+" Editing
 " ----------------------------------------
+
 set hidden
 set autoread
 set switchbuf=usetab
@@ -54,7 +53,96 @@ set noswapfile
 set nobackup
 set nowritebackup
 
+set shell=fish
+set history=10000
 set helplang=ja,en
+
+set clipboard&
+set clipboard^=unnamed,unnamedplus
+set mouse=a
+set ttymouse=xterm2
+
+set virtualedit=onemore
+set whichwrap=b,s,h,l,<,>,[,]
+set backspace=indent,eol,start
+set textwidth=0
+
+set nrformats&
+set nrformats-=octal
+
+set expandtab
+set smarttab
+set shiftround
+set autoindent
+set smartindent
+
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+
+augroup vimrc
+    autocmd FileType json setlocal tabstop=2 softtabstop=2 shiftwidth=2
+augroup END
+
+" ----------------------------------------
+" Appearance
+" ----------------------------------------
+
+" set termguicolors
+set background=dark
+colorscheme iceberg
+" hybrid iceberg nord tender
+
+set list
+set listchars=eol:¬,tab:»\ ,space:\ ,trail:\ ,extends:>,precedes:<,nbsp:~
+
+set title
+set number
+set cursorline
+set nocursorcolumn
+
+set showtabline=1
+set laststatus=2
+set noshowmode
+set showcmd
+set ruler
+
+set scrolloff=3
+set display=lastline
+set breakindent
+set nofoldenable
+autocmd vimrc FileType vim setlocal foldmethod=marker
+
+set splitbelow
+set splitright
+
+set belloff=all
+
+set showmatch
+set matchtime=1
+set matchpairs&
+set matchpairs+=（:）,［:］,｛:｝,「:」,『:』,〈:〉,【:】,〔:〕
+
+source $VIMRUNTIME/macros/matchit.vim
+let b:match_ignorecase = 1
+" let b:match_words = "<if>:<endif>"
+
+" ----------------------------------------
+" Search/Completion
+" ----------------------------------------
+
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
+" set infercase
+set gdefault
+set wrapscan
+
+set wildmenu
+set wildmode=full
+set completeopt=menuone,popup
+set pumheight=10
 
 if executable("rg")
     set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
@@ -67,804 +155,98 @@ augroup vimrc
 augroup END
 
 " ----------------------------------------
-" Appearance
-" ----------------------------------------
-set background=dark
-" set termguicolors
-
-set title
-set number
-set cursorline
-set nocursorcolumn
-
-set showmatch
-set matchtime=1
-set matchpairs&
-set matchpairs+=（:）,［:］,｛:｝,「:」,『:』,〈:〉,【:】,〔:〕
-
-source $VIMRUNTIME/macros/matchit.vim
-let b:match_ignorecase = 1
-" let b:match_words = "<if>:<endif>"
-
-set showtabline=1
-set laststatus=2
-set noshowmode
-set showcmd
-set ruler
-
-set display=lastline
-set scrolloff=3
-set breakindent
-set nofoldenable
-autocmd vimrc FileType vim setlocal foldmethod=marker
-
-set belloff=all
-
-set list
-set listchars=eol:¬,tab:»\ ,space:\ ,trail:\ ,extends:>,precedes:<,nbsp:~
-
-set splitbelow
-set splitright
-
-" Diff
-" --------------------
-set diffopt=internal,filler,vertical,indent-heuristic,algorithm:histogram
-
-function! SetDiffMode()
-    if &diff
-        setlocal nospell
-        setlocal wrap<
-    endif
-endfunction
-
-augroup vimrc
-    autocmd VimEnter,FilterWritePre * call SetDiffMode()
-    autocmd WinEnter * if(winnr('$') == 1) &&
-    \ (getbufvar(winbufnr(0), '&diff')) == 1 | diffoff | endif
-augroup END
-
-command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-\ | wincmd p | diffthis
-
-" GUI Options
-" --------------------
-if has('gui_running')
-    set guioptions&
-    set guioptions+=c
-    set guioptions-=e
-    set guioptions-=m
-    set guioptions-=r
-    set guioptions-=L
-    set guioptions-=t
-    set guioptions-=T
-    set guicursor&
-    set guicursor+=a:blinkon0
-    set guifont=Myrica\ Monospace:h14
-    " set guifont=Hack:h14
-    " set guifontwide=Noto\ Sans\ Mono\ CJK\ JP:h14
-    set ambiwidth=double
-    set linespace=2
-
-    if has('vim_starting')
-        set columns=140
-        set lines=50
-    endif
-endif
-
-
-" ----------------------------------------
-" Editting
-" ----------------------------------------
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-
-augroup vimrc
-    autocmd FileType json setlocal tabstop=2 softtabstop=2 shiftwidth=2
-augroup END
-
-set expandtab
-set smarttab
-set shiftround
-set autoindent
-set smartindent
-
-set textwidth=0
-set virtualedit=onemore
-set backspace=indent,eol,start
-set whichwrap=b,s,h,l,<,>,[,]
-set clipboard&
-set clipboard^=unnamed,unnamedplus
-
-set nrformats&
-set nrformats-=octal
-
-set mouse=a
-set ttymouse=xterm2
-
-set shell=fish
-
-" ----------------------------------------
-" Search/Completion
-" ----------------------------------------
-set wrapscan
-set incsearch
-set hlsearch
-set ignorecase
-set smartcase
-set gdefault
-
-set wildmenu
-set wildmode=full
-set history=10000
-
-set completeopt=menu,menuone,preview
-set pumheight=20
-set infercase
-
-" ----------------------------------------
-" Keymap
-" ----------------------------------------
-
-"        Normal  Insert  Command  Visual  Terminal
-"        ------  ------  -------  ------  --------
-"  map   x                        x
-"  map!          x       x
-"  nmap  x
-"  imap          x
-"  cmap                  x
-"  vmap                           x
-"  tmap                                   x
-
-let g:mapleader = ','
-noremap \ ,
-noremap ; :
-noremap : ;
-" noremap / /\v
-
-noremap j gj
-noremap k gk
-noremap gj j
-noremap gk k
-
-noremap Y y$
-noremap x "_x
-noremap X "_X
-
-cnoremap <C-p> <Up>
-cnoremap <C-n> <Down>
-
-" set termwinkey=<C-g>
-" tnoremap <F1> <C-\><C-n>
-
-nnoremap <silent> <Leader><Leader> :<C-u>edit $MYVIMRC<CR>
-nnoremap <silent> <Leader>. :<C-u>source $MYVIMRC<CR> :source $MYGVIMRC<CR>
-
-nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR>
-nnoremap <silent> <Leader>r :<C-u>redraw!<CR>
-nnoremap <silent> <Leader>t :<C-u>vertical terminal ++close<CR>
-
-noremap ZZ <Nop>
-noremap ZQ <Nop>
-noremap Q <Nop>
-noremap gQ <Nop>
-noremap <Del> <Nop>
-
-inoremap <D-0> <Nop>
-inoremap <D-1> <Nop>
-inoremap <D-2> <Nop>
-inoremap <D-3> <Nop>
-inoremap <D-4> <Nop>
-inoremap <D-5> <Nop>
-inoremap <D-6> <Nop>
-inoremap <D-7> <Nop>
-inoremap <D-8> <Nop>
-inoremap <D-9> <Nop>
-inoremap <D-a> <Nop>
-inoremap <D-i> <Nop>
-
-" Insert Blank Line
-" --------------------
-nnoremap <silent> go :<C-u>for i in range(1, v:count1) \|
-\ call append(line('.'), '') \| endfor \|
-\ silent! call repeat#set("go", v:count1)<CR>
-nnoremap <silent> gO :<C-u>for i in range(1, v:count1) \|
-\ call append(line('.')-1, '') \| endfor \|
-\ silent! call repeat#set("gO", v:count1)<CR>
-
-" Window/Tabpage/Buffer
-" --------------------
-nnoremap t <Nop>
-nnoremap [window] <Nop>
-nmap t [window]
-
-nnoremap [window]/ :<C-u>vertical help<Space>
-
-nnoremap [window]s <C-w>s
-nnoremap [window]v <C-w>v
-nnoremap [window]= <C-w>=
-
-nnoremap [window]h <C-w>h
-nnoremap [window]j <C-w>j
-nnoremap [window]k <C-w>k
-nnoremap [window]l <C-w>l
-
-nnoremap [window]H <C-w>H
-nnoremap [window]J <C-w>J
-nnoremap [window]K <C-w>K
-nnoremap [window]L <C-w>L
-
-nnoremap <silent> [window]t :<C-u>tabnew<CR>
-nnoremap <silent> [window]q :<C-u>tabclose<CR>
-nnoremap [window]n gt
-nnoremap [window]p gT
-nnoremap <silent> [window]N :<C-u>+tabmove<CR>
-nnoremap <silent> [window]P :<C-u>-tabmove<CR>
-
-nnoremap <silent> [window]] :<C-u>bnext<CR>
-nnoremap <silent> [window][ :<C-u>bprevious<CR>
-
-" ----------------------------------------
-" vim-plug
-" ----------------------------------------
-if empty(glob('~/.vim/autoload/plug.vim'))
-    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    silent !mkdir -p ~/.vim/colors
-    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
-call plug#begin('~/.vim/plugged')
-
-" Editting
-" --------------------
-Plug 'tpope/vim-repeat'
-" Plug 'kana/vim-repeat'
-Plug 'LeafCage/yankround.vim'
-Plug 'kana/vim-smartinput'
-Plug 'cohama/vim-smartinput-endwise'
-Plug 'tyru/caw.vim'
-Plug 'godlygeek/tabular'
-Plug 'glidenote/memolist.vim'
-Plug 'qpkorr/vim-renamer'
-Plug 'alvan/vim-closetag'
-Plug 'mattn/emmet-vim'
-Plug 'prettier/vim-prettier', {'for': ['html', 'markdown', 'yaml', 'css', 'less', 'scss', 'javascript', 'json',]}
-Plug 'ervandew/supertab'
-
-" Movement
-" --------------------
-Plug 'cocopon/vaffle.vim'
-Plug 'tyru/open-browser.vim'
-Plug 'easymotion/vim-easymotion'
-Plug 'haya14busa/is.vim'
-Plug 'haya14busa/vim-asterisk'
-Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
-Plug 'junegunn/fzf.vim'
-
-" Language
-" --------------------
-Plug 'sheerun/vim-polyglot'
-Plug 'joker1007/vim-markdown-quote-syntax', {'for': 'markdown'}
-Plug 'rcmdnk/vim-markdown', {'for': 'markdown'}
-Plug 'previm/previm'
-" Plug 'dagwieers/asciidoc-vim', {'for': 'asciidoc'}
-Plug 'mechatroner/rainbow_csv'
-Plug 'dense-analysis/ale'
-Plug 'davidhalter/jedi-vim'
-
-" Operator/Objects
-" --------------------
-Plug 'kana/vim-operator-user'
-Plug 'kana/vim-operator-replace'
-Plug 'rhysd/vim-operator-surround'
-Plug 'haya14busa/vim-operator-flashy'
-Plug 'kana/vim-textobj-user'
-Plug 'kana/vim-textobj-entire'
-Plug 'kana/vim-textobj-line'
-
-" Git
-" --------------------
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
-Plug 'cohama/agit.vim', {'on': 'Agit'}
-
-" Japanese
-" --------------------
-Plug 'vim-jp/vimdoc-ja'
-Plug 'haya14busa/vim-migemo'
-Plug 'deton/jasegment.vim'
-Plug 'deton/jasentence.vim'
-
-" Appearance
-" --------------------
-Plug 'itchyny/lightline.vim'
-Plug 'itchyny/vim-highlighturl'
-Plug 'cocopon/lightline-hybrid.vim'
-Plug 'ntpeters/vim-better-whitespace'
-
-" Colorscheme
-" --------------------
-Plug 'w0ng/vim-hybrid', {'do': 'cp colors/* ~/.vim/colors/'}
-Plug 'cocopon/iceberg.vim', {'do': 'cp colors/* ~/.vim/colors/'}
-Plug 'arcticicestudio/nord-vim', {'do': 'cp colors/* ~/.vim/colors/'}
-Plug 'jacoborus/tender.vim', {'do': 'cp colors/* ~/.vim/colors/'}
-
-call plug#end()
-
-" ----------------------------------------
 " Plugins
 " ----------------------------------------
 
-" colorschemes
-" --------------------
-if has('gui_running')
-    colorscheme iceberg
-else
-    colorscheme hybrid
-endif
-" hybrid iceberg tender nord
-
-let g:hybrid_custom_term_colors = 1
-" let g:lightline_hybrid_style = 'plain'
-
-let g:nord_italic = 1
-let g:nord_underline = 1
-let g:nord_italic_comments = 1
-let g:nord_uniform_status_lines = 1
-let g:nord_comment_brightness = 15
-let g:nord_uniform_diff_background = 1
-let g:nord_cursor_line_number_background = 1
-
-" lightline
-" --------------------
-" powerline wombat jellybeans solarized PaperColor seoul256 Dracula one landscape
-" hybrid iceberg tender tenderplus nord
-
-if has('gui_running')
-    let g:lightline = {
-        \ 'colorscheme': 'iceberg',
-        \ 'active': {
-            \ 'left': [
-                \ ['mode', 'paste'],
-                \ ['readonly', 'filepath', 'modified']],
-            \ 'right': [
-                \ ['lineinfo'],
-                \ ['percent'],
-                \ ['fileformat', 'fileencoding', 'filetype']]},
-        \ 'component': {
-            \ 'percent': '%3p%% [%LL]'},
-        \ 'component_function': {
-            \ 'filepath': 'FilePath'}}
-else
-    let g:lightline = {
-        \ 'colorscheme': 'hybrid',
-        \ 'active': {
-            \ 'left': [
-                \ ['mode', 'paste'],
-                \ ['readonly', 'filepath', 'modified']],
-            \ 'right': [
-                \ ['lineinfo'],
-                \ ['percent'],
-                \ ['fileformat', 'fileencoding', 'filetype']]},
-        \ 'component': {
-            \ 'percent': '%3p%% [%LL]'},
-        \ 'component_function': {
-            \ 'filepath': 'FilePath'}}
+if empty(glob('~/.vim/pack/minpac/opt/minpac'))
+    silent !git clone https://github.com/k-takata/minpac.git
+    \ ~/.vim/pack/minpac/opt/minpac
 endif
 
-function! FilePath()
-    if winwidth(0) > 70
-        return expand('%:s')
-    else
-        return expand('%:t')
-    endif
-endfunction
-
-let g:lightline.tabline = {
-    \ 'left': [['tabs']],
-    \ 'right': [['']],}
-
-" vaffle
-" --------------------
-let g:vaffle_auto_cd = 1
-let g:vaffle_show_hidden_files = 1
-
-nnoremap <silent> <Leader>v :<C-u>Vaffle<CR>
-
-" rcmdnk/vim-markdown
-" --------------------
-highlight link htmlItalic LineNr
-highlight link htmlBold WarningMsg
-highlight link htmlBoldItalic ErrorMsg
-
-let g:vim_markdown_folding_disabled = 1
-" let g:vim_markdown_conceal = 0
-
-" previm
-" --------------------
-let g:previm_open_cmd = 'open -a Google\ Chrome'
-" let g:previm_disable_default_css = 1
-" let g:previm_custom_css_path = ''
-" let g:previm_show_header = 0
-
-nnoremap <silent> <Leader>p :<C-u>PrevimOpen<CR>
-
-" open-browser
-" --------------------
-let g:netrw_nogx = 1
-
-map gx <Plug>(openbrowser-smart-search)
-
-" better-whitespace
-" --------------------
-" let g:better_whitespace_filetypes_blacklist = ['diff', 'gitcommit', 'qf', 'help']
-autocmd vimrc FileType diff,gitcommit,qf,help DisableWhitespace
-
-highlight ExtraWhitespace ctermbg=DarkRed
-highlight ExtraWhitespace guibg=DarkRed
-
-" jasegment
-" --------------------
-call jasegment#define(
-    \'nonblank', {
-        \ 'move-n': 'gW',
-        \ 'move-p': 'gB',
-        \ 'move-N': 'gE',
-        \ 'select-i': 'iE',
-        \ 'select-a': 'aE',})
-
-" yankround
-" --------------------
-let g:yankround_max_history = 100
-let g:yankround_use_region_hl = 1
-
-map p <Plug>(yankround-p)
-map P <Plug>(yankround-P)
-map gp <Plug>(yankround-gp)
-map gP <Plug>(yankround-gP)
-
-nmap <C-p> <Plug>(yankround-prev)
-nmap <C-n> <Plug>(yankround-next)
-
-" vim-easymotion
-" --------------------
-let g:EasyMotion_do_mapping = 0
-
-let g:EasyMotion_smartcase = 1
-let g:EasyMotion_use_migemo = 1
-
-let g:EasyMotion_startofline = 0
-let g:EasyMotion_enter_jump_first = 1
-let g:EasyMotion_space_jump_first = 1
-
-let g:EasyMotion_use_upper = 1
-let g:EasyMotion_keys = ';HKLYUIOPNM,QWERTASDGZXCVBJF'
-
-map s <Plug>(easymotion-bd-f2)
-nmap s <Plug>(easymotion-overwin-f2)
-" map f <Plug>(easymotion-bd-fl)
-" map F <Plug>(easymotion-bd-fl)
-
-" highlight link EasyMotionTarget ErrorMsg
-" highlight link EasyMotionShade Comment
-" highlight link EasyMotionTarget2First MatchParen
-" highlight link EasyMotionTarget2Second MatchParen
-" highlight link EasyMotionMoveHL Search
-" highlight link EasyMotionIncSearch Search
-
-" operator-replace
-" --------------------
-map R <Plug>(operator-replace)
-
-" operator-surround
-" --------------------
-nnoremap S <Nop>
-map S <Plug>(operator-surround-append)
-map Sd <Plug>(operator-surround-delete)
-map Sr <Plug>(operator-surround-replace)
-
-let g:operator#surround#blocks = {'-' : [
-    \ {
-        \ 'block': ['**', '**'],
-        \ 'motionwise': ['char', 'line', 'block'],
-        \ 'keys': ['*']
-    \ },
-    \ {
-        \ 'block': ['（', '）'],
-        \ 'motionwise': ['char', 'line', 'block'],
-        \ 'keys': ['（', '）', 'm']
-    \ },
-    \ {
-        \ 'block': ['「', '」'],
-        \ 'motionwise': ['char', 'line', 'block'],
-        \ 'keys': ['「', '」', 'k']
-    \ },
-    \ {
-        \ 'block': ['『', '』'],
-        \ 'motionwise': ['char', 'line', 'block'],
-        \ 'keys': ['『', '』', 'K']
-    \ },
-\ ]}
-
-" operator-flashy
-" --------------------
-map y <Plug>(operator-flashy)
-nmap Y <Plug>(operator-flashy)$
-
-" memolist
-" --------------------
-let g:memolist_path = "$HOME/Box/Memos"
-let g:memolist_template_dir_path = "$HOME/dotfiles/memolist"
-let g:memolist_memo_suffix = "md"
-let g:memolist_memo_date = "%Y-%m-%d %H:%M"
-
-nnoremap <silent> <Leader>mn :<C-u>MemoNew<CR>
-nnoremap <silent> <Leader>ml :<C-u>MemoList<CR>
-" nnoremap <silent> <Leader>mg :<C-u>MemoGrep<CR>
-nnoremap <silent> <Leader>mg :execute "FZF" g:memolist_path<CR>
-
-" fzf
-" --------------------
-let g:fzf_layout = {'down': '~60%'}
-let g:fzf_buffers_jump = 1
-
-nnoremap <Leader>f <Nop>
-nnoremap [fzf] <Nop>
-nmap <Leader>f [fzf]
-
-nnoremap <silent> [fzf]b :<C-u>Buffers<CR>
-nnoremap <silent> [fzf]c :<C-u>Colors<CR>
-nnoremap <silent> [fzf]f :<C-u>Files<CR>
-nnoremap <silent> [fzf]h :<C-u>History<CR>
-nnoremap <silent> [fzf]l :<C-u>BLines<CR>
-nnoremap <silent> [fzf]m :<C-u>Marks<CR>
-nnoremap <silent> [fzf]t :<C-u>Filetypes<CR>
-nnoremap [fzf]r :<C-u>Rg<Space>
-
-nnoremap <silent> <Leader>b :<C-u>Buffers<CR>
-
-command! -bang -nargs=? -complete=dir Files
-\ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
-
-command! -bang Colors
-\ call fzf#vim#colors({'left': '15%', 'options': '--reverse --margin 30%,0'}, <bang>0)
-
-command! -bang -nargs=* Rg
-\ call fzf#vim#grep(
-\ 'rg --line-number --no-heading --color=auto --smart-case '.shellescape(<q-args>), 0,
-\ fzf#vim#with_preview('right:50%:wrap'))
-
-" gitgutter
-" --------------------
-set updatetime=250
-
-nmap ]h <Plug>(GitGutterNextHunk)
-nmap [h <Plug>(GitGutterPrevHunk)
-
-nnoremap <Leader>h <Nop>
-nnoremap [gitgutter] <Nop>
-nmap <Leader>h [gitgutter]
-
-nnoremap <silent> [gitgutter]j :<C-u>GitGutterNextHunk<CR>
-nnoremap <silent> [gitgutter]k :<C-u>GitGutterPrevHunk<CR>
-nnoremap <silent> [gitgutter]h :<C-u>GitGutterLineHighlightsToggle<CR>
-nnoremap <silent> [gitgutter]p :<C-u>GitGutterPreviewHunk<CR>
-nnoremap <silent> [gitgutter]s :<C-u>GitGutterStagewHunk<CR>
-nnoremap <silent> [gitgutter]u :<C-u>GitGutterUndoHunk<CR>
-
-" fugitive
-" --------------------
-nnoremap <Leader>g <Nop>
-nnoremap [fugitive] <Nop>
-nmap <Leader>g [fugitive]
-
-nnoremap <silent> [fugitive]s :<C-u>Gstatus<CR>
-nnoremap <silent> [fugitive]a :<C-u>Gwrite<CR>
-nnoremap <silent> [fugitive]c :<C-u>Gcommit -v<CR>
-nnoremap <silent> [fugitive]d :<C-u>Gvdiffsplit<CR>
-nnoremap <silent> [fugitive]l :<C-u>Glog<CR>
-
-autocmd vimrc FileType fugitive nnoremap <silent> <buffer> q <C-w>q
-
-" agit
-" --------------------
-" let g:agit_enable_auto_show_commit = 0
-" let g:agit_enable_auto_refresh = 1
-
-" caw.vim
-" --------------------
-map <Leader>c <Plug>(caw:hatpos:toggle)
-map <Leader>0 <Plug>(caw:zeropos:toggle)
-
-" vim-polyglot
-" --------------------
-let g:polyglot_disabled = ['markdown', 'csv']
-
-" tabular
-" --------------------
-function! s:align()
-    let p = '^\s*|\s.*\s|\s*$'
-    if exists(':Tabularize') && getline('.') =~# '^\s*|' &&
-    \ (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
-        let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
-        let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
-        Tabularize/|/l1
-        normal! 0
-        call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
-    endif
-endfunction
-inoremap <silent> <Bar> <Bar><Esc>:call <SID>align()<CR>a
-
-" map <Leader>a= :Tabularize /=<CR>
-" map <Leader>a: :Tabularize /:\zs<CR>
-
-" vim-smartinput
-" --------------------
-call smartinput#map_to_trigger('i', '<Space>', '<Space>', '<Space>')
-call smartinput#map_to_trigger('i', '（', '（', '（')
-call smartinput#map_to_trigger('i', '「', '「', '「')
-call smartinput#map_to_trigger('i', '『', '『', '『')
-call smartinput#map_to_trigger('i', '〈', '〈', '〈')
-call smartinput#map_to_trigger('i', '【', '【', '【')
-call smartinput#map_to_trigger('i', '［', '［', '［')
-call smartinput#map_to_trigger('i', '｛', '｛', '｛')
-call smartinput#map_to_trigger('i', '）', '）', '）')
-call smartinput#map_to_trigger('i', '」', '」', '」')
-call smartinput#map_to_trigger('i', '』', '』', '』')
-call smartinput#map_to_trigger('i', '〉', '〉', '〉')
-call smartinput#map_to_trigger('i', '】', '】', '】')
-call smartinput#map_to_trigger('i', '］', '］', '］')
-call smartinput#map_to_trigger('i', '｝', '｝', '｝')
-
-call smartinput#define_rule({
-    \ 'at': '\s\+\%#',
-    \ 'char': '<CR>',
-    \ 'input': "<C-o>:call setline('.', substitute(getline('.'), '\\s\\+$', '', ''))<CR><CR>",})
-
-call smartinput#define_rule({'at': '(\%#)', 'char': '<Space>', 'input': '<Space><Space><Left>'})
-call smartinput#define_rule({'at': '{\%#}', 'char': '<Space>', 'input': '<Space><Space><Left>'})
-call smartinput#define_rule({'at': '\[\%#\]', 'char': '<Space>', 'input': '<Space><Space><Left>'})
-call smartinput#define_rule({'at': '<\%#>', 'char': '<Space>', 'input': '<Space><Space><Left>'})
-
-call smartinput#define_rule({'at': '( \%# )', 'char': '<BS>', 'input': '<BS><Del>'})
-call smartinput#define_rule({'at': '{ \%# }', 'char': '<BS>', 'input': '<BS><Del>'})
-call smartinput#define_rule({'at': '\[ \%# \]', 'char': '<BS>', 'input': '<BS><Del>'})
-call smartinput#define_rule({'at': '< \%# >', 'char': '<BS>', 'input': '<BS><Del>'})
-
-call smartinput#define_rule({'at': '\%#', 'char': '（', 'input': '（）<Left>'})
-call smartinput#define_rule({'at': '\%#', 'char': '「', 'input': '「」<Left>'})
-call smartinput#define_rule({'at': '\%#', 'char': '『', 'input': '『』<Left>'})
-call smartinput#define_rule({'at': '\%#', 'char': '〈', 'input': '〈〉<Left>'})
-call smartinput#define_rule({'at': '\%#', 'char': '【', 'input': '【】<Left>'})
-call smartinput#define_rule({'at': '\%#', 'char': '［', 'input': '［］<Left>'})
-call smartinput#define_rule({'at': '\%#', 'char': '｛', 'input': '｛｝<Left>'})
-
-call smartinput#define_rule({'at': '（.*\%#）', 'char': '）', 'input': '<Right>'})
-call smartinput#define_rule({'at': '「.*\%#」', 'char': '」', 'input': '<Right>'})
-call smartinput#define_rule({'at': '『.*\%#』', 'char': '』', 'input': '<Right>'})
-call smartinput#define_rule({'at': '〈.*\%#〉', 'char': '〉', 'input': '<Right>'})
-call smartinput#define_rule({'at': '【.*\%#】', 'char': '】', 'input': '<Right>'})
-call smartinput#define_rule({'at': '［.*\%#］', 'char': '］', 'input': '<Right>'})
-call smartinput#define_rule({'at': '｛.*\%#｝', 'char': '｝', 'input': '<Right>'})
-
-call smartinput#define_rule({'at': '（\%#）', 'char': '<BS>', 'input': '<BS><Del>'})
-call smartinput#define_rule({'at': '「\%#」', 'char': '<BS>', 'input': '<BS><Del>'})
-call smartinput#define_rule({'at': '『\%#』', 'char': '<BS>', 'input': '<BS><Del>'})
-call smartinput#define_rule({'at': '〈\%#〉', 'char': '<BS>', 'input': '<BS><Del>'})
-call smartinput#define_rule({'at': '【\%#】', 'char': '<BS>', 'input': '<BS><Del>'})
-call smartinput#define_rule({'at': '［\%#］', 'char': '<BS>', 'input': '<BS><Del>'})
-call smartinput#define_rule({'at': '｛\%#｝', 'char': '<BS>', 'input': '<BS><Del>'})
-
-call smartinput#define_rule({'at': '（）\%#', 'char': '<BS>', 'input': '<BS><BS>'})
-call smartinput#define_rule({'at': '「」\%#', 'char': '<BS>', 'input': '<BS><BS>'})
-call smartinput#define_rule({'at': '『』\%#', 'char': '<BS>', 'input': '<BS><BS>'})
-call smartinput#define_rule({'at': '〈〉\%#', 'char': '<BS>', 'input': '<BS><BS>'})
-call smartinput#define_rule({'at': '【】\%#', 'char': '<BS>', 'input': '<BS><BS>'})
-call smartinput#define_rule({'at': '［］\%#', 'char': '<BS>', 'input': '<BS><BS>'})
-call smartinput#define_rule({'at': '｛｝\%#', 'char': '<BS>', 'input': '<BS><BS>'})
-
-" vim-closetag
-" --------------------
-let g:closetag_filetypes = 'html,xhtml,phtml,xml,markdown'
-
-" vim-prettier
-" --------------------
-let g:prettier#exec_cmd_path = "/usr/local/bin/prettier"
-let g:prettier#autoformat = 0
-" let g:prettier#quickfix_enabled = 0
-let g:prettier#quickfix_auto_focus = 0
-" let g:prettier#exec_cmd_async = 1
-
-" ale
-" --------------------
-let g:ale_lint_on_enter = 0
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_insert_leave = 1
-" let g:ale_lint_on_filetype_changed = 0
-" let g:ale_lint_on_save = 0
-
-" let g:ale_sign_column_always = 1
-" let g:ale_sign_error = '!'
-" g:ale_sign_warning = '?'
-
-" let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
-" let g:ale_echo_msg_error_str = 'E'
-" let g:ale_echo_msg_warning_str = 'W'
-" let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-
-let g:ale_linters = {
-    \ 'html': ['htmlhint'],
-    \ 'javascript': ['eslint'],
-    \ 'python': ['flake8'],}
-let g:ale_fixers = {
-    \ 'html': ['prettier'],
-    \ 'javascript': ['eslint'],
-    \ 'python': ['black', 'isort'],}
-
-let g:ale_python_flake8_options = ''
-let g:ale_python_black_options = ''
-
-function! s:ale_list()
-    let g:ale_open_list = 1
-    call ale#Queue(0, 'lint_file')
-endfunction
-command! ALEList call s:ale_list()
-
-nnoremap <Leader>a <Nop>
-nnoremap [ale] <Nop>
-nmap <Leader>a [ale]
-
-nmap <silent> [ale]t <Plug>(ale_toggle)
-nmap <silent> [ale]f <Plug>(ale_fix)
-nnoremap <silent> [ale]l :ALEList<CR>
-
-nmap <silent> [ale]] <Plug>(ale_next)
-nmap <silent> [ale][ <Plug>(ale_previous)
-nmap ]a <Plug>(ale_next)
-nmap [a <Plug>(ale_previous)
+if exists('*minpac#init')
+    call minpac#init()
+    call minpac#add('k-takata/minpac', {'type': 'opt'})
+
+    " General
+    " --------------------
+    call minpac#add('LeafCage/yankround.vim')
+    call minpac#add('airblade/vim-gitgutter')
+    call minpac#add('alvan/vim-closetag')
+    call minpac#add('cocopon/lightline-hybrid.vim')
+    call minpac#add('cocopon/vaffle.vim')
+    call minpac#add('easymotion/vim-easymotion')
+    call minpac#add('glidenote/memolist.vim')
+    call minpac#add('godlygeek/tabular')
+    call minpac#add('haya14busa/is.vim')
+    call minpac#add('haya14busa/vim-asterisk')
+    call minpac#add('itchyny/lightline.vim')
+    call minpac#add('itchyny/vim-highlighturl')
+    call minpac#add('junegunn/fzf.vim')
+    call minpac#add('ntpeters/vim-better-whitespace')
+    call minpac#add('tpope/vim-fugitive')
+    call minpac#add('tpope/vim-repeat')
+    call minpac#add('tyru/caw.vim')
+    call minpac#add('tyru/open-browser.vim')
+    " call minpac#add('kana/vim-repeat')
+
+    call minpac#add('kana/vim-smartinput')
+    call minpac#add('cohama/vim-smartinput-endwise')
+
+    " Operator / Text Object
+    " --------------------
+    call minpac#add('kana/vim-operator-user')
+    call minpac#add('haya14busa/vim-operator-flashy')
+    call minpac#add('kana/vim-operator-replace')
+    call minpac#add('rhysd/vim-operator-surround')
+
+    call minpac#add('kana/vim-textobj-user')
+    call minpac#add('kana/vim-textobj-entire')
+    call minpac#add('kana/vim-textobj-line')
+
+    " Language
+    " --------------------
+    call minpac#add('sheerun/vim-polyglot')
+    call minpac#add('dense-analysis/ale')
+    call minpac#add('mattn/emmet-vim')
+    call minpac#add('aklt/plantuml-syntax', {'type': 'opt'})
+    call minpac#add('mechatroner/rainbow_csv', {'type': 'opt'})
+    call minpac#add('prettier/vim-prettier', {'type': 'opt'})
+    call minpac#add('previm/previm', {'type': 'opt'})
+    call minpac#add('vim-jp/syntax-vim-ex', {'type': 'opt'})
+    " call minpac#add('dagwieers/asciidoc-vim', {'type': 'opt'})
+
+    call minpac#add('joker1007/vim-markdown-quote-syntax', {'type': 'opt'})
+    call minpac#add('rcmdnk/vim-markdown', {'type': 'opt'})
+
+    " Japanese Support
+    " --------------------
+    call minpac#add('deton/jasegment.vim')
+    call minpac#add('deton/jasentence.vim')
+    call minpac#add('haya14busa/vim-migemo')
+    call minpac#add('vim-jp/vimdoc-ja')
+
+    " Colorscheme
+    " --------------------
+    call minpac#add('arcticicestudio/nord-vim', {'type': 'opt'})
+    call minpac#add('cocopon/iceberg.vim', {'type': 'opt'})
+    call minpac#add('jacoborus/tender.vim', {'type': 'opt'})
+    call minpac#add('kristijanhusak/vim-hybrid-material', {'type': 'opt'})
+    call minpac#add('w0ng/vim-hybrid', {'type': 'opt'})
+endif
 
 augroup vimrc
-    autocmd FileType qf nnoremap <silent> <buffer> q :let g:ale_open_list = 0<CR>:q!<CR>
-    autocmd FileType help,qf,man,ref let b:ale_enabled = 0
+    autocmd FileType csv packadd rainbow_csv
+    autocmd FileType html,json,javascript,yaml,markdown packadd vim-prettier
+    autocmd FileType markdown packadd previm
+    autocmd FileType markdown packadd vim-markdown
+    autocmd FileType markdown packadd vim-markdown-quote-syntax
+    autocmd FileType plantuml packadd plantuml-syntax
+    autocmd FileType vim packadd syntax-vim-ex
+    " autocmd FileType asciidoc packadd asciidoc-vim
 augroup END
 
-" emmet.vim
-" --------------------
-" let g:user_emmet_leader_key='<C-E>'
-let g:user_emmet_install_global = 0
-autocmd vimrc FileType html,css,markdown EmmetInstall
+command! PackUpdate packadd minpac | source $MYVIMRC | call minpac#update('', {'do': 'call minpac#status()'})
+command! PackClean  packadd minpac | source $MYVIMRC | call minpac#clean()
+command! PackStatus packadd minpac | source $MYVIMRC | call minpac#status()
 
-" jedi-vim
-" --------------------
-" let g:jedi#auto_initialization = 0
-" let g:jedi#auto_vim_configuration = 0
-" let g:jedi#use_tabs_not_buffers = 1
-" let g:jedi#use_splits_not_buffers = 'right'
-let g:jedi#popup_on_dot = 0
-let g:jedi#popup_select_first = 0
-let g:jedi#show_call_signatures = 0
-
-autocmd vimrc FileType python setlocal completeopt-=preview
-
-let g:jedi#goto_command = '<leader>jd'
-let g:jedi#goto_assignments_command = '<leader>jg'
-let g:jedi#goto_definitions_command = ''
-let g:jedi#documentation_command = '<Leader>jk'
-let g:jedi#usages_command = '<leader>jn'
-let g:jedi#completions_command = '<C-n>'
-let g:jedi#rename_command = '<leader>jr'
-
-" supertab
-" --------------------
-let g:SuperTabDefaultCompletionType = '<C-n>'
-let g:SuperTabContextDefaultCompletionType = '<C-n>'
-
-" vim-asterisk
-" --------------------
-map * <Plug>(asterisk-z*)
-map # <Plug>(asterisk-z#)
-map g* <Plug>(asterisk-gz*)
-map g# <Plug>(asterisk-gz#)
-
-" let g:asterisk#keeppos = 1
+call map(sort(split(globpath(&runtimepath, 'config/*.vim'))), {->[execute('exec "so" v:val')]})
