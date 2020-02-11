@@ -43,10 +43,10 @@ ln -snfv ${DOT}/.config/micro/setting.json ${CONFIG}/micro/setting.json
 
 # .vim
 
-mkdir -p ${HOME}/.vim
+mkdir -p ${HOME}/.vim/config
 ln -snfv ${DOT}/.vim/.vimrc ${HOME}/.vim/.vimrc
 ln -snfv ${DOT}/.vim/.gvimrc ${HOME}/.vim/.gvimrc
-ln -snfv ${DOT}/.vim/config ${HOME}/.vim/config
+ln -snfv ${DOT}/.vim/config/ ${HOME}/.vim/config
 
 # Application Support
 
