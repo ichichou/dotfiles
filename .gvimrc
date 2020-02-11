@@ -10,8 +10,8 @@ endif
 
 set background=dark
 
-set guifont=Hack-Regular:h14
-set guifontwide=NotoSansMonoCJKjp-Regular:h14
+set guifont=Hack-Regular:h12
+set guifontwide=NotoSansCJKjp-DemiLight:h12
 
 set ambiwidth=double
 set linespace=2
