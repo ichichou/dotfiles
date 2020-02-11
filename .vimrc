@@ -173,6 +173,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
 Plug 'cocopon/lightline-hybrid.vim'
 Plug 'cocopon/vaffle.vim'
+Plug 'dense-analysis/ale'
 Plug 'easymotion/vim-easymotion'
 Plug 'glidenote/memolist.vim'
 Plug 'godlygeek/tabular'
@@ -180,6 +181,7 @@ Plug 'haya14busa/is.vim'
 Plug 'haya14busa/vim-asterisk'
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-highlighturl'
+Plug 'mattn/emmet-vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
@@ -208,14 +210,12 @@ Plug 'kana/vim-textobj-line'
 " Language
 " --------------------
 Plug 'aklt/plantuml-syntax', {'for': 'plantuml'}
-Plug 'dense-analysis/ale'
-Plug 'mattn/emmet-vim'
+Plug 'dagwieers/asciidoc-vim', {'for': 'asciidoc'}
 Plug 'mechatroner/rainbow_csv', {'for': 'csv'}
 Plug 'prettier/vim-prettier', {'for': ['html', 'markdown', 'yaml', 'css', 'less', 'scss', 'javascript', 'json',]}
 Plug 'previm/previm', {'for': 'markdown'}
 Plug 'sheerun/vim-polyglot'
 Plug 'vim-jp/syntax-vim-ex', {'for': 'vim'}
-" Plug 'dagwieers/asciidoc-vim', {'for': 'asciidoc'}
 
 Plug 'joker1007/vim-markdown-quote-syntax', {'for': 'markdown'}
 Plug 'rcmdnk/vim-markdown', {'for': 'markdown'}
