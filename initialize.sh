@@ -20,7 +20,6 @@ for i in .??*; do
     [[ ${i} == ".config" ]] && continue
     [[ ${i} == ".vim" ]] && continue
     [[ ${i} == ".gitignore" ]] && continue
-    [[ ${i} == ".vimrc" ]] && continue
     [[ ${i} == ".DS_Store" ]] && continue
     ln -snfv ${DOT}/${i} ${HOME}/${i}
 done
@@ -43,11 +42,9 @@ ln -snfv ${DOT}/.config/karabiner/karabiner.json ${CONFIG}/karabiner/karabiner.j
 mkdir -p ${CONFIG}/micro
 ln -snfv ${DOT}/.config/micro/setting.json ${CONFIG}/micro/setting.json
 
-# .vim
+# .vim/config
 
 mkdir -p ${HOME}/.vim
-ln -snfv ${DOT}/.vim/.vimrc ${HOME}/.vim/.vimrc
-ln -snfv ${DOT}/.vim/.gvimrc ${HOME}/.vim/.gvimrc
 ln -snfv ${DOT}/.vim/config/ ${HOME}/.vim/config
 
 # Application Support
