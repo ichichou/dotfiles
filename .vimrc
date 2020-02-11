@@ -188,7 +188,7 @@ Plug 'tyru/open-browser.vim'
 
 Plug 'kana/vim-smartinput'
 Plug 'cohama/vim-smartinput-endwise'
-Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
+Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
 " Operator / Text Object
