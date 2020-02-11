@@ -42,8 +42,14 @@ cnoremap <C-p> <Up>
 " set termwinkey=<C-g>
 " tnoremap <F1> <C-\><C-n>
 
-nnoremap <silent> <Leader><Leader> :<C-u>edit $MYVIMRC<CR>
-nnoremap <silent> <Leader>. :<C-u>source $MYVIMRC<CR> :source $MYGVIMRC<CR>
+if has('gui_running')
+    nnoremap <silent> <Leader><Leader> :<C-u>edit $MYVIMRC<CR>
+    nnoremap <silent> <Leader><lt> :<C-u>edit $MYGVIMRC<CR>
+    nnoremap <silent> <Leader>. :<C-u>source $MYVIMRC<CR> :source $MYGVIMRC<CR>
+else
+    nnoremap <silent> <Leader><Leader> :<C-u>edit $MYVIMRC<CR>
+    nnoremap <silent> <Leader>. :<C-u>source $MYVIMRC<CR>
+endif
 
 nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR>
 nnoremap <silent> <Leader>r :<C-u>redraw!<CR>
