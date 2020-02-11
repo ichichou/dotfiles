@@ -1,4 +1,4 @@
-if empty(globpath(&runtimepath, 'autoload/operator-replace'))
+if empty(globpath(&runtimepath, 'plugged/vim-operator-replace'))
     finish
 endif
 

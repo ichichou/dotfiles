@@ -1,4 +1,4 @@
-if empty(globpath(&runtimepath, 'autoload/vaffle.vim'))
+if empty(globpath(&runtimepath, 'plugged/vaffle.vim'))
     finish
 endif
 

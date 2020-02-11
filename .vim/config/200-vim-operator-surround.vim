@@ -1,4 +1,4 @@
-if empty(globpath(&runtimepath, 'autoload/operator-surround'))
+if empty(globpath(&runtimepath, 'plugged/vim-operator-surround'))
     finish
 endif
 

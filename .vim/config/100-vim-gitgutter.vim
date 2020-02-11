@@ -2,7 +2,7 @@ if !executable("git")
     finish
 endif
 
-if empty(globpath(&runtimepath, 'autoload/gitgutter'))
+if empty(globpath(&runtimepath, 'plugged/vim-gitgutter'))
     finish
 endif
 

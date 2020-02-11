@@ -1,4 +1,4 @@
-if empty(globpath(&runtimepath, 'autoload/caw.vim'))
+if empty(globpath(&runtimepath, 'plugged/caw.vim'))
     finish
 endif
 

@@ -1,4 +1,4 @@
-if empty(globpath(&runtimepath, 'autoload/vim-smartinput'))
+if empty(globpath(&runtimepath, 'plugged/vim-smartinput'))
     finish
 endif
 

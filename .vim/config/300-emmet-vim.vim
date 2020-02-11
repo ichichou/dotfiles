@@ -1,4 +1,4 @@
-if empty(globpath(&runtimepath, 'autoload/emmet.vim'))
+if empty(globpath(&runtimepath, 'plugged/emmet-vim'))
     finish
 endif
 

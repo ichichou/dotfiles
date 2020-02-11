@@ -1,4 +1,4 @@
-if empty(globpath(&runtimepath, 'autoload/vim-easymotion'))
+if empty(globpath(&runtimepath, 'plugged/vim-easymotion'))
     finish
 endif
 

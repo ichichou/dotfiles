@@ -1,4 +1,4 @@
-if empty(globpath(&runtimepath, 'autoload/open-browser'))
+if empty(globpath(&runtimepath, 'plugged/open-browser.vim'))
     finish
 endif
 

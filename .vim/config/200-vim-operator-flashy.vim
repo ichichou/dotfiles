@@ -1,4 +1,4 @@
-if empty(globpath(&runtimepath, 'autoload/operator-flashy'))
+if empty(globpath(&runtimepath, 'plugged/vim-operator-flashy'))
     finish
 endif
 

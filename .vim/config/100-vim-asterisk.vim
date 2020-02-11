@@ -1,4 +1,4 @@
-if empty(globpath(&runtimepath, 'autoload/vim-asterisk'))
+if empty(globpath(&runtimepath, 'plugged/vim-asterisk'))
     finish
 endif
 

@@ -1,4 +1,4 @@
-if empty(globpath(&runtimepath, 'autoload/tabular'))
+if empty(globpath(&runtimepath, 'plugged/tabular'))
     finish
 endif
 

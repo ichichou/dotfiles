@@ -1,4 +1,4 @@
-if empty(globpath(&runtimepath, 'autoload/vim-closetag'))
+if empty(globpath(&runtimepath, 'plugged/vim-closetag'))
     finish
 endif
 

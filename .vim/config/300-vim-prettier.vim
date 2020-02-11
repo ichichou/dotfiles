@@ -2,7 +2,7 @@ if !executable("prettier")
     finish
 endif
 
-if empty(globpath(&runtimepath, 'autoload/vim-prettier'))
+if empty(globpath(&runtimepath, 'plugged/vim-prettier'))
     finish
 endif
 

@@ -1,4 +1,4 @@
-if empty(globpath(&runtimepath, 'autoload/yankround'))
+if empty(globpath(&runtimepath, 'plugged/yankround.vim'))
     finish
 endif
 

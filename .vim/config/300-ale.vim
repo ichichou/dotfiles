@@ -1,4 +1,4 @@
-if empty(globpath(&runtimepath, 'autoload/ale'))
+if empty(globpath(&runtimepath, 'plugged/ale'))
     finish
 endif
 

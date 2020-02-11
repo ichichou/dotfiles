@@ -1,4 +1,4 @@
-if empty(globpath(&runtimepath, 'autoload/previm'))
+if empty(globpath(&runtimepath, 'plugged/previm'))
     finish
 endif
 

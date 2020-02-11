@@ -2,7 +2,7 @@ if !executable("fzf")
     finish
 endif
 
-if empty(globpath(&runtimepath, 'autoload/fzf'))
+if empty(globpath(&runtimepath, 'plugged/fzf.vim'))
     finish
 endif
 

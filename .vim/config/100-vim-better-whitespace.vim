@@ -1,4 +1,4 @@
-if empty(globpath(&runtimepath, 'autoload/better-whitespace'))
+if empty(globpath(&runtimepath, 'plugged/vim-better-whitespace'))
     finish
 endif
 

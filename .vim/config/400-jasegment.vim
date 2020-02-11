@@ -1,4 +1,4 @@
-if empty(globpath(&runtimepath, 'autoload/jasegment'))
+if empty(globpath(&runtimepath, 'plugged/jasegment.vim'))
     finish
 endif
 

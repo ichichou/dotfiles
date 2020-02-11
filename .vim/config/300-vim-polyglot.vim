@@ -1,4 +1,4 @@
-if empty(globpath(&runtimepath, 'autoload/vim-polyglot'))
+if empty(globpath(&runtimepath, 'plugged/vim-polyglot'))
     finish
 endif
 
