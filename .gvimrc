@@ -9,8 +9,6 @@ if has('gui_macvim')
 endif
 
 set background=dark
-colorscheme hybrid
-" hybrid iceberg nord tender
 
 set guifont=Hack-Regular:h14
 set guifontwide=NotoSansMonoCJKjp-Regular:h14

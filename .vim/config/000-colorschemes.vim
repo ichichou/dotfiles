@@ -2,6 +2,13 @@
 " Colorschemes
 " ========================================
 
+" hybrid iceberg nord tender
+if has('gui_running')
+    colorscheme hybrid
+else
+    colorscheme iceberg
+endif
+
 let g:hybrid_custom_term_colors = 1
 " let g:lightline_hybrid_style = 'plain'
 

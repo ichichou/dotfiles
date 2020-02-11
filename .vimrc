@@ -90,8 +90,6 @@ augroup END
 
 " set termguicolors
 set background=dark
-colorscheme iceberg
-" hybrid iceberg nord tender
 
 set list
 set listchars=eol:¬,tab:»\ ,space:\ ,trail:\ ,extends:>,precedes:<,nbsp:~
