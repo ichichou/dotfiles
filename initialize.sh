@@ -10,9 +10,7 @@ APP="${HOME}/Library/Application Support"
 # dotfiles
 
 if [[ ! -e ${DOT} ]]; then
-    mkdir -p ${DOT}
-    cd ${HOME}
-    git clone https://github.com/ichichou/dotfiles.git
+    git clone https://github.com/ichichou/dotfiles.git ${HOME}
 fi
 
 cd ${DOT}
@@ -75,11 +73,11 @@ defaults write -g KeyRepeat -int 1
 # .localized
 
 rm ${HOME}/Applications/.localized \
-    ${HOME}/Desktop/.localized \
-    ${HOME}/Documents/.localized \
-    ${HOME}/Downloads/.localized \
-    ${HOME}/Library/.localized \
-    ${HOME}/Movies/.localized \
-    ${HOME}/Music/.localized \
-    ${HOME}/Pictures/.localized \
-    ${HOME}/Public/.localized
+${HOME}/Desktop/.localized \
+${HOME}/Documents/.localized \
+${HOME}/Downloads/.localized \
+${HOME}/Library/.localized \
+${HOME}/Movies/.localized \
+${HOME}/Music/.localized \
+${HOME}/Pictures/.localized \
+${HOME}/Public/.localized
