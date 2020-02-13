@@ -11,16 +11,13 @@ if has('gui_running')
         \ 'active': {
             \ 'left': [
                 \ ['mode', 'paste'],
-                \ ['readonly', 'filepath', 'modified']
+                \ ['readonly', 'filename', 'modified']
             \ ],
             \ 'right': [
                 \ ['lineinfo'],
                 \ ['percent'],
                 \ ['fileformat', 'fileencoding', 'filetype']
             \ ]
-        \ },
-        \ 'component': {
-            \ 'percent': '%3p%% [%LL]'
         \ },
         \ 'component_function': {
             \ 'filepath': 'FilePath'
@@ -32,16 +29,13 @@ else
         \ 'active': {
             \ 'left': [
                 \ ['mode', 'paste'],
-                \ ['readonly', 'filepath', 'modified']
+                \ ['readonly', 'filename', 'modified']
             \ ],
             \ 'right': [
                 \ ['lineinfo'],
                 \ ['percent'],
                 \ ['fileformat', 'fileencoding', 'filetype']
             \ ]
-        \ },
-        \ 'component': {
-            \ 'percent': '%3p%% [%LL]'
         \ },
         \ 'component_function': {
             \ 'filepath': 'FilePath'
@@ -51,7 +45,7 @@ endif
 
 function! FilePath()
     if winwidth(0) > 70
-        return expand('%:s')
+        return expand('%:p')
     else
         return expand('%:t')
     endif
