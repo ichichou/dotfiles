@@ -16,16 +16,16 @@ let g:operator#surround#blocks = {'-' : [
     \ {
         \ 'block': ['（', '）'],
         \ 'motionwise': ['char', 'line', 'block'],
-        \ 'keys': ['（', '）', 'm']
+        \ 'keys': ['（', '）', 'P']
     \ },
     \ {
         \ 'block': ['「', '」'],
         \ 'motionwise': ['char', 'line', 'block'],
-        \ 'keys': ['「', '」', 'k']
+        \ 'keys': ['「', '」', 'B']
     \ },
     \ {
         \ 'block': ['『', '』'],
         \ 'motionwise': ['char', 'line', 'block'],
-        \ 'keys': ['『', '』', 'K']
+        \ 'keys': ['『', '』', 'D']
     \ },
 \ ]}
