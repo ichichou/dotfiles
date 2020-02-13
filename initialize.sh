@@ -4,6 +4,7 @@ set -eu
 
 DOT="${HOME}/dotfiles"
 CONFIG="${HOME}/.config"
+VIM="${HOME}/.vim"
 APP="${HOME}/Library/Application Support"
 
 # dotfiles
@@ -42,10 +43,20 @@ ln -snfv ${DOT}/.config/karabiner/karabiner.json ${CONFIG}/karabiner/karabiner.j
 mkdir -p ${CONFIG}/micro
 ln -snfv ${DOT}/.config/micro/setting.json ${CONFIG}/micro/setting.json
 
-# .vim/config
+# .vim
 
-mkdir -p ${HOME}/.vim
-ln -snfv ${DOT}/.vim/config/ ${HOME}/.vim/config
+mkdir -p ${VIM}
+ln -snfv ${VIM}/config/ ${VIM}/config
+
+if [[ ! -e ${VIM}/autoload/plug.vim ]]; then
+    curl -fLo ${VIM}/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+if
+
+# if [[ ! -e ${VIM}/pack/minpac/opt/minpac/plugin/minpac.vim ]]; then
+#     git clone https://github.com/k-takata/minpac.git \
+#     ${VIM}/pack/minpac/opt/minpac
+# if
 
 # Application Support
 
