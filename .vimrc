@@ -137,7 +137,7 @@ set incsearch
 set hlsearch
 set ignorecase
 set smartcase
-" set infercase
+set noinfercase
 set gdefault
 set wrapscan
 
