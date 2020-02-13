@@ -128,7 +128,3 @@ nnoremap <silent> [window]x :<C-u>bdelete<CR>
 " --------------------
 " Plugins
 " --------------------
-
-" gundo
-" ----------
-nnoremap U :<C-u>GundoToggle<CR>
