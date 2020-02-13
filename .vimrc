@@ -120,7 +120,7 @@ set belloff=all
 set showmatch
 set matchtime=1
 set matchpairs&
-set matchpairs+=（:）,［:］,｛:｝,「:」,『:』,〈:〉,【:】,〔:〕
+set matchpairs+=（:）,［:］,｛:｝,「:」,『:』,〈:〉,《:》,【:】,〔:〕,‘:’,“:”
 
 source $VIMRUNTIME/macros/matchit.vim
 let b:match_ignorecase = 1
