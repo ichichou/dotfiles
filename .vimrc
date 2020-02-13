@@ -149,7 +149,7 @@ if executable("rg")
 endif
 
 augroup vimrc
-    autocmd FileType help,qf,man,ref nnoremap <silent> <buffer> q :q!<CR>
+    autocmd FileType help,qf,man,ref,diff nnoremap <silent> <buffer> q :q!<CR>
     autocmd QuickFixCmdPost *grep*,make if len(getqflist()) != 0 | cwindow | endif
 augroup END
 
