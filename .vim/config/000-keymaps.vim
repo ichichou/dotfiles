@@ -32,10 +32,6 @@ noremap X "_X
 noremap + <C-a>
 noremap - <C-x>
 
-nnoremap <silent> <C-j> :<C-u>bnext<CR>
-nnoremap <silent> <C-k> :<C-u>bprevious<CR>
-" nnoremap <silent> <C-x> :<C-u>bdelete<CR>
-
 cnoremap <C-n> <Down>
 cnoremap <C-p> <Up>
 
@@ -114,12 +110,13 @@ nnoremap [window]J <C-w>J
 nnoremap [window]K <C-w>K
 nnoremap [window]L <C-w>L
 
-nnoremap <silent> [window]t :<C-u>tabnew<CR>
-nnoremap <silent> [window]q :<C-u>tabclose<CR>
 nnoremap [window]n gt
 nnoremap [window]p gT
+nnoremap <silent> [window]t :<C-u>tabnew<CR>
+nnoremap <silent> [window]q :<C-u>tabclose<CR>
 nnoremap <silent> [window]N :<C-u>+tabmove<CR>
 nnoremap <silent> [window]P :<C-u>-tabmove<CR>
 
 nnoremap <silent> [window]] :<C-u>bnext<CR>
 nnoremap <silent> [window][ :<C-u>bprevious<CR>
+nnoremap <silent> [window]x :<C-u>bdelete<CR>
