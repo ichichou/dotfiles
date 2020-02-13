@@ -55,6 +55,7 @@ set nowritebackup
 
 set shell=fish
 set history=10000
+" set updatetime=300
 set helplang=ja,en
 
 set clipboard&
@@ -101,7 +102,9 @@ set cursorline
 set nocursorcolumn
 
 set showtabline=1
+" set signcolumn=yes
 set laststatus=2
+" set cmdheight=2
 set noshowmode
 set showcmd
 set ruler
@@ -140,8 +143,10 @@ set wrapscan
 
 set wildmenu
 set wildmode=full
-set completeopt=menuone,noinsert,popup
 set pumheight=10
+set completeopt=menuone,noinsert,popup
+" set shortmess&
+" set shortmess+=c
 
 if executable("rg")
     set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
