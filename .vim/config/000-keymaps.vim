@@ -124,3 +124,11 @@ nnoremap <silent> [window]P :<C-u>-tabmove<CR>
 nnoremap <silent> [window]] :<C-u>bnext<CR>
 nnoremap <silent> [window][ :<C-u>bprevious<CR>
 nnoremap <silent> [window]x :<C-u>bdelete<CR>
+
+" --------------------
+" Plugins
+" --------------------
+
+" gundo
+" ----------
+nnoremap U :<C-u>GundoToggle<CR>
