@@ -140,7 +140,7 @@ set wrapscan
 
 set wildmenu
 set wildmode=full
-set completeopt=menuone,popup
+set completeopt=menuone,noinsert,popup
 set pumheight=10
 
 if executable("rg")
