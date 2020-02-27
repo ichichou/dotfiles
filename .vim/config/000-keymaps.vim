@@ -65,6 +65,9 @@ noremap Q <Nop>
 noremap gQ <Nop>
 noremap <Del> <Nop>
 
+inoremap <C-j> <Nop>
+inoremap <C-l> <Nop>
+
 inoremap <D-0> <Nop>
 inoremap <D-1> <Nop>
 inoremap <D-2> <Nop>
