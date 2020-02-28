@@ -50,4 +50,6 @@
   "plantuml.exportFormat": "png",
   "plantuml.render": "PlantUMLServer",
   "plantuml.server": "http://localhost:8080/",
+  "asciidoc.asciidoctorpdf_command": "asciidoctor-pdf-cjk",
+  "asciidoc.use_asciidoctor_js": false,
 }
