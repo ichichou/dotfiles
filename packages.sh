@@ -16,6 +16,6 @@ npm -g install prettier
 
 gem update --system
 gem install asciidoctor
-gem install asciidoctor-pdf --pre
+gem install asciidoctor-pdf
 gem install asciidoctor-pdf-cjk
 gem install asciidoctor-diagram
