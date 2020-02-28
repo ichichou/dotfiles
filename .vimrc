@@ -210,7 +210,7 @@ Plug 'kana/vim-textobj-line'
 " Language
 " --------------------
 Plug 'aklt/plantuml-syntax', {'for': 'plantuml'}
-Plug 'dagwieers/asciidoc-vim', {'for': 'asciidoc'}
+Plug 'habamax/vim-asciidoctor', {'for': 'asciidoc'}
 Plug 'mechatroner/rainbow_csv', {'for': 'csv'}
 Plug 'prettier/vim-prettier', {'for': ['html', 'markdown', 'yaml', 'css', 'less', 'scss', 'javascript', 'json',]}
 Plug 'previm/previm', {'for': 'markdown'}
