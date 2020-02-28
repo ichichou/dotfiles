@@ -171,6 +171,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
 Plug 'cocopon/lightline-hybrid.vim'
 Plug 'cocopon/vaffle.vim'
+Plug 'cohama/vim-smartinput-endwise'
 Plug 'dense-analysis/ale'
 Plug 'easymotion/vim-easymotion'
 Plug 'glidenote/memolist.vim'
@@ -179,6 +180,7 @@ Plug 'haya14busa/is.vim'
 Plug 'haya14busa/vim-asterisk'
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-highlighturl'
+Plug 'kana/vim-smartinput'
 Plug 'mattn/emmet-vim'
 Plug 'mattn/vim-maketable'
 Plug 'ntpeters/vim-better-whitespace'
@@ -189,8 +191,6 @@ Plug 'tyru/caw.vim'
 Plug 'tyru/open-browser.vim'
 " Plug 'kana/vim-repeat'
 
-Plug 'kana/vim-smartinput'
-Plug 'cohama/vim-smartinput-endwise'
 " Plug '/usr/local/opt/fzf'
 " Plug 'junegunn/fzf', {'do': './install --bin'}
 Plug 'junegunn/fzf', {'do': './install --all'}
@@ -198,27 +198,25 @@ Plug 'junegunn/fzf.vim'
 
 " Operator / Text Object
 " --------------------
-Plug 'kana/vim-operator-user'
 Plug 'haya14busa/vim-operator-flashy'
 Plug 'kana/vim-operator-replace'
-Plug 'rhysd/vim-operator-surround'
-
-Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-operator-user'
 Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-line'
+Plug 'kana/vim-textobj-user'
+Plug 'rhysd/vim-operator-surround'
 
 " Language
 " --------------------
 Plug 'aklt/plantuml-syntax', {'for': 'plantuml'}
 Plug 'habamax/vim-asciidoctor', {'for': 'asciidoc'}
+Plug 'joker1007/vim-markdown-quote-syntax', {'for': 'markdown'}
 Plug 'mechatroner/rainbow_csv', {'for': 'csv'}
 Plug 'prettier/vim-prettier', {'for': ['html', 'markdown', 'yaml', 'css', 'less', 'scss', 'javascript', 'json',]}
 Plug 'previm/previm', {'for': 'markdown'}
+Plug 'rcmdnk/vim-markdown', {'for': 'markdown'}
 Plug 'sheerun/vim-polyglot'
 Plug 'vim-jp/syntax-vim-ex', {'for': 'vim'}
-
-Plug 'joker1007/vim-markdown-quote-syntax', {'for': 'markdown'}
-Plug 'rcmdnk/vim-markdown', {'for': 'markdown'}
 
 " Japanese Support
 " --------------------
