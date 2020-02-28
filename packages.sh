@@ -2,11 +2,12 @@
 
 set -eu
 
-curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
+if test ! -f ~/.config/fish/functions/fisher.fish
+    curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
+end
+
 fisher self-update
 fisehr
-
-set -U fish_user_paths /usr/local/opt/ruby/bin $fish_user_paths
 
 npm -g install npm
 npm -g install eslint
