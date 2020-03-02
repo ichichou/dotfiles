@@ -46,3 +46,4 @@ set -x FZF_FIND_FILE_COMMAND $FZF_DEFAULT_COMMAND
 
 ## ruby
 set -x fish_user_paths /usr/local/opt/ruby/bin $fish_user_paths
+set -x fish_user_paths $fish_user_paths /usr/local/lib/ruby/gems/2.7.0/bin
