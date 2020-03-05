@@ -18,3 +18,4 @@ gem install asciidoctor
 gem install asciidoctor-pdf
 gem install asciidoctor-pdf-cjk
 gem install asciidoctor-diagram
+gem install rouge
