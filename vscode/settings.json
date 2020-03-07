@@ -50,6 +50,10 @@
   "plantuml.exportFormat": "png",
   "plantuml.render": "PlantUMLServer",
   "plantuml.server": "http://localhost:8080/",
-  "asciidoc.asciidoctorpdf_command": "asciidoctor-pdf-cjk",
   "asciidoc.use_asciidoctor_js": false,
+  "asciidoc.use_asciidoctorpdf": true,
+  "asciidoc.asciidoctor_command": "/usr/local/lib/ruby/gems/2.7.0/bin/asciidoctor -r asciidoctor-diagram",
+  "asciidoc.asciidoctorpdf_command": "/usr/local/lib/ruby/gems/2.7.0/bin/asciidoctor-pdf -r asciidoctor-pdf-cjk -r asciidoctor-diagram",
+  "asciidoc.preview.fontFamily": "",
+  "asciidoc.preview.useEditorStyle": false,
 }
