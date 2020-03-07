@@ -30,6 +30,11 @@ else
     alias la 'ls -alG'
 end
 
+## binds
+bind -e \cl
+bind -e \cj
+bind -e \cf
+
 ## functions
 functions --copy cd standard_cd
 function cd
