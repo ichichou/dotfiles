@@ -36,9 +36,19 @@ bind -e \cj
 bind -e \cf
 
 ## functions
+### auto ls
 functions --copy cd standard_cd
 function cd
     standard_cd $argv; and ls
+end
+
+### asciidoctor
+function adoc
+    asciidoctor -r asciidoctor-diagram $argv
+end
+
+function adocpdf
+    asciidoctor-pdf -r asciidoctor-pdf-cjk -r asciidoctor-diagram $argv
 end
 
 ## fish
