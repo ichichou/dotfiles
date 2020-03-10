@@ -11,8 +11,8 @@ let g:asciidoctor_extensions = ['asciidoctor-diagram']
 
 " PDF
 " --------------------
-let g:asciidoctor_pdf_executable = 'asciidoctor-pdf-cjk'
-let g:asciidoctor_pdf_extensions = ['asciidoctor-diagram']
+let g:asciidoctor_pdf_executable = 'asciidoctor-pdf'
+let g:asciidoctor_pdf_extensions = ['asciidoctor-pdf-cjk', 'asciidoctor-diagram']
 " let g:asciidoctor_pdf_themes_path = ''
 " let g:asciidoctor_pdf_fonts_path = ''
 
