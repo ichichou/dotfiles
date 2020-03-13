@@ -10,7 +10,7 @@ alias g 'git'
 alias gu 'gitup'
 alias j 'z'
 alias jl 'jupyter lab'
-alias mvi 'mvim'
+alias mvi 'mvim --remote-tab-silent'
 alias t 'tmux'
 alias vi 'vim'
 
