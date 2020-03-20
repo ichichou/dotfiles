@@ -21,7 +21,7 @@ Mackup フォルダ内の設定ファイルを元の場所にコピー（Mackup 
 . {blank}
 +
 ----
-$ cp "~/Library/Application Support/AquaSKK/skk-jisyo.utf8" \
+$ cp ~/Library/Application\ Support/AquaSKK/skk-jisyo.utf8 \
 ~/Box/Setting_files/AquaSKK/skk-jisyo.utf8
 ----
 +
@@ -101,7 +101,7 @@ Mackup 管理対象アプリの設定ファイルを復元（シンボリック�
 +
 ----
 $ cp ~/Box/Setting_files/AquaSKK/skk-jisyo.utf8 \
-"~/Library/Application Support/AquaSKK/skk-jisyo.utf8"
+~/Library/Application\ Support/AquaSKK/skk-jisyo.utf8
 ----
 
 . AquaSKK の環境設定から辞書を `~/Library/Application\ Support/AquaSKK/skk-jisyo.utf8` に設定する。
