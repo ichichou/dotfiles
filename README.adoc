@@ -12,9 +12,9 @@
 
 === Mackup
 . `.mackup.cfg` から管理対象のアプリを確認。必要に応じて追加・削除。
-. $ `mackup -f backup` +
+. `$ mackup -f backup` +
 管理対象アプリの設定ファイルを Mackup フォルダにコピーし、元の場所にはシンボリックリンクを生成。
-. $ `mackup uninstall` +
+. `$ mackup uninstall` +
 Mackup フォルダ内の設定ファイルを元の場所にコピー（Mackup フォルダ内のファイルはそのまま残る）。
 
 === AquaSKK ユーザー辞書をバックアップ
@@ -56,24 +56,24 @@ AquaSKK のユーザー辞書はシンボリックリンクでは機能しない
 == Homebrew
 
 === Homebrew のインストール
-. $ `xcode-select --install` +
+. `$ xcode-select --install` +
 Command Line Tools をインストール（Xcode 自体は不要）。
 . https://brew.sh/[Homebrew 公式サイト]のコマンドを実行。
 
 === アプリケーションをインストール
 . App Store にサインイン（mas-cli 用）。
-. $ `cd ~/Downloads/`
-. $ `curl -LO https://raw.githubusercontent.com/ichichou/dotfiles/master/Brewfile`
-. $ `brew bundle`
+. `$ cd ~/Downloads/`
+. `$ curl -LO https://raw.githubusercontent.com/ichichou/dotfiles/master/Brewfile`
+. `$ brew bundle`
 
 （インストールの待ち時間に Mac のシステム環境設定をやるといい）
 
 == シェルスクリプトによる初期化
 
 === init.sh
-. $ `cd ~`
-. $ `git clone https://github.com/ichichou/dotfiles.git`
-. $ `bash ~/dotfiles/init.sh`
+. `$ cd ~`
+. `$ git clone https://github.com/ichichou/dotfiles.git`
+. `$ bash ~/dotfiles/init.sh`
 
 === pm.sh
 `pm.sh` 自体は実行せずに、参考にしながら一行ずつコマンドラインで実行する。
@@ -82,7 +82,7 @@ Command Line Tools をインストール（Xcode 自体は不要）。
 
 （Mackup は使わず、まず手動で設定してみる）
 
-* $ `mackup restore` +
+* `$ mackup restore` +
 ：Mackup 管理対象アプリの設定ファイルを復元（シンボリックリンク）。
 * 後述の BetterTouchTool と Dash は、Mackup で復元できれば手動設定は不要。
 
@@ -177,9 +177,9 @@ sudo ln -s \
 . 表示オプション
 ** `表示 > 表示オプションを表示` から諸々設定
 ** 次のコマンドを `Bash` で実行：
-*** $ `sudo find / -name ".DS_Store" | xargs rm -rf` +
+*** `$ sudo find / -name ".DS_Store" | xargs rm -rf` +
 ：すべてのディレクトリから `.DS_Store` を探し出して削除。
-*** $ `killall Finder`
+*** `$ killall Finder`
 
 === キーボードショートカット
 [%autowidth, cols="2*a"]
