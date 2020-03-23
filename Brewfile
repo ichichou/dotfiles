@@ -1,5 +1,6 @@
 cask_args appdir: '/Applications'
 tap "homebrew/cask"
+tap "homebrwe/cask-drivers"
 tap "homebrew/cask-fonts"
 
 brew "bat"
@@ -33,7 +34,6 @@ brew "z"
 
 cask "alfred"
 cask "appcleaner"
-cask "aquaskk"
 cask "bettertouchtool"
 cask "bitwarden"
 cask "box-drive"
@@ -54,7 +54,6 @@ cask "realforce"
 cask "rstudio"
 cask "scroll-reverser"
 cask "slack"
-cask "teamviewer"
 cask "the-unarchiver"
 cask "visual-studio-code"
 cask "vlc"
