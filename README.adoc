@@ -12,16 +12,17 @@
 
 === Mackup
 . `.mackup.cfg` から管理対象のアプリを確認。必要に応じて追加・削除。
-. `$ mackup -f backup` +
+. $ `mackup -f backup` +
 管理対象アプリの設定ファイルを Mackup フォルダにコピーし、元の場所にはシンボリックリンクを生成。
-. `$ mackup uninstall` +
+. $ `mackup uninstall` +
 Mackup フォルダ内の設定ファイルを元の場所にコピー（Mackup フォルダ内のファイルはそのまま残る）。
 
 === AquaSKK ユーザー辞書をバックアップ
 . {blank}
 +
 ----
-$ cp ~/Library/Application\ Support/AquaSKK/skk-jisyo.utf8 \
+sudo cp \
+~/Library/Application\ Support/AquaSKK/skk-jisyo.utf8 \
 ~/Box/Setting_files/AquaSKK/skk-jisyo.utf8
 ----
 +
@@ -55,42 +56,34 @@ AquaSKK のユーザー辞書はシンボリックリンクでは機能しない
 == Homebrew
 
 === Homebrew のインストール
-. `$ xcode-select --install` +
+. $ `xcode-select --install` +
 Command Line Tools をインストール（Xcode 自体は不要）。
 . https://brew.sh/[Homebrew 公式サイト]のコマンドを実行。
 
 === アプリケーションをインストール
 . App Store にサインイン（mas-cli 用）。
-. `$ cd ~/Downloads/`
-. `$ curl -LO https://raw.githubusercontent.com/ichichou/dotfiles/master/Brewfile`
-. `$ brew bundle`
+. $ `cd ~/Downloads/`
+. $ `curl -LO https://raw.githubusercontent.com/ichichou/dotfiles/master/Brewfile`
+. $ `brew bundle`
 
 （インストールの待ち時間に Mac のシステム環境設定をやるといい）
 
 == シェルスクリプトによる初期化
 
 === init.sh
-`$ bash -c "$(curl -L https://raw.githubusercontent.com/ichichou/dotfiles/master/init.sh)"`
-
-上記でうまくいかない場合：
-
-. `$ cd ~/Downloads/`
-. `$ curl -LO https://raw.githubusercontent.com/ichichou/dotfiles/master/init.sh`
-. `$ ./init.sh`
+. $ `cd ~`
+. $ `git clone https://github.com/ichichou/dotfiles.git`
+. $ `bash ~/dotfiles/init.sh`
 
 === pm.sh
-`$ bash -c "$(curl -L https://raw.githubusercontent.com/ichichou/dotfiles/master/pm.sh)"`
-
-上記でうまくいかない場合：
-
-. `$ cd ~/Downloads/`
-. `$ curl -LO https://raw.githubusercontent.com/ichichou/dotfiles/master/pm.sh`
-. `$ ./pm.sh`
+`pm.sh` 自体は実行せずに、参考にしながら一行ずつコマンドラインで実行する。
 
 == Mackup
 
-* `$ mackup restore` +
-Mackup 管理対象アプリの設定ファイルを復元（シンボリックリンク）。
+（Mackup は使わず、まず手動で設定してみる）
+
+* $ `mackup restore` +
+：Mackup 管理対象アプリの設定ファイルを復元（シンボリックリンク）。
 * 後述の BetterTouchTool と Dash は、Mackup で復元できれば手動設定は不要。
 
 == 手動設定
@@ -100,7 +93,8 @@ Mackup 管理対象アプリの設定ファイルを復元（シンボリック�
 . {blank}
 +
 ----
-$ cp ~/Box/Setting_files/AquaSKK/skk-jisyo.utf8 \
+sudo cp \
+~/Box/Setting_files/AquaSKK/skk-jisyo.utf8 \
 ~/Library/Application\ Support/AquaSKK/skk-jisyo.utf8
 ----
 
@@ -111,9 +105,9 @@ $ cp ~/Box/Setting_files/AquaSKK/skk-jisyo.utf8 \
 . {blank}
 +
 ----
-`$ sudo ln -s \
+sudo ln -s \
 /usr/local/share/git-core/contrib/diff-highlight/diff-highlight \
-/usr/local/bin/diff-highlight`
+/usr/local/bin/diff-highlight
 ----
 
 === BetterTouchTool（メモ）
@@ -181,10 +175,11 @@ $ cp ~/Box/Setting_files/AquaSKK/skk-jisyo.utf8 \
 === Finder
 . 環境設定から諸々設定
 . 表示オプション
-* `表示 > 表示オプションを表示` から諸々設定
-* `$ sudo find / -name ".DS_Store" | xargs rm -rf` +
-すべてのディレクトリから `.DS_Store` を探し出して削除。
-* `$ killall Finder`
+** `表示 > 表示オプションを表示` から諸々設定
+** 次のコマンドを `Bash` で実行：
+*** $ `sudo find / -name ".DS_Store" | xargs rm -rf` +
+：すべてのディレクトリから `.DS_Store` を探し出して削除。
+*** $ `killall Finder`
 
 === キーボードショートカット
 [%autowidth, cols="2*a"]
@@ -197,12 +192,12 @@ $ cp ~/Box/Setting_files/AquaSKK/skk-jisyo.utf8 \
 |アプリケーションウインドウ |kbd:[Control+Option+Command+↓]
 |左の操作スペースに移動 |kbd:[Control+Option+Command+←]
 |右の操作スペースに移動 |kbd:[Control+Option+Command+→]
-|デスクトップ1へ切り替え |kbd:[Option+1]
-|デスクトップ2へ切り替え |kbd:[Option+2]
-|デスクトップ3へ切り替え |kbd:[Option+3]
-|デスクトップ4へ切り替え |kbd:[Option+4]
-|デスクトップ5へ切り替え |kbd:[Option+5]
-|デスクトップ6へ切り替え |kbd:[Option+6]
+|デスクトップ1へ切り替え |kbd:[Control+1]
+|デスクトップ2へ切り替え |kbd:[Control+2]
+|デスクトップ3へ切り替え |kbd:[Control+3]
+|デスクトップ4へ切り替え |kbd:[Control+4]
+|デスクトップ5へ切り替え |kbd:[Control+5]
+|デスクトップ6へ切り替え |kbd:[Control+6]
 
 2+h|入力ソース
 |前の入力ソースを選択 |チェック外す
