@@ -44,7 +44,7 @@ ln -snfv ${DOT}/.config/micro/setting.json ${CONFIG}/micro/setting.json
 # .vim
 
 mkdir -p ${VIM}
-ln -snfv ${VIM}/config/ ${VIM}/config
+ln -snfv ${DOT}/.vim/config/ ${VIM}/config
 
 if [[ ! -e ${VIM}/autoload/plug.vim ]]; then
     curl -fLo ${VIM}/autoload/plug.vim --create-dirs \
