@@ -1,6 +1,6 @@
 cask_args appdir: '/Applications'
 tap "homebrew/cask"
-tap "homebrwe/cask-drivers"
+tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 
 brew "bat"
