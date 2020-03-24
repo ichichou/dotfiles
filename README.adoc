@@ -71,13 +71,13 @@ Command Line Tools をインストール（Xcode 自体は不要）。
 
 == シェルスクリプトによる初期化
 
-=== `init.sh`
+=== init.sh
 . `$ cd ~`
 . `$ git clone https://github.com/ichichou/dotfiles.git`
 . `$ sudo bash ~/dotfiles/init.sh`
 ** root ディレクトリを編集するため、`sudo` で実行する必要がある。
 
-=== `pm.sh`
+=== pm.sh
 `pm.sh` 自体は実行せずに、参考にしながら一行ずつコマンドラインで実行する。
 
 == Mackup
