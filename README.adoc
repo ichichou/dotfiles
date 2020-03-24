@@ -4,6 +4,7 @@
 :experimental:
 :sectnums:
 :sectnumlevels: 1
+:table-caption!:
 
 == クリーンインストール前の作業
 === Homebrew
@@ -198,22 +199,25 @@ NOTE: BetterTouchTool は設定ファイルをインポートせず、手動で�
 == Mac のシステム環境設定
 
 === Finder
-. 環境設定から諸々設定。
+. 環境設定からもろもろ設定。
 . 表示オプション：
-** `表示 > 表示オプションを表示` から諸々設定し、`デフォルトとして使用` から反映。
-*** ホームディレクトリで表示オプションを表示すると `“ライブラリ”フォルダを表示` が出現する。
-** 次のコマンドを `Bash` で実行：
-*** `$ sudo find / -name ".DS_Store" | xargs rm -rf` ： +
+** `表示 > 表示オプションを表示` からもろもろ設定し、`デフォルトとして使用` から反映。
+** ホームディレクトリで表示オプションを表示すると `“ライブラリ”フォルダを表示` が出現する。
+. 次のコマンドを `Bash` で実行：
+.. `$ sudo find / -name ".DS_Store" | xargs rm -rf` ： +
 すべてのディレクトリから `.DS_Store` を探し出して削除。
-*** `$ killall Finder`
+.. `$ killall Finder`
 
 === キーボードショートカット
 [%autowidth, cols="2*a"]
+.LaunchpadとDock
 |===
-2+h|LaunchpadとDock
 |Launchpadを表示 |チェック外す
+|===
 
-2+h|Mission Control
+[%autowidth, cols="2*a"]
+.Mission Control
+|===
 |Mission Control |kbd:[Control+Option+Command+↑]
 |アプリケーションウインドウ |kbd:[Control+Option+Command+↓]
 |左の操作スペースに移動 |kbd:[Control+Option+Command+←]
@@ -224,20 +228,32 @@ NOTE: BetterTouchTool は設定ファイルをインポートせず、手動で�
 |デスクトップ4へ切り替え |kbd:[Option+4]
 |デスクトップ5へ切り替え |kbd:[Option+5]
 |デスクトップ6へ切り替え |kbd:[Option+6]
+|===
 
-2+h|入力ソース
+[%autowidth, cols="2*a"]
+.入力ソース
+|===
 |前の入力ソースを選択 |チェック外す
 |入力メニューの次のソースを選択 |チェック外す
+|===
 
-2+h|サービス
+[%autowidth, cols="2*a"]
+.サービス
+|===
 |Googleで検索 |チェック外す
 |Spotlight |チェック外す
 |辞書で調べる |なし
+|===
 
-2+h|Spotlight
+[%autowidth, cols="2*a"]
+.Spotlight
+|===
 |Spotlight検索を表示 |チェック外す
+|===
 
-2+h|アプリケーション
+[%autowidth, cols="2*a"]
+.アプリケーション
+|===
 |すべてしまう |kbd:[Shift+Control+Option+Command+M]
 |しまう |kbd:[Control+Option+Command+M]
 |最小化 |kbd:[Control+Option+Command+M]
