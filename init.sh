@@ -25,9 +25,6 @@ done
 
 # .config
 
-mkdir -p ${CONFIG}/alacritty
-ln -snfv ${DOT}/.config/alacritty/alacritty.yml ${CONFIG}/alacritty/alacritty.yml
-
 mkdir -p ${CONFIG}/fish
 ln -snfv ${DOT}/.config/fish/config.fish ${CONFIG}/fish/config.fish
 ln -snfv ${DOT}/.config/fish/fishfile ${CONFIG}/fish/fishfile
@@ -38,18 +35,10 @@ ln -snfv ${DOT}/.config/git/ignore ${CONFIG}/git/ignore
 mkdir -p ${CONFIG}/karabiner
 ln -snfv ${DOT}/.config/karabiner/karabiner.json ${CONFIG}/karabiner/karabiner.json
 
-mkdir -p ${CONFIG}/micro
-ln -snfv ${DOT}/.config/micro/setting.json ${CONFIG}/micro/setting.json
-
 # .vim
 
 mkdir -p ${VIM}/colors
 ln -snfv ${DOT}/.vim/config/ ${VIM}/config
-
-if [[ ! -e ${VIM}/autoload/plug.vim ]]; then
-    curl -fLo ${VIM}/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-if
 
 # if [[ ! -e ${VIM}/pack/minpac/opt/minpac/plugin/minpac.vim ]]; then
 #     git clone https://github.com/k-takata/minpac.git \
