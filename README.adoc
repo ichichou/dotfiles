@@ -140,6 +140,7 @@ NOTE: BetterTouchTool は設定ファイルをインポートせず、手動で�
 .2+h|ウィンドウスナップと移動
 |ウィンドウの移動 |kbd:[Control+Option+ドラッグ]
 |ウィンドウのサイズ変更 |kbd:[Control+Option+Command+ドラッグ]
+|===
 
 [%autowidth, cols="3*a"]
 .トラックパッド
