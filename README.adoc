@@ -2,7 +2,6 @@
 :lang: ja
 :icons: font
 :experimental:
-:source-highlighter: rouge
 :sectnums:
 :sectnumlevels: 1
 
@@ -12,9 +11,9 @@
 
 === Mackup
 . `.mackup.cfg` から管理対象のアプリを確認。必要に応じて追加・削除。
-. `$ mackup -f backup` +
+. `$ mackup -f backup` ： +
 管理対象アプリの設定ファイルを Mackup フォルダにコピーし、元の場所にはシンボリックリンクを生成。
-. `$ mackup uninstall` +
+. `$ mackup uninstall` ： +
 Mackup フォルダ内の設定ファイルを元の場所にコピー（Mackup フォルダ内のファイルはそのまま残る）。
 
 === AquaSKK ユーザー辞書をバックアップ
@@ -26,15 +25,17 @@ sudo cp \
 ~/Box/Setting_files/AquaSKK/skk-jisyo.utf8
 ----
 +
-AquaSKK のユーザー辞書はシンボリックリンクでは機能しないため、都度バックアップする必要がある。
+AquaSKK のユーザー辞書はシンボリックリンクでは機能しないようなので、都度バックアップする必要がある。
 
 == クリーンインストール
 
 === クリーンインストール手順
 . `Command-R` を押しながら Mac を起動 →「macOSユーティリティ」が起動する。
-. `ディスクユーティリティ` で Macintosh HD を選択し、`消去` する（`フォーマット` は `APFS`）。
-. `ディスクユーティリティ` のウィンドウを閉じる。
-. `macOSを再インストール`
+. 「ディスクユーティリティ」を開く。
+. `Macintosh HD - Data` を選択し、`ボリューム` の `−` をクリックして削除する。
+. `Macintosh HD` を選択し、`消去` する（フォーマットは `APFS`）。
+. 「ディスクユーティリティ」を閉じる。
+. 「macOSを再インストール」を開いてインストールを進める。
 
 === インストール時の設定
 . 「コンピュータアカウントを作成」
@@ -70,25 +71,28 @@ Command Line Tools をインストール（Xcode 自体は不要）。
 
 == シェルスクリプトによる初期化
 
-=== init.sh
+=== `init.sh`
 . `$ cd ~`
 . `$ git clone https://github.com/ichichou/dotfiles.git`
-. `$ bash ~/dotfiles/init.sh`
+. `$ sudo bash ~/dotfiles/init.sh`
+** root ディレクトリを編集するため、`sudo` で実行する必要がある。
 
-=== pm.sh
+=== `pm.sh`
 `pm.sh` 自体は実行せずに、参考にしながら一行ずつコマンドラインで実行する。
 
 == Mackup
 
-（Mackup は使わず、まず手動で設定してみる）
+NOTE: 設定が反映されないアプリが一部あるため、Mackup は使わず、ひとまず手動で設定してみる。
 
-* `$ mackup restore` +
-：Mackup 管理対象アプリの設定ファイルを復元（シンボリックリンク）。
+* `$ mackup restore` ： +
+Mackup 管理対象アプリの設定ファイルを復元（シンボリックリンク）。
 * 後述の BetterTouchTool と Dash は、Mackup で復元できれば手動設定は不要。
 
 == 手動設定
 
 === AquaSKK のユーザー辞書を復元
+NOTE: 現状、AquaSKK は Catalina でうまく機能しない。Brewfile ではインストールせず、あとから入れて様子をみる。
+
 . Box Drive にサインイン。
 . {blank}
 +
@@ -101,6 +105,23 @@ sudo cp \
 . AquaSKK の環境設定から辞書を `~/Library/Application\ Support/AquaSKK/skk-jisyo.utf8` に設定する。
 ** `変更…` からではなくパスを直接入力する必要あり。
 
+=== Terminal
+* https://cocopon.github.io/iceberg.vim/[Iceberg プロファイル]をインポートする。
+* 開くシェル： `/usr/local/bin/fish`
+* フォント： `Hack Regular 12 pt.`
+* サイズ： `160 × 50`
+* 曖昧幅文字を全角で表示する。
+
+=== TotalSpaces2
+* https://totalspaces.binaryage.com/[TotalSpaces2] をインストール。
+** 現状、TotalSpaces2 は Homebrew でインストールできない。
+
+=== Alfred
+* 「Google Search with Selected Text」のワークフローを設定。
+
+=== Google Chrome
+* Mouse Dictionary にlink:https://booth.pm/ja/items/777563[英辞郎データ]を読み込む。
+
 === diff-highlight にパスを通す
 . {blank}
 +
@@ -110,17 +131,19 @@ sudo ln -s \
 /usr/local/bin/diff-highlight
 ----
 
-=== BetterTouchTool（メモ）
-（Mackup で設定できていれば不要）
+=== BetterTouchTool
+NOTE: BetterTouchTool は設定ファイルをインポートせず、手動で設定する。なぜかインポートしたトリガーの一部が機能しないため。
 
 [%autowidth, cols="3*a"]
+.環境設定
 |===
-3+h|環境設定
 .2+h|ウィンドウスナップと移動
 |ウィンドウの移動 |kbd:[Control+Option+ドラッグ]
 |ウィンドウのサイズ変更 |kbd:[Control+Option+Command+ドラッグ]
 
-3+h|トラックパッド
+[%autowidth, cols="3*a"]
+.トラックパッド
+|===
 .9+h|すべてのアプリ
 |シングルフィンガーフォースクリック |kbd:[Command+クリック]
 |3本指でタップ |kbd:[Command+クリック]
@@ -141,8 +164,11 @@ sudo ln -s \
 |3本指で上にスワイプ |kbd:[Command+T]
 |Shift + 3本指で左にスワイプ |kbd:[Shift+Command+PageDown]
 |Shift + 3本指で右にスワイプ |kbd:[Shift+Command+PageUp]
+|===
 
-3+h|マウスジェスチャー
+[%autowidth, cols="3*a"]
+.マウスジェスチャー
+|===
 .6+h|すべてのアプリ
 |↓→ |なし
 |↓← |なし
@@ -152,11 +178,9 @@ sudo ln -s \
 |→← |`スペースを左に移動`
 |===
 
-=== Dash（メモ）
-
-（Mackup で設定できていれば不要）
-
+=== Dash
 [%autowidth, cols="2*a"]
+.スニペット
 |===
 2+h|Placeholder
 |@time |`H:mm`
@@ -173,12 +197,13 @@ sudo ln -s \
 == Mac のシステム環境設定
 
 === Finder
-. 環境設定から諸々設定
-. 表示オプション
-** `表示 > 表示オプションを表示` から諸々設定
+. 環境設定から諸々設定。
+. 表示オプション：
+** `表示 > 表示オプションを表示` から諸々設定し、`デフォルトとして使用` から反映。
+*** ホームディレクトリで表示オプションを表示すると `“ライブラリ”フォルダを表示` が出現する。
 ** 次のコマンドを `Bash` で実行：
-*** `$ sudo find / -name ".DS_Store" | xargs rm -rf` +
-：すべてのディレクトリから `.DS_Store` を探し出して削除。
+*** `$ sudo find / -name ".DS_Store" | xargs rm -rf` ： +
+すべてのディレクトリから `.DS_Store` を探し出して削除。
 *** `$ killall Finder`
 
 === キーボードショートカット
@@ -192,12 +217,12 @@ sudo ln -s \
 |アプリケーションウインドウ |kbd:[Control+Option+Command+↓]
 |左の操作スペースに移動 |kbd:[Control+Option+Command+←]
 |右の操作スペースに移動 |kbd:[Control+Option+Command+→]
-|デスクトップ1へ切り替え |kbd:[Control+1]
-|デスクトップ2へ切り替え |kbd:[Control+2]
-|デスクトップ3へ切り替え |kbd:[Control+3]
-|デスクトップ4へ切り替え |kbd:[Control+4]
-|デスクトップ5へ切り替え |kbd:[Control+5]
-|デスクトップ6へ切り替え |kbd:[Control+6]
+|デスクトップ1へ切り替え |kbd:[Option+1]
+|デスクトップ2へ切り替え |kbd:[Option+2]
+|デスクトップ3へ切り替え |kbd:[Option+3]
+|デスクトップ4へ切り替え |kbd:[Option+4]
+|デスクトップ5へ切り替え |kbd:[Option+5]
+|デスクトップ6へ切り替え |kbd:[Option+6]
 
 2+h|入力ソース
 |前の入力ソースを選択 |チェック外す
@@ -222,5 +247,5 @@ sudo ln -s \
 == その他の設定
 
 === プリンタ設定
-* システム環境設定の「プリンタとスキャナ」からプリンタを登録する
-* 基本的に Mac 標準のドライバで OK
+* システム環境設定の「プリンタとスキャナ」からプリンタを登録する。
+* 基本的に Mac 標準のドライバで OK。
