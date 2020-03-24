@@ -47,12 +47,12 @@ ln -snfv ${DOT}/.vim/config/ ${VIM}/config
 
 # Application Support
 
-sudo mkdir -p "${APP}/AquaSKK"
-sudo ln -snfv ${DOT}/aquaskk/kana-rule.conf "${APP}/AquaSKK/kana-rule.conf"
-sudo ln -snfv ${DOT}/aquaskk/keymap.conf "${APP}/AquaSKK/keymap.conf"
+mkdir -p "${APP}/AquaSKK"
+ln -snfv ${DOT}/aquaskk/kana-rule.conf "${APP}/AquaSKK/kana-rule.conf"
+ln -snfv ${DOT}/aquaskk/keymap.conf "${APP}/AquaSKK/keymap.conf"
 
-sudo mkdir -p "${APP}/Code/User"
-sudo ln -snfv ${DOT}/vscode/setting.json "${APP}/Code/User/setting.json"
+mkdir -p "${APP}/Code/User"
+ln -snfv ${DOT}/vscode/setting.json "${APP}/Code/User/setting.json"
 
 # Key Repeat
 
