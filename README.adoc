@@ -12,10 +12,8 @@
 
 === Mackup
 . `.mackup.cfg` から管理対象のアプリを確認。必要に応じて追加・削除。
-. `$ mackup -f backup` ： +
-管理対象アプリの設定ファイルを Mackup フォルダにコピーし、元の場所にはシンボリックリンクを生成。
-. `$ mackup uninstall` ： +
-Mackup フォルダ内の設定ファイルを元の場所にコピー（Mackup フォルダ内のファイルはそのまま残る）。
+. `$ mackup -f backup` ：管理対象アプリの設定ファイルを Mackup フォルダにコピーし、元の場所にはシンボリックリンクを生成。
+. `$ mackup uninstall` ：Mackup フォルダ内の設定ファイルを元の場所にコピー（Mackup フォルダ内のファイルはそのまま残る）。
 
 === AquaSKK ユーザー辞書をバックアップ
 . {blank}
@@ -75,8 +73,7 @@ Command Line Tools をインストール（Xcode 自体は不要）。
 === init.sh
 . `$ cd ~`
 . `$ git clone https://github.com/ichichou/dotfiles.git`
-. `$ sudo bash ~/dotfiles/init.sh`
-** root ディレクトリを編集するため、`sudo` で実行する必要がある。
+. `$ sh ~/dotfiles/init.sh`
 
 === pm.sh
 `pm.sh` 自体は実行せずに、参考にしながら一行ずつコマンドラインで実行する。
@@ -85,12 +82,10 @@ Command Line Tools をインストール（Xcode 自体は不要）。
 
 NOTE: 設定が反映されないアプリが一部あるため、Mackup は使わず、ひとまず手動で設定してみる。
 
-* `$ mackup restore` ： +
-Mackup 管理対象アプリの設定ファイルを復元（シンボリックリンク）。
+* `$ mackup restore` ： Mackup 管理対象アプリの設定ファイルを復元（シンボリックリンク）。
 * 後述の BetterTouchTool と Dash は、Mackup で復元できれば手動設定は不要。
 
 == 手動設定
-
 === AquaSKK のユーザー辞書を復元
 NOTE: 現状、AquaSKK は Catalina でうまく機能しない。Brewfile ではインストールせず、あとから入れて様子をみる。
 
@@ -113,6 +108,11 @@ sudo cp \
 * サイズ： `160 × 50`
 * 曖昧幅文字を全角で表示する。
 
+=== Google Chrome
+* アカウントを同期する前に、`kabankobo` と `private` のユーザーを作成する。
+* Mouse Dictionary にlink:https://booth.pm/ja/items/777563[英辞郎データ]を読み込む。
+* https://greasyfork.org/ja/scripts/14391-zenzawatch[ZenzaWatch] をインストールする。
+
 === TotalSpaces2
 * https://totalspaces.binaryage.com/[TotalSpaces2] をインストール。
 ** 現状、TotalSpaces2 は Homebrew でインストールできない。
@@ -120,14 +120,11 @@ sudo cp \
 === Alfred
 * 「Google Search with Selected Text」のワークフローを設定。
 
-=== Google Chrome
-* Mouse Dictionary にlink:https://booth.pm/ja/items/777563[英辞郎データ]を読み込む。
-
 === diff-highlight にパスを通す
 . {blank}
 +
 ----
-sudo ln -s \
+sudo ln -snfv \
 /usr/local/share/git-core/contrib/diff-highlight/diff-highlight \
 /usr/local/bin/diff-highlight
 ----
@@ -182,12 +179,15 @@ NOTE: BetterTouchTool は設定ファイルをインポートせず、手動で�
 
 === Dash
 [%autowidth, cols="2*a"]
-.スニペット
+.Placeholder
 |===
-2+h|Placeholder
 |@time |`H:mm`
 |@date |`yyyy-MM-dd`
-2+h|Snippets
+|===
+
+[%autowidth, cols="2*a"]
+.Snippets
+|===
 |`;date` |`@date`
 |`;time` |`@time`
 |`@k\***` |`@k\***.com`
@@ -203,15 +203,15 @@ NOTE: BetterTouchTool は設定ファイルをインポートせず、手動で�
 . 表示オプション：
 ** `表示 > 表示オプションを表示` からもろもろ設定し、`デフォルトとして使用` から反映。
 ** ホームディレクトリで表示オプションを表示すると `“ライブラリ”フォルダを表示` が出現する。
-. 次のコマンドを `Bash` で実行：
-.. `$ sudo find / -name ".DS_Store" | xargs rm -rf` ： +
-すべてのディレクトリから `.DS_Store` を探し出して削除。
+. 次のコマンドを実行（fish 以外で）：
+.. `$ sudo find / -name ".DS_Store" | xargs rm -rf` ：すべてのディレクトリから `.DS_Store` を探し出して削除。
 .. `$ killall Finder`
 
 === キーボードショートカット
 [%autowidth, cols="2*a"]
 .LaunchpadとDock
 |===
+|Dockを自動的に表示/非表示のオン/オフ |チェック外す
 |Launchpadを表示 |チェック外す
 |===
 
