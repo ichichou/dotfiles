@@ -99,11 +99,12 @@ sudo cp \
 ** `変更…` からではなくパスを直接入力する必要あり。
 
 === Terminal
-* https://cocopon.github.io/iceberg.vim/[Iceberg プロファイル]をインポートする。
-* 開くシェル： `/usr/local/bin/fish`
-* フォント： `Hack Regular 12 pt.`
-* サイズ： `160 × 50`
-* 曖昧幅文字を全角で表示する。
+. https://cocopon.github.io/iceberg.vim/[Iceberg プロファイル]をインポートする。
+. 環境設定：
+** 開くシェル： `/usr/local/bin/fish`
+** フォント： `Hack Regular 12 pt.`
+** サイズ： `160 × 50`
+** 曖昧幅文字を全角で表示する。
 
 === Google Chrome
 * アカウントを同期する前に、`kabankobo` と `private` のユーザーを作成する。
@@ -111,7 +112,10 @@ sudo cp \
 * https://greasyfork.org/ja/scripts/14391-zenzawatch[ZenzaWatch] をインストールする。
 
 === TotalSpaces2
-* https://totalspaces.binaryage.com/[TotalSpaces2] をインストール。
+NOTE: 現状、Catalina では TotalSpaces2 がうまく機能しない。
+
+. Mac をリカバリーモードで起動し、Terminal で `$ csrutil disable` を実行する。
+. https://totalspaces.binaryage.com/[TotalSpaces2] をインストール。
 ** 現状、TotalSpaces2 は Homebrew でインストールできない。
 
 === Box Drive
@@ -119,6 +123,14 @@ sudo cp \
 
 === Alfred
 * 「Google Search with Selected Text」のワークフローを設定。
+
+=== キーリピートを変更
+. {blank}
++
+----
+defaults write -g InitialKeyRepeat -int 10
+defaults write -g KeyRepeat -int 1
+----
 
 === diff-highlight にパスを通す
 . {blank}
