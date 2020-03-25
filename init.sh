@@ -47,26 +47,26 @@ ln -snfv ${DOT}/.vim/config/ ${VIM}/config
 
 # Application Support
 
-mkdir -p "${APP}/AquaSKK"
-ln -snfv ${DOT}/aquaskk/kana-rule.conf "${APP}/AquaSKK/kana-rule.conf"
-ln -snfv ${DOT}/aquaskk/keymap.conf "${APP}/AquaSKK/keymap.conf"
+sudo sh -c "mkdir -p \"${APP}/AquaSKK\""
+sudo sh -c "ln -snfv ${DOT}/aquaskk/kana-rule.conf \"${APP}/AquaSKK/kana-rule.conf\""
+sudo sh -c "ln -snfv ${DOT}/aquaskk/keymap.conf \"${APP}/AquaSKK/keymap.conf\""
 
-mkdir -p "${APP}/Code/User"
-ln -snfv ${DOT}/vscode/setting.json "${APP}/Code/User/setting.json"
+sudo sh -c "mkdir -p \"${APP}/Code/User\""
+sudo sh -c "ln -snfv ${DOT}/vscode/setting.json \"${APP}/Code/User/setting.json\""
 
 # Key Repeat
 
-defaults write -g InitialKeyRepeat -int 10
-defaults write -g KeyRepeat -int 1
+sudo sh -c "defaults write -g InitialKeyRepeat -int 10"
+sudo sh -c "defaults write -g KeyRepeat -int 1"
 
 # .localized
 
-rm ${HOME}/Applications/.localized \
-   ${HOME}/Desktop/.localized \
-   ${HOME}/Documents/.localized \
-   ${HOME}/Downloads/.localized \
-   ${HOME}/Library/.localized \
-   ${HOME}/Movies/.localized \
-   ${HOME}/Music/.localized \
-   ${HOME}/Pictures/.localized \
-   ${HOME}/Public/.localized
+sudo sh -c "rm -v ${HOME}/Applications/.localized"
+sudo sh -c "rm -v ${HOME}/Desktop/.localized"
+sudo sh -c "rm -v ${HOME}/Documents/.localized"
+sudo sh -c "rm -v ${HOME}/Downloads/.localized"
+sudo sh -c "rm -v ${HOME}/Library/.localized"
+sudo sh -c "rm -v ${HOME}/Movies/.localized"
+sudo sh -c "rm -v ${HOME}/Music/.localized"
+sudo sh -c "rm -v ${HOME}/Pictures/.localized"
+sudo sh -c "rm -v ${HOME}/Public/.localized"
