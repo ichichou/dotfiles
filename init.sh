@@ -7,8 +7,7 @@ CONFIG="${HOME}/.config"
 VIM="${HOME}/.vim"
 APP="${HOME}/Library/Application Support"
 
-# dotfiles
-
+## dotfiles
 if [[ ! -e ${DOT} ]]; then
     git clone https://github.com/ichichou/dotfiles.git ${HOME}
 fi
@@ -23,8 +22,7 @@ for i in .??*; do
     ln -snfv ${DOT}/${i} ${HOME}/${i}
 done
 
-# .config
-
+## .config
 mkdir -p ${CONFIG}/fish
 ln -snfv ${DOT}/.config/fish/config.fish ${CONFIG}/fish/config.fish
 ln -snfv ${DOT}/.config/fish/fishfile ${CONFIG}/fish/fishfile
@@ -35,8 +33,7 @@ ln -snfv ${DOT}/.config/git/ignore ${CONFIG}/git/ignore
 mkdir -p ${CONFIG}/karabiner
 ln -snfv ${DOT}/.config/karabiner/karabiner.json ${CONFIG}/karabiner/karabiner.json
 
-# .vim
-
+## .vim
 mkdir -p ${VIM}/colors
 ln -snfv ${DOT}/.vim/config/ ${VIM}/config
 
@@ -45,8 +42,7 @@ ln -snfv ${DOT}/.vim/config/ ${VIM}/config
 #     ${VIM}/pack/minpac/opt/minpac
 # if
 
-# Application Support
-
+## Application Support
 sudo sh -c "mkdir -p \"${APP}/AquaSKK\""
 sudo sh -c "ln -snfv ${DOT}/aquaskk/kana-rule.conf \"${APP}/AquaSKK/kana-rule.conf\""
 sudo sh -c "ln -snfv ${DOT}/aquaskk/keymap.conf \"${APP}/AquaSKK/keymap.conf\""
@@ -54,14 +50,7 @@ sudo sh -c "ln -snfv ${DOT}/aquaskk/keymap.conf \"${APP}/AquaSKK/keymap.conf\""
 sudo sh -c "mkdir -p \"${APP}/Code/User\""
 sudo sh -c "ln -snfv ${DOT}/vscode/setting.json \"${APP}/Code/User/setting.json\""
 
-# Key Repeat
-
-sudo sh -c "defaults write -g InitialKeyRepeat -int 10"
-sudo sh -c "defaults write -g KeyRepeat -int 1"
-
-# .localized
-
-sudo sh -c "rm -v ${HOME}/Applications/.localized"
+## .localized
 sudo sh -c "rm -v ${HOME}/Desktop/.localized"
 sudo sh -c "rm -v ${HOME}/Documents/.localized"
 sudo sh -c "rm -v ${HOME}/Downloads/.localized"
@@ -70,3 +59,4 @@ sudo sh -c "rm -v ${HOME}/Movies/.localized"
 sudo sh -c "rm -v ${HOME}/Music/.localized"
 sudo sh -c "rm -v ${HOME}/Pictures/.localized"
 sudo sh -c "rm -v ${HOME}/Public/.localized"
+sudo sh -c "rm -v ${HOME}/Applications/.localized"
