@@ -1,24 +1,23 @@
-# Aliases
-alias cp='cp -iv'
-alias mv='mv -iv'
-alias rm='rmtrash'
+## Aliases
+alias cp="cp -iv"
+alias mv="mv -iv"
+alias rm="rm -iv"
 
-alias b='brew'
-alias bc='brew cask'
-alias g='git'
-alias v='vim'
-alias vi='vim'
-
-# ls/exa
 if [ -e /usr/local/bin/exa ]; then
-    alias ls='exa -a'
-    alias ll='exa -1a'
-    alias la='exa -al --git'
+    alias ls="exa -A"
+    alias ll="exa -1A"
+    alias la="exa -Al --git"
 else
-    alias ls='ls -aG'
-    alias ll='ls -1aG'
-    alias la='ls -alG'
+    alias ls="ls -AG"
+    alias ll="ls -1AG"
+    alias la="ls -AlG"
 fi
 
-# Fzf
+alias b="brew"
+alias bc="brew cask"
+alias g="git"
+alias mvi="mvim --remote-silent"
+alias vi="vim"
+
+## Fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
