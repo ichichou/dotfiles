@@ -1,4 +1,5 @@
 #!/usr/local/bin/fish
+set -eu
 
 if test ! -f ~/.config/fish/functions/fisher.fish
     curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
