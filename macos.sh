@@ -30,8 +30,6 @@ defaults write -g NSAutomaticWindowAnimationsEnabled -bool false
 
 ## Finder のアニメーションを無効化
 defaults write com.apple.finder DisableAllAnimations -bool true
-### 不可視ファイルを表示する
-defaults write com.apple.finder AppleShowAllFiles -bool true
 ### ネットワークディスク上に .DS_Store を作らない
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
