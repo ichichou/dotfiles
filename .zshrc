@@ -1,7 +1,10 @@
+## Basics
+autoload -Uz compinit && compinit
+autoload -Uz colors && colors
+
 export LANG=ja_JP.UTF-8
 bindkey -e
 
-autoload -Uz colors && colors
 setopt print_eight_bit
 setopt IGNOREEOF
 
@@ -15,7 +18,6 @@ setopt auto_pushd
 setopt pushd_ignore_dups
 
 ## Completion
-autoload -Uz compinit && compinit
 setopt auto_menu
 setopt complete_in_word
 setopt auto_param_slash
@@ -25,8 +27,8 @@ setopt auto_param_keys
 
 zstyle ":completion:*" matcher-list "m:{a-z}={A-Z}"
 
-export LS_COLORS=""
-zstyle ":completion:*" list-colors ${LS_COLORS}
+# export LS_COLORS=""
+# zstyle ":completion:*" list-colors ${LS_COLORS}
 
 ## History
 HISTFILE=$HOME/.zsh_history
@@ -47,12 +49,18 @@ alias cp="cp -iv"
 alias mv="mv -iv"
 alias rm="rm -iv"
 
-alias ls="ls -AG"
-alias ll="ls -1AG"
-alias la="ls -lAG"
+if [ -e /usr/local/bin/exa ]; then
+    alias ls="exa -A"
+    alias ll="exa -1A"
+    alias la="exa -Al --git"
+else
+    alias ls="ls -AG"
+    alias ll="ls -1AG"
+    alias la="ls -AlG"
+fi
 
 alias b="brew"
 alias bc="brew cask"
 alias g="git"
-alias mvi="mvi --remote-tab-silent"
+alias mvi="mvim --remote-silent"
 alias vi="vim"
