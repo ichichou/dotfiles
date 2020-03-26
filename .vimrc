@@ -168,6 +168,7 @@ augroup END
 " ----------------------------------------
 
 if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !mkdir -p ~/.vim/colors
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
@@ -223,7 +224,7 @@ Plug 'aklt/plantuml-syntax', {'for': 'plantuml'}
 Plug 'habamax/vim-asciidoctor', {'for': 'asciidoc'}
 Plug 'joker1007/vim-markdown-quote-syntax', {'for': 'markdown'}
 Plug 'mechatroner/rainbow_csv', {'for': 'csv'}
-Plug 'prettier/vim-prettier', {'for': ['html', 'markdown', 'yaml', 'css', 'less', 'scss', 'javascript', 'json',]}
+Plug 'prettier/vim-prettier', {'for': ['html', 'markdown', 'yaml', 'css', 'less', 'scss', 'javascript', 'json']}
 Plug 'previm/previm', {'for': 'markdown'}
 Plug 'rcmdnk/vim-markdown', {'for': 'markdown'}
 Plug 'sheerun/vim-polyglot'
