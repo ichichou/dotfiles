@@ -86,6 +86,8 @@ augroup vimrc
     autocmd FileType nim setlocal tabstop=2 softtabstop=2 shiftwidth=2
 augroup END
 
+autocmd vimrc FileType gitcommit setlocal fileencoding=utf-8
+
 " ----------------------------------------
 " Appearance
 " ----------------------------------------
@@ -203,8 +205,6 @@ Plug 'tyru/caw.vim'
 Plug 'tyru/open-browser.vim'
 " Plug 'kana/vim-repeat'
 
-" Plug 'junegunn/fzf', {'do': './install --bin'}
-" Plug 'junegunn/fzf', {'do': './install --all'}
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
