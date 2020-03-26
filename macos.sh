@@ -11,7 +11,7 @@ defaults write -g KeyRepeat -int 1
 ## Dock
 
 ### Dock のアニメーションを高速化
-defaults write com.apple.dock autohide-time-modifier -float 0.1
+defaults write com.apple.dock autohide-time-modifier -float 0.15
 ### Dock が表示されるまでの待ち時間をゼロにする
 defaults write com.apple.dock autohide-delay -float 0
 ### アプリを隠したら Dock のアイコンを半透明にする
@@ -20,9 +20,9 @@ defaults write com.apple.dock showhidden -bool true
 ## Mission Control
 
 ### Mision Control のアニメーションを高速化
-defaults write com.apple.dock expose-animation-duration -float 0.1
+defaults write com.apple.dock expose-animation-duration -float 0
 ### ウィンドウを隣のデスクトップに移動するときの待ち時間を短縮
-defaults write com.apple.dock workspaces-edge-delay -float 0.1
+defaults write com.apple.dock workspaces-edge-delay -float 0.15
 ## ウィンドウのアニメーションを無効化
 defaults write -g NSAutomaticWindowAnimationsEnabled -bool false
 
