@@ -348,6 +348,15 @@ Identity added: /Users/{user}/.ssh/id_rsa ({local host})
 . `$ pbcopy < ~/.ssh/id_rsa.pub`
 . GitHub の `Settings > SSH and GPG keys > SSH keys` に公開鍵を登録する。
 
+. `$ vim ~/.ssh/config` で以下を追加。
++
+----
+Host github
+  HostName github.com
+  IdentityFile ~/.ssh/id_rsa
+  User git
+----
+
 . 接続を確認する。
 +
 ----
@@ -367,7 +376,7 @@ Hi {user}! You've successfully authenticated, but GitHub does not provide shell 
 .編集後
 ----
 [remote "origin"]
-	url = GitHub:{user}/{repository}.git
+	url = github:{user}/{repository}.git
 ----
 
 === リポジトリを復元
