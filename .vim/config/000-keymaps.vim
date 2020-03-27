@@ -32,6 +32,8 @@ noremap X "_X
 noremap + <C-a>
 noremap - <C-x>
 
+noremap <Leader>u <C-^>
+
 cnoremap <C-n> <Down>
 cnoremap <C-p> <Up>
 
@@ -127,6 +129,7 @@ nnoremap <silent> [window]P :<C-u>-tabmove<CR>
 nnoremap <silent> [window]] :<C-u>bnext<CR>
 nnoremap <silent> [window][ :<C-u>bprevious<CR>
 nnoremap <silent> [window]x :<C-u>bdelete<CR>
+
 
 " --------------------
 " Plugins
