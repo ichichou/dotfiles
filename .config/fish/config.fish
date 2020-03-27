@@ -3,6 +3,8 @@ alias cp "cp -iv"
 alias mv "mv -iv"
 alias reload "exec fish"
 alias symln "ln -snfv"
+alias pd "prevd"
+alias nd "nextd"
 
 if test -e "/usr/local/bin/rmtrash"
     alias rm "rmtrash"
