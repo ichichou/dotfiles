@@ -73,7 +73,26 @@ AquaSKK のユーザー辞書はシンボリックリンクでは機能しない
 . `$ sh ~/dotfiles/init.sh`
 
 === pm.sh
-`pm.sh` 自体は実行せずに、参考にしながら一行ずつコマンドラインで実行する。
+NOTE: `pm.sh` 自体は実行しない（うまく機能しないため）。以下のコードを手動で実行する。
+
+.fisher
+. `$ curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish`
+. `$ fisher self-update`
+. `$ fisher` ： `fishfile` をもとに自動インストール。
+
+.gem
+. `$ which gem` ： `/usr/local/opt/ruby/bin/gem` にパスが通っているか確認。
+. `$ gem update --system`
+. `$ gem install asciidoctor asciidoctor-pdf asciidoctor-pdf-cjk asciidoctor-diagram rouge`
+
+.npm
+. `$ npm -g install npm`
+. `$ npm -g install eslint prettier eslint-plugin-prettier htmlhint`
+
+=== macos.sh
+. `$ sh ~/dotfiles/macos.sh`
+. Mac を再起動する。
+** 再起動後、設定が反映されるまで少し時間がかかるかもしれない。
 
 == Mackup
 
