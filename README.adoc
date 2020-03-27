@@ -304,6 +304,76 @@ NOTE: `前の入力ソースを選択` はチェックを外しても、たび�
 |Minimize |kbd:[Control+Option+Command+M]
 |===
 
+== GitHub
+=== 公開鍵・秘密鍵を生成
+. `$ ssh-keygen -t rsa -b 4096`
+
+. {blank}
++
+----
+Generating public/private rsa key pair.
+Enter file in which to save the key (/Users/{user}/.ssh/id_rsa):
+（何も入力せずに Enter を押す）
+
+Enter passphrase (empty for no passphrase):
+（パスフレーズを入力する）
+
+Enter same passphrase again:
+（もう一度入力する）
+----
+
+. 生成した鍵を確認する。
++
+----
+$ ls -l ~/.ssh/
+
+
+id_rsa
+id_rsa.pub
+----
+
+=== 秘密鍵を ssh-agent に登録
+. {blank}
++
+----
+$ ssh-add ~/.ssh/id_rsa
+
+Enter passphrase for /Users/{user}/.ssh/id_rsa:
+（パスフレーズを入力）
+
+Identity added: /Users/{user}/.ssh/id_rsa ({local host})
+----
+
+=== 公開鍵を GitHub に登録
+. `$ pbcopy < ~/.ssh/id_rsa.pub`
+. GitHub の `Settings > SSH and GPG keys > SSH keys` に公開鍵を登録する。
+
+. 接続を確認する。
++
+----
+$ ssh -T git@github.com
+
+Hi {user}! You've successfully authenticated, but GitHub does not provide shell access.
+----
+
+. HTTPS 接続したことがあるリポジトリの `.git/config` を編集。
++
+.編集前
+----
+[remote "origin"]
+	url = https://github.com/{user}/{repository}.git
+----
++
+.編集後
+----
+[remote "origin"]
+	url = GitHub:{user}/{repository}.git
+----
+
+=== リポジトリを復元
+. `$ mkdir ~/repos; cd ~/repos/`
+. 必要なリポジトリを `git clone` する。
+
 == その他の設定
 
 === プリンタ設定
