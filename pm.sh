@@ -8,15 +8,15 @@ end
 fisher self-update
 fisehr
 
-npm -g install npm
-npm -g install eslint
-npm -g install prettier
-npm -g install eslint-plugin-prettier
-npm -g install htmlhint
-
 gem update --system
 gem install asciidoctor
 gem install asciidoctor-pdf
 gem install asciidoctor-pdf-cjk
 gem install asciidoctor-diagram
 gem install rouge
+
+npm -g install npm
+npm -g install eslint
+npm -g install prettier
+npm -g install eslint-plugin-prettier
+npm -g install htmlhint
