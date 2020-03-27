@@ -328,7 +328,7 @@
             ]
           },
           {
-            "description": "Left Commad / Right Command → Eisu/Kana",
+            "description": "Left Commad / Right Command → Eisuu/Kana",
             "manipulators": [
               {
                 "from": {
@@ -434,6 +434,39 @@
                 "to": [
                   {
                     "key_code": "return_or_enter"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Left Cotrol - J/L → Kana/Eisuu",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "j",
+                  "modifiers": {
+                    "mandatory": ["left_control"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "japanese_kana"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "l",
+                  "modifiers": {
+                    "mandatory": ["left_control"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "japanese_eisuu"
                   }
                 ],
                 "type": "basic"
