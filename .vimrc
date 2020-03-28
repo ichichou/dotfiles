@@ -151,7 +151,7 @@ set wrapscan
 set wildmenu
 set wildmode=full
 set pumheight=10
-set completeopt=menuone,noinsert,popup
+set completeopt=menuone,popup
 " set shortmess&
 " set shortmess+=c
 
