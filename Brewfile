@@ -58,6 +58,7 @@ cask "slack"
 cask "the-unarchiver"
 cask "visual-studio-code"
 cask "vlc"
+cask "zoomus"
 
 cask "font-cantarell"
 cask "font-dejavu-sans"
