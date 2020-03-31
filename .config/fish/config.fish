@@ -24,6 +24,7 @@ end
 
 alias b "brew"
 alias bc "brew cask"
+alias ch "open -a '/Applications/Google Chrome.app'"
 alias g "git"
 alias gu "gitup"
 alias j "z"
