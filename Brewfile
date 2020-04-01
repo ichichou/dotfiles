@@ -71,6 +71,7 @@ cask "font-source-code-pro"
 cask "font-source-han-code-jp"
 
 mas "Amphetamine", id: 937984704
+mas "Gravit Designer", id: 1207744923
 mas "LINE", id: 539883307
 mas "Textwell", id: 905944937
 mas "Yoink", id: 457622435
