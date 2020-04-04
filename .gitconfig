@@ -58,7 +58,8 @@
     fe = fetch
     fep = fetch --prune
     lg = log
-    lgg = log --graph --oneline --decorate --follow
+    lgf = log --graph --oneline --decorate --follow
+    lgg = log --graph --oneline --decorate
     lgp = log --patch
     mg = merge
     mgt = mergetool
