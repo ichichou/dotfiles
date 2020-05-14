@@ -15,7 +15,7 @@
         },
         "rules": [
           {
-            "description": "[Chrome] Left Command - N → Command - T",
+            "description": "[Chrome] LCommand - N → Command - T",
             "manipulators": [
               {
                 "conditions": [
@@ -41,7 +41,7 @@
             ]
           },
           {
-            "description": "[Chrome] Left Command - T → Command-Shift-T",
+            "description": "[Chrome] LCommand - T → Command-Shift-T",
             "manipulators": [
               {
                 "conditions": [
@@ -67,7 +67,7 @@
             ]
           },
           {
-            "description": "[Chrome] Left Control - U/D → PageUp/PageDown",
+            "description": "[Chrome] LControl - U/D → PageUp/PageDown",
             "manipulators": [
               {
                 "conditions": [
@@ -112,7 +112,7 @@
             ]
           },
           {
-            "description": "[Chrome] Left Command - Q → Q",
+            "description": "[Chrome] LCommand - Q → Q",
             "manipulators": [
               {
                 "conditions": [
@@ -137,7 +137,7 @@
             ]
           },
           {
-            "description": "[Finder] Left Command - N → Command - T",
+            "description": "[Finder] LCommand - N → Command - T",
             "manipulators": [
               {
                 "conditions": [
@@ -163,7 +163,7 @@
             ]
           },
           {
-            "description": "Left Command - Space → Return",
+            "description": "LCommand - Space → Return",
             "manipulators": [
               {
                 "from": {
@@ -183,7 +183,7 @@
             ]
           },
           {
-            "description": "Left Command - Right Command → ESC",
+            "description": "LCommand - RCommand → ESC",
             "manipulators": [
               {
                 "from": {
@@ -228,7 +228,7 @@
             ]
           },
           {
-            "description": "Left Command - H/J/K/L → Left/Down/Up/Right",
+            "description": "LCommand - H/J/K/L → Left/Down/Up/Right",
             "manipulators": [
               {
                 "from": {
@@ -293,7 +293,7 @@
             ]
           },
           {
-            "description": "Left Command - U/O → Delete/Fn-Delete",
+            "description": "LCommand - U/O → Delete/Fn-Delete",
             "manipulators": [
               {
                 "from": {
@@ -328,7 +328,7 @@
             ]
           },
           {
-            "description": "Left Commad / Right Command → Eisuu/Kana",
+            "description": "LCommad/RCommand → Eisuu/Kana",
             "manipulators": [
               {
                 "from": {
@@ -465,7 +465,7 @@
             ]
           },
           {
-            "description": "Left Cotrol - J/L → Kana/Eisuu",
+            "description": "LCotrol - J/L → Kana/Eisuu",
             "manipulators": [
               {
                 "from": {
@@ -498,7 +498,7 @@
             ]
           },
           {
-            "description": "Left Command - 1-0 → F1-F10",
+            "description": "LCommand - 1-0 → F1-F10",
             "manipulators": [
               {
                 "from": {
