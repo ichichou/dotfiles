@@ -1,5 +1,46 @@
+_	_
+-	-
+;	っ
+:	：
+!	！
+?	？
+.	。
+'	ー
+"	〜
+(	（
+)	）
+[	「
+]	」
+{	『
+}	』
+@	@
+*	*
+/	・
+\	\
+&	＆
+,	、
+#	#
+%	％
+`	`
+^	^
++	＋
+<	<
+=	＝
+>	>
+|	|
+~	〜
+$	$
+0	0
+1	1
+2	2
+3	3
+4	4
+5	5
+6	6
+7	7
+8	8
+9	9
 a	あ
-
 ba	ば
 bd	べん
 be	べ
@@ -46,12 +87,9 @@ byu	びゅ
 byw	びぇい
 byz	びゃん
 bz	ばん
-
 ca	ちゃ
-cc	ちゃ
 cd	ちぇん
 ce	ちぇ
-cf	ちぇ
 ch	ちゅう
 ci	ちぃ
 cj	ちゅん
@@ -62,11 +100,8 @@ co	ちょ
 cp	ちょう
 cq	ちゃい
 cu	ちゅ
-cv	ちゃい
 cw	ちぇい
-cx	ちぇい
 cz	ちゃん
-
 da	だ
 dch	どぅー
 dci	でぃ
@@ -75,7 +110,6 @@ dck	でぃん
 dcu	どぅ
 dd	でん
 de	で
-df	で
 dga	ぢゃ
 dgd	ぢぇん
 dge	ぢぇ
@@ -121,9 +155,7 @@ dyu	ぢゅ
 dyw	ぢぇい
 dyz	ぢゃん
 dz	だん
-
 e	え
-
 fa	ふぁ
 fd	ふぇん
 fe	ふぇ
@@ -169,7 +201,6 @@ fyu	ふゅ
 fyw	ふぇい
 fyz	ふゃん
 fz	ふぁん
-
 ga	が
 gd	げん
 ge	げ
@@ -217,11 +248,9 @@ gyu	ぎゅ
 gyw	ぎぇい
 gyz	ぎゃん
 gz	がん
-
 ha	は
 hd	へん
 he	へ
-hf	ふ
 hga	ひゃ
 hgd	ひぇん
 hge	ひぇ
@@ -265,13 +294,10 @@ hyu	ひゅ
 hyw	ひぇい
 hyz	ひゃん
 hz	はん
-
 i	い
-
 ja	じゃ
 jd	じぇん
 je	じぇ
-jf	じゅ
 jh	じゅう
 ji	じ
 jj	じゅん
@@ -284,11 +310,9 @@ jq	じゃい
 ju	じゅ
 jw	じぇい
 jz	じゃん
-
 ka	か
 kd	けん
 ke	け
-kf	き
 kga	きゃ
 kgd	きぇん
 kge	きぇ
@@ -334,49 +358,38 @@ kyu	きゅ
 kyw	きぇい
 kyz	きゃん
 kz	かん
-
-la	ぁ
-le	ぇ
-lf	ぉ
-li	ぃ
-lo	ぉ
-ltu	っ
-lu	ぅ
-lwa	ゎ
-lya	ゃ
-lyo	ょ
-lyu	ゅ
-
-lh	←
-lj	↓
-lk	↑
-ll	→
-lx	×
-
+l_	_
+l-	-
+l;	;
+l:	:
+l!	!
+l?	?
+l.	.
+l'	'
+l"	"
 l(	(
 l)	)
 l[	[
 l]	]
 l{	{
 l}	}
-l~	~
-l!	!
-l%	%
-l&	&
+l@	@
 l*	×
-l-	-
-l=	=
-l+	+
-l;	;
-l:	:
-l'	'
-l"	"
-l,	,
-l.	.
-l<	≦
-l>	≧
 l/	/
-l?	?
+l\	\
+l&	&
+l,	,
+l#	#
+l%	%
+l`	`
+l^	^
+l+	+
+l<	≦
+l=	=
+l>	≧
+l|	|
+l~	~
+l$	$
 l0	〇
 l1	一
 l2	二
@@ -387,11 +400,19 @@ l6	六
 l7	七
 l8	八
 l9	九
-
+la	ぁ
+le	ぇ
+li	ぃ
+lo	ぉ
+ltu	っ
+lu	ぅ
+lwa	ゎ
+lya	ゃ
+lyo	ょ
+lyu	ゅ
 ma	ま
 md	めん
 me	め
-mf	む
 mga	みゃ
 mgd	みぇん
 mge	みぇ
@@ -436,12 +457,10 @@ myu	みゅ
 myw	みぇい
 myz	みゃん
 mz	まん
-
 na	な
 nb	ねば
 nd	ねん
 ne	ね
-nf	ぬ
 nga	にゃ
 ngd	にぇん
 nge	にぇ
@@ -486,13 +505,10 @@ nyu	にゅ
 nyw	にぇい
 nyz	にゃん
 nz	なん
-
 o	お
-
 pa	ぱ
 pd	ぺん
 pe	ぺ
-pf	ぽん
 pga	ぴゃ
 pgd	ぴぇん
 pge	ぴぇ
@@ -535,9 +551,7 @@ pyu	ぴゅ
 pyw	ぴぇい
 pyz	ぴゃん
 pz	ぱん
-
 q	ん
-
 ra	ら
 rd	れん
 re	れ
@@ -584,11 +598,9 @@ ryu	りゅ
 ryw	りぇい
 ryz	りゃん
 rz	らん
-
 sa	さ
 sd	せん
 se	せ
-sf	さい
 sga	しゃ
 sgd	しぇん
 sge	しぇ
@@ -615,12 +627,9 @@ so	そ
 sp	そう
 sq	さい
 sr	する
-ss	せい
 st	した
 su	す
-sv	さい
 sw	せい
-sx	せい
 sya	しゃ
 syd	しぇん
 sye	しぇ
@@ -637,7 +646,6 @@ syu	しゅ
 syw	しぇい
 syz	しゃん
 sz	さん
-
 ta	た
 tb	たび
 td	てん
@@ -702,9 +710,7 @@ tyu	ちゅ
 tyw	ちぇい
 tyz	ちゃん
 tz	たん
-
 u	う
-
 va	ヴぁ
 vd	ヴぇん
 ve	ヴぇ
@@ -720,11 +726,9 @@ vq	ヴぁい
 vu	ヴ
 vw	ヴぇい
 vz	ヴぁん
-
 wa	わ
 wd	うぇん
 we	うぇ
-wf	わい
 wh	うう
 wi	うぃ
 wj	うん
@@ -742,12 +746,9 @@ wt	わた
 wu	う
 ww	うぇい
 wz	わん
-
 xa	しゃ
-xc	しゃ
 xd	しぇん
 xe	しぇ
-xf	しぇ
 xh	しゅう
 xi	しぃ
 xj	しゅん
@@ -758,15 +759,11 @@ xo	しょ
 xp	しょう
 xq	しゃい
 xu	しゅ
-xv	しゃい
 xw	しぇい
-xx	しぇい
 xz	しゃん
-
 ya	や
 yd	ゑん
 ye	ゑ
-yf	ゆ
 yh	ゆう
 yi	ゐ
 yj	ゆん
@@ -780,12 +777,51 @@ yr	よる
 yu	ゆ
 yw	ゑい
 yz	やん
-
+z_	　
+z-	—
+z;	；
+z:	：
+z!	!
+z?	?
+z.	……
+z'	‘
+z"	“
+z(	“
+z)	”
+z[	〈
+z]	〉
+z{	【
+z}	】
+z@	@
+z*	＊
+z/	／
+z\	\
+z&	&
+z,	…
+z#	#
+z%	%
+z`	`
+z^	^
+z+	+
+z<	＜
+z=	≠
+z>	＞
+z|	|
+z~	~
+z$	$
+z0	０
+z1	１
+z2	２
+z3	３
+z4	４
+z5	５
+z6	６
+z7	７
+z8	８
+z9	９
 za	ざ
-zc	ざ
 zd	ぜん
 ze	ぜ
-zf	ぜ
 zga	じゃ
 zgd	じぇん
 zge	じぇ
@@ -813,9 +849,7 @@ zq	ざい
 zr	ざる
 zs	　
 zu	ず
-zv	ざい
 zw	ぜい
-zx	ぜい
 zya	じゃ
 zyd	じぇん
 zye	じぇ
@@ -832,75 +866,3 @@ zyu	じゅ
 zyw	じぇい
 zyz	じゃん
 zz	ざん
-
-z(	“
-z)	”
-z[	〈
-z]	〉
-z{	【
-z}	】
-z*	＊
-z-	―
-z_	　
-z=	≠
-z;	；
-z'	‘
-z"	“
-z,	，
-z.	…
-z<	＜
-z>	＞
-z/	／
-z0	０
-z1	１
-z2	２
-z3	３
-z4	４
-z5	５
-z6	６
-z7	７
-z8	８
-z9	９
-
-(	（
-)	）
-[	「
-]	」
-{	『
-}	』
-`	`
-~	〜
-!	！
-@	@
-#	#
-$	$
-%	％
-^	^
-&	＆
-*	*
--	-
-_	_
-=	＝
-+	＋
-\	\
-|	|
-;	っ
-:	：
-'	ー
-"	”
-,	、
-.	。
-<	<
->	>
-/	・
-?	？
-0	0
-1	1
-2	2
-3	3
-4	4
-5	5
-6	6
-7	7
-8	8
-9	9
