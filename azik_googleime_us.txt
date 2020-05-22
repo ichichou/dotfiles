@@ -402,7 +402,11 @@ l8	八
 l9	九
 la	ぁ
 le	ぇ
+lh	←
 li	ぃ
+lj	↓
+lk	↑
+ll	→
 lo	ぉ
 ltu	っ
 lu	ぅ
