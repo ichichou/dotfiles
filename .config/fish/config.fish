@@ -32,6 +32,7 @@ alias jl "jupyter lab"
 alias mvi "mvim --remote-silent"
 alias t "tmux"
 alias vi "vim"
+alias planck "cd ~/repos/qmk_firmware/; and make planck/ez:ichichou; and prevd"
 
 ## Keybinds
 bind -e \cl
@@ -65,3 +66,6 @@ set -x FZF_FIND_FILE_COMMAND $FZF_DEFAULT_COMMAND
 ## Ruby
 set -x fish_user_paths /usr/local/opt/ruby/bin $fish_user_paths
 set -x fish_user_paths $fish_user_paths /usr/local/lib/ruby/gems/2.7.0/bin
+
+## Path
+set PATH /usr/local/opt/avr-gcc@7/bin $PATH
