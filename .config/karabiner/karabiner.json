@@ -15,7 +15,7 @@
         },
         "rules": [
           {
-            "description": "[Chrome] LCommand - N → Command - T",
+            "description": "[Chrome] LCommand-N → Command-T",
             "manipulators": [
               {
                 "conditions": [
@@ -41,7 +41,7 @@
             ]
           },
           {
-            "description": "[Chrome] LCommand - T → Command-Shift-T",
+            "description": "[Chrome] LCommand-T → Command-Shift-T",
             "manipulators": [
               {
                 "conditions": [
@@ -67,52 +67,7 @@
             ]
           },
           {
-            "description": "[Chrome] LControl - U/D → PageUp/PageDown",
-            "manipulators": [
-              {
-                "conditions": [
-                  {
-                    "bundle_identifiers": ["^com.google.Chrome"],
-                    "type": "frontmost_application_if"
-                  }
-                ],
-                "from": {
-                  "key_code": "u",
-                  "modifiers": {
-                    "mandatory": ["left_control"]
-                  }
-                },
-                "to": [
-                  {
-                    "key_code": "page_up"
-                  }
-                ],
-                "type": "basic"
-              },
-              {
-                "conditions": [
-                  {
-                    "bundle_identifiers": ["^com.google.Chrome"],
-                    "type": "frontmost_application_if"
-                  }
-                ],
-                "from": {
-                  "key_code": "d",
-                  "modifiers": {
-                    "mandatory": ["left_control"]
-                  }
-                },
-                "to": [
-                  {
-                    "key_code": "page_down"
-                  }
-                ],
-                "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "[Chrome] LCommand - Q → Q",
+            "description": "[Chrome] LCommand-Q → Q",
             "manipulators": [
               {
                 "conditions": [
@@ -137,7 +92,7 @@
             ]
           },
           {
-            "description": "[Finder] LCommand - N → Command - T",
+            "description": "[Finder] LCommand-N → Command-T",
             "manipulators": [
               {
                 "conditions": [
@@ -163,7 +118,7 @@
             ]
           },
           {
-            "description": "LCommand - Space → Return",
+            "description": "LCommand-Space → Return",
             "manipulators": [
               {
                 "from": {
@@ -183,7 +138,7 @@
             ]
           },
           {
-            "description": "LCommand - RCommand → ESC",
+            "description": "LCommand-RCommand → ESC",
             "manipulators": [
               {
                 "from": {
@@ -228,7 +183,7 @@
             ]
           },
           {
-            "description": "LCommand - H/J/K/L → Left/Down/Up/Right",
+            "description": "LCommand-H/J/K/L → Left/Down/Up/Right",
             "manipulators": [
               {
                 "from": {
@@ -293,7 +248,7 @@
             ]
           },
           {
-            "description": "LCommand - U/O → Delete/Fn-Delete",
+            "description": "LCommand-U/O → Delete/Fn-Delete",
             "manipulators": [
               {
                 "from": {
@@ -384,7 +339,7 @@
                 },
                 "to": [
                   {
-                    "key_code": "left_shift"
+                    "key_code": "right_shift"
                   }
                 ],
                 "to_if_alone": [
@@ -408,7 +363,8 @@
                 },
                 "to": [
                   {
-                    "key_code": ["right_shift", "right_command", "right_control", "right_option"]
+                    "key_code": "right_shift",
+                    "modifiers": ["right_command", "right_control", "right_option"]
                   }
                 ],
                 "to_if_alone": [
@@ -421,7 +377,7 @@
             ]
           },
           {
-            "description": "Caps Lock → Control/ESC",
+            "description": "Caps Lock → RControl/ESC",
             "manipulators": [
               {
                 "from": {
@@ -445,31 +401,7 @@
             ]
           },
           {
-            "description": "LControl → Control/ESC",
-            "manipulators": [
-              {
-                "from": {
-                  "key_code": "left_control",
-                  "modifiers": {
-                    "optional": ["any"]
-                  }
-                },
-                "to": [
-                  {
-                    "key_code": "left_control"
-                  }
-                ],
-                "to_if_alone": [
-                  {
-                    "key_code": "escape"
-                  }
-                ],
-                "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "LControl - M → Return",
+            "description": "LControl-M → Return",
             "manipulators": [
               {
                 "from": {
@@ -489,13 +421,13 @@
             ]
           },
           {
-            "description": "LCotrol - J/L → Kana/Eisuu",
+            "description": "RCotrol-J/L → Kana/Eisuu",
             "manipulators": [
               {
                 "from": {
                   "key_code": "j",
                   "modifiers": {
-                    "mandatory": ["left_control"]
+                    "mandatory": ["right_control"]
                   }
                 },
                 "to": [
@@ -509,7 +441,7 @@
                 "from": {
                   "key_code": "l",
                   "modifiers": {
-                    "mandatory": ["left_control"]
+                    "mandatory": ["right_control"]
                   }
                 },
                 "to": [
@@ -788,7 +720,7 @@
         }
       ],
       "name": "Default",
-      "selected": true,
+      "selected": false,
       "simple_modifications": [],
       "virtual_hid_keyboard": {
         "caps_lock_delay_milliseconds": 0,
@@ -805,7 +737,7 @@
         },
         "rules": [
           {
-            "description": "[Chrome] LCommand - N → Command - T",
+            "description": "[Chrome] LCommand-N → Command-T",
             "manipulators": [
               {
                 "conditions": [
@@ -831,7 +763,7 @@
             ]
           },
           {
-            "description": "[Chrome] LCommand - T → Command-Shift-T",
+            "description": "[Chrome] LCommand-T → Command-Shift-T",
             "manipulators": [
               {
                 "conditions": [
@@ -857,7 +789,7 @@
             ]
           },
           {
-            "description": "[Chrome] LCommand - Q → Q",
+            "description": "[Chrome] LCommand-Q → Q",
             "manipulators": [
               {
                 "conditions": [
@@ -882,7 +814,7 @@
             ]
           },
           {
-            "description": "[Finder] LCommand - N → Command - T",
+            "description": "[Finder] LCommand-N → Command-T",
             "manipulators": [
               {
                 "conditions": [
@@ -906,13 +838,249 @@
                 "type": "basic"
               }
             ]
+          },
+          {
+            "description": "LCommand-Space → Return",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "spacebar",
+                  "modifiers": {
+                    "mandatory": ["left_command"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "return_or_enter"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "LCommand-RCommand → ESC",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "left_command",
+                  "modifiers": {
+                    "mandatory": ["right_command"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "escape"
+                  }
+                ],
+                "to_if_alone": [
+                  {
+                    "key_code": "left_command"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "right_command",
+                  "modifiers": {
+                    "mandatory": ["left_command"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "escape"
+                  }
+                ],
+                "to_if_alone": [
+                  {
+                    "key_code": "right_command"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "LCommad/RCommand → Eisuu/Kana",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "left_command",
+                  "modifiers": {
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "left_command",
+                    "lazy": false
+                  }
+                ],
+                "to_if_alone": [
+                  {
+                    "key_code": "japanese_eisuu"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "right_command",
+                  "modifiers": {
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "right_command",
+                    "lazy": false
+                  }
+                ],
+                "to_if_alone": [
+                  {
+                    "key_code": "japanese_kana"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "SandS",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "spacebar",
+                  "modifiers": {
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "right_shift"
+                  }
+                ],
+                "to_if_alone": [
+                  {
+                    "key_code": "spacebar"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Tab → Hyper/Tab",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "tab",
+                  "modifiers": {
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "right_shift",
+                    "modifiers": ["right_command", "right_control", "right_option"]
+                  }
+                ],
+                "to_if_alone": [
+                  {
+                    "key_code": "tab"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Caps Lock → RControl/ESC",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "caps_lock",
+                  "modifiers": {
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "right_control"
+                  }
+                ],
+                "to_if_alone": [
+                  {
+                    "key_code": "escape"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "LControl-M → Return",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "m",
+                  "modifiers": {
+                    "mandatory": ["left_control"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "return_or_enter"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "RCotrol-J/L → Kana/Eisuu",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "j",
+                  "modifiers": {
+                    "mandatory": ["right_control"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "japanese_kana"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "l",
+                  "modifiers": {
+                    "mandatory": ["right_control"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "japanese_eisuu"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
           }
         ]
       },
       "devices": [],
       "fn_function_keys": [],
       "name": "Planck",
-      "selected": false,
+      "selected": true,
       "simple_modifications": [],
       "virtual_hid_keyboard": {
         "caps_lock_delay_milliseconds": 0,
