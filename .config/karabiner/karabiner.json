@@ -401,6 +401,30 @@
             ]
           },
           {
+            "description": "RControl → RControl/ESC",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "right_control",
+                  "modifiers": {
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "right_control"
+                  }
+                ],
+                "to_if_alone": [
+                  {
+                    "key_code": "escape"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "LControl-M → Return",
             "manipulators": [
               {
@@ -1004,6 +1028,30 @@
               {
                 "from": {
                   "key_code": "caps_lock",
+                  "modifiers": {
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "right_control"
+                  }
+                ],
+                "to_if_alone": [
+                  {
+                    "key_code": "escape"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "RControl → RControl/ESC",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "right_control",
                   "modifiers": {
                     "optional": ["any"]
                   }
