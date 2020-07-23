@@ -5,45 +5,45 @@
       "description": "新下駄配列",
       "manipulators": [
         {
-          "var": "k"
+          "var/from/key_code": "k"
         },
         {
-          "var": "d"
+          "var/from/key_code": "d"
         },
         {
-          "var": "l"
+          "var/from/key_code": "l"
         },
         {
-          "var": "s"
+          "var/from/key_code": "s"
         },
         {
-          "var": "i"
+          "var/from/key_code": "i"
         },
         {
-          "var": "o"
+          "var/from/key_code": "o"
         },
         {
-          "var": {
+          "var/from/modifiers": {
             "optional": [
               "any"
             ]
           }
         },
         {
-          "var": {
+          "var/to/modifiers": {
             "mandatory": [
               "shift"
             ]
           }
         },
         {
-          "var": {
+          "var/to/set_variable": {
             "name": "invalid",
             "value": 1
           }
         },
         {
-          "var": [
+          "var/to_after_key_up": [
             {
               "set_variable": {
                 "name": "invalid",
@@ -53,7 +53,7 @@
           ]
         },
         {
-          "var": [
+          "var/conditions": [
             {
               "type": "input_source_if",
               "input_sources": [
@@ -65,7 +65,7 @@
           ]
         },
         {
-          "var": [
+          "var/conditions": [
             {
               "type": "input_source_if",
               "input_sources": [

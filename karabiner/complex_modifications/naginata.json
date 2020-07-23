@@ -5,42 +5,42 @@
       "description": "薙刀式 v12",
       "manipulators": [
         {
-          "var": "j"
+          "var/from/key_code": "j"
         },
         {
-          "var": "f"
+          "var/from/key_code": "f"
         },
         {
-          "var": "m"
+          "var/from/key_code": "m"
         },
         {
-          "var": "v"
+          "var/from/key_code": "v"
         },
         {
-          "var": "q"
+          "var/from/key_code": "q"
         },
         {
-          "var": {
+          "var/from/modifiers": {
             "optional": [
               "any"
             ]
           }
         },
         {
-          "var": {
+          "var/to/modifiers": {
             "mandatory": [
               "shift"
             ]
           }
         },
         {
-          "var": {
+          "var/to/set_variable": {
             "name": "invalid",
             "value": 1
           }
         },
         {
-          "var": [
+          "var/to_if_held_down": [
             {
               "set_variable": {
                 "name": "shifted",
@@ -50,7 +50,7 @@
           ]
         },
         {
-          "var": [
+          "var/to_after_key_up": [
             {
               "set_variable": {
                 "name": "invalid",
@@ -60,7 +60,7 @@
           ]
         },
         {
-          "var": [
+          "var/to_after_key_up": [
             {
               "set_variable": {
                 "name": "shifted",
@@ -70,7 +70,7 @@
           ]
         },
         {
-          "var": [
+          "var/conditions": [
             {
               "type": "input_source_if",
               "input_sources": [
@@ -82,7 +82,7 @@
           ]
         },
         {
-          "var": [
+          "var/conditions": [
             {
               "type": "input_source_if",
               "input_sources": [
@@ -99,7 +99,7 @@
           ]
         },
         {
-          "var": [
+          "var/conditions": [
             {
               "type": "input_source_if",
               "input_sources": [
@@ -121,7 +121,7 @@
           ]
         },
         {
-          "var": {
+          "var/parameters": {
             "basic.to_if_held_down_threshold_milliseconds": 50
           }
         },
