@@ -1,0 +1,27 @@
+title: Finder
+rules:
+
+# ---------- Variables ----------
+
+- var/from/modifiers: &left_command
+    mandatory:
+    - left_command
+
+- var/conditions: &finder
+  - type: frontmost_application_if
+    bundle_identifiers:
+    - "^com.apple.finder"
+
+# ---------- Keymaps ----------
+
+- description: "[Finder] LCommand-N → 新しいタブを開く"
+  manipulators:
+  - type: basic
+    from:
+      key_code: "n"
+      modifiers: *left_command
+    to:
+    - key_code: t
+      modifiers:
+      - left_command
+    conditions: *finder

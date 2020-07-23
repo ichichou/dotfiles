@@ -1,0 +1,62 @@
+title: Control Key
+rules:
+
+# ---------- Variables ----------
+
+- var/from/modifiers: &any
+    optional:
+    - any
+
+- var/from/modifiers: &right_control
+    mandatory:
+    - right_control
+
+# ---------- Keymaps ----------
+
+- description: Caps Lock → RControl/ESC
+  manipulators:
+  - type: basic
+    from:
+      key_code: caps_lock
+      modifiers: *any
+    to:
+    - key_code: right_control
+    to_if_alone:
+    - key_code: escape
+
+- description: RControl → RControl/ESC (for HHKB)
+  manipulators:
+  - type: basic
+    from:
+      key_code: right_control
+      modifiers: *any
+    to:
+    - key_code: right_control
+    to_if_alone:
+    - key_code: escape
+
+- description: RCotrol-J/L → かな/英数
+  manipulators:
+  - type: basic
+    from:
+      key_code: j
+      modifiers: *right_control
+    to:
+    - key_code: japanese_kana
+  - type: basic
+    from:
+      key_code: l
+      modifiers: *right_control
+    to:
+    - key_code: japanese_eisuu
+
+- description: RControl-M → Return
+  manipulators:
+  - type: basic
+    from:
+      key_code: m
+      modifiers:
+        <<: *right_control
+        <<: *any
+    to:
+    - key_code: return_or_enter
