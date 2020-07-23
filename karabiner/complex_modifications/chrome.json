@@ -1,58 +1,130 @@
-title: Google Chrome
-rules:
-
-# ---------- Variables ----------
-
-- var/from/modifiers: &left_command
-    mandatory:
-    - left_command
-
-- var/conditions: &chrome
-  - type: frontmost_application_if
-    bundle_identifiers:
-    - "^com.google.Chrome"
-
-
-# ---------- Keymaps ----------
-
-- description: "[Chrome] LCommand-N → 新しいタブを開く"
-  manipulators:
-  - type: basic
-    from:
-      key_code: "n"
-      modifiers: *left_command
-    to:
-    - key_code: t
-      modifiers:
-      - command
-    conditions: *chrome
-
-- description: "[Chrome] LCommand-T → 閉じたタブを開く"
-  manipulators:
-  - type: basic
-    from:
-      key_code: t
-      modifiers: *left_command
-    to:
-    - key_code: t
-      modifiers:
-      - shift
-      - command
-    conditions: *chrome
-
-- description: "[Chrome] LCommand-Q (held down) → Google Chrome を終了"
-  manipulators:
-  - type: basic
-    from:
-      key_code: q
-      modifiers: *left_command
-    to_if_held_down:
-    - key_code: q
-      modifiers:
-      - command
-      repeat: false
-    to_if_alone:
-    - key_code: null
-    parameters:
-      basic.to_if_held_down_threshold_milliseconds: 1000
-    conditions: *chrome
+{
+  "title": "Google Chrome",
+  "variables": [
+    {
+      "from/modifiers": {
+        "mandatory": [
+          "left_command"
+        ]
+      }
+    },
+    {
+      "conditions": [
+        {
+          "type": "frontmost_application_if",
+          "bundle_identifiers": [
+            "^com.google.Chrome"
+          ]
+        }
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "description": "[Chrome] LCommand-N → 新しいタブを開く",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "n",
+            "modifiers": {
+              "mandatory": [
+                "left_command"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "t",
+              "modifiers": [
+                "command"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com.google.Chrome"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[Chrome] LCommand-T → 閉じたタブを開く",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "t",
+            "modifiers": {
+              "mandatory": [
+                "left_command"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "t",
+              "modifiers": [
+                "shift",
+                "command"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com.google.Chrome"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[Chrome] LCommand-Q (held down) → Google Chrome を終了",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "q",
+            "modifiers": {
+              "mandatory": [
+                "left_command"
+              ]
+            }
+          },
+          "to_if_held_down": [
+            {
+              "key_code": "q",
+              "modifiers": [
+                "command"
+              ],
+              "repeat": false
+            }
+          ],
+          "to_if_alone": [
+            {
+              "key_code": null
+            }
+          ],
+          "parameters": {
+            "basic.to_if_held_down_threshold_milliseconds": 1000
+          },
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com.google.Chrome"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

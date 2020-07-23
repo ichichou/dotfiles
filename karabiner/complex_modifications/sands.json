@@ -1,14 +1,31 @@
-title: SandS
-rules:
-- description: SandS
-  manipulators:
-  - type: basic
-    from:
-      key_code: spacebar
-      modifiers:
-        optional:
-        - any
-    to:
-    - key_code: left_shift
-    to_if_alone:
-    - key_code: spacebar
+{
+  "title": "SandS",
+  "rules": [
+    {
+      "description": "SandS",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "spacebar",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_shift"
+            }
+          ],
+          "to_if_alone": [
+            {
+              "key_code": "spacebar"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
