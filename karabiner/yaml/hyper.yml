@@ -10,7 +10,7 @@ rules:
   - option
 
 - var/conditions: &hyper_state
-  - type: variable_if:
+  - type: variable_if
     name: hyper
     value: 1
 
