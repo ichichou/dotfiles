@@ -1,0 +1,264 @@
+title: Hyper key
+rules:
+
+# ---------- Variables ----------
+
+- var/to/modifiers: &hyper_key
+  - shift
+  - command
+  - control
+  - option
+
+- var/conditions: &hyper_state
+  - type: variable_if
+    name: hyper
+    value: 1
+
+# ---------- Hyper Key ----------
+
+- description: Tab → Hyper/Tab
+  manipulators:
+  - type: basic
+    from:
+      key_code: tab
+    to:
+    - set_variable:
+        name: hyper
+        value: 1
+    to_if_alone:
+    - key_code: tab
+    to_after_key_up:
+    - set_variable:
+        name: hyper
+        value: 0
+
+# ---------- 1-0 ----------
+
+- description: Hyper - 1-0
+  manipulators:
+
+  - type: basic
+    from:
+      key_code: "1"
+    to:
+    - key_code: "1"
+      modifiers: *hyper_key
+    conditions: *hyper_state
+
+  - type: basic
+    from:
+      key_code: "2"
+    to:
+    - key_code: "2"
+      modifiers: *hyper_key
+    conditions: *hyper_state
+
+  - type: basic
+    from:
+      key_code: "3"
+    to:
+    - key_code: "3"
+      modifiers: *hyper_key
+    conditions: *hyper_state
+
+  - type: basic
+    from:
+      key_code: "4"
+    to:
+    - key_code: "4"
+      modifiers: *hyper_key
+    conditions: *hyper_state
+
+  - type: basic
+    from:
+      key_code: "5"
+    to:
+    - key_code: "5"
+      modifiers: *hyper_key
+    conditions: *hyper_state
+
+  - type: basic
+    from:
+      key_code: "6"
+    to:
+    - key_code: "6"
+      modifiers: *hyper_key
+    conditions: *hyper_state
+
+  - type: basic
+    from:
+      key_code: "7"
+    to:
+    - key_code: "7"
+      modifiers: *hyper_key
+    conditions: *hyper_state
+
+  - type: basic
+    from:
+      key_code: "8"
+    to:
+    - key_code: "8"
+      modifiers: *hyper_key
+    conditions: *hyper_state
+
+  - type: basic
+    from:
+      key_code: "9"
+    to:
+    - key_code: "9"
+      modifiers: *hyper_key
+    conditions: *hyper_state
+
+  - type: basic
+    from:
+      key_code: "0"
+    to:
+    - key_code: "0"
+      modifiers: *hyper_key
+    conditions: *hyper_state
+
+# ---------- Q-P ----------
+
+- description: Hyper - Q-P → Hyper - 1-0
+  manipulators:
+
+  - type: basic
+    from:
+      key_code: q
+    to:
+    - key_code: "1"
+      modifiers: *hyper_key
+    conditions: *hyper_state
+
+  - type: basic
+    from:
+      key_code: w
+    to:
+    - key_code: "2"
+      modifiers: *hyper_key
+    conditions: *hyper_state
+
+  - type: basic
+    from:
+      key_code: e
+    to:
+    - key_code: "3"
+      modifiers: *hyper_key
+    conditions: *hyper_state
+
+  - type: basic
+    from:
+      key_code: r
+    to:
+    - key_code: "4"
+      modifiers: *hyper_key
+    conditions: *hyper_state
+
+  - type: basic
+    from:
+      key_code: t
+    to:
+    - key_code: "5"
+      modifiers: *hyper_key
+    conditions: *hyper_state
+
+  - type: basic
+    from:
+      key_code: "y"
+    to:
+    - key_code: "6"
+      modifiers: *hyper_key
+    conditions: *hyper_state
+
+  - type: basic
+    from:
+      key_code: u
+    to:
+    - key_code: "7"
+      modifiers: *hyper_key
+    conditions: *hyper_state
+
+  - type: basic
+    from:
+      key_code: i
+    to:
+    - key_code: "8"
+      modifiers: *hyper_key
+    conditions: *hyper_state
+
+  - type: basic
+    from:
+      key_code: o
+    to:
+    - key_code: "9"
+      modifiers: *hyper_key
+    conditions: *hyper_state
+
+  - type: basic
+    from:
+      key_code: p
+    to:
+    - key_code: "0"
+      modifiers: *hyper_key
+    conditions: *hyper_state
+
+# ---------- Apps ----------
+
+- description: アプリケーションを起動
+  manipulators:
+
+  # F: Finder
+  - type: basic
+    from:
+      key_code: f
+    to:
+    - shell_command: open -a "finder"
+    conditions: *hyper_state
+
+  # X: Textwell
+  - type: basic
+    from:
+      key_code: x
+    to:
+    - shell_command: open -a "textwell"
+    conditions: *hyper_state
+
+  # C: Google Chrome
+  - type: basic
+    from:
+      key_code: c
+    to:
+    - shell_command: open -a "google\ chrome"
+    conditions: *hyper_state
+
+  # A: Terminal
+  - type: basic
+    from:
+      key_code: a
+    to:
+    - shell_command: open -a "terminal"
+    conditions: *hyper_state
+
+  # V: Vim
+  - type: basic
+    from:
+      key_code: v
+    to:
+    - shell_command: open -a "macvim"
+    conditions: *hyper_state
+
+  # S: Slack
+  - type: basic
+    from:
+      key_code: s
+    to:
+    - shell_command: open -a "slack"
+    conditions: *hyper_state
+
+  # D: Discord
+  - type: basic
+    from:
+      key_code: d
+    to:
+    - shell_command: open -a "discord"
+    conditions: *hyper_state
