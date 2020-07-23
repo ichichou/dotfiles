@@ -27,6 +27,26 @@
           }
         },
         {
+          "var/to": [
+            {
+              "set_invalid": {
+                "name": "invalid",
+                "value": 1
+              }
+            }
+          ]
+        },
+        {
+          "var/to": [
+            {
+              "set_invalid": {
+                "name": "invalid",
+                "value": 0
+              }
+            }
+          ]
+        },
+        {
           "var/to/modifiers": {
             "mandatory": [
               "shift"
@@ -37,8 +57,28 @@
           "var/to_if_held_down": [
             {
               "set_variable": {
+                "name": "system_mode",
+                "value": 1
+              }
+            }
+          ]
+        },
+        {
+          "var/to_if_held_down": [
+            {
+              "set_variable": {
                 "name": "shifted",
                 "value": 1
+              }
+            }
+          ]
+        },
+        {
+          "var/to_after_key_up": [
+            {
+              "set_variable": {
+                "name": "system_mode",
+                "value": 0
               }
             }
           ]
@@ -76,8 +116,47 @@
               ]
             },
             {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "var/conditions": [
+            {
+              "type": "input_source_if",
+              "input_sources": [
+                {
+                  "language": "ja"
+                }
+              ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
+            },
+            {
               "type": "variable_if",
               "name": "shifted",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "var/conditions": [
+            {
+              "type": "input_source_if",
+              "input_sources": [
+                {
+                  "language": "ja"
+                }
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "system_mode",
               "value": 1
             }
           ]
@@ -86,6 +165,105 @@
           "var/parameters": {
             "basic.to_if_held_down_threshold_milliseconds": 50
           }
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "q"
+          },
+          "to_if_alone": [
+            {
+              "key_code": "q",
+              "repeat": false
+            }
+          ],
+          "to_if_held_down": [
+            {
+              "set_variable": {
+                "name": "system_mode",
+                "value": 1
+              }
+            }
+          ],
+          "to_after_key_up": [
+            {
+              "set_variable": {
+                "name": "system_mode",
+                "value": 0
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "input_source_if",
+              "input_sources": [
+                {
+                  "language": "ja"
+                }
+              ]
+            }
+          ],
+          "parameters": {
+            "basic.to_if_held_down_threshold_milliseconds": 50
+          }
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "o"
+          },
+          "to": [
+            {
+              "set_invalid": {
+                "name": "invalid",
+                "value": 0
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "input_source_if",
+              "input_sources": [
+                {
+                  "language": "ja"
+                }
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "system_mode",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "i"
+          },
+          "to": [
+            {
+              "set_invalid": {
+                "name": "invalid",
+                "value": 1
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "input_source_if",
+              "input_sources": [
+                {
+                  "language": "ja"
+                }
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "system_mode",
+              "value": 1
+            }
+          ]
         },
         {
           "type": "basic",
@@ -132,6 +310,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -161,6 +344,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -195,6 +383,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -229,6 +422,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -258,6 +456,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -287,6 +490,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -321,6 +529,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -355,6 +568,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -396,6 +614,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -447,6 +670,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -478,6 +706,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             },
             {
               "type": "variable_if",
@@ -514,6 +747,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             },
             {
               "type": "variable_if",
@@ -566,6 +804,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ],
           "parameters": {
@@ -612,6 +855,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ],
           "parameters": {
@@ -660,6 +908,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -705,6 +958,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -750,6 +1008,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -795,6 +1058,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -840,6 +1108,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -881,6 +1154,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -922,6 +1200,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -963,6 +1246,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -1004,6 +1292,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -1049,6 +1342,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -1094,6 +1392,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -1139,6 +1442,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -1184,6 +1492,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -1229,6 +1542,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -1282,6 +1600,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -1327,6 +1650,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -1372,6 +1700,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -1417,6 +1750,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -1462,6 +1800,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -1507,6 +1850,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -1548,6 +1896,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -1589,6 +1942,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -1634,6 +1992,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -1675,6 +2038,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -1716,6 +2084,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -1757,6 +2130,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -1798,6 +2176,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -1843,6 +2226,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -1888,6 +2276,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -1933,6 +2326,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -1978,6 +2376,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -2023,6 +2426,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -2068,6 +2476,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -2113,6 +2526,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -2158,6 +2576,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -2203,6 +2626,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -2256,6 +2684,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -2301,6 +2734,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -2346,6 +2784,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -2391,6 +2834,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -2432,6 +2880,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -2473,6 +2926,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -2514,6 +2972,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -2559,6 +3022,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -2604,6 +3072,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -2649,6 +3122,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -2694,6 +3172,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -2739,6 +3222,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -2784,6 +3272,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -2829,6 +3322,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -2874,6 +3372,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -2919,6 +3422,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -2961,6 +3469,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -3003,6 +3516,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -3045,6 +3563,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -3087,6 +3610,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -3129,6 +3657,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -3171,6 +3704,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -3213,6 +3751,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -3255,6 +3798,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -3297,6 +3845,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -3339,6 +3892,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -3381,6 +3939,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -3423,6 +3986,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -3465,6 +4033,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -3507,6 +4080,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -3549,6 +4127,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -3591,6 +4174,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -3633,6 +4221,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -3675,6 +4268,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -3717,6 +4315,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -3759,6 +4362,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -3801,6 +4409,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -3839,6 +4452,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -3877,6 +4495,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -3915,6 +4538,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -3953,6 +4581,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -3991,6 +4624,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -4033,6 +4671,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -4075,6 +4718,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -4117,6 +4765,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -4159,6 +4812,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -4201,6 +4859,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -4243,6 +4906,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             },
             {
               "type": "variable_if",
@@ -4286,6 +4954,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -4324,6 +4997,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -4362,6 +5040,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -4400,6 +5083,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -4438,6 +5126,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -4476,6 +5169,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -4514,6 +5212,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -4552,6 +5255,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -4590,6 +5298,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -4628,6 +5341,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -4666,6 +5384,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -4704,6 +5427,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -4742,6 +5470,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -4780,6 +5513,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -4818,6 +5556,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -4856,6 +5599,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -4894,6 +5642,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -4932,6 +5685,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -4970,6 +5728,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -5008,6 +5771,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -5046,6 +5814,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -5084,6 +5857,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -5122,6 +5900,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -5160,6 +5943,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -5198,6 +5986,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -5236,6 +6029,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -5263,6 +6061,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             },
             {
               "type": "variable_if",
@@ -5295,6 +6098,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             },
             {
               "type": "variable_if",
@@ -5333,6 +6141,11 @@
               ]
             },
             {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
+            },
+            {
               "type": "variable_if",
               "name": "shifted",
               "value": 1
@@ -5367,6 +6180,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             },
             {
               "type": "variable_if",
@@ -5405,6 +6223,11 @@
               ]
             },
             {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
+            },
+            {
               "type": "variable_if",
               "name": "shifted",
               "value": 1
@@ -5439,6 +6262,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             },
             {
               "type": "variable_if",
@@ -5477,6 +6305,11 @@
               ]
             },
             {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
+            },
+            {
               "type": "variable_if",
               "name": "shifted",
               "value": 1
@@ -5511,6 +6344,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             },
             {
               "type": "variable_if",
@@ -5549,6 +6387,11 @@
               ]
             },
             {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
+            },
+            {
               "type": "variable_if",
               "name": "shifted",
               "value": 1
@@ -5583,6 +6426,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             },
             {
               "type": "variable_if",
@@ -5621,6 +6469,11 @@
               ]
             },
             {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
+            },
+            {
               "type": "variable_if",
               "name": "shifted",
               "value": 1
@@ -5655,6 +6508,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             },
             {
               "type": "variable_if",
@@ -5693,6 +6551,11 @@
               ]
             },
             {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
+            },
+            {
               "type": "variable_if",
               "name": "shifted",
               "value": 1
@@ -5727,6 +6590,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             },
             {
               "type": "variable_if",
@@ -5765,6 +6633,11 @@
               ]
             },
             {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
+            },
+            {
               "type": "variable_if",
               "name": "shifted",
               "value": 1
@@ -5799,6 +6672,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             },
             {
               "type": "variable_if",
@@ -5837,6 +6715,11 @@
               ]
             },
             {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
+            },
+            {
               "type": "variable_if",
               "name": "shifted",
               "value": 1
@@ -5871,6 +6754,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             },
             {
               "type": "variable_if",
@@ -5909,6 +6797,11 @@
               ]
             },
             {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
+            },
+            {
               "type": "variable_if",
               "name": "shifted",
               "value": 1
@@ -5945,6 +6838,11 @@
               ]
             },
             {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
+            },
+            {
               "type": "variable_if",
               "name": "shifted",
               "value": 1
@@ -5975,6 +6873,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             },
             {
               "type": "variable_if",
@@ -6013,6 +6916,11 @@
               ]
             },
             {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
+            },
+            {
               "type": "variable_if",
               "name": "shifted",
               "value": 1
@@ -6043,6 +6951,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -6070,6 +6983,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -6101,6 +7019,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -6132,6 +7055,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -6163,6 +7091,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -6194,6 +7127,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -6225,6 +7163,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -6256,6 +7199,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -6287,6 +7235,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -6318,6 +7271,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -6349,6 +7307,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -6384,6 +7347,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -6415,6 +7383,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -6446,6 +7419,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -6477,6 +7455,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -6508,6 +7491,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -6539,6 +7527,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -6570,6 +7563,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -6601,6 +7599,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -6632,6 +7635,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -6663,6 +7671,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -6694,6 +7707,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -6725,6 +7743,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -6752,6 +7775,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -6779,6 +7807,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -6806,6 +7839,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         },
@@ -6833,6 +7871,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "invalid",
+              "value": 1
             }
           ]
         }
