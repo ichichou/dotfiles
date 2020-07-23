@@ -1,17 +1,20 @@
 title: Control Key
-rules:
 
 # ---------- Variables ----------
 
-- var/from/modifiers: &any
+variables:
+
+- from/modifiers: &any
     optional:
     - any
 
-- var/from/modifiers: &right_control
+- from/modifiers: &right_control
     mandatory:
     - right_control
 
 # ---------- Keymaps ----------
+
+rules:
 
 - description: Caps Lock → RControl/ESC
   manipulators:

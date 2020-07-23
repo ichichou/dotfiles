@@ -1,17 +1,20 @@
 title: Command Key
-rules:
 
 # ---------- Variables ----------
 
-- var/from/modifiers: &left_command
+variables:
+
+- from/modifiers: &left_command
     mandatory:
     - left_command
 
-- var/from/modifiers: &any
+- from/modifiers: &any
     optional:
     - any
 
 # ---------- Keymaps ----------
+
+rules:
 
 - description: LCommand-Space → Return
   manipulators:

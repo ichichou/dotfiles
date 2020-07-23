@@ -1,20 +1,23 @@
 title: Hyper key
-rules:
 
 # ---------- Variables ----------
 
-- var/to/modifiers: &hyper_key
+variables:
+
+- to/modifiers: &hyper_key
   - shift
   - command
   - control
   - option
 
-- var/conditions: &hyper_state
+- conditions: &hyper_state
   - type: variable_if
     name: hyper
     value: 1
 
 # ---------- Hyper Key ----------
+
+rules:
 
 - description: Tab → Hyper/Tab
   manipulators:
