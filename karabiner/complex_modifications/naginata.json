@@ -22,7 +22,7 @@
         {
           "var/from/modifiers": {
             "optional": [
-              "any"
+              "shift"
             ]
           }
         },
@@ -31,12 +31,6 @@
             "mandatory": [
               "shift"
             ]
-          }
-        },
-        {
-          "var/to/set_variable": {
-            "name": "invalid",
-            "value": 1
           }
         },
         {
@@ -53,16 +47,6 @@
           "var/to_after_key_up": [
             {
               "set_variable": {
-                "name": "invalid",
-                "value": 0
-              }
-            }
-          ]
-        },
-        {
-          "var/to_after_key_up": [
-            {
-              "set_variable": {
                 "name": "shifted",
                 "value": 0
               }
@@ -92,28 +76,6 @@
               ]
             },
             {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
-            }
-          ]
-        },
-        {
-          "var/conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
-            },
-            {
               "type": "variable_if",
               "name": "shifted",
               "value": 1
@@ -128,119 +90,12 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "command"
-          },
-          "to": [
-            {
-              "set_variable": {
-                "name": "invalid",
-                "value": 1
-              }
-            },
-            {
-              "key_code": "command"
-            }
-          ],
-          "to_after_key_up": [
-            {
-              "set_variable": {
-                "name": "invalid",
-                "value": 0
-              }
-            }
-          ],
-          "conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "control"
-          },
-          "to": [
-            {
-              "set_variable": {
-                "name": "invalid",
-                "value": 1
-              }
-            },
-            {
-              "key_code": "control"
-            }
-          ],
-          "to_after_key_up": [
-            {
-              "set_variable": {
-                "name": "invalid",
-                "value": 0
-              }
-            }
-          ],
-          "conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "option"
-          },
-          "to": [
-            {
-              "set_variable": {
-                "name": "invalid",
-                "value": 1
-              }
-            },
-            {
-              "key_code": "option"
-            }
-          ],
-          "to_after_key_up": [
-            {
-              "set_variable": {
-                "name": "invalid",
-                "value": 0
-              }
-            }
-          ],
-          "conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
             "simultaneous": [
               {
-                "key_code": "v",
-                "repeat": false
+                "key_code": "v"
               },
               {
-                "key_code": "m",
-                "repeat": false
+                "key_code": "m"
               }
             ]
           },
@@ -256,12 +111,10 @@
           "from": {
             "simultaneous": [
               {
-                "key_code": "r",
-                "repeat": false
+                "key_code": "r"
               },
               {
-                "key_code": "f",
-                "repeat": false
+                "key_code": "f"
               }
             ]
           },
@@ -279,11 +132,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -292,12 +140,10 @@
           "from": {
             "simultaneous": [
               {
-                "key_code": "r",
-                "repeat": false
+                "key_code": "r"
               },
               {
-                "key_code": "g",
-                "repeat": false
+                "key_code": "g"
               }
             ]
           },
@@ -315,11 +161,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -328,12 +169,10 @@
           "from": {
             "simultaneous": [
               {
-                "key_code": "f",
-                "repeat": false
+                "key_code": "f"
               },
               {
-                "key_code": "v",
-                "repeat": false
+                "key_code": "v"
               }
             ]
           },
@@ -356,11 +195,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -369,12 +203,10 @@
           "from": {
             "simultaneous": [
               {
-                "key_code": "f",
-                "repeat": false
+                "key_code": "f"
               },
               {
-                "key_code": "b",
-                "repeat": false
+                "key_code": "b"
               }
             ]
           },
@@ -397,11 +229,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -410,12 +237,10 @@
           "from": {
             "simultaneous": [
               {
-                "key_code": "u",
-                "repeat": false
+                "key_code": "u"
               },
               {
-                "key_code": "j",
-                "repeat": false
+                "key_code": "j"
               }
             ]
           },
@@ -433,11 +258,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -446,12 +266,10 @@
           "from": {
             "simultaneous": [
               {
-                "key_code": "u",
-                "repeat": false
+                "key_code": "u"
               },
               {
-                "key_code": "h",
-                "repeat": false
+                "key_code": "h"
               }
             ]
           },
@@ -469,11 +287,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -482,12 +295,10 @@
           "from": {
             "simultaneous": [
               {
-                "key_code": "j",
-                "repeat": false
+                "key_code": "j"
               },
               {
-                "key_code": "m",
-                "repeat": false
+                "key_code": "m"
               }
             ]
           },
@@ -510,11 +321,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -523,12 +329,10 @@
           "from": {
             "simultaneous": [
               {
-                "key_code": "j",
-                "repeat": false
+                "key_code": "j"
               },
               {
-                "key_code": "n",
-                "repeat": false
+                "key_code": "n"
               }
             ]
           },
@@ -551,11 +355,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -564,12 +363,10 @@
           "from": {
             "simultaneous": [
               {
-                "key_code": "f",
-                "repeat": false
+                "key_code": "f"
               },
               {
-                "key_code": "g",
-                "repeat": false
+                "key_code": "g"
               }
             ]
           },
@@ -599,11 +396,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -612,12 +404,10 @@
           "from": {
             "simultaneous": [
               {
-                "key_code": "j",
-                "repeat": false
+                "key_code": "j"
               },
               {
-                "key_code": "h",
-                "repeat": false
+                "key_code": "h"
               }
             ]
           },
@@ -657,11 +447,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -671,7 +456,7 @@
             "key_code": "d",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -695,11 +480,6 @@
               ]
             },
             {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
-            },
-            {
               "type": "variable_if",
               "name": "shifted",
               "value": 1
@@ -712,7 +492,7 @@
             "key_code": "k",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -736,11 +516,6 @@
               ]
             },
             {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
-            },
-            {
               "type": "variable_if",
               "name": "shifted",
               "value": 1
@@ -753,7 +528,7 @@
             "key_code": "d",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -791,11 +566,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ],
           "parameters": {
@@ -808,7 +578,7 @@
             "key_code": "k",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -842,11 +612,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ],
           "parameters": {
@@ -869,7 +634,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -895,11 +660,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -919,7 +679,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -945,11 +705,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -969,7 +724,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -995,11 +750,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -1019,7 +769,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -1045,11 +795,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -1069,7 +814,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -1095,11 +840,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -1119,7 +859,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -1141,11 +881,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -1165,7 +900,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -1187,11 +922,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -1211,7 +941,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -1233,11 +963,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -1257,7 +982,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -1279,11 +1004,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -1303,7 +1023,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -1329,11 +1049,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -1353,7 +1068,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -1379,11 +1094,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -1403,7 +1113,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -1429,11 +1139,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -1453,7 +1158,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -1479,11 +1184,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -1503,7 +1203,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -1529,11 +1229,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -1553,7 +1248,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -1587,11 +1282,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -1611,7 +1301,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -1637,11 +1327,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -1661,7 +1346,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -1687,11 +1372,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -1711,7 +1391,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -1737,11 +1417,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -1761,7 +1436,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -1787,11 +1462,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -1811,7 +1481,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -1837,11 +1507,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -1861,7 +1526,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -1883,11 +1548,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -1907,7 +1567,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -1929,11 +1589,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -1953,7 +1608,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -1979,11 +1634,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -2003,7 +1653,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -2025,11 +1675,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -2049,7 +1694,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -2071,11 +1716,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -2095,7 +1735,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -2117,11 +1757,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -2141,7 +1776,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -2163,11 +1798,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -2187,7 +1817,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -2213,11 +1843,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -2237,7 +1862,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -2263,11 +1888,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -2287,7 +1907,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -2313,11 +1933,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -2337,7 +1952,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -2363,11 +1978,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -2387,7 +1997,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -2413,11 +2023,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -2437,7 +2042,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -2463,11 +2068,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -2487,7 +2087,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -2513,11 +2113,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -2537,7 +2132,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -2563,11 +2158,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -2587,7 +2177,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -2613,11 +2203,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -2637,7 +2222,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -2671,11 +2256,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -2695,7 +2275,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -2721,11 +2301,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -2745,7 +2320,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -2771,11 +2346,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -2795,7 +2365,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -2821,11 +2391,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -2845,7 +2410,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -2867,11 +2432,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -2891,7 +2451,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -2913,11 +2473,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -2937,7 +2492,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -2959,11 +2514,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -2983,7 +2533,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -3009,11 +2559,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -3033,7 +2578,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -3059,11 +2604,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -3083,7 +2623,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -3109,11 +2649,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -3133,7 +2668,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -3159,11 +2694,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -3183,7 +2713,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -3209,11 +2739,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -3233,7 +2758,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -3259,11 +2784,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -3283,7 +2803,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -3309,11 +2829,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -3333,7 +2848,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -3359,11 +2874,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -3383,7 +2893,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -3409,11 +2919,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -3430,7 +2935,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -3456,11 +2961,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -3477,7 +2977,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -3503,11 +3003,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -3524,7 +3019,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -3550,11 +3045,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -3571,7 +3061,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -3597,11 +3087,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -3618,7 +3103,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -3644,11 +3129,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -3665,7 +3145,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -3691,11 +3171,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -3712,7 +3187,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -3738,11 +3213,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -3759,7 +3229,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -3785,11 +3255,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -3806,7 +3271,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -3832,11 +3297,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -3853,7 +3313,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -3879,11 +3339,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -3900,7 +3355,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -3926,11 +3381,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -3947,7 +3397,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -3973,11 +3423,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -3994,7 +3439,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -4020,11 +3465,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -4041,7 +3481,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -4067,11 +3507,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -4088,7 +3523,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -4114,11 +3549,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -4135,7 +3565,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -4161,11 +3591,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -4182,7 +3607,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -4208,11 +3633,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -4229,7 +3649,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -4255,11 +3675,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -4276,7 +3691,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -4302,11 +3717,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -4323,7 +3733,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -4349,11 +3759,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -4370,7 +3775,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -4396,11 +3801,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -4417,7 +3817,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -4439,11 +3839,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -4460,7 +3855,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -4482,11 +3877,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -4503,7 +3893,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -4525,11 +3915,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -4546,7 +3931,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -4568,11 +3953,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -4589,7 +3969,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -4611,11 +3991,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -4632,7 +4007,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -4658,11 +4033,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -4679,7 +4049,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -4705,11 +4075,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -4726,7 +4091,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -4752,11 +4117,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -4773,7 +4133,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -4799,11 +4159,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -4820,7 +4175,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -4846,11 +4201,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -4867,7 +4217,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -4893,11 +4243,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             },
             {
               "type": "variable_if",
@@ -4919,7 +4264,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -4941,11 +4286,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -4962,7 +4302,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -4984,11 +4324,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -5005,7 +4340,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -5027,11 +4362,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -5048,7 +4378,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -5070,11 +4400,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -5091,7 +4416,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -5113,11 +4438,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -5134,7 +4454,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -5156,11 +4476,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -5177,7 +4492,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -5199,11 +4514,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -5220,7 +4530,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -5242,11 +4552,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -5263,7 +4568,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -5285,11 +4590,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -5306,7 +4606,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -5328,11 +4628,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -5349,7 +4644,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -5371,11 +4666,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -5392,7 +4682,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -5414,11 +4704,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -5435,7 +4720,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -5457,11 +4742,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -5478,7 +4758,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -5500,11 +4780,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -5521,7 +4796,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -5543,11 +4818,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -5564,7 +4834,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -5586,11 +4856,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -5607,7 +4872,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -5629,11 +4894,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -5650,7 +4910,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -5672,11 +4932,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -5693,7 +4948,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -5715,11 +4970,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -5736,7 +4986,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -5758,11 +5008,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -5779,7 +5024,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -5801,11 +5046,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -5822,7 +5062,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -5844,11 +5084,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -5865,7 +5100,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -5887,11 +5122,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -5908,7 +5138,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -5930,11 +5160,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -5951,7 +5176,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -5973,11 +5198,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -5994,7 +5214,7 @@
             ],
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -6016,11 +5236,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -6030,7 +5245,7 @@
             "key_code": "o",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -6050,11 +5265,6 @@
               ]
             },
             {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
-            },
-            {
               "type": "variable_if",
               "name": "shifted",
               "value": 1
@@ -6067,7 +5277,7 @@
             "key_code": "n",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -6087,11 +5297,6 @@
               ]
             },
             {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
-            },
-            {
               "type": "variable_if",
               "name": "shifted",
               "value": 1
@@ -6104,7 +5309,7 @@
             "key_code": "u",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -6128,11 +5333,6 @@
               ]
             },
             {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
-            },
-            {
               "type": "variable_if",
               "name": "shifted",
               "value": 1
@@ -6145,7 +5345,7 @@
             "key_code": "a",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -6169,11 +5369,6 @@
               ]
             },
             {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
-            },
-            {
               "type": "variable_if",
               "name": "shifted",
               "value": 1
@@ -6186,7 +5381,7 @@
             "key_code": "g",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -6210,11 +5405,6 @@
               ]
             },
             {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
-            },
-            {
               "type": "variable_if",
               "name": "shifted",
               "value": 1
@@ -6227,7 +5417,7 @@
             "key_code": "semicolon",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -6251,11 +5441,6 @@
               ]
             },
             {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
-            },
-            {
               "type": "variable_if",
               "name": "shifted",
               "value": 1
@@ -6268,7 +5453,7 @@
             "key_code": "s",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -6292,11 +5477,6 @@
               ]
             },
             {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
-            },
-            {
               "type": "variable_if",
               "name": "shifted",
               "value": 1
@@ -6309,7 +5489,7 @@
             "key_code": "w",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -6333,11 +5513,6 @@
               ]
             },
             {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
-            },
-            {
               "type": "variable_if",
               "name": "shifted",
               "value": 1
@@ -6350,7 +5525,7 @@
             "key_code": "j",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -6374,11 +5549,6 @@
               ]
             },
             {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
-            },
-            {
               "type": "variable_if",
               "name": "shifted",
               "value": 1
@@ -6391,7 +5561,7 @@
             "key_code": "period",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -6415,11 +5585,6 @@
               ]
             },
             {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
-            },
-            {
               "type": "variable_if",
               "name": "shifted",
               "value": 1
@@ -6432,7 +5597,7 @@
             "key_code": "f",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -6456,11 +5621,6 @@
               ]
             },
             {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
-            },
-            {
               "type": "variable_if",
               "name": "shifted",
               "value": 1
@@ -6473,7 +5633,7 @@
             "key_code": "b",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -6497,11 +5657,6 @@
               ]
             },
             {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
-            },
-            {
               "type": "variable_if",
               "name": "shifted",
               "value": 1
@@ -6514,7 +5669,7 @@
             "key_code": "comma",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -6538,11 +5693,6 @@
               ]
             },
             {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
-            },
-            {
               "type": "variable_if",
               "name": "shifted",
               "value": 1
@@ -6555,7 +5705,7 @@
             "key_code": "r",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -6579,11 +5729,6 @@
               ]
             },
             {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
-            },
-            {
               "type": "variable_if",
               "name": "shifted",
               "value": 1
@@ -6596,7 +5741,7 @@
             "key_code": "h",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -6620,11 +5765,6 @@
               ]
             },
             {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
-            },
-            {
               "type": "variable_if",
               "name": "shifted",
               "value": 1
@@ -6637,7 +5777,7 @@
             "key_code": "p",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -6661,11 +5801,6 @@
               ]
             },
             {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
-            },
-            {
               "type": "variable_if",
               "name": "shifted",
               "value": 1
@@ -6678,7 +5813,7 @@
             "key_code": "i",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -6702,11 +5837,6 @@
               ]
             },
             {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
-            },
-            {
               "type": "variable_if",
               "name": "shifted",
               "value": 1
@@ -6719,7 +5849,7 @@
             "key_code": "e",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -6743,11 +5873,6 @@
               ]
             },
             {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
-            },
-            {
               "type": "variable_if",
               "name": "shifted",
               "value": 1
@@ -6760,7 +5885,7 @@
             "key_code": "l",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -6784,11 +5909,6 @@
               ]
             },
             {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
-            },
-            {
               "type": "variable_if",
               "name": "shifted",
               "value": 1
@@ -6801,7 +5921,7 @@
             "key_code": "c",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -6825,11 +5945,6 @@
               ]
             },
             {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
-            },
-            {
               "type": "variable_if",
               "name": "shifted",
               "value": 1
@@ -6842,7 +5957,7 @@
             "key_code": "v",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -6862,11 +5977,6 @@
               ]
             },
             {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
-            },
-            {
               "type": "variable_if",
               "name": "shifted",
               "value": 1
@@ -6879,7 +5989,7 @@
             "key_code": "m",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -6903,11 +6013,6 @@
               ]
             },
             {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
-            },
-            {
               "type": "variable_if",
               "name": "shifted",
               "value": 1
@@ -6920,7 +6025,7 @@
             "key_code": "j",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -6938,11 +6043,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -6952,7 +6052,7 @@
             "key_code": "l",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -6970,11 +6070,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -6984,7 +6079,7 @@
             "key_code": "f",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -7006,11 +6101,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -7020,7 +6110,7 @@
             "key_code": "w",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -7042,11 +6132,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -7056,7 +6141,7 @@
             "key_code": "h",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -7078,11 +6163,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -7092,7 +6172,7 @@
             "key_code": "x",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -7114,11 +6194,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -7128,7 +6203,7 @@
             "key_code": "v",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -7150,11 +6225,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -7164,7 +6234,7 @@
             "key_code": "r",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -7186,11 +6256,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -7200,7 +6265,7 @@
             "key_code": "o",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -7222,11 +6287,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -7236,7 +6296,7 @@
             "key_code": "b",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -7258,11 +6318,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -7272,7 +6327,7 @@
             "key_code": "n",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -7294,21 +6349,16 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
         {
           "type": "basic",
           "from": {
-            "key_code": "semicolon",
+            "key_code": "g",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -7334,11 +6384,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -7348,7 +6393,7 @@
             "key_code": "e",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -7370,11 +6415,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -7384,7 +6424,7 @@
             "key_code": "m",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -7406,11 +6446,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -7420,7 +6455,7 @@
             "key_code": "c",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -7442,11 +6477,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -7456,7 +6486,7 @@
             "key_code": "s",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -7478,11 +6508,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -7492,7 +6517,7 @@
             "key_code": "p",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -7514,11 +6539,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -7528,7 +6548,7 @@
             "key_code": "z",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -7550,11 +6570,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -7564,7 +6579,7 @@
             "key_code": "period",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -7586,11 +6601,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -7600,7 +6610,7 @@
             "key_code": "i",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -7622,11 +6632,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -7636,7 +6641,7 @@
             "key_code": "slash",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -7658,11 +6663,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -7672,7 +6672,7 @@
             "key_code": "a",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -7694,11 +6694,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -7708,7 +6703,7 @@
             "key_code": "comma",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -7730,11 +6725,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -7744,7 +6734,7 @@
             "key_code": "semicolon",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -7762,11 +6752,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -7776,7 +6761,7 @@
             "key_code": "u",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -7794,11 +6779,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -7808,7 +6788,7 @@
             "key_code": "t",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -7826,11 +6806,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         },
@@ -7840,7 +6815,7 @@
             "key_code": "y",
             "modifiers": {
               "optional": [
-                "any"
+                "shift"
               ]
             }
           },
@@ -7858,11 +6833,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
             }
           ]
         }
