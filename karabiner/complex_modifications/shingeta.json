@@ -5,6 +5,18 @@
       "description": "新下駄配列",
       "manipulators": [
         {
+          "var/from/modifiers": {
+            "optional": [
+              "shift"
+            ]
+          }
+        },
+        {
+          "var/to/modifiers": [
+            "shift"
+          ]
+        },
+        {
           "var/from/key_code": "k"
         },
         {
@@ -23,58 +35,6 @@
           "var/from/key_code": "o"
         },
         {
-          "var/from/modifiers": {
-            "optional": [
-              "shift"
-            ]
-          }
-        },
-        {
-          "var/to": [
-            {
-              "set_variable": {
-                "name": "system_mode",
-                "value": 1
-              }
-            }
-          ]
-        },
-        {
-          "var/to/": [
-            {
-              "set_variable": {
-                "name": "invalid",
-                "value": 1
-              }
-            }
-          ]
-        },
-        {
-          "var/to": [
-            {
-              "set_variable": {
-                "name": "invalid",
-                "value": 0
-              }
-            }
-          ]
-        },
-        {
-          "var/to/modifiers": [
-            "shift"
-          ]
-        },
-        {
-          "var/to_after_key_up": [
-            {
-              "set_variable": {
-                "name": "system_mode",
-                "value": 0
-              }
-            }
-          ]
-        },
-        {
           "var/conditions": [
             {
               "type": "input_source_if",
@@ -99,162 +59,6 @@
             {
               "type": "variable_unless",
               "name": "invalid",
-              "value": 1
-            }
-          ]
-        },
-        {
-          "var/conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "system_mode",
-              "value": 1
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "q"
-          },
-          "to_if_alone": [
-            {
-              "key_code": "hyphen",
-              "repeat": false
-            }
-          ],
-          "to": [
-            {
-              "set_variable": {
-                "name": "system_mode",
-                "value": 1
-              }
-            }
-          ],
-          "to_after_key_up": [
-            {
-              "set_variable": {
-                "name": "system_mode",
-                "value": 0
-              }
-            }
-          ],
-          "conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "invalid",
-              "value": 1
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "q"
-          },
-          "to_if_alone": [
-            {
-              "key_code": "q",
-              "repeat": false
-            }
-          ],
-          "to": [
-            {
-              "set_variable": {
-                "name": "system_mode",
-                "value": 1
-              }
-            }
-          ],
-          "to_after_key_up": [
-            {
-              "set_variable": {
-                "name": "system_mode",
-                "value": 0
-              }
-            }
-          ],
-          "conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "o"
-          },
-          "to": [
-            {
-              "set_variable": {
-                "name": "invalid",
-                "value": 1
-              }
-            }
-          ],
-          "conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "system_mode",
-              "value": 1
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "i"
-          },
-          "to": [
-            {
-              "set_variable": {
-                "name": "invalid",
-                "value": 0
-              }
-            }
-          ],
-          "conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "system_mode",
               "value": 1
             }
           ]

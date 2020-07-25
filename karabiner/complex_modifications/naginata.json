@@ -5,6 +5,18 @@
       "description": "薙刀式 v12",
       "manipulators": [
         {
+          "var/from/modifiers": {
+            "optional": [
+              "shift"
+            ]
+          }
+        },
+        {
+          "var/to/modifiers": [
+            "shift"
+          ]
+        },
+        {
           "var/from/key_code": "j"
         },
         {
@@ -20,63 +32,11 @@
           "var/from/key_code": "q"
         },
         {
-          "var/from/modifiers": {
-            "optional": [
-              "shift"
-            ]
-          }
-        },
-        {
-          "var/to": [
-            {
-              "set_variable": {
-                "name": "invalid",
-                "value": 1
-              }
-            }
-          ]
-        },
-        {
-          "var/to": [
-            {
-              "set_variable": {
-                "name": "invalid",
-                "value": 0
-              }
-            }
-          ]
-        },
-        {
-          "var/to/modifiers": [
-            "shift"
-          ]
-        },
-        {
-          "var/to_if_held_down": [
-            {
-              "set_variable": {
-                "name": "system_mode",
-                "value": 1
-              }
-            }
-          ]
-        },
-        {
           "var/to_if_held_down": [
             {
               "set_variable": {
                 "name": "shifted",
                 "value": 1
-              }
-            }
-          ]
-        },
-        {
-          "var/to_after_key_up": [
-            {
-              "set_variable": {
-                "name": "system_mode",
-                "value": 0
               }
             }
           ]
@@ -143,125 +103,9 @@
           ]
         },
         {
-          "var/conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "system_mode",
-              "value": 1
-            }
-          ]
-        },
-        {
           "var/parameters": {
             "basic.to_if_held_down_threshold_milliseconds": 50
           }
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "q"
-          },
-          "to_if_alone": [
-            {
-              "key_code": "q",
-              "repeat": false
-            }
-          ],
-          "to_if_held_down": [
-            {
-              "set_variable": {
-                "name": "system_mode",
-                "value": 1
-              }
-            }
-          ],
-          "to_after_key_up": [
-            {
-              "set_variable": {
-                "name": "system_mode",
-                "value": 0
-              }
-            }
-          ],
-          "conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
-            }
-          ],
-          "parameters": {
-            "basic.to_if_held_down_threshold_milliseconds": 50
-          }
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "o"
-          },
-          "to": [
-            {
-              "set_variable": {
-                "name": "invalid",
-                "value": 1
-              }
-            }
-          ],
-          "conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "system_mode",
-              "value": 1
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "i"
-          },
-          "to": [
-            {
-              "set_variable": {
-                "name": "invalid",
-                "value": 0
-              }
-            }
-          ],
-          "conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "system_mode",
-              "value": 1
-            }
-          ]
         },
         {
           "type": "basic",
