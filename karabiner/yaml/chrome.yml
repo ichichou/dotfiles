@@ -53,8 +53,6 @@ rules:
       modifiers:
       - command
       repeat: false
-    to_if_alone:
-    - key_code: null
     parameters:
       basic.to_if_held_down_threshold_milliseconds: 1000
     conditions: *chrome
