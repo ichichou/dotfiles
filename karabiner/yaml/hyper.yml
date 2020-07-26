@@ -1,8 +1,8 @@
 title: Hyper key
 
-# ---------- Variables ----------
+# ===== Aliases =====
 
-variables:
+aliases:
 
 - to/modifiers: &hyper_key
   - shift
@@ -12,12 +12,14 @@ variables:
 
 - conditions: &hyper_state
   - type: variable_if
-    name: hyper
+    name: hyper_mode
     value: 1
 
-# ---------- Hyper Key ----------
+# ===== Rules =====
 
 rules:
+
+# ----- Hyper Key -----
 
 - description: Tab → Hyper/Tab
   manipulators:
@@ -26,16 +28,16 @@ rules:
       key_code: tab
     to:
     - set_variable:
-        name: hyper
+        name: hyper_mode
         value: 1
     to_if_alone:
     - key_code: tab
     to_after_key_up:
     - set_variable:
-        name: hyper
+        name: hyper_mode
         value: 0
 
-# ---------- 1-0 ----------
+# ----- 1-0 -----
 
 - description: Hyper - 1-0
   manipulators:
@@ -120,7 +122,7 @@ rules:
       modifiers: *hyper_key
     conditions: *hyper_state
 
-# ---------- Q-P ----------
+# ----- Q-P -----
 
 - description: Hyper - Q-P → Hyper - 1-0
   manipulators:
@@ -205,9 +207,9 @@ rules:
       modifiers: *hyper_key
     conditions: *hyper_state
 
-# ---------- Apps ----------
+# ----- Apps -----
 
-- description: アプリケーションを起動
+- description: Hyper - Alphabets → アプリケーションを起動
   manipulators:
 
   # F: Finder
