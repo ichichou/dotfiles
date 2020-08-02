@@ -1,0 +1,69 @@
+title: Vim
+
+# ---------- Aliases ----------
+
+variables:
+
+- conditions: &vim_ja
+  - type: frontmost_application_if
+    bundle_identifiers:
+    - "^org.vim.MacVim$"
+  - type: input_source_if
+    input_sources:
+    - language: ja
+
+- conditions: &vim
+  - type: frontmost_application_if
+    bundle_identifiers:
+    - "^org.vim.MacVim$"
+
+# ---------- Rules ----------
+
+rules:
+
+- description: "[Vim] I/A + J → I/A, Kana"
+  manipulators:
+  # I + J
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: i
+      - key_code: j
+    modifiers:
+      optional:
+      - shift
+    to:
+    - key_code: i
+      repeat: false
+    - key_code: japamese_kana
+      repeat: false
+    conditions: *vim_ja
+  # A + J
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: a
+      - key_code: j
+    modifiers:
+      optional:
+      - shift
+    to:
+    - key_code: a
+      repeat: false
+    - key_code: japamese_kana
+      repeat: false
+    conditions: *vim_ja
+
+- description: "[Vim] RControl + L → ESC, Eisuu"
+  manipulators:
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: control_right
+      - key_code: l
+    to:
+    - key_code: escape
+      repeat: false
+    - key_code: japamese_eisuu
+      repeat: false
+    conditions: *vim
