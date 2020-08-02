@@ -4,13 +4,9 @@ title: Vim
 
 variables:
 
-- conditions: &vim_ja
-  - type: frontmost_application_if
-    bundle_identifiers:
-    - "^org.vim.MacVim$"
-  - type: input_source_if
-    input_sources:
-    - language: ja
+- from/modifiers: &opt_shift
+    optional:
+    - shift
 
 - conditions: &vim
   - type: frontmost_application_if
@@ -29,41 +25,37 @@ rules:
       simultaneous:
       - key_code: i
       - key_code: j
-    modifiers:
-      optional:
-      - shift
+      modifiers: *opt_shift
     to:
     - key_code: i
       repeat: false
-    - key_code: japamese_kana
+    - key_code: japanese_kana
       repeat: false
-    conditions: *vim_ja
+    conditions: *vim
   # A + J
   - type: basic
     from:
       simultaneous:
       - key_code: a
       - key_code: j
-    modifiers:
-      optional:
-      - shift
+      modifiers: *opt_shift
     to:
     - key_code: a
       repeat: false
-    - key_code: japamese_kana
+    - key_code: japanese_kana
       repeat: false
-    conditions: *vim_ja
+    conditions: *vim
 
 - description: "[Vim] RControl + L → ESC, Eisuu"
   manipulators:
   - type: basic
     from:
       simultaneous:
-      - key_code: control_right
+      - key_code: right_control
       - key_code: l
     to:
     - key_code: escape
       repeat: false
-    - key_code: japamese_eisuu
+    - key_code: japanese_eisuu
       repeat: false
     conditions: *vim
