@@ -1,38 +1,76 @@
 title: Control Key
 
-# ---------- Variables ----------
+# ---------- Aliases ----------
 
 variables:
-
-- from/modifiers: &any
-    optional:
-    - any
 
 - from/modifiers: &right_control
     mandatory:
     - right_control
 
-# ---------- Keymaps ----------
+- from/modifiers: &any
+    optional:
+    - any
+
+# ---------- Rules ----------
 
 rules:
+
+- description: Caps Lock + J/L → かな/英数
+  manipulators:
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: j
+      - key_code: caps_lock
+    to:
+    - key_code: japanese_kana
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: l
+      - key_code: caps_lock
+    to:
+    - key_code: japanese_eisuu
+
+- description: RControl + J/L → かな/英数
+  manipulators:
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: j
+      - key_code: right_control
+    to:
+    - key_code: japanese_kana
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: l
+      - key_code: right_control
+    to:
+    - key_code: japanese_eisuu
 
 - description: Caps Lock → RControl/ESC
   manipulators:
   - type: basic
     from:
       key_code: caps_lock
-      modifiers: *any
+      modifiers:
+        optional:
+        - any
     to:
     - key_code: right_control
     to_if_alone:
     - key_code: escape
 
-- description: RControl → RControl/ESC (for HHKB)
+- description: RControl → RControl/ESC
   manipulators:
   - type: basic
     from:
       key_code: right_control
-      modifiers: *any
+      modifiers:
+        optional:
+        - any
     to:
     - key_code: right_control
     to_if_alone:
@@ -43,13 +81,17 @@ rules:
   - type: basic
     from:
       key_code: j
-      modifiers: *right_control
+      modifiers:
+        mandatory:
+        - right_control
     to:
     - key_code: japanese_kana
   - type: basic
     from:
       key_code: l
-      modifiers: *right_control
+      modifiers:
+        mandatory:
+        - right_control
     to:
     - key_code: japanese_eisuu
 
@@ -59,7 +101,9 @@ rules:
     from:
       key_code: m
       modifiers:
-        <<: *right_control
-        <<: *any
+        mandatory:
+        - right_control
+        optional:
+        - any
     to:
     - key_code: return_or_enter
