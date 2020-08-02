@@ -1,6 +1,6 @@
 title: Google Chrome
 
-# ---------- Variables ----------
+# ---------- Aliases ----------
 
 variables:
 
@@ -11,9 +11,9 @@ variables:
 - conditions: &chrome
   - type: frontmost_application_if
     bundle_identifiers:
-    - "^com.google.Chrome"
+    - "^com.google.Chrome$"
 
-# ---------- Keymaps ----------
+# ---------- Rules ----------
 
 rules:
 

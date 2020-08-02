@@ -1,6 +1,6 @@
 title: Finder
 
-# ---------- Variables ----------
+# ---------- Aliases ----------
 
 variables:
 
@@ -11,9 +11,9 @@ variables:
 - conditions: &finder
   - type: frontmost_application_if
     bundle_identifiers:
-    - "^com.apple.finder"
+    - "^com.apple.finder$"
 
-# ---------- Keymaps ----------
+# ---------- Rules ----------
 
 rules:
 
