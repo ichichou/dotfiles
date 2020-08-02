@@ -1,18 +1,18 @@
 title: Command Key
 
-# ---------- Variables ----------
+# ---------- Aliases ----------
 
 variables:
-
-- from/modifiers: &left_command
-    mandatory:
-    - left_command
 
 - from/modifiers: &any
     optional:
     - any
 
-# ---------- Keymaps ----------
+- from/modifiers: &left_command
+    mandatory:
+    - left_command
+
+# ---------- Rules ----------
 
 rules:
 
