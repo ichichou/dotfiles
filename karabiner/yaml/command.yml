@@ -16,7 +16,7 @@ variables:
 
 rules:
 
-- description: "[Chrome] LCommand-Space → Return"
+- description: "[Command] LCommand-Space → Return"
   manipulators:
   - type: basic
     from:
@@ -27,7 +27,7 @@ rules:
     to:
     - key_code: return_or_enter
 
-- description: "[Chrome] LCommand-RCommand → ESC"
+- description: "[Command] LCommand-RCommand → ESC"
   manipulators:
   - type: basic
     from:
@@ -40,7 +40,7 @@ rules:
     # to_if_alone:
     # - key_code: right_command
 
-- description: "[Chrome] LCommand-H/J/K/L → Left/Down/Up/Right"
+- description: "[Command] LCommand-H/J/K/L → Left/Down/Up/Right"
   manipulators:
   - type: basic
     from:
@@ -75,7 +75,7 @@ rules:
     to:
     - key_code: right_arrow
 
-- description: "[Chrome] LCommad/RCommand → 英数/かな"
+- description: "[Command] LCommad/RCommand → 英数/かな"
   manipulators:
   - type: basic
     from:
