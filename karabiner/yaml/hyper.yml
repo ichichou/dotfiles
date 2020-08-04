@@ -21,7 +21,7 @@ rules:
 
 # ----- Hyper Key -----
 
-- description: Tab → Hyper/Tab
+- description: "[Hyper] Tab → Hyper/Tab"
   manipulators:
   - type: basic
     from:
@@ -39,7 +39,7 @@ rules:
 
 # ----- 1-0 -----
 
-- description: Hyper - 1-0
+- description: "[Hyper] Hyper - 1-0"
   manipulators:
 
   - type: basic
@@ -124,7 +124,7 @@ rules:
 
 # ----- Q-P -----
 
-- description: Hyper - Q-P → Hyper - 1-0
+- description: "[Hyper] Hyper - Q-P → Hyper - 1-0"
   manipulators:
 
   - type: basic
@@ -209,7 +209,7 @@ rules:
 
 # ----- Apps -----
 
-- description: Hyper - Alphabets → アプリケーションを起動
+- description: "[Hyper] Hyper - Alphabets → アプリケーションを起動"
   manipulators:
 
   # F: Finder
@@ -250,6 +250,14 @@ rules:
       key_code: v
     to:
     - shell_command: open -a "macvim"
+    conditions: *hyper_state
+
+  # B: Visual Studio Code
+  - type: basic
+    from:
+      key_code: b
+    to:
+    - shell_command: open -a "code"
     conditions: *hyper_state
 
   # S: Slack

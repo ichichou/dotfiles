@@ -1,6 +1,6 @@
 title: Vim
 
-# ---------- Aliases ----------
+# ===== Aliases =====
 
 variables:
 
@@ -13,7 +13,7 @@ variables:
     bundle_identifiers:
     - "^org.vim.MacVim$"
 
-# ---------- Rules ----------
+# ===== Rules =====
 
 rules:
 
@@ -46,16 +46,16 @@ rules:
       repeat: false
     conditions: *vim
 
-- description: "[Vim] RControl + L → ESC, Eisuu"
-  manipulators:
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: right_control
-      - key_code: l
-    to:
-    - key_code: escape
-      repeat: false
-    - key_code: japanese_eisuu
-      repeat: false
-    conditions: *vim
+# - description: "[Vim] RControl + L → ESC, Eisuu"
+#   manipulators:
+#   - type: basic
+#     from:
+#       simultaneous:
+#       - key_code: right_control
+#       - key_code: l
+#     to:
+#     - key_code: escape
+#       repeat: false
+#     - key_code: japanese_eisuu
+#       repeat: false
+#     conditions: *vim

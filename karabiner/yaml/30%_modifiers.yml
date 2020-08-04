@@ -25,7 +25,7 @@ aliases:
 # ===== Rules =====
 
 rules:
-- description: 30% Modifiers
+- description: "[30%] 30% Modifiers"
   manipulators:
 
 # ----- Shift Key -----

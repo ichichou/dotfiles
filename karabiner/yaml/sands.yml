@@ -1,7 +1,7 @@
 title: SandS
 rules:
 
-- description: SandS
+- description: "[SandS] Space and Shift"
   manipulators:
   - type: basic
     from:
@@ -14,7 +14,7 @@ rules:
     to_if_alone:
     - key_code: spacebar
 
-# - description: Return and Shift
+# - description: "[SandS] Return and Shift"
 #   manipulators:
 #   - type: basic
 #     from:
