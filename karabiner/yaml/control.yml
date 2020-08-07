@@ -23,15 +23,21 @@ rules:
       simultaneous:
       - key_code: j
       - key_code: caps_lock
+      simultaneous_options:
+        key_up_when: all
     to:
     - key_code: japanese_kana
+    - key_code: right_control
   - type: basic
     from:
       simultaneous:
       - key_code: l
       - key_code: caps_lock
+      simultaneous_options:
+        key_up_when: all
     to:
     - key_code: japanese_eisuu
+    - key_code: right_control
 
 - description: "[Control] RControl + J/L → かな/英数"
   manipulators:
@@ -40,15 +46,21 @@ rules:
       simultaneous:
       - key_code: j
       - key_code: right_control
+      simultaneous_options:
+        key_up_when: all
     to:
     - key_code: japanese_kana
+    - key_code: right_control
   - type: basic
     from:
       simultaneous:
       - key_code: l
       - key_code: right_control
+      simultaneous_options:
+        key_up_when: all
     to:
     - key_code: japanese_eisuu
+    - key_code: right_control
 
 - description: "[Control] Caps Lock → RControl/ESC"
   manipulators:
