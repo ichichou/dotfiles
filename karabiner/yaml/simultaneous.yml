@@ -1,7 +1,7 @@
 title: Simultaneous
 rules:
 
-# Return
+# Return 1
 - description: "[Simul] V + M → Return"
   manipulators:
   - type: basic
@@ -9,6 +9,18 @@ rules:
       simultaneous:
       - key_code: v
       - key_code: m
+    to:
+    - key_code: return_or_enter
+      repeat: false
+
+# Return 2
+- description: "[Simul] V + N → Return"
+  manipulators:
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: v
+      - key_code: "n"
     to:
     - key_code: return_or_enter
       repeat: false
