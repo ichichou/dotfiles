@@ -37,9 +37,9 @@ noremap <Leader>u <C-^>
 cnoremap <C-n> <Down>
 cnoremap <C-p> <Up>
 
-inoremap <expr><CR>  pumvisible() ? "<C-y>" : "<CR>"
-inoremap <expr><C-n> pumvisible() ? "<Down>" : "<C-n>"
-inoremap <expr><C-p> pumvisible() ? "<Up>" : "<C-p>"
+" inoremap <expr><CR>  pumvisible() ? "<C-y>" : "<CR>"
+" inoremap <expr><C-n> pumvisible() ? "<Down>" : "<C-n>"
+" inoremap <expr><C-p> pumvisible() ? "<Up>" : "<C-p>"
 
 " set termwinkey=<C-g>
 " tnoremap <F1> <C-\><C-n>
