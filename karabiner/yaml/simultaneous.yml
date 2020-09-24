@@ -25,6 +25,18 @@ rules:
     - key_code: return_or_enter
       repeat: false
 
+# Return 3
+- description: "[Simul] C + M → Return"
+  manipulators:
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: c
+      - key_code: m
+    to:
+    - key_code: return_or_enter
+      repeat: false
+
 # # Delete
 # - description: "[Simul] N + M → Delete"
 #   manipulators:
