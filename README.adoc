@@ -132,7 +132,7 @@ sudo cp \
 * https://greasyfork.org/ja/scripts/14391-zenzawatch[ZenzaWatch] をインストールする。
 
 === TotalSpaces2
-NOTE: 現状、Catalina では TotalSpaces2 がうまく機能しない。
+NOTE: Catalina では TotalSpaces2 がうまく機能しない。動かす設定方法もあるようだがうまくいかなかった。使用しないのが無難。
 
 . Mac をリカバリーモードで起動し、Terminal で `$ csrutil disable` を実行する。
 . https://totalspaces.binaryage.com/[TotalSpaces2] をインストール。
