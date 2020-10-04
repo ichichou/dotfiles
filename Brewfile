@@ -34,6 +34,7 @@ brew "z"
 
 cask "alfred"
 cask "appcleaner"
+cask "aquaskk"
 cask "bettertouchtool"
 cask "bitwarden"
 cask "box-drive"
