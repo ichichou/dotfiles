@@ -58,6 +58,7 @@ AquaSKK のユーザー辞書はシンボリックリンクでは機能しない
 === Homebrew のインストール
 . `$ xcode-select --install` ：Command Line Tools をインストール（Xcode 自体は不要）。
 . https://brew.sh/[Homebrew 公式サイト]のコマンドを実行。
+** `$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"`
 
 === アプリケーションをインストール
 . App Store にサインイン（mas-cli 用）。
