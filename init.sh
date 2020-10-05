@@ -30,7 +30,7 @@ mkdir -p ${CONFIG}/git
 ln -snfv ${DOT}/.config/git/ignore ${CONFIG}/git/ignore
 
 mkdir -p ${CONFIG}/karabiner
-ln -snfv ${DOT}/.config/karabiner/karabiner.json ${CONFIG}/karabiner/karabiner.json
+ln -snfv ${DOT}/karabiner/complex_modifications/ ${CONFIG}/karabiner/assets/complex_modifications
 
 ## .vim
 mkdir -p ${VIM}/colors
