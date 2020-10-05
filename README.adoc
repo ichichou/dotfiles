@@ -182,7 +182,7 @@ NOTE: BetterTouchTool は設定ファイルをインポートせず、手動で�
 |3本指でスワイプダウン |kbd:[Command+W]
 |3本指で左にスワイプ |kbd:[Control+Tab]
 |3本指で右にスワイプ |kbd:[Shift+Control+Tab]
-|4本指でタップ |kbd:[Application Expose]
+|4本指でクリック |kbd:[Application Expose]
 |4本指で上にスワイプ |kbd:[Mission Control]
 |4本指で下にスワイプ |kbd:[Open Launchpad]
 
