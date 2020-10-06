@@ -275,3 +275,11 @@ rules:
     to:
     - shell_command: open -a "discord"
     conditions: *hyper_state
+
+  # G: Chatwork
+  - type: basic
+    from:
+      key_code: g
+    to:
+    - shell_command: open -a "chatwork"
+    conditions: *hyper_state
