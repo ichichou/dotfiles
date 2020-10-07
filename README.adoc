@@ -95,6 +95,15 @@ NOTE: `pm.sh` 自体は実行しない（うまく機能しないため）。以
 . Mac を再起動する。
 ** 再起動後、設定が反映されるまで少し時間がかかるかもしれない。
 
+NOTE: `macos.sh` の中には効き目が不明なものもあるため、下記のものだけ手動で設定している。
+
+* `defaults write -g InitialKeyRepeat -int 10`
+* `defaults write -g KeyRepeat -int 1`
+* `defaults write com.apple.dock expose-animation-duration -float 0`
+* `defaults write com.apple.dock autohide-time-modifier -float 0.15`
+* `defaults write com.apple.dock autohide-delay -float 0`
+* `defaults write com.apple.dock showhidden -bool true`
+
 == Mackup
 
 NOTE: 設定が反映されないアプリが一部あるため、Mackup は使わず、ひとまず手動で設定してみる。
@@ -143,14 +152,6 @@ NOTE: Catalina では TotalSpaces2 がうまく機能しない。動かす設定
 
 === Alfred
 * 「Google Search with Selected Text」のワークフローを設定。
-
-=== キーリピートを変更
-. {blank}
-+
-----
-defaults write -g InitialKeyRepeat -int 10
-defaults write -g KeyRepeat -int 1
-----
 
 === diff-highlight にパスを通す
 . {blank}
@@ -300,6 +301,9 @@ NOTE: `前の入力ソースを選択` はチェックを外しても、たび�
 |Minimize All |kbd:[Shift+Control+Option+Command+M]
 |Minimize |kbd:[Control+Option+Command+M]
 |===
+
+=== 入力ソース
+`U.S.` や `英語` を消すには、`日本語` の設定で `英字` にチェックを入れる。`U.S.` や `英語` を消したあとは `日本語` も消していい。
 
 == GitHub
 === 公開鍵・秘密鍵を生成
