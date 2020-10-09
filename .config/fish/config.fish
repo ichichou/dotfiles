@@ -23,8 +23,6 @@ else
 end
 
 alias b "brew"
-alias bc "brew cask"
-alias ch "open -a '/Applications/Google Chrome.app'"
 alias g "git"
 alias gu "gitup"
 alias j "z"
@@ -32,7 +30,6 @@ alias jl "jupyter lab"
 alias mvi "mvim --remote-silent"
 alias t "tmux"
 alias vi "vim"
-alias planck "cd ~/repos/qmk_firmware/; and make planck/ez:ichichou; and prevd"
 
 ## Keybinds
 bind -e \cl
