@@ -34,14 +34,14 @@ l*	＊
 ~	〜
 \	\
 |	|
--	-
+-	ー
 _	_
 =	＝
 +	＋
 ;	；
 :	：
-'	ー
-"	“”
+'	'
+"	"
 ,	、
 .	。
 <	＜
@@ -55,23 +55,30 @@ l\	\
 l|	|
 l-	—
 l_	_
-l=	＝
+l=	=
 l+	+
 l;	;
 l:	:
 l'	'
 l"	"
-l,	……
+l,	,
 l.	.
 l<	<
 l>	>
-l/	/
+l/	／
 l?	?
 
+ly	
+lu	
+li	……
+lo	
+lp	
 lh	←
-ll	→
-lk	↑
 lj	↓
+lk	↑
+ll	→
+ln	
+lm	
 ls	　
 lx	×
 
@@ -331,21 +338,20 @@ fyu	ふゅ
 fye	ふぇ
 fyo	ふょ
 
-la	ぁ
-li	ぃ
-lu	ぅ
-le	ぇ
-lo	ぉ
-lya	ゃ
-lyu	ゅ
-lyo	ょ
-lwa	ゎ
-
+xa	ぁ
+xi	ぃ
+xu	ぅ
+xe	ぇ
+xo	ぉ
+xya	ゃ
+xyu	ゅ
+xyo	ょ
+xwa	ゎ
 xka	ヵ
 xke	ヶ
 
-ltu	っ
-ltsu	っ
+xtu	っ
+xtsu	っ
 kk	っ	k
 ss	っ	s
 tt	っ	t
