@@ -1,0 +1,101 @@
+{
+  "title": "3. Vim",
+  "variables": [
+    {
+      "from/modifiers": {
+        "optional": [
+          "shift"
+        ]
+      }
+    },
+    {
+      "conditions": [
+        {
+          "type": "frontmost_application_if",
+          "bundle_identifiers": [
+            "^org//.vim//.MacVim$"
+          ]
+        }
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "description": "[Vim] I/A + J → I/A, Kana",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "simultaneous": [
+              {
+                "key_code": "i"
+              },
+              {
+                "key_code": "j"
+              }
+            ],
+            "modifiers": {
+              "optional": [
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "i",
+              "repeat": false
+            },
+            {
+              "key_code": "japanese_kana",
+              "repeat": false
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^org//.vim//.MacVim$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "simultaneous": [
+              {
+                "key_code": "a"
+              },
+              {
+                "key_code": "j"
+              }
+            ],
+            "modifiers": {
+              "optional": [
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "a",
+              "repeat": false
+            },
+            {
+              "key_code": "japanese_kana",
+              "repeat": false
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^org//.vim//.MacVim$"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

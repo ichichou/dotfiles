@@ -1,0 +1,101 @@
+{
+  "title": "4. Simultaneous",
+  "rules": [
+    {
+      "description": "[Simul] F + J → Return",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "simultaneous": [
+              {
+                "key_code": "f"
+              },
+              {
+                "key_code": "j"
+              }
+            ]
+          },
+          "to": [
+            {
+              "key_code": "return_or_enter",
+              "repeat": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[Simul] V + M → Return",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "simultaneous": [
+              {
+                "key_code": "v"
+              },
+              {
+                "key_code": "m"
+              }
+            ]
+          },
+          "to": [
+            {
+              "key_code": "return_or_enter",
+              "repeat": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[Simul] V + N → Return",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "simultaneous": [
+              {
+                "key_code": "v"
+              },
+              {
+                "key_code": "n"
+              }
+            ]
+          },
+          "to": [
+            {
+              "key_code": "return_or_enter",
+              "repeat": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[Simul] C + M → Return",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "simultaneous": [
+              {
+                "key_code": "c"
+              },
+              {
+                "key_code": "m"
+              }
+            ]
+          },
+          "to": [
+            {
+              "key_code": "return_or_enter",
+              "repeat": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
