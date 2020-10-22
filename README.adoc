@@ -337,12 +337,20 @@ id_rsa.pub
 . {blank}
 +
 ----
-$ ssh-add ~/.ssh/id_rsa
+$ ssh-add -K ~/.ssh/id_rsa
 
 Enter passphrase for /Users/{user}/.ssh/id_rsa:
 （パスフレーズを入力）
 
 Identity added: /Users/{user}/.ssh/id_rsa ({local host})
+----
+
+. `$ vim ~/.ssh/config` で以下を追加。
++
+----
+Host *
+  UseKeychain yes
+  AddKeysToAgent yes
 ----
 
 === 公開鍵を GitHub に登録
