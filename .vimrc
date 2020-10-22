@@ -178,6 +178,10 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
+" Vim-Polyglot
+" --------------------
+let g:polyglot_disabled = ['markdown', 'csv']
+
 " General
 " --------------------
 Plug 'LeafCage/yankround.vim'
