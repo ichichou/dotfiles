@@ -21,6 +21,36 @@
   ],
   "rules": [
     {
+      "description": "[Vim] Control-C → ESC, Eisuu",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "c",
+            "modifiers": "control"
+          },
+          "to": [
+            {
+              "key_code": "escape",
+              "repeat": false
+            },
+            {
+              "key_code": "japanese_eisuu",
+              "repeat": false
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^org//.vim//.MacVim$"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "description": "[Vim] I/A + J → I/A, Kana",
       "manipulators": [
         {
