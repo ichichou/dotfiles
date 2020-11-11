@@ -1,6 +1,6 @@
 title: "3. Vim"
 
-# ===== Aliases =====
+# ----- Aliases -----
 
 variables:
 
@@ -13,7 +13,7 @@ variables:
     bundle_identifiers:
     - "^org//.vim//.MacVim$"
 
-# ===== Rules =====
+# ----- Rules -----
 
 rules:
 
