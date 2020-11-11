@@ -17,6 +17,19 @@ variables:
 
 rules:
 
+- description: "[Vim] Control-C → ESC, Eisuu"
+  manipulators:
+  - type: basic
+    from:
+      key_code: c
+      modifiers: control
+    to:
+    - key_code: escape
+      repeat: false
+    - key_code: japanese_eisuu
+      repeat: false
+    conditions: *vim
+
 - description: "[Vim] I/A + J → I/A, Kana"
   manipulators:
   # I + J
@@ -45,17 +58,3 @@ rules:
     - key_code: japanese_kana
       repeat: false
     conditions: *vim
-
-# - description: "[Vim] RControl + L → ESC, Eisuu"
-#   manipulators:
-#   - type: basic
-#     from:
-#       simultaneous:
-#       - key_code: right_control
-#       - key_code: l
-#     to:
-#     - key_code: escape
-#       repeat: false
-#     - key_code: japanese_eisuu
-#       repeat: false
-#     conditions: *vim
