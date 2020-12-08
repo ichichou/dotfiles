@@ -1,18 +1,6 @@
 title: "4. Simultaneous"
 rules:
 
-# Return (middle)
-- description: "[Simul] F + J → Return"
-  manipulators:
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: f
-      - key_code: j
-    to:
-    - key_code: return_or_enter
-      repeat: false
-
 # Return (lower 1)
 - description: "[Simul] V + M → Return"
   manipulators:
@@ -48,29 +36,3 @@ rules:
     to:
     - key_code: return_or_enter
       repeat: false
-
-# # Delete
-# - description: "[Simul] N + M → Delete"
-#   manipulators:
-#   - type: basic
-#     from:
-#       simultaneous:
-#       - key_code: "n"
-#       - key_code: m
-#     to:
-#     - key_code: delete_or_backspace
-#       repeat: true
-
-# # Fn-Delete
-# - description: "[Simul] V + B → Fn-Delete"
-#   manipulators:
-#   - type: basic
-#     from:
-#       simultaneous:
-#       - key_code: v
-#       - key_code: b
-#     to:
-#     - key_code: delete_or_backspace
-#       modifiers:
-#       - fn
-#       repeat: true
