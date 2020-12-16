@@ -4540,6 +4540,56 @@
           "from": {
             "simultaneous": [
               {
+                "key_code": "s"
+              },
+              {
+                "key_code": "quote"
+              }
+            ],
+            "modifiers": {
+              "optional": [
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "quote",
+              "repeat": false
+            }
+          ],
+          "conditions": [
+            {
+              "type": "input_source_if",
+              "input_sources": [
+                {
+                  "language": "ja"
+                }
+              ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "kana_layout_invalid",
+              "value": 1
+            },
+            {
+              "type": "variable_unless",
+              "name": "symbol_mode",
+              "value": 1
+            },
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.apple\\.loginwindow$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "simultaneous": [
+              {
                 "key_code": "i"
               },
               {
@@ -9072,7 +9122,7 @@
           },
           "to": [
             {
-              "key_code": "hyphen",
+              "key_code": "quote",
               "repeat": false
             }
           ],
@@ -9600,9 +9650,38 @@
         {
           "type": "basic",
           "from": {
+            "key_code": "quote"
+          },
+          "to": [
+            {
+              "key_code": "l",
+              "repeat": false
+            },
+            {
+              "key_code": "quote",
+              "repeat": false
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "symbol_mode",
+              "value": 1
+            },
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.apple\\.loginwindow$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
             "key_code": "quote",
             "modifiers": {
-              "optional": [
+              "mandatory": [
                 "shift"
               ]
             }
@@ -9610,6 +9689,9 @@
           "to": [
             {
               "key_code": "quote",
+              "modifiers": [
+                "shift"
+              ],
               "repeat": false
             }
           ],
