@@ -209,15 +209,95 @@ rules:
 
 # ----- Apps -----
 
-- description: "[Hyper] Hyper - Alphabets → アプリケーションを起動"
+- description: "[Hyper] Hyper - Alpha Keys → アプリケーションを起動"
   manipulators:
 
-  # F: Finder
+  # A: Finder
+  - type: basic
+    from:
+      key_code: a
+    to:
+    - shell_command: open -a "finder"
+    conditions: *hyper_state
+
+  # S: Slack
+  - type: basic
+    from:
+      key_code: s
+    to:
+    - shell_command: open -a "slack"
+    conditions: *hyper_state
+
+  # D: Chatwork
+  - type: basic
+    from:
+      key_code: d
+    to:
+    - shell_command: open -a "chatwork"
+    conditions: *hyper_state
+
+  # F: (Not recommended)
   - type: basic
     from:
       key_code: f
     to:
-    - shell_command: open -a "finder"
+    - shell_command: open -a ""
+    conditions: *hyper_state
+
+  # G: (Not recommended)
+  - type: basic
+    from:
+      key_code: g
+    to:
+    - shell_command: open -a ""
+    conditions: *hyper_state
+
+  # H: Superhuman
+  - type: basic
+    from:
+      key_code: h
+    to:
+    - shell_command: open -a "superhuman"
+    conditions: *hyper_state
+
+  # J: Trello
+  - type: basic
+    from:
+      key_code: j
+    to:
+    - shell_command: open -a "trello"
+    conditions: *hyper_state
+
+  # K: 
+  - type: basic
+    from:
+      key_code: k
+    to:
+    - shell_command: open -a ""
+    conditions: *hyper_state
+
+  # L: Terminal
+  - type: basic
+    from:
+      key_code: l
+    to:
+    - shell_command: open -a "terminal"
+    conditions: *hyper_state
+
+  # Semicolon: 
+  - type: basic
+    from:
+      key_code: semicolon
+    to:
+    - shell_command: open -a ""
+    conditions: *hyper_state
+
+  # Z: Bitwarden
+  - type: basic
+    from:
+      key_code: z
+    to:
+    - shell_command: open -a "bitwarden"
     conditions: *hyper_state
 
   # X: Textwell
@@ -236,50 +316,58 @@ rules:
     - shell_command: open -a "google chrome"
     conditions: *hyper_state
 
-  # A: Terminal
-  - type: basic
-    from:
-      key_code: a
-    to:
-    - shell_command: open -a "terminal"
-    conditions: *hyper_state
-
-  # V: Vim
+  # V: (Not recommended)
   - type: basic
     from:
       key_code: v
     to:
-    - shell_command: open -a "macvim"
+    - shell_command: open -a ""
     conditions: *hyper_state
 
-  # B: Visual Studio Code
+  # B: (Not recommended)
   - type: basic
     from:
       key_code: b
     to:
+    - shell_command: open -a ""
+    conditions: *hyper_state
+
+  # N: Visual Studio Code
+  - type: basic
+    from:
+      key_code: "n"
+    to:
     - shell_command: open -a "visual studio code"
     conditions: *hyper_state
 
-  # S: Slack
+  # M: MacVim
   - type: basic
     from:
-      key_code: s
+      key_code: m
     to:
-    - shell_command: open -a "slack"
+    - shell_command: open -a "macvim"
     conditions: *hyper_state
 
-  # D: Discord
+  # Comma: 
   - type: basic
     from:
-      key_code: d
+      key_code: comma
     to:
-    - shell_command: open -a "discord"
+    - shell_command: open -a ""
     conditions: *hyper_state
 
-  # G: Chatwork
+  # Period: 
   - type: basic
     from:
-      key_code: g
+      key_code: period
     to:
-    - shell_command: open -a "chatwork"
+    - shell_command: open -a ""
+    conditions: *hyper_state
+
+  # Slash: 
+  - type: basic
+    from:
+      key_code: slash
+    to:
+    - shell_command: open -a ""
     conditions: *hyper_state
