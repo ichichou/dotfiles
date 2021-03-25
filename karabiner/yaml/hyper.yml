@@ -207,7 +207,7 @@ rules:
       modifiers: *hyper_key
     conditions: *hyper_state
 
-# ----- Apps -----
+# ----- A-Semicolon -----
 
 - description: "[Hyper] Hyper - Alpha Keys → アプリケーションを起動"
   manipulators:
@@ -292,6 +292,8 @@ rules:
     - shell_command: open -a ""
     conditions: *hyper_state
 
+# ----- Z-Slash -----
+
   # Z: Bitwarden
   - type: basic
     from:
@@ -370,4 +372,16 @@ rules:
       key_code: slash
     to:
     - shell_command: open -a ""
+    conditions: *hyper_state
+
+# ----- Spacebar -----
+
+  - type: basic
+    from:
+      key_code: spacebar
+    to:
+    - key_code: spacebar
+      modifiers:
+      - control
+      - option
     conditions: *hyper_state
