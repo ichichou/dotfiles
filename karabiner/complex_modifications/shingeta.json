@@ -1,5 +1,5 @@
 {
-  "title": "9. 新下駄配列",
+  "title": "11. 新下駄配列",
   "aliases": [
     {
       "from/modifiers": {
@@ -47,32 +47,12 @@
     {
       "conditions": [
         {
-          "type": "variable_if",
-          "name": "symbol_mode",
-          "value": 1
-        },
-        {
-          "type": "frontmost_application_unless",
-          "bundle_identifiers": [
-            "^com\\.apple\\.loginwindow$"
-          ]
-        }
-      ]
-    },
-    {
-      "conditions": [
-        {
           "type": "input_source_if",
           "input_sources": [
             {
               "language": "ja"
             }
           ]
-        },
-        {
-          "type": "variable_unless",
-          "name": "kana_layout_invalid",
-          "value": 1
         },
         {
           "type": "variable_unless",
@@ -90,388 +70,8 @@
   ],
   "rules": [
     {
-      "description": "[Kana-input] 新下駄配列",
+      "description": "[Kana Input] 新下駄配列",
       "manipulators": [
-        {
-          "type": "basic",
-          "from": {
-            "simultaneous": [
-              {
-                "key_code": "r"
-              },
-              {
-                "key_code": "f"
-              }
-            ]
-          },
-          "to": [
-            {
-              "key_code": "slash",
-              "repeat": false
-            }
-          ],
-          "conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "symbol_mode",
-              "value": 1
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "simultaneous": [
-              {
-                "key_code": "r"
-              },
-              {
-                "key_code": "g"
-              }
-            ]
-          },
-          "to": [
-            {
-              "key_code": "slash",
-              "repeat": false
-            }
-          ],
-          "conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "symbol_mode",
-              "value": 1
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "simultaneous": [
-              {
-                "key_code": "f"
-              },
-              {
-                "key_code": "v"
-              }
-            ]
-          },
-          "to": [
-            {
-              "key_code": "1",
-              "modifiers": [
-                "shift"
-              ],
-              "repeat": false
-            }
-          ],
-          "conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "symbol_mode",
-              "value": 1
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "simultaneous": [
-              {
-                "key_code": "f"
-              },
-              {
-                "key_code": "b"
-              }
-            ]
-          },
-          "to": [
-            {
-              "key_code": "1",
-              "modifiers": [
-                "shift"
-              ],
-              "repeat": false
-            }
-          ],
-          "conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "symbol_mode",
-              "value": 1
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "simultaneous": [
-              {
-                "key_code": "u"
-              },
-              {
-                "key_code": "j"
-              }
-            ]
-          },
-          "to": [
-            {
-              "key_code": "l",
-              "repeat": false
-            },
-            {
-              "key_code": "slash",
-              "repeat": false
-            }
-          ],
-          "conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "symbol_mode",
-              "value": 1
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "simultaneous": [
-              {
-                "key_code": "u"
-              },
-              {
-                "key_code": "h"
-              }
-            ]
-          },
-          "to": [
-            {
-              "key_code": "l",
-              "repeat": false
-            },
-            {
-              "key_code": "slash",
-              "repeat": false
-            }
-          ],
-          "conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "symbol_mode",
-              "value": 1
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "simultaneous": [
-              {
-                "key_code": "j"
-              },
-              {
-                "key_code": "m"
-              }
-            ]
-          },
-          "to": [
-            {
-              "key_code": "slash",
-              "modifiers": [
-                "shift"
-              ],
-              "repeat": false
-            }
-          ],
-          "conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "symbol_mode",
-              "value": 1
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "simultaneous": [
-              {
-                "key_code": "j"
-              },
-              {
-                "key_code": "n"
-              }
-            ]
-          },
-          "to": [
-            {
-              "key_code": "slash",
-              "modifiers": [
-                "shift"
-              ],
-              "repeat": false
-            }
-          ],
-          "conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "symbol_mode",
-              "value": 1
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
         {
           "type": "basic",
           "from": {
@@ -507,11 +107,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -564,11 +159,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -615,11 +205,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -672,11 +257,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -723,11 +303,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -780,11 +355,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -831,11 +401,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -888,11 +453,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -939,11 +499,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -996,11 +551,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -1047,11 +597,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -1104,11 +649,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -1155,11 +695,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -1212,11 +747,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -1263,11 +793,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -1320,11 +845,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -1371,11 +891,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -1428,11 +943,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -1479,11 +989,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -1536,11 +1041,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -1586,11 +1086,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -1633,11 +1128,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -1690,11 +1180,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -1741,11 +1226,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -1798,11 +1278,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -1849,11 +1324,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -1906,11 +1376,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -1957,11 +1422,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -2014,11 +1474,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -2065,11 +1520,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -2122,11 +1572,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -2176,11 +1621,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -2227,11 +1667,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -2288,11 +1723,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -2335,11 +1765,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -2388,11 +1813,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -2435,11 +1855,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -2488,11 +1903,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -2535,11 +1945,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -2592,11 +1997,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -2643,11 +2043,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -2700,11 +2095,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -2751,11 +2141,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -2808,11 +2193,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -2859,11 +2239,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -2916,11 +2291,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -2967,11 +2337,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -3024,11 +2389,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -3075,11 +2435,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -3132,11 +2487,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -3183,11 +2533,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -3244,11 +2589,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -3299,11 +2639,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -3360,11 +2695,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -3415,11 +2745,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -3476,11 +2801,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -3531,11 +2851,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -3592,11 +2907,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -3643,11 +2953,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -3700,11 +3005,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -3751,11 +3051,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -3808,11 +3103,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -3859,11 +3149,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -3916,11 +3201,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -3970,11 +3250,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -4021,11 +3296,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -4078,11 +3348,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -4129,11 +3394,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -4190,11 +3450,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -4248,11 +3503,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -4306,11 +3556,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -4341,7 +3586,7 @@
           },
           "to": [
             {
-              "key_code": "l",
+              "key_code": "backslash",
               "repeat": false
             },
             {
@@ -4357,11 +3602,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -4413,11 +3653,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -4463,11 +3698,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -4519,11 +3749,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -4574,11 +3799,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -4635,11 +3855,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -4690,11 +3905,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -4751,11 +3961,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -4806,11 +4011,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -4867,11 +4067,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -4922,11 +4117,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -4983,11 +4173,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -5038,11 +4223,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -5099,11 +4279,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -5157,11 +4332,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -5212,11 +4382,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -5273,11 +4438,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -5328,11 +4488,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -5389,11 +4544,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -5444,11 +4594,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -5505,11 +4650,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -5560,11 +4700,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -5621,11 +4756,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -5676,11 +4806,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -5737,11 +4862,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -5792,11 +4912,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -5853,11 +4968,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -5908,11 +5018,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -5969,11 +5074,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -6024,11 +5124,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -6085,11 +5180,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -6143,11 +5233,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -6198,11 +5283,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -6259,11 +5339,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -6314,11 +5389,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -6375,11 +5445,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -6430,11 +5495,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -6491,11 +5551,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -6546,11 +5601,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -6607,11 +5657,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -6662,11 +5707,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -6723,11 +5763,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -6778,11 +5813,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -6839,11 +5869,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -6894,11 +5919,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -6955,11 +5975,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -7010,11 +6025,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -7071,11 +6081,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -7129,11 +6134,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -7184,11 +6184,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -7245,11 +6240,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -7300,11 +6290,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -7361,11 +6346,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -7412,11 +6392,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -7469,11 +6444,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -7520,11 +6490,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -7577,11 +6542,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -7628,11 +6588,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -7689,11 +6644,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -7732,11 +6682,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -7772,11 +6717,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -7822,11 +6762,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -7866,11 +6801,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -7916,11 +6846,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -7960,11 +6885,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -8010,11 +6930,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -8054,11 +6969,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -8104,11 +7014,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -8148,11 +7053,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -8198,11 +7098,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -8242,11 +7137,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -8292,11 +7182,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -8336,11 +7221,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -8386,11 +7266,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -8430,11 +7305,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -8480,11 +7350,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -8524,11 +7389,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -8574,11 +7434,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -8618,11 +7473,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -8668,11 +7518,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -8712,11 +7557,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -8762,11 +7602,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -8806,11 +7641,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -8856,11 +7686,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -8903,11 +7728,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -8947,11 +7767,6 @@
                   "language": "ja"
                 }
               ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
             },
             {
               "type": "variable_unless",
@@ -9001,8 +7816,41 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
+              "name": "symbol_mode",
               "value": 1
+            },
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.apple\\.loginwindow$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "r",
+            "modifiers": {
+              "optional": [
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "comma",
+              "repeat": false
+            }
+          ],
+          "conditions": [
+            {
+              "type": "input_source_if",
+              "input_sources": [
+                {
+                  "language": "ja"
+                }
+              ]
             },
             {
               "type": "variable_unless",
@@ -9044,11 +7892,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -9087,775 +7930,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "symbol_mode",
-              "value": 1
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "r",
-            "modifiers": {
-              "optional": [
-                "shift"
-              ]
-            }
-          },
-          "to_if_alone": [
-            {
-              "key_code": "comma",
-              "repeat": false
-            }
-          ],
-          "to": [
-            {
-              "set_variable": {
-                "name": "symbol_mode",
-                "value": 1
-              }
-            }
-          ],
-          "to_after_key_up": [
-            {
-              "set_variable": {
-                "name": "symbol_mode",
-                "value": 0
-              }
-            }
-          ],
-          "conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "kana_layout_invalid",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "symbol_mode",
-              "value": 1
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "u"
-          },
-          "to": [
-            {
-              "key_code": "l",
-              "repeat": false
-            },
-            {
-              "key_code": "hyphen",
-              "repeat": false
-            }
-          ],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "symbol_mode",
-              "value": 1
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "i"
-          },
-          "to": [
-            {
-              "key_code": "l",
-              "repeat": false
-            },
-            {
-              "key_code": "i",
-              "repeat": false
-            }
-          ],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "symbol_mode",
-              "value": 1
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "o"
-          },
-          "to": [
-            {
-              "key_code": "semicolon",
-              "modifiers": [
-                "shift"
-              ],
-              "repeat": false
-            }
-          ],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "symbol_mode",
-              "value": 1
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "h"
-          },
-          "to": [
-            {
-              "key_code": "l",
-              "repeat": false
-            },
-            {
-              "key_code": "h",
-              "repeat": false
-            }
-          ],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "symbol_mode",
-              "value": 1
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "j"
-          },
-          "to": [
-            {
-              "key_code": "l",
-              "repeat": false
-            },
-            {
-              "key_code": "j",
-              "repeat": false
-            }
-          ],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "symbol_mode",
-              "value": 1
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "k"
-          },
-          "to": [
-            {
-              "key_code": "l",
-              "repeat": false
-            },
-            {
-              "key_code": "k",
-              "repeat": false
-            }
-          ],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "symbol_mode",
-              "value": 1
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "l"
-          },
-          "to": [
-            {
-              "key_code": "l",
-              "repeat": false
-            },
-            {
-              "key_code": "l",
-              "repeat": false
-            }
-          ],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "symbol_mode",
-              "value": 1
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "n"
-          },
-          "to": [
-            {
-              "key_code": "l",
-              "repeat": false
-            },
-            {
-              "key_code": "s",
-              "repeat": false
-            }
-          ],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "symbol_mode",
-              "value": 1
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "m"
-          },
-          "to": [
-            {
-              "key_code": "l",
-              "repeat": false
-            },
-            {
-              "key_code": "x",
-              "repeat": false
-            }
-          ],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "symbol_mode",
-              "value": 1
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "s"
-          },
-          "to": [
-            {
-              "key_code": "l",
-              "repeat": false
-            },
-            {
-              "key_code": "s",
-              "repeat": false
-            }
-          ],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "symbol_mode",
-              "value": 1
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "x"
-          },
-          "to": [
-            {
-              "key_code": "l",
-              "repeat": false
-            },
-            {
-              "key_code": "x",
-              "repeat": false
-            }
-          ],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "symbol_mode",
-              "value": 1
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "comma"
-          },
-          "to": [
-            {
-              "key_code": "l",
-              "repeat": false
-            },
-            {
-              "key_code": "comma",
-              "repeat": false
-            }
-          ],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "symbol_mode",
-              "value": 1
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "period"
-          },
-          "to": [
-            {
-              "key_code": "l",
-              "repeat": false
-            },
-            {
-              "key_code": "period",
-              "repeat": false
-            }
-          ],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "symbol_mode",
-              "value": 1
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "slash"
-          },
-          "to": [
-            {
-              "key_code": "l",
-              "repeat": false
-            },
-            {
-              "key_code": "slash",
-              "repeat": false
-            }
-          ],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "symbol_mode",
-              "value": 1
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "semicolon",
-            "modifiers": {
-              "optional": [
-                "shift"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "semicolon",
-              "repeat": false
-            }
-          ],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "symbol_mode",
-              "value": 1
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "quote"
-          },
-          "to": [
-            {
-              "key_code": "l",
-              "repeat": false
-            },
-            {
-              "key_code": "quote",
-              "repeat": false
-            }
-          ],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "symbol_mode",
-              "value": 1
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "quote",
-            "modifiers": {
-              "mandatory": [
-                "shift"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "quote",
-              "modifiers": [
-                "shift"
-              ],
-              "repeat": false
-            }
-          ],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "symbol_mode",
-              "value": 1
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "open_bracket",
-            "modifiers": {
-              "optional": [
-                "shift"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "l",
-              "repeat": false
-            },
-            {
-              "key_code": "open_bracket",
-              "repeat": false
-            }
-          ],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "symbol_mode",
-              "value": 1
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "close_bracket",
-            "modifiers": {
-              "optional": [
-                "shift"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "l",
-              "repeat": false
-            },
-            {
-              "key_code": "close_bracket",
-              "repeat": false
-            }
-          ],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "symbol_mode",
-              "value": 1
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "9",
-            "modifiers": {
-              "mandatory": [
-                "shift"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "l",
-              "repeat": false
-            },
-            {
-              "key_code": "9",
-              "modifiers": [
-                "shift"
-              ],
-              "repeat": false
-            }
-          ],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "symbol_mode",
-              "value": 1
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "0",
-            "modifiers": {
-              "mandatory": [
-                "shift"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "l",
-              "repeat": false
-            },
-            {
-              "key_code": "0",
-              "repeat": false,
-              "modifiers": [
-                "shift"
-              ]
-            }
-          ],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "symbol_mode",
-              "value": 1
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "8",
-            "modifiers": {
-              "mandatory": [
-                "shift"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "l",
-              "repeat": false
-            },
-            {
-              "key_code": "8",
-              "modifiers": [
-                "shift"
-              ],
-              "repeat": false
-            }
-          ],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "symbol_mode",
-              "value": 1
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "hyphen"
-          },
-          "to": [
-            {
-              "key_code": "l",
-              "repeat": false
-            },
-            {
-              "key_code": "hyphen",
-              "repeat": false
-            }
-          ],
-          "conditions": [
-            {
-              "type": "variable_if",
               "name": "symbol_mode",
               "value": 1
             },
