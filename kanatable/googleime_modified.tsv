@@ -1,60 +1,31 @@
-!	！
+!	!
 @	@
 #	#
 $	$
-%	％
+%	%
 ^	^
-&	＆
+&	&
 *	*
-
-l!	!
-l@	@
-l#	#
-l$	$
-l%	%
-l^	^
-l&	&
-l*	＊
 
 -	-
 _	_
-=	＝
-+	＋
+=	=
++	+
 `	`
-~	〜
-\	\
+~	~
+\		\
 |	|
-
-l-	—
-l_	_
-l=	=
-l+	+
-l`	`
-l~	~
-l\	\
-l|	|
 
 ,	、
 .	。
-<	＜
->	＞
-/	・
-?	？
-;	；
-:	：
+<	<
+>	>
+/	/
+?	?
+;	;
+:	:
 '	ー
-"	"
-
-l,	,
-l.	.
-l<	<
-l>	>
-l/	／
-l?	?
-l;	;
-l:	:
-l'	'
-l"	"
+"	・
 
 [	「
 ]	」
@@ -63,26 +34,34 @@ l"	"
 (	（
 )	）
 
-l[	〈
-l]	〉
-l{	【
-l}	】
-l(	“
-l)	”
+\[	〈
+\]	〉
+\{	【
+\}	】
+\(	“
+\)	”
 
-ly	
-lu	
-li	……
-lo	
-lp	
-lh	←
-lj	↓
-lk	↑
-ll	→
-ln	
-lm	
-ls	　
-lx	×
+\y	・
+\u	—
+\i	…
+\o	：
+\p	〜
+\h	←
+\j	↓
+\k	↑
+\l	→
+\;	;
+\:	:
+\'	'
+\"	"
+\n	×
+\m	　
+\,	,
+\.	.
+\<	！
+\>	？
+\/	/
+\?	?
 
 a	あ
 i	い
@@ -145,6 +124,7 @@ we	うぇ
 wo	を
 
 nn	ん
+n	ん
 
 ga	が
 gi	ぎ
@@ -274,59 +254,11 @@ vu	ゔ
 ve	ゔぇ
 vo	ゔぉ
 
-kwa	くぁ
-kwi	くぃ
-kwu	くぅ
-kwe	くぇ
-kwo	くぉ
-
-gwa	ぐぁ
-gwi	ぐぃ
-gwu	ぐぅ
-gwe	ぐぇ
-gwo	ぐぉ
-
-swa	すぁ
-swi	すぃ
-swu	すぅ
-swe	すぇ
-swo	すぉ
-
-zwa	ずぁ
-zwi	ずぃ
-zwu	ずぅ
-zwe	ずぇ
-zwo	ずぉ
-
-tsa	つぁ
-tsi	つぃ
-tsu	つ
-tse	つぇ
-tso	つぉ
-
-tha	てゃ
-thi	てぃ
-thu	てゅ
-the	てぇ
-tho	てょ
-
-dha	でゃ
-dhi	でぃ
-dhu	でゅ
-dhe	でぇ
-dho	でょ
-
-twa	とぁ
-twi	とぃ
-twu	とぅ
-twe	とぇ
-two	とぉ
-
-dwa	どぁ
-dwi	どぃ
-dwu	どぅ
-dwe	どぇ
-dwo	どぉ
+vya	ゔゃ
+vyi	ゔぃ
+vyu	ゔゅ
+vye	ゔぇ
+vyo	ゔょ
 
 fa	ふぁ
 fi	ふぃ
@@ -340,9 +272,73 @@ fyu	ふゅ
 fye	ふぇ
 fyo	ふょ
 
+kwa	くぁ
+kwi	くぃ
+kwu	くぅ
+kwe	くぇ
+kwo	くぉ
+
+swa	すぁ
+swi	すぃ
+swu	すぅ
+swe	すぇ
+swo	すぉ
+
+tsa	つぁ
+tsi	つぃ
+tsu	つ
+tse	つぇ
+tso	つぉ
+
+tha	てゃ
+thi	てぃ
+thu	てゅ
+the	てぇ
+tho	てょ
+
+twa	とぁ
+twi	とぃ
+twu	とぅ
+twe	とぇ
+two	とぉ
+
+gwa	ぐぁ
+gwi	ぐぃ
+gwu	ぐぅ
+gwe	ぐぇ
+gwo	ぐぉ
+
+zwa	ずぁ
+zwi	ずぃ
+zwu	ずぅ
+zwe	ずぇ
+zwo	ずぉ
+
+dsa	づぁ
+dsi	づぃ
+dsu	づ
+dse	づぇ
+dso	づぉ
+
+dha	でゃ
+dhi	でぃ
+dhu	でゅ
+dhe	でぇ
+dho	でょ
+
+dwa	どぁ
+dwi	どぃ
+dwu	どぅ
+dwe	どぇ
+dwo	どぉ
+
 xya	ゃ
 xyu	ゅ
 xyo	ょ
+
+lya	ゃ
+lyu	ゅ
+lyo	ょ
 
 xa	ぁ
 xi	ぃ
@@ -350,12 +346,26 @@ xu	ぅ
 xe	ぇ
 xo	ぉ
 
+la	ぁ
+li	ぃ
+lu	ぅ
+le	ぇ
+lo	ぉ
+
 xwa	ゎ
 xka	ヵ
 xke	ヶ
 
+lwa	ゎ
+lka	ヵ
+lke	ヶ
+
 xtu	っ
 xtsu	っ
+
+ltu	っ
+ltsu	っ
+
 kk	っ	k
 ss	っ	s
 tt	っ	t
@@ -369,6 +379,9 @@ zz	っ	z
 dd	っ	d
 bb	っ	b
 pp	っ	p
+cc	っ	c
 jj	っ	j
 vv	っ	v
 ff	っ	f
+xx	っ	x
+ll	っ	l
