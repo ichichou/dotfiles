@@ -1,6 +1,6 @@
-title: "1. Finder"
+title: "01. Finder"
 
-# ---------- Aliases ----------
+# ===== Aliases =====
 
 variables:
 
@@ -13,7 +13,7 @@ variables:
     bundle_identifiers:
     - "^com\\.apple\\.finder$"
 
-# ---------- Rules ----------
+# ===== Rules =====
 
 rules:
 

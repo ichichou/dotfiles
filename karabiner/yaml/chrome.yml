@@ -1,6 +1,6 @@
-title: "2. Google Chrome"
+title: "02. Google Chrome"
 
-# ---------- Aliases ----------
+# ===== Aliases =====
 
 variables:
 
@@ -13,7 +13,7 @@ variables:
     bundle_identifiers:
     - "^com\\.google\\.Chrome$"
 
-# ---------- Rules ----------
+# ===== Rules =====
 
 rules:
 
