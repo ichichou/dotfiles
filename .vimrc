@@ -5,7 +5,7 @@
 set encoding=utf-8
 scriptencoding utf-8
 set fileencoding=utf-8
-set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
+set fileencodings=utf-8,sjis,euc-jp,iso-2022-jp,cp932
 set fileformats=unix,dos,mac
 
 filetype plugin indent on
