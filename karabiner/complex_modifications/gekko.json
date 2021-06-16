@@ -862,902 +862,6 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "l",
-            "modifiers": {
-              "optional": [
-                "shift"
-              ]
-            }
-          },
-          "to": [
-            {
-              "set_variable": {
-                "name": "dakuon",
-                "value": 1
-              }
-            }
-          ],
-          "to_delayed_action": {
-            "to_if_invoked": [
-              {
-                "set_variable": {
-                  "name": "dakuon",
-                  "value": 0
-                }
-              }
-            ],
-            "to_if_canceled": [
-              {
-                "set_variable": {
-                  "name": "dakuon",
-                  "value": 0
-                }
-              }
-            ]
-          },
-          "conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "symbol_mode",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "shift",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "dakuon",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "handakuon",
-              "value": 1
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "l",
-            "modifiers": {
-              "optional": [
-                "shift"
-              ]
-            }
-          },
-          "to": [
-            {
-              "set_variable": {
-                "name": "shift",
-                "value": 1
-              }
-            },
-            {
-              "set_variable": {
-                "name": "dakuon",
-                "value": 1
-              }
-            }
-          ],
-          "to_delayed_action": {
-            "to_if_invoked": [
-              {
-                "set_variable": {
-                  "name": "shift",
-                  "value": 0
-                }
-              },
-              {
-                "set_variable": {
-                  "name": "dakuon",
-                  "value": 0
-                }
-              }
-            ],
-            "to_if_canceled": [
-              {
-                "set_variable": {
-                  "name": "shift",
-                  "value": 0
-                }
-              },
-              {
-                "set_variable": {
-                  "name": "dakuon",
-                  "value": 0
-                }
-              }
-            ]
-          },
-          "conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "symbol_mode",
-              "value": 1
-            },
-            {
-              "type": "variable_if",
-              "name": "shift",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "dakuon",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "handakuon",
-              "value": 1
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "slash",
-            "modifiers": {
-              "optional": [
-                "shift"
-              ]
-            }
-          },
-          "to": [
-            {
-              "set_variable": {
-                "name": "handakuon",
-                "value": 1
-              }
-            }
-          ],
-          "to_delayed_action": {
-            "to_if_invoked": [
-              {
-                "set_variable": {
-                  "name": "handakuon",
-                  "value": 0
-                }
-              }
-            ],
-            "to_if_canceled": [
-              {
-                "set_variable": {
-                  "name": "handakuon",
-                  "value": 0
-                }
-              }
-            ]
-          },
-          "conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "symbol_mode",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "shift",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "dakuon",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "handakuon",
-              "value": 1
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "slash",
-            "modifiers": {
-              "optional": [
-                "shift"
-              ]
-            }
-          },
-          "to": [
-            {
-              "set_variable": {
-                "name": "shift",
-                "value": 1
-              }
-            },
-            {
-              "set_variable": {
-                "name": "handakuon",
-                "value": 1
-              }
-            }
-          ],
-          "to_delayed_action": {
-            "to_if_invoked": [
-              {
-                "set_variable": {
-                  "name": "shift",
-                  "value": 0
-                }
-              },
-              {
-                "set_variable": {
-                  "name": "handakuon",
-                  "value": 0
-                }
-              }
-            ],
-            "to_if_canceled": [
-              {
-                "set_variable": {
-                  "name": "shift",
-                  "value": 0
-                }
-              },
-              {
-                "set_variable": {
-                  "name": "handakuon",
-                  "value": 0
-                }
-              }
-            ]
-          },
-          "conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "symbol_mode",
-              "value": 1
-            },
-            {
-              "type": "variable_if",
-              "name": "shift",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "dakuon",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "handakuon",
-              "value": 1
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "d",
-            "modifiers": {
-              "optional": [
-                "shift"
-              ]
-            }
-          },
-          "to": [
-            {
-              "set_variable": {
-                "name": "left_shift",
-                "value": 1
-              }
-            },
-            {
-              "set_variable": {
-                "name": "shift",
-                "value": 1
-              }
-            },
-            {
-              "set_variable": {
-                "name": "dakuon",
-                "value": 1
-              }
-            }
-          ],
-          "to_delayed_action": {
-            "to_if_invoked": [
-              {
-                "set_variable": {
-                  "name": "left_shift",
-                  "value": 0
-                }
-              },
-              {
-                "set_variable": {
-                  "name": "shift",
-                  "value": 0
-                }
-              },
-              {
-                "set_variable": {
-                  "name": "dakuon",
-                  "value": 0
-                }
-              }
-            ],
-            "to_if_canceled": [
-              {
-                "set_variable": {
-                  "name": "left_shift",
-                  "value": 0
-                }
-              },
-              {
-                "set_variable": {
-                  "name": "shift",
-                  "value": 0
-                }
-              },
-              {
-                "set_variable": {
-                  "name": "dakuon",
-                  "value": 0
-                }
-              }
-            ]
-          },
-          "conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "symbol_mode",
-              "value": 1
-            },
-            {
-              "type": "variable_if",
-              "name": "dakuon",
-              "value": 1
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "d",
-            "modifiers": {
-              "optional": [
-                "shift"
-              ]
-            }
-          },
-          "to": [
-            {
-              "set_variable": {
-                "name": "left_shift",
-                "value": 1
-              }
-            },
-            {
-              "set_variable": {
-                "name": "shift",
-                "value": 1
-              }
-            },
-            {
-              "set_variable": {
-                "name": "handakuon",
-                "value": 1
-              }
-            }
-          ],
-          "to_delayed_action": {
-            "to_if_invoked": [
-              {
-                "set_variable": {
-                  "name": "left_shift",
-                  "value": 0
-                }
-              },
-              {
-                "set_variable": {
-                  "name": "shift",
-                  "value": 0
-                }
-              },
-              {
-                "set_variable": {
-                  "name": "handakuon",
-                  "value": 0
-                }
-              }
-            ],
-            "to_if_canceled": [
-              {
-                "set_variable": {
-                  "name": "left_shift",
-                  "value": 0
-                }
-              },
-              {
-                "set_variable": {
-                  "name": "shift",
-                  "value": 0
-                }
-              },
-              {
-                "set_variable": {
-                  "name": "handakuon",
-                  "value": 0
-                }
-              }
-            ]
-          },
-          "conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "symbol_mode",
-              "value": 1
-            },
-            {
-              "type": "variable_if",
-              "name": "handakuon",
-              "value": 1
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "d",
-            "modifiers": {
-              "optional": [
-                "shift"
-              ]
-            }
-          },
-          "to": [
-            {
-              "set_variable": {
-                "name": "left_shift",
-                "value": 1
-              }
-            },
-            {
-              "set_variable": {
-                "name": "shift",
-                "value": 1
-              }
-            }
-          ],
-          "to_delayed_action": {
-            "to_if_invoked": [
-              {
-                "set_variable": {
-                  "name": "left_shift",
-                  "value": 0
-                }
-              },
-              {
-                "set_variable": {
-                  "name": "shift",
-                  "value": 0
-                }
-              }
-            ],
-            "to_if_canceled": [
-              {
-                "set_variable": {
-                  "name": "left_shift",
-                  "value": 0
-                }
-              },
-              {
-                "set_variable": {
-                  "name": "shift",
-                  "value": 0
-                }
-              }
-            ]
-          },
-          "conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "symbol_mode",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "dakuon",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "handakuon",
-              "value": 1
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "k",
-            "modifiers": {
-              "optional": [
-                "shift"
-              ]
-            }
-          },
-          "to": [
-            {
-              "set_variable": {
-                "name": "right_shift",
-                "value": 1
-              }
-            },
-            {
-              "set_variable": {
-                "name": "shift",
-                "value": 1
-              }
-            },
-            {
-              "set_variable": {
-                "name": "dakuon",
-                "value": 1
-              }
-            }
-          ],
-          "to_delayed_action": {
-            "to_if_invoked": [
-              {
-                "set_variable": {
-                  "name": "right_shift",
-                  "value": 0
-                }
-              },
-              {
-                "set_variable": {
-                  "name": "shift",
-                  "value": 0
-                }
-              },
-              {
-                "set_variable": {
-                  "name": "dakuon",
-                  "value": 0
-                }
-              }
-            ],
-            "to_if_canceled": [
-              {
-                "set_variable": {
-                  "name": "right_shift",
-                  "value": 0
-                }
-              },
-              {
-                "set_variable": {
-                  "name": "shift",
-                  "value": 0
-                }
-              },
-              {
-                "set_variable": {
-                  "name": "dakuon",
-                  "value": 0
-                }
-              }
-            ]
-          },
-          "conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "symbol_mode",
-              "value": 1
-            },
-            {
-              "type": "variable_if",
-              "name": "dakuon",
-              "value": 1
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "k",
-            "modifiers": {
-              "optional": [
-                "shift"
-              ]
-            }
-          },
-          "to": [
-            {
-              "set_variable": {
-                "name": "right_shift",
-                "value": 1
-              }
-            },
-            {
-              "set_variable": {
-                "name": "shift",
-                "value": 1
-              }
-            },
-            {
-              "set_variable": {
-                "name": "handakuon",
-                "value": 1
-              }
-            }
-          ],
-          "to_delayed_action": {
-            "to_if_invoked": [
-              {
-                "set_variable": {
-                  "name": "right_shift",
-                  "value": 0
-                }
-              },
-              {
-                "set_variable": {
-                  "name": "shift",
-                  "value": 0
-                }
-              },
-              {
-                "set_variable": {
-                  "name": "handakuon",
-                  "value": 0
-                }
-              }
-            ],
-            "to_if_canceled": [
-              {
-                "set_variable": {
-                  "name": "right_shift",
-                  "value": 0
-                }
-              },
-              {
-                "set_variable": {
-                  "name": "shift",
-                  "value": 0
-                }
-              },
-              {
-                "set_variable": {
-                  "name": "handakuon",
-                  "value": 0
-                }
-              }
-            ]
-          },
-          "conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "symbol_mode",
-              "value": 1
-            },
-            {
-              "type": "variable_if",
-              "name": "handakuon",
-              "value": 1
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "k",
-            "modifiers": {
-              "optional": [
-                "shift"
-              ]
-            }
-          },
-          "to": [
-            {
-              "set_variable": {
-                "name": "right_shift",
-                "value": 1
-              }
-            },
-            {
-              "set_variable": {
-                "name": "shift",
-                "value": 1
-              }
-            }
-          ],
-          "to_delayed_action": {
-            "to_if_invoked": [
-              {
-                "set_variable": {
-                  "name": "right_shift",
-                  "value": 0
-                }
-              },
-              {
-                "set_variable": {
-                  "name": "shift",
-                  "value": 0
-                }
-              }
-            ],
-            "to_if_canceled": [
-              {
-                "set_variable": {
-                  "name": "right_shift",
-                  "value": 0
-                }
-              },
-              {
-                "set_variable": {
-                  "name": "shift",
-                  "value": 0
-                }
-              }
-            ]
-          },
-          "conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "symbol_mode",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "dakuon",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "handakuon",
-              "value": 1
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
             "key_code": "g",
             "modifiers": {
               "optional": [
@@ -4224,6 +3328,58 @@
         {
           "type": "basic",
           "from": {
+            "key_code": "a",
+            "modifiers": {
+              "optional": [
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "z",
+              "repeat": false
+            },
+            {
+              "key_code": "i",
+              "repeat": false
+            }
+          ],
+          "conditions": [
+            {
+              "type": "input_source_if",
+              "input_sources": [
+                {
+                  "language": "ja"
+                }
+              ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "symbol_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_unless",
+              "name": "shift",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "dakuon",
+              "value": 1
+            },
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.apple\\.loginwindow$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
             "key_code": "z",
             "modifiers": {
               "optional": [
@@ -4884,6 +4040,63 @@
             },
             {
               "key_code": "a",
+              "repeat": false
+            }
+          ],
+          "conditions": [
+            {
+              "type": "input_source_if",
+              "input_sources": [
+                {
+                  "language": "ja"
+                }
+              ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "symbol_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_unless",
+              "name": "shift",
+              "value": 1
+            },
+            {
+              "type": "variable_unless",
+              "name": "dakuon",
+              "value": 1
+            },
+            {
+              "type": "variable_unless",
+              "name": "handakuon",
+              "value": 1
+            },
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.apple\\.loginwindow$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "a",
+            "modifiers": {
+              "optional": [
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "s",
+              "repeat": false
+            },
+            {
+              "key_code": "i",
               "repeat": false
             }
           ],
@@ -6276,6 +5489,902 @@
             {
               "type": "variable_unless",
               "name": "shift",
+              "value": 1
+            },
+            {
+              "type": "variable_unless",
+              "name": "dakuon",
+              "value": 1
+            },
+            {
+              "type": "variable_unless",
+              "name": "handakuon",
+              "value": 1
+            },
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.apple\\.loginwindow$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "l",
+            "modifiers": {
+              "optional": [
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "dakuon",
+                "value": 1
+              }
+            }
+          ],
+          "to_delayed_action": {
+            "to_if_invoked": [
+              {
+                "set_variable": {
+                  "name": "dakuon",
+                  "value": 0
+                }
+              }
+            ],
+            "to_if_canceled": [
+              {
+                "set_variable": {
+                  "name": "dakuon",
+                  "value": 0
+                }
+              }
+            ]
+          },
+          "conditions": [
+            {
+              "type": "input_source_if",
+              "input_sources": [
+                {
+                  "language": "ja"
+                }
+              ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "symbol_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_unless",
+              "name": "shift",
+              "value": 1
+            },
+            {
+              "type": "variable_unless",
+              "name": "dakuon",
+              "value": 1
+            },
+            {
+              "type": "variable_unless",
+              "name": "handakuon",
+              "value": 1
+            },
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.apple\\.loginwindow$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "l",
+            "modifiers": {
+              "optional": [
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "shift",
+                "value": 1
+              }
+            },
+            {
+              "set_variable": {
+                "name": "dakuon",
+                "value": 1
+              }
+            }
+          ],
+          "to_delayed_action": {
+            "to_if_invoked": [
+              {
+                "set_variable": {
+                  "name": "shift",
+                  "value": 0
+                }
+              },
+              {
+                "set_variable": {
+                  "name": "dakuon",
+                  "value": 0
+                }
+              }
+            ],
+            "to_if_canceled": [
+              {
+                "set_variable": {
+                  "name": "shift",
+                  "value": 0
+                }
+              },
+              {
+                "set_variable": {
+                  "name": "dakuon",
+                  "value": 0
+                }
+              }
+            ]
+          },
+          "conditions": [
+            {
+              "type": "input_source_if",
+              "input_sources": [
+                {
+                  "language": "ja"
+                }
+              ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "symbol_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "shift",
+              "value": 1
+            },
+            {
+              "type": "variable_unless",
+              "name": "dakuon",
+              "value": 1
+            },
+            {
+              "type": "variable_unless",
+              "name": "handakuon",
+              "value": 1
+            },
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.apple\\.loginwindow$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "slash",
+            "modifiers": {
+              "optional": [
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "handakuon",
+                "value": 1
+              }
+            }
+          ],
+          "to_delayed_action": {
+            "to_if_invoked": [
+              {
+                "set_variable": {
+                  "name": "handakuon",
+                  "value": 0
+                }
+              }
+            ],
+            "to_if_canceled": [
+              {
+                "set_variable": {
+                  "name": "handakuon",
+                  "value": 0
+                }
+              }
+            ]
+          },
+          "conditions": [
+            {
+              "type": "input_source_if",
+              "input_sources": [
+                {
+                  "language": "ja"
+                }
+              ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "symbol_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_unless",
+              "name": "shift",
+              "value": 1
+            },
+            {
+              "type": "variable_unless",
+              "name": "dakuon",
+              "value": 1
+            },
+            {
+              "type": "variable_unless",
+              "name": "handakuon",
+              "value": 1
+            },
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.apple\\.loginwindow$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "slash",
+            "modifiers": {
+              "optional": [
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "shift",
+                "value": 1
+              }
+            },
+            {
+              "set_variable": {
+                "name": "handakuon",
+                "value": 1
+              }
+            }
+          ],
+          "to_delayed_action": {
+            "to_if_invoked": [
+              {
+                "set_variable": {
+                  "name": "shift",
+                  "value": 0
+                }
+              },
+              {
+                "set_variable": {
+                  "name": "handakuon",
+                  "value": 0
+                }
+              }
+            ],
+            "to_if_canceled": [
+              {
+                "set_variable": {
+                  "name": "shift",
+                  "value": 0
+                }
+              },
+              {
+                "set_variable": {
+                  "name": "handakuon",
+                  "value": 0
+                }
+              }
+            ]
+          },
+          "conditions": [
+            {
+              "type": "input_source_if",
+              "input_sources": [
+                {
+                  "language": "ja"
+                }
+              ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "symbol_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "shift",
+              "value": 1
+            },
+            {
+              "type": "variable_unless",
+              "name": "dakuon",
+              "value": 1
+            },
+            {
+              "type": "variable_unless",
+              "name": "handakuon",
+              "value": 1
+            },
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.apple\\.loginwindow$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "d",
+            "modifiers": {
+              "optional": [
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "left_shift",
+                "value": 1
+              }
+            },
+            {
+              "set_variable": {
+                "name": "shift",
+                "value": 1
+              }
+            },
+            {
+              "set_variable": {
+                "name": "dakuon",
+                "value": 1
+              }
+            }
+          ],
+          "to_delayed_action": {
+            "to_if_invoked": [
+              {
+                "set_variable": {
+                  "name": "left_shift",
+                  "value": 0
+                }
+              },
+              {
+                "set_variable": {
+                  "name": "shift",
+                  "value": 0
+                }
+              },
+              {
+                "set_variable": {
+                  "name": "dakuon",
+                  "value": 0
+                }
+              }
+            ],
+            "to_if_canceled": [
+              {
+                "set_variable": {
+                  "name": "left_shift",
+                  "value": 0
+                }
+              },
+              {
+                "set_variable": {
+                  "name": "shift",
+                  "value": 0
+                }
+              },
+              {
+                "set_variable": {
+                  "name": "dakuon",
+                  "value": 0
+                }
+              }
+            ]
+          },
+          "conditions": [
+            {
+              "type": "input_source_if",
+              "input_sources": [
+                {
+                  "language": "ja"
+                }
+              ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "symbol_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "dakuon",
+              "value": 1
+            },
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.apple\\.loginwindow$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "d",
+            "modifiers": {
+              "optional": [
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "left_shift",
+                "value": 1
+              }
+            },
+            {
+              "set_variable": {
+                "name": "shift",
+                "value": 1
+              }
+            },
+            {
+              "set_variable": {
+                "name": "handakuon",
+                "value": 1
+              }
+            }
+          ],
+          "to_delayed_action": {
+            "to_if_invoked": [
+              {
+                "set_variable": {
+                  "name": "left_shift",
+                  "value": 0
+                }
+              },
+              {
+                "set_variable": {
+                  "name": "shift",
+                  "value": 0
+                }
+              },
+              {
+                "set_variable": {
+                  "name": "handakuon",
+                  "value": 0
+                }
+              }
+            ],
+            "to_if_canceled": [
+              {
+                "set_variable": {
+                  "name": "left_shift",
+                  "value": 0
+                }
+              },
+              {
+                "set_variable": {
+                  "name": "shift",
+                  "value": 0
+                }
+              },
+              {
+                "set_variable": {
+                  "name": "handakuon",
+                  "value": 0
+                }
+              }
+            ]
+          },
+          "conditions": [
+            {
+              "type": "input_source_if",
+              "input_sources": [
+                {
+                  "language": "ja"
+                }
+              ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "symbol_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "handakuon",
+              "value": 1
+            },
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.apple\\.loginwindow$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "d",
+            "modifiers": {
+              "optional": [
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "left_shift",
+                "value": 1
+              }
+            },
+            {
+              "set_variable": {
+                "name": "shift",
+                "value": 1
+              }
+            }
+          ],
+          "to_delayed_action": {
+            "to_if_invoked": [
+              {
+                "set_variable": {
+                  "name": "left_shift",
+                  "value": 0
+                }
+              },
+              {
+                "set_variable": {
+                  "name": "shift",
+                  "value": 0
+                }
+              }
+            ],
+            "to_if_canceled": [
+              {
+                "set_variable": {
+                  "name": "left_shift",
+                  "value": 0
+                }
+              },
+              {
+                "set_variable": {
+                  "name": "shift",
+                  "value": 0
+                }
+              }
+            ]
+          },
+          "conditions": [
+            {
+              "type": "input_source_if",
+              "input_sources": [
+                {
+                  "language": "ja"
+                }
+              ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "symbol_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_unless",
+              "name": "dakuon",
+              "value": 1
+            },
+            {
+              "type": "variable_unless",
+              "name": "handakuon",
+              "value": 1
+            },
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.apple\\.loginwindow$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "k",
+            "modifiers": {
+              "optional": [
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "right_shift",
+                "value": 1
+              }
+            },
+            {
+              "set_variable": {
+                "name": "shift",
+                "value": 1
+              }
+            },
+            {
+              "set_variable": {
+                "name": "dakuon",
+                "value": 1
+              }
+            }
+          ],
+          "to_delayed_action": {
+            "to_if_invoked": [
+              {
+                "set_variable": {
+                  "name": "right_shift",
+                  "value": 0
+                }
+              },
+              {
+                "set_variable": {
+                  "name": "shift",
+                  "value": 0
+                }
+              },
+              {
+                "set_variable": {
+                  "name": "dakuon",
+                  "value": 0
+                }
+              }
+            ],
+            "to_if_canceled": [
+              {
+                "set_variable": {
+                  "name": "right_shift",
+                  "value": 0
+                }
+              },
+              {
+                "set_variable": {
+                  "name": "shift",
+                  "value": 0
+                }
+              },
+              {
+                "set_variable": {
+                  "name": "dakuon",
+                  "value": 0
+                }
+              }
+            ]
+          },
+          "conditions": [
+            {
+              "type": "input_source_if",
+              "input_sources": [
+                {
+                  "language": "ja"
+                }
+              ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "symbol_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "dakuon",
+              "value": 1
+            },
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.apple\\.loginwindow$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "k",
+            "modifiers": {
+              "optional": [
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "right_shift",
+                "value": 1
+              }
+            },
+            {
+              "set_variable": {
+                "name": "shift",
+                "value": 1
+              }
+            },
+            {
+              "set_variable": {
+                "name": "handakuon",
+                "value": 1
+              }
+            }
+          ],
+          "to_delayed_action": {
+            "to_if_invoked": [
+              {
+                "set_variable": {
+                  "name": "right_shift",
+                  "value": 0
+                }
+              },
+              {
+                "set_variable": {
+                  "name": "shift",
+                  "value": 0
+                }
+              },
+              {
+                "set_variable": {
+                  "name": "handakuon",
+                  "value": 0
+                }
+              }
+            ],
+            "to_if_canceled": [
+              {
+                "set_variable": {
+                  "name": "right_shift",
+                  "value": 0
+                }
+              },
+              {
+                "set_variable": {
+                  "name": "shift",
+                  "value": 0
+                }
+              },
+              {
+                "set_variable": {
+                  "name": "handakuon",
+                  "value": 0
+                }
+              }
+            ]
+          },
+          "conditions": [
+            {
+              "type": "input_source_if",
+              "input_sources": [
+                {
+                  "language": "ja"
+                }
+              ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "symbol_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "handakuon",
+              "value": 1
+            },
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.apple\\.loginwindow$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "k",
+            "modifiers": {
+              "optional": [
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "right_shift",
+                "value": 1
+              }
+            },
+            {
+              "set_variable": {
+                "name": "shift",
+                "value": 1
+              }
+            }
+          ],
+          "to_delayed_action": {
+            "to_if_invoked": [
+              {
+                "set_variable": {
+                  "name": "right_shift",
+                  "value": 0
+                }
+              },
+              {
+                "set_variable": {
+                  "name": "shift",
+                  "value": 0
+                }
+              }
+            ],
+            "to_if_canceled": [
+              {
+                "set_variable": {
+                  "name": "right_shift",
+                  "value": 0
+                }
+              },
+              {
+                "set_variable": {
+                  "name": "shift",
+                  "value": 0
+                }
+              }
+            ]
+          },
+          "conditions": [
+            {
+              "type": "input_source_if",
+              "input_sources": [
+                {
+                  "language": "ja"
+                }
+              ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "symbol_mode",
               "value": 1
             },
             {
