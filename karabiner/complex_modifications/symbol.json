@@ -61,7 +61,7 @@
   ],
   "rules": [
     {
-      "description": "[Kana Input] 記号入力",
+      "description": "[Kana Input] 同時打鍵で記号入力",
       "manipulators": [
         {
           "type": "basic",
@@ -400,7 +400,12 @@
               ]
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "description": "[Kana Input] Symbol Mode",
+      "manipulators": [
         {
           "type": "basic",
           "from": {
@@ -1107,12 +1112,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "open_bracket",
-            "modifiers": {
-              "optional": [
-                "shift"
-              ]
-            }
+            "key_code": "open_bracket"
           },
           "to": [
             {
@@ -1141,9 +1141,75 @@
         {
           "type": "basic",
           "from": {
+            "key_code": "close_bracket"
+          },
+          "to": [
+            {
+              "key_code": "backslash",
+              "repeat": false
+            },
+            {
+              "key_code": "close_bracket",
+              "repeat": false
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "symbol_mode",
+              "value": 1
+            },
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.apple\\.loginwindow$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "open_bracket",
+            "modifiers": {
+              "mandatory": [
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "backslash",
+              "repeat": false
+            },
+            {
+              "key_code": "open_bracket",
+              "modifiers": [
+                "shift"
+              ],
+              "repeat": false
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "symbol_mode",
+              "value": 1
+            },
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.apple\\.loginwindow$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
             "key_code": "close_bracket",
             "modifiers": {
-              "optional": [
+              "mandatory": [
                 "shift"
               ]
             }
@@ -1155,6 +1221,9 @@
             },
             {
               "key_code": "close_bracket",
+              "modifiers": [
+                "shift"
+              ],
               "repeat": false
             }
           ],
