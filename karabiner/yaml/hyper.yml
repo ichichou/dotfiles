@@ -10,7 +10,7 @@ aliases:
   - control
   - option
 
-- conditions: &hyper_state
+- conditions: &hyper_mode
   - type: variable_if
     name: hyper_mode
     value: 1
@@ -37,7 +37,7 @@ rules:
         name: hyper_mode
         value: 0
 
-# ----- 1-0 -----
+# ----- 1234567890 -----
 
 - description: "[Hyper] Hyper - 1-0"
   manipulators:
@@ -48,7 +48,7 @@ rules:
     to:
     - key_code: "1"
       modifiers: *hyper_key
-    conditions: *hyper_state
+    conditions: *hyper_mode
 
   - type: basic
     from:
@@ -56,7 +56,7 @@ rules:
     to:
     - key_code: "2"
       modifiers: *hyper_key
-    conditions: *hyper_state
+    conditions: *hyper_mode
 
   - type: basic
     from:
@@ -64,7 +64,7 @@ rules:
     to:
     - key_code: "3"
       modifiers: *hyper_key
-    conditions: *hyper_state
+    conditions: *hyper_mode
 
   - type: basic
     from:
@@ -72,7 +72,7 @@ rules:
     to:
     - key_code: "4"
       modifiers: *hyper_key
-    conditions: *hyper_state
+    conditions: *hyper_mode
 
   - type: basic
     from:
@@ -80,7 +80,7 @@ rules:
     to:
     - key_code: "5"
       modifiers: *hyper_key
-    conditions: *hyper_state
+    conditions: *hyper_mode
 
   - type: basic
     from:
@@ -88,7 +88,7 @@ rules:
     to:
     - key_code: "6"
       modifiers: *hyper_key
-    conditions: *hyper_state
+    conditions: *hyper_mode
 
   - type: basic
     from:
@@ -96,7 +96,7 @@ rules:
     to:
     - key_code: "7"
       modifiers: *hyper_key
-    conditions: *hyper_state
+    conditions: *hyper_mode
 
   - type: basic
     from:
@@ -104,7 +104,7 @@ rules:
     to:
     - key_code: "8"
       modifiers: *hyper_key
-    conditions: *hyper_state
+    conditions: *hyper_mode
 
   - type: basic
     from:
@@ -112,7 +112,7 @@ rules:
     to:
     - key_code: "9"
       modifiers: *hyper_key
-    conditions: *hyper_state
+    conditions: *hyper_mode
 
   - type: basic
     from:
@@ -120,7 +120,7 @@ rules:
     to:
     - key_code: "0"
       modifiers: *hyper_key
-    conditions: *hyper_state
+    conditions: *hyper_mode
 
 # ----- QWERTYUIOP -----
 
@@ -133,7 +133,7 @@ rules:
     to:
     - key_code: "1"
       modifiers: *hyper_key
-    conditions: *hyper_state
+    conditions: *hyper_mode
 
   - type: basic
     from:
@@ -141,7 +141,7 @@ rules:
     to:
     - key_code: "2"
       modifiers: *hyper_key
-    conditions: *hyper_state
+    conditions: *hyper_mode
 
   - type: basic
     from:
@@ -149,7 +149,7 @@ rules:
     to:
     - key_code: "3"
       modifiers: *hyper_key
-    conditions: *hyper_state
+    conditions: *hyper_mode
 
   - type: basic
     from:
@@ -157,7 +157,7 @@ rules:
     to:
     - key_code: "4"
       modifiers: *hyper_key
-    conditions: *hyper_state
+    conditions: *hyper_mode
 
   - type: basic
     from:
@@ -165,7 +165,7 @@ rules:
     to:
     - key_code: "5"
       modifiers: *hyper_key
-    conditions: *hyper_state
+    conditions: *hyper_mode
 
   - type: basic
     from:
@@ -173,7 +173,7 @@ rules:
     to:
     - key_code: "6"
       modifiers: *hyper_key
-    conditions: *hyper_state
+    conditions: *hyper_mode
 
   - type: basic
     from:
@@ -181,7 +181,7 @@ rules:
     to:
     - key_code: "7"
       modifiers: *hyper_key
-    conditions: *hyper_state
+    conditions: *hyper_mode
 
   - type: basic
     from:
@@ -189,7 +189,7 @@ rules:
     to:
     - key_code: "8"
       modifiers: *hyper_key
-    conditions: *hyper_state
+    conditions: *hyper_mode
 
   - type: basic
     from:
@@ -197,7 +197,7 @@ rules:
     to:
     - key_code: "9"
       modifiers: *hyper_key
-    conditions: *hyper_state
+    conditions: *hyper_mode
 
   - type: basic
     from:
@@ -205,9 +205,10 @@ rules:
     to:
     - key_code: "0"
       modifiers: *hyper_key
-    conditions: *hyper_state
+    conditions: *hyper_mode
 
-# ----- ASDFGHJKL; -----
+# ----- ASDFG -----
+# ----- ZXCVB -----
 
 - description: "[Hyper] Hyper - Alpha Keys → アプリケーションを起動"
   manipulators:
@@ -218,7 +219,7 @@ rules:
       key_code: a
     to:
     - shell_command: open -a "finder"
-    conditions: *hyper_state
+    conditions: *hyper_mode
 
   # S: Slack
   - type: basic
@@ -226,7 +227,7 @@ rules:
       key_code: s
     to:
     - shell_command: open -a "slack"
-    conditions: *hyper_state
+    conditions: *hyper_mode
 
   # D: Chatwork
   - type: basic
@@ -234,76 +235,31 @@ rules:
       key_code: d
     to:
     - shell_command: open -a "chatwork"
-    conditions: *hyper_state
+    conditions: *hyper_mode
 
-  # F: (Not recommended)
-  - type: basic
-    from:
-      key_code: f
-    to:
-    - shell_command: open -a ""
-    conditions: *hyper_state
+  # # F:
+  # - type: basic
+  #   from:
+  #     key_code: f
+  #   to:
+  #   - shell_command: open -a ""
+  #   conditions: *hyper_mode
 
-  # G: (Not recommended)
-  - type: basic
-    from:
-      key_code: g
-    to:
-    - shell_command: open -a ""
-    conditions: *hyper_state
+  # # G:
+  # - type: basic
+  #   from:
+  #     key_code: g
+  #   to:
+  #   - shell_command: open -a ""
+  #   conditions: *hyper_mode
 
-  # H: Superhuman
-  - type: basic
-    from:
-      key_code: h
-    to:
-    - shell_command: open -a "superhuman"
-    conditions: *hyper_state
-
-  # J: Trello
-  - type: basic
-    from:
-      key_code: j
-    to:
-    - shell_command: open -a "trello"
-    conditions: *hyper_state
-
-  # K: Trello (Quick Add)
-  - type: basic
-    from:
-      key_code: k
-    to:
-    - key_code: spacebar
-      modifiers:
-      - control
-      - option
-    conditions: *hyper_state
-
-  # L: Terminal
-  - type: basic
-    from:
-      key_code: l
-    to:
-    - shell_command: open -a "terminal"
-    conditions: *hyper_state
-
-  # Semicolon: 
-  - type: basic
-    from:
-      key_code: semicolon
-    to:
-    - shell_command: open -a ""
-    conditions: *hyper_state
-
-# ----- ZXCVBNM,./ -----
-
-  # Z: Bitwarden
+  # Z: Trello
   - type: basic
     from:
       key_code: z
     to:
-    - shell_command: open -a "bitwarden"
-    conditions: *hyper_state
+    - shell_command: open -a "trello"
+    conditions: *hyper_mode
 
   # X: Textwell
   - type: basic
@@ -311,7 +267,7 @@ rules:
       key_code: x
     to:
     - shell_command: open -a "textwell"
-    conditions: *hyper_state
+    conditions: *hyper_mode
 
   # C: Google Chrome
   - type: basic
@@ -319,31 +275,77 @@ rules:
       key_code: c
     to:
     - shell_command: open -a "google chrome"
-    conditions: *hyper_state
+    conditions: *hyper_mode
 
-  # V: (Not recommended)
+  # V: Visual Studio Code
   - type: basic
     from:
       key_code: v
     to:
-    - shell_command: open -a ""
-    conditions: *hyper_state
-
-  # B: (Not recommended)
-  - type: basic
-    from:
-      key_code: b
-    to:
-    - shell_command: open -a ""
-    conditions: *hyper_state
-
-  # N: Visual Studio Code
-  - type: basic
-    from:
-      key_code: "n"
-    to:
     - shell_command: open -a "visual studio code"
-    conditions: *hyper_state
+    conditions: *hyper_mode
+
+  # # B:
+  # - type: basic
+  #   from:
+  #     key_code: b
+  #   to:
+  #   - shell_command: open -a ""
+  #   conditions: *hyper_mode
+
+# ----- HJKL; -----
+# ----- NM,./ -----
+
+  # H: Superhuman
+  - type: basic
+    from:
+      key_code: h
+    to:
+    - shell_command: open -a "superhuman"
+    conditions: *hyper_mode
+
+  # J: Trello (Quick Add)
+  - type: basic
+    from:
+      key_code: j
+    to:
+    - key_code: spacebar
+      modifiers:
+      - control
+      - option
+    conditions: *hyper_mode
+
+  # # K:
+  # - type: basic
+  #   from:
+  #     key_code: k
+  #   to:
+  #   - shell_command: open -a ""
+  #   conditions: *hyper_mode
+
+  # L: Terminal
+  - type: basic
+    from:
+      key_code: l
+    to:
+    - shell_command: open -a "terminal"
+    conditions: *hyper_mode
+
+  # # Semicolon:
+  # - type: basic
+  #   from:
+  #     key_code: semicolon
+  #   to:
+  #   - shell_command: open -a ""
+  #   conditions: *hyper_mode
+
+  # # N:
+  # - type: basic
+  #   from:
+  #     key_code: "n"
+  #   to:
+  #   - shell_command: open -a ""
+  #   conditions: *hyper_mode
 
   # M: MacVim
   - type: basic
@@ -351,37 +353,37 @@ rules:
       key_code: m
     to:
     - shell_command: open -a "macvim"
-    conditions: *hyper_state
+    conditions: *hyper_mode
 
-  # Comma: 
-  - type: basic
-    from:
-      key_code: comma
-    to:
-    - shell_command: open -a ""
-    conditions: *hyper_state
+  # # Comma:
+  # - type: basic
+  #   from:
+  #     key_code: comma
+  #   to:
+  #   - shell_command: open -a ""
+  #   conditions: *hyper_mode
 
-  # Period: 
-  - type: basic
-    from:
-      key_code: period
-    to:
-    - shell_command: open -a ""
-    conditions: *hyper_state
+  # # Period:
+  # - type: basic
+  #   from:
+  #     key_code: period
+  #   to:
+  #   - shell_command: open -a ""
+  #   conditions: *hyper_mode
 
-  # Slash: 
-  - type: basic
-    from:
-      key_code: slash
-    to:
-    - shell_command: open -a ""
-    conditions: *hyper_state
+  # # Slash:
+  # - type: basic
+  #   from:
+  #     key_code: slash
+  #   to:
+  #   - shell_command: open -a ""
+  #   conditions: *hyper_mode
 
 # ----- Spacebar -----
 
-  - type: basic
-    from:
-      key_code: spacebar
-    to:
-    - shell_command: open -a ""
-    conditions: *hyper_state
+  # - type: basic
+  #   from:
+  #     key_code: spacebar
+  #   to:
+  #   - shell_command: open -a ""
+  #   conditions: *hyper_mode
