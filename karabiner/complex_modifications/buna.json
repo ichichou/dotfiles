@@ -853,7 +853,7 @@
               "repeat": false
             },
             {
-              "key_code": "e",
+              "key_code": "a",
               "repeat": false
             }
           ],
@@ -4094,58 +4094,6 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "quote",
-            "modifiers": {
-              "optional": [
-                "shift"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "r",
-              "repeat": false
-            },
-            {
-              "key_code": "a",
-              "repeat": false
-            }
-          ],
-          "conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
-            },
-            {
-              "type": "variable_unless",
-              "name": "symbol_mode",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "left_shift",
-              "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "right_shift",
-              "value": 1
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
             "key_code": "y",
             "modifiers": {
               "optional": [
@@ -4212,6 +4160,58 @@
             },
             {
               "key_code": "u",
+              "repeat": false
+            }
+          ],
+          "conditions": [
+            {
+              "type": "input_source_if",
+              "input_sources": [
+                {
+                  "language": "ja"
+                }
+              ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "symbol_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_unless",
+              "name": "left_shift",
+              "value": 1
+            },
+            {
+              "type": "variable_unless",
+              "name": "right_shift",
+              "value": 1
+            },
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.apple\\.loginwindow$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "slash",
+            "modifiers": {
+              "optional": [
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "r",
+              "repeat": false
+            },
+            {
+              "key_code": "e",
               "repeat": false
             }
           ],
@@ -4666,7 +4666,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "slash",
+            "key_code": "quote",
             "modifiers": {
               "optional": [
                 "shift"
@@ -5857,12 +5857,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "open_bracket",
-            "modifiers": {
-              "optional": [
-                "shift"
-              ]
-            }
+            "key_code": "open_bracket"
           },
           "to": [
             {
@@ -5899,9 +5894,91 @@
         {
           "type": "basic",
           "from": {
+            "key_code": "close_bracket"
+          },
+          "to": [
+            {
+              "key_code": "backslash",
+              "repeat": false
+            },
+            {
+              "key_code": "close_bracket",
+              "repeat": false
+            }
+          ],
+          "conditions": [
+            {
+              "type": "input_source_if",
+              "input_sources": [
+                {
+                  "language": "ja"
+                }
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "symbol_mode",
+              "value": 1
+            },
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.apple\\.loginwindow$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "open_bracket",
+            "modifiers": {
+              "mandatory": [
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "backslash",
+              "repeat": false
+            },
+            {
+              "key_code": "open_bracket",
+              "modifiers": [
+                "shift"
+              ],
+              "repeat": false
+            }
+          ],
+          "conditions": [
+            {
+              "type": "input_source_if",
+              "input_sources": [
+                {
+                  "language": "ja"
+                }
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "symbol_mode",
+              "value": 1
+            },
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.apple\\.loginwindow$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
             "key_code": "close_bracket",
             "modifiers": {
-              "optional": [
+              "mandatory": [
                 "shift"
               ]
             }
@@ -5913,6 +5990,9 @@
             },
             {
               "key_code": "close_bracket",
+              "modifiers": [
+                "shift"
+              ],
               "repeat": false
             }
           ],
