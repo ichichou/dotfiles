@@ -1,22 +1,10 @@
 title: "06. Control Key"
 
-# ===== Aliases =====
-
-variables:
-
-- from/modifiers: &right_control
-    mandatory:
-    - right_control
-
-- from/modifiers: &any
-    optional:
-    - any
-
 # ===== Rules =====
 
 rules:
 
-- description: "[Control] Caps Lock + J/L → かな/英数"
+- description: "[Control] Caps Lock + J/L (simul) → かな/英数"
   manipulators:
   - type: basic
     from:
@@ -28,6 +16,7 @@ rules:
     to:
     - key_code: japanese_kana
     - key_code: right_control
+
   - type: basic
     from:
       simultaneous:
@@ -39,7 +28,7 @@ rules:
     - key_code: japanese_eisuu
     - key_code: right_control
 
-- description: "[Control] RControl + J/L → かな/英数"
+- description: "[Control] RControl + J/L (simul) → かな/英数"
   manipulators:
   - type: basic
     from:
@@ -51,6 +40,7 @@ rules:
     to:
     - key_code: japanese_kana
     - key_code: right_control
+
   - type: basic
     from:
       simultaneous:
