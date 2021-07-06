@@ -109,3 +109,17 @@ rules:
         - any
     to:
     - key_code: return_or_enter
+
+- description: "[Control] RControl-S → Shift-Control-R (for Google IME)"
+  manipulators:
+  - type: basic
+    from:
+      key_code: s
+      modifiers:
+        mandatory:
+        - right_control
+    to:
+    - key_code: r
+      modifiers:
+      - shift
+      - control

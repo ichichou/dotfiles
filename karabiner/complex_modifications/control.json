@@ -1,24 +1,8 @@
 {
   "title": "06. Control Key",
-  "variables": [
-    {
-      "from/modifiers": {
-        "mandatory": [
-          "right_control"
-        ]
-      }
-    },
-    {
-      "from/modifiers": {
-        "optional": [
-          "any"
-        ]
-      }
-    }
-  ],
   "rules": [
     {
-      "description": "[Control] Caps Lock + J/L → かな/英数",
+      "description": "[Control] Caps Lock + J/L (simul) → かな/英数",
       "manipulators": [
         {
           "type": "basic",
@@ -71,7 +55,7 @@
       ]
     },
     {
-      "description": "[Control] RControl + J/L → かな/英数",
+      "description": "[Control] RControl + J/L (simul) → かな/英数",
       "manipulators": [
         {
           "type": "basic",
@@ -231,6 +215,31 @@
           "to": [
             {
               "key_code": "return_or_enter"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[Control] RControl-S → Shift-Control-R (for Google IME)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "s",
+            "modifiers": {
+              "mandatory": [
+                "right_control"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "r",
+              "modifiers": [
+                "shift",
+                "control"
+              ]
             }
           ]
         }
