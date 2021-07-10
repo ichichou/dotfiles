@@ -2,18 +2,11 @@
   "title": "03. Vim",
   "variables": [
     {
-      "from/modifiers": {
-        "optional": [
-          "shift"
-        ]
-      }
-    },
-    {
       "conditions": [
         {
           "type": "frontmost_application_if",
           "bundle_identifiers": [
-            "^org//.vim//.MacVim$"
+            "^org\\.vim\\.MacVim$"
           ]
         }
       ]
@@ -27,7 +20,11 @@
           "type": "basic",
           "from": {
             "key_code": "c",
-            "modifiers": "control"
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ]
+            }
           },
           "to": [
             {
@@ -43,7 +40,7 @@
             {
               "type": "frontmost_application_if",
               "bundle_identifiers": [
-                "^org//.vim//.MacVim$"
+                "^org\\.vim\\.MacVim$"
               ]
             }
           ]
@@ -51,7 +48,7 @@
       ]
     },
     {
-      "description": "[Vim] I/A + J → I/A, Kana",
+      "description": "[Vim] I/A + J (simul) → I/A, Kana",
       "manipulators": [
         {
           "type": "basic",
@@ -63,12 +60,7 @@
               {
                 "key_code": "j"
               }
-            ],
-            "modifiers": {
-              "optional": [
-                "shift"
-              ]
-            }
+            ]
           },
           "to": [
             {
@@ -84,7 +76,77 @@
             {
               "type": "frontmost_application_if",
               "bundle_identifiers": [
-                "^org//.vim//.MacVim$"
+                "^org\\.vim\\.MacVim$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "simultaneous": [
+              {
+                "key_code": "a"
+              },
+              {
+                "key_code": "j"
+              }
+            ]
+          },
+          "to": [
+            {
+              "key_code": "a",
+              "repeat": false
+            },
+            {
+              "key_code": "japanese_kana",
+              "repeat": false
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^org\\.vim\\.MacVim$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "simultaneous": [
+              {
+                "key_code": "i"
+              },
+              {
+                "key_code": "j"
+              }
+            ],
+            "modifiers": {
+              "mandatory": [
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "i",
+              "modifiers": [
+                "shift"
+              ],
+              "repeat": false
+            },
+            {
+              "key_code": "japanese_kana",
+              "repeat": false
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^org\\.vim\\.MacVim$"
               ]
             }
           ]
@@ -101,7 +163,7 @@
               }
             ],
             "modifiers": {
-              "optional": [
+              "mandatory": [
                 "shift"
               ]
             }
@@ -109,6 +171,9 @@
           "to": [
             {
               "key_code": "a",
+              "modifiers": [
+                "shift"
+              ],
               "repeat": false
             },
             {
@@ -120,7 +185,7 @@
             {
               "type": "frontmost_application_if",
               "bundle_identifiers": [
-                "^org//.vim//.MacVim$"
+                "^org\\.vim\\.MacVim$"
               ]
             }
           ]

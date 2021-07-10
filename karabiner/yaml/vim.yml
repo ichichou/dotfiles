@@ -4,14 +4,10 @@ title: "03. Vim"
 
 variables:
 
-- from/modifiers: &opt_shift
-    optional:
-    - shift
-
 - conditions: &vim
   - type: frontmost_application_if
     bundle_identifiers:
-    - "^org//.vim//.MacVim$"
+    - "^org\\.vim\\.MacVim$"
 
 # ===== Rules =====
 
@@ -22,7 +18,9 @@ rules:
   - type: basic
     from:
       key_code: c
-      modifiers: control
+      modifiers:
+        mandatory:
+        - control
     to:
     - key_code: escape
       repeat: false
@@ -30,30 +28,66 @@ rules:
       repeat: false
     conditions: *vim
 
-- description: "[Vim] I/A + J → I/A, Kana"
+- description: "[Vim] I/A + J (simul) → I/A, Kana"
   manipulators:
+
   # I + J
   - type: basic
     from:
       simultaneous:
       - key_code: i
       - key_code: j
-      modifiers: *opt_shift
     to:
     - key_code: i
       repeat: false
     - key_code: japanese_kana
       repeat: false
     conditions: *vim
+
   # A + J
   - type: basic
     from:
       simultaneous:
       - key_code: a
       - key_code: j
-      modifiers: *opt_shift
     to:
     - key_code: a
+      repeat: false
+    - key_code: japanese_kana
+      repeat: false
+    conditions: *vim
+
+  # Shift-I + J
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: i
+      - key_code: j
+      modifiers:
+        mandatory:
+        - shift
+    to:
+    - key_code: i
+      modifiers:
+      - shift
+      repeat: false
+    - key_code: japanese_kana
+      repeat: false
+    conditions: *vim
+
+  # Shift-A + J
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: a
+      - key_code: j
+      modifiers:
+        mandatory:
+        - shift
+    to:
+    - key_code: a
+      modifiers:
+      - shift
       repeat: false
     - key_code: japanese_kana
       repeat: false
