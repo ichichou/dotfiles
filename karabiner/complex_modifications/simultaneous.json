@@ -2,7 +2,7 @@
   "title": "04. Simultaneous",
   "rules": [
     {
-      "description": "[Simul] V + M → Return",
+      "description": "[Simul] V + M / V + N / C + M → Return",
       "manipulators": [
         {
           "type": "basic",
@@ -22,12 +22,7 @@
               "repeat": false
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[Simul] V + N → Return",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "from": {
@@ -46,12 +41,7 @@
               "repeat": false
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[Simul] C + M → Return",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "from": {
