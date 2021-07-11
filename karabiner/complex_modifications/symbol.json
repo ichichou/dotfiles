@@ -419,7 +419,7 @@
           "to_if_alone": [
             {
               "key_code": "r",
-              "repeat": true
+              "repeat": false
             }
           ],
           "to": [
