@@ -10,19 +10,19 @@ rules:
         optional:
         - any
     to:
-    - key_code: left_shift
+    - key_code: shift
     to_if_alone:
     - key_code: spacebar
 
-# - description: "[SandS] Return and Shift"
-#   manipulators:
-#   - type: basic
-#     from:
-#       key_code: return_or_enter
-#       modifiers:
-#         optional:
-#         - any
-#     to:
-#     - key_code: left_shift
-#     to_if_alone:
-#     - key_code: return_or_enter
+- description: "[SandS] Return and Shift"
+  manipulators:
+  - type: basic
+    from:
+      key_code: return_or_enter
+      modifiers:
+        optional:
+        - any
+    to:
+    - key_code: shift
+    to_if_alone:
+    - key_code: return_or_enter
