@@ -7,7 +7,7 @@ endif
 
 if has('gui_running')
     let g:lightline = {
-        \ 'colorscheme': 'hybrid',
+        \ 'colorscheme': 'iceberg',
         \ 'active': {
             \ 'left': [
                 \ ['mode', 'paste'],
@@ -25,7 +25,7 @@ if has('gui_running')
     \ }
 else
     let g:lightline = {
-        \ 'colorscheme': 'iceberg',
+        \ 'colorscheme': 'hybrid',
         \ 'active': {
             \ 'left': [
                 \ ['mode', 'paste'],

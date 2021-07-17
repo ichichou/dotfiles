@@ -4,9 +4,9 @@
 
 " hybrid iceberg nord tender
 if has('gui_running')
-    colorscheme hybrid
-else
     colorscheme iceberg
+else
+    colorscheme hybrid
 endif
 
 " hybrid
