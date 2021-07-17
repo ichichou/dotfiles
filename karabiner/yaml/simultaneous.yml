@@ -1,7 +1,7 @@
 title: "04. Simultaneous"
 rules:
 
-- description: "[Simul] V + M / V + N / C + M → Return"
+- description: "[Simul] V + M / V + N → Return"
   manipulators:
 
   - type: basic
@@ -22,11 +22,14 @@ rules:
     - key_code: return_or_enter
       repeat: false
 
+- description: "[Simul] F + J → Return"
+  manipulators:
+
   - type: basic
     from:
       simultaneous:
-      - key_code: c
-      - key_code: m
+      - key_code: f
+      - key_code: j
     to:
     - key_code: return_or_enter
       repeat: false
