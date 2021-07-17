@@ -6,7 +6,7 @@
 if has('gui_running')
     colorscheme iceberg
 else
-    colorscheme hybrid
+    colorscheme iceberg
 endif
 
 " hybrid
