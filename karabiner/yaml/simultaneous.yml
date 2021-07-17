@@ -33,3 +33,26 @@ rules:
     to:
     - key_code: return_or_enter
       repeat: false
+
+- description: "[Simul] H + J → Delete, F + G → Fn-Delete"
+  manipulators:
+
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: h
+      - key_code: j
+    to:
+    - key_code: delete_or_backspace
+      repeat: true
+
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: f
+      - key_code: g
+    to:
+    - key_code: delete_or_backspace
+      modifiers:
+      - fn
+      repeat: true
