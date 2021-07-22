@@ -15,7 +15,7 @@ rules:
         key_up_when: all
     to:
     - key_code: japanese_kana
-    - key_code: left_control
+    - key_code: right_control
 
   - type: basic
     from:
@@ -26,31 +26,31 @@ rules:
         key_up_when: all
     to:
     - key_code: japanese_eisuu
-    - key_code: left_control
+    - key_code: right_control
 
-- description: "[Control] LControl + J/L (simul) → かな/英数"
+- description: "[Control] RControl + J/L (simul) → かな/英数"
   manipulators:
   - type: basic
     from:
       simultaneous:
       - key_code: j
-      - key_code: left_control
+      - key_code: right_control
       simultaneous_options:
         key_up_when: all
     to:
     - key_code: japanese_kana
-    - key_code: left_control
+    - key_code: right_control
 
   - type: basic
     from:
       simultaneous:
       - key_code: l
-      - key_code: left_control
+      - key_code: right_control
       simultaneous_options:
         key_up_when: all
     to:
     - key_code: japanese_eisuu
-    - key_code: left_control
+    - key_code: right_control
 
 - description: "[Control] Caps Lock → Control/ESC"
   manipulators:
@@ -61,20 +61,20 @@ rules:
         optional:
         - any
     to:
-    - key_code: left_control
+    - key_code: right_control
     to_if_alone:
     - key_code: escape
 
-- description: "[Control] LControl → Control/ESC"
+- description: "[Control] RControl → Control/ESC"
   manipulators:
   - type: basic
     from:
-      key_code: left_control
+      key_code: right_control
       modifiers:
         optional:
         - any
     to:
-    - key_code: left_control
+    - key_code: right_control
     to_if_alone:
     - key_code: escape
 
@@ -85,7 +85,7 @@ rules:
       key_code: j
       modifiers:
         mandatory:
-        - left_control
+        - right_control
     to:
     - key_code: japanese_kana
 
@@ -94,31 +94,31 @@ rules:
       key_code: l
       modifiers:
         mandatory:
-        - left_control
+        - right_control
     to:
     - key_code: japanese_eisuu
 
-- description: "[Control] LControl-M → Return"
+- description: "[Control] RControl-M → Return"
   manipulators:
   - type: basic
     from:
       key_code: m
       modifiers:
         mandatory:
-        - left_control
+        - right_control
         optional:
         - any
     to:
     - key_code: return_or_enter
 
-- description: "[Control] LControl-S → Shift-Control-R (for Google IME)"
+- description: "[Control] RControl-S → Shift-Control-R (for Google IME)"
   manipulators:
   - type: basic
     from:
       key_code: s
       modifiers:
         mandatory:
-        - left_control
+        - right_control
     to:
     - key_code: r
       modifiers:
