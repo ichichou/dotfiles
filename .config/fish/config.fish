@@ -6,8 +6,8 @@ alias symln "ln -snfv"
 alias pd "prevd"
 alias nd "nextd"
 
-if test -e "/usr/local/bin/rmtrash"
-    alias rm "rmtrash"
+if test -e "/usr/local/bin/trash"
+    alias rm "trash"
 else
     alias rm "rm -iv"
 end
@@ -28,7 +28,6 @@ alias gu "gitup"
 alias j "z"
 alias jl "jupyter lab"
 alias mvi "mvim --remote-silent"
-alias t "tmux"
 alias vi "vim"
 
 ## Keybinds
