@@ -1,20 +1,8 @@
 {
-  "title": "03. Vim",
-  "variables": [
-    {
-      "conditions": [
-        {
-          "type": "frontmost_application_if",
-          "bundle_identifiers": [
-            "^org\\.vim\\.MacVim$"
-          ]
-        }
-      ]
-    }
-  ],
+  "title": "02. Vim",
   "rules": [
     {
-      "description": "[Vim] Control-C → ESC, Eisuu",
+      "description": "[Vim] Control-C → ESC, 英数",
       "manipulators": [
         {
           "type": "basic",
@@ -28,8 +16,7 @@
           },
           "to": [
             {
-              "key_code": "escape",
-              "repeat": false
+              "key_code": "escape"
             },
             {
               "key_code": "japanese_eisuu",
@@ -48,7 +35,7 @@
       ]
     },
     {
-      "description": "[Vim] I/A + J (simul) → I/A, Kana",
+      "description": "[Vim] I/A + J (simul) → I/A, かな",
       "manipulators": [
         {
           "type": "basic",
@@ -64,8 +51,7 @@
           },
           "to": [
             {
-              "key_code": "i",
-              "repeat": false
+              "key_code": "i"
             },
             {
               "key_code": "japanese_kana",
@@ -95,8 +81,7 @@
           },
           "to": [
             {
-              "key_code": "a",
-              "repeat": false
+              "key_code": "a"
             },
             {
               "key_code": "japanese_kana",
@@ -134,8 +119,7 @@
               "key_code": "i",
               "modifiers": [
                 "shift"
-              ],
-              "repeat": false
+              ]
             },
             {
               "key_code": "japanese_kana",
@@ -173,8 +157,7 @@
               "key_code": "a",
               "modifiers": [
                 "shift"
-              ],
-              "repeat": false
+              ]
             },
             {
               "key_code": "japanese_kana",

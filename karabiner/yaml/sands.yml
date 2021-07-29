@@ -1,4 +1,4 @@
-title: "08. SandS"
+title: "07. SandS"
 rules:
 
 - description: "[SandS] Space and Shift"
@@ -11,6 +11,7 @@ rules:
         - any
     to:
     - key_code: left_shift
+      lazy: true
     to_if_alone:
     - key_code: spacebar
 
@@ -24,5 +25,6 @@ rules:
         - any
     to:
     - key_code: left_shift
+      lazy: true
     to_if_alone:
     - key_code: return_or_enter

@@ -1,20 +1,4 @@
-title: "02. Google Chrome"
-
-# ===== Aliases =====
-
-variables:
-
-- from/modifiers: &left_command
-    mandatory:
-    - left_command
-
-- conditions: &chrome
-  - type: frontmost_application_if
-    bundle_identifiers:
-    - "^com\\.google\\.Chrome$"
-
-# ===== Rules =====
-
+title: "01. Google Chrome"
 rules:
 
 - description: "[Chrome] LCommand-E → 閉じたタブを開く"
@@ -22,20 +6,28 @@ rules:
   - type: basic
     from:
       key_code: e
-      modifiers: *left_command
+      modifiers:
+        mandatory:
+        - left_command
     to:
     - key_code: t
       modifiers:
       - shift
       - command
-    conditions: *chrome
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.google\\.Chrome$"
 
 - description: "[Chrome] LCommand-Q (held down) → Google Chrome を終了"
   manipulators:
   - type: basic
     from:
       key_code: q
-      modifiers: *left_command
+      modifiers:
+        mandatory:
+        - left_command
     to_if_held_down:
     - key_code: q
       modifiers:
@@ -43,4 +35,7 @@ rules:
       repeat: false
     parameters:
       basic.to_if_held_down_threshold_milliseconds: 1000
-    conditions: *chrome
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.google\\.Chrome$"

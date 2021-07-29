@@ -1,19 +1,7 @@
-title: "03. Vim"
-
-# ===== Aliases =====
-
-variables:
-
-- conditions: &vim
-  - type: frontmost_application_if
-    bundle_identifiers:
-    - "^org\\.vim\\.MacVim$"
-
-# ===== Rules =====
-
+title: "02. Vim"
 rules:
 
-- description: "[Vim] Control-C → ESC, Eisuu"
+- description: "[Vim] Control-C → ESC, 英数"
   manipulators:
   - type: basic
     from:
@@ -23,12 +11,14 @@ rules:
         - control
     to:
     - key_code: escape
-      repeat: false
     - key_code: japanese_eisuu
       repeat: false
-    conditions: *vim
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^org\\.vim\\.MacVim$"
 
-- description: "[Vim] I/A + J (simul) → I/A, Kana"
+- description: "[Vim] I/A + J (simul) → I/A, かな"
   manipulators:
 
   # I + J
@@ -39,10 +29,12 @@ rules:
       - key_code: j
     to:
     - key_code: i
-      repeat: false
     - key_code: japanese_kana
       repeat: false
-    conditions: *vim
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^org\\.vim\\.MacVim$"
 
   # A + J
   - type: basic
@@ -52,10 +44,12 @@ rules:
       - key_code: j
     to:
     - key_code: a
-      repeat: false
     - key_code: japanese_kana
       repeat: false
-    conditions: *vim
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^org\\.vim\\.MacVim$"
 
   # Shift-I + J
   - type: basic
@@ -70,10 +64,12 @@ rules:
     - key_code: i
       modifiers:
       - shift
-      repeat: false
     - key_code: japanese_kana
       repeat: false
-    conditions: *vim
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^org\\.vim\\.MacVim$"
 
   # Shift-A + J
   - type: basic
@@ -88,7 +84,9 @@ rules:
     - key_code: a
       modifiers:
       - shift
-      repeat: false
     - key_code: japanese_kana
       repeat: false
-    conditions: *vim
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^org\\.vim\\.MacVim$"

@@ -1,19 +1,4 @@
-title: "05. Command Key"
-
-# ===== Aliases =====
-
-variables:
-
-- from/modifiers: &any
-    optional:
-    - any
-
-- from/modifiers: &left_command
-    mandatory:
-    - left_command
-
-# ===== Rules =====
-
+title: "04. Command Key"
 rules:
 
 - description: "[Command] LCommand-Space → Return"
@@ -22,8 +7,10 @@ rules:
     from:
       key_code: spacebar
       modifiers:
-        <<: *left_command
-        <<: *any
+        mandatory:
+        - left_command
+        optional:
+        - any
     to:
     - key_code: return_or_enter
 
@@ -33,12 +20,10 @@ rules:
     from:
       key_code: right_command
       modifiers:
-        <<: *left_command
-        # <<: *any
+        mandatory:
+        - left_command
     to:
     - key_code: escape
-    # to_if_alone:
-    # - key_code: right_command
 
 - description: "[Command] LCommand-H/J/K/L → Left/Down/Up/Right"
   manipulators:
@@ -46,32 +31,43 @@ rules:
     from:
       key_code: h
       modifiers:
-        <<: *left_command
-        <<: *any
+        mandatory:
+        - left_command
+        optional:
+        - any
     to:
     - key_code: left_arrow
+
   - type: basic
     from:
       key_code: j
       modifiers:
-        <<: *left_command
-        <<: *any
+        mandatory:
+        - left_command
+        optional:
+        - any
     to:
     - key_code: down_arrow
+
   - type: basic
     from:
       key_code: k
       modifiers:
-        <<: *left_command
-        <<: *any
+        mandatory:
+        - left_command
+        optional:
+        - any
     to:
     - key_code: up_arrow
+
   - type: basic
     from:
       key_code: l
       modifiers:
-        <<: *left_command
-        <<: *any
+        mandatory:
+        - left_command
+        optional:
+        - any
     to:
     - key_code: right_arrow
 
@@ -80,16 +76,23 @@ rules:
   - type: basic
     from:
       key_code: left_command
-      modifiers: *any
+      modifiers:
+        optional:
+        - any
     to:
     - key_code: left_command
+      lazy: true
     to_if_alone:
     - key_code: japanese_eisuu
+
   - type: basic
     from:
       key_code: right_command
-      modifiers: *any
+      modifiers:
+        optional:
+        - any
     to:
     - key_code: right_command
+      lazy: true
     to_if_alone:
     - key_code: japanese_kana

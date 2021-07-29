@@ -1,5 +1,5 @@
 {
-  "title": "08. SandS",
+  "title": "07. SandS",
   "rules": [
     {
       "description": "[SandS] Space and Shift",
@@ -16,7 +16,8 @@
           },
           "to": [
             {
-              "key_code": "left_shift"
+              "key_code": "left_shift",
+              "lazy": true
             }
           ],
           "to_if_alone": [
@@ -42,7 +43,8 @@
           },
           "to": [
             {
-              "key_code": "left_shift"
+              "key_code": "left_shift",
+              "lazy": true
             }
           ],
           "to_if_alone": [

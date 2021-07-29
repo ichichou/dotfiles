@@ -1,10 +1,10 @@
-title: "06. Control Key"
+title: "05. Control Key"
 
 # ===== Rules =====
 
 rules:
 
-- description: "[Control] Caps Lock + J/L (simul) → かな/英数"
+- description: "[Control] Caps Lock + J/L (simul) → かな/英数, RControl"
   manipulators:
   - type: basic
     from:
@@ -16,6 +16,7 @@ rules:
     to:
     - key_code: japanese_kana
     - key_code: right_control
+      lazy: true
 
   - type: basic
     from:
@@ -27,8 +28,9 @@ rules:
     to:
     - key_code: japanese_eisuu
     - key_code: right_control
+      lazy: true
 
-- description: "[Control] RControl + J/L (simul) → かな/英数"
+- description: "[Control] RControl + J/L (simul) → かな/英数, RControl"
   manipulators:
   - type: basic
     from:
@@ -40,6 +42,7 @@ rules:
     to:
     - key_code: japanese_kana
     - key_code: right_control
+      lazy: true
 
   - type: basic
     from:
@@ -51,6 +54,7 @@ rules:
     to:
     - key_code: japanese_eisuu
     - key_code: right_control
+      lazy: true
 
 - description: "[Control] Caps Lock → Control/ESC"
   manipulators:
@@ -62,6 +66,7 @@ rules:
         - any
     to:
     - key_code: right_control
+      lazy: true
     to_if_alone:
     - key_code: escape
 
@@ -75,6 +80,7 @@ rules:
         - any
     to:
     - key_code: right_control
+      lazy: true
     to_if_alone:
     - key_code: escape
 
@@ -110,17 +116,3 @@ rules:
         - any
     to:
     - key_code: return_or_enter
-
-- description: "[Control] RControl-S → Shift-Control-R (for Google IME)"
-  manipulators:
-  - type: basic
-    from:
-      key_code: s
-      modifiers:
-        mandatory:
-        - right_control
-    to:
-    - key_code: r
-      modifiers:
-      - shift
-      - control

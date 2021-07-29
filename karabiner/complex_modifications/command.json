@@ -1,21 +1,5 @@
 {
-  "title": "05. Command Key",
-  "variables": [
-    {
-      "from/modifiers": {
-        "optional": [
-          "any"
-        ]
-      }
-    },
-    {
-      "from/modifiers": {
-        "mandatory": [
-          "left_command"
-        ]
-      }
-    }
-  ],
+  "title": "04. Command Key",
   "rules": [
     {
       "description": "[Command] LCommand-Space → Return",
@@ -158,7 +142,8 @@
           },
           "to": [
             {
-              "key_code": "left_command"
+              "key_code": "left_command",
+              "lazy": true
             }
           ],
           "to_if_alone": [
@@ -179,7 +164,8 @@
           },
           "to": [
             {
-              "key_code": "right_command"
+              "key_code": "right_command",
+              "lazy": true
             }
           ],
           "to_if_alone": [
