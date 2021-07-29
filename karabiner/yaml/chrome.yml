@@ -20,7 +20,7 @@ rules:
       bundle_identifiers:
       - "^com\\.google\\.Chrome$"
 
-- description: "[Chrome] LCommand-Q (held down) → Google Chrome を終了"
+- description: "[Chrome] LCommand-Q (held down) → Chrome を終了"
   manipulators:
   - type: basic
     from:
