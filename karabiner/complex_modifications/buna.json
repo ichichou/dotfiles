@@ -558,6 +558,124 @@
         {
           "type": "basic",
           "from": {
+            "simultaneous": [
+              {
+                "key_code": "f"
+              },
+              {
+                "key_code": "g"
+              }
+            ]
+          },
+          "to": [
+            {
+              "key_code": "open_bracket"
+            },
+            {
+              "key_code": "close_bracket"
+            },
+            {
+              "key_code": "left_arrow",
+              "repeat": false
+            }
+          ],
+          "conditions": [
+            {
+              "type": "input_source_if",
+              "input_sources": [
+                {
+                  "language": "ja"
+                }
+              ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "symbol_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_unless",
+              "name": "left_shift",
+              "value": 1
+            },
+            {
+              "type": "variable_unless",
+              "name": "right_shift",
+              "value": 1
+            },
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.apple\\.loginwindow$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "simultaneous": [
+              {
+                "key_code": "h"
+              },
+              {
+                "key_code": "j"
+              }
+            ]
+          },
+          "to": [
+            {
+              "key_code": "9",
+              "modifiers": [
+                "shift"
+              ]
+            },
+            {
+              "key_code": "0",
+              "modifiers": [
+                "shift"
+              ]
+            },
+            {
+              "key_code": "left_arrow",
+              "repeat": false
+            }
+          ],
+          "conditions": [
+            {
+              "type": "input_source_if",
+              "input_sources": [
+                {
+                  "language": "ja"
+                }
+              ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "symbol_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_unless",
+              "name": "left_shift",
+              "value": 1
+            },
+            {
+              "type": "variable_unless",
+              "name": "right_shift",
+              "value": 1
+            },
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.apple\\.loginwindow$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
             "key_code": "s",
             "modifiers": {
               "optional": [
@@ -567,8 +685,7 @@
           },
           "to": [
             {
-              "key_code": "s",
-              "repeat": false
+              "key_code": "s"
             },
             {
               "key_code": "a",
@@ -614,8 +731,7 @@
           },
           "to": [
             {
-              "key_code": "n",
-              "repeat": false
+              "key_code": "n"
             },
             {
               "key_code": "u",
@@ -661,8 +777,7 @@
           },
           "to": [
             {
-              "key_code": "h",
-              "repeat": false
+              "key_code": "h"
             },
             {
               "key_code": "i",
@@ -708,8 +823,7 @@
           },
           "to": [
             {
-              "key_code": "m",
-              "repeat": false
+              "key_code": "m"
             },
             {
               "key_code": "u",
@@ -755,8 +869,7 @@
           },
           "to": [
             {
-              "key_code": "m",
-              "repeat": false
+              "key_code": "m"
             },
             {
               "key_code": "e",
@@ -802,8 +915,7 @@
           },
           "to": [
             {
-              "key_code": "y",
-              "repeat": false
+              "key_code": "y"
             },
             {
               "key_code": "u",
@@ -849,8 +961,7 @@
           },
           "to": [
             {
-              "key_code": "r",
-              "repeat": false
+              "key_code": "r"
             },
             {
               "key_code": "a",
@@ -896,8 +1007,7 @@
           },
           "to": [
             {
-              "key_code": "w",
-              "repeat": false
+              "key_code": "w"
             },
             {
               "key_code": "o",
@@ -943,8 +1053,7 @@
           },
           "to": [
             {
-              "key_code": "g",
-              "repeat": false
+              "key_code": "g"
             },
             {
               "key_code": "i",
@@ -990,8 +1099,7 @@
           },
           "to": [
             {
-              "key_code": "g",
-              "repeat": false
+              "key_code": "g"
             },
             {
               "key_code": "u",
@@ -1037,8 +1145,7 @@
           },
           "to": [
             {
-              "key_code": "g",
-              "repeat": false
+              "key_code": "g"
             },
             {
               "key_code": "e",
@@ -1084,8 +1191,7 @@
           },
           "to": [
             {
-              "key_code": "z",
-              "repeat": false
+              "key_code": "z"
             },
             {
               "key_code": "i",
@@ -1131,8 +1237,7 @@
           },
           "to": [
             {
-              "key_code": "z",
-              "repeat": false
+              "key_code": "z"
             },
             {
               "key_code": "u",
@@ -1178,8 +1283,7 @@
           },
           "to": [
             {
-              "key_code": "z",
-              "repeat": false
+              "key_code": "z"
             },
             {
               "key_code": "e",
@@ -1225,8 +1329,7 @@
           },
           "to": [
             {
-              "key_code": "z",
-              "repeat": false
+              "key_code": "z"
             },
             {
               "key_code": "o",
@@ -1272,8 +1375,7 @@
           },
           "to": [
             {
-              "key_code": "d",
-              "repeat": false
+              "key_code": "d"
             },
             {
               "key_code": "i",
@@ -1319,8 +1421,7 @@
           },
           "to": [
             {
-              "key_code": "d",
-              "repeat": false
+              "key_code": "d"
             },
             {
               "key_code": "u",
@@ -1366,8 +1467,7 @@
           },
           "to": [
             {
-              "key_code": "b",
-              "repeat": false
+              "key_code": "b"
             },
             {
               "key_code": "a",
@@ -1413,8 +1513,7 @@
           },
           "to": [
             {
-              "key_code": "b",
-              "repeat": false
+              "key_code": "b"
             },
             {
               "key_code": "u",
@@ -1460,8 +1559,7 @@
           },
           "to": [
             {
-              "key_code": "p",
-              "repeat": false
+              "key_code": "p"
             },
             {
               "key_code": "a",
@@ -1507,8 +1605,7 @@
           },
           "to": [
             {
-              "key_code": "p",
-              "repeat": false
+              "key_code": "p"
             },
             {
               "key_code": "i",
@@ -1554,8 +1651,7 @@
           },
           "to": [
             {
-              "key_code": "p",
-              "repeat": false
+              "key_code": "p"
             },
             {
               "key_code": "o",
@@ -1601,8 +1697,7 @@
           },
           "to": [
             {
-              "key_code": "v",
-              "repeat": false
+              "key_code": "v"
             },
             {
               "key_code": "u",
@@ -1648,8 +1743,7 @@
           },
           "to": [
             {
-              "key_code": "x",
-              "repeat": false
+              "key_code": "x"
             },
             {
               "key_code": "u",
@@ -1695,12 +1789,10 @@
           },
           "to": [
             {
-              "key_code": "x",
-              "repeat": false
+              "key_code": "x"
             },
             {
-              "key_code": "y",
-              "repeat": false
+              "key_code": "y"
             },
             {
               "key_code": "a",
@@ -1746,12 +1838,10 @@
           },
           "to": [
             {
-              "key_code": "x",
-              "repeat": false
+              "key_code": "x"
             },
             {
-              "key_code": "y",
-              "repeat": false
+              "key_code": "y"
             },
             {
               "key_code": "u",
@@ -2106,8 +2196,7 @@
           },
           "to": [
             {
-              "key_code": "k",
-              "repeat": false
+              "key_code": "k"
             },
             {
               "key_code": "e",
@@ -2153,8 +2242,7 @@
           },
           "to": [
             {
-              "key_code": "s",
-              "repeat": false
+              "key_code": "s"
             },
             {
               "key_code": "e",
@@ -2200,8 +2288,7 @@
           },
           "to": [
             {
-              "key_code": "t",
-              "repeat": false
+              "key_code": "t"
             },
             {
               "key_code": "i",
@@ -2247,8 +2334,7 @@
           },
           "to": [
             {
-              "key_code": "t",
-              "repeat": false
+              "key_code": "t"
             },
             {
               "key_code": "u",
@@ -2294,8 +2380,7 @@
           },
           "to": [
             {
-              "key_code": "n",
-              "repeat": false
+              "key_code": "n"
             },
             {
               "key_code": "e",
@@ -2341,8 +2426,7 @@
           },
           "to": [
             {
-              "key_code": "h",
-              "repeat": false
+              "key_code": "h"
             },
             {
               "key_code": "u",
@@ -2388,8 +2472,7 @@
           },
           "to": [
             {
-              "key_code": "h",
-              "repeat": false
+              "key_code": "h"
             },
             {
               "key_code": "e",
@@ -2435,8 +2518,7 @@
           },
           "to": [
             {
-              "key_code": "h",
-              "repeat": false
+              "key_code": "h"
             },
             {
               "key_code": "o",
@@ -2482,8 +2564,7 @@
           },
           "to": [
             {
-              "key_code": "m",
-              "repeat": false
+              "key_code": "m"
             },
             {
               "key_code": "i",
@@ -2529,8 +2610,7 @@
           },
           "to": [
             {
-              "key_code": "y",
-              "repeat": false
+              "key_code": "y"
             },
             {
               "key_code": "a",
@@ -2576,8 +2656,7 @@
           },
           "to": [
             {
-              "key_code": "y",
-              "repeat": false
+              "key_code": "y"
             },
             {
               "key_code": "o",
@@ -2623,8 +2702,7 @@
           },
           "to": [
             {
-              "key_code": "r",
-              "repeat": false
+              "key_code": "r"
             },
             {
               "key_code": "o",
@@ -2670,8 +2748,7 @@
           },
           "to": [
             {
-              "key_code": "w",
-              "repeat": false
+              "key_code": "w"
             },
             {
               "key_code": "a",
@@ -2717,8 +2794,7 @@
           },
           "to": [
             {
-              "key_code": "g",
-              "repeat": false
+              "key_code": "g"
             },
             {
               "key_code": "o",
@@ -2764,8 +2840,7 @@
           },
           "to": [
             {
-              "key_code": "z",
-              "repeat": false
+              "key_code": "z"
             },
             {
               "key_code": "a",
@@ -2811,8 +2886,7 @@
           },
           "to": [
             {
-              "key_code": "d",
-              "repeat": false
+              "key_code": "d"
             },
             {
               "key_code": "o",
@@ -2858,8 +2932,7 @@
           },
           "to": [
             {
-              "key_code": "b",
-              "repeat": false
+              "key_code": "b"
             },
             {
               "key_code": "i",
@@ -2905,8 +2978,7 @@
           },
           "to": [
             {
-              "key_code": "b",
-              "repeat": false
+              "key_code": "b"
             },
             {
               "key_code": "e",
@@ -2952,8 +3024,7 @@
           },
           "to": [
             {
-              "key_code": "b",
-              "repeat": false
+              "key_code": "b"
             },
             {
               "key_code": "o",
@@ -2999,8 +3070,7 @@
           },
           "to": [
             {
-              "key_code": "p",
-              "repeat": false
+              "key_code": "p"
             },
             {
               "key_code": "e",
@@ -3046,8 +3116,7 @@
           },
           "to": [
             {
-              "key_code": "x",
-              "repeat": false
+              "key_code": "x"
             },
             {
               "key_code": "a",
@@ -3093,8 +3162,7 @@
           },
           "to": [
             {
-              "key_code": "x",
-              "repeat": false
+              "key_code": "x"
             },
             {
               "key_code": "i",
@@ -3140,8 +3208,7 @@
           },
           "to": [
             {
-              "key_code": "x",
-              "repeat": false
+              "key_code": "x"
             },
             {
               "key_code": "e",
@@ -3187,8 +3254,7 @@
           },
           "to": [
             {
-              "key_code": "x",
-              "repeat": false
+              "key_code": "x"
             },
             {
               "key_code": "o",
@@ -3465,8 +3531,7 @@
           },
           "to": [
             {
-              "key_code": "k",
-              "repeat": false
+              "key_code": "k"
             },
             {
               "key_code": "a",
@@ -3517,8 +3582,7 @@
           },
           "to": [
             {
-              "key_code": "k",
-              "repeat": false
+              "key_code": "k"
             },
             {
               "key_code": "i",
@@ -3569,8 +3633,7 @@
           },
           "to": [
             {
-              "key_code": "k",
-              "repeat": false
+              "key_code": "k"
             },
             {
               "key_code": "u",
@@ -3621,8 +3684,7 @@
           },
           "to": [
             {
-              "key_code": "k",
-              "repeat": false
+              "key_code": "k"
             },
             {
               "key_code": "o",
@@ -3673,8 +3735,7 @@
           },
           "to": [
             {
-              "key_code": "s",
-              "repeat": false
+              "key_code": "s"
             },
             {
               "key_code": "i",
@@ -3725,8 +3786,7 @@
           },
           "to": [
             {
-              "key_code": "s",
-              "repeat": false
+              "key_code": "s"
             },
             {
               "key_code": "u",
@@ -3777,8 +3837,7 @@
           },
           "to": [
             {
-              "key_code": "t",
-              "repeat": false
+              "key_code": "t"
             },
             {
               "key_code": "a",
@@ -3829,8 +3888,7 @@
           },
           "to": [
             {
-              "key_code": "t",
-              "repeat": false
+              "key_code": "t"
             },
             {
               "key_code": "o",
@@ -3881,8 +3939,7 @@
           },
           "to": [
             {
-              "key_code": "n",
-              "repeat": false
+              "key_code": "n"
             },
             {
               "key_code": "a",
@@ -3933,8 +3990,7 @@
           },
           "to": [
             {
-              "key_code": "n",
-              "repeat": false
+              "key_code": "n"
             },
             {
               "key_code": "i",
@@ -3985,8 +4041,7 @@
           },
           "to": [
             {
-              "key_code": "n",
-              "repeat": false
+              "key_code": "n"
             },
             {
               "key_code": "o",
@@ -4037,8 +4092,7 @@
           },
           "to": [
             {
-              "key_code": "h",
-              "repeat": false
+              "key_code": "h"
             },
             {
               "key_code": "a",
@@ -4089,8 +4143,7 @@
           },
           "to": [
             {
-              "key_code": "m",
-              "repeat": false
+              "key_code": "m"
             },
             {
               "key_code": "a",
@@ -4141,8 +4194,7 @@
           },
           "to": [
             {
-              "key_code": "m",
-              "repeat": false
+              "key_code": "m"
             },
             {
               "key_code": "o",
@@ -4193,8 +4245,7 @@
           },
           "to": [
             {
-              "key_code": "r",
-              "repeat": false
+              "key_code": "r"
             },
             {
               "key_code": "i",
@@ -4245,8 +4296,7 @@
           },
           "to": [
             {
-              "key_code": "r",
-              "repeat": false
+              "key_code": "r"
             },
             {
               "key_code": "u",
@@ -4297,8 +4347,7 @@
           },
           "to": [
             {
-              "key_code": "r",
-              "repeat": false
+              "key_code": "r"
             },
             {
               "key_code": "e",
@@ -4349,8 +4398,7 @@
           },
           "to": [
             {
-              "key_code": "n",
-              "repeat": false
+              "key_code": "n"
             },
             {
               "key_code": "n",
@@ -4401,8 +4449,7 @@
           },
           "to": [
             {
-              "key_code": "g",
-              "repeat": false
+              "key_code": "g"
             },
             {
               "key_code": "a",
@@ -4453,8 +4500,7 @@
           },
           "to": [
             {
-              "key_code": "d",
-              "repeat": false
+              "key_code": "d"
             },
             {
               "key_code": "a",
@@ -4505,8 +4551,7 @@
           },
           "to": [
             {
-              "key_code": "d",
-              "repeat": false
+              "key_code": "d"
             },
             {
               "key_code": "e",
@@ -4557,12 +4602,10 @@
           },
           "to": [
             {
-              "key_code": "x",
-              "repeat": false
+              "key_code": "x"
             },
             {
-              "key_code": "t",
-              "repeat": false
+              "key_code": "t"
             },
             {
               "key_code": "u",
@@ -4613,12 +4656,10 @@
           },
           "to": [
             {
-              "key_code": "x",
-              "repeat": false
+              "key_code": "x"
             },
             {
-              "key_code": "y",
-              "repeat": false
+              "key_code": "y"
             },
             {
               "key_code": "o",
@@ -4813,8 +4854,7 @@
           },
           "to_if_alone": [
             {
-              "key_code": "p",
-              "repeat": false
+              "key_code": "p"
             },
             {
               "key_code": "u",
@@ -4876,8 +4916,7 @@
           },
           "to_if_alone": [
             {
-              "key_code": "s",
-              "repeat": false
+              "key_code": "s"
             },
             {
               "key_code": "o",
@@ -4939,8 +4978,7 @@
           },
           "to_if_alone": [
             {
-              "key_code": "t",
-              "repeat": false
+              "key_code": "t"
             },
             {
               "key_code": "e",
@@ -5134,8 +5172,7 @@
           },
           "to": [
             {
-              "key_code": "backslash",
-              "repeat": false
+              "key_code": "backslash"
             },
             {
               "key_code": "y",
@@ -5171,8 +5208,7 @@
           },
           "to": [
             {
-              "key_code": "backslash",
-              "repeat": false
+              "key_code": "backslash"
             },
             {
               "key_code": "u",
@@ -5208,8 +5244,7 @@
           },
           "to": [
             {
-              "key_code": "backslash",
-              "repeat": false
+              "key_code": "backslash"
             },
             {
               "key_code": "i",
@@ -5245,8 +5280,7 @@
           },
           "to": [
             {
-              "key_code": "backslash",
-              "repeat": false
+              "key_code": "backslash"
             },
             {
               "key_code": "o",
@@ -5282,8 +5316,7 @@
           },
           "to": [
             {
-              "key_code": "backslash",
-              "repeat": false
+              "key_code": "backslash"
             },
             {
               "key_code": "p",
@@ -5319,8 +5352,7 @@
           },
           "to": [
             {
-              "key_code": "backslash",
-              "repeat": false
+              "key_code": "backslash"
             },
             {
               "key_code": "h",
@@ -5356,8 +5388,7 @@
           },
           "to": [
             {
-              "key_code": "backslash",
-              "repeat": false
+              "key_code": "backslash"
             },
             {
               "key_code": "j",
@@ -5393,8 +5424,7 @@
           },
           "to": [
             {
-              "key_code": "backslash",
-              "repeat": false
+              "key_code": "backslash"
             },
             {
               "key_code": "k",
@@ -5430,8 +5460,7 @@
           },
           "to": [
             {
-              "key_code": "backslash",
-              "repeat": false
+              "key_code": "backslash"
             },
             {
               "key_code": "l",
@@ -5467,8 +5496,7 @@
           },
           "to": [
             {
-              "key_code": "backslash",
-              "repeat": false
+              "key_code": "backslash"
             },
             {
               "key_code": "semicolon",
@@ -5509,8 +5537,7 @@
           },
           "to": [
             {
-              "key_code": "backslash",
-              "repeat": false
+              "key_code": "backslash"
             },
             {
               "key_code": "semicolon",
@@ -5549,8 +5576,7 @@
           },
           "to": [
             {
-              "key_code": "backslash",
-              "repeat": false
+              "key_code": "backslash"
             },
             {
               "key_code": "quote",
@@ -5591,8 +5617,7 @@
           },
           "to": [
             {
-              "key_code": "backslash",
-              "repeat": false
+              "key_code": "backslash"
             },
             {
               "key_code": "quote",
@@ -5631,8 +5656,7 @@
           },
           "to": [
             {
-              "key_code": "backslash",
-              "repeat": false
+              "key_code": "backslash"
             },
             {
               "key_code": "n",
@@ -5668,8 +5692,7 @@
           },
           "to": [
             {
-              "key_code": "backslash",
-              "repeat": false
+              "key_code": "backslash"
             },
             {
               "key_code": "m",
@@ -5705,8 +5728,7 @@
           },
           "to": [
             {
-              "key_code": "backslash",
-              "repeat": false
+              "key_code": "backslash"
             },
             {
               "key_code": "comma",
@@ -5742,8 +5764,7 @@
           },
           "to": [
             {
-              "key_code": "backslash",
-              "repeat": false
+              "key_code": "backslash"
             },
             {
               "key_code": "period",
@@ -5784,8 +5805,7 @@
           },
           "to": [
             {
-              "key_code": "backslash",
-              "repeat": false
+              "key_code": "backslash"
             },
             {
               "key_code": "comma",
@@ -5829,8 +5849,7 @@
           },
           "to": [
             {
-              "key_code": "backslash",
-              "repeat": false
+              "key_code": "backslash"
             },
             {
               "key_code": "period",
@@ -5869,8 +5888,7 @@
           },
           "to": [
             {
-              "key_code": "backslash",
-              "repeat": false
+              "key_code": "backslash"
             },
             {
               "key_code": "slash",
@@ -5911,8 +5929,7 @@
           },
           "to": [
             {
-              "key_code": "backslash",
-              "repeat": false
+              "key_code": "backslash"
             },
             {
               "key_code": "slash",
@@ -5951,8 +5968,7 @@
           },
           "to": [
             {
-              "key_code": "backslash",
-              "repeat": false
+              "key_code": "backslash"
             },
             {
               "key_code": "open_bracket",
@@ -5988,8 +6004,7 @@
           },
           "to": [
             {
-              "key_code": "backslash",
-              "repeat": false
+              "key_code": "backslash"
             },
             {
               "key_code": "close_bracket",
@@ -6030,8 +6045,7 @@
           },
           "to": [
             {
-              "key_code": "backslash",
-              "repeat": false
+              "key_code": "backslash"
             },
             {
               "key_code": "open_bracket",
@@ -6075,8 +6089,7 @@
           },
           "to": [
             {
-              "key_code": "backslash",
-              "repeat": false
+              "key_code": "backslash"
             },
             {
               "key_code": "close_bracket",
@@ -6120,8 +6133,7 @@
           },
           "to": [
             {
-              "key_code": "backslash",
-              "repeat": false
+              "key_code": "backslash"
             },
             {
               "key_code": "9",
@@ -6165,8 +6177,7 @@
           },
           "to": [
             {
-              "key_code": "backslash",
-              "repeat": false
+              "key_code": "backslash"
             },
             {
               "key_code": "0",
