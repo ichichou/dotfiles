@@ -45,7 +45,7 @@
       ]
     },
     {
-      "description": "[Simul] F + J → Sticky Shift / SKK EnterJapanese",
+      "description": "[Simul] F + J → Sticky Shift / AquaSKK EnterJapanese",
       "manipulators": [
         {
           "type": "basic",
@@ -94,6 +94,42 @@
               "key_code": "comma",
               "modifiers": [
                 "shift"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "input_source_if",
+              "input_sources": [
+                {
+                  "language": "ja"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[Simul] G + H → AquaSKK ToggleKana",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "simultaneous": [
+              {
+                "key_code": "g"
+              },
+              {
+                "key_code": "h"
+              }
+            ]
+          },
+          "to": [
+            {
+              "key_code": "semicolon",
+              "modifiers": [
+                "control"
               ]
             }
           ],
