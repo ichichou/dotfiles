@@ -14,11 +14,7 @@
 ### AquaSKK ユーザー辞書をバックアップ
 AquaSKK のユーザー辞書はシンボリックリンクでは機能しないようなので、都度バックアップする必要がある。
 
-```
-sudo cp \
-~/Library/Application\ Support/AquaSKK/skk-jisyo.utf8 \
-~/Box/Setting_files/AquaSKK/skk-jisyo.utf8
-```
+ユーザー辞書のパス：`~/Library/Application Support/AquaSKK/skk-jisyo.utf8`
 
 
 ## クリーンインストール
@@ -105,21 +101,14 @@ NPM：
 
 ## 手動設定
 
-### AquaSKK のユーザー辞書を復元
-**NOTE:** 現状、AquaSKK はうまく機能しない。
+### AquaSKK の設定ファイルを復元
+以下のファイルを次のパスに置く：`~/Library/Application Support/AquaSKK/`
 
-1: Box Drive にサインイン。
+* skk-jisyo.utf8……ユーザー辞書
+* kana-rule.conf……仮名テーブル
+* keymap.conf……キーマップ
 
-2: 以下のコマンドを実行：
-
-```
-sudo cp \
-~/Box/Setting_files/AquaSKK/skk-jisyo.utf8 \
-~/Library/Application\ Support/AquaSKK/skk-jisyo.utf8
-```
-
-3: AquaSKK の環境設定から辞書を `~/Library/Application\ Support/AquaSKK/skk-jisyo.utf8` に設定する。\
-`変更…` からではなくパスを直接入力する必要がある。
+辞書ファイルの上書きは、AquaSKK を終了させてからでないとうまくいかないかもしれない。
 
 ### Terminal
 1. https://cocopon.github.io/iceberg.vim/[Iceberg プロファイル]をインポートする。
@@ -135,7 +124,7 @@ sudo cp \
 * [ZenzaWatch](https://greasyfork.org/ja/scripts/14391-zenzawatch) をインストールする。
 
 ### Box Drive
-* `Setting_files` を `オフライン利用可` にする。
+* `Config/` を `オフライン利用可` にする。
 
 ### Alfred
 * 「Google Search with Selected Text」のワークフローを設定。
