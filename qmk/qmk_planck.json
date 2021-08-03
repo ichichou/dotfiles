@@ -123,7 +123,7 @@
       "SGUI(KC_Z)",
       "KC_LBRC",
       "KC_RBRC",
-      "LCTL(KC_SCLN)",
+      "ANY(LCTL(LGUI(KC_S)))",
       "ANY(LCTL(LGUI(KC_V)))",
       "KC_LEFT",
       "KC_DOWN",
