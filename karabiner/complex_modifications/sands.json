@@ -27,33 +27,6 @@
           ]
         }
       ]
-    },
-    {
-      "description": "[SandS] Return and Shift",
-      "manipulators": [
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "return_or_enter",
-            "modifiers": {
-              "optional": [
-                "any"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "left_shift",
-              "lazy": true
-            }
-          ],
-          "to_if_alone": [
-            {
-              "key_code": "return_or_enter"
-            }
-          ]
-        }
-      ]
     }
   ]
 }
