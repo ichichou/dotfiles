@@ -45,7 +45,7 @@
       ]
     },
     {
-      "description": "[Simul] F + J → Sticky Shift / AquaSKK StickyKey",
+      "description": "[Simul] F + J → AquaSKK ToggleKana",
       "manipulators": [
         {
           "type": "basic",
@@ -56,72 +56,6 @@
               },
               {
                 "key_code": "j"
-              }
-            ]
-          },
-          "to": [
-            {
-              "sticky_modifier": {
-                "left_shift": "toggle"
-              }
-            }
-          ],
-          "conditions": [
-            {
-              "type": "input_source_unless",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "simultaneous": [
-              {
-                "key_code": "f"
-              },
-              {
-                "key_code": "j"
-              }
-            ]
-          },
-          "to": [
-            {
-              "key_code": "comma",
-              "modifiers": [
-                "shift"
-              ]
-            }
-          ],
-          "conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "[Simul] G + H → AquaSKK ToggleKana",
-      "manipulators": [
-        {
-          "type": "basic",
-          "from": {
-            "simultaneous": [
-              {
-                "key_code": "g"
-              },
-              {
-                "key_code": "h"
               }
             ]
           },
