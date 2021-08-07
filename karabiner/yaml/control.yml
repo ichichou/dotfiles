@@ -84,7 +84,7 @@ rules:
     to_if_alone:
     - key_code: escape
 
-- description: "[Control] LCotrol-J/L → かな/英数"
+- description: "[Control] RCotrol-J/L → かな/英数"
   manipulators:
   - type: basic
     from:

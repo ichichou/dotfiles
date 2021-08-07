@@ -166,7 +166,7 @@
       ]
     },
     {
-      "description": "[Control] LCotrol-J/L → かな/英数",
+      "description": "[Control] RCotrol-J/L → かな/英数",
       "manipulators": [
         {
           "type": "basic",
