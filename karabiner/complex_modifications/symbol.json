@@ -47,6 +47,11 @@
         },
         {
           "type": "variable_unless",
+          "name": "kanchoku_mode",
+          "value": 1
+        },
+        {
+          "type": "variable_unless",
           "name": "symbol_mode",
           "value": 1
         },
@@ -61,7 +66,7 @@
   ],
   "rules": [
     {
-      "description": "[Kana Input] 同時打鍵で記号入力",
+      "description": "[Japanese Input] 同時打鍵で記号入力",
       "manipulators": [
         {
           "type": "basic",
@@ -92,6 +97,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "kanchoku_mode",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -135,6 +145,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "kanchoku_mode",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -181,6 +196,11 @@
             },
             {
               "type": "variable_unless",
+              "name": "kanchoku_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -224,6 +244,11 @@
             },
             {
               "type": "variable_unless",
+              "name": "kanchoku_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -264,6 +289,11 @@
             },
             {
               "type": "variable_unless",
+              "name": "kanchoku_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -301,6 +331,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "kanchoku_mode",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -347,6 +382,11 @@
             },
             {
               "type": "variable_unless",
+              "name": "kanchoku_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -387,6 +427,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "kanchoku_mode",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -433,6 +478,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "kanchoku_mode",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -488,6 +538,11 @@
             },
             {
               "type": "variable_unless",
+              "name": "kanchoku_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -502,7 +557,7 @@
       ]
     },
     {
-      "description": "[Kana Input] Symbol Mode",
+      "description": "[Japanese Input] Symbol Mode",
       "manipulators": [
         {
           "type": "basic",
@@ -544,6 +599,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "kanchoku_mode",
+              "value": 1
             },
             {
               "type": "variable_unless",
