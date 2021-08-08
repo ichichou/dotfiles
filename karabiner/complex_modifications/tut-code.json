@@ -9,13 +9,6 @@
       }
     },
     {
-      "from/modifiers": {
-        "mandatory": [
-          "shift"
-        ]
-      }
-    },
-    {
       "to/modifiers": [
         "shift"
       ]
@@ -26,6 +19,36 @@
           "type": "variable_if",
           "name": "kanchoku_mode",
           "value": 1
+        },
+        {
+          "type": "frontmost_application_unless",
+          "bundle_identifiers": [
+            "^com\\.apple\\.loginwindow$"
+          ]
+        }
+      ]
+    },
+    {
+      "conditions": [
+        {
+          "type": "variable_if",
+          "name": "kanchoku_mode",
+          "value": 2
+        },
+        {
+          "type": "frontmost_application_unless",
+          "bundle_identifiers": [
+            "^com\\.apple\\.loginwindow$"
+          ]
+        }
+      ]
+    },
+    {
+      "conditions": [
+        {
+          "type": "variable_if",
+          "name": "kanchoku_mode",
+          "value": 3
         },
         {
           "type": "frontmost_application_unless",
@@ -52,8 +75,13 @@
         },
         {
           "type": "variable_unless",
-          "name": "symbol_mode",
-          "value": 1
+          "name": "kanchoku_mode",
+          "value": 2
+        },
+        {
+          "type": "variable_unless",
+          "name": "kanchoku_mode",
+          "value": 3
         },
         {
           "type": "frontmost_application_unless",
@@ -110,6 +138,16 @@
               "value": 1
             },
             {
+              "type": "variable_unless",
+              "name": "kanchoku_mode",
+              "value": 2
+            },
+            {
+              "type": "variable_unless",
+              "name": "kanchoku_mode",
+              "value": 3
+            },
+            {
               "type": "frontmost_application_unless",
               "bundle_identifiers": [
                 "^com\\.apple\\.loginwindow$"
@@ -140,24 +178,24 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "j"
+            "key_code": "g"
           },
           "to": [
             {
-              "key_code": "k"
+              "key_code": "3",
+              "modifiers": [
+                "shift"
+              ]
             },
             {
-              "key_code": "a"
-            },
-            {
-              "key_code": "n"
-            },
-            {
-              "key_code": "j"
-            },
-            {
-              "key_code": "i",
+              "key_code": "g",
               "repeat": false
+            },
+            {
+              "set_variable": {
+                "name": "kanchoku_mode",
+                "value": 2
+              }
             }
           ],
           "conditions": [
@@ -165,6 +203,68 @@
               "type": "variable_if",
               "name": "kanchoku_mode",
               "value": 1
+            },
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.apple\\.loginwindow$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "g"
+          },
+          "to": [
+            {
+              "key_code": "g",
+              "repeat": false
+            },
+            {
+              "set_variable": {
+                "name": "kanchoku_mode",
+                "value": 3
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "kanchoku_mode",
+              "value": 2
+            },
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.apple\\.loginwindow$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "h"
+          },
+          "to": [
+            {
+              "key_code": "h",
+              "repeat": false
+            },
+            {
+              "set_variable": {
+                "name": "kanchoku_mode",
+                "value": 0
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "kanchoku_mode",
+              "value": 3
             },
             {
               "type": "frontmost_application_unless",
