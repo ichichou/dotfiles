@@ -1,0 +1,371 @@
+{
+  "title": "09-9. TUT-code",
+  "aliases": [
+    {
+      "from/modifiers": {
+        "optional": [
+          "any"
+        ]
+      }
+    },
+    {
+      "from/modifiers": {
+        "optional": [
+          "shift"
+        ]
+      }
+    },
+    {
+      "to/modifiers": [
+        "shift"
+      ]
+    },
+    {
+      "conditions": [
+        {
+          "type": "variable_if",
+          "name": "kanchoku_mode",
+          "value": 1
+        },
+        {
+          "type": "frontmost_application_unless",
+          "bundle_identifiers": [
+            "^com\\.apple\\.loginwindow$"
+          ]
+        }
+      ]
+    },
+    {
+      "conditions": [
+        {
+          "type": "variable_if",
+          "name": "kanchoku_mode",
+          "value": 2
+        },
+        {
+          "type": "frontmost_application_unless",
+          "bundle_identifiers": [
+            "^com\\.apple\\.loginwindow$"
+          ]
+        }
+      ]
+    },
+    {
+      "conditions": [
+        {
+          "type": "variable_if",
+          "name": "kanchoku_mode",
+          "value": 3
+        },
+        {
+          "type": "frontmost_application_unless",
+          "bundle_identifiers": [
+            "^com\\.apple\\.loginwindow$"
+          ]
+        }
+      ]
+    },
+    {
+      "conditions": [
+        {
+          "type": "input_source_if",
+          "input_sources": [
+            {
+              "language": "ja"
+            }
+          ]
+        },
+        {
+          "type": "variable_unless",
+          "name": "kanchoku_mode",
+          "value": 1
+        },
+        {
+          "type": "variable_unless",
+          "name": "kanchoku_mode",
+          "value": 2
+        },
+        {
+          "type": "variable_unless",
+          "name": "kanchoku_mode",
+          "value": 3
+        },
+        {
+          "type": "frontmost_application_unless",
+          "bundle_identifiers": [
+            "^com\\.apple\\.loginwindow$"
+          ]
+        }
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "description": "[Kana Input] TUT-code",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "return_or_enter"
+          },
+          "to_if_alone": [
+            {
+              "key_code": "return_or_enter",
+              "repeat": false
+            }
+          ],
+          "to": [
+            {
+              "set_variable": {
+                "name": "kanchoku_mode",
+                "value": 1
+              }
+            }
+          ],
+          "to_after_key_up": [
+            {
+              "set_variable": {
+                "name": "kanchoku_mode",
+                "value": 0
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "input_source_if",
+              "input_sources": [
+                {
+                  "language": "ja"
+                }
+              ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "kanchoku_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_unless",
+              "name": "kanchoku_mode",
+              "value": 2
+            },
+            {
+              "type": "variable_unless",
+              "name": "kanchoku_mode",
+              "value": 3
+            },
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.apple\\.loginwindow$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "return_or_enter"
+          },
+          "to": [
+            {
+              "key_code": "return_or_enter",
+              "repeat": false
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "g"
+          },
+          "to": [
+            {
+              "key_code": "3",
+              "modifiers": [
+                "shift"
+              ]
+            },
+            {
+              "key_code": "g",
+              "repeat": false
+            },
+            {
+              "set_variable": {
+                "name": "kanchoku_mode",
+                "value": 2
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "kanchoku_mode",
+              "value": 1
+            },
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.apple\\.loginwindow$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f"
+          },
+          "to": [
+            {
+              "key_code": "f",
+              "repeat": false
+            },
+            {
+              "set_variable": {
+                "name": "kanchoku_mode",
+                "value": 1
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "kanchoku_mode",
+              "value": 2
+            },
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.apple\\.loginwindow$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "g"
+          },
+          "to": [
+            {
+              "key_code": "g",
+              "repeat": false
+            },
+            {
+              "set_variable": {
+                "name": "kanchoku_mode",
+                "value": 3
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "kanchoku_mode",
+              "value": 2
+            },
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.apple\\.loginwindow$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "h"
+          },
+          "to": [
+            {
+              "key_code": "h",
+              "repeat": false
+            },
+            {
+              "set_variable": {
+                "name": "kanchoku_mode",
+                "value": 1
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "kanchoku_mode",
+              "value": 3
+            },
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.apple\\.loginwindow$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f16",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "kanchoku_mode",
+                "value": 1
+              }
+            }
+          ],
+          "to_delayed_action": {
+            "to_if_invoked": [
+              {
+                "set_variable": {
+                  "name": "kanchoku_mode",
+                  "value": 0
+                }
+              }
+            ],
+            "to_if_canceled": [
+              {
+                "set_variable": {
+                  "name": "kanchoku_mode",
+                  "value": 0
+                }
+              }
+            ]
+          },
+          "parameters": {
+            "basic.to_delayed_action_delay_milliseconds": 5000
+          },
+          "conditions": [
+            {
+              "type": "input_source_if",
+              "input_sources": [
+                {
+                  "language": "ja"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f16",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
