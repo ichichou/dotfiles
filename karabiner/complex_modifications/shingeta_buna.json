@@ -76,16 +76,6 @@
         },
         {
           "type": "variable_unless",
-          "name": "kanchoku_mode",
-          "value": 2
-        },
-        {
-          "type": "variable_unless",
-          "name": "kanchoku_mode",
-          "value": 3
-        },
-        {
-          "type": "variable_unless",
           "name": "symbol_mode",
           "value": 1
         },
@@ -111,16 +101,6 @@
           "type": "variable_unless",
           "name": "kanchoku_mode",
           "value": 1
-        },
-        {
-          "type": "variable_unless",
-          "name": "kanchoku_mode",
-          "value": 2
-        },
-        {
-          "type": "variable_unless",
-          "name": "kanchoku_mode",
-          "value": 3
         },
         {
           "type": "variable_unless",
@@ -154,16 +134,6 @@
           "type": "variable_unless",
           "name": "kanchoku_mode",
           "value": 1
-        },
-        {
-          "type": "variable_unless",
-          "name": "kanchoku_mode",
-          "value": 2
-        },
-        {
-          "type": "variable_unless",
-          "name": "kanchoku_mode",
-          "value": 3
         },
         {
           "type": "variable_unless",
@@ -205,16 +175,6 @@
         },
         {
           "type": "variable_unless",
-          "name": "kanchoku_mode",
-          "value": 2
-        },
-        {
-          "type": "variable_unless",
-          "name": "kanchoku_mode",
-          "value": 3
-        },
-        {
-          "type": "variable_unless",
           "name": "symbol_mode",
           "value": 1
         },
@@ -250,16 +210,6 @@
           "type": "variable_unless",
           "name": "kanchoku_mode",
           "value": 1
-        },
-        {
-          "type": "variable_unless",
-          "name": "kanchoku_mode",
-          "value": 2
-        },
-        {
-          "type": "variable_unless",
-          "name": "kanchoku_mode",
-          "value": 3
         },
         {
           "type": "variable_unless",
@@ -331,16 +281,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -386,16 +326,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -447,16 +377,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -505,16 +425,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -560,16 +470,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -612,16 +512,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -673,16 +563,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -728,16 +608,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -789,16 +659,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -859,16 +719,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -919,16 +769,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -990,16 +830,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -1055,16 +885,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -1126,16 +946,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -1191,16 +1001,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -1262,16 +1062,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -1327,16 +1117,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -1398,16 +1178,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -1463,16 +1233,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -1534,16 +1294,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -1599,16 +1349,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -1670,16 +1410,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -1735,16 +1465,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -1806,16 +1526,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -1871,16 +1581,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -1942,16 +1642,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -2007,16 +1697,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -2078,16 +1758,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -2143,16 +1813,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -2214,16 +1874,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -2279,16 +1929,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -2341,16 +1981,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -2412,16 +2042,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -2477,16 +2097,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -2548,16 +2158,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -2613,16 +2213,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -2684,16 +2274,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -2749,16 +2329,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -2820,16 +2390,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -2885,16 +2445,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -2956,16 +2506,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -3024,16 +2564,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -3089,16 +2619,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -3163,16 +2683,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -3225,16 +2735,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -3293,16 +2793,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -3355,16 +2845,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -3423,16 +2903,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -3485,16 +2955,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -3556,16 +3016,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -3621,16 +3071,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -3692,16 +3132,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -3757,16 +3187,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -3828,16 +3248,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -3893,16 +3303,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -3964,16 +3364,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -4029,16 +3419,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -4100,16 +3480,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -4165,16 +3535,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -4236,16 +3596,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -4301,16 +3651,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -4375,16 +3715,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -4443,16 +3773,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -4517,16 +3837,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -4585,16 +3895,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -4659,16 +3959,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -4727,16 +4017,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -4801,16 +4081,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -4866,16 +4136,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -4937,16 +4197,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -5002,16 +4252,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -5073,16 +4313,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -5138,16 +4368,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -5209,16 +4429,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -5277,16 +4487,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -5342,16 +4542,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -5413,16 +4603,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -5478,16 +4658,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -5552,16 +4722,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -5623,16 +4783,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -5691,16 +4841,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -5762,16 +4902,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -5827,16 +4957,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -5898,16 +5018,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -5966,16 +5076,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -6034,16 +5134,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -6108,16 +5198,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -6176,16 +5256,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -6250,16 +5320,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -6318,16 +5378,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -6392,16 +5442,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -6460,16 +5500,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -6534,16 +5564,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -6602,16 +5622,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -6676,16 +5686,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -6747,16 +5747,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -6815,16 +5805,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -6889,16 +5869,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -6957,16 +5927,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -7031,16 +5991,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -7099,16 +6049,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -7173,16 +6113,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -7241,16 +6171,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -7315,16 +6235,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -7383,16 +6293,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -7457,16 +6357,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -7525,16 +6415,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -7599,16 +6479,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -7667,16 +6537,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -7741,16 +6601,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -7809,16 +6659,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -7883,16 +6723,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -7954,16 +6784,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -8022,16 +6842,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -8096,16 +6906,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -8164,16 +6964,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -8238,16 +7028,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -8306,16 +7086,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -8380,16 +7150,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -8448,16 +7208,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -8522,16 +7272,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -8590,16 +7330,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -8664,16 +7394,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -8732,16 +7452,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -8806,16 +7516,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -8874,16 +7574,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -8948,16 +7638,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -9016,16 +7696,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -9090,16 +7760,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -9161,16 +7821,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -9229,16 +7879,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -9300,16 +7940,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -9365,16 +7995,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -9436,16 +8056,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -9504,16 +8114,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -9569,16 +8169,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -9643,16 +8233,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -9711,16 +8291,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -9785,16 +8355,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -9856,16 +8416,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -9914,16 +8464,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -9969,16 +8509,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -10033,16 +8563,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -10091,16 +8611,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -10155,16 +8665,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -10213,16 +8713,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -10277,16 +8767,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -10335,16 +8815,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -10399,16 +8869,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -10457,16 +8917,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -10521,16 +8971,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -10579,16 +9019,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -10643,16 +9073,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -10701,16 +9121,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -10765,16 +9175,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -10823,16 +9223,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -10887,16 +9277,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -10945,16 +9325,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -11009,16 +9379,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -11067,16 +9427,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -11131,16 +9481,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -11189,16 +9529,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -11253,16 +9583,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -11311,16 +9631,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -11375,16 +9685,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -11436,16 +9736,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -11494,16 +9784,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -11561,16 +9841,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -11619,16 +9889,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -11674,16 +9934,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -11751,16 +10001,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -11809,16 +10049,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -11878,16 +10108,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -11941,16 +10161,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -12010,16 +10220,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -12073,16 +10273,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -12142,16 +10332,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -12205,16 +10385,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -12274,16 +10444,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -12337,16 +10497,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -12406,16 +10556,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -12469,16 +10609,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -12538,16 +10668,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -12601,16 +10721,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -12670,16 +10780,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -12733,16 +10833,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -12802,16 +10892,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -12865,16 +10945,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -12934,16 +11004,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -12997,16 +11057,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -13066,16 +11116,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -13132,16 +11172,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -13195,16 +11225,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -13264,16 +11284,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -13327,16 +11337,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -13399,16 +11399,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -13468,16 +11458,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -13530,16 +11510,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -13598,16 +11568,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -13660,16 +11620,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -13728,16 +11678,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -13788,16 +11728,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -13854,16 +11784,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -13914,16 +11834,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -13983,16 +11893,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -14049,16 +11949,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -14112,16 +12002,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -14181,16 +12061,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -14244,16 +12114,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -14313,16 +12173,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -14376,16 +12226,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -14445,16 +12285,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -14508,16 +12338,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -14577,16 +12397,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -14640,16 +12450,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -14709,16 +12509,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -14772,16 +12562,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -14841,16 +12621,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -14904,16 +12674,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -14973,16 +12733,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -15036,16 +12786,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -15105,16 +12845,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -15168,16 +12898,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -15237,16 +12957,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -15300,16 +13010,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -15369,16 +13069,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -15432,16 +13122,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -15501,16 +13181,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -15563,16 +13233,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -15631,16 +13291,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -15696,16 +13346,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -15756,16 +13396,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -15824,16 +13454,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -15898,16 +13518,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -15966,16 +13576,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -16040,16 +13640,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -16108,16 +13698,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -16182,16 +13762,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -16250,16 +13820,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -16324,16 +13884,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -16392,16 +13942,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -16466,16 +14006,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -16534,16 +14064,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -16608,16 +14128,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -16676,16 +14186,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -16750,16 +14250,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -16818,16 +14308,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -16892,16 +14372,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -16963,16 +14433,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -17031,16 +14491,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -17105,16 +14555,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -17173,16 +14613,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -17247,16 +14677,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -17315,16 +14735,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -17392,16 +14802,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -17466,16 +14866,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -17531,16 +14921,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -17602,16 +14982,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -17667,16 +15037,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
@@ -17757,16 +15117,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -17839,16 +15189,6 @@
             },
             {
               "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
-            },
-            {
-              "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
             },
@@ -17918,16 +15258,6 @@
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 2
-            },
-            {
-              "type": "variable_unless",
-              "name": "kanchoku_mode",
-              "value": 3
             },
             {
               "type": "variable_unless",
