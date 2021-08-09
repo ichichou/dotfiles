@@ -134,6 +134,3 @@ nnoremap <silent> [window]x :<C-u>bdelete<CR>
 " --------------------
 " Plugins
 " --------------------
-
-vmap v <Plug>(expand_region_expand)
-vmap <C-v> <Plug>(expand_region_shrink)
