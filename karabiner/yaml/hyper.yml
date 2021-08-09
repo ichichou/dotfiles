@@ -26,12 +26,12 @@ rules:
   - type: basic
     from:
       key_code: tab
+    to_if_alone:
+    - key_code: tab
     to:
     - set_variable:
         name: hyper_mode
         value: 1
-    to_if_alone:
-    - key_code: tab
     to_after_key_up:
     - set_variable:
         name: hyper_mode
@@ -286,12 +286,12 @@ rules:
     conditions: *hyper_mode
 
   # B: Visual Studio Code
-  - type: basic
-    from:
-      key_code: b
-    to:
-    - shell_command: open -a "visual studio code"
-    conditions: *hyper_mode
+  # - type: basic
+  #   from:
+  #     key_code: b
+  #   to:
+  #   - shell_command: open -a "visual studio code"
+  #   conditions: *hyper_mode
 
 # ----- HJKL; -----
 # ----- NM,./ -----
@@ -304,15 +304,12 @@ rules:
     - shell_command: open -a "superhuman"
     conditions: *hyper_mode
 
-  # J: Trello (Quick Add)
+  # J: TUT-code ストローク表
   - type: basic
     from:
       key_code: j
     to:
-    - key_code: spacebar
-      modifiers:
-      - control
-      - option
+    - shell_command: open -a "coteditor" ~/repos/kanchoku/tutcode_stroke_table.txt
     conditions: *hyper_mode
 
   # K: Cot Editor
