@@ -35,12 +35,12 @@
       ]
     },
     {
-      "description": "[Chrome] LShift-LCommand-H → Shift-Command-H",
+      "description": "[Chrome] LShift-LCommand-F → Shift-Command-H",
       "manipulators": [
         {
           "type": "basic",
           "from": {
-            "key_code": "h",
+            "key_code": "f",
             "modifiers": {
               "mandatory": [
                 "left_shift",
