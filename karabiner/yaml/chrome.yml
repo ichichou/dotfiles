@@ -20,6 +20,44 @@ rules:
 #       bundle_identifiers:
 #       - "^com\\.google\\.Chrome$"
 
+- description: "[Chrome] LCommand-; → Command-L"
+  manipulators:
+  - type: basic
+    from:
+      key_code: semicolon
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: l
+      modifiers:
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.google\\.Chrome$"
+
+- description: "[Chrome] LShift-LCommand-H → Shift-Command-H"
+  manipulators:
+  - type: basic
+    from:
+      key_code: h
+      modifiers:
+        mandatory:
+        - left_shift
+        - left_command
+    to:
+    - key_code: h
+      modifiers:
+      - shift
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.google\\.Chrome$"
+
 - description: "[Chrome] LCommand-Q (held down) → Chrome を終了"
   manipulators:
   - type: basic

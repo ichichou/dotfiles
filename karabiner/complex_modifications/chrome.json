@@ -2,12 +2,12 @@
   "title": "01. Google Chrome",
   "rules": [
     {
-      "description": "[Chrome] LCommand-E → 閉じたタブを開く",
+      "description": "[Chrome] LCommand-; → Command-L",
       "manipulators": [
         {
           "type": "basic",
           "from": {
-            "key_code": "e",
+            "key_code": "semicolon",
             "modifiers": {
               "mandatory": [
                 "left_command"
@@ -16,7 +16,41 @@
           },
           "to": [
             {
-              "key_code": "t",
+              "key_code": "l",
+              "modifiers": [
+                "command"
+              ],
+              "repeat": false
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.google\\.Chrome$"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[Chrome] LShift-LCommand-H → Shift-Command-H",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "h",
+            "modifiers": {
+              "mandatory": [
+                "left_shift",
+                "left_command"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "h",
               "modifiers": [
                 "shift",
                 "command"
@@ -36,7 +70,7 @@
       ]
     },
     {
-      "description": "[Chrome] LCommand-Q (held down) → Google Chrome を終了",
+      "description": "[Chrome] LCommand-Q (held down) → Chrome を終了",
       "manipulators": [
         {
           "type": "basic",
