@@ -2,12 +2,12 @@
   "title": "01. Google Chrome",
   "rules": [
     {
-      "description": "[Chrome] LCommand-; → Command-L",
+      "description": "[Chrome] LCommand-Quote → Command-L",
       "manipulators": [
         {
           "type": "basic",
           "from": {
-            "key_code": "semicolon",
+            "key_code": "quote",
             "modifiers": {
               "mandatory": [
                 "left_command"
