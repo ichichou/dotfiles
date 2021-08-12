@@ -81,7 +81,7 @@
       ]
     },
     {
-      "description": "[Simul] F + G → [] / H + J →()",
+      "description": "[Simul] F + G → [] / H + J → ()",
       "manipulators": [
         {
           "type": "basic",
