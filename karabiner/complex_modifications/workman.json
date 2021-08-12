@@ -1334,105 +1334,12 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "r",
+            "key_code": "quote",
             "modifiers": {
-              "optional": [
-                "shift"
+              "mandatory": [
+                "right_control"
               ]
             }
-          },
-          "to_if_alone": [
-            {
-              "key_code": "r",
-              "repeat": false
-            }
-          ],
-          "to": [
-            {
-              "set_variable": {
-                "name": "switch_layout_mode",
-                "value": 1
-              }
-            }
-          ],
-          "to_after_key_up": [
-            {
-              "set_variable": {
-                "name": "switch_layout_mode",
-                "value": 0
-              }
-            }
-          ],
-          "conditions": [
-            {
-              "type": "input_source_unless",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "r",
-            "modifiers": {
-              "optional": [
-                "shift"
-              ]
-            }
-          },
-          "to_if_alone": [
-            {
-              "key_code": "w",
-              "repeat": false
-            }
-          ],
-          "to": [
-            {
-              "set_variable": {
-                "name": "switch_layout_mode",
-                "value": 1
-              }
-            }
-          ],
-          "to_after_key_up": [
-            {
-              "set_variable": {
-                "name": "switch_layout_mode",
-                "value": 0
-              }
-            }
-          ],
-          "conditions": [
-            {
-              "type": "input_source_unless",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
-            },
-            {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.loginwindow$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "b"
           },
           "to": [
             {
@@ -1443,19 +1350,6 @@
             }
           ],
           "conditions": [
-            {
-              "type": "input_source_unless",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "switch_layout_mode",
-              "value": 1
-            },
             {
               "type": "variable_unless",
               "name": "workman",
@@ -1472,7 +1366,12 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "b"
+            "key_code": "quote",
+            "modifiers": {
+              "mandatory": [
+                "right_control"
+              ]
+            }
           },
           "to": [
             {
@@ -1483,19 +1382,6 @@
             }
           ],
           "conditions": [
-            {
-              "type": "input_source_unless",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "switch_layout_mode",
-              "value": 1
-            },
             {
               "type": "variable_if",
               "name": "workman",

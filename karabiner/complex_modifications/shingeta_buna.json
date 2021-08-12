@@ -16260,7 +16260,13 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "0"
+            "key_code": "quote",
+            "modifiers": {
+              "mandatory": [
+                "left_shift",
+                "right_control"
+              ]
+            }
           },
           "to": [
             {
@@ -16271,19 +16277,6 @@
             }
           ],
           "conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "symbol_mode",
-              "value": 1
-            },
             {
               "type": "variable_unless",
               "name": "buna_layout",
@@ -16300,7 +16293,13 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "0"
+            "key_code": "quote",
+            "modifiers": {
+              "mandatory": [
+                "left_shift",
+                "right_control"
+              ]
+            }
           },
           "to": [
             {
@@ -16311,19 +16310,6 @@
             }
           ],
           "conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "symbol_mode",
-              "value": 1
-            },
             {
               "type": "variable_if",
               "name": "buna_layout",
