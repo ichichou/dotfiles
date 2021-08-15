@@ -81,8 +81,11 @@ set softtabstop=4
 set shiftwidth=4
 
 augroup vimrc
+    autocmd FileType c,cpp,java setlocal tabstop=4 softtabstop=4 shiftwidth=4 cindent
     autocmd FileType json setlocal tabstop=2 softtabstop=2 shiftwidth=2
     autocmd FileType nim setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd FileType go setlocal tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
+    autocmd FileType html,css setlocal tabstop=2 softtabstop=2 shiftwidth=2
 augroup END
 
 autocmd vimrc FileType gitcommit setlocal fileencoding=utf-8
