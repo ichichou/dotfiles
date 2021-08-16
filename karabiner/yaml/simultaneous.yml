@@ -61,22 +61,6 @@ rules:
 #       input_sources:
 #       - language: ja
 
-# - description: "[Simul] G + H → AquaSKK ToggleKana"
-#   manipulators:
-#   - type: basic
-#     from:
-#       simultaneous:
-#       - key_code: g
-#       - key_code: h
-#     to:
-#     - key_code: semicolon
-#       modifiers:
-#       - control
-#     conditions:
-#     - type: input_source_if
-#       input_sources:
-#       - language: ja
-
 - description: "[Simul] F + J → AquaSKK ToggleKana"
   manipulators:
   - type: basic

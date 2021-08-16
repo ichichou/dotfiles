@@ -2,61 +2,6 @@
   "title": "05. Control Key",
   "rules": [
     {
-      "description": "[Control] Caps Lock + J/L (simul) → かな/英数, RControl",
-      "manipulators": [
-        {
-          "type": "basic",
-          "from": {
-            "simultaneous": [
-              {
-                "key_code": "j"
-              },
-              {
-                "key_code": "caps_lock"
-              }
-            ],
-            "simultaneous_options": {
-              "key_up_when": "all"
-            }
-          },
-          "to": [
-            {
-              "key_code": "japanese_kana"
-            },
-            {
-              "key_code": "right_control",
-              "lazy": true
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "simultaneous": [
-              {
-                "key_code": "l"
-              },
-              {
-                "key_code": "caps_lock"
-              }
-            ],
-            "simultaneous_options": {
-              "key_up_when": "all"
-            }
-          },
-          "to": [
-            {
-              "key_code": "japanese_eisuu"
-            },
-            {
-              "key_code": "right_control",
-              "lazy": true
-            }
-          ]
-        }
-      ]
-    },
-    {
       "description": "[Control] RControl + J/L (simul) → かな/英数, RControl",
       "manipulators": [
         {
@@ -106,33 +51,6 @@
             {
               "key_code": "right_control",
               "lazy": true
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "[Control] Caps Lock → Control/ESC",
-      "manipulators": [
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "caps_lock",
-            "modifiers": {
-              "optional": [
-                "any"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "right_control",
-              "lazy": true
-            }
-          ],
-          "to_if_alone": [
-            {
-              "key_code": "escape"
             }
           ]
         }

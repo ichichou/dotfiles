@@ -27,42 +27,6 @@
           ]
         }
       ]
-    },
-    {
-      "description": "[SandS] F13 → AquaSKK StickyKey",
-      "manipulators": [
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "f13"
-          },
-          "to": [
-            {
-              "key_code": "comma",
-              "modifiers": [
-                "shift"
-              ],
-              "repeat": false
-            }
-          ],
-          "conditions": [
-            {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "f13"
-          }
-        }
-      ]
     }
   ]
 }
