@@ -23,12 +23,9 @@
     {
       "conditions": [
         {
-          "type": "input_source_if",
-          "input_sources": [
-            {
-              "language": "ja"
-            }
-          ]
+          "type": "variable_if",
+          "name": "is_buna_layout",
+          "value": 1
         },
         {
           "type": "variable_if",
@@ -52,6 +49,11 @@
               "language": "ja"
             }
           ]
+        },
+        {
+          "type": "variable_if",
+          "name": "is_buna_layout",
+          "value": 1
         },
         {
           "type": "variable_unless",
@@ -87,6 +89,11 @@
           ]
         },
         {
+          "type": "variable_if",
+          "name": "is_buna_layout",
+          "value": 1
+        },
+        {
           "type": "variable_unless",
           "name": "kanchoku_mode",
           "value": 1
@@ -118,6 +125,11 @@
               "language": "ja"
             }
           ]
+        },
+        {
+          "type": "variable_if",
+          "name": "is_buna_layout",
+          "value": 1
         },
         {
           "type": "variable_unless",
@@ -183,6 +195,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -239,6 +256,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -299,6 +321,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -357,6 +384,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -412,6 +444,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -465,6 +502,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -525,6 +567,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -581,6 +628,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -644,6 +696,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -711,6 +768,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -767,6 +829,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -816,6 +883,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -869,6 +941,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -918,6 +995,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -971,6 +1053,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -1020,6 +1107,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -1073,6 +1165,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -1122,6 +1219,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -1175,6 +1277,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -1224,6 +1331,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -1277,6 +1389,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -1326,6 +1443,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -1379,6 +1501,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -1428,6 +1555,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -1481,6 +1613,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -1530,6 +1667,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -1583,6 +1725,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -1632,6 +1779,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -1685,6 +1837,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -1734,6 +1891,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -1787,6 +1949,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -1836,6 +2003,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -1889,6 +2061,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -1938,6 +2115,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -1994,6 +2176,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -2048,6 +2235,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -2096,6 +2288,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -2148,6 +2345,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -2196,6 +2398,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -2248,6 +2455,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -2294,6 +2506,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -2344,6 +2561,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -2390,6 +2612,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -2443,6 +2670,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -2494,6 +2726,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -2543,6 +2780,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -2596,6 +2838,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -2645,6 +2892,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -2698,6 +2950,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -2747,6 +3004,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -2800,6 +3062,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -2849,6 +3116,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -2902,6 +3174,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -2951,6 +3228,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -3004,6 +3286,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -3053,6 +3340,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -3106,6 +3398,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -3155,6 +3452,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -3208,6 +3510,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -3257,6 +3564,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -3310,6 +3622,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -3359,6 +3676,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -3412,6 +3734,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -3461,6 +3788,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -3514,6 +3846,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -3563,6 +3900,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -3616,6 +3958,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -3664,6 +4011,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -3716,6 +4068,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -3766,6 +4123,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -3812,6 +4174,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -3865,6 +4232,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -3923,6 +4295,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -3977,6 +4354,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -4035,6 +4417,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -4089,6 +4476,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -4147,6 +4539,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -4201,6 +4598,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -4259,6 +4661,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -4313,6 +4720,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -4371,6 +4783,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -4425,6 +4842,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -4483,6 +4905,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -4537,6 +4964,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -4595,6 +5027,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -4649,6 +5086,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -4707,6 +5149,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -4763,6 +5210,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -4817,6 +5269,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -4875,6 +5332,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -4929,6 +5391,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -4987,6 +5454,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -5041,6 +5513,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -5102,6 +5579,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -5161,6 +5643,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -5212,6 +5699,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -5267,6 +5759,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -5318,6 +5815,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -5392,6 +5894,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -5459,6 +5966,11 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "kanchoku_mode",
               "value": 1
@@ -5524,6 +6036,11 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -5600,6 +6117,16 @@
                   "language": "ja"
                 }
               ]
+            },
+            {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
+              "type": "variable_unless",
+              "name": "kanchoku_mode",
+              "value": 1
             },
             {
               "type": "variable_unless",
@@ -5668,6 +6195,16 @@
               ]
             },
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
+              "type": "variable_unless",
+              "name": "kanchoku_mode",
+              "value": 1
+            },
+            {
               "type": "variable_unless",
               "name": "symbol_mode",
               "value": 1
@@ -5701,12 +6238,9 @@
           ],
           "conditions": [
             {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_if",
@@ -5737,12 +6271,9 @@
           ],
           "conditions": [
             {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_if",
@@ -5773,12 +6304,9 @@
           ],
           "conditions": [
             {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_if",
@@ -5809,12 +6337,9 @@
           ],
           "conditions": [
             {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_if",
@@ -5845,12 +6370,9 @@
           ],
           "conditions": [
             {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_if",
@@ -5881,12 +6403,9 @@
           ],
           "conditions": [
             {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_if",
@@ -5917,12 +6436,9 @@
           ],
           "conditions": [
             {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_if",
@@ -5953,12 +6469,9 @@
           ],
           "conditions": [
             {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_if",
@@ -5989,12 +6502,9 @@
           ],
           "conditions": [
             {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_if",
@@ -6025,12 +6535,9 @@
           ],
           "conditions": [
             {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_if",
@@ -6069,12 +6576,9 @@
           ],
           "conditions": [
             {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_if",
@@ -6105,12 +6609,9 @@
           ],
           "conditions": [
             {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_if",
@@ -6149,12 +6650,9 @@
           ],
           "conditions": [
             {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_if",
@@ -6185,12 +6683,9 @@
           ],
           "conditions": [
             {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_if",
@@ -6221,12 +6716,9 @@
           ],
           "conditions": [
             {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_if",
@@ -6257,12 +6749,9 @@
           ],
           "conditions": [
             {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_if",
@@ -6293,12 +6782,9 @@
           ],
           "conditions": [
             {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_if",
@@ -6337,12 +6823,9 @@
           ],
           "conditions": [
             {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_if",
@@ -6381,12 +6864,9 @@
           ],
           "conditions": [
             {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_if",
@@ -6417,12 +6897,9 @@
           ],
           "conditions": [
             {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_if",
@@ -6461,12 +6938,9 @@
           ],
           "conditions": [
             {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_if",
@@ -6497,12 +6971,9 @@
           ],
           "conditions": [
             {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_if",
@@ -6533,12 +7004,9 @@
           ],
           "conditions": [
             {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_if",
@@ -6577,12 +7045,9 @@
           ],
           "conditions": [
             {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_if",
@@ -6621,12 +7086,9 @@
           ],
           "conditions": [
             {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_if",
@@ -6665,12 +7127,9 @@
           ],
           "conditions": [
             {
-              "type": "input_source_if",
-              "input_sources": [
-                {
-                  "language": "ja"
-                }
-              ]
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
             },
             {
               "type": "variable_if",
@@ -6709,6 +7168,44 @@
           ],
           "conditions": [
             {
+              "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "symbol_mode",
+              "value": 1
+            },
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.apple\\.loginwindow$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "quote",
+            "modifiers": {
+              "mandatory": [
+                "left_shift",
+                "right_control"
+              ]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "is_buna_layout",
+                "value": 0
+              }
+            }
+          ],
+          "conditions": [
+            {
               "type": "input_source_if",
               "input_sources": [
                 {
@@ -6718,7 +7215,27 @@
             },
             {
               "type": "variable_if",
+              "name": "is_buna_layout",
+              "value": 1
+            },
+            {
+              "type": "variable_unless",
+              "name": "kanchoku_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_unless",
               "name": "symbol_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_unless",
+              "name": "left_shift",
+              "value": 1
+            },
+            {
+              "type": "variable_unless",
+              "name": "right_shift",
               "value": 1
             },
             {
