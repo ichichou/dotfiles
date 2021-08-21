@@ -20,11 +20,11 @@ rules:
 #       bundle_identifiers:
 #       - "^com\\.google\\.Chrome$"
 
-- description: "[Chrome] LCommand-Quote → Command-L"
+- description: "[Chrome] LCommand-Semicolon → Command-L"
   manipulators:
   - type: basic
     from:
-      key_code: quote
+      key_code: semicolon
       modifiers:
         mandatory:
         - left_command
