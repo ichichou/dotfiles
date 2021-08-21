@@ -24,7 +24,7 @@
       "conditions": [
         {
           "type": "variable_if",
-          "name": "is_buna_layout",
+          "name": "buna_layout",
           "value": 1
         },
         {
@@ -52,7 +52,7 @@
         },
         {
           "type": "variable_if",
-          "name": "is_buna_layout",
+          "name": "buna_layout",
           "value": 1
         },
         {
@@ -90,7 +90,7 @@
         },
         {
           "type": "variable_if",
-          "name": "is_buna_layout",
+          "name": "buna_layout",
           "value": 1
         },
         {
@@ -128,7 +128,7 @@
         },
         {
           "type": "variable_if",
-          "name": "is_buna_layout",
+          "name": "buna_layout",
           "value": 1
         },
         {
@@ -196,7 +196,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -259,7 +259,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -322,7 +322,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -385,7 +385,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -445,7 +445,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -505,7 +505,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -568,7 +568,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -631,7 +631,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -697,7 +697,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -769,7 +769,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -830,7 +830,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -886,7 +886,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -942,7 +942,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -998,7 +998,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -1054,7 +1054,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -1110,7 +1110,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -1166,7 +1166,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -1222,7 +1222,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -1278,7 +1278,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -1334,7 +1334,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -1390,7 +1390,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -1446,7 +1446,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -1502,7 +1502,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -1558,7 +1558,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -1614,7 +1614,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -1670,7 +1670,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -1726,7 +1726,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -1782,7 +1782,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -1838,7 +1838,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -1894,7 +1894,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -1950,7 +1950,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -2006,7 +2006,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -2062,7 +2062,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -2118,7 +2118,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -2177,7 +2177,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -2236,7 +2236,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -2291,7 +2291,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -2346,7 +2346,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -2401,7 +2401,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -2456,7 +2456,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -2509,7 +2509,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -2562,7 +2562,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -2615,7 +2615,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -2671,7 +2671,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -2727,7 +2727,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -2783,7 +2783,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -2839,7 +2839,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -2895,7 +2895,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -2951,7 +2951,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -3007,7 +3007,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -3063,7 +3063,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -3119,7 +3119,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -3175,7 +3175,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -3231,7 +3231,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -3287,7 +3287,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -3343,7 +3343,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -3399,7 +3399,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -3455,7 +3455,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -3511,7 +3511,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -3567,7 +3567,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -3623,7 +3623,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -3679,7 +3679,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -3735,7 +3735,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -3791,7 +3791,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -3847,7 +3847,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -3903,7 +3903,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -3959,7 +3959,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -4014,7 +4014,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -4069,7 +4069,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -4124,7 +4124,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -4177,7 +4177,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -4235,7 +4235,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -4296,7 +4296,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -4357,7 +4357,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -4418,7 +4418,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -4479,7 +4479,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -4540,7 +4540,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -4601,7 +4601,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -4662,7 +4662,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -4723,7 +4723,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -4784,7 +4784,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -4845,7 +4845,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -4906,7 +4906,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -4967,7 +4967,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -5028,7 +5028,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -5089,7 +5089,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -5150,7 +5150,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -5211,7 +5211,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -5272,7 +5272,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -5333,7 +5333,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -5394,7 +5394,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -5455,7 +5455,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -5516,7 +5516,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -5580,7 +5580,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -5644,7 +5644,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -5702,7 +5702,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -5760,7 +5760,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -5818,7 +5818,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -5895,7 +5895,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -5967,7 +5967,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -6039,7 +6039,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -6120,7 +6120,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -6196,7 +6196,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -6239,7 +6239,7 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -6272,7 +6272,7 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -6305,7 +6305,7 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -6338,7 +6338,7 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -6371,7 +6371,7 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -6404,7 +6404,7 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -6437,7 +6437,7 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -6470,7 +6470,7 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -6503,7 +6503,7 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -6536,7 +6536,7 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -6577,7 +6577,7 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -6610,7 +6610,7 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -6651,7 +6651,7 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -6684,7 +6684,7 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -6717,7 +6717,7 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -6750,7 +6750,7 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -6783,7 +6783,7 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -6824,7 +6824,7 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -6865,7 +6865,7 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -6898,7 +6898,7 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -6939,7 +6939,7 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -6972,7 +6972,7 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -7005,7 +7005,7 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -7046,7 +7046,7 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -7087,7 +7087,7 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -7128,7 +7128,7 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -7169,7 +7169,7 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
@@ -7199,7 +7199,7 @@
           "to": [
             {
               "set_variable": {
-                "name": "is_buna_layout",
+                "name": "buna_layout",
                 "value": 0
               }
             }
@@ -7215,7 +7215,7 @@
             },
             {
               "type": "variable_if",
-              "name": "is_buna_layout",
+              "name": "buna_layout",
               "value": 1
             },
             {
