@@ -51,6 +51,11 @@ function adocpdf
     asciidoctor-pdf -r asciidoctor-pdf-cjk -r asciidoctor-diagram $argv
 end
 
+### yq
+function yqj
+    yq eval -j $argv | pbcopy
+end
+
 ## Fish
 set fish_greeting
 
