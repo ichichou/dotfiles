@@ -976,12 +976,24 @@
                 "name": "right_middle_finger_shifted",
                 "value": 1
               }
+            },
+            {
+              "set_variable": {
+                "name": "left_ring_finger_shifted",
+                "value": 1
+              }
             }
           ],
           "to_after_key_up": [
             {
               "set_variable": {
                 "name": "right_middle_finger_shifted",
+                "value": 0
+              }
+            },
+            {
+              "set_variable": {
+                "name": "left_ring_finger_shifted",
                 "value": 0
               }
             }
@@ -3283,12 +3295,24 @@
                 "name": "right_ring_finger_shifted",
                 "value": 1
               }
+            },
+            {
+              "set_variable": {
+                "name": "left_middle_finger_shifted",
+                "value": 1
+              }
             }
           ],
           "to_after_key_up": [
             {
               "set_variable": {
                 "name": "right_ring_finger_shifted",
+                "value": 0
+              }
+            },
+            {
+              "set_variable": {
+                "name": "left_middle_finger_shifted",
                 "value": 0
               }
             }
@@ -9535,12 +9559,24 @@
                 "name": "right_upper_pinky_finger_shifted",
                 "value": 1
               }
+            },
+            {
+              "set_variable": {
+                "name": "left_upper_pinky_finger_shifted",
+                "value": 1
+              }
             }
           ],
           "to_after_key_up": [
             {
               "set_variable": {
                 "name": "right_upper_pinky_finger_shifted",
+                "value": 0
+              }
+            },
+            {
+              "set_variable": {
+                "name": "left_upper_pinky_finger_shifted",
                 "value": 0
               }
             }
