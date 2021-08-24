@@ -53,7 +53,7 @@ end
 
 ### yq
 function yqj
-    yq eval -j $argv | pbcopy
+    yq eval -o=json $argv | pbcopy
 end
 
 ## Fish
