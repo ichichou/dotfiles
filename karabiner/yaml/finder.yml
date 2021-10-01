@@ -1,0 +1,15 @@
+title: "01. Finder"
+rules:
+
+- description: "[Finder] Command-P → Invalid"
+  manipulators:
+  - type: basic
+    from:
+      key_code: p
+      modifiers:
+        mandatory:
+        - command
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.apple\\.finder$"
