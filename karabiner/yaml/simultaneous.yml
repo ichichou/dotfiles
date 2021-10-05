@@ -104,3 +104,65 @@ rules:
       - shift
     - key_code: left_arrow
       repeat: false
+
+- description: "[Simul] R + G / H + U / F + B / N + J → ; / ! ?"
+  manipulators:
+  # R + G → Semicolon
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: r
+      - key_code: g
+    to:
+    - key_code: semicolon
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: en
+
+  # H + U → Slash
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: h
+      - key_code: u
+    to:
+    - key_code: slash
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: en
+
+  # F + B → !
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: f
+      - key_code: b
+    to:
+    - key_code: "1"
+      modifiers:
+      - shift
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: en
+
+  # N + J → ?
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: "n"
+      - key_code: j
+    to:
+    - key_code: slash
+      modifiers:
+      - shift
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: en
