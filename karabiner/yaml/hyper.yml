@@ -304,13 +304,13 @@ rules:
     - shell_command: open -a "superhuman"
     conditions: *hyper_mode
 
-  # J: TUT-code ストローク表
-  - type: basic
-    from:
-      key_code: j
-    to:
-    - shell_command: open -a "coteditor" ~/repos/kanchoku/tutcode_stroke_table.txt
-    conditions: *hyper_mode
+  # # J:
+  # - type: basic
+  #   from:
+  #     key_code: j
+  #   to:
+  #   - shell_command: open -a ""
+  #   conditions: *hyper_mode
 
   # K: Cot Editor
   - type: basic
