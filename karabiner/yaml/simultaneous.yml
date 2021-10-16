@@ -166,3 +166,25 @@ rules:
     - type: input_source_if
       input_sources:
       - language: en
+
+- description: "[Simul] V + B / N + M → 英数/かな"
+  manipulators:
+  # V + B → 英数
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: v
+      - key_code: b
+    to:
+    - key_code: japanese_eisuu
+      repeat: false
+
+  # N + M → かな
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: "n"
+      - key_code: m
+    to:
+    - key_code: japanese_kana
+      repeat: false
