@@ -1,43 +1,7 @@
 title: "01. Google Chrome"
 rules:
 
-# - description: "[Chrome] LCommand-E → 閉じたタブを開く"
-#   manipulators:
-#   - type: basic
-#     from:
-#       key_code: e
-#       modifiers:
-#         mandatory:
-#         - left_command
-#     to:
-#     - key_code: t
-#       modifiers:
-#       - shift
-#       - command
-#       repeat: false
-#     conditions:
-#     - type: frontmost_application_if
-#       bundle_identifiers:
-#       - "^com\\.google\\.Chrome$"
-
-- description: "[Chrome] LCommand-Semicolon → Command-L"
-  manipulators:
-  - type: basic
-    from:
-      key_code: semicolon
-      modifiers:
-        mandatory:
-        - left_command
-    to:
-    - key_code: l
-      modifiers:
-      - command
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "^com\\.google\\.Chrome$"
-
+# スプレッドシートでの検索・置換用
 - description: "[Chrome] LShift-LCommand-F → Shift-Command-H"
   manipulators:
   - type: basic
