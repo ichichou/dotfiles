@@ -2,7 +2,7 @@ if empty(globpath(&runtimepath, 'plugged/memolist.vim'))
     finish
 endif
 
-let g:memolist_path = "$HOME/Box/Memos"
+let g:memolist_path = "$HOME/Library/CloudStorage/Box-Box/Memos"
 let g:memolist_template_dir_path = "$HOME/dotfiles/memolist"
 let g:memolist_memo_suffix = "md"
 let g:memolist_memo_date = "%Y-%m-%d %H:%M"
