@@ -15,6 +15,8 @@ AquaSKK のユーザー辞書はシンボリックリンクでは機能しない
 ## クリーンインストール
 
 ### クリーンインストール手順
+最新の macOS では手順が異なる場合があるため、実行前に要確認。
+
 1. `Command-R` を押しながら Mac を起動 →「macOSユーティリティ」が起動する。
 2. 「ディスクユーティリティ」を開く。
 3. `Macintosh HD - Data` を選択し、`ボリューム` の `−` をクリックして削除する。
@@ -41,7 +43,7 @@ AquaSKK のユーザー辞書はシンボリックリンクでは機能しない
 2. [Homebrew 公式サイト](https://brew.sh/)のコマンドを実行。
     * `$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"`
 
-### アプリケーションをインストール
+### Brewfile からアプリケーションをインストール
 1. App Store にサインイン（mas-cli 用）。
 2. `$ cd ~/Downloads/`
 3. `$ curl -LO https://raw.githubusercontent.com/ichichou/dotfiles/master/Brewfile`
