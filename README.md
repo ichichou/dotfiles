@@ -6,11 +6,6 @@
 ### Homebrew
 * `Brewfile` を手動で更新。
 
-### Mackup
-. `.mackup.cfg` から管理対象のアプリを確認。必要に応じて追加・削除。
-. `$ mackup -f backup`：管理対象アプリの設定ファイルを Mackup フォルダにコピーし、元の場所にはシンボリックリンクを生成。
-. `$ mackup uninstall`：Mackup フォルダ内の設定ファイルを元の場所にコピー（Mackup フォルダ内のファイルはそのまま残る）。
-
 ### AquaSKK ユーザー辞書をバックアップ
 AquaSKK のユーザー辞書はシンボリックリンクでは機能しないようなので、都度バックアップする必要がある。
 
@@ -69,7 +64,7 @@ Fisher：
 2. `$ fisher self-update`
 3. `$ fisher`： `fishfile` をもとに自動インストール。
 
-Gem：
+Gem（実行しない）：
 
 1. `$ which gem`： `/usr/local/opt/ruby/bin/gem` にパスが通っているか確認。
 2. `$ gem update --system`
@@ -91,14 +86,6 @@ NPM：
 * `defaults write com.apple.dock showhidden -bool true`：ウィンドウが隠れている Dock アイコンを半透明にする
 
 
-## Mackup
-
-**NOTE:** 設定が反映されないアプリが一部あるため、Mackup は使わず、ひとまず手動で設定してみる。
-
-* `$ mackup restore`： Mackup 管理対象アプリの設定ファイルを復元（シンボリックリンク）。
-* 後述の BetterTouchTool と Dash は、Mackup で復元できれば手動設定は不要。
-
-
 ## 手動設定
 
 ### AquaSKK の設定ファイルを復元
@@ -111,7 +98,7 @@ NPM：
 辞書ファイルの上書きは、AquaSKK を終了させてからでないとうまくいかないかもしれない。
 
 ### Terminal
-1. https://cocopon.github.io/iceberg.vim/[Iceberg プロファイル]をインポートする。
+1. [Iceberg プロファイル](https://cocopon.github.io/iceberg.vim/)をインポートする。
 2. 環境設定：
     * 開くシェル： `/usr/local/bin/fish`
     * フォント： `Hack Regular 12 pt.`
@@ -119,7 +106,7 @@ NPM：
     * 曖昧幅文字を全角で表示する。
 
 ### Google Chrome
-* アカウントを同期する前に、`kabankobo` と `private` のユーザーを作成する。
+* アカウントを同期する前に、`work` と `private` のユーザーを作成する。
 * Mouse Dictionary に[英辞郎データ](https://booth.pm/ja/items/777563)を読み込む。
 * [ZenzaWatch](https://greasyfork.org/ja/scripts/14391-zenzawatch) をインストールする。
 
@@ -127,6 +114,7 @@ NPM：
 * `Config/` を `オフライン利用可` にする。
 
 ### Alfred
+* キーマップなどいろいろ設定
 * 「Google Search with Selected Text」のワークフローを設定。
 
 ### diff-highlight にパスを通す
@@ -135,9 +123,6 @@ sudo ln -snfv \
 /usr/local/share/git-core/contrib/diff-highlight/diff-highlight \
 /usr/local/bin/diff-highlight
 ```
-
-### Dash
-（長いので最終セクションに記載する）
 
 ### BetterTouchTool
 （長いので最終セクションに記載する）
@@ -261,34 +246,7 @@ Hi {user}! You've successfully authenticated, but GitHub does not provide shell 
 * システム環境設定の「プリンタとスキャナ」からプリンタを登録する。
 * 基本的に Mac 標準のドライバで OK。
 
-### Dash
-Placeholder：
-
-| 項目  | 設定         |
-| ---   | ---          |
-| @time | `H:mm`       |
-| @date | `yyyy-MM-dd` |
-
-Snippets：
-
-| 入力     | 割り当て        |
-| ---      | ---             |
-| `;date`  | `@date`         |
-| `;time`  | `@time`         |
-| `@k***`  | `@k***.com`     |
-| `@gmail` | `@gmail.com`    |
-| `***@`   | `***@k***.com`  |
-| `***@`   | `***@gmail.com` |
-
 ### BetterTouchTool
-#### 環境設定
-ウィンドウスナップと移動：
-
-| 項目                   | 設定                                    |
-| ---                    | ---                                     |
-| ウィンドウの移動       | `Control - Option - ドラッグ`           |
-| ウィンドウのサイズ変更 | `Control - Option - Command - ドラッグ` |
-
 #### トラックパッド
 すべてのアプリ：
 
@@ -331,16 +289,6 @@ Chrome：
 | `↑←`       | `Command+\[`         |
 | `←→`       | `スペースを右に移動` |
 | `→←`       | `スペースを左に移動` |
-
-#### キーボードショートカット
-すべてのアプリ：
-
-| アクション              | 割り当て                   |
-| ---                     | ---                        |
-| `Control - Option - ↑` | ウィンドウを最大化         |
-| `Control - Option - →` | ウィンドウを右に最大化     |
-| `Control - Option - ←` | ウィンドウを左に最大化     |
-| `Control - Option - ↓` | 古いウィンドウサイズに復元 |
 
 ### キーボードショートカット
 LaunchpadとDock：
