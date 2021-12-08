@@ -16,7 +16,6 @@ brew "go"
 brew "graphviz"
 brew "itchyny/tap/mmv"
 brew "jupyterlab"
-brew "mackup"
 brew "macvim"
 brew "mas"
 brew "node"
@@ -29,6 +28,7 @@ brew "ruby"
 brew "sd"
 brew "tig"
 brew "trash"
+brew "yq"
 brew "z"
 
 cask "1password"
@@ -46,7 +46,6 @@ cask "docker"
 cask "gitup"
 cask "google-chrome"
 cask "google-drive"
-cask "google-japanese-ime"
 cask "iterm2"
 cask "karabiner-elements"
 cask "kindle"
@@ -75,7 +74,6 @@ cask "font-source-code-pro"
 cask "font-source-han-code-jp"
 
 mas "Amphetamine", id: 937984704
-mas "Gravit Designer", id: 1207744923
 mas "LINE", id: 539883307
 mas "Textwell", id: 905944937
 mas "Trello", id: 1278508951
