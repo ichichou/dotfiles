@@ -64,3 +64,7 @@ alias bc="brew cask"
 alias g="git"
 alias mvi="mvim --remote-silent"
 alias vi="vim"
+
+if [[ -o interactive ]]; then
+    exec fish
+fi
