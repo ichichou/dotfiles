@@ -47,9 +47,8 @@ setopt hist_no_store
 ## Aliases
 alias cp="cp -iv"
 alias mv="mv -iv"
-alias rm="rm -iv"
 
-if [ -e /usr/local/bin/exa ]; then
+if [ -e /opt/homebrew/bin/exa -o -e /usr/local/bin/exa ]; then
     alias ls="exa -a"
     alias ll="exa -1a"
     alias la="exa -al --git"
@@ -57,6 +56,12 @@ else
     alias ls="ls -AG"
     alias ll="ls -1AG"
     alias la="ls -AlG"
+fi
+
+if [ -e /opt/homebrew/bin/trash -o -e /usr/local/bin/trash ]; then
+    alias rm="trash"
+else
+    alias rm="rm -iv"
 fi
 
 alias b="brew"
