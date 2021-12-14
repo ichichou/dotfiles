@@ -24,28 +24,19 @@ done
 ## .config
 mkdir -p ${CONFIG}/fish
 ln -snfv ${DOT}/.config/fish/config.fish ${CONFIG}/fish/config.fish
-ln -snfv ${DOT}/.config/fish/fishfile ${CONFIG}/fish/fishfile
 
 mkdir -p ${CONFIG}/git
 ln -snfv ${DOT}/.config/git/ignore ${CONFIG}/git/ignore
 
 mkdir -p ${CONFIG}/karabiner
 ln -snfv ${DOT}/karabiner/complex_modifications/ ${CONFIG}/karabiner/assets/complex_modifications
+# Karabiner の箇所は2回以上実行するとディレクトリが入れ子になってしまうかも
 
 ## .vim
 mkdir -p ${VIM}/colors
 ln -snfv ${DOT}/.vim/config/ ${VIM}/config
 
-# if [[ ! -e ${VIM}/pack/minpac/opt/minpac/plugin/minpac.vim ]]; then
-#     git clone https://github.com/k-takata/minpac.git \
-#     ${VIM}/pack/minpac/opt/minpac
-# if
-
 ## Application Support
-sudo sh -c "mkdir -p \"${APP}/AquaSKK\""
-sudo sh -c "ln -snfv ${DOT}/aquaskk/kana-rule.conf \"${APP}/AquaSKK/kana-rule.conf\""
-sudo sh -c "ln -snfv ${DOT}/aquaskk/keymap.conf \"${APP}/AquaSKK/keymap.conf\""
-
 sudo sh -c "mkdir -p \"${APP}/Code/User\""
 sudo sh -c "ln -snfv ${DOT}/vscode/setting.json \"${APP}/Code/User/setting.json\""
 
