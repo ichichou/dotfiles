@@ -6,13 +6,15 @@ alias symln "ln -snfv"
 alias pd "prevd"
 alias nd "nextd"
 
-if test -e "/usr/local/bin/trash"
+if test -e "/opt/homebrew/bin/trash"
+    or test -e "/usr/local/bin/trash"
     alias rm "trash"
 else
     alias rm "rm -iv"
 end
 
-if test -e "/usr/local/bin/exa"
+if test -e "/opt/homebrew/bin/exa"
+    or test -e "/usr/local/bin/exa"
     alias ls "exa -a"
     alias ll "exa -1a"
     alias la "exa -al --git"
