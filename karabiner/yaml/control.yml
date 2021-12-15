@@ -112,8 +112,6 @@ rules:
       modifiers:
         mandatory:
         - right_control
-        optional:
-        - any
     to:
     - key_code: return_or_enter
 
