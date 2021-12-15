@@ -97,19 +97,16 @@ BetterTouchTool が使えるようになった後は以下の設定にする：
 **NOTE:** init.sh を2回以上実行すると、`~/.config/karabiner/complex_modifications` の中にシンボリックリンクが入れ子になってしまうかもしれない。これが起こったら `unlink` コマンドで修正する。
 
 ### 2. プラグインマネージャー
-Fisher：
-
+#### Fisher
 1. [Fisher のインストールコマンド](https://github.com/jorgebucaran/fisher)を実行。
 1. `$ fisher jethrokuan/z jethrokuan/fzf rafaelrinaldi/pure`
 
-Gem：
-
+#### Gem
 1. `$ which gem`……`/usr/local/opt/ruby/bin/gem` にパスが通っているか確認。
 1. `$ gem update --system`
 1. `$ gem install asciidoctor asciidoctor-pdf asciidoctor-pdf-cjk asciidoctor-diagram rouge`
 
-NPM：
-
+#### NPM
 1. `$ npm -g install npm`
 1. `$ npm -g install eslint prettier eslint-plugin-prettier htmlhint`
 
@@ -170,9 +167,9 @@ NPM：
     1. Tampermonkey の画面が開くので `インストール` をクリック。
 
 ### Git
-diff-highlight にシンボリックリンクを貼る：
+diff-highlight にシンボリックリンクを貼る。
 
-（M1 Mac 版 Homebrew の場合）
+M1 Mac 版 Homebrew の場合：
 
 ```
 sudo ln -snfv \
@@ -180,7 +177,7 @@ sudo ln -snfv \
 /usr/local/bin/diff-highlight
 ```
 
-（Intel Mac 版 Homebrew の場合）
+Intel Mac 版 Homebrew の場合：
 
 ```
 sudo ln -snfv \
@@ -190,15 +187,6 @@ sudo ln -snfv \
 
 ### Box Drive
 * `Config/` を `オフライン利用可` にする。
-
-### AquaSKK
-以下のファイルを次のパスに置く：`~/Library/Application Support/AquaSKK/`
-
-* skk-jisyo.utf8……ユーザー辞書
-* kana-rule.conf……仮名テーブル
-* keymap.conf……キーマップ
-
-辞書ファイルの上書きは、AquaSKK を終了させてからでないとうまくいかないかもしれない。
 
 ### AquaSKK
 1. AquaSKK をインストールする。
@@ -309,16 +297,16 @@ $ ssh -T git@github.com
 > Hi USER_NAME! You've successfully authenticated, but GitHub does not provide shell access.
 ```
 
-5: HTTPS 接続したことがあるリポジトリの `.git/config` を編集（dotfiles など）：
+5: HTTPS 接続したことがあるリポジトリの `.git/config` を編集（dotfiles など）。
 
-（編集前）
+編集前：
 
 ```
 [remote "origin"]
 	url = https://github.com/USER_NAME/REPOSITORY_NAME.git
 ```
 
-（編集後）
+編集後：
 
 ```
 [remote "origin"]
