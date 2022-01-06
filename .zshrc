@@ -73,3 +73,5 @@ alias vi="vim"
 if [[ -o interactive ]]; then
     exec fish
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
