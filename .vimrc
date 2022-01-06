@@ -210,7 +210,7 @@ Plug 'tyru/caw.vim'
 Plug 'tyru/open-browser.vim'
 " Plug 'kana/vim-repeat'
 
-Plug '/usr/local/opt/fzf'
+Plug '/opt/homebrew/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
 " Operator / Text Object
