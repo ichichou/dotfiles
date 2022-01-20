@@ -1,7 +1,11 @@
 window:
   dimensions:
-    columns: 120
+    columns: 140
     lines: 50
+
+  padding:
+    x: 8
+    y: 4
 
   # opacity: 0.99999
   # バグ回避: https://github.com/alacritty/alacritty/issues/4474
