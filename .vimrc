@@ -94,7 +94,7 @@ autocmd vimrc FileType gitcommit setlocal fileencoding=utf-8
 " Appearance
 " ----------------------------------------
 
-" set termguicolors
+set termguicolors
 set background=dark
 
 set list
