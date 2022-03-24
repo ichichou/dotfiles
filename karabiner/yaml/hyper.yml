@@ -122,96 +122,137 @@ rules:
       modifiers: *hyper_key
     conditions: *hyper_mode
 
-# ----- QWERTYUIOP -----
+# ----- QWERTYUIOP → 1234567890 -----
 
-- description: "[Hyper] Hyper - Q-P → Hyper - 1-0"
-  manipulators:
+# - description: "[Hyper] Hyper - Q-P → Hyper - 1-0"
+#   manipulators:
+#
+#   - type: basic
+#     from:
+#       key_code: q
+#     to:
+#     - key_code: "1"
+#       modifiers: *hyper_key
+#     conditions: *hyper_mode
+#
+#   - type: basic
+#     from:
+#       key_code: w
+#     to:
+#     - key_code: "2"
+#       modifiers: *hyper_key
+#     conditions: *hyper_mode
+#
+#   - type: basic
+#     from:
+#       key_code: e
+#     to:
+#     - key_code: "3"
+#       modifiers: *hyper_key
+#     conditions: *hyper_mode
+#
+#   - type: basic
+#     from:
+#       key_code: r
+#     to:
+#     - key_code: "4"
+#       modifiers: *hyper_key
+#     conditions: *hyper_mode
+#
+#   - type: basic
+#     from:
+#       key_code: t
+#     to:
+#     - key_code: "5"
+#       modifiers: *hyper_key
+#     conditions: *hyper_mode
+#
+#   - type: basic
+#     from:
+#       key_code: "y"
+#     to:
+#     - key_code: "6"
+#       modifiers: *hyper_key
+#     conditions: *hyper_mode
+#
+#   - type: basic
+#     from:
+#       key_code: u
+#     to:
+#     - key_code: "7"
+#       modifiers: *hyper_key
+#     conditions: *hyper_mode
+#
+#   - type: basic
+#     from:
+#       key_code: i
+#     to:
+#     - key_code: "8"
+#       modifiers: *hyper_key
+#     conditions: *hyper_mode
+#
+#   - type: basic
+#     from:
+#       key_code: o
+#     to:
+#     - key_code: "9"
+#       modifiers: *hyper_key
+#     conditions: *hyper_mode
+#
+#   - type: basic
+#     from:
+#       key_code: p
+#     to:
+#     - key_code: "0"
+#       modifiers: *hyper_key
+#     conditions: *hyper_mode
 
-  - type: basic
-    from:
-      key_code: q
-    to:
-    - key_code: "1"
-      modifiers: *hyper_key
-    conditions: *hyper_mode
-
-  - type: basic
-    from:
-      key_code: w
-    to:
-    - key_code: "2"
-      modifiers: *hyper_key
-    conditions: *hyper_mode
-
-  - type: basic
-    from:
-      key_code: e
-    to:
-    - key_code: "3"
-      modifiers: *hyper_key
-    conditions: *hyper_mode
-
-  - type: basic
-    from:
-      key_code: r
-    to:
-    - key_code: "4"
-      modifiers: *hyper_key
-    conditions: *hyper_mode
-
-  - type: basic
-    from:
-      key_code: t
-    to:
-    - key_code: "5"
-      modifiers: *hyper_key
-    conditions: *hyper_mode
-
-  - type: basic
-    from:
-      key_code: "y"
-    to:
-    - key_code: "6"
-      modifiers: *hyper_key
-    conditions: *hyper_mode
-
-  - type: basic
-    from:
-      key_code: u
-    to:
-    - key_code: "7"
-      modifiers: *hyper_key
-    conditions: *hyper_mode
-
-  - type: basic
-    from:
-      key_code: i
-    to:
-    - key_code: "8"
-      modifiers: *hyper_key
-    conditions: *hyper_mode
-
-  - type: basic
-    from:
-      key_code: o
-    to:
-    - key_code: "9"
-      modifiers: *hyper_key
-    conditions: *hyper_mode
-
-  - type: basic
-    from:
-      key_code: p
-    to:
-    - key_code: "0"
-      modifiers: *hyper_key
-    conditions: *hyper_mode
-
+# ----- QWERT -----
 # ----- ASDFG -----
 # ----- ZXCVB -----
 
 - description: "[Hyper] Hyper - Alpha Keys → アプリケーションを起動"
   manipulators:
+
+  # # Q:
+  # - type: basic
+  #   from:
+  #     key_code: q
+  #   to:
+  #   - shell_command: open -a ""
+  #   conditions: *hyper_mode
+
+  # W: Asana
+  - type: basic
+    from:
+      key_code: w
+    to:
+    - shell_command: open -a "Asana"
+    conditions: *hyper_mode
+
+  # # E:
+  # - type: basic
+  #   from:
+  #     key_code: e
+  #   to:
+  #   - shell_command: open -a ""
+  #   conditions: *hyper_mode
+
+  # # R:
+  # - type: basic
+  #   from:
+  #     key_code: r
+  #   to:
+  #   - shell_command: open -a ""
+  #   conditions: *hyper_mode
+
+  # # T:
+  # - type: basic
+  #   from:
+  #     key_code: t
+  #   to:
+  #   - shell_command: open -a ""
+  #   conditions: *hyper_mode
 
   # A: Finder
   - type: basic
@@ -293,8 +334,49 @@ rules:
   #   - shell_command: open -a ""
   #   conditions: *hyper_mode
 
+# ----- YUIOP -----
 # ----- HJKL; -----
 # ----- NM,./ -----
+
+  # # Y:
+  # - type: basic
+  #   from:
+  #     key_code: "y"
+  #   to:
+  #   - shell_command: open -a ""
+  #   conditions: *hyper_mode
+
+  # # U:
+  # - type: basic
+  #   from:
+  #     key_code: u
+  #   to:
+  #   - shell_command: open -a ""
+  #   conditions: *hyper_mode
+
+  # # I:
+  # - type: basic
+  #   from:
+  #     key_code: i
+  #   to:
+  #   - shell_command: open -a ""
+  #   conditions: *hyper_mode
+
+  # # O:
+  # - type: basic
+  #   from:
+  #     key_code: o
+  #   to:
+  #   - shell_command: open -a ""
+  #   conditions: *hyper_mode
+
+  # # P:
+  # - type: basic
+  #   from:
+  #     key_code: p
+  #   to:
+  #   - shell_command: open -a ""
+  #   conditions: *hyper_mode
 
   # H: Superhuman
   - type: basic
