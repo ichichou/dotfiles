@@ -37,9 +37,25 @@ rules:
         name: hyper_mode
         value: 0
 
+- description: "[Hyper] Return → Hyper/Return"
+  manipulators:
+  - type: basic
+    from:
+      key_code: return_or_enter
+    to_if_alone:
+    - key_code: return_or_enter
+    to:
+    - set_variable:
+        name: hyper_mode
+        value: 1
+    to_after_key_up:
+    - set_variable:
+        name: hyper_mode
+        value: 0
+
 # ----- 1234567890 -----
 
-- description: "[Hyper] Hyper - 1-0"
+- description: "[Hyper] Hyper - Num Key → Change Desktop"
   manipulators:
 
   - type: basic
@@ -211,7 +227,7 @@ rules:
 # ----- ASDFG -----
 # ----- ZXCVB -----
 
-- description: "[Hyper] Hyper - Alpha Keys → アプリケーションを起動"
+- description: "[Hyper] Hyper - Alpha Key → Launch App"
   manipulators:
 
   # # Q:
