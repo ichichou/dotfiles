@@ -29,17 +29,17 @@ call smartinput#define_rule({'at': '{ \%# }', 'char': '<BS>', 'input': '<BS><Del
 call smartinput#define_rule({'at': '\[ \%# \]', 'char': '<BS>', 'input': '<BS><Del>'})
 call smartinput#define_rule({'at': '< \%# >', 'char': '<BS>', 'input': '<BS><Del>'})
 
-call smartinput#define_rule({'at': '\%#.*）', 'char': '（', 'input': '（'})
-call smartinput#define_rule({'at': '\%#.*」', 'char': '「', 'input': '「'})
-call smartinput#define_rule({'at': '\%#.*』', 'char': '『', 'input': '『'})
-call smartinput#define_rule({'at': '\%#.*〉', 'char': '〈', 'input': '〈'})
-call smartinput#define_rule({'at': '\%#.*】', 'char': '【', 'input': '【'})
-
 call smartinput#define_rule({'at': '\%#', 'char': '（', 'input': '（）<Left>'})
 call smartinput#define_rule({'at': '\%#', 'char': '「', 'input': '「」<Left>'})
 call smartinput#define_rule({'at': '\%#', 'char': '『', 'input': '『』<Left>'})
 call smartinput#define_rule({'at': '\%#', 'char': '〈', 'input': '〈〉<Left>'})
 call smartinput#define_rule({'at': '\%#', 'char': '【', 'input': '【】<Left>'})
+
+call smartinput#define_rule({'at': '\%#.*）', 'char': '（', 'input': '（'})
+call smartinput#define_rule({'at': '\%#.*」', 'char': '「', 'input': '「'})
+call smartinput#define_rule({'at': '\%#.*』', 'char': '『', 'input': '『'})
+call smartinput#define_rule({'at': '\%#.*〉', 'char': '〈', 'input': '〈'})
+call smartinput#define_rule({'at': '\%#.*】', 'char': '【', 'input': '【'})
 
 call smartinput#define_rule({'at': '（.*\%#）', 'char': '）', 'input': '<Right>'})
 call smartinput#define_rule({'at': '「.*\%#」', 'char': '」', 'input': '<Right>'})
