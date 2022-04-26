@@ -29,6 +29,9 @@ noremap Y y$
 noremap x "_x
 noremap X "_X
 
+noremap U <C-r>
+noremap <Leader>U U
+
 noremap + <C-a>
 noremap - <C-x>
 
