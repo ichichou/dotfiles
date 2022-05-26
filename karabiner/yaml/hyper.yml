@@ -488,7 +488,7 @@ rules:
 
 - description: "[Hyper] F13/F14 → One Shot Hyper Mode"
   manipulators:
-  - Type: basic
+  - type: basic
     from:
       key_code: f13
     to:
