@@ -486,40 +486,40 @@ rules:
 #         name: hyper_mode
 #         value: 0
 
-- description: "[Hyper] F13/F14 → One Shot Hyper Mode"
-  manipulators:
-  - type: basic
-    from:
-      key_code: f13
-    to:
-    - set_variable:
-        name: hyper_mode
-        value: 1
-    to_delayed_action:
-      to_if_invoked:
-      - set_variable:
-          name: hyper_mode
-          value: 0
-      to_if_canceled:
-      - set_variable:
-          name: hyper_mode
-          value: 0
-    parameters: *delay_time_to_cancel_one_shot_hyper_mode
-
-  - type: basic
-    from:
-      key_code: f14
-    to:
-    - set_variable:
-        name: hyper_mode
-        value: 1
-    to_delayed_action:
-      to_if_invoked:
-      - set_variable:
-          name: hyper_mode
-          value: 0
-      to_if_canceled:
-      - set_variable:
-          name: hyper_mode
-          value: 0
-    parameters: *delay_time_to_cancel_one_shot_hyper_mode
+# - description: "[Hyper] F13/F14 → One Shot Hyper Mode"
+#   manipulators:
+#   - type: basic
+#     from:
+#       key_code: f13
+#     to:
+#     - set_variable:
+#         name: hyper_mode
+#         value: 1
+#     to_delayed_action:
+#       to_if_invoked:
+#       - set_variable:
+#           name: hyper_mode
+#           value: 0
+#       to_if_canceled:
+#       - set_variable:
+#           name: hyper_mode
+#           value: 0
+#     parameters: *delay_time_to_cancel_one_shot_hyper_mode
+#
+#   - type: basic
+#     from:
+#       key_code: f14
+#     to:
+#     - set_variable:
+#         name: hyper_mode
+#         value: 1
+#     to_delayed_action:
+#       to_if_invoked:
+#       - set_variable:
+#           name: hyper_mode
+#           value: 0
+#       to_if_canceled:
+#       - set_variable:
+#           name: hyper_mode
+#           value: 0
+#     parameters: *delay_time_to_cancel_one_shot_hyper_mode
