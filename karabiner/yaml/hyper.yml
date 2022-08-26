@@ -255,20 +255,20 @@ rules:
     - shell_command: open -a "slack"
     conditions: *hyper_mode
 
-  # # D:
-  # - type: basic
-  #   from:
-  #     key_code: d
-  #   to:
-  #   - shell_command: open -a ""
-  #   conditions: *hyper_mode
+  # D: Safari
+  - type: basic
+    from:
+      key_code: d
+    to:
+    - shell_command: open -a "safari"
+    conditions: *hyper_mode
 
-  # F: Safari
+  # F: Ferdi
   - type: basic
     from:
       key_code: f
     to:
-    - shell_command: open -a "safari"
+    - shell_command: open -a "ferdi"
     conditions: *hyper_mode
 
   # # G:
