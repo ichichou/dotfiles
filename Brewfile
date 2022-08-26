@@ -31,22 +31,18 @@ brew "trash"
 brew "yq"
 brew "z"
 
-cask "1password"
 cask "alfred"
 cask "appcleaner"
 cask "aquaskk"
 cask "bettertouchtool"
-cask "bitwarden"
 cask "box-drive"
-cask "chatwork"
+cask "cleanshot"
 cask "coteditor"
-cask "dialpad"
 cask "discord"
 cask "docker", args: ["cask"]
-cask "gitup"
+cask "ferdi"
 cask "google-chrome"
 cask "google-drive"
-cask "iterm2"
 cask "karabiner-elements"
 cask "kindle"
 cask "logitech-options"
@@ -67,11 +63,15 @@ cask "font-cantarell"
 cask "font-hack"
 cask "font-inconsolata"
 cask "font-lato"
-cask "font-noto-sans-cjk-jp"
-cask "font-noto-serif-cjk-jp"
+cask "font-noto-sans-jp"
+cask "font-noto-serif-jp"
 
+mas "AdGuard for Safari", id: 1440147259
 mas "Amphetamine", id: 937984704
+mas "Bitwarden", id: 1352778147
+mas "Keepa - Price Tracker", id: 1533805339
 mas "LINE", id: 539883307
+mas "Save to Raindrop.io", id: 1549370672
 mas "Textwell", id: 905944937
 mas "Trello", id: 1278508951
 mas "Yoink", id: 457622435
