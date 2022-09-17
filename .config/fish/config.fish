@@ -26,9 +26,7 @@ end
 
 alias b "brew"
 alias g "git"
-alias gu "gitup"
 alias j "z"
-alias jl "jupyter lab"
 alias mvi "mvim --remote-silent"
 alias vi "vim"
 
@@ -44,18 +42,9 @@ function cd
     standard_cd $argv; and ls
 end
 
-### Asciidoctor
-function adoc
-    asciidoctor -r asciidoctor-diagram $argv
-end
-
-function adocpdf
-    asciidoctor-pdf -r asciidoctor-pdf-cjk -r asciidoctor-diagram $argv
-end
-
 ### yq
 function yqj
-    yq eval -o=json $argv | pbcopy
+    yq eval -o=json $argv
 end
 
 ## Fish
