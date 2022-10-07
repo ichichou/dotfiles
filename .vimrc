@@ -131,7 +131,7 @@ set matchpairs+=「:」,（:）,『:』,〈:〉,《:》,【:】,〔:〕,［:］,
 
 source $VIMRUNTIME/macros/matchit.vim
 let b:match_ignorecase = 1
-" let b:match_words = "<if>:<endif>"
+" let b:match_words = '<if>:<endif>'
 
 
 " Search/Completion
@@ -152,7 +152,7 @@ set completeopt=menuone,popup
 " set shortmess&
 " set shortmess+=c
 
-if executable("rg")
+if executable('rg')
     set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
     set grepformat=%f:%l:%c:%m,%f:%l:%m
 endif
@@ -204,9 +204,9 @@ noremap <Leader>u <C-^>
 cnoremap <C-n> <Down>
 cnoremap <C-p> <Up>
 
-" inoremap <expr><CR>  pumvisible() ? "<C-y>" : "<CR>"
-" inoremap <expr><C-n> pumvisible() ? "<Down>" : "<C-n>"
-" inoremap <expr><C-p> pumvisible() ? "<Up>" : "<C-p>"
+" inoremap <expr><CR>  pumvisible() ? '<C-y>' : '<CR>'
+" inoremap <expr><C-n> pumvisible() ? '<Down>' : '<C-n>'
+" inoremap <expr><C-p> pumvisible() ? '<Up>' : '<C-p>'
 
 " set termwinkey=<C-g>
 " tnoremap <F1> <C-\><C-n>
@@ -254,11 +254,11 @@ inoremap <D-i> <Nop>
 " --------------------
 nnoremap <silent> go :<C-u>for i in range(1, v:count1) \|
 \ call append(line('.'), '') \| endfor \|
-\ silent! call repeat#set("go", v:count1)<CR>
+\ silent! call repeat#set('go', v:count1)<CR>
 
 nnoremap <silent> gO :<C-u>for i in range(1, v:count1) \|
 \ call append(line('.')-1, '') \| endfor \|
-\ silent! call repeat#set("gO", v:count1)<CR>
+\ silent! call repeat#set('gO', v:count1)<CR>
 
 " --------------------
 " Window/Tabpage/Buffer
@@ -534,15 +534,15 @@ let g:lightline.tabline = {
 " --------------------
 " Memolist
 " --------------------
-let g:memolist_path = "$HOME/Library/CloudStorage/Box-Box/Memos"
-let g:memolist_template_dir_path = "$HOME/dotfiles/memolist"
-let g:memolist_memo_suffix = "md"
-let g:memolist_memo_date = "%Y-%m-%d %H:%M"
+let g:memolist_path = '$HOME/Library/CloudStorage/Box-Box/Memos'
+let g:memolist_template_dir_path = '$HOME/dotfiles/memolist'
+let g:memolist_memo_suffix = 'md'
+let g:memolist_memo_date = '%Y-%m-%d %H:%M'
 
 nnoremap <silent> <Leader>mn :<C-u>MemoNew<CR>
 nnoremap <silent> <Leader>ml :<C-u>MemoList<CR>
 " nnoremap <silent> <Leader>mg :<C-u>MemoGrep<CR>
-nnoremap <silent> <Leader>mg :execute "FZF" g:memolist_path<CR>
+nnoremap <silent> <Leader>mg :execute 'FZF' g:memolist_path<CR>
 
 " --------------------
 " Open Browser
@@ -594,8 +594,8 @@ map g# <Plug>(asterisk-gz#)
 let g:better_whitespace_filetypes_blacklist = ['diff', 'gitcommit', 'qf', 'help']
 " autocmd vimrc FileType diff,gitcommit,qf,help DisableWhitespace
 
-let g:better_whitespace_ctermcolor = "DarkRed"
-let g:better_whitespace_guicolor = "DarkRed"
+let g:better_whitespace_ctermcolor = 'DarkRed'
+let g:better_whitespace_guicolor = 'DarkRed'
 " highlight ExtraWhitespace ctermbg=DarkRed
 " highlight ExtraWhitespace guibg=DarkRed
 
@@ -693,7 +693,7 @@ call smartinput#map_to_trigger('i', '>', '>', '>')
 call smartinput#define_rule({
     \ 'at': '\s\+\%#',
     \ 'char': '<CR>',
-    \ 'input': "<C-o>:call setline('.', substitute(getline('.'), '\\s\\+$', '', ''))<CR><CR>"})
+    \ 'input': '<C-o>:call setline(".", substitute(getline("."), "\\s\\+$", "", ""))<CR><CR>'})
 
 call smartinput#define_rule({'at': '\%#', 'char': '<', 'input': '<><Left>'})
 call smartinput#define_rule({'at': '\%#.*>', 'char': '<', 'input': '<'})
@@ -856,7 +856,7 @@ highlight link htmlBoldItalic ErrorMsg
 " --------------------
 " Prettier
 " --------------------
-let g:prettier#exec_cmd_path = "/usr/local/bin/prettier"
+let g:prettier#exec_cmd_path = '/usr/local/bin/prettier'
 let g:prettier#autoformat = 0
 " let g:prettier#quickfix_enabled = 0
 let g:prettier#quickfix_auto_focus = 0
