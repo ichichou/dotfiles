@@ -386,6 +386,7 @@ Plug 'vim-jp/syntax-vim-ex', {'for': 'vim'}
 " --------------------
 " Japanese Support
 " --------------------
+Plug 'brglng/vim-im-select'
 Plug 'deton/jasegment.vim'
 Plug 'deton/jasentence.vim'
 Plug 'haya14busa/vim-migemo'
@@ -861,6 +862,13 @@ let g:prettier#autoformat = 0
 " let g:prettier#quickfix_enabled = 0
 let g:prettier#quickfix_auto_focus = 0
 " let g:prettier#exec_cmd_async = 1
+
+" --------------------
+" Vim-IM-Select
+" --------------------
+let g:im_select_get_im_cmd = ['im-select']
+let g:im_select_default = 'jp.sourceforge.inputmethod.aquaskk.Ascii'
+let g:im_select_enable_for_gvim = 1
 
 " --------------------
 " Jasegment
