@@ -211,6 +211,12 @@ cnoremap <C-p> <Up>
 " set termwinkey=<C-g>
 " tnoremap <F1> <C-\><C-n>
 
+augroup vimrc
+    autocmd FileType markdown inoremap <Tab> <C-t>
+    autocmd FileType markdown inoremap <S-Tab> <C-d>
+    autocmd FileType markdown inoremap <C-d> <Delete>
+augroup END
+
 if has('gui_running')
     nnoremap <silent> <Leader><Leader> :<C-u>edit $MYVIMRC<CR>
     nnoremap <silent> <Leader><lt> :<C-u>edit $MYGVIMRC<CR>
