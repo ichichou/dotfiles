@@ -115,3 +115,22 @@ rules:
     - type: frontmost_application_if
       bundle_identifiers:
       - "^com\\.tinyspeck\\.slackmacgap$"
+
+- description: "[Command] Superhuman: Command-K → Command-K, 英数"
+  manipulators:
+  - type: basic
+    from:
+      key_code: k
+      modifiers:
+        mandatory:
+        - command
+    to:
+    - key_code: k
+      modifiers:
+      - command
+    - key_code: japanese_eisuu
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.superhuman\\.electron$"
