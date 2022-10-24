@@ -82,10 +82,11 @@ set shiftwidth=4
 
 augroup vimrc
     autocmd FileType c,cpp,java setlocal tabstop=4 softtabstop=4 shiftwidth=4 cindent
-    autocmd FileType json setlocal tabstop=2 softtabstop=2 shiftwidth=2
-    autocmd FileType nim setlocal tabstop=2 softtabstop=2 shiftwidth=2
     autocmd FileType go setlocal tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
     autocmd FileType html,css setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd FileType json setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd FileType nim setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd FileType r setlocal tabstop=2 softtabstop=2 shiftwidth=2
 augroup END
 
 autocmd vimrc FileType gitcommit setlocal fileencoding=utf-8
@@ -702,12 +703,12 @@ call smartinput#define_rule({
     \ 'char': '<CR>',
     \ 'input': '<C-o>:call setline(".", substitute(getline("."), "\\s\\+$", "", ""))<CR><CR>'})
 
-call smartinput#define_rule({'at': '\%#', 'char': '<', 'input': '<><Left>'})
-call smartinput#define_rule({'at': '\%#.*>', 'char': '<', 'input': '<'})
-call smartinput#define_rule({'at': '\%#.*<.*>', 'char': '<', 'input': '<><Left>'})
-call smartinput#define_rule({'at': '<.*\%#>', 'char': '>', 'input': '<Right>'})
-call smartinput#define_rule({'at': '<\%#>', 'char': '<BS>', 'input': '<BS><Del>'})
-call smartinput#define_rule({'at': '<>\%#', 'char': '<BS>', 'input': '<BS><BS>'})
+" call smartinput#define_rule({'at': '\%#', 'char': '<', 'input': '<><Left>'})
+" call smartinput#define_rule({'at': '\%#.*>', 'char': '<', 'input': '<'})
+" call smartinput#define_rule({'at': '\%#.*<.*>', 'char': '<', 'input': '<><Left>'})
+" call smartinput#define_rule({'at': '<.*\%#>', 'char': '>', 'input': '<Right>'})
+" call smartinput#define_rule({'at': '<\%#>', 'char': '<BS>', 'input': '<BS><Del>'})
+" call smartinput#define_rule({'at': '<>\%#', 'char': '<BS>', 'input': '<BS><BS>'})
 
 call smartinput#define_rule({'at': '(\%#)', 'char': '<Space>', 'input': '<Space><Space><Left>'})
 call smartinput#define_rule({'at': '{\%#}', 'char': '<Space>', 'input': '<Space><Space><Left>'})
