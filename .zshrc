@@ -65,7 +65,6 @@ else
 fi
 
 alias b="brew"
-alias bc="brew cask"
 alias g="git"
 alias mvi="mvim --remote-silent"
 alias vi="vim"
