@@ -155,7 +155,8 @@ set wrapscan
 set wildmenu
 set wildmode=full
 set pumheight=10
-set completeopt=menuone,popup
+set completeopt=menuone,noinsert
+" set completeopt=menuone,noinsert,popup
 " set shortmess&
 " set shortmess+=c
 
@@ -476,7 +477,7 @@ let g:lsp_diagnostics_echo_cursor = 1
 let g:asyncomplete_auto_popup = 1
 let g:asyncomplete_auto_completeopt = 0
 let g:asyncomplete_popup_delay = 200
-" let g:lsp_text_edit_enabled = 1
+" let g:lsp_text_edit_enabled = 0
 
 " --------------------
 " Caw
