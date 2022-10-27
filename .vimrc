@@ -211,10 +211,6 @@ noremap <Leader>u <C-^>
 cnoremap <C-n> <Down>
 cnoremap <C-p> <Up>
 
-" inoremap <expr> <CR> pumvisible() ? '<C-y>' : '<CR>'
-" inoremap <expr> <C-n> pumvisible() ? '<Down>' : '<C-n>'
-" inoremap <expr> <C-p> pumvisible() ? '<Up>' : '<C-p>'
-
 " set termwinkey=<C-g>
 " tnoremap <F1> <C-\><C-n>
 
@@ -386,6 +382,17 @@ Plug 'kana/vim-textobj-user'
 Plug 'rhysd/vim-operator-surround'
 
 " --------------------
+" Language Server
+" --------------------
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'mattn/vim-lsp-icons'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
+
+" --------------------
 " Language
 " --------------------
 Plug 'aklt/plantuml-syntax', {'for': 'plantuml'}
@@ -445,6 +452,31 @@ let g:nord_uniform_status_lines = 1
 let g:nord_comment_brightness = 15
 let g:nord_uniform_diff_background = 1
 let g:nord_cursor_line_number_background = 1
+
+" --------------------
+" Vim-lsp
+" --------------------
+function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+    setlocal signcolumn=yes
+    nmap <buffer> gd <plug>(lsp-definition)
+    nmap <buffer> gr <plug>(lsp-rename)
+    inoremap <expr> <CR> pumvisible() ? '<C-y>' : '<CR>'
+    " inoremap <expr> <C-n> pumvisible() ? '<Down>' : '<C-n>'
+    " inoremap <expr> <C-p> pumvisible() ? '<Up>' : '<C-p>'
+endfunction
+
+augroup lsp_install
+    au!
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
+
+let g:lsp_diagnostics_enabled = 1
+let g:lsp_diagnostics_echo_cursor = 1
+let g:asyncomplete_auto_popup = 1
+let g:asyncomplete_auto_completeopt = 0
+let g:asyncomplete_popup_delay = 200
+" let g:lsp_text_edit_enabled = 1
 
 " --------------------
 " Caw
