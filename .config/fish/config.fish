@@ -1,35 +1,83 @@
-## Aliases
-alias cp "cp -iv"
-alias mv "mv -iv"
-alias reload "exec fish"
-alias symln "ln -snfv"
-alias pd "prevd"
-alias nd "nextd"
+## Abbr
+abbr -ag cp cp -iv
+abbr -ag mv mv -iv
+abbr -ag symln ln -snfv
+abbr -ag pd prevd
+abbr -ag nd nextd
+abbr -ag reload exec fish
 
 if test -e "/opt/homebrew/bin/trash"
     or test -e "/usr/local/bin/trash"
-    alias rm "trash"
+    abbr -ag rm trash
 else
-    alias rm "rm -iv"
+    abbr -ag rm rm -iv
 end
 
 if test -e "/opt/homebrew/bin/exa"
     or test -e "/usr/local/bin/exa"
-    alias ls "exa -a"
-    alias ll "exa -1a"
-    alias la "exa -al --git"
+    abbr -ag ls exa -a
+    abbr -ag ll exa -1a
+    abbr -ag la exa -al --git
 else
-    alias ls "ls -AG"
-    alias ll "ls -1AG"
-    alias la "ls -AlG"
+    abbr -ag ls ls -AG
+    abbr -ag ll ls -1AG
+    abbr -ag la ls -AlG
 end
 
-alias b "brew"
-alias g "git"
-alias j "z"
-alias mvi "mvim --remote-silent"
-alias r "radian"
-alias vi "vim"
+### Apps
+abbr -ag j z
+abbr -ag mvi mvim
+abbr -ag r radian
+abbr -ag vi vim
+abbr -ag yqj yq eval -o=json
+
+### Homebrew
+abbr -ag b brew
+abbr -ag bls brew list
+abbr -ag bu brew update
+abbr -ag bug brew upgrade
+abbr -ag bo brew outdated
+abbr -ag bs brew search
+abbr -ag bi brew info
+abbr -ag bin brew install
+abbr -ag bun brew uninstall
+abbr -ag bdep brew deps
+abbr -ag buse brew uses
+abbr -ag bc brew cleanup
+abbr -ag brm brew autoremove
+abbr -ag bd brew doctor
+
+### Git
+abbr -ag g git
+abbr -ag ga git add
+abbr -ag gaa git add --all
+abbr -ag gbr git branch
+abbr -ag gbra git branch --all
+abbr -ag gbrd git branch --delete
+abbr -ag gcl git clone
+abbr -ag gcm git commit
+abbr -ag gcma git commit --all
+abbr -ag gco git checkout
+abbr -ag gcob git checkout -b
+abbr -ag gdi git diff
+abbr -ag gdit git difftool
+abbr -ag gfe git fetch
+abbr -ag gfep git fetch --prune
+abbr -ag glg git log
+abbr -ag glgf git log --graph --oneline --decorate --follow
+abbr -ag glgg git log --graph --oneline --decorate
+abbr -ag glgp git log --patch
+abbr -ag gmg git merge
+abbr -ag gmgt git mergetool
+abbr -ag gmv git mv --verbose
+abbr -ag gpl git pull
+abbr -ag gps git push
+abbr -ag gpsd git push --delete
+abbr -ag gpsu git push --set-upstream
+abbr -ag grl git reflog
+abbr -ag gs git status --short --branch
+abbr -ag gsh git show
+abbr -ag gss status
 
 ## Keybinds
 bind -e \cl
@@ -43,22 +91,13 @@ function cd
     standard_cd $argv; and ls
 end
 
-### yq
-function yqj
-    yq eval -o=json $argv
-end
+## Path
+set PATH /usr/local/opt/avr-gcc@7/bin $PATH
 
-## Fish
-set fish_greeting
-
-## fzf
+## Fzf
 set -x FZF_LEGACY_KEYBINDINGS 0
 set -x FZF_DEFAULT_COMMAND 'rg --files --hidden --follow --glob "!.git/*"'
 set -x FZF_FIND_FILE_COMMAND $FZF_DEFAULT_COMMAND
 
-## Ruby
-set -x fish_user_paths /usr/local/opt/ruby/bin $fish_user_paths
-set -x fish_user_paths $fish_user_paths /usr/local/lib/ruby/gems/2.7.0/bin
-
-## Path
-set PATH /usr/local/opt/avr-gcc@7/bin $PATH
+## Greeting
+set fish_greeting
