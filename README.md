@@ -105,14 +105,9 @@ BetterTouchTool が使えるようになった後は以下の設定にする：
 1. [Fisher のインストールコマンド](https://github.com/jorgebucaran/fisher)を実行。
 1. `$ fisher jethrokuan/z jethrokuan/fzf rafaelrinaldi/pure`
 
-#### Gem
-1. `$ which gem`……`/usr/local/opt/ruby/bin/gem` にパスが通っているか確認。
-1. `$ gem update --system`
-1. `$ gem install asciidoctor asciidoctor-pdf asciidoctor-pdf-cjk asciidoctor-diagram rouge`
-
 #### NPM
 1. `$ npm -g install npm`
-1. `$ npm -g install eslint prettier eslint-plugin-prettier htmlhint`
+1. `$ npm -g install eslint htmlhint prettier`
 
 ### 3. システム環境設定（CLI）
 * `defaults write -g InitialKeyRepeat -int 10`……キーリピートが始まるまでの時間（ミリ秒）
