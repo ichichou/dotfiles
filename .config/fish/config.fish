@@ -28,6 +28,7 @@ alias b "brew"
 alias g "git"
 alias j "z"
 alias mvi "mvim --remote-silent"
+alias r "radian"
 alias vi "vim"
 
 ## Keybinds
