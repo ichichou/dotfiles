@@ -52,8 +52,6 @@
     cl = clone
     cm = commit
     cma = commit --all
-    cmam = commit --all --message
-    cmm = commit --message
     co = checkout
     cob = checkout -b
     di = diff
