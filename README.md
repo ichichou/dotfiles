@@ -11,6 +11,7 @@
 
 
 ## クリーンインストール
+
 ### クリーンインストール手順
 **NOTE:** 最新版の macOS では手順が異なるかもしれない。
 
@@ -34,6 +35,7 @@
 
 
 ## システム環境設定
+
 ### 一般
 * `書類を開くときはタブで開く`：`常に`……プレビューアプリで複数の PDF がひとつのウィンドウで開かれるようになる。
 
@@ -77,6 +79,7 @@ BetterTouchTool が使えるようになった後は以下の設定にする：
 
 
 ## Homebrew
+
 ### 1. Homebrew のインストール
 1. `$ xcode-select --install`……Command Line Tools をインストール。
 1. [Homebrew 公式サイト](https://brew.sh/)のコマンドを実行。
@@ -89,6 +92,7 @@ BetterTouchTool が使えるようになった後は以下の設定にする：
 
 
 ## CLI によるセットアップ
+
 ### 1. init.sh
 1. `$ cd ~`
 1. `$ git clone https://github.com/ichichou/dotfiles.git`
@@ -120,6 +124,7 @@ BetterTouchTool が使えるようになった後は以下の設定にする：
 
 
 ## アプリケーション設定
+
 ### Finder
 1. ホームディレクトリを開く。
 1. 環境設定から設定。
@@ -131,7 +136,6 @@ BetterTouchTool が使えるようになった後は以下の設定にする：
     1. `$ killall Finder`
 
 ### Terminal
-1. [Iceberg プロファイル](https://cocopon.github.io/iceberg.vim/)をインポートする。
 1. 環境設定：
     * `開くシェル`：`デフォルトのログインシェル`……fish は .zshrc／.bash_profile から起動する。
     * `フォント`：`Hack Regular 12`
@@ -226,6 +230,7 @@ sudo ln -snfv \
 
 
 ## 秘密鍵の作成・登録
+
 ### 1. 公開鍵・秘密鍵を生成
 **NOTE:** 鍵の生成はローカルホスト名を変更した後にやったほうがいいかもしれない。
 
@@ -319,6 +324,7 @@ $ ssh -T git@github.com
 
 
 ## その他の設定
+
 ### フォントのインストール
 Adobe フォントは Homebrew でサポートされていないため、手動でインストールする必要がある：
 
