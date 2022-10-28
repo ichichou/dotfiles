@@ -343,6 +343,28 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " --------------------
+" Language Server
+" --------------------
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'mattn/vim-lsp-icons'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
+
+" --------------------
+" Language
+" --------------------
+Plug 'aklt/plantuml-syntax', {'for': 'plantuml'}
+Plug 'joker1007/vim-markdown-quote-syntax', {'for': 'markdown'}
+Plug 'mechatroner/rainbow_csv', {'for': 'csv'}
+Plug 'prettier/vim-prettier', {'for': ['html', 'markdown', 'yaml', 'css', 'less', 'scss', 'javascript', 'json']}
+Plug 'previm/previm', {'for': 'markdown'}
+Plug 'rcmdnk/vim-markdown', {'for': 'markdown'}
+Plug 'vim-jp/syntax-vim-ex', {'for': 'vim'}
+
+" --------------------
 " General
 " --------------------
 Plug 'LeafCage/yankround.vim'
@@ -381,28 +403,6 @@ Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-line'
 Plug 'kana/vim-textobj-user'
 Plug 'rhysd/vim-operator-surround'
-
-" --------------------
-" Language Server
-" --------------------
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
-Plug 'mattn/vim-lsp-icons'
-Plug 'hrsh7th/vim-vsnip'
-Plug 'hrsh7th/vim-vsnip-integ'
-
-" --------------------
-" Language
-" --------------------
-Plug 'aklt/plantuml-syntax', {'for': 'plantuml'}
-Plug 'joker1007/vim-markdown-quote-syntax', {'for': 'markdown'}
-Plug 'mechatroner/rainbow_csv', {'for': 'csv'}
-Plug 'prettier/vim-prettier', {'for': ['html', 'markdown', 'yaml', 'css', 'less', 'scss', 'javascript', 'json']}
-Plug 'previm/previm', {'for': 'markdown'}
-Plug 'rcmdnk/vim-markdown', {'for': 'markdown'}
-Plug 'vim-jp/syntax-vim-ex', {'for': 'vim'}
 
 " --------------------
 " Japanese Support
