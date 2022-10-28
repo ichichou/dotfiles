@@ -31,7 +31,7 @@ let g:loaded_vimball            = 1
 let g:loaded_vimballPlugin      = 1
 let g:loaded_getscript          = 1
 let g:loaded_getscriptPlugin    = 1
-" let g:loaded_netrw              = 1
+let g:loaded_netrw              = 1
 let g:loaded_netrwPlugin        = 1
 let g:loaded_netrwSettings      = 1
 let g:loaded_netrwFileHandlers  = 1
@@ -91,6 +91,9 @@ augroup END
 
 autocmd vimrc FileType gitcommit setlocal fileencoding=utf-8
 
+packadd! matchit
+let b:match_ignorecase = 1
+
 
 " Appearance
 " ========================================
@@ -115,7 +118,6 @@ set nocursorcolumn
 set showtabline=1
 " set signcolumn=yes
 set laststatus=2
-" set cmdheight=2
 set noshowmode
 set showcmd
 set ruler
@@ -136,10 +138,6 @@ set matchtime=1
 set matchpairs&
 set matchpairs+=「:」,（:）,『:』,〈:〉,《:》,【:】,〔:〕,［:］,｛:｝,“:”,‘:’
 
-source $VIMRUNTIME/macros/matchit.vim
-let b:match_ignorecase = 1
-" let b:match_words = '<if>:<endif>'
-
 
 " Search/Completion
 " ========================================
@@ -157,7 +155,7 @@ set wildmode=full
 set pumheight=10
 set completeopt=menuone,noinsert
 " set completeopt=menuone,noinsert,popup
-" set shortmess&
+set shortmess-=S
 " set shortmess+=c
 
 if executable('rg')
@@ -190,19 +188,17 @@ let g:mapleader = ','
 noremap \ ,
 noremap ; :
 noremap : ;
-" noremap / /\v
 
 noremap j gj
 noremap k gk
-noremap gj j
-noremap gk k
+" noremap gj j
+" noremap gk k
 
 noremap Y y$
 noremap x "_x
 noremap X "_X
 
 noremap U <C-r>
-noremap <Leader>U U
 
 noremap + <C-a>
 noremap - <C-x>
@@ -357,11 +353,12 @@ Plug 'hrsh7th/vim-vsnip-integ'
 " Language
 " --------------------
 Plug 'aklt/plantuml-syntax', {'for': 'plantuml'}
+Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
 Plug 'joker1007/vim-markdown-quote-syntax', {'for': 'markdown'}
+Plug 'rcmdnk/vim-markdown', {'for': 'markdown'}
+Plug 'previm/previm', {'for': 'markdown'}
 Plug 'mechatroner/rainbow_csv', {'for': 'csv'}
 Plug 'prettier/vim-prettier', {'for': ['html', 'markdown', 'yaml', 'css', 'less', 'scss', 'javascript', 'json']}
-Plug 'previm/previm', {'for': 'markdown'}
-Plug 'rcmdnk/vim-markdown', {'for': 'markdown'}
 Plug 'vim-jp/syntax-vim-ex', {'for': 'vim'}
 
 " --------------------
@@ -381,7 +378,6 @@ Plug 'haya14busa/vim-asterisk'
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-highlighturl'
 Plug 'kana/vim-smartinput'
-Plug 'mattn/emmet-vim'
 Plug 'mattn/vim-maketable'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-fugitive'
@@ -476,7 +472,7 @@ let g:lsp_diagnostics_enabled = 1
 let g:lsp_diagnostics_echo_cursor = 1
 let g:asyncomplete_auto_popup = 1
 let g:asyncomplete_auto_completeopt = 0
-let g:asyncomplete_popup_delay = 200
+" let g:asyncomplete_popup_delay = 200
 " let g:lsp_text_edit_enabled = 0
 
 " --------------------
@@ -488,10 +484,6 @@ map <Leader>0 <Plug>(caw:zeropos:toggle)
 " --------------------
 " Fzf
 " --------------------
-if empty(globpath(&runtimepath, 'plugged/fzf.vim'))
-    finish
-endif
-
 let g:fzf_layout = {'down': '~60%'}
 let g:fzf_buffers_jump = 1
 
@@ -681,10 +673,6 @@ nmap s <Plug>(easymotion-overwin-f2)
 " --------------------
 " Fugitive
 " --------------------
-if empty(globpath(&runtimepath, 'plugged/vim-fugitive'))
-    finish
-endif
-
 autocmd vimrc FileType fugitive nnoremap <silent> <buffer> q <C-w>q
 
 nnoremap <Leader>g <Nop>
@@ -700,11 +688,7 @@ nnoremap <silent> [fugitive]l :<C-u>Glog<CR>
 " --------------------
 " Gitgutter
 " --------------------
-if empty(globpath(&runtimepath, 'plugged/vim-gitgutter'))
-    finish
-endif
-
-set updatetime=250
+set updatetime=200
 
 nmap ]h <Plug>(GitGutterNextHunk)
 nmap [h <Plug>(GitGutterPrevHunk)
@@ -871,14 +855,6 @@ call textobj#user#plugin('jbrackets', {
         \ 'select-i': 'iD'
     \ }
 \ })
-
-" --------------------
-" Emmet
-" --------------------
-autocmd vimrc FileType html,css,markdown EmmetInstall
-
-" let g:user_emmet_leader_key='<C-E>'
-let g:user_emmet_install_global = 0
 
 " --------------------
 " Previm
