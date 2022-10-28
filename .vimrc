@@ -203,7 +203,9 @@ noremap U <C-r>
 noremap + <C-a>
 noremap - <C-x>
 
-noremap <Leader>u <C-^>
+noremap <C-h> <C-^>
+" noremap <C-j> :<C-u>bprevious<CR>
+" noremap <C-k> :<C-u>bnext<CR>
 
 cnoremap <C-n> <Down>
 cnoremap <C-p> <Up>
@@ -227,7 +229,7 @@ else
 endif
 
 nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR>
-nnoremap <silent> <Leader>r :<C-u>redraw!<CR>
+" nnoremap <silent> <Leader>r :<C-u>redraw!<CR>
 nnoremap <silent> <Leader>t :<C-u>vertical terminal ++close<CR>
 
 " --------------------
@@ -295,10 +297,6 @@ nnoremap <silent> [window]t :<C-u>tabnew<CR>
 nnoremap <silent> [window]q :<C-u>tabclose<CR>
 nnoremap <silent> [window]N :<C-u>+tabmove<CR>
 nnoremap <silent> [window]P :<C-u>-tabmove<CR>
-
-nnoremap <silent> [window]] :<C-u>bnext<CR>
-nnoremap <silent> [window][ :<C-u>bprevious<CR>
-nnoremap <silent> [window]x :<C-u>bdelete<CR>
 
 
 " Commands
