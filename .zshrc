@@ -66,7 +66,7 @@ fi
 
 alias b="brew"
 alias g="git"
-alias mvi="mvim --remote-silent"
+alias mvi="mvim"
 alias vi="vim"
 
 if [[ -o interactive ]]; then

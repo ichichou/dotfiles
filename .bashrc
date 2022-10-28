@@ -1,9 +1,8 @@
 ## Aliases
 alias cp="cp -iv"
 alias mv="mv -iv"
-alias rm="rm -iv"
 
-if [ -e /usr/local/bin/exa ]; then
+if [ -e /opt/homebrew/bin/exa -o -e /usr/local/bin/exa ]; then
     alias ls="exa -a"
     alias ll="exa -1a"
     alias la="exa -al --git"
@@ -13,10 +12,15 @@ else
     alias la="ls -AlG"
 fi
 
+if [ -e /opt/homebrew/bin/trash -o -e /usr/local/bin/trash ]; then
+    alias rm="trash"
+else
+    alias rm="rm -iv"
+fi
+
 alias b="brew"
-alias bc="brew cask"
 alias g="git"
-alias mvi="mvim --remote-silent"
+alias mvi="mvim"
 alias vi="vim"
 
 ## Fzf
