@@ -1,10 +1,18 @@
 ## Abbr
 abbr -ag cp cp -iv
+abbr -ag lns ln -snfv
 abbr -ag mv mv -iv
-abbr -ag symln ln -snfv
-abbr -ag pd prevd
 abbr -ag nd nextd
+abbr -ag pd prevd
 abbr -ag reload exec fish
+
+### Apps
+abbr -ag ba bat
+abbr -ag j z
+abbr -ag mvi mvim
+abbr -ag r radian
+abbr -ag vi vim
+abbr -ag yqj yq eval -o=json
 
 if test -e "/opt/homebrew/bin/trash"
     or test -e "/usr/local/bin/trash"
@@ -23,13 +31,6 @@ else
     abbr -ag ll ls -1AG
     abbr -ag la ls -AlG
 end
-
-### Apps
-abbr -ag j z
-abbr -ag mvi mvim
-abbr -ag r radian
-abbr -ag vi vim
-abbr -ag yqj yq eval -o=json
 
 ### Homebrew
 abbr -ag b brew
