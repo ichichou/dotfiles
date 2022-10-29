@@ -88,7 +88,12 @@ bind -e \cf
 ### Auto ls
 functions --copy cd standard_cd
 function cd
-    standard_cd $argv; and ls
+    if test -e "/opt/homebrew/bin/exa"
+        or test -e "/usr/local/bin/exa"
+        standard_cd $argv; and exa -a
+    else
+        standard_cd $argv; and ls -AG
+    end
 end
 
 ## Path
