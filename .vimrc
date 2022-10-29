@@ -365,6 +365,8 @@ Plug 'vim-jp/syntax-vim-ex', {'for': 'vim'}
 " --------------------
 " General
 " --------------------
+" Edditing
+" --------------------
 Plug 'LeafCage/yankround.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
@@ -393,12 +395,13 @@ Plug 'junegunn/fzf.vim'
 " --------------------
 " Operator / Text Object
 " --------------------
+Plug 'kana/vim-operator-user'
 Plug 'haya14busa/vim-operator-flashy'
 Plug 'kana/vim-operator-replace'
-Plug 'kana/vim-operator-user'
+
+Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-line'
-Plug 'kana/vim-textobj-user'
 Plug 'rhysd/vim-operator-surround'
 
 " --------------------
