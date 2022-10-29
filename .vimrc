@@ -351,25 +351,25 @@ Plug 'hrsh7th/vim-vsnip-integ'
 " Plug 'shun/ddc-vim-lsp'
 
 " --------------------
+" Vim-polyglot
+" --------------------
+let g:polyglot_disabled = ['markdown.plugin', 'csv.plugin', 'r-lang.plugin']
+" let g:polyglot_disabled += ['autoindent']
+" let g:polyglot_disabled += ['sensible']
+
+Plug 'sheerun/vim-polyglot'
+
+" --------------------
 " Language
 " --------------------
-Plug 'vim-jp/syntax-vim-ex', {'for': 'vim'}
 Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
-" Plug 'mechatroner/rainbow_csv', {'for': 'csv'}
+Plug 'mechatroner/rainbow_csv', {'for': 'csv'}
+Plug 'vim-jp/syntax-vim-ex', {'for': 'vim'}
 Plug 'prettier/vim-prettier', {'for': ['html', 'markdown', 'yaml', 'css', 'less', 'scss', 'javascript', 'json']}
 
 Plug 'joker1007/vim-markdown-quote-syntax', {'for': 'markdown'}
 Plug 'rcmdnk/vim-markdown', {'for': 'markdown'}
 Plug 'previm/previm', {'for': 'markdown'}
-
-" --------------------
-" Vim-polyglot
-" --------------------
-let g:polyglot_disabled = ['markdown', 'r-lang']
-" let g:polyglot_disabled += ['autoindent']
-" let g:polyglot_disabled += ['sensible']
-
-Plug 'sheerun/vim-polyglot'
 
 " --------------------
 " Edditing
