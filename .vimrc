@@ -353,17 +353,24 @@ Plug 'hrsh7th/vim-vsnip-integ'
 " --------------------
 " Language
 " --------------------
-Plug 'aklt/plantuml-syntax', {'for': 'plantuml'}
+Plug 'vim-jp/syntax-vim-ex', {'for': 'vim'}
 Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
+" Plug 'mechatroner/rainbow_csv', {'for': 'csv'}
+Plug 'prettier/vim-prettier', {'for': ['html', 'markdown', 'yaml', 'css', 'less', 'scss', 'javascript', 'json']}
+
 Plug 'joker1007/vim-markdown-quote-syntax', {'for': 'markdown'}
 Plug 'rcmdnk/vim-markdown', {'for': 'markdown'}
 Plug 'previm/previm', {'for': 'markdown'}
-Plug 'mechatroner/rainbow_csv', {'for': 'csv'}
-Plug 'prettier/vim-prettier', {'for': ['html', 'markdown', 'yaml', 'css', 'less', 'scss', 'javascript', 'json']}
-Plug 'vim-jp/syntax-vim-ex', {'for': 'vim'}
 
 " --------------------
-" General
+" Vim-polyglot
+" --------------------
+let g:polyglot_disabled = ['markdown', 'r-lang']
+" let g:polyglot_disabled += ['autoindent']
+" let g:polyglot_disabled += ['sensible']
+
+Plug 'sheerun/vim-polyglot'
+
 " --------------------
 " Edditing
 " --------------------
