@@ -1,5 +1,6 @@
 ## Abbr
 abbr -ag cp cp -iv
+abbr -ag e exit
 abbr -ag lns ln -snfv
 abbr -ag mv mv -iv
 abbr -ag nd nextd
@@ -78,7 +79,7 @@ abbr -ag gpsu git push --set-upstream
 abbr -ag grl git reflog
 abbr -ag gs git status --short --branch
 abbr -ag gsh git show
-abbr -ag gss status
+abbr -ag gss git status
 
 ## Keybinds
 bind -e \cl
