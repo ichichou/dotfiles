@@ -99,7 +99,8 @@ function cd
 end
 
 ## Path
-set PATH /usr/local/opt/avr-gcc@7/bin $PATH
+fish_add_path /usr/local/opt/avr-gcc@7/bin
+fish_add_path /Users/kazu/go/bin
 
 ## Fzf
 set -x FZF_LEGACY_KEYBINDINGS 0
