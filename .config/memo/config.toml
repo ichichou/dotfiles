@@ -1,0 +1,11 @@
+memodir = "/Users/kazu/.config/memo/_posts"
+editor = "mvim"
+column = 20
+width = 0
+selectcmd = "fzf"
+grepcmd = "rg ${PATTERN} ${FILES}"
+memotemplate = ""
+assetsdir = "."
+pluginsdir = "/Users/kazu/.config/memo/plugins"
+templatedirfile = ""
+templatebodyfile = ""
