@@ -1,4 +1,4 @@
-memodir = "/Users/kazu/.config/memo/_posts"
+memodir = "~/Library/CloudStorage/Box-Box/Notes/memo"
 editor = "mvim"
 column = 20
 width = 0
@@ -6,6 +6,6 @@ selectcmd = "fzf"
 grepcmd = "rg ${PATTERN} ${FILES}"
 memotemplate = ""
 assetsdir = "."
-pluginsdir = "/Users/kazu/.config/memo/plugins"
+pluginsdir = "~/kazu/.config/memo/plugins"
 templatedirfile = ""
 templatebodyfile = ""
