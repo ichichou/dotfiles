@@ -33,6 +33,14 @@ else
     abbr -ag la ls -AlG
 end
 
+### Memo
+abbr -ag m memo
+abbr -ag mn memo new
+abbr -ag me memo edit
+abbr -ag mc memo cat
+abbr -ag mg memo grep
+abbr -ag ms memo serve
+
 ### Homebrew
 abbr -ag b brew
 abbr -ag bls brew list
