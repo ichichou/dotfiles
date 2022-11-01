@@ -15,9 +15,6 @@ aliases:
     name: hyper_mode
     value: 1
 
-- parameters: &delay_time_to_cancel_one_shot_hyper_mode
-    basic.to_delayed_action_delay_milliseconds: 1000
-
 # ===== Rules =====
 
 rules:
