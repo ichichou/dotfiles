@@ -54,7 +54,7 @@ set nowritebackup
 
 set shell=fish
 set history=10000
-" set updatetime=300
+set updatetime=100
 set helplang=ja,en
 
 set clipboard&
@@ -112,15 +112,16 @@ set listchars=eol:¬,tab:»\ ,space:\ ,trail:\ ,extends:>,precedes:<,nbsp:~
 
 set title
 set number
+set ruler
 set cursorline
 set nocursorcolumn
 
-set showtabline=1
-" set signcolumn=yes
+set signcolumn=yes
 set laststatus=2
-set noshowmode
+" set cmdhe = 0
+set showtabline=1
 set showcmd
-set ruler
+set noshowmode
 
 set scrolloff=3
 set display=lastline
