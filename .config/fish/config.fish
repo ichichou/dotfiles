@@ -12,6 +12,7 @@ abbr -ag ba bat
 abbr -ag j z
 abbr -ag mvi mvim
 abbr -ag r radian
+abbr -ag t tig
 abbr -ag vi vim
 abbr -ag yqj yq eval -o=json
 
