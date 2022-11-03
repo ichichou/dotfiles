@@ -378,29 +378,33 @@ Plug 'previm/previm', {'for': 'markdown'}
 " Edditing
 " --------------------
 Plug 'LeafCage/yankround.vim'
-Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
-Plug 'cocopon/lightline-hybrid.vim'
 Plug 'cocopon/vaffle.vim'
 Plug 'cohama/vim-smartinput-endwise'
 Plug 'easymotion/vim-easymotion'
 Plug 'glidenote/memolist.vim'
 Plug 'godlygeek/tabular'
-Plug 'haya14busa/is.vim'
 Plug 'haya14busa/vim-asterisk'
-Plug 'itchyny/lightline.vim'
-Plug 'itchyny/vim-highlighturl'
 Plug 'kana/vim-smartinput'
 Plug 'mattn/vim-maketable'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-repeat'
 Plug 'tyru/caw.vim'
 Plug 'tyru/open-browser.vim'
+Plug 'tpope/vim-repeat'
 " Plug 'kana/vim-repeat'
+" Plug 'tpope/vim-fugitive'
+" Plug 'airblade/vim-gitgutter'
 
 Plug '/opt/homebrew/opt/fzf'
 Plug 'junegunn/fzf.vim'
+
+" --------------------
+" Appearance
+" --------------------
+Plug 'cocopon/lightline-hybrid.vim'
+Plug 'haya14busa/is.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'itchyny/vim-highlighturl'
+Plug 'ntpeters/vim-better-whitespace'
 
 " --------------------
 " Operator / Text Object
@@ -687,36 +691,36 @@ nmap s <Plug>(easymotion-overwin-f2)
 " --------------------
 " Fugitive
 " --------------------
-autocmd vimrc FileType fugitive nnoremap <silent> <buffer> q <C-w>q
-
-nnoremap <Leader>g <Nop>
-nnoremap [fugitive] <Nop>
-nmap <Leader>g [fugitive]
-
-nnoremap <silent> [fugitive]s :<C-u>Gstatus<CR>
-nnoremap <silent> [fugitive]a :<C-u>Gwrite<CR>
-nnoremap <silent> [fugitive]c :<C-u>Gcommit -v<CR>
-nnoremap <silent> [fugitive]d :<C-u>Gvdiffsplit<CR>
-nnoremap <silent> [fugitive]l :<C-u>Glog<CR>
+" autocmd vimrc FileType fugitive nnoremap <silent> <buffer> q <C-w>q
+"
+" nnoremap <Leader>g <Nop>
+" nnoremap [fugitive] <Nop>
+" nmap <Leader>g [fugitive]
+"
+" nnoremap <silent> [fugitive]s :<C-u>Gstatus<CR>
+" nnoremap <silent> [fugitive]a :<C-u>Gwrite<CR>
+" nnoremap <silent> [fugitive]c :<C-u>Gcommit -v<CR>
+" nnoremap <silent> [fugitive]d :<C-u>Gvdiffsplit<CR>
+" nnoremap <silent> [fugitive]l :<C-u>Glog<CR>
 
 " --------------------
 " Gitgutter
 " --------------------
-set updatetime=200
-
-nmap ]h <Plug>(GitGutterNextHunk)
-nmap [h <Plug>(GitGutterPrevHunk)
-
-nnoremap <Leader>h <Nop>
-nnoremap [gitgutter] <Nop>
-nmap <Leader>h [gitgutter]
-
-nnoremap <silent> [gitgutter]j :<C-u>GitGutterNextHunk<CR>
-nnoremap <silent> [gitgutter]k :<C-u>GitGutterPrevHunk<CR>
-nnoremap <silent> [gitgutter]h :<C-u>GitGutterLineHighlightsToggle<CR>
-nnoremap <silent> [gitgutter]p :<C-u>GitGutterPreviewHunk<CR>
-nnoremap <silent> [gitgutter]s :<C-u>GitGutterStagewHunk<CR>
-nnoremap <silent> [gitgutter]u :<C-u>GitGutterUndoHunk<CR>
+" set updatetime=200
+"
+" nmap ]h <Plug>(GitGutterNextHunk)
+" nmap [h <Plug>(GitGutterPrevHunk)
+"
+" nnoremap <Leader>h <Nop>
+" nnoremap [gitgutter] <Nop>
+" nmap <Leader>h [gitgutter]
+"
+" nnoremap <silent> [gitgutter]j :<C-u>GitGutterNextHunk<CR>
+" nnoremap <silent> [gitgutter]k :<C-u>GitGutterPrevHunk<CR>
+" nnoremap <silent> [gitgutter]h :<C-u>GitGutterLineHighlightsToggle<CR>
+" nnoremap <silent> [gitgutter]p :<C-u>GitGutterPreviewHunk<CR>
+" nnoremap <silent> [gitgutter]s :<C-u>GitGutterStagewHunk<CR>
+" nnoremap <silent> [gitgutter]u :<C-u>GitGutterUndoHunk<CR>
 
 " --------------------
 " Smartinput
@@ -893,7 +897,7 @@ highlight link htmlBoldItalic ErrorMsg
 " --------------------
 " Prettier
 " --------------------
-let g:prettier#exec_cmd_path = '/usr/local/bin/prettier'
+let g:prettier#exec_cmd_path = '/opt/homebrew/bin/prettier'
 let g:prettier#autoformat = 0
 " let g:prettier#quickfix_enabled = 0
 let g:prettier#quickfix_auto_focus = 0
