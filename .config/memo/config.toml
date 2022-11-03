@@ -1,5 +1,5 @@
-memodir = "~/Library/CloudStorage/Box-Box/Notes/memo"
-editor = "mvim"
+memodir = "~/Library/CloudStorage/Box-Box/Notes/log"
+editor = "vim"
 column = 20
 width = 0
 selectcmd = "fzf"
