@@ -11,6 +11,7 @@ abbr -ag reload exec fish
 abbr -ag ba bat
 abbr -ag j z
 abbr -ag mvi mvim
+abbr -ag nvi nvim
 abbr -ag r radian
 abbr -ag t tig
 abbr -ag ts tig status
@@ -37,13 +38,16 @@ else
     abbr -ag la ls -AlG
 end
 
-### Memo
+### memo
 abbr -ag m memo
 abbr -ag mn memo new
 abbr -ag me memo edit
 abbr -ag mc memo cat
 abbr -ag mg memo grep
 abbr -ag ms memo serve
+
+### zk
+abbr -ag k zk
 
 ### Homebrew
 abbr -ag b brew
