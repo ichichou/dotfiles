@@ -104,16 +104,16 @@ rules:
     to:
     - key_code: japanese_eisuu
 
-- description: "[Control] RControl-M → Return"
-  manipulators:
-  - type: basic
-    from:
-      key_code: m
-      modifiers:
-        mandatory:
-        - right_control
-    to:
-    - key_code: return_or_enter
+# - description: "[Control] RControl-M → Return"
+#   manipulators:
+#   - type: basic
+#     from:
+#       key_code: m
+#       modifiers:
+#         mandatory:
+#         - right_control
+#     to:
+#     - key_code: return_or_enter
 
 - description: "[Control] RControl-LCommand-Space → Emoji Palette"
   manipulators:
