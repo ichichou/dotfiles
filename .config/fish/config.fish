@@ -20,8 +20,10 @@ abbr -ag yqj yq eval -o=json
 if test -e "/opt/homebrew/bin/trash"
     or test -e "/usr/local/bin/trash"
     abbr -ag rm trash
+    abbr -ag rmds trash .DS_Store
 else
     abbr -ag rm rm -iv
+    abbr -ag rm rm -iv .DS_Store
 end
 
 if test -e "/opt/homebrew/bin/exa"
