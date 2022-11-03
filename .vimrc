@@ -232,6 +232,9 @@ nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR>
 " nnoremap <silent> <Leader>r :<C-u>redraw!<CR>
 nnoremap <silent> <Leader>t :<C-u>vertical terminal ++close<CR>
 
+nnoremap <Leader>d i## <C-R>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
+nnoremap <Leader>D o<CR>## <C-R>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
+
 " --------------------
 " Nop
 " --------------------
