@@ -379,6 +379,7 @@ Plug 'previm/previm', {'for': 'markdown'}
 " Edditing
 " --------------------
 Plug 'LeafCage/yankround.vim'
+Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
 Plug 'cocopon/vaffle.vim'
 Plug 'cohama/vim-smartinput-endwise'
@@ -388,12 +389,11 @@ Plug 'godlygeek/tabular'
 Plug 'haya14busa/vim-asterisk'
 Plug 'kana/vim-smartinput'
 Plug 'mattn/vim-maketable'
+Plug 'tpope/vim-repeat'
 Plug 'tyru/caw.vim'
 Plug 'tyru/open-browser.vim'
-Plug 'tpope/vim-repeat'
 " Plug 'kana/vim-repeat'
 " Plug 'tpope/vim-fugitive'
-" Plug 'airblade/vim-gitgutter'
 
 Plug '/opt/homebrew/opt/fzf'
 Plug 'junegunn/fzf.vim'
@@ -707,21 +707,21 @@ nmap s <Plug>(easymotion-overwin-f2)
 " --------------------
 " Gitgutter
 " --------------------
-" set updatetime=200
-"
-" nmap ]h <Plug>(GitGutterNextHunk)
-" nmap [h <Plug>(GitGutterPrevHunk)
-"
-" nnoremap <Leader>h <Nop>
-" nnoremap [gitgutter] <Nop>
-" nmap <Leader>h [gitgutter]
-"
-" nnoremap <silent> [gitgutter]j :<C-u>GitGutterNextHunk<CR>
-" nnoremap <silent> [gitgutter]k :<C-u>GitGutterPrevHunk<CR>
-" nnoremap <silent> [gitgutter]h :<C-u>GitGutterLineHighlightsToggle<CR>
-" nnoremap <silent> [gitgutter]p :<C-u>GitGutterPreviewHunk<CR>
-" nnoremap <silent> [gitgutter]s :<C-u>GitGutterStagewHunk<CR>
-" nnoremap <silent> [gitgutter]u :<C-u>GitGutterUndoHunk<CR>
+let g:gitgutter_map_keys = 0
+
+nnoremap <Leader>h <Nop>
+nnoremap [gitgutter] <Nop>
+nmap <Leader>h [gitgutter]
+
+nnoremap <silent> [gitgutter]j :<C-u>GitGutterNextHunk<CR>
+nnoremap <silent> [gitgutter]k :<C-u>GitGutterPrevHunk<CR>
+nmap ]h <Plug>(GitGutterNextHunk)
+nmap [h <Plug>(GitGutterPrevHunk)
+
+nnoremap <silent> [gitgutter]p :<C-u>GitGutterPreviewHunk<CR>
+nnoremap <silent> [gitgutter]t :<C-u>GitGutterLineHighlightsToggle<CR>
+nnoremap <silent> [gitgutter]s :<C-u>GitGutterStagewHunk<CR>
+nnoremap <silent> [gitgutter]u :<C-u>GitGutterUndoHunk<CR>
 
 " --------------------
 " Smartinput
