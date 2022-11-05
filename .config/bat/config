@@ -1,2 +1,2 @@
---theme="TwoDark"
---style="numbers,changes,grid"
+--theme "TwoDark"
+--style "numbers,grid,header,changes"
