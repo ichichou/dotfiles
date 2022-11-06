@@ -1,26 +1,80 @@
+env:
+  TERM: alacritty
+
 window:
   dimensions:
     columns: 140
     lines: 50
-
+  # position:
+  #   x:
+  #   y:
   padding:
-    x: 8
+    x: 4
     y: 4
-
-  # opacity: 0.99999
-  # バグ回避: https://github.com/alacritty/alacritty/issues/4474
-
-env:
-  TERM: xterm-256color
+  # dynamic_padding: false
+  decorations: full
+  # opacity: 1.0
+  # startup_mode: Windowed
+  title: Alacritty
+  dynamic_title: true
+  # class:
+  # instance: Alacritty
+  # general: Alacritty
+  # decorations_theme_variant:
+  history: 10000
+  multiplier: 3
 
 font:
   normal:
     family: Hack
+    style: Regular
+  # bold:
+  # italic:
+  # bold_italic:
   size: 13.0
+  # offset:
+  #   x: 0
+  #   y: 0
+  # glyph_offset:
+  #   x: 0
+  #   y: 0
+  builtin_box_drawing: true
 
 draw_bold_text_with_bright_colors: true
-custom_cursor_colors: true
+
+# bell:
+  # animation: EaseOutExpo
+  # duration: 0
+  # color: '#ffffff'
+  # command: None
+
+# selection:
+  # semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+  # save_to_clipboard: false
+
+cursor:
+  style:
+    shape: Block
+    blinking: Off
+  # vi_mode_style: None
+  # blink_interval: 750
+  # blink_timeout: 5
+  # unfocused_hollow: true
+  # thickness: 0.15
+
 live_config_reload: true
+
+# shell:
+  # program: /opt/homebrew/bin/fish
+  # args:
+
+# working_directory: None
+# alt_send_esc: true
+# ipc_socket: true
+
+# mouse:
+# hints:
+# debug:
 
 # Colors - Nord
 colors:
@@ -29,72 +83,109 @@ colors:
     foreground:     '#d8dee9'
     dim_foreground: '#a5abb6'
   cursor:
-    text:           '#2e3440'
-    cursor:         '#d8dee9'
+    text:   '#2e3440'
+    cursor: '#d8dee9'
   vi_mode_cursor:
-    text:           '#2e3440'
-    cursor:         '#d8dee9'
-  selection:
-    text:           CellForeground
-    background:     '#4c566a'
+    text:   '#2e3440'
+    cursor: '#d8dee9'
   search:
     matches:
-      foreground:   CellBackground
-      background:   '#88c0d0'
-    footer_bar:
-      background:   '#434c5e'
-      foreground:   '#d8dee9'
+      foreground: CellBackground
+      background: '#88c0d0'
+  footer_bar:
+    background: '#434c5e'
+    foreground: '#d8dee9'
+  selection:
+    text:       CellForeground
+    background: '#4c566a'
   normal:
-    black:          '#3b4252'
-    red:            '#bf616a'
-    green:          '#a3be8c'
-    yellow:         '#ebcb8b'
-    blue:           '#81a1c1'
-    magenta:        '#b48ead'
-    cyan:           '#88c0d0'
-    white:          '#e5e9f0'
+    black:   '#3b4252'
+    red:     '#bf616a'
+    green:   '#a3be8c'
+    yellow:  '#ebcb8b'
+    blue:    '#81a1c1'
+    magenta: '#b48ead'
+    cyan:    '#88c0d0'
+    white:   '#e5e9f0'
   bright:
-    black:          '#4c566a'
-    red:            '#bf616a'
-    green:          '#a3be8c'
-    yellow:         '#ebcb8b'
-    blue:           '#81a1c1'
-    magenta:        '#b48ead'
-    cyan:           '#8fbcbb'
-    white:          '#eceff4'
+    black:   '#4c566a'
+    red:     '#bf616a'
+    green:   '#a3be8c'
+    yellow:  '#ebcb8b'
+    blue:    '#81a1c1'
+    magenta: '#b48ead'
+    cyan:    '#8fbcbb'
+    white:   '#eceff4'
   dim:
-    black:          '#373e4d'
-    red:            '#94545d'
-    green:          '#809575'
-    yellow:         '#b29e75'
-    blue:           '#68809a'
-    magenta:        '#8c738c'
-    cyan:           '#6d96a5'
-    white:          '#aeb3bb'
+    black:   '#373e4d'
+    red:     '#94545d'
+    green:   '#809575'
+    yellow:  '#b29e75'
+    blue:    '#68809a'
+    magenta: '#8c738c'
+    cyan:    '#6d96a5'
+    white:   '#aeb3bb'
 
 # Colors - Tomorrow Night
 # colors:
 #   primary:
-#     background: '#1d1f21'
-#     foreground: '#c5c8c6'
+#     background:        '#1d1f21'
+#     foreground:        '#c5c8c6'
+#     dim_foreground:    '#828482'
+#     bright_foreground: '#eaeaea'
 #   cursor:
-#     text:       '#1d1f21'
-#     cursor:     '#ffffff'
+#     text:   CellBackground
+#     cursor: CellForeground
+#   vi_mode_cursor:
+#     text:   CellBackground
+#     cursor: CellForeground
+#   search:
+#     matches:
+#       foreground: '#000000'
+#       background: '#ffffff'
+#     focused_match:
+#       foreground: '#ffffff'
+#       background: '#000000'
+#   hints:
+#     start:
+#       foreground: '#1d1f21'
+#       background: '#e9ff5e'
+#     end:
+#       foreground: '#e9ff5e'
+#       background: '#1d1f21'
+#   line_indicator:
+#     foreground: None
+#     background: None
+#   footer_bar:
+#     background: '#c5c8c6'
+#     foreground: '#1d1f21'
+#   selection:
+#     text:       CellBackground
+#     background: CellForeground
 #   normal:
-#     black:      '#1d1f21'
-#     red:        '#cc6666'
-#     green:      '#b5bd68'
-#     yellow:     '#e6c547'
-#     blue:       '#81a2be'
-#     magenta:    '#b294bb'
-#     cyan:       '#70c0ba'
-#     white:      '#373b41'
+#     black:   '#1d1f21'
+#     red:     '#cc6666'
+#     green:   '#b5bd68'
+#     yellow:  '#f0c674'
+#     blue:    '#81a2be'
+#     magenta: '#b294bb'
+#     cyan:    '#8abeb7'
+#     white:   '#c5c8c6'
 #   bright:
-#     black:      '#666666'
-#     red:        '#ff3334'
-#     green:      '#9ec400'
-#     yellow:     '#f0c674'
-#     blue:       '#81a2be'
-#     magenta:    '#b77ee0'
-#     cyan:       '#54ced6'
-#     white:      '#282a2e'
+#     black:   '#666666'
+#     red:     '#d54e53'
+#     green:   '#b9ca4a'
+#     yellow:  '#e7c547'
+#     blue:    '#7aa6da'
+#     magenta: '#c397d8'
+#     cyan:    '#70c0b1'
+#     white:   '#eaeaea'
+#   dim:
+#     black:   '#131415'
+#     red:     '#864343'
+#     green:   '#777c44'
+#     yellow:  '#9e824c'
+#     blue:    '#556a7d'
+#     magenta: '#75617b'
+#     cyan:    '#5b7d78'
+#     white:   '#828482'
