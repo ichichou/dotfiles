@@ -38,6 +38,9 @@ else
     abbr -ag la ls -AlG
 end
 
+### Vim
+abbr -ag vf vim ~/dotfiles/.config/fish/config.fish
+
 ### memo
 abbr -ag m memo
 abbr -ag mn memo new
