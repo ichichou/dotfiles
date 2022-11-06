@@ -54,7 +54,7 @@ template = "journal.md"
 paths = ["draft"]
 
 [group.draft.note]
-filename = "{{date now 'timestamp'}}-{{title}}"
+filename = "{{date now '%Y%m%d%H%M%S'}}-{{title}}"
 template = "draft.md"
 
 [group.draft.extra]
@@ -117,6 +117,7 @@ note-detail = "{{filename-stem}}"
 [filter]
 recents = "--sort created- --created-after 'last two weeks'"
 journal = "--sort created journal"
+draft = "--sort created draft"
 
 # COMMAND ALIASES
 [alias]
