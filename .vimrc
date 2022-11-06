@@ -449,9 +449,9 @@ runtime! config/*.vim
 " --------------------
 " hybrid iceberg nord tender
 if has('gui_running')
-    colorscheme iceberg
+    colorscheme nord
 else
-    colorscheme iceberg
+    colorscheme nord
 endif
 
 " Hybrid
@@ -540,7 +540,7 @@ nnoremap <silent> <Leader>b :<C-u>Buffers<CR>
 
 if has('gui_running')
     let g:lightline = {
-        \ 'colorscheme': 'iceberg',
+        \ 'colorscheme': 'nord',
         \ 'active': {
             \ 'left': [
                 \ ['mode', 'paste'],
@@ -558,7 +558,7 @@ if has('gui_running')
     \ }
 else
     let g:lightline = {
-        \ 'colorscheme': 'iceberg',
+        \ 'colorscheme': 'nord',
         \ 'active': {
             \ 'left': [
                 \ ['mode', 'paste'],
