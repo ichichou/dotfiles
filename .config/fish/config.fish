@@ -105,11 +105,6 @@ abbr -ag gs git status --short --branch
 abbr -ag gsh git show
 abbr -ag gss git status
 
-## Keybinds
-bind -e \cl
-bind -e \cj
-bind -e \cf
-
 ## Functions
 ### Auto ls
 functions --copy cd standard_cd
@@ -122,17 +117,26 @@ function cd
     end
 end
 
+## Greeting
+set fish_greeting
+
 ## Path
 fish_add_path /usr/local/opt/avr-gcc@7/bin
 fish_add_path /Users/kazu/go/bin
 
-## Fzf
+## Keybinds
+bind -e \cl
+bind -e \cj
+bind -e \cf
+
+## Apps
+### Fzf
 set -x FZF_LEGACY_KEYBINDINGS 0
 set -x FZF_DEFAULT_COMMAND 'rg --files --hidden --follow --glob "!.git/*"'
 set -x FZF_FIND_FILE_COMMAND $FZF_DEFAULT_COMMAND
 
-## Zk
+### Zk
 set -x ZK_NOTEBOOK_DIR ~/repos/zk
 
-## Greeting
-set fish_greeting
+### Pure
+set -x pure_show_jobs true
