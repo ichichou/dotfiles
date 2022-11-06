@@ -50,6 +50,16 @@ template = "journal.md"
 [group.journal.extra]
 # key = "value"
 
+[group.draft]
+paths = ["draft"]
+
+[group.draft.note]
+filename = "{{date now 'timestamp'}}-{{title}}"
+template = "draft.md"
+
+[group.draft.extra]
+# key = "value"
+
 # MARKDOWN SETTINGS
 [format.markdown]
 
