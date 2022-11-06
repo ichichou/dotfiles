@@ -51,6 +51,11 @@ abbr -ag ms memo serve
 
 ### zk
 abbr -ag k zk
+abbr -ag kn zk new
+abbr -ag kl zk list
+abbr -ag ke zk edit
+abbr -ag kj zk new --no-input "$ZK_NOTEBOOK_DIR/journal"
+abbr -ag kc vim ~/dotfiles/.config/zk/config.toml
 
 ### Homebrew
 abbr -ag b brew
