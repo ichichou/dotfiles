@@ -9,6 +9,7 @@ abbr -ag reload exec fish
 
 ### Apps
 abbr -ag ba bat
+abbr -ag fc vim ~/dotfiles/.config/fish/config.fish
 abbr -ag j z
 abbr -ag mvi mvim
 abbr -ag nvi nvim
@@ -38,15 +39,13 @@ else
     abbr -ag la ls -AlG
 end
 
-### Vim
-abbr -ag vf vim ~/dotfiles/.config/fish/config.fish
-
 ### memo
 abbr -ag m memo
-abbr -ag mn memo new
-abbr -ag me memo edit
 abbr -ag mc memo cat
+abbr -ag mco memo config
+abbr -ag me memo edit
 abbr -ag mg memo grep
+abbr -ag mn memo new
 abbr -ag ms memo serve
 
 ### zk
@@ -129,7 +128,9 @@ bind -e \cl
 bind -e \cj
 bind -e \cf
 
-## Apps
+## Environment Variable
+set -x EDITOR vim
+
 ### Fzf
 set -x FZF_LEGACY_KEYBINDINGS 0
 set -x FZF_DEFAULT_COMMAND 'rg --files --hidden --follow --glob "!.git/*"'
