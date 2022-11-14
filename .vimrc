@@ -105,6 +105,13 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 let &t_Cs = "\e[4:3m"
 let &t_Ce = "\e[4:0m"
 
+if has('vim_starting')
+    let &t_SI .= "\e[6 q"
+    " let &t_SI .= "\e[5 q"
+    let &t_EI .= "\e[2 q"
+    let &t_SR .= "\e[4 q"
+endif
+
 set background=dark
 
 set list
