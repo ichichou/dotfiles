@@ -116,8 +116,8 @@ note-detail = "{{filename-stem}}"
 # NAMED FILTERS
 [filter]
 recents = "--sort created- --created-after 'last two weeks'"
-journal = "--sort created journal"
-draft = "--sort created draft"
+journal = "--sort created- journal"
+draft = "--sort created- draft"
 
 # COMMAND ALIASES
 [alias]
