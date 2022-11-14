@@ -54,7 +54,7 @@ template = "journal.md"
 paths = ["draft"]
 
 [group.draft.note]
-filename = "{{date now '%Y%m%d%H%M%S'}}-{{title}}"
+filename = "{{date now 'timestamp'}}"
 template = "draft.md"
 
 [group.draft.extra]
