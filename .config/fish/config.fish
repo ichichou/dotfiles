@@ -53,8 +53,13 @@ abbr -ag k zk
 abbr -ag kn zk new
 abbr -ag kl zk list -i
 abbr -ag ke zk edit -i
+
 abbr -ag kj zk new --no-input "$ZK_NOTEBOOK_DIR/journal"
-abbr -ag kd zk 
+abbr -ag kje zk edit journal -i
+
+abbr -ag kd zk new "$ZK_NOTEBOOK_DIR/draft"
+abbr -ag kde zk edit draft -i
+
 abbr -ag kc vim ~/dotfiles/.config/zk/config.toml
 
 ### Homebrew
