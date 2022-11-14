@@ -218,6 +218,8 @@ noremap <C-h> <C-^>
 cnoremap <C-n> <Down>
 cnoremap <C-p> <Up>
 
+nnoremap <CR> i<CR><Esc>
+
 " set termwinkey=<C-g>
 " tnoremap <F1> <C-\><C-n>
 
