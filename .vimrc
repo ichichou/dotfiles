@@ -124,7 +124,7 @@ set nocursorcolumn
 
 set signcolumn=yes
 set laststatus=2
-" set cmdhe = 0
+" set cmdheight = 0
 set showtabline=1
 set showcmd
 set noshowmode
