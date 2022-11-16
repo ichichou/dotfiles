@@ -820,17 +820,17 @@ let g:operator#surround#blocks = {'-' : [
     \ {
         \ 'block': ['（', '）'],
         \ 'motionwise': ['char', 'line', 'block'],
-        \ 'keys': ['（', '）', 'P']
+        \ 'keys': ['p']
     \ },
     \ {
         \ 'block': ['「', '」'],
         \ 'motionwise': ['char', 'line', 'block'],
-        \ 'keys': ['「', '」', 'B']
+        \ 'keys': ['b']
     \ },
     \ {
         \ 'block': ['『', '』'],
         \ 'motionwise': ['char', 'line', 'block'],
-        \ 'keys': ['『', '』', 'D']
+        \ 'keys': ['d']
     \ },
 \ ]}
 
@@ -889,7 +889,7 @@ let g:prettier#quickfix_auto_focus = 0
 " --------------------
 let g:im_select_get_im_cmd = ['im-select']
 let g:im_select_default = 'jp.sourceforge.inputmethod.aquaskk.Ascii'
-let g:im_select_enable_for_gvim = 1
+" let g:im_select_enable_for_gvim = 1
 
 " --------------------
 " Jasegment
