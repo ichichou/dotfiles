@@ -545,43 +545,28 @@ nnoremap <silent> <Leader>b :<C-u>Buffers<CR>
 " powerline wombat jellybeans solarized PaperColor seoul256 Dracula one landscape
 " hybrid iceberg tender tenderplus nord
 
-if has('gui_running')
-    let g:lightline = {
-        \ 'colorscheme': 'nord',
-        \ 'active': {
-            \ 'left': [
-                \ ['mode', 'paste'],
-                \ ['readonly', 'filename', 'modified']
-            \ ],
-            \ 'right': [
-                \ ['lineinfo'],
-                \ ['percent'],
-                \ ['fileformat', 'fileencoding', 'filetype']
-            \ ]
-        \ },
-        \ 'component_function': {
-            \ 'filepath': 'FilePath'
-        \ }
+let g:lightline = {
+    \ 'colorscheme': 'nord',
+    \ 'active': {
+        \ 'left': [
+            \ ['mode', 'paste'],
+            \ ['readonly', 'filename', 'modified']
+        \ ],
+        \ 'right': [
+            \ ['lineinfo'],
+            \ ['percent'],
+            \ ['fileformat', 'fileencoding', 'filetype']
+        \ ]
+    \ },
+    \ 'component_function': {
+        \ 'filepath': 'FilePath'
     \ }
-else
-    let g:lightline = {
-        \ 'colorscheme': 'nord',
-        \ 'active': {
-            \ 'left': [
-                \ ['mode', 'paste'],
-                \ ['readonly', 'filename', 'modified']
-            \ ],
-            \ 'right': [
-                \ ['lineinfo'],
-                \ ['percent'],
-                \ ['fileformat', 'fileencoding', 'filetype']
-            \ ]
-        \ },
-        \ 'component_function': {
-            \ 'filepath': 'FilePath'
-        \ }
-    \ }
-endif
+\ }
+
+let g:lightline.tabline = {
+    \ 'left': [['tabs']],
+    \ 'right': [['']],
+\ }
 
 function! FilePath()
     if winwidth(0) > 70
@@ -590,11 +575,6 @@ function! FilePath()
         return expand('%:t')
     endif
 endfunction
-
-let g:lightline.tabline = {
-    \ 'left': [['tabs']],
-    \ 'right': [['']],
-\ }
 
 " --------------------
 " Memolist
