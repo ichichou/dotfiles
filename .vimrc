@@ -456,11 +456,7 @@ runtime! config/*.vim
 " Colorscheme
 " --------------------
 " hybrid iceberg nord tender
-if has('gui_running')
-    colorscheme nord
-else
-    colorscheme nord
-endif
+colorscheme nord
 
 " Hybrid
 " ----------
