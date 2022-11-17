@@ -8,7 +8,7 @@ abbr -ag pd prevd
 abbr -ag reload exec fish
 
 ### Apps
-abbr -ag ba bat
+abbr -ag a bat
 abbr -ag fc vim ~/dotfiles/.config/fish/config.fish
 abbr -ag j z
 abbr -ag mvi mvim
@@ -56,10 +56,12 @@ abbr -ag kl zk list -i
 abbr -ag kc zk config
 
 abbr -ag kj zk journal
+abbr -ag kjn zk new journal
 abbr -ag kje zk edit journal -i
 abbr -ag kjl zk list journal -i
 
 abbr -ag kd zk draft
+abbr -ag kdn zk new draft
 abbr -ag kde zk edit draft -i
 abbr -ag kdl zk list draft -i
 
@@ -102,6 +104,7 @@ abbr -ag glgp git log --patch
 abbr -ag gmg git merge
 abbr -ag gmgt git mergetool
 abbr -ag gmv git mv --verbose
+abbr -ag grm git rm
 abbr -ag gpl git pull
 abbr -ag gps git push
 abbr -ag gpsd git push --delete
