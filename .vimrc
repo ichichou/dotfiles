@@ -453,24 +453,31 @@ runtime! config/*.vim
 " ========================================
 
 " --------------------
-" Colorscheme
+" Colorscheme Config
 " --------------------
-" hybrid iceberg nord tender
-colorscheme nord
+
+" Nord
+" ----------
+" let g:nord_cursor_line_number_background = 1
+" let g:nord_uniform_status_lines = 1
+" let g:nord_bold_vertical_split_line = 1
+" let g:nord_uniform_diff_background = 1
+
+" let g:nord_bold = 0
+let g:nord_italic = 1
+let g:nord_italic_comments = 1
+let g:nord_underline = 1
 
 " Hybrid
 " ----------
 let g:hybrid_custom_term_colors = 1
 " let g:lightline_hybrid_style = 'plain'
 
-" Nord
-" ----------
-let g:nord_italic = 1
-let g:nord_underline = 1
-let g:nord_italic_comments = 1
-let g:nord_uniform_status_lines = 1
-let g:nord_uniform_diff_background = 1
-let g:nord_cursor_line_number_background = 1
+" --------------------
+" Colorscheme
+" --------------------
+" nord iceberg tender hybrid
+colorscheme nord
 
 " --------------------
 " Vim-lsp
