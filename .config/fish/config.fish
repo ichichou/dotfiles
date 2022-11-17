@@ -25,7 +25,7 @@ if test -e "/opt/homebrew/bin/trash"
     abbr -ag rmds trash .DS_Store
 else
     abbr -ag rm rm -iv
-    abbr -ag rm rm -iv .DS_Store
+    abbr -ag rmds rm -iv .DS_Store
 end
 
 if test -e "/opt/homebrew/bin/exa"
