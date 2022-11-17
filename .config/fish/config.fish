@@ -40,13 +40,13 @@ else
 end
 
 ### memo
-abbr -ag m memo
-abbr -ag mc memo cat
-abbr -ag mco memo config
-abbr -ag me memo edit
-abbr -ag mg memo grep
-abbr -ag mn memo new
-abbr -ag ms memo serve
+# abbr -ag m memo
+# abbr -ag mc memo cat
+# abbr -ag mco memo config
+# abbr -ag me memo edit
+# abbr -ag mg memo grep
+# abbr -ag mn memo new
+# abbr -ag ms memo serve
 
 ### zk
 abbr -ag k zk
