@@ -241,7 +241,7 @@ nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR>
 " nnoremap <silent> <Leader>r :<C-u>redraw!<CR>
 nnoremap <silent> <Leader>t :<C-u>vertical terminal ++close<CR>
 
-nnoremap <Leader>d i## <C-R>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
+nnoremap <Leader>d o## <C-R>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
 nnoremap <Leader>D o<CR>## <C-R>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
 
 " --------------------
@@ -895,7 +895,9 @@ let g:prettier#quickfix_auto_focus = 0
 " Vim-IM-Select
 " --------------------
 let g:im_select_get_im_cmd = ['im-select']
-let g:im_select_default = 'jp.sourceforge.inputmethod.aquaskk.Ascii'
+" let g:im_select_default = 'jp.sourceforge.inputmethod.aquaskk.Ascii'
+let g:im_select_default = 'com.apple.keylayout.ABC'
+
 " let g:im_select_enable_for_gvim = 1
 
 " --------------------
