@@ -895,8 +895,7 @@ let g:prettier#quickfix_auto_focus = 0
 " Vim-IM-Select
 " --------------------
 let g:im_select_get_im_cmd = ['im-select']
-" let g:im_select_default = 'jp.sourceforge.inputmethod.aquaskk.Ascii'
-let g:im_select_default = 'com.apple.keylayout.ABC'
+let g:im_select_default = 'jp.sourceforge.inputmethod.aquaskk.Ascii'
 
 " let g:im_select_enable_for_gvim = 1
 
