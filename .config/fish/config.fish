@@ -10,17 +10,30 @@ abbr -ag reload exec fish
 ### Apps
 abbr -ag a bat
 abbr -ag fc vim ~/dotfiles/.config/fish/config.fish
-abbr -ag j z
 abbr -ag mvi mvim
 abbr -ag nvi nvim
 abbr -ag r radian
 abbr -ag t tig
 abbr -ag ts tig status
 abbr -ag vi vim
-abbr -ag yqj yq eval -o=json
+abbr -ag yqj yq -o=json
+abbr -ag yqy yq -P
 
+### exa/ls
+if test -e "/opt/homebrew/bin/exa"
+    abbr -ag la exa -al --git
+    abbr -ag ll exa -1a
+    abbr -ag ls exa -a
+    abbr -ag lsa exa
+else
+    abbr -ag la ls -AlG
+    abbr -ag ll ls -1AG
+    abbr -ag ls ls -AG
+    abbr -ag lsa ls
+end
+
+### trash/rm
 if test -e "/opt/homebrew/bin/trash"
-    or test -e "/usr/local/bin/trash"
     abbr -ag rm trash
     abbr -ag rmds trash .DS_Store
 else
@@ -28,115 +41,88 @@ else
     abbr -ag rmds rm -iv .DS_Store
 end
 
-if test -e "/opt/homebrew/bin/exa"
-    or test -e "/usr/local/bin/exa"
-    abbr -ag ls exa -a
-    abbr -ag ll exa -1a
-    abbr -ag la exa -al --git
-else
-    abbr -ag ls ls -AG
-    abbr -ag ll ls -1AG
-    abbr -ag la ls -AlG
-end
-
-### memo
-# abbr -ag m memo
-# abbr -ag mc memo cat
-# abbr -ag mco memo config
-# abbr -ag me memo edit
-# abbr -ag mg memo grep
-# abbr -ag mn memo new
-# abbr -ag ms memo serve
+### z
+abbr -ag j z
+abbr -ag jd z dotfiles
+abbr -ag jdl z downloads
+abbr -ag jr z repos
+abbr -ag jz z zk
 
 ### zk
 abbr -ag k zk
-abbr -ag kn zk new
+abbr -ag kc zk config
 abbr -ag ke zk edit -i
 abbr -ag kl zk list -i
-abbr -ag kc zk config
+abbr -ag kn zk new
 
 abbr -ag kj zk journal
-abbr -ag kjn zk new journal
 abbr -ag kje zk edit journal -i
 abbr -ag kjl zk list journal -i
+abbr -ag kjn zk new journal
+abbr -ag kjs zk save_journal
 
 abbr -ag kd zk draft
-abbr -ag kdn zk new draft
 abbr -ag kde zk edit draft -i
 abbr -ag kdl zk list draft -i
+abbr -ag kdn zk new draft
+abbr -ag kds zk save_draft
 
 ### Homebrew
 abbr -ag b brew
-abbr -ag bls brew list
-abbr -ag bu brew update
-abbr -ag bug brew upgrade
-abbr -ag bo brew outdated
-abbr -ag bs brew search
+abbr -ag bc brew cleanup
+abbr -ag bd brew doctor
+abbr -ag bdep brew deps
 abbr -ag bi brew info
 abbr -ag bin brew install
-abbr -ag bun brew uninstall
-abbr -ag bdep brew deps
-abbr -ag buse brew uses
-abbr -ag bc brew cleanup
+abbr -ag bl brew list
+abbr -ag bo brew outdated
 abbr -ag brm brew autoremove
-abbr -ag bd brew doctor
+abbr -ag bs brew search
+abbr -ag bu brew update
+abbr -ag bug brew upgrade
+abbr -ag bun brew uninstall
+abbr -ag buse brew uses
 
 ### Git
 abbr -ag g git
 abbr -ag ga git add
 abbr -ag gaa git add --all
-abbr -ag gbr git branch
-abbr -ag gbra git branch --all
-abbr -ag gbrd git branch --delete
+abbr -ag gb git branch
+abbr -ag gba git branch --all
+abbr -ag gbd git branch --delete
 abbr -ag gcl git clone
 abbr -ag gcm git commit
-abbr -ag gcma git commit --all
 abbr -ag gco git checkout
 abbr -ag gcob git checkout -b
-abbr -ag gdi git diff
-abbr -ag gdit git difftool
-abbr -ag gfe git fetch
-abbr -ag gfep git fetch --prune
-abbr -ag glg git log
-abbr -ag glgf git log --graph --oneline --decorate --follow
-abbr -ag glgg git log --graph --oneline --decorate
-abbr -ag glgp git log --patch
-abbr -ag gmg git merge
-abbr -ag gmgt git mergetool
+abbr -ag gd git difftool
+abbr -ag gf git fetch
+abbr -ag gfp git fetch --prune
+abbr -ag gl git log --graph --oneline --decorate
+abbr -ag glf git log --graph --oneline --decorate --follow
+abbr -ag glp git log --patch
 abbr -ag gmv git mv --verbose
-abbr -ag grm git rm
 abbr -ag gpl git pull
 abbr -ag gps git push
 abbr -ag gpsd git push --delete
 abbr -ag gpsu git push --set-upstream
+abbr -ag gr git reset HEAD
+abbr -ag grh git reset --hard HEAD
 abbr -ag grl git reflog
+abbr -ag grm git rm
 abbr -ag gs git status --short --branch
 abbr -ag gsh git show
 abbr -ag gss git status
 
-## Functions
+## Function
 ### Auto ls
 functions --copy cd standard_cd
 function cd
     if test -e "/opt/homebrew/bin/exa"
-        or test -e "/usr/local/bin/exa"
         standard_cd $argv; and exa -a
     else
         standard_cd $argv; and ls -AG
     end
 end
-
-## Greeting
-set fish_greeting
-
-## Path
-fish_add_path /usr/local/opt/avr-gcc@7/bin
-fish_add_path /Users/kazu/go/bin
-
-## Keybinds
-bind -e \cl
-bind -e \cj
-bind -e \cf
 
 ## Environment Variable
 set -x EDITOR vim
@@ -151,3 +137,15 @@ set -x ZK_NOTEBOOK_DIR ~/repos/zk
 
 ### Pure
 set -x pure_show_jobs true
+
+## Path
+fish_add_path /usr/local/opt/avr-gcc@7/bin
+fish_add_path /Users/kazu/go/bin
+
+## Greeting
+set fish_greeting
+
+## Keybind
+bind -e \cl
+bind -e \cj
+bind -e \cf
