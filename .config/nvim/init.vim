@@ -2,24 +2,14 @@
 " Neovim
 " ========================================
 
-set encoding=utf-8
 scriptencoding utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8,sjis,euc-jp,iso-2022-jp,cp932
 set fileformats=unix,dos,mac
 
-filetype plugin indent on
-syntax enable
-
 augroup vimrc
     autocmd!
 augroup END
-
-unlet! skip_defaults_vim
-source $VIMRUNTIME/defaults.vim
-
-let g:no_vimrc_example = 1
-let g:no_gvimrc_example = 1
 
 let g:loaded_gzip               = 1
 let g:loaded_tar                = 1
@@ -44,38 +34,25 @@ let g:loaded_2html_plugin       = 1
 " Editing
 " ========================================
 
-set hidden
-set autoread
-set switchbuf=usetab
-
 set noswapfile
-set nobackup
 set nowritebackup
 
+set switchbuf=usetab,uselast
+
 set shell=fish
-set history=10000
-set updatetime=100
 set helplang=ja,en
 
-set clipboard&
-set clipboard^=unnamed,unnamedplus
-set mouse=a
-set ttymouse=xterm2
+set clipboard=unnamed,unnamedplus
 
+set textwidth=0
 set virtualedit=onemore
 set whichwrap=b,s,h,l,<,>,[,]
-set backspace=indent,eol,start
-set textwidth=0
 
-set nrformats&
-set nrformats-=octal
+set smartindent
+set breakindent
 
 set expandtab
-set smarttab
 set shiftround
-set autoindent
-set smartindent
-
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -91,68 +68,52 @@ augroup END
 
 autocmd vimrc FileType gitcommit setlocal fileencoding=utf-8
 
-packadd! matchit
-let b:match_ignorecase = 1
-
 
 " Appearance
 " ========================================
 
 set termguicolors
 
-set background=dark
-
 set list
-set listchars=eol:¬,tab:»\ ,space:\ ,trail:\ ,extends:>,precedes:<,nbsp:~
+" set listchars=eol:¬,tab:»\ ,space:\ ,trail:\ ,extends:>,precedes:<,nbsp:~
 
 set title
 set number
-set ruler
 set cursorline
-set nocursorcolumn
 
-set signcolumn=yes
-set laststatus=2
-set cmdheight = 0
-set showtabline=1
-set showcmd
+set cmdheight=0
+set laststatus=3
+" set winbar=%f
 set noshowmode
+set signcolumn=yes
 
-set scrolloff=3
-set display=lastline
-set breakindent
+set scrolloff=5
+set sidescrolloff=5
+
 set nofoldenable
 autocmd vimrc FileType vim setlocal foldmethod=marker
 
-set splitbelow
-set splitright
+set updatetime=100
 
-set belloff=all
+set splitbelow
+" set splitright
 
 set showmatch
 set matchtime=1
 set matchpairs&
-set matchpairs+=「:」,（:）,『:』,〈:〉,《:》,【:】,〔:〕,［:］,｛:｝,“:”,‘:’
+set matchpairs+=（:）,「:」,『:』,〈:〉,《:》,【:】,〔:〕,［:］,｛:｝,‘:’,“:”
 
 
 " Search/Completion
 " ========================================
 
-set incsearch
-set hlsearch
 set ignorecase
 set smartcase
-set noinfercase
 set gdefault
-set wrapscan
 
-set wildmenu
-set wildmode=full
 set pumheight=10
 set completeopt=menuone,noinsert
 " set completeopt=menuone,noinsert,popup
-set shortmess-=S
-" set shortmess+=c
 
 if executable('rg')
     set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
@@ -190,7 +151,6 @@ noremap k gk
 noremap gj j
 noremap gk k
 
-noremap Y y$
 noremap x "_x
 noremap X "_X
 
@@ -203,13 +163,16 @@ noremap <C-h> <C-^>
 " noremap <C-j> :<C-u>bprevious<CR>
 " noremap <C-k> :<C-u>bnext<CR>
 
+nnoremap <CR> i<CR><Esc>
+
 cnoremap <C-n> <Down>
 cnoremap <C-p> <Up>
 
-nnoremap <CR> i<CR><Esc>
-
 " set termwinkey=<C-g>
 " tnoremap <F1> <C-\><C-n>
+
+nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR>
+nnoremap <silent> <Leader>t :<C-u>vertical terminal ++close<CR>
 
 augroup vimrc
     autocmd FileType markdown inoremap <Tab> <C-t>
@@ -217,21 +180,21 @@ augroup vimrc
     autocmd FileType markdown inoremap <C-d> <Delete>
 augroup END
 
+augroup vimrc
+    autocmd FileType markdown
+    \ nnoremap <Leader>d o## <C-r>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
+    autocmd FileType markdown
+    \ nnoremap <Leader>D o<CR>## <C-r>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
+augroup END
+
 if has('gui_running')
     nnoremap <silent> <Leader><Leader> :<C-u>edit $MYVIMRC<CR>
     nnoremap <silent> <Leader><lt> :<C-u>edit $MYGVIMRC<CR>
-    nnoremap <silent> <Leader>. :<C-u>source $MYVIMRC<CR> :source $MYGVIMRC<CR>
+    nnoremap <silent> <Leader>. :<C-u>source $MYVIMRC<CR> :<C-u>source $MYGVIMRC<CR>
 else
     nnoremap <silent> <Leader><Leader> :<C-u>edit $MYVIMRC<CR>
     nnoremap <silent> <Leader>. :<C-u>source $MYVIMRC<CR>
 endif
-
-nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR>
-" nnoremap <silent> <Leader>r :<C-u>redraw!<CR>
-nnoremap <silent> <Leader>t :<C-u>vertical terminal ++close<CR>
-
-nnoremap <Leader>d o## <C-R>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
-nnoremap <Leader>D o<CR>## <C-R>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
 
 " --------------------
 " Nop
@@ -275,8 +238,6 @@ nnoremap <silent> gO :<C-u>for i in range(1, v:count1) \|
 nnoremap t <Nop>
 nnoremap [window] <Nop>
 nmap t [window]
-
-nnoremap [window]/ :<C-u>vertical help<Space>
 
 nnoremap [window]s <C-w>s
 nnoremap [window]v <C-w>v
@@ -327,3 +288,119 @@ command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 
 " Plugins
 " ========================================
+
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.local/share/nvim/plugged')
+
+" --------------------
+" Language Server
+" --------------------
+
+" --------------------
+" Vim-polyglot
+" --------------------
+let g:polyglot_disabled = ['markdown.plugin', 'csv.plugin', 'r-lang.plugin']
+" let g:polyglot_disabled += ['autoindent']
+" let g:polyglot_disabled += ['sensible']
+
+Plug 'sheerun/vim-polyglot'
+
+" --------------------
+" Language
+" --------------------
+Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
+Plug 'mechatroner/rainbow_csv', {'for': 'csv'}
+Plug 'vim-jp/syntax-vim-ex', {'for': 'vim'}
+Plug 'prettier/vim-prettier', {'for': ['html', 'markdown', 'yaml', 'css', 'less', 'scss', 'javascript', 'json']}
+
+Plug 'joker1007/vim-markdown-quote-syntax', {'for': 'markdown'}
+Plug 'rcmdnk/vim-markdown', {'for': 'markdown'}
+Plug 'previm/previm', {'for': 'markdown'}
+
+" --------------------
+" Edditing
+" --------------------
+
+" --------------------
+" Appearance
+" --------------------
+
+" --------------------
+" Operator / Text Object
+" --------------------
+
+" --------------------
+" Japanese Support
+" --------------------
+
+" --------------------
+" Colorscheme
+" --------------------
+Plug 'arcticicestudio/nord-vim'
+
+call plug#end()
+
+
+" Plugin Settings
+" ========================================
+
+" --------------------
+" Colorscheme Config
+" --------------------
+
+" Nord
+" ----------
+" let g:nord_cursor_line_number_background = 1
+" let g:nord_uniform_status_lines = 1
+" let g:nord_bold_vertical_split_line = 1
+" let g:nord_uniform_diff_background = 1
+
+" let g:nord_bold = 0
+let g:nord_italic = 1
+let g:nord_italic_comments = 1
+let g:nord_underline = 1
+
+" --------------------
+" Colorscheme
+" --------------------
+colorscheme nord
+
+" --------------------
+" Matchit
+" --------------------
+let b:match_ignorecase = 1
+
+" --------------------
+" Previm
+" --------------------
+let g:previm_open_cmd = 'open -a Google\ Chrome'
+" let g:previm_disable_default_css = 1
+" let g:previm_custom_css_path = ''
+" let g:previm_show_header = 0
+
+nnoremap <silent> <Leader>p :<C-u>PrevimOpen<CR>
+
+" --------------------
+" Markdown
+" --------------------
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_conceal = 0
+
+" highlight link htmlItalic LineNr
+" highlight link htmlBold WarningMsg
+" highlight link htmlBoldItalic ErrorMsg
+
+" --------------------
+" Prettier
+" --------------------
+let g:prettier#exec_cmd_path = '/opt/homebrew/bin/prettier'
+let g:prettier#autoformat = 0
+" let g:prettier#quickfix_enabled = 0
+let g:prettier#quickfix_auto_focus = 0
+" let g:prettier#exec_cmd_async = 1
