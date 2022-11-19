@@ -46,36 +46,33 @@ let g:loaded_2html_plugin       = 1
 
 set hidden
 set autoread
-set switchbuf=usetab
+set switchbuf=usetab,uselast
 
 set noswapfile
-set nobackup
 set nowritebackup
 
 set shell=fish
 set history=10000
-set updatetime=100
 set helplang=ja,en
+set nrformats=bin,hex
 
-set clipboard&
-set clipboard^=unnamed,unnamedplus
 set mouse=a
 set ttymouse=xterm2
+set clipboard=unnamed,unnamedplus
 
+set textwidth=0
 set virtualedit=onemore
 set whichwrap=b,s,h,l,<,>,[,]
 set backspace=indent,eol,start
-set textwidth=0
+set nostartofline
 
-set nrformats&
-set nrformats-=octal
+set autoindent
+set smartindent
+set breakindent
 
 set expandtab
 set smarttab
 set shiftround
-set autoindent
-set smartindent
-
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -90,9 +87,6 @@ augroup vimrc
 augroup END
 
 autocmd vimrc FileType gitcommit setlocal fileencoding=utf-8
-
-packadd! matchit
-let b:match_ignorecase = 1
 
 
 " Appearance
@@ -118,52 +112,45 @@ set listchars=eol:¬,tab:»\ ,space:\ ,trail:\ ,extends:>,precedes:<,nbsp:~
 
 set title
 set number
-set ruler
 set cursorline
-set nocursorcolumn
 
 set signcolumn=yes
 set laststatus=2
-" set cmdheight = 0
-set showtabline=1
-set showcmd
 set noshowmode
 
-set scrolloff=3
+set sidescroll=1
+set sidescrolloff=5
 set display=lastline
-set breakindent
+
 set nofoldenable
 autocmd vimrc FileType vim setlocal foldmethod=marker
 
-set splitbelow
-set splitright
-
+set ttyfast
+set updatetime=100
 set belloff=all
+
+set splitbelow
+" set splitright
 
 set showmatch
 set matchtime=1
 set matchpairs&
-set matchpairs+=「:」,（:）,『:』,〈:〉,《:》,【:】,〔:〕,［:］,｛:｝,“:”,‘:’
+set matchpairs+=（:）,「:」,『:』,〈:〉,《:》,【:】,〔:〕,［:］,｛:｝,‘:’,“:”
 
 
 " Search/Completion
 " ========================================
 
-set incsearch
 set hlsearch
 set ignorecase
 set smartcase
-set noinfercase
 set gdefault
-set wrapscan
 
-set wildmenu
-set wildmode=full
+set wildoptions=pum,tagfile
 set pumheight=10
 set completeopt=menuone,noinsert
 " set completeopt=menuone,noinsert,popup
-set shortmess-=S
-" set shortmess+=c
+set shortmess=filnxtToOF
 
 if executable('rg')
     set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
@@ -214,13 +201,16 @@ noremap <C-h> <C-^>
 " noremap <C-j> :<C-u>bprevious<CR>
 " noremap <C-k> :<C-u>bnext<CR>
 
+nnoremap <CR> i<CR><Esc>
+
 cnoremap <C-n> <Down>
 cnoremap <C-p> <Up>
 
-nnoremap <CR> i<CR><Esc>
-
 " set termwinkey=<C-g>
 " tnoremap <F1> <C-\><C-n>
+
+nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR>
+nnoremap <silent> <Leader>t :<C-u>vertical terminal ++close<CR>
 
 augroup vimrc
     autocmd FileType markdown inoremap <Tab> <C-t>
@@ -228,21 +218,21 @@ augroup vimrc
     autocmd FileType markdown inoremap <C-d> <Delete>
 augroup END
 
+augroup vimrc
+    autocmd FileType markdown
+    \ nnoremap <Leader>d o## <C-r>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
+    autocmd FileType markdown
+    \ nnoremap <Leader>D o<CR>## <C-r>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
+augroup END
+
 if has('gui_running')
     nnoremap <silent> <Leader><Leader> :<C-u>edit $MYVIMRC<CR>
     nnoremap <silent> <Leader><lt> :<C-u>edit $MYGVIMRC<CR>
-    nnoremap <silent> <Leader>. :<C-u>source $MYVIMRC<CR> :source $MYGVIMRC<CR>
+    nnoremap <silent> <Leader>. :<C-u>source $MYVIMRC<CR> :<C-u>source $MYGVIMRC<CR>
 else
     nnoremap <silent> <Leader><Leader> :<C-u>edit $MYVIMRC<CR>
     nnoremap <silent> <Leader>. :<C-u>source $MYVIMRC<CR>
 endif
-
-nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR>
-" nnoremap <silent> <Leader>r :<C-u>redraw!<CR>
-nnoremap <silent> <Leader>t :<C-u>vertical terminal ++close<CR>
-
-nnoremap <Leader>d o## <C-R>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
-nnoremap <Leader>D o<CR>## <C-R>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
 
 " --------------------
 " Nop
@@ -281,13 +271,11 @@ nnoremap <silent> gO :<C-u>for i in range(1, v:count1) \|
 \ silent! call repeat#set('gO', v:count1)<CR>
 
 " --------------------
-" Window/Tabpage/Buffer
+" Window/Tabpage
 " --------------------
 nnoremap t <Nop>
 nnoremap [window] <Nop>
 nmap t [window]
-
-nnoremap [window]/ :<C-u>vertical help<Space>
 
 nnoremap [window]s <C-w>s
 nnoremap [window]v <C-w>v
@@ -392,7 +380,7 @@ Plug 'alvan/vim-closetag'
 Plug 'cocopon/vaffle.vim'
 Plug 'cohama/vim-smartinput-endwise'
 Plug 'easymotion/vim-easymotion'
-Plug 'glidenote/memolist.vim'
+" Plug 'glidenote/memolist.vim'
 Plug 'godlygeek/tabular'
 Plug 'haya14busa/vim-asterisk'
 Plug 'kana/vim-smartinput'
@@ -445,8 +433,6 @@ Plug 'jacoborus/tender.vim', {'do': 'cp colors/* ~/.vim/colors/'}
 Plug 'w0ng/vim-hybrid', {'do': 'cp colors/* ~/.vim/colors/'}
 
 call plug#end()
-
-runtime! config/*.vim
 
 
 " Plugin Settings
@@ -503,6 +489,12 @@ let g:asyncomplete_auto_popup = 1
 let g:asyncomplete_auto_completeopt = 0
 let g:asyncomplete_popup_delay = 200
 " let g:lsp_text_edit_enabled = 0
+
+" --------------------
+" Matchit
+" --------------------
+packadd! matchit
+let b:match_ignorecase = 1
 
 " --------------------
 " Caw
@@ -582,15 +574,15 @@ endfunction
 " --------------------
 " Memolist
 " --------------------
-let g:memolist_path = '$HOME/Library/CloudStorage/Box-Box/Notes/draft'
-let g:memolist_template_dir_path = '$HOME/dotfiles/memolist'
-let g:memolist_memo_suffix = 'md'
-let g:memolist_memo_date = '%Y-%m-%d %H:%M'
+" let g:memolist_path = '$HOME/Library/CloudStorage/Box-Box/Notes/draft'
+" let g:memolist_template_dir_path = '$HOME/dotfiles/memolist'
+" let g:memolist_memo_suffix = 'md'
+" let g:memolist_memo_date = '%Y-%m-%d %H:%M'
 
-nnoremap <silent> <Leader>mn :<C-u>MemoNew<CR>
-nnoremap <silent> <Leader>ml :<C-u>MemoList<CR>
-" nnoremap <silent> <Leader>mg :<C-u>MemoGrep<CR>
-nnoremap <silent> <Leader>mg :execute 'FZF' g:memolist_path<CR>
+" nnoremap <silent> <Leader>mn :<C-u>MemoNew<CR>
+" nnoremap <silent> <Leader>ml :<C-u>MemoList<CR>
+" " nnoremap <silent> <Leader>mg :<C-u>MemoGrep<CR>
+" nnoremap <silent> <Leader>mg :execute 'FZF' g:memolist_path<CR>
 
 " --------------------
 " Open Browser
@@ -613,6 +605,7 @@ function! s:align()
         call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
     endif
 endfunction
+
 inoremap <silent> <Bar> <Bar><Esc>:call <SID>align()<CR>a
 
 " map <Leader>a= :Tabularize /=<CR>
@@ -875,12 +868,13 @@ nnoremap <silent> <Leader>p :<C-u>PrevimOpen<CR>
 " --------------------
 " Markdown
 " --------------------
+let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_folding_disabled = 1
-" let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal = 0
 
-highlight link htmlItalic LineNr
-highlight link htmlBold WarningMsg
-highlight link htmlBoldItalic ErrorMsg
+" highlight link htmlItalic LineNr
+" highlight link htmlBold WarningMsg
+" highlight link htmlBoldItalic ErrorMsg
 
 " --------------------
 " Prettier
@@ -902,17 +896,15 @@ let g:im_select_default = 'jp.sourceforge.inputmethod.aquaskk.Ascii'
 " --------------------
 " Jasegment
 " --------------------
-call jasegment#define(
-    \'nonblank', {
-        \ 'move-n': 'gW',
-        \ 'move-p': 'gB',
-        \ 'move-N': 'gE',
-        \ 'select-i': 'iE',
-        \ 'select-a': 'aE',
-    \ }
-\ )
+call jasegment#define('nonblank', {
+    \ 'move-n': 'gW',
+    \ 'move-p': 'gB',
+    \ 'move-N': 'gE',
+    \ 'select-i': 'iE',
+    \ 'select-a': 'aE',
+\ })
 
 " --------------------
 " Jasentence
 " --------------------
-let g:jasentence_endpat = '[、。，．？！…（）［］｛｝「」『』〈〉《》【】〔〕‘’“”]\+'
+let g:jasentence_endpat = '[、。，．？！…（）「」『』〈〉《》【】〔〕［］｛｝‘’“”]\+'
