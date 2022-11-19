@@ -46,7 +46,7 @@ abbr -ag j z
 abbr -ag jd z dotfiles
 abbr -ag jdl z downloads
 abbr -ag jr z repos
-abbr -ag jz z zk
+abbr -ag jk z zk
 
 ### zk
 abbr -ag k zk
