@@ -52,6 +52,7 @@ abbr -ag jk z zk
 abbr -ag k zk
 abbr -ag kc zk config
 abbr -ag ke zk edit -i
+abbr -ag kg zk git_status
 abbr -ag kl zk list -i
 abbr -ag kn zk new
 
@@ -61,7 +62,7 @@ abbr -ag kjl zk list journal -i
 abbr -ag kjn zk new journal
 abbr -ag kjs zk save_journal
 
-abbr -ag kd zk draft
+# abbr -ag kd zk draft
 abbr -ag kde zk edit draft -i
 abbr -ag kdl zk list draft -i
 abbr -ag kdn zk new draft
@@ -97,8 +98,7 @@ abbr -ag gcob git checkout -b
 abbr -ag gd git difftool
 abbr -ag gf git fetch
 abbr -ag gfp git fetch --prune
-abbr -ag gl git log --graph --oneline --decorate
-abbr -ag glf git log --graph --oneline --decorate --follow
+abbr -ag gl git log --graph --oneline
 abbr -ag glp git log --patch
 abbr -ag gmv git mv --verbose
 abbr -ag gpl git pull
