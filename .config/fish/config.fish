@@ -16,8 +16,8 @@ abbr -ag r radian
 abbr -ag t tig
 abbr -ag ts tig status
 abbr -ag vi vim
-abbr -ag yqj yq -o=json
-abbr -ag yqy yq -P
+abbr -ag yqj yq eval -o=json
+abbr -ag yqy yq eval -P
 
 ### exa/ls
 if test -e "/opt/homebrew/bin/exa"
