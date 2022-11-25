@@ -391,7 +391,7 @@ Plug 'tyru/open-browser.vim'
 " Plug 'kana/vim-repeat'
 " Plug 'tpope/vim-fugitive'
 
-Plug '/opt/homebrew/opt/fzf'
+set runtimepath+=/opt/homebrew/opt/fzf
 Plug 'junegunn/fzf.vim'
 
 " --------------------
@@ -888,9 +888,10 @@ let g:prettier#quickfix_auto_focus = 0
 " --------------------
 " Vim-IM-Select
 " --------------------
-let g:im_select_get_im_cmd = ['im-select']
+" let g:im_select_get_im_cmd = ['im-select']
+let g:im_select_get_im_cmd = ['macism']
+let g:ImSelectSetImCmd = {key -> ['macism', key]}
 let g:im_select_default = 'jp.sourceforge.inputmethod.aquaskk.Ascii'
-
 " let g:im_select_enable_for_gvim = 1
 
 " --------------------
