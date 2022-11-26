@@ -11,6 +11,8 @@ set fileformats=unix,dos,mac
 filetype plugin indent on
 syntax enable
 
+language messages en_US.UTF-8
+
 augroup vimrc
     autocmd!
 augroup END
@@ -385,7 +387,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tyru/caw.vim'
 Plug 'tyru/open-browser.vim'
 " Plug 'kana/vim-repeat'
-" Plug 'tpope/vim-fugitive'
 
 set runtimepath+=/opt/homebrew/opt/fzf
 Plug 'junegunn/fzf.vim'
@@ -651,21 +652,6 @@ nmap s <Plug>(easymotion-overwin-f2)
 " highlight link EasyMotionTarget2Second MatchParen
 " highlight link EasyMotionMoveHL Search
 " highlight link EasyMotionIncSearch Search
-
-" --------------------
-" Fugitive
-" --------------------
-" autocmd vimrc FileType fugitive nnoremap <silent> <buffer> q <C-w>q
-"
-" nnoremap <Leader>g <Nop>
-" nnoremap [fugitive] <Nop>
-" nmap <Leader>g [fugitive]
-"
-" nnoremap <silent> [fugitive]s :<C-u>Gstatus<CR>
-" nnoremap <silent> [fugitive]a :<C-u>Gwrite<CR>
-" nnoremap <silent> [fugitive]c :<C-u>Gcommit -v<CR>
-" nnoremap <silent> [fugitive]d :<C-u>Gvdiffsplit<CR>
-" nnoremap <silent> [fugitive]l :<C-u>Glog<CR>
 
 " --------------------
 " Gitgutter
