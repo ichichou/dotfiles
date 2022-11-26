@@ -18,9 +18,6 @@ augroup END
 unlet! skip_defaults_vim
 source $VIMRUNTIME/defaults.vim
 
-let g:no_vimrc_example = 1
-let g:no_gvimrc_example = 1
-
 let g:loaded_gzip               = 1
 let g:loaded_tar                = 1
 let g:loaded_tarPlugin          = 1
@@ -114,9 +111,9 @@ set title
 set number
 set cursorline
 
-set signcolumn=yes
 set laststatus=2
 set noshowmode
+set signcolumn=yes
 
 set sidescroll=1
 set sidescrolloff=5
@@ -150,7 +147,7 @@ set wildoptions=pum,tagfile
 set pumheight=10
 set completeopt=menuone,noinsert
 " set completeopt=menuone,noinsert,popup
-set shortmess=filnxtToOF
+set shortmess=filmnrxoOtTF
 
 if executable('rg')
     set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
