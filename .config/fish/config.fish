@@ -57,16 +57,16 @@ abbr -ag kl zk list -i
 abbr -ag kn zk new
 
 abbr -ag kj zk journal
-abbr -ag kje zk edit journal -i
-abbr -ag kjl zk list journal -i
-abbr -ag kjn zk new journal
-abbr -ag kjs zk save_journal
+abbr -ag kej zk edit -i journal
+abbr -ag klj zk list -i journal
+abbr -ag knj zk new journal
+abbr -ag ksj zk save_journal
 
-# abbr -ag kd zk draft
-abbr -ag kde zk edit draft -i
-abbr -ag kdl zk list draft -i
-abbr -ag kdn zk new draft
-abbr -ag kds zk save_draft
+abbr -ag kd zk draft
+abbr -ag ked zk edit -i draft
+abbr -ag kld zk list -i draft
+abbr -ag knd zk new draft
+abbr -ag ksd zk save_draft
 
 ### Homebrew
 abbr -ag b brew
