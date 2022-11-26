@@ -377,7 +377,6 @@ Plug 'alvan/vim-closetag'
 Plug 'cocopon/vaffle.vim'
 Plug 'cohama/vim-smartinput-endwise'
 Plug 'easymotion/vim-easymotion'
-" Plug 'glidenote/memolist.vim'
 Plug 'godlygeek/tabular'
 Plug 'haya14busa/vim-asterisk'
 Plug 'kana/vim-smartinput'
@@ -567,19 +566,6 @@ function! FilePath()
         return expand('%:t')
     endif
 endfunction
-
-" --------------------
-" Memolist
-" --------------------
-" let g:memolist_path = '$HOME/Library/CloudStorage/Box-Box/Notes/draft'
-" let g:memolist_template_dir_path = '$HOME/dotfiles/memolist'
-" let g:memolist_memo_suffix = 'md'
-" let g:memolist_memo_date = '%Y-%m-%d %H:%M'
-
-" nnoremap <silent> <Leader>mn :<C-u>MemoNew<CR>
-" nnoremap <silent> <Leader>ml :<C-u>MemoList<CR>
-" " nnoremap <silent> <Leader>mg :<C-u>MemoGrep<CR>
-" nnoremap <silent> <Leader>mg :execute 'FZF' g:memolist_path<CR>
 
 " --------------------
 " Open Browser
