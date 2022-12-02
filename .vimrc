@@ -157,7 +157,7 @@ if executable('rg')
 endif
 
 augroup vimrc
-    autocmd FileType help,qf,man,ref,diff nnoremap <silent> <buffer> q :q!<CR>
+    autocmd FileType help,qf,man,ref,diff nnoremap <silent> <buffer> q <Cmd>q!<CR>
     autocmd QuickFixCmdPost *grep*,make if len(getqflist()) != 0 | cwindow | endif
 augroup END
 
@@ -197,8 +197,8 @@ noremap + <C-a>
 noremap - <C-x>
 
 noremap <C-h> <C-^>
-" noremap <C-j> :<C-u>bprevious<CR>
-" noremap <C-k> :<C-u>bnext<CR>
+" noremap <C-j> <Cmd>bprevious<CR>
+" noremap <C-k> <Cmd>bnext<CR>
 
 nnoremap <CR> i<CR><Esc>
 
@@ -208,16 +208,13 @@ cnoremap <C-p> <Up>
 " set termwinkey=<C-g>
 " tnoremap <F1> <C-\><C-n>
 
-nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR>
-nnoremap <silent> <Leader>t :<C-u>vertical terminal ++close<CR>
+nnoremap <silent> <Esc><Esc> <Cmd>nohlsearch<CR>
+nnoremap <silent> <Leader>t <Cmd>vertical terminal ++close<CR>
 
 augroup vimrc
     autocmd FileType markdown inoremap <Tab> <C-t>
     autocmd FileType markdown inoremap <S-Tab> <C-d>
     autocmd FileType markdown inoremap <C-d> <Delete>
-augroup END
-
-augroup vimrc
     autocmd FileType markdown
     \ nnoremap <Leader>d o## <C-r>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
     autocmd FileType markdown
@@ -225,12 +222,12 @@ augroup vimrc
 augroup END
 
 if has('gui_running')
-    nnoremap <silent> <Leader><Leader> :<C-u>edit $MYVIMRC<CR>
-    nnoremap <silent> <Leader><lt> :<C-u>edit $MYGVIMRC<CR>
-    nnoremap <silent> <Leader>. :<C-u>source $MYVIMRC<CR> :<C-u>source $MYGVIMRC<CR>
+    nnoremap <silent> <Leader><Leader> <Cmd>edit $MYVIMRC<CR>
+    nnoremap <silent> <Leader><lt> <Cmd>edit $MYGVIMRC<CR>
+    nnoremap <silent> <Leader>. <Cmd>source $MYVIMRC<CR> <Cmd>source $MYGVIMRC<CR>
 else
-    nnoremap <silent> <Leader><Leader> :<C-u>edit $MYVIMRC<CR>
-    nnoremap <silent> <Leader>. :<C-u>source $MYVIMRC<CR>
+    nnoremap <silent> <Leader><Leader> <Cmd>edit $MYVIMRC<CR>
+    nnoremap <silent> <Leader>. <Cmd>source $MYVIMRC<CR>
 endif
 
 " --------------------
@@ -261,11 +258,11 @@ inoremap <D-i> <Nop>
 " --------------------
 " Insert Blank Line
 " --------------------
-nnoremap <silent> go :<C-u>for i in range(1, v:count1) \|
+nnoremap <silent> go <Cmd>for i in range(1, v:count1) \|
 \ call append(line('.'), '') \| endfor \|
 \ silent! call repeat#set('go', v:count1)<CR>
 
-nnoremap <silent> gO :<C-u>for i in range(1, v:count1) \|
+nnoremap <silent> gO <Cmd>for i in range(1, v:count1) \|
 \ call append(line('.')-1, '') \| endfor \|
 \ silent! call repeat#set('gO', v:count1)<CR>
 
@@ -292,10 +289,10 @@ nnoremap [window]L <C-w>L
 
 nnoremap [window]n gt
 nnoremap [window]p gT
-nnoremap <silent> [window]t :<C-u>tabnew<CR>
-nnoremap <silent> [window]q :<C-u>tabclose<CR>
-nnoremap <silent> [window]N :<C-u>+tabmove<CR>
-nnoremap <silent> [window]P :<C-u>-tabmove<CR>
+nnoremap <silent> [window]t <Cmd>tabnew<CR>
+nnoremap <silent> [window]q <Cmd>tabclose<CR>
+nnoremap <silent> [window]N <Cmd>+tabmove<CR>
+nnoremap <silent> [window]P <Cmd>-tabmove<CR>
 
 
 " Commands
@@ -521,16 +518,16 @@ nnoremap <Leader>f <Nop>
 nnoremap [fzf] <Nop>
 nmap <Leader>f [fzf]
 
-nnoremap <silent> [fzf]b :<C-u>Buffers<CR>
-nnoremap <silent> [fzf]c :<C-u>Colors<CR>
-nnoremap <silent> [fzf]f :<C-u>Files<CR>
-nnoremap <silent> [fzf]h :<C-u>History<CR>
-nnoremap <silent> [fzf]l :<C-u>BLines<CR>
-nnoremap <silent> [fzf]m :<C-u>Marks<CR>
-nnoremap <silent> [fzf]t :<C-u>Filetypes<CR>
-nnoremap [fzf]r :<C-u>Rg<Space>
+nnoremap <silent> [fzf]b <Cmd>Buffers<CR>
+nnoremap <silent> [fzf]c <Cmd>Colors<CR>
+nnoremap <silent> [fzf]f <Cmd>Files<CR>
+nnoremap <silent> [fzf]h <Cmd>History<CR>
+nnoremap <silent> [fzf]l <Cmd>BLines<CR>
+nnoremap <silent> [fzf]m <Cmd>Marks<CR>
+nnoremap <silent> [fzf]t <Cmd>Filetypes<CR>
+nnoremap [fzf]r <Cmd>Rg<Space>
 
-nnoremap <silent> <Leader>b :<C-u>Buffers<CR>
+nnoremap <silent> <Leader>b <Cmd>Buffers<CR>
 
 " --------------------
 " Lightline
@@ -591,10 +588,10 @@ function! s:align()
     endif
 endfunction
 
-inoremap <silent> <Bar> <Bar><Esc>:call <SID>align()<CR>a
+inoremap <silent> <Bar> <Bar><Esc><Cmd>call <SID>align()<CR>a
 
-" map <Leader>a= :Tabularize /=<CR>
-" map <Leader>a: :Tabularize /:\zs<CR>
+" map <Leader>a= <Cmd>Tabularize /=<CR>
+" map <Leader>a: <Cmd>Tabularize /:\zs<CR>
 
 " --------------------
 " Vaffle
@@ -602,7 +599,7 @@ inoremap <silent> <Bar> <Bar><Esc>:call <SID>align()<CR>a
 let g:vaffle_auto_cd = 1
 let g:vaffle_show_hidden_files = 1
 
-nnoremap <silent> <Leader>v :<C-u>Vaffle<CR>
+nnoremap <silent> <Leader>v <Cmd>Vaffle<CR>
 
 " --------------------
 " Asterisk
@@ -663,15 +660,15 @@ nnoremap <Leader>h <Nop>
 nnoremap [gitgutter] <Nop>
 nmap <Leader>h [gitgutter]
 
-nnoremap <silent> [gitgutter]j :<C-u>GitGutterNextHunk<CR>
-nnoremap <silent> [gitgutter]k :<C-u>GitGutterPrevHunk<CR>
+nnoremap <silent> [gitgutter]j <Cmd>GitGutterNextHunk<CR>
+nnoremap <silent> [gitgutter]k <Cmd>GitGutterPrevHunk<CR>
 nmap ]h <Plug>(GitGutterNextHunk)
 nmap [h <Plug>(GitGutterPrevHunk)
 
-nnoremap <silent> [gitgutter]p :<C-u>GitGutterPreviewHunk<CR>
-nnoremap <silent> [gitgutter]t :<C-u>GitGutterLineHighlightsToggle<CR>
-nnoremap <silent> [gitgutter]s :<C-u>GitGutterStagewHunk<CR>
-nnoremap <silent> [gitgutter]u :<C-u>GitGutterUndoHunk<CR>
+nnoremap <silent> [gitgutter]p <Cmd>GitGutterPreviewHunk<CR>
+nnoremap <silent> [gitgutter]t <Cmd>GitGutterLineHighlightsToggle<CR>
+nnoremap <silent> [gitgutter]s <Cmd>GitGutterStagewHunk<CR>
+nnoremap <silent> [gitgutter]u <Cmd>GitGutterUndoHunk<CR>
 
 " --------------------
 " Smartinput
@@ -833,7 +830,7 @@ let g:previm_open_cmd = 'open -a Google\ Chrome'
 " let g:previm_custom_css_path = ''
 " let g:previm_show_header = 0
 
-nnoremap <silent> <Leader>p :<C-u>PrevimOpen<CR>
+nnoremap <silent> <Leader>p <Cmd>PrevimOpen<CR>
 
 " --------------------
 " Markdown
