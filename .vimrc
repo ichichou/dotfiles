@@ -399,6 +399,7 @@ Plug 'haya14busa/is.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-highlighturl'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'rbtnn/vim-ambiwidth'
 
 " --------------------
 " Operator / Text Object

@@ -351,6 +351,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'haya14busa/is.vim'
 Plug 'itchyny/vim-highlighturl'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'rbtnn/vim-ambiwidth'
 
 " --------------------
 " Operator / Text Object
