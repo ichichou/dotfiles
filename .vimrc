@@ -549,7 +549,8 @@ let g:lightline = {
         \ ]
     \ },
     \ 'component_function': {
-        \ 'filepath': 'FilePath'
+        \ 'mode': 'LightlineMode',
+        \ 'filepath': 'LightlineFilePath'
     \ }
 \ }
 
@@ -558,7 +559,15 @@ let g:lightline.tabline = {
     \ 'right': [['']],
 \ }
 
-function! FilePath()
+function! LightlineMode()
+    if winwidth(0) > 70
+        return g:lightline#mode()
+    else
+        return g:lightline#mode()[0]
+    endif
+endfunction
+
+function! LightlineFilePath()
     if winwidth(0) > 70
         return expand('%:p')
     else
