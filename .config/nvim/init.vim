@@ -353,6 +353,7 @@ Plug 'folke/noice.nvim'
 Plug 'haya14busa/is.vim'
 Plug 'itchyny/vim-highlighturl'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'rbtnn/vim-ambiwidth'
 
 " --------------------
