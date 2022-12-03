@@ -348,6 +348,8 @@ Plug 'junegunn/fzf.vim'
 " --------------------
 " Appearance
 " --------------------
+Plug 'MunifTanjim/nui.nvim'
+Plug 'folke/noice.nvim'
 Plug 'haya14busa/is.vim'
 Plug 'itchyny/vim-highlighturl'
 Plug 'ntpeters/vim-better-whitespace'
@@ -405,6 +407,11 @@ let g:nord_underline = 1
 " Colorscheme
 " --------------------
 colorscheme nord
+
+" --------------------
+" Colorscheme
+" --------------------
+lua require("noice").setup()
 
 " --------------------
 " Matchit
