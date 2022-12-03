@@ -111,15 +111,14 @@ set listchars=eol:¬,tab:»\ ,space:\ ,trail:\ ,extends:>,precedes:<,nbsp:~
 
 set title
 set number
-set cursorline
-
+set signcolumn=yes
 set laststatus=2
 set noshowmode
-set signcolumn=yes
 
 set sidescroll=1
 set sidescrolloff=5
 set display=lastline
+set cursorline
 
 set nofoldenable
 autocmd vimrc FileType vim setlocal foldmethod=marker
@@ -128,12 +127,8 @@ set ttyfast
 set updatetime=100
 set belloff=all
 
-set splitbelow
-" set splitright
-
 set showmatch
 set matchtime=1
-set matchpairs&
 set matchpairs+=（:）,「:」,『:』,〈:〉,《:》,【:】,〔:〕,［:］,｛:｝,‘:’,“:”
 
 
@@ -145,10 +140,9 @@ set ignorecase
 set smartcase
 set gdefault
 
+set completeopt=menuone,noinsert,popup
 set wildoptions=pum,tagfile
 set pumheight=10
-set completeopt=menuone,noinsert
-" set completeopt=menuone,noinsert,popup
 set shortmess=filmnrxoOtTF
 
 if executable('rg')
@@ -181,44 +175,34 @@ let g:mapleader = ','
 noremap \ ,
 noremap ; :
 noremap : ;
-
 noremap j gj
 noremap k gk
 noremap gj j
 noremap gk k
-
 noremap Y y$
 noremap x "_x
 noremap X "_X
-
 noremap U <C-r>
-
 noremap + <C-a>
 noremap - <C-x>
-
 noremap <C-h> <C-^>
 " noremap <C-j> <Cmd>bprevious<CR>
 " noremap <C-k> <Cmd>bnext<CR>
 
-nnoremap <CR> i<CR><Esc>
+nnoremap <silent> <Esc><Esc> <Cmd>nohlsearch<CR>
+nnoremap <silent> <Leader>t <Cmd>terminal ++close<CR>
+nnoremap <silent> go <Cmd>for i in range(1, v:count1) \| call append(line('.'), '') \| endfor \| silent! call repeat#set('go', v:count1)<CR>
+nnoremap <silent> gO <Cmd>for i in range(1, v:count1) \| call append(line('.')-1, '') \| endfor \| silent! call repeat#set('gO', v:count1)<CR>
 
 cnoremap <C-n> <Down>
 cnoremap <C-p> <Up>
-
-" set termwinkey=<C-g>
-" tnoremap <F1> <C-\><C-n>
-
-nnoremap <silent> <Esc><Esc> <Cmd>nohlsearch<CR>
-nnoremap <silent> <Leader>t <Cmd>vertical terminal ++close<CR>
 
 augroup vimrc
     autocmd FileType markdown inoremap <Tab> <C-t>
     autocmd FileType markdown inoremap <S-Tab> <C-d>
     autocmd FileType markdown inoremap <C-d> <Delete>
-    autocmd FileType markdown
-    \ nnoremap <Leader>d o## <C-r>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
-    autocmd FileType markdown
-    \ nnoremap <Leader>D o<CR>## <C-r>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
+    autocmd FileType markdown nnoremap <Leader>d o## <C-r>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
+    autocmd FileType markdown nnoremap <Leader>D o<CR>## <C-r>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
 augroup END
 
 if has('gui_running')
@@ -241,7 +225,6 @@ noremap <Del> <Nop>
 
 inoremap <C-j> <Nop>
 inoremap <C-l> <Nop>
-
 inoremap <D-0> <Nop>
 inoremap <D-1> <Nop>
 inoremap <D-2> <Nop>
@@ -254,17 +237,6 @@ inoremap <D-8> <Nop>
 inoremap <D-9> <Nop>
 inoremap <D-a> <Nop>
 inoremap <D-i> <Nop>
-
-" --------------------
-" Insert Blank Line
-" --------------------
-nnoremap <silent> go <Cmd>for i in range(1, v:count1) \|
-\ call append(line('.'), '') \| endfor \|
-\ silent! call repeat#set('go', v:count1)<CR>
-
-nnoremap <silent> gO <Cmd>for i in range(1, v:count1) \|
-\ call append(line('.')-1, '') \| endfor \|
-\ silent! call repeat#set('gO', v:count1)<CR>
 
 " --------------------
 " Window/Tabpage
