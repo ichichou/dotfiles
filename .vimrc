@@ -215,28 +215,8 @@ else
 endif
 
 " --------------------
-" Nop
 " --------------------
-noremap ZZ <Nop>
-noremap ZQ <Nop>
-noremap Q <Nop>
-noremap gQ <Nop>
-noremap <Del> <Nop>
 
-inoremap <C-j> <Nop>
-inoremap <C-l> <Nop>
-inoremap <D-0> <Nop>
-inoremap <D-1> <Nop>
-inoremap <D-2> <Nop>
-inoremap <D-3> <Nop>
-inoremap <D-4> <Nop>
-inoremap <D-5> <Nop>
-inoremap <D-6> <Nop>
-inoremap <D-7> <Nop>
-inoremap <D-8> <Nop>
-inoremap <D-9> <Nop>
-inoremap <D-a> <Nop>
-inoremap <D-i> <Nop>
 
 " --------------------
 " Window/Tabpage
@@ -265,6 +245,32 @@ nnoremap <silent> [window]t <Cmd>tabnew<CR>
 nnoremap <silent> [window]q <Cmd>tabclose<CR>
 nnoremap <silent> [window]N <Cmd>+tabmove<CR>
 nnoremap <silent> [window]P <Cmd>-tabmove<CR>
+
+" --------------------
+" Nop
+" --------------------
+noremap ZZ <Nop>
+noremap ZQ <Nop>
+noremap Q <Nop>
+noremap gQ <Nop>
+noremap <Del> <Nop>
+
+inoremap <C-j> <Nop>
+inoremap <C-l> <Nop>
+
+inoremap <D-a> <Nop>
+inoremap <D-i> <Nop>
+
+inoremap <D-0> <Nop>
+inoremap <D-1> <Nop>
+inoremap <D-2> <Nop>
+inoremap <D-3> <Nop>
+inoremap <D-4> <Nop>
+inoremap <D-5> <Nop>
+inoremap <D-6> <Nop>
+inoremap <D-7> <Nop>
+inoremap <D-8> <Nop>
+inoremap <D-9> <Nop>
 
 
 " Commands
