@@ -438,8 +438,8 @@ colorscheme nord
 function! s:on_lsp_buffer_enabled() abort
     setlocal omnifunc=lsp#complete
     setlocal signcolumn=yes
-    nmap <buffer> gd <plug>(lsp-definition)
-    nmap <buffer> gr <plug>(lsp-rename)
+    nmap <buffer> gd <Plug>(lsp-definition)
+    nmap <buffer> gr <Plug>(lsp-rename)
     inoremap <expr> <CR> pumvisible() ? '<C-y>' : '<CR>'
     " inoremap <expr> <C-n> pumvisible() ? '<Down>' : '<C-n>'
     " inoremap <expr> <C-p> pumvisible() ? '<Up>' : '<C-p>'
