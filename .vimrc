@@ -191,8 +191,6 @@ noremap <C-h> <C-^>
 
 nnoremap <silent> <Esc><Esc> <Cmd>nohlsearch<CR>
 nnoremap <silent> <Leader>t <Cmd>terminal ++close<CR>
-nnoremap <silent> go <Cmd>for i in range(1, v:count1) \| call append(line('.'), '') \| endfor \| silent! call repeat#set('go', v:count1)<CR>
-nnoremap <silent> gO <Cmd>for i in range(1, v:count1) \| call append(line('.')-1, '') \| endfor \| silent! call repeat#set('gO', v:count1)<CR>
 
 cnoremap <C-n> <Down>
 cnoremap <C-p> <Up>
@@ -215,8 +213,32 @@ else
 endif
 
 " --------------------
+" Insert Blank Lines
 " --------------------
+function! s:blank_below(type = '') abort
+    if a:type == ''
+        set operatorfunc=function('s:blank_below')
+        return 'g@ '
+    endif
 
+    for i in range(v:count1)
+        call append(line('.'), '')
+    endfor
+endfunction
+
+function! s:blank_above(type = '') abort
+    if a:type == ''
+        set operatorfunc=function('s:blank_above')
+        return 'g@ '
+    endif
+
+    for i in range(v:count1)
+        call append(line('.') - 1, '')
+    endfor
+endfunction
+
+nnoremap <expr> go <SID>blank_below()
+nnoremap <expr> gO <SID>blank_above()
 
 " --------------------
 " Window/Tabpage
