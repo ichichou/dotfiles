@@ -241,6 +241,27 @@ nnoremap <expr> go <SID>blank_below()
 nnoremap <expr> gO <SID>blank_above()
 
 " --------------------
+" Time Stamp
+" --------------------
+" function! s:put_timestamp() abort
+"     let l:timestamp = '## ' .. strftime('%Y-%m-%d %H:%M:%S')
+"     let l:blank = nr2char(10)
+"
+"     if strlen(getline('.')) > 0
+"         put =l:blank .. l:timestamp .. l:blank
+"         normal! i
+"     elseif strlen(getline(line('.') - 1)) > 0
+"         put =l:timestamp .. l:blank
+"         normal! i
+"     else
+"         call append(getline('.') - 1, l:timestamp)
+"         normal! i
+"     endif
+" endfunction
+"
+" autocmd vimrc FileType markdown nnoremap <expr> <Leader>d <SID>put_timestamp()
+
+" --------------------
 " Window/Tabpage
 " --------------------
 nnoremap t <Nop>
