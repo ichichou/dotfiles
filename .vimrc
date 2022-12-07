@@ -1,7 +1,6 @@
 " ========================================
 " .vimrc
 " ========================================
-
 set encoding=utf-8
 scriptencoding utf-8
 set fileencoding=utf-8
@@ -39,10 +38,8 @@ let g:skip_loading_mswin        = 1
 let g:did_install_syntax_menu   = 1
 let g:loaded_2html_plugin       = 1
 
-
 " Editing
 " ========================================
-
 set hidden
 set autoread
 set switchbuf=usetab,uselast
@@ -87,10 +84,10 @@ augroup END
 
 autocmd vimrc FileType gitcommit setlocal fileencoding=utf-8
 
+set diffopt=internal,filler,closeoff,vertical,indent-heuristic,algorithm:histogram
 
 " Appearance
 " ========================================
-
 set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -131,10 +128,8 @@ set showmatch
 set matchtime=1
 set matchpairs+=（:）,「:」,『:』,〈:〉,《:》,【:】,〔:〕,［:］,｛:｝,‘:’,“:”
 
-
-" Search/Completion
+" Search & Completion
 " ========================================
-
 set hlsearch
 set ignorecase
 set smartcase
@@ -154,7 +149,6 @@ augroup vimrc
     autocmd FileType help,qf,man,ref,diff nnoremap <silent> <buffer> q <Cmd>q!<CR>
     autocmd QuickFixCmdPost *grep*,make if len(getqflist()) != 0 | cwindow | endif
 augroup END
-
 
 " Keymaps
 " ========================================
@@ -212,9 +206,8 @@ else
     nnoremap <silent> <Leader>. <Cmd>source $MYVIMRC<CR>
 endif
 
-" --------------------
 " Insert Blank Lines
-" --------------------
+" ----------------------------------------
 function! s:blank_below(type = '') abort
     if a:type == ''
         set operatorfunc=function('s:blank_below')
@@ -240,9 +233,8 @@ endfunction
 nnoremap <expr> go <SID>blank_below()
 nnoremap <expr> gO <SID>blank_above()
 
-" --------------------
 " Time Stamp
-" --------------------
+" ----------------------------------------
 " function! s:put_timestamp() abort
 "     let l:timestamp = '## ' .. strftime('%Y-%m-%d %H:%M:%S')
 "     let l:blank = nr2char(10)
@@ -261,9 +253,8 @@ nnoremap <expr> gO <SID>blank_above()
 "
 " autocmd vimrc FileType markdown nnoremap <expr> <Leader>d <SID>put_timestamp()
 
-" --------------------
-" Window/Tabpage
-" --------------------
+" Window & Tabpage
+" ----------------------------------------
 nnoremap t <Nop>
 nnoremap [window] <Nop>
 nmap t [window]
@@ -289,9 +280,8 @@ nnoremap <silent> [window]q <Cmd>tabclose<CR>
 nnoremap <silent> [window]N <Cmd>+tabmove<CR>
 nnoremap <silent> [window]P <Cmd>-tabmove<CR>
 
-" --------------------
 " Nop
-" --------------------
+" ----------------------------------------
 noremap ZZ <Nop>
 noremap ZQ <Nop>
 noremap Q <Nop>
@@ -315,31 +305,18 @@ inoremap <D-7> <Nop>
 inoremap <D-8> <Nop>
 inoremap <D-9> <Nop>
 
-
 " Commands
 " ========================================
 
-" --------------------
-" Diff
-" --------------------
-set diffopt=internal,filler,vertical,indent-heuristic,algorithm:histogram
-
-function! SetDiffMode()
+" Diff Mode
+" ----------------------------------------
+function! s:set_diff_mode() abort
     if &diff
         setlocal nospell
         setlocal wrap<
     endif
 endfunction
-
-augroup vimrc
-    autocmd VimEnter,FilterWritePre * call SetDiffMode()
-    autocmd WinEnter * if(winnr('$') == 1) &&
-    \ (getbufvar(winbufnr(0), '&diff')) == 1 | diffoff | endif
-augroup END
-
-command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-\ | wincmd p | diffthis
-
+autocmd vimrc VimEnter,DiffUpdated * call s:set_diff_mode()
 
 " Plugins
 " ========================================
@@ -352,11 +329,8 @@ else
     runtime config/plug-vim.vim
 endif
 
-
-
-" Plugin Settings
-" ========================================
-
+" Plugin Config
+" ----------------------------------------
 let s:plugs = get(s:, 'plugs', get(g:, 'plugs', {}))
 function! FindPlugin(name) abort
   return has_key(s:plugs, a:name) ? isdirectory(s:plugs[a:name].dir) : 0

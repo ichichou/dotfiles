@@ -262,31 +262,18 @@ nnoremap <silent> [window]q :<C-u>tabclose<CR>
 nnoremap <silent> [window]N :<C-u>+tabmove<CR>
 nnoremap <silent> [window]P :<C-u>-tabmove<CR>
 
-
 " Commands
 " ========================================
 
-" --------------------
-" Diff
-" --------------------
-set diffopt=internal,filler,vertical,indent-heuristic,algorithm:histogram
-
-function! SetDiffMode()
+" Diff Mode
+" ----------------------------------------
+function! s:set_diff_mode() abort
     if &diff
         setlocal nospell
         setlocal wrap<
     endif
 endfunction
-
-augroup vimrc
-    autocmd VimEnter,FilterWritePre * call SetDiffMode()
-    autocmd WinEnter * if(winnr('$') == 1) &&
-    \ (getbufvar(winbufnr(0), '&diff')) == 1 | diffoff | endif
-augroup END
-
-command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-\ | wincmd p | diffthis
-
+autocmd vimrc VimEnter,DiffUpdated * call s:set_diff_mode()
 
 " Plugins
 " ========================================
@@ -298,8 +285,6 @@ if has('nvim')
 else
     runtime! config/plug-vim.vim
 endif
-
-
 
 " Plugin Settings
 " ========================================
