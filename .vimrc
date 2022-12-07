@@ -186,8 +186,8 @@ noremap U <C-r>
 noremap + <C-a>
 noremap - <C-x>
 noremap <C-h> <C-^>
-" noremap <C-j> <Cmd>bprevious<CR>
-" noremap <C-k> <Cmd>bnext<CR>
+" noremap <silent> <C-j> <Cmd>bprevious<CR>
+" noremap <silent> <C-k> <Cmd>bnext<CR>
 
 nnoremap <silent> <Esc><Esc> <Cmd>nohlsearch<CR>
 nnoremap <silent> <Leader>t <Cmd>terminal ++close<CR>
@@ -206,7 +206,7 @@ augroup END
 if has('gui_running')
     nnoremap <silent> <Leader><Leader> <Cmd>edit $MYVIMRC<CR>
     nnoremap <silent> <Leader><lt> <Cmd>edit $MYGVIMRC<CR>
-    nnoremap <silent> <Leader>. <Cmd>source $MYVIMRC<CR> <Cmd>source $MYGVIMRC<CR>
+    nnoremap <silent> <Leader>. <Cmd>source $MYVIMRC<CR><Cmd>source $MYGVIMRC<CR>
 else
     nnoremap <silent> <Leader><Leader> <Cmd>edit $MYVIMRC<CR>
     nnoremap <silent> <Leader>. <Cmd>source $MYVIMRC<CR>
@@ -406,6 +406,7 @@ Plug 'mattn/vim-maketable'
 Plug 'tyru/caw.vim'
 Plug 'tyru/open-browser.vim'
 
+packadd! matchit
 set runtimepath+=/opt/homebrew/opt/fzf
 Plug 'junegunn/fzf.vim'
 
@@ -509,7 +510,6 @@ let g:asyncomplete_popup_delay = 200
 " --------------------
 " Matchit
 " --------------------
-packadd! matchit
 let b:match_ignorecase = 1
 
 " --------------------
@@ -620,8 +620,8 @@ endfunction
 
 inoremap <silent> <Bar> <Bar><Esc><Cmd>call <SID>align()<CR>a
 
-" map <Leader>a= <Cmd>Tabularize /=<CR>
-" map <Leader>a: <Cmd>Tabularize /:\zs<CR>
+" map <silent> <Leader>a= <Cmd>Tabularize /=<CR>
+" map <silent> <Leader>a: <Cmd>Tabularize /:\zs<CR>
 
 " --------------------
 " Vaffle
@@ -634,7 +634,7 @@ nnoremap <silent> <Leader>v <Cmd>Vaffle<CR>
 " --------------------
 " Asterisk
 " --------------------
-" let g:asterisk#keeppos = 1
+let g:asterisk#keeppos = 1
 
 map * <Plug>(asterisk-z*)
 map # <Plug>(asterisk-z#)
