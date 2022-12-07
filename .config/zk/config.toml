@@ -125,5 +125,5 @@ config = "$EDITOR ~/dotfiles/.config/zk/config.toml"
 journal = 'zk new --no-input "$ZK_NOTEBOOK_DIR/journal"'
 draft = 'zk new --title "$*" "$ZK_NOTEBOOK_DIR/draft"'
 git_status = 'git -C "$ZK_NOTEBOOK_DIR" status --short --branch'
-save_journal = 'git -C "$ZK_NOTEBOOK_DIR" reset HEAD && git -C "$ZK_NOTEBOOK_DIR" add journal && git -C "$ZK_NOTEBOOK_DIR" commit -m "Update journal"'
-save_draft = 'git -C "$ZK_NOTEBOOK_DIR" reset HEAD && git -C "$ZK_NOTEBOOK_DIR" add draft && git -C "$ZK_NOTEBOOK_DIR" commit -m "Update draft"'
+save_journal = 'git -C "$ZK_NOTEBOOK_DIR" reset HEAD && git -C "$ZK_NOTEBOOK_DIR" add journal && git -C "$ZK_NOTEBOOK_DIR" commit -m "Update journal" && git -C "$ZK_NOTEBOOK_DIR" push'
+save_draft = 'git -C "$ZK_NOTEBOOK_DIR" reset HEAD && git -C "$ZK_NOTEBOOK_DIR" add draft && git -C "$ZK_NOTEBOOK_DIR" commit -m "Update draft" && git -C "$ZK_NOTEBOOK_DIR" push'

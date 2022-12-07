@@ -186,13 +186,11 @@ noremap U <C-r>
 noremap + <C-a>
 noremap - <C-x>
 noremap <C-h> <C-^>
-" noremap <C-j> <Cmd>bprevious<CR>
-" noremap <C-k> <Cmd>bnext<CR>
+" noremap <silent> <C-j> <Cmd>bprevious<CR>
+" noremap <silent> <C-k> <Cmd>bnext<CR>
 
 nnoremap <silent> <Esc><Esc> <Cmd>nohlsearch<CR>
 nnoremap <silent> <Leader>t <Cmd>terminal ++close<CR>
-nnoremap <silent> go <Cmd>for i in range(1, v:count1) \| call append(line('.'), '') \| endfor \| silent! call repeat#set('go', v:count1)<CR>
-nnoremap <silent> gO <Cmd>for i in range(1, v:count1) \| call append(line('.')-1, '') \| endfor \| silent! call repeat#set('gO', v:count1)<CR>
 
 cnoremap <C-n> <Down>
 cnoremap <C-p> <Up>
@@ -208,35 +206,60 @@ augroup END
 if has('gui_running')
     nnoremap <silent> <Leader><Leader> <Cmd>edit $MYVIMRC<CR>
     nnoremap <silent> <Leader><lt> <Cmd>edit $MYGVIMRC<CR>
-    nnoremap <silent> <Leader>. <Cmd>source $MYVIMRC<CR> <Cmd>source $MYGVIMRC<CR>
+    nnoremap <silent> <Leader>. <Cmd>source $MYVIMRC<CR><Cmd>source $MYGVIMRC<CR>
 else
     nnoremap <silent> <Leader><Leader> <Cmd>edit $MYVIMRC<CR>
     nnoremap <silent> <Leader>. <Cmd>source $MYVIMRC<CR>
 endif
 
 " --------------------
-" Nop
+" Insert Blank Lines
 " --------------------
-noremap ZZ <Nop>
-noremap ZQ <Nop>
-noremap Q <Nop>
-noremap gQ <Nop>
-noremap <Del> <Nop>
+function! s:blank_below(type = '') abort
+    if a:type == ''
+        set operatorfunc=function('s:blank_below')
+        return 'g@ '
+    endif
 
-inoremap <C-j> <Nop>
-inoremap <C-l> <Nop>
-inoremap <D-0> <Nop>
-inoremap <D-1> <Nop>
-inoremap <D-2> <Nop>
-inoremap <D-3> <Nop>
-inoremap <D-4> <Nop>
-inoremap <D-5> <Nop>
-inoremap <D-6> <Nop>
-inoremap <D-7> <Nop>
-inoremap <D-8> <Nop>
-inoremap <D-9> <Nop>
-inoremap <D-a> <Nop>
-inoremap <D-i> <Nop>
+    for i in range(v:count1)
+        call append(line('.'), '')
+    endfor
+endfunction
+
+function! s:blank_above(type = '') abort
+    if a:type == ''
+        set operatorfunc=function('s:blank_above')
+        return 'g@ '
+    endif
+
+    for i in range(v:count1)
+        call append(line('.') - 1, '')
+    endfor
+endfunction
+
+nnoremap <expr> go <SID>blank_below()
+nnoremap <expr> gO <SID>blank_above()
+
+" --------------------
+" Time Stamp
+" --------------------
+" function! s:put_timestamp() abort
+"     let l:timestamp = '## ' .. strftime('%Y-%m-%d %H:%M:%S')
+"     let l:blank = nr2char(10)
+"
+"     if strlen(getline('.')) > 0
+"         put =l:blank .. l:timestamp .. l:blank
+"         normal! i
+"     elseif strlen(getline(line('.') - 1)) > 0
+"         put =l:timestamp .. l:blank
+"         normal! i
+"     else
+"         call append(getline('.') - 1, l:timestamp)
+"         normal! i
+"     endif
+" endfunction
+"
+" autocmd vimrc FileType markdown nnoremap <expr> <Leader>d <SID>put_timestamp()
 
 " --------------------
 " Window/Tabpage
@@ -265,6 +288,32 @@ nnoremap <silent> [window]t <Cmd>tabnew<CR>
 nnoremap <silent> [window]q <Cmd>tabclose<CR>
 nnoremap <silent> [window]N <Cmd>+tabmove<CR>
 nnoremap <silent> [window]P <Cmd>-tabmove<CR>
+
+" --------------------
+" Nop
+" --------------------
+noremap ZZ <Nop>
+noremap ZQ <Nop>
+noremap Q <Nop>
+noremap gQ <Nop>
+noremap <Del> <Nop>
+
+inoremap <C-j> <Nop>
+inoremap <C-l> <Nop>
+
+inoremap <D-a> <Nop>
+inoremap <D-i> <Nop>
+
+inoremap <D-0> <Nop>
+inoremap <D-1> <Nop>
+inoremap <D-2> <Nop>
+inoremap <D-3> <Nop>
+inoremap <D-4> <Nop>
+inoremap <D-5> <Nop>
+inoremap <D-6> <Nop>
+inoremap <D-7> <Nop>
+inoremap <D-8> <Nop>
+inoremap <D-9> <Nop>
 
 
 " Commands
@@ -350,13 +399,14 @@ Plug 'cohama/vim-smartinput-endwise'
 Plug 'easymotion/vim-easymotion'
 Plug 'godlygeek/tabular'
 Plug 'haya14busa/vim-asterisk'
+Plug 'kana/vim-niceblock'
+Plug 'kana/vim-repeat'
 Plug 'kana/vim-smartinput'
 Plug 'mattn/vim-maketable'
-Plug 'tpope/vim-repeat'
 Plug 'tyru/caw.vim'
 Plug 'tyru/open-browser.vim'
-" Plug 'kana/vim-repeat'
 
+packadd! matchit
 set runtimepath+=/opt/homebrew/opt/fzf
 Plug 'junegunn/fzf.vim'
 
@@ -438,8 +488,8 @@ colorscheme nord
 function! s:on_lsp_buffer_enabled() abort
     setlocal omnifunc=lsp#complete
     setlocal signcolumn=yes
-    nmap <buffer> gd <plug>(lsp-definition)
-    nmap <buffer> gr <plug>(lsp-rename)
+    nmap <buffer> gd <Plug>(lsp-definition)
+    nmap <buffer> gr <Plug>(lsp-rename)
     inoremap <expr> <CR> pumvisible() ? '<C-y>' : '<CR>'
     " inoremap <expr> <C-n> pumvisible() ? '<Down>' : '<C-n>'
     " inoremap <expr> <C-p> pumvisible() ? '<Up>' : '<C-p>'
@@ -460,7 +510,6 @@ let g:asyncomplete_popup_delay = 200
 " --------------------
 " Matchit
 " --------------------
-packadd! matchit
 let b:match_ignorecase = 1
 
 " --------------------
@@ -571,8 +620,8 @@ endfunction
 
 inoremap <silent> <Bar> <Bar><Esc><Cmd>call <SID>align()<CR>a
 
-" map <Leader>a= <Cmd>Tabularize /=<CR>
-" map <Leader>a: <Cmd>Tabularize /:\zs<CR>
+" map <silent> <Leader>a= <Cmd>Tabularize /=<CR>
+" map <silent> <Leader>a: <Cmd>Tabularize /:\zs<CR>
 
 " --------------------
 " Vaffle
@@ -585,7 +634,7 @@ nnoremap <silent> <Leader>v <Cmd>Vaffle<CR>
 " --------------------
 " Asterisk
 " --------------------
-" let g:asterisk#keeppos = 1
+let g:asterisk#keeppos = 1
 
 map * <Plug>(asterisk-z*)
 map # <Plug>(asterisk-z#)
@@ -743,13 +792,16 @@ nmap <C-n> <Plug>(yankround-next)
 " --------------------
 " Operator Flashy
 " --------------------
+let g:operator#flashy#flash_time = 200
+
 map y <Plug>(operator-flashy)
 nmap Y <Plug>(operator-flashy)$
 
 " --------------------
 " Operator Replace
 " --------------------
-map R <Plug>(operator-replace)
+map r <Plug>(operator-replace)
+noremap R r
 
 " --------------------
 " Operator Surround
@@ -836,7 +888,6 @@ let g:prettier#quickfix_auto_focus = 0
 " --------------------
 " Vim-IM-Select
 " --------------------
-" let g:im_select_get_im_cmd = ['im-select']
 let g:im_select_get_im_cmd = ['macism']
 let g:ImSelectSetImCmd = {key -> ['macism', key]}
 let g:im_select_default = 'jp.sourceforge.inputmethod.aquaskk.Ascii'
@@ -857,3 +908,15 @@ call jasegment#define('nonblank', {
 " Jasentence
 " --------------------
 let g:jasentence_endpat = '[、。，．？！…（）「」『』〈〉《》【】〔〕［］｛｝‘’“”]\+'
+
+" --------------------
+" kana/repeat.vim
+" --------------------
+let g:repeat_no_default_key_mappings = 1
+
+nmap . <Plug>(repeat-.)
+nmap u <Plug>(repeat-u)
+nmap U <Plug>(repeat-<C-r>)
+nmap <C-r> <Plug>(repeat-<C-r>)
+nmap g- <Plug>(repeat-g-)
+nmap g+ <Plug>(repeat-g+)
