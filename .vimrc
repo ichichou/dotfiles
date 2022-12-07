@@ -378,12 +378,12 @@ Plug 'cohama/vim-smartinput-endwise'
 Plug 'easymotion/vim-easymotion'
 Plug 'godlygeek/tabular'
 Plug 'haya14busa/vim-asterisk'
+Plug 'kana/vim-niceblock'
+Plug 'kana/vim-repeat'
 Plug 'kana/vim-smartinput'
 Plug 'mattn/vim-maketable'
-Plug 'tpope/vim-repeat'
 Plug 'tyru/caw.vim'
 Plug 'tyru/open-browser.vim'
-" Plug 'kana/vim-repeat'
 
 set runtimepath+=/opt/homebrew/opt/fzf
 Plug 'junegunn/fzf.vim'
@@ -771,13 +771,16 @@ nmap <C-n> <Plug>(yankround-next)
 " --------------------
 " Operator Flashy
 " --------------------
+let g:operator#flashy#flash_time = 200
+
 map y <Plug>(operator-flashy)
 nmap Y <Plug>(operator-flashy)$
 
 " --------------------
 " Operator Replace
 " --------------------
-map R <Plug>(operator-replace)
+map r <Plug>(operator-replace)
+noremap R r
 
 " --------------------
 " Operator Surround
@@ -864,7 +867,6 @@ let g:prettier#quickfix_auto_focus = 0
 " --------------------
 " Vim-IM-Select
 " --------------------
-" let g:im_select_get_im_cmd = ['im-select']
 let g:im_select_get_im_cmd = ['macism']
 let g:ImSelectSetImCmd = {key -> ['macism', key]}
 let g:im_select_default = 'jp.sourceforge.inputmethod.aquaskk.Ascii'
@@ -885,3 +887,15 @@ call jasegment#define('nonblank', {
 " Jasentence
 " --------------------
 let g:jasentence_endpat = '[、。，．？！…（）「」『』〈〉《》【】〔〕［］｛｝‘’“”]\+'
+
+" --------------------
+" kana/repeat.vim
+" --------------------
+let g:repeat_no_default_key_mappings = 1
+
+nmap . <Plug>(repeat-.)
+nmap u <Plug>(repeat-u)
+nmap U <Plug>(repeat-<C-r>)
+nmap <C-r> <Plug>(repeat-<C-r>)
+nmap g- <Plug>(repeat-g-)
+nmap g+ <Plug>(repeat-g+)
