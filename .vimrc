@@ -346,16 +346,113 @@ autocmd vimrc VimEnter,DiffUpdated * call s:set_diff_mode()
 " Plugins
 " ========================================
 
-" Plugin Loading
-" ----------------------------------------
-if has('nvim')
-    runtime config/plug-nvim.vim
-else
-    runtime config/plug-vim.vim
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+    silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-" Plugin Config
-" ----------------------------------------
+if has('nvim')
+    call plug#begin('~/.local/share/nvim/plugged')
+else
+    call plug#begin('~/.vim/plugged')
+endif
+
+" Vim-Polyglot
+let g:polyglot_disabled = ['markdown.plugin', 'csv.plugin', 'r-lang.plugin']
+Plug 'sheerun/vim-polyglot'
+
+" Language Server
+if ! has('nvim')
+    Plug 'prabirshrestha/asyncomplete.vim'
+    Plug 'prabirshrestha/asyncomplete-lsp.vim'
+    Plug 'prabirshrestha/vim-lsp'
+    Plug 'mattn/vim-lsp-settings'
+    Plug 'mattn/vim-lsp-icons'
+    Plug 'hrsh7th/vim-vsnip'
+    Plug 'hrsh7th/vim-vsnip-integ'
+    " Plug 'vim-denops/denops.vim'
+    " Plug 'Shougo/ddc.vim'
+    " Plug 'shun/ddc-vim-lsp'
+endif
+
+" Language
+Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
+Plug 'mechatroner/rainbow_csv', {'for': 'csv'}
+Plug 'prettier/vim-prettier', {'do': 'yarn install --frozen-lockfile --production', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html']}
+Plug 'previm/previm', {'for': 'markdown'}
+Plug 'vim-jp/syntax-vim-ex', {'for': 'vim'}
+
+Plug 'godlygeek/tabular'
+Plug 'joker1007/vim-markdown-quote-syntax', {'for': 'markdown'}
+Plug 'rcmdnk/vim-markdown', {'for': 'markdown'}
+
+" Edditing
+Plug 'LeafCage/yankround.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'alvan/vim-closetag'
+Plug 'cocopon/vaffle.vim'
+Plug 'cohama/vim-smartinput-endwise'
+Plug 'easymotion/vim-easymotion'
+Plug 'haya14busa/vim-asterisk'
+Plug 'kana/vim-niceblock'
+Plug 'kana/vim-repeat'
+Plug 'kana/vim-smartinput'
+Plug 'mattn/vim-maketable'
+Plug 'tyru/caw.vim'
+Plug 'tyru/open-browser.vim'
+
+packadd! matchit
+set runtimepath+=/opt/homebrew/opt/fzf
+Plug 'junegunn/fzf.vim'
+
+" Appearance
+Plug 'haya14busa/is.vim'
+Plug 'itchyny/vim-highlighturl'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'rbtnn/vim-ambiwidth'
+
+if has('nvim')
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'MunifTanjim/nui.nvim'
+    " Plug 'rcarriga/nvim-notify'
+    Plug 'folke/noice.nvim'
+else
+    Plug 'cocopon/lightline-hybrid.vim'
+    Plug 'itchyny/lightline.vim'
+endif
+
+" Operator / Text Object
+Plug 'kana/vim-operator-user'
+Plug 'haya14busa/vim-operator-flashy'
+Plug 'kana/vim-operator-replace'
+
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-entire'
+Plug 'kana/vim-textobj-line'
+Plug 'rhysd/vim-operator-surround'
+
+" Japanese Support
+Plug 'brglng/vim-im-select'
+Plug 'deton/jasegment.vim'
+Plug 'deton/jasentence.vim'
+Plug 'haya14busa/vim-migemo'
+
+if ! has('nvim')
+    Plug 'vim-jp/vimdoc-ja'
+endif
+
+" Colorscheme
+Plug 'arcticicestudio/nord-vim'
+Plug 'cocopon/iceberg.vim'
+Plug 'jacoborus/tender.vim'
+Plug 'sainnhe/everforest'
+Plug 'sainnhe/sonokai'
+Plug 'w0ng/vim-hybrid'
+
+call plug#end()
+
 let s:plugs = get(s:, 'plugs', get(g:, 'plugs', {}))
 function! FindPlugin(name) abort
     return has_key(s:plugs, a:name) ? isdirectory(s:plugs[a:name].dir) : 0
