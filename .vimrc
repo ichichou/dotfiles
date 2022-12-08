@@ -11,6 +11,7 @@ filetype plugin indent on
 syntax enable
 
 language messages en_US.UTF-8
+language time en_US.UTF-8
 
 augroup vimrc
     autocmd!
@@ -82,7 +83,10 @@ augroup vimrc
     autocmd FileType r setlocal tabstop=2 softtabstop=2 shiftwidth=2
 augroup END
 
-autocmd vimrc FileType gitcommit setlocal fileencoding=utf-8
+augroup vimrc
+    autocmd FileType gitcommit setlocal fileencoding=utf-8
+    autocmd BufRead,BufNewFile *.{txt,text} setlocal filetype=markdown
+augroup END
 
 set diffopt=internal,filler,closeoff,vertical,indent-heuristic,algorithm:histogram
 
@@ -94,7 +98,6 @@ endif
 " Appearance
 " ========================================
 set termguicolors
-set background=dark
 
 if ! has('nvim')
     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
