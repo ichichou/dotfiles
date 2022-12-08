@@ -16,8 +16,10 @@ augroup vimrc
     autocmd!
 augroup END
 
-unlet! skip_defaults_vim
-source $VIMRUNTIME/defaults.vim
+if ! has('nvim')
+    unlet! skip_defaults_vim
+    source $VIMRUNTIME/defaults.vim
+endif
 
 let g:did_install_default_menus = 1
 let g:did_install_syntax_menu   = 1
@@ -51,10 +53,8 @@ set shell=fish
 set history=10000
 set helplang=ja,en
 set nrformats=bin,hex
-
-set mouse=a
-set ttymouse=xterm2
 set clipboard=unnamed,unnamedplus
+set ttyfast
 
 set textwidth=0
 set virtualedit=onemore
@@ -86,47 +86,60 @@ autocmd vimrc FileType gitcommit setlocal fileencoding=utf-8
 
 set diffopt=internal,filler,closeoff,vertical,indent-heuristic,algorithm:histogram
 
+if ! has('nvim')
+    set mouse=a
+    set ttymouse=xterm2
+endif
+
 " Appearance
 " ========================================
 set termguicolors
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-
-let &t_Cs = "\e[4:3m"
-let &t_Ce = "\e[4:0m"
-
-if has('vim_starting')
-    let &t_SI .= "\e[6 q"
-    let &t_EI .= "\e[2 q"
-    let &t_SR .= "\e[4 q"
-endif
-
 set background=dark
 
-set list
-set listchars=eol:¬,tab:»\ ,space:\ ,trail:\ ,extends:>,precedes:<,nbsp:~
+if ! has('nvim')
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+    let &t_Cs = "\e[4:3m"
+    let &t_Ce = "\e[4:0m"
+
+    if has('vim_starting')
+        let &t_SI .= "\e[6 q"
+        let &t_EI .= "\e[2 q"
+        let &t_SR .= "\e[4 q"
+    endif
+endif
 
 set title
 set number
 set signcolumn=yes
-set laststatus=2
+set cursorline
 set noshowmode
+set display=lastline
+set list
 
 set sidescroll=1
+set scrolloff=5
 set sidescrolloff=5
-set display=lastline
-set cursorline
-
-set nofoldenable
-autocmd vimrc FileType vim setlocal foldmethod=marker
-
-set ttyfast
 set updatetime=100
 set belloff=all
 
 set showmatch
 set matchtime=1
 set matchpairs+=（:）,「:」,『:』,〈:〉,《:》,【:】,〔:〕,［:］,｛:｝,‘:’,“:”
+
+set nofoldenable
+autocmd vimrc FileType vim setlocal foldmethod=marker
+
+if has('nvim')
+    set cmdheight=0
+    set laststatus=3
+    " set winbar=%f
+    set listchars=eol:¬,tab:>\ ,space:\ ,trail:-,nbsp:+,extends:>,precedes:<
+else
+    set laststatus=2
+    set listchars=eol:¬,tab:»\ ,space:\ ,trail:\ ,nbsp:~,extends:>,precedes:<
+endif
 
 " Search & Completion
 " ========================================
@@ -138,7 +151,8 @@ set gdefault
 set completeopt=menuone,noinsert,popup
 set wildoptions=pum,tagfile
 set pumheight=10
-set shortmess=filmnrxoOtTF
+set shortmess+=mrF
+set shortmess-=S
 
 if executable('rg')
     set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
@@ -173,28 +187,32 @@ noremap j gj
 noremap k gk
 noremap gj j
 noremap gk k
-noremap Y y$
 noremap x "_x
 noremap X "_X
-noremap U <C-r>
-noremap + <C-a>
-noremap - <C-x>
-noremap <C-h> <C-^>
-" noremap <silent> <C-j> <Cmd>bprevious<CR>
-" noremap <silent> <C-k> <Cmd>bnext<CR>
-
-nnoremap <silent> <Esc><Esc> <Cmd>nohlsearch<CR>
-nnoremap <silent> <Leader>t <Cmd>terminal ++close<CR>
-
+nnoremap Y y$
+inoremap <C-u> <C-g>u<C-u>
+inoremap <C-w> <C-g>u<C-w>
 cnoremap <C-n> <Down>
 cnoremap <C-p> <Up>
+
+noremap + <C-a>
+noremap - <C-x>
+noremap U <C-r>
+noremap <C-h> <C-^>
+
+" nnoremap <silent> <C-j> <Cmd>bprevious<CR>
+" nnoremap <silent> <C-k> <Cmd>bnext<CR>
+nnoremap <silent> <Esc><Esc> <Cmd>nohlsearch<CR>
+nnoremap <silent> <Leader>t <Cmd>terminal ++close<CR>
 
 augroup vimrc
     autocmd FileType markdown inoremap <Tab> <C-t>
     autocmd FileType markdown inoremap <S-Tab> <C-d>
     autocmd FileType markdown inoremap <C-d> <Delete>
-    autocmd FileType markdown nnoremap <Leader>d o## <C-r>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
-    autocmd FileType markdown nnoremap <Leader>D o<CR>## <C-r>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
+    autocmd FileType markdown
+    \nnoremap <Leader>d o## <C-r>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
+    autocmd FileType markdown
+    \nnoremap <Leader>D o<CR>## <C-r>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
 augroup END
 
 if has('gui_running')
@@ -288,8 +306,10 @@ noremap Q <Nop>
 noremap gQ <Nop>
 noremap <Del> <Nop>
 
-inoremap <C-j> <Nop>
-inoremap <C-l> <Nop>
+noremap <C-j> <Nop>
+noremap <C-l> <Nop>
+noremap! <C-j> <Nop>
+noremap! <C-l> <Nop>
 
 inoremap <D-a> <Nop>
 inoremap <D-i> <Nop>
