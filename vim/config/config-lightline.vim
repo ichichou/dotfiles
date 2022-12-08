@@ -1,10 +1,7 @@
 UsePlugin 'lightline.vim'
 
-" powerline wombat jellybeans solarized PaperColor seoul256 Dracula one landscape
-" hybrid iceberg tender tenderplus nord
-
 let g:lightline = {
-    \ 'colorscheme': 'nord',
+    \ 'colorscheme': 'everforest',
     \ 'active': {
         \ 'left': [
             \ ['mode', 'paste'],

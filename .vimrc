@@ -11,32 +11,35 @@ filetype plugin indent on
 syntax enable
 
 language messages en_US.UTF-8
+language time en_US.UTF-8
 
 augroup vimrc
     autocmd!
 augroup END
 
-unlet! skip_defaults_vim
-source $VIMRUNTIME/defaults.vim
+if ! has('nvim')
+    unlet! skip_defaults_vim
+    source $VIMRUNTIME/defaults.vim
+endif
 
-let g:loaded_gzip               = 1
-let g:loaded_tar                = 1
-let g:loaded_tarPlugin          = 1
-let g:loaded_zip                = 1
-let g:loaded_zipPlugin          = 1
-let g:loaded_rrhelper           = 1
-let g:loaded_vimball            = 1
-let g:loaded_vimballPlugin      = 1
-let g:loaded_getscript          = 1
-let g:loaded_getscriptPlugin    = 1
-let g:loaded_netrw              = 1
-let g:loaded_netrwPlugin        = 1
-let g:loaded_netrwSettings      = 1
-let g:loaded_netrwFileHandlers  = 1
 let g:did_install_default_menus = 1
-let g:skip_loading_mswin        = 1
 let g:did_install_syntax_menu   = 1
 let g:loaded_2html_plugin       = 1
+let g:loaded_getscript          = 1
+let g:loaded_getscriptPlugin    = 1
+let g:loaded_gzip               = 1
+let g:loaded_netrw              = 1
+let g:loaded_netrwFileHandlers  = 1
+let g:loaded_netrwPlugin        = 1
+let g:loaded_netrwSettings      = 1
+let g:loaded_rrhelper           = 1
+let g:loaded_tar                = 1
+let g:loaded_tarPlugin          = 1
+let g:loaded_vimball            = 1
+let g:loaded_vimballPlugin      = 1
+let g:loaded_zip                = 1
+let g:loaded_zipPlugin          = 1
+let g:skip_loading_mswin        = 1
 
 " Editing
 " ========================================
@@ -51,10 +54,8 @@ set shell=fish
 set history=10000
 set helplang=ja,en
 set nrformats=bin,hex
-
-set mouse=a
-set ttymouse=xterm2
 set clipboard=unnamed,unnamedplus
+set ttyfast
 
 set textwidth=0
 set virtualedit=onemore
@@ -82,51 +83,66 @@ augroup vimrc
     autocmd FileType r setlocal tabstop=2 softtabstop=2 shiftwidth=2
 augroup END
 
-autocmd vimrc FileType gitcommit setlocal fileencoding=utf-8
+augroup vimrc
+    autocmd FileType gitcommit setlocal fileencoding=utf-8
+    autocmd BufRead,BufNewFile *.{txt,text} setlocal filetype=markdown
+augroup END
 
 set diffopt=internal,filler,closeoff,vertical,indent-heuristic,algorithm:histogram
+
+if ! has('nvim')
+    set mouse=a
+    set ttymouse=xterm2
+endif
 
 " Appearance
 " ========================================
 set termguicolors
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
-let &t_Cs = "\e[4:3m"
-let &t_Ce = "\e[4:0m"
+if ! has('nvim')
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
-if has('vim_starting')
-    let &t_SI .= "\e[6 q"
-    let &t_EI .= "\e[2 q"
-    let &t_SR .= "\e[4 q"
+    let &t_Cs = "\e[4:3m"
+    let &t_Ce = "\e[4:0m"
+
+    if has('vim_starting')
+        let &t_SI .= "\e[6 q"
+        let &t_EI .= "\e[2 q"
+        let &t_SR .= "\e[4 q"
+    endif
 endif
-
-set background=dark
-
-set list
-set listchars=eol:¬,tab:»\ ,space:\ ,trail:\ ,extends:>,precedes:<,nbsp:~
 
 set title
 set number
 set signcolumn=yes
-set laststatus=2
+set cursorline
 set noshowmode
+set display=lastline
+set list
 
 set sidescroll=1
+set scrolloff=5
 set sidescrolloff=5
-set display=lastline
-set cursorline
-
-set nofoldenable
-autocmd vimrc FileType vim setlocal foldmethod=marker
-
-set ttyfast
 set updatetime=100
 set belloff=all
 
 set showmatch
 set matchtime=1
 set matchpairs+=（:）,「:」,『:』,〈:〉,《:》,【:】,〔:〕,［:］,｛:｝,‘:’,“:”
+
+set nofoldenable
+autocmd vimrc FileType vim setlocal foldmethod=marker
+
+if has('nvim')
+    set cmdheight=0
+    set laststatus=3
+    " set winbar=%f
+    set listchars=eol:¬,tab:>\ ,space:\ ,trail:-,nbsp:+,extends:>,precedes:<
+else
+    set laststatus=2
+    set listchars=eol:¬,tab:»\ ,space:\ ,trail:\ ,nbsp:~,extends:>,precedes:<
+endif
 
 " Search & Completion
 " ========================================
@@ -135,10 +151,10 @@ set ignorecase
 set smartcase
 set gdefault
 
-set completeopt=menuone,noinsert,popup
 set wildoptions=pum,tagfile
 set pumheight=10
-set shortmess=filmnrxoOtTF
+set shortmess+=mrF
+set shortmess-=S
 
 if executable('rg')
     set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
@@ -150,17 +166,23 @@ augroup vimrc
     autocmd QuickFixCmdPost *grep*,make if len(getqflist()) != 0 | cwindow | endif
 augroup END
 
+if has('nvim')
+    set completeopt=menuone,noinsert
+else
+    set completeopt=menuone,noinsert,popup
+endif
+
 " Keymaps
 " ========================================
 
-"        Normal  Insert  Command  Visual  Terminal
-"        ------  ------  -------  ------  --------
-"  map   x                        x
-"  map!          x       x
+"        Normal  Visual  Insert  Command  Terminal
+"        ------  ------  ------  -------  --------
+"  map   x       x
+"  map!                  x       x
 "  nmap  x
-"  imap          x
-"  cmap                  x
-"  vmap                           x
+"  vmap          x
+"  imap                  x
+"  cmap                          x
 "  tmap                                   x
 
 let g:mapleader = ','
@@ -173,28 +195,32 @@ noremap j gj
 noremap k gk
 noremap gj j
 noremap gk k
-noremap Y y$
 noremap x "_x
 noremap X "_X
-noremap U <C-r>
-noremap + <C-a>
-noremap - <C-x>
-noremap <C-h> <C-^>
-" noremap <silent> <C-j> <Cmd>bprevious<CR>
-" noremap <silent> <C-k> <Cmd>bnext<CR>
-
-nnoremap <silent> <Esc><Esc> <Cmd>nohlsearch<CR>
-nnoremap <silent> <Leader>t <Cmd>terminal ++close<CR>
-
+nnoremap Y y$
+inoremap <C-u> <C-g>u<C-u>
+inoremap <C-w> <C-g>u<C-w>
 cnoremap <C-n> <Down>
 cnoremap <C-p> <Up>
+
+noremap + <C-a>
+noremap - <C-x>
+noremap U <C-r>
+noremap <C-h> <C-^>
+
+" nnoremap <silent> <C-j> <Cmd>bprevious<CR>
+" nnoremap <silent> <C-k> <Cmd>bnext<CR>
+nnoremap <silent> <Esc><Esc> <Cmd>nohlsearch<CR>
+nnoremap <silent> <Leader>t <Cmd>terminal ++close<CR>
 
 augroup vimrc
     autocmd FileType markdown inoremap <Tab> <C-t>
     autocmd FileType markdown inoremap <S-Tab> <C-d>
     autocmd FileType markdown inoremap <C-d> <Delete>
-    autocmd FileType markdown nnoremap <Leader>d o## <C-r>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
-    autocmd FileType markdown nnoremap <Leader>D o<CR>## <C-r>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
+    autocmd FileType markdown
+    \nnoremap <Leader>d o## <C-r>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
+    autocmd FileType markdown
+    \nnoremap <Leader>D o<CR>## <C-r>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
 augroup END
 
 if has('gui_running')
@@ -288,8 +314,10 @@ noremap Q <Nop>
 noremap gQ <Nop>
 noremap <Del> <Nop>
 
-inoremap <C-j> <Nop>
-inoremap <C-l> <Nop>
+noremap <C-j> <Nop>
+noremap <C-l> <Nop>
+noremap! <C-j> <Nop>
+noremap! <C-l> <Nop>
 
 inoremap <D-a> <Nop>
 inoremap <D-i> <Nop>
@@ -321,16 +349,113 @@ autocmd vimrc VimEnter,DiffUpdated * call s:set_diff_mode()
 " Plugins
 " ========================================
 
-" Plugin Loading
-" ----------------------------------------
-if has('nvim')
-    runtime config/plug-nvim.vim
-else
-    runtime config/plug-vim.vim
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+    silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-" Plugin Config
-" ----------------------------------------
+if has('nvim')
+    call plug#begin('~/.local/share/nvim/plugged')
+else
+    call plug#begin('~/.vim/plugged')
+endif
+
+" Vim-Polyglot
+let g:polyglot_disabled = ['markdown.plugin', 'csv.plugin', 'r-lang.plugin']
+Plug 'sheerun/vim-polyglot'
+
+" Language Server
+if ! has('nvim')
+    Plug 'prabirshrestha/asyncomplete.vim'
+    Plug 'prabirshrestha/asyncomplete-lsp.vim'
+    Plug 'prabirshrestha/vim-lsp'
+    Plug 'mattn/vim-lsp-settings'
+    Plug 'mattn/vim-lsp-icons'
+    Plug 'hrsh7th/vim-vsnip'
+    Plug 'hrsh7th/vim-vsnip-integ'
+    " Plug 'vim-denops/denops.vim'
+    " Plug 'Shougo/ddc.vim'
+    " Plug 'shun/ddc-vim-lsp'
+endif
+
+" Language
+Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
+Plug 'mechatroner/rainbow_csv', {'for': 'csv'}
+Plug 'prettier/vim-prettier', {'do': 'yarn install --frozen-lockfile --production', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html']}
+Plug 'previm/previm', {'for': 'markdown'}
+Plug 'vim-jp/syntax-vim-ex', {'for': 'vim'}
+
+Plug 'godlygeek/tabular'
+Plug 'joker1007/vim-markdown-quote-syntax', {'for': 'markdown'}
+Plug 'rcmdnk/vim-markdown', {'for': 'markdown'}
+
+" Edditing
+Plug 'LeafCage/yankround.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'alvan/vim-closetag'
+Plug 'cocopon/vaffle.vim'
+Plug 'cohama/vim-smartinput-endwise'
+Plug 'easymotion/vim-easymotion'
+Plug 'haya14busa/vim-asterisk'
+Plug 'kana/vim-niceblock'
+Plug 'kana/vim-repeat'
+Plug 'kana/vim-smartinput'
+Plug 'mattn/vim-maketable'
+Plug 'tyru/caw.vim'
+Plug 'tyru/open-browser.vim'
+
+packadd! matchit
+set runtimepath+=/opt/homebrew/opt/fzf
+Plug 'junegunn/fzf.vim'
+
+" Appearance
+Plug 'haya14busa/is.vim'
+Plug 'itchyny/vim-highlighturl'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'rbtnn/vim-ambiwidth'
+
+if has('nvim')
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'MunifTanjim/nui.nvim'
+    " Plug 'rcarriga/nvim-notify'
+    Plug 'folke/noice.nvim'
+else
+    Plug 'cocopon/lightline-hybrid.vim'
+    Plug 'itchyny/lightline.vim'
+endif
+
+" Operator / Text Object
+Plug 'kana/vim-operator-user'
+Plug 'haya14busa/vim-operator-flashy'
+Plug 'kana/vim-operator-replace'
+
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-entire'
+Plug 'kana/vim-textobj-line'
+Plug 'rhysd/vim-operator-surround'
+
+" Japanese Support
+Plug 'brglng/vim-im-select'
+Plug 'deton/jasegment.vim'
+Plug 'deton/jasentence.vim'
+Plug 'haya14busa/vim-migemo'
+
+if ! has('nvim')
+    Plug 'vim-jp/vimdoc-ja'
+endif
+
+" Colorscheme
+Plug 'arcticicestudio/nord-vim'
+Plug 'cocopon/iceberg.vim'
+Plug 'jacoborus/tender.vim'
+Plug 'sainnhe/everforest'
+Plug 'sainnhe/sonokai'
+Plug 'w0ng/vim-hybrid'
+
+call plug#end()
+
 let s:plugs = get(s:, 'plugs', get(g:, 'plugs', {}))
 function! FindPlugin(name) abort
     return has_key(s:plugs, a:name) ? isdirectory(s:plugs[a:name].dir) : 0
