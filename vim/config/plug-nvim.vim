@@ -69,7 +69,7 @@ Plug 'brglng/vim-im-select'
 Plug 'deton/jasegment.vim'
 Plug 'deton/jasentence.vim'
 Plug 'haya14busa/vim-migemo'
-Plug 'vim-jp/vimdoc-ja'
+" Plug 'vim-jp/vimdoc-ja'
 
 " Colorscheme
 Plug 'arcticicestudio/nord-vim'
