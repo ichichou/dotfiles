@@ -19,24 +19,24 @@ augroup END
 unlet! skip_defaults_vim
 source $VIMRUNTIME/defaults.vim
 
-let g:loaded_gzip               = 1
-let g:loaded_tar                = 1
-let g:loaded_tarPlugin          = 1
-let g:loaded_zip                = 1
-let g:loaded_zipPlugin          = 1
-let g:loaded_rrhelper           = 1
-let g:loaded_vimball            = 1
-let g:loaded_vimballPlugin      = 1
-let g:loaded_getscript          = 1
-let g:loaded_getscriptPlugin    = 1
-let g:loaded_netrw              = 1
-let g:loaded_netrwPlugin        = 1
-let g:loaded_netrwSettings      = 1
-let g:loaded_netrwFileHandlers  = 1
 let g:did_install_default_menus = 1
-let g:skip_loading_mswin        = 1
 let g:did_install_syntax_menu   = 1
 let g:loaded_2html_plugin       = 1
+let g:loaded_getscript          = 1
+let g:loaded_getscriptPlugin    = 1
+let g:loaded_gzip               = 1
+let g:loaded_netrw              = 1
+let g:loaded_netrwFileHandlers  = 1
+let g:loaded_netrwPlugin        = 1
+let g:loaded_netrwSettings      = 1
+let g:loaded_rrhelper           = 1
+let g:loaded_tar                = 1
+let g:loaded_tarPlugin          = 1
+let g:loaded_vimball            = 1
+let g:loaded_vimballPlugin      = 1
+let g:loaded_zip                = 1
+let g:loaded_zipPlugin          = 1
+let g:skip_loading_mswin        = 1
 
 " Editing
 " ========================================
@@ -153,14 +153,14 @@ augroup END
 " Keymaps
 " ========================================
 
-"        Normal  Insert  Command  Visual  Terminal
-"        ------  ------  -------  ------  --------
-"  map   x                        x
-"  map!          x       x
+"        Normal  Visual  Insert  Command  Terminal
+"        ------  ------  ------  -------  --------
+"  map   x       x
+"  map!                  x       x
 "  nmap  x
-"  imap          x
-"  cmap                  x
-"  vmap                           x
+"  vmap          x
+"  imap                  x
+"  cmap                          x
 "  tmap                                   x
 
 let g:mapleader = ','
