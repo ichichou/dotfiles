@@ -148,7 +148,6 @@ set ignorecase
 set smartcase
 set gdefault
 
-set completeopt=menuone,noinsert,popup
 set wildoptions=pum,tagfile
 set pumheight=10
 set shortmess+=mrF
@@ -163,6 +162,12 @@ augroup vimrc
     autocmd FileType help,qf,man,ref,diff nnoremap <silent> <buffer> q <Cmd>q!<CR>
     autocmd QuickFixCmdPost *grep*,make if len(getqflist()) != 0 | cwindow | endif
 augroup END
+
+if has('nvim')
+    set completeopt=menuone,noinsert
+else
+    set completeopt=menuone,noinsert,popup
+endif
 
 " Keymaps
 " ========================================
