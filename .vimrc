@@ -156,20 +156,15 @@ set pumheight=10
 set shortmess+=mrF
 set shortmess-=S
 
-if executable('rg')
-    set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
-    set grepformat=%f:%l:%c:%m,%f:%l:%m
-endif
-
-augroup vimrc
-    autocmd FileType help,qf,man,ref,diff nnoremap <silent> <buffer> q <Cmd>q!<CR>
-    autocmd QuickFixCmdPost *grep*,make if len(getqflist()) != 0 | cwindow | endif
-augroup END
-
 if has('nvim')
     set completeopt=menuone,noinsert
 else
     set completeopt=menuone,noinsert,popup
+endif
+
+if executable('rg')
+    set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
+    set grepformat=%f:%l:%c:%m,%f:%l:%m
 endif
 
 " Keymaps
@@ -208,21 +203,32 @@ noremap - <C-x>
 noremap U <C-r>
 noremap <C-h> <C-^>
 
-" nnoremap <silent> <C-j> <Cmd>bprevious<CR>
-" nnoremap <silent> <C-k> <Cmd>bnext<CR>
 nnoremap <silent> <Esc><Esc> <Cmd>nohlsearch<CR>
 nnoremap <silent> <Leader>t <Cmd>terminal ++close<CR>
+" nnoremap <silent> <C-> <Cmd>bnext<CR>
+" nnoremap <silent> <C-> <Cmd>bprevious<CR>
 
+" Markdown
+" ----------------------------------------
 augroup vimrc
-    autocmd FileType markdown inoremap <Tab> <C-t>
-    autocmd FileType markdown inoremap <S-Tab> <C-d>
-    autocmd FileType markdown inoremap <C-d> <Delete>
+    autocmd FileType markdown inoremap <buffer> <Tab> <C-t>
+    autocmd FileType markdown inoremap <buffer> <S-Tab> <C-d>
+    autocmd FileType markdown inoremap <buffer> <C-d> <Delete>
     autocmd FileType markdown
-    \ nnoremap <Leader>d o## <C-r>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
+    \ nnoremap <buffer> <Leader>d o## <C-r>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
     autocmd FileType markdown
-    \ nnoremap <Leader>D o<CR>## <C-r>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
+    \ nnoremap <buffer> <Leader>D o<CR>## <C-r>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
 augroup END
 
+" Quit by Q
+" ----------------------------------------
+augroup vimrc
+    autocmd FileType help,qf,man,ref,diff nnoremap <silent> <buffer> q <Cmd>quit!<CR>
+    autocmd QuickFixCmdPost *grep*,make if len(getqflist()) != 0 | cwindow | endif
+augroup END
+
+" Open & Reload Vimrc
+" ----------------------------------------
 if has('gui_running')
     nnoremap <silent> <Leader><Leader> <Cmd>edit $MYVIMRC<CR>
     nnoremap <silent> <Leader><lt> <Cmd>edit $MYGVIMRC<CR>
@@ -231,53 +237,6 @@ else
     nnoremap <silent> <Leader><Leader> <Cmd>edit $MYVIMRC<CR>
     nnoremap <silent> <Leader>. <Cmd>source $MYVIMRC<CR>
 endif
-
-" Insert Blank Lines
-" ----------------------------------------
-function! s:blank_below(type = '') abort
-    if a:type == ''
-        set operatorfunc=function('s:blank_below')
-        return 'g@ '
-    endif
-
-    for i in range(v:count1)
-        call append(line('.'), '')
-    endfor
-endfunction
-
-function! s:blank_above(type = '') abort
-    if a:type == ''
-        set operatorfunc=function('s:blank_above')
-        return 'g@ '
-    endif
-
-    for i in range(v:count1)
-        call append(line('.') - 1, '')
-    endfor
-endfunction
-
-nnoremap <expr> go <SID>blank_below()
-nnoremap <expr> gO <SID>blank_above()
-
-" Time Stamp
-" ----------------------------------------
-" function! s:put_timestamp() abort
-"     let l:timestamp = '## ' .. strftime('%Y-%m-%d %H:%M:%S')
-"     let l:blank = nr2char(10)
-"
-"     if strlen(getline('.')) > 0
-"         put =l:blank .. l:timestamp .. l:blank
-"         normal! i
-"     elseif strlen(getline(line('.') - 1)) > 0
-"         put =l:timestamp .. l:blank
-"         normal! i
-"     else
-"         call append(getline('.') - 1, l:timestamp)
-"         normal! i
-"     endif
-" endfunction
-"
-" autocmd vimrc FileType markdown nnoremap <expr> <Leader>d <SID>put_timestamp()
 
 " Window & Tabpage
 " ----------------------------------------
@@ -333,7 +292,7 @@ inoremap <D-7> <Nop>
 inoremap <D-8> <Nop>
 inoremap <D-9> <Nop>
 
-" Commands
+" Command & Function
 " ========================================
 
 " Diff Mode
@@ -346,9 +305,55 @@ function! s:set_diff_mode() abort
 endfunction
 autocmd vimrc VimEnter,DiffUpdated * call s:set_diff_mode()
 
+" Insert Blank Lines
+" ----------------------------------------
+function! s:blank_below(type = '') abort
+    if a:type == ''
+        set operatorfunc=function('s:blank_below')
+        return 'g@ '
+    endif
+
+    for i in range(v:count1)
+        call append(line('.'), '')
+    endfor
+endfunction
+
+function! s:blank_above(type = '') abort
+    if a:type == ''
+        set operatorfunc=function('s:blank_above')
+        return 'g@ '
+    endif
+
+    for i in range(v:count1)
+        call append(line('.') - 1, '')
+    endfor
+endfunction
+
+nnoremap <expr> go <SID>blank_below()
+nnoremap <expr> gO <SID>blank_above()
+
+" Time Stamp
+" ----------------------------------------
+" function! s:put_timestamp() abort
+"     let l:timestamp = '## ' .. strftime('%Y-%m-%d %H:%M:%S')
+"     let l:blank = nr2char(10)
+"
+"     if strlen(getline('.')) > 0
+"         put =l:blank .. l:timestamp .. l:blank
+"         normal! i
+"     elseif strlen(getline(line('.') - 1)) > 0
+"         put =l:timestamp .. l:blank
+"         normal! i
+"     else
+"         call append(getline('.') - 1, l:timestamp)
+"         normal! i
+"     endif
+" endfunction
+"
+" autocmd vimrc FileType markdown nnoremap <expr> <buffer> <Leader>d <SID>put_timestamp()
+
 " Plugins
 " ========================================
-
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
     silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs
@@ -363,10 +368,12 @@ else
 endif
 
 " Vim-Polyglot
+" ----------------------------------------
 let g:polyglot_disabled = ['markdown.plugin', 'csv.plugin', 'r-lang.plugin']
 Plug 'sheerun/vim-polyglot'
 
 " Language Server
+" ----------------------------------------
 if ! has('nvim')
     Plug 'prabirshrestha/asyncomplete.vim'
     Plug 'prabirshrestha/asyncomplete-lsp.vim'
@@ -381,6 +388,7 @@ if ! has('nvim')
 endif
 
 " Language
+" ----------------------------------------
 Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
 Plug 'mechatroner/rainbow_csv', {'for': 'csv'}
 Plug 'prettier/vim-prettier', {'do': 'yarn install --frozen-lockfile --production', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html']}
@@ -392,6 +400,7 @@ Plug 'joker1007/vim-markdown-quote-syntax', {'for': 'markdown'}
 Plug 'rcmdnk/vim-markdown', {'for': 'markdown'}
 
 " Edditing
+" ----------------------------------------
 Plug 'LeafCage/yankround.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
@@ -411,6 +420,7 @@ set runtimepath+=/opt/homebrew/opt/fzf
 Plug 'junegunn/fzf.vim'
 
 " Appearance
+" ----------------------------------------
 Plug 'haya14busa/is.vim'
 Plug 'itchyny/vim-highlighturl'
 Plug 'ntpeters/vim-better-whitespace'
@@ -427,6 +437,7 @@ else
 endif
 
 " Operator / Text Object
+" ----------------------------------------
 Plug 'kana/vim-operator-user'
 Plug 'haya14busa/vim-operator-flashy'
 Plug 'kana/vim-operator-replace'
@@ -437,6 +448,7 @@ Plug 'kana/vim-textobj-line'
 Plug 'rhysd/vim-operator-surround'
 
 " Japanese Support
+" ----------------------------------------
 Plug 'brglng/vim-im-select'
 Plug 'deton/jasegment.vim'
 Plug 'deton/jasentence.vim'
@@ -447,6 +459,7 @@ if ! has('nvim')
 endif
 
 " Colorscheme
+" ----------------------------------------
 Plug 'arcticicestudio/nord-vim'
 Plug 'cocopon/iceberg.vim'
 Plug 'jacoborus/tender.vim'
@@ -456,6 +469,8 @@ Plug 'w0ng/vim-hybrid'
 
 call plug#end()
 
+" Plugin Config
+" ----------------------------------------
 let s:plugs = get(s:, 'plugs', get(g:, 'plugs', {}))
 function! FindPlugin(name) abort
     return has_key(s:plugs, a:name) ? isdirectory(s:plugs[a:name].dir) : 0
