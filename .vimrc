@@ -218,9 +218,9 @@ augroup vimrc
     autocmd FileType markdown inoremap <S-Tab> <C-d>
     autocmd FileType markdown inoremap <C-d> <Delete>
     autocmd FileType markdown
-    \nnoremap <Leader>d o## <C-r>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
+    \ nnoremap <Leader>d o## <C-r>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
     autocmd FileType markdown
-    \nnoremap <Leader>D o<CR>## <C-r>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
+    \ nnoremap <Leader>D o<CR>## <C-r>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
 augroup END
 
 if has('gui_running')
