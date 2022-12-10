@@ -17,6 +17,11 @@ let g:sonokai_better_performance = 1
 
 " Colorscheme
 set background=dark
+let s:colorscheme = 'everforest'
 
-colorscheme everforest
-" let g:lightline.colorscheme = 'nord'
+execute 'colorscheme' s:colorscheme
+let g:lightline_colorscheme = s:colorscheme
+" if ! exists('g:lightline')
+"     let g:lightline = {}
+" endif
+" let g:lightline.colorscheme = s:colorscheme

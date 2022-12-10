@@ -1,7 +1,7 @@
 UsePlugin 'lightline.vim'
 
 let g:lightline = {
-    \ 'colorscheme': 'everforest',
+    \ 'colorscheme': g:lightline_colorscheme,
     \ 'active': {
         \ 'left': [
             \ ['mode', 'paste'],
