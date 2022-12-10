@@ -44,7 +44,7 @@ id-case = "lower"
 paths = ["journal"]
 
 [group.journal.note]
-filename = "{{date now}}"
+filename = "{{format-date now}}"
 template = "journal.md"
 
 [group.journal.extra]
@@ -54,7 +54,7 @@ template = "journal.md"
 paths = ["draft"]
 
 [group.draft.note]
-filename = "{{date now '%Y%m%d%H%M%S'}}"
+filename = "{{format-date now '%Y%m%d%H%M%S'}}"
 template = "draft.md"
 
 [group.draft.extra]
