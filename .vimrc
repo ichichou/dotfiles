@@ -476,6 +476,7 @@ Plug 'kana/vim-smartinput'
 Plug 'machakann/vim-highlightedyank'
 Plug 'mattn/vim-maketable'
 Plug 'rcmdnk/yankround.vim'
+Plug 'thinca/vim-quickrun'
 Plug 'tyru/caw.vim'
 Plug 'tyru/open-browser.vim'
 
