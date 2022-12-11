@@ -512,13 +512,14 @@ endif
 
 " Colorscheme
 " ----------------------------------------
-Plug 'arcticicestudio/nord-vim'
+" Plug 'arcticicestudio/nord-vim'
 Plug 'cocopon/iceberg.vim'
 Plug 'jacoborus/tender.vim'
 Plug 'sainnhe/edge'
 Plug 'sainnhe/everforest'
 Plug 'sainnhe/gruvbox-material'
 Plug 'sainnhe/sonokai'
+Plug 'shaunsingh/nord.nvim'
 Plug 'w0ng/vim-hybrid'
 
 call plug#end()
