@@ -27,12 +27,12 @@ let g:gruvbox_material_better_performance = 1
 
 " Fix highlight
 augroup vimrc
-    autocmd VimEnter,ColorScheme * highlight! link htmlItalic LineNr
-    autocmd VimEnter,ColorScheme * highlight! link htmlBold WarningMsg
-    autocmd VimEnter,ColorScheme * highlight! link htmlBoldItalic ErrorMsg
-    autocmd VimEnter,ColorScheme * highlight! link HighlightedyankRegion Visual
-    autocmd VimEnter,ColorScheme * highlight! link ExtraWhitespace IncSearch
-    autocmd VimEnter,ColorScheme * highlight! link EasyMotionTarget Search
+  autocmd VimEnter,ColorScheme * highlight! link htmlItalic LineNr
+  autocmd VimEnter,ColorScheme * highlight! link htmlBold WarningMsg
+  autocmd VimEnter,ColorScheme * highlight! link htmlBoldItalic ErrorMsg
+  autocmd VimEnter,ColorScheme * highlight! link HighlightedyankRegion Visual
+  autocmd VimEnter,ColorScheme * highlight! link ExtraWhitespace IncSearch
+
 augroup END
 
 " Colorscheme

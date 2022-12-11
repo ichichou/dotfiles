@@ -14,12 +14,12 @@ language messages en_US.UTF-8
 language time en_US.UTF-8
 
 augroup vimrc
-    autocmd!
+  autocmd!
 augroup END
 
-if ! has('nvim')
-    unlet! skip_defaults_vim
-    source $VIMRUNTIME/defaults.vim
+if !has('nvim')
+  unlet! skip_defaults_vim
+  source $VIMRUNTIME/defaults.vim
 endif
 
 let g:did_install_default_menus = 1
@@ -75,42 +75,43 @@ set softtabstop=4
 set shiftwidth=4
 
 augroup vimrc
-    autocmd FileType c,cpp,java setlocal tabstop=4 softtabstop=4 shiftwidth=4 cindent
-    autocmd FileType go setlocal tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
-    autocmd FileType html,css setlocal tabstop=2 softtabstop=2 shiftwidth=2
-    autocmd FileType json setlocal tabstop=2 softtabstop=2 shiftwidth=2
-    autocmd FileType nim setlocal tabstop=2 softtabstop=2 shiftwidth=2
-    autocmd FileType r setlocal tabstop=2 softtabstop=2 shiftwidth=2
+  autocmd FileType c,cpp,java setlocal tabstop=4 softtabstop=4 shiftwidth=4 cindent
+  autocmd FileType go setlocal tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
+  autocmd FileType html,css setlocal tabstop=2 softtabstop=2 shiftwidth=2
+  autocmd FileType json setlocal tabstop=2 softtabstop=2 shiftwidth=2
+  autocmd FileType nim setlocal tabstop=2 softtabstop=2 shiftwidth=2
+  autocmd FileType r setlocal tabstop=2 softtabstop=2 shiftwidth=2
+  autocmd FileType vim setlocal tabstop=2 softtabstop=2 shiftwidth=2
 augroup END
 
 augroup vimrc
-    autocmd FileType gitcommit setlocal fileencoding=utf-8
-    autocmd BufRead,BufNewFile *.{txt,text} setlocal filetype=markdown
+  autocmd FileType gitcommit setlocal fileencoding=utf-8
+  autocmd BufRead,BufNewFile *.{txt,text} setlocal filetype=markdown
 augroup END
 
 set diffopt=internal,filler,closeoff,vertical,indent-heuristic,algorithm:histogram
 
-if ! has('nvim')
-    set mouse=a
-    set ttymouse=xterm2
+if !has('nvim')
+  set mouse=a
+  set ttymouse=xterm2
 endif
 
 " Appearance
 " ========================================
 set termguicolors
 
-if ! has('nvim')
-    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+if !has('nvim')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
-    let &t_Cs = "\e[4:3m"
-    let &t_Ce = "\e[4:0m"
+  let &t_Cs = "\e[4:3m"
+  let &t_Ce = "\e[4:0m"
 
-    if has('vim_starting')
-        let &t_SI .= "\e[6 q"
-        let &t_EI .= "\e[2 q"
-        let &t_SR .= "\e[4 q"
-    endif
+  if has('vim_starting')
+    let &t_SI .= "\e[6 q"
+    let &t_EI .= "\e[2 q"
+    let &t_SR .= "\e[4 q"
+  endif
 endif
 
 set title
@@ -135,13 +136,13 @@ set nofoldenable
 autocmd vimrc FileType vim setlocal foldmethod=marker
 
 if has('nvim')
-    set cmdheight=0
-    set laststatus=3
-    " set winbar=%f
-    set listchars=eol:¬,tab:>\ ,space:\ ,trail:-,nbsp:+,extends:>,precedes:<
+  set cmdheight=0
+  set laststatus=3
+  " set winbar=%f
+  set listchars=eol:¬,tab:>\ ,space:\ ,trail:-,nbsp:+,extends:>,precedes:<
 else
-    set laststatus=2
-    set listchars=eol:¬,tab:»\ ,space:\ ,trail:\ ,nbsp:~,extends:>,precedes:<
+  set laststatus=2
+  set listchars=eol:¬,tab:»\ ,space:\ ,trail:\ ,nbsp:~,extends:>,precedes:<
 endif
 
 " Search & Completion
@@ -157,14 +158,14 @@ set shortmess+=mrF
 set shortmess-=S
 
 if has('nvim')
-    set completeopt=menuone,noinsert
+  set completeopt=menuone,noinsert
 else
-    set completeopt=menuone,noinsert,popup
+  set completeopt=menuone,noinsert,popup
 endif
 
 if executable('rg')
-    set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
-    set grepformat=%f:%l:%c:%m,%f:%l:%m
+  set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
+  set grepformat=%f:%l:%c:%m,%f:%l:%m
 endif
 
 " Keymap
@@ -217,20 +218,20 @@ inoremap <expr> <CR> pumvisible() ? '<C-y>' : '<CR>'
 " Quit by Q
 " ----------------------------------------
 augroup vimrc
-    autocmd FileType help,qf,man,ref,diff nnoremap <silent> <buffer> q <Cmd>quit!<CR>
-    autocmd QuickFixCmdPost *grep*,make if len(getqflist()) != 0 | cwindow | endif
+  autocmd FileType help,qf,man,ref,diff nnoremap <silent> <buffer> q <Cmd>quit!<CR>
+  autocmd QuickFixCmdPost *grep*,make if len(getqflist()) != 0 | cwindow | endif
 augroup END
 
 " Markdown
 " ----------------------------------------
 augroup vimrc
-    autocmd FileType markdown inoremap <buffer> <Tab> <C-t>
-    autocmd FileType markdown inoremap <buffer> <S-Tab> <C-d>
-    autocmd FileType markdown inoremap <buffer> <C-d> <Delete>
-    autocmd FileType markdown
-    \ nnoremap <buffer> <Leader>d o## <C-r>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
-    autocmd FileType markdown
-    \ nnoremap <buffer> <Leader>D o<CR>## <C-r>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
+  autocmd FileType markdown inoremap <buffer> <Tab> <C-t>
+  autocmd FileType markdown inoremap <buffer> <S-Tab> <C-d>
+  autocmd FileType markdown inoremap <buffer> <C-d> <Delete>
+  autocmd FileType markdown
+  \ nnoremap <buffer> <Leader>d o## <C-r>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
+  autocmd FileType markdown
+  \ nnoremap <buffer> <Leader>D o<CR>## <C-r>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
 augroup END
 
 " Vimrc
@@ -239,10 +240,10 @@ nnoremap <silent> <Leader><Leader> <Cmd>edit $MYVIMRC<CR>
 nnoremap <silent> <Leader>/ <Cmd>edit $HOME/dotfiles/vim/config<CR>
 
 if has('gui_running')
-    nnoremap <silent> <Leader><lt> <Cmd>edit $MYGVIMRC<CR>
-    nnoremap <silent> <Leader>. <Cmd>source $MYVIMRC<CR><Cmd>source $MYGVIMRC<CR>
+  nnoremap <silent> <Leader><lt> <Cmd>edit $MYGVIMRC<CR>
+  nnoremap <silent> <Leader>. <Cmd>source $MYVIMRC<CR><Cmd>source $MYGVIMRC<CR>
 else
-    nnoremap <silent> <Leader>. <Cmd>source $MYVIMRC<CR>
+  nnoremap <silent> <Leader>. <Cmd>source $MYVIMRC<CR>
 endif
 
 " Window & Tabpage
@@ -305,35 +306,40 @@ inoremap <D-9> <Nop>
 " Diff Mode
 " ----------------------------------------
 function! s:set_diff_mode() abort
-    if &diff
-        setlocal nospell
-        setlocal wrap<
-    endif
+  if &diff
+    setlocal nospell
+    setlocal wrap<
+  endif
 endfunction
 autocmd vimrc VimEnter,DiffUpdated * call s:set_diff_mode()
+
+" DiffOfig (tweaked)
+" ----------------------------------------
+command! DiffOrig vert new | set bt=nofile ft=diff | r ++edit #
+\ | 0d_ | diffthis | wincmd p | diffthis
 
 " Insert Blank Lines
 " ----------------------------------------
 function! s:blank_below(type = '') abort
-    if a:type == ''
-        set operatorfunc=function('s:blank_below')
-        return 'g@ '
-    endif
+  if a:type == ''
+    set operatorfunc=function('s:blank_below')
+    return 'g@ '
+  endif
 
-    for i in range(v:count1)
-        call append(line('.'), '')
-    endfor
+  for i in range(v:count1)
+    call append(line('.'), '')
+  endfor
 endfunction
 
 function! s:blank_above(type = '') abort
-    if a:type == ''
-        set operatorfunc=function('s:blank_above')
-        return 'g@ '
-    endif
+  if a:type == ''
+    set operatorfunc=function('s:blank_above')
+    return 'g@ '
+  endif
 
-    for i in range(v:count1)
-        call append(line('.') - 1, '')
-    endfor
+  for i in range(v:count1)
+    call append(line('.') - 1, '')
+  endfor
 endfunction
 
 nnoremap <expr> go <SID>blank_below()
@@ -342,14 +348,14 @@ nnoremap <expr> gO <SID>blank_above()
 " Time Stamp
 " ----------------------------------------
 " function! s:put_timestamp() abort
-"     let l:timestamp = '## ' .. strftime('%Y-%m-%d %H:%M:%S')
+"     let l:timestamp = '## ' . strftime('%Y-%m-%d %H:%M:%S')
 "     let l:blank = nr2char(10)
 "
 "     if strlen(getline('.')) > 0
-"         put =l:blank .. l:timestamp .. l:blank
+"         put =l:blank . l:timestamp . l:blank
 "         normal! i
 "     elseif strlen(getline(line('.') - 1)) > 0
-"         put =l:timestamp .. l:blank
+"         put =l:timestamp . l:blank
 "         normal! i
 "     else
 "         call append(getline('.') - 1, l:timestamp)
@@ -362,59 +368,66 @@ nnoremap <expr> gO <SID>blank_above()
 " Syntax Info
 " ----------------------------------------
 function! s:get_syn_id(transparent)
-    let synid = synID(line('.'), col('.'), 1)
-    if a:transparent
-        return synIDtrans(synid)
-    else
-        return synid
-    endif
+  let synid = synID(line('.'), col('.'), 1)
+  if a:transparent
+    return synIDtrans(synid)
+  else
+    return synid
+  endif
 endfunction
 
 function! s:get_syn_attr(synid)
-    let name = synIDattr(a:synid, 'name')
-    let ctermfg = synIDattr(a:synid, 'fg', 'cterm')
-    let ctermbg = synIDattr(a:synid, 'bg', 'cterm')
-    let guifg = synIDattr(a:synid, 'fg', 'gui')
-    let guibg = synIDattr(a:synid, 'bg', 'gui')
-    return {
-        \ 'name': name,
-        \ 'ctermfg': ctermfg,
-        \ 'ctermbg': ctermbg,
-        \ 'guifg': guifg,
-        \ 'guibg': guibg
-    \ }
+  let name = synIDattr(a:synid, 'name')
+  let ctermfg = synIDattr(a:synid, 'fg', 'cterm')
+  let ctermbg = synIDattr(a:synid, 'bg', 'cterm')
+  let guifg = synIDattr(a:synid, 'fg', 'gui')
+  let guibg = synIDattr(a:synid, 'bg', 'gui')
+  return {
+    \ 'name': name,
+    \ 'ctermfg': ctermfg,
+    \ 'ctermbg': ctermbg,
+    \ 'guifg': guifg,
+    \ 'guibg': guibg
+  \ }
 endfunction
 
 function! s:get_syn_info()
-    let baseSyn = s:get_syn_attr(s:get_syn_id(0))
-    echo 'name: ' .. baseSyn.name ..
-        \ ' ctermfg: ' .. baseSyn.ctermfg ..
-        \ ' ctermbg: ' .. baseSyn.ctermbg ..
-        \ ' guifg: ' .. baseSyn.guifg ..
-        \ ' guibg: ' .. baseSyn.guibg
-    let linkedSyn = s:get_syn_attr(s:get_syn_id(1))
-    echo 'link to'
-    echo 'name: ' .. linkedSyn.name ..
-        \ ' ctermfg: ' .. linkedSyn.ctermfg ..
-        \ ' ctermbg: ' .. linkedSyn.ctermbg ..
-        \ ' guifg: ' .. linkedSyn.guifg ..
-        \ ' guibg: ' .. linkedSyn.guibg
+  let baseSyn = s:get_syn_attr(s:get_syn_id(0))
+  echo 'name: ' . baseSyn.name .
+    \ ' ctermfg: ' . baseSyn.ctermfg .
+    \ ' ctermbg: ' . baseSyn.ctermbg .
+    \ ' guifg: ' . baseSyn.guifg .
+    \ ' guibg: ' . baseSyn.guibg
+  let linkedSyn = s:get_syn_attr(s:get_syn_id(1))
+  echo 'link to'
+  echo 'name: ' . linkedSyn.name .
+    \ ' ctermfg: ' . linkedSyn.ctermfg .
+    \ ' ctermbg: ' . linkedSyn.ctermbg .
+    \ ' guifg: ' . linkedSyn.guifg .
+    \ ' guibg: ' . linkedSyn.guibg
 endfunction
 command! -nargs=0 SyntaxInfo call s:get_syn_info()
+
+" Cursor Highlight in Active Window
+" ----------------------------------------
+augroup vimrc
+  autocmd VimEnter,BufWinEnter,WinEnter * setlocal cursorline
+  autocmd WinLeave * setlocal nocursorline
+augroup END
 
 " Plugins
 " ========================================
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
-    silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs
+  \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 if has('nvim')
-    call plug#begin('~/.local/share/nvim/plugged')
+  call plug#begin('~/.local/share/nvim/plugged')
 else
-    call plug#begin('~/.vim/plugged')
+  call plug#begin('~/.vim/plugged')
 endif
 
 " Vim-Polyglot
@@ -424,17 +437,17 @@ Plug 'sheerun/vim-polyglot'
 
 " Language Server
 " ----------------------------------------
-if ! has('nvim')
-    Plug 'prabirshrestha/asyncomplete.vim'
-    Plug 'prabirshrestha/asyncomplete-lsp.vim'
-    Plug 'prabirshrestha/vim-lsp'
-    Plug 'mattn/vim-lsp-settings'
-    Plug 'mattn/vim-lsp-icons'
-    Plug 'hrsh7th/vim-vsnip'
-    Plug 'hrsh7th/vim-vsnip-integ'
-    " Plug 'vim-denops/denops.vim'
-    " Plug 'Shougo/ddc.vim'
-    " Plug 'shun/ddc-vim-lsp'
+if !has('nvim')
+  Plug 'prabirshrestha/asyncomplete.vim'
+  Plug 'prabirshrestha/asyncomplete-lsp.vim'
+  Plug 'prabirshrestha/vim-lsp'
+  Plug 'mattn/vim-lsp-settings'
+  Plug 'mattn/vim-lsp-icons'
+  Plug 'hrsh7th/vim-vsnip'
+  Plug 'hrsh7th/vim-vsnip-integ'
+  " Plug 'vim-denops/denops.vim'
+  " Plug 'Shougo/ddc.vim'
+  " Plug 'shun/ddc-vim-lsp'
 endif
 
 " Language
@@ -479,13 +492,13 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'rbtnn/vim-ambiwidth'
 
 if has('nvim')
-    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-    Plug 'MunifTanjim/nui.nvim'
-    " Plug 'rcarriga/nvim-notify'
-    Plug 'folke/noice.nvim'
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'MunifTanjim/nui.nvim'
+  " Plug 'rcarriga/nvim-notify'
+  Plug 'folke/noice.nvim'
 else
-    Plug 'cocopon/lightline-hybrid.vim'
-    Plug 'itchyny/lightline.vim'
+  Plug 'cocopon/lightline-hybrid.vim'
+  Plug 'itchyny/lightline.vim'
 endif
 
 " Operator / Text Object
@@ -506,13 +519,14 @@ Plug 'deton/jasegment.vim'
 Plug 'deton/jasentence.vim'
 Plug 'haya14busa/vim-migemo'
 
-if ! has('nvim')
-    Plug 'vim-jp/vimdoc-ja'
+if !has('nvim')
+  Plug 'vim-jp/vimdoc-ja'
 endif
 
 " Colorscheme
 " ----------------------------------------
 " Plug 'arcticicestudio/nord-vim'
+Plug 'EdenEast/nightfox.nvim'
 Plug 'cocopon/iceberg.vim'
 Plug 'jacoborus/tender.vim'
 Plug 'sainnhe/edge'
@@ -532,7 +546,7 @@ runtime! config/colorscheme.vim
 " ----------------------------------------
 let s:plugs = get(s:, 'plugs', get(g:, 'plugs', {}))
 function! FindPlugin(name) abort
-    return has_key(s:plugs, a:name) ? isdirectory(s:plugs[a:name].dir) : 0
+  return has_key(s:plugs, a:name) ? isdirectory(s:plugs[a:name].dir) : 0
 endfunction
 command! -nargs=1 UsePlugin if !FindPlugin(<args>) | finish | endif
 
