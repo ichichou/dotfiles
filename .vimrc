@@ -239,9 +239,10 @@ nnoremap <silent> <Leader>/ <Cmd>edit $HOME/dotfiles/vim/config<CR>
 
 if has('gui_running')
   nnoremap <silent> <Leader><lt> <Cmd>edit $MYGVIMRC<CR>
-  nnoremap <silent> <Leader>. <Cmd>source $MYVIMRC<CR><Cmd>source $MYGVIMRC<CR>
+  nnoremap <silent> <Leader>.
+  \ <Cmd>source $MYVIMRC<CR><Cmd>source $MYGVIMRC<CR><Cmd>nohlsearch<CR>
 else
-  nnoremap <silent> <Leader>. <Cmd>source $MYVIMRC<CR>
+  nnoremap <silent> <Leader>. <Cmd>source $MYVIMRC<CR><Cmd>nohlsearch<CR>
 endif
 
 " Window & Tabpage
@@ -264,12 +265,9 @@ nnoremap [window]J <C-w>J
 nnoremap [window]K <C-w>K
 nnoremap [window]L <C-w>L
 
-nnoremap [window]n gt
-nnoremap [window]p gT
 nnoremap <silent> [window]t <Cmd>tabnew<CR>
-nnoremap <silent> [window]q <Cmd>tabclose<CR>
-nnoremap <silent> [window]N <Cmd>+tabmove<CR>
-nnoremap <silent> [window]P <Cmd>-tabmove<CR>
+nnoremap <silent> [window]n <Cmd>bnext<CR>
+nnoremap <silent> [window]p <Cmd>bprevious<CR>
 
 " Nop
 " ----------------------------------------
