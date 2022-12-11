@@ -167,7 +167,7 @@ if executable('rg')
     set grepformat=%f:%l:%c:%m,%f:%l:%m
 endif
 
-" Keymaps
+" Keymap
 " ========================================
 
 "        Normal  Visual  Insert  Command  Terminal
@@ -200,13 +200,19 @@ cnoremap <C-p> <Up>
 
 noremap + <C-a>
 noremap - <C-x>
-noremap U <C-r>
-noremap <C-h> <C-^>
+nnoremap U <C-r>
+nnoremap <C-h> <C-^>
 
 nnoremap <silent> <Esc><Esc> <Cmd>nohlsearch<CR>
 nnoremap <silent> <Leader>t <Cmd>terminal ++close<CR>
 " nnoremap <silent> <C-> <Cmd>bnext<CR>
 " nnoremap <silent> <C-> <Cmd>bprevious<CR>
+" Quit by Q
+" ----------------------------------------
+augroup vimrc
+    autocmd FileType help,qf,man,ref,diff nnoremap <silent> <buffer> q <Cmd>quit!<CR>
+    autocmd QuickFixCmdPost *grep*,make if len(getqflist()) != 0 | cwindow | endif
+augroup END
 
 " Markdown
 " ----------------------------------------
@@ -220,21 +226,15 @@ augroup vimrc
     \ nnoremap <buffer> <Leader>D o<CR>## <C-r>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
 augroup END
 
-" Quit by Q
+" Vimrc
 " ----------------------------------------
-augroup vimrc
-    autocmd FileType help,qf,man,ref,diff nnoremap <silent> <buffer> q <Cmd>quit!<CR>
-    autocmd QuickFixCmdPost *grep*,make if len(getqflist()) != 0 | cwindow | endif
-augroup END
+nnoremap <silent> <Leader><Leader> <Cmd>edit $MYVIMRC<CR>
+nnoremap <silent> <Leader>/ <Cmd>edit $HOME/dotfiles/vim/config<CR>
 
-" Open & Reload Vimrc
-" ----------------------------------------
 if has('gui_running')
-    nnoremap <silent> <Leader><Leader> <Cmd>edit $MYVIMRC<CR>
     nnoremap <silent> <Leader><lt> <Cmd>edit $MYGVIMRC<CR>
     nnoremap <silent> <Leader>. <Cmd>source $MYVIMRC<CR><Cmd>source $MYGVIMRC<CR>
 else
-    nnoremap <silent> <Leader><Leader> <Cmd>edit $MYVIMRC<CR>
     nnoremap <silent> <Leader>. <Cmd>source $MYVIMRC<CR>
 endif
 
@@ -441,11 +441,11 @@ endif
 Plug 'kana/vim-operator-user'
 Plug 'haya14busa/vim-operator-flashy'
 Plug 'kana/vim-operator-replace'
+Plug 'rhysd/vim-operator-surround'
 
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-line'
-Plug 'rhysd/vim-operator-surround'
 
 " Japanese Support
 " ----------------------------------------
