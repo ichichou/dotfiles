@@ -32,11 +32,7 @@ augroup vimrc
     autocmd VimEnter,ColorScheme * highlight! link htmlBoldItalic ErrorMsg
     autocmd VimEnter,ColorScheme * highlight! link HighlightedyankRegion Visual
     autocmd VimEnter,ColorScheme * highlight! link ExtraWhitespace IncSearch
-
-    " if !hlexists('debugBreakpoint')
-    "     autocmd VimEnter,ColorScheme * highlight default debugBreakpoint ctermbg=DarkRed guibg=DarkRed
-    " endif
-    " autocmd VimEnter,ColorScheme * highlight! link ExtraWhitespace debugBreakpoint
+    autocmd VimEnter,ColorScheme * highlight! link EasyMotionTarget Search
 augroup END
 
 " Colorscheme
