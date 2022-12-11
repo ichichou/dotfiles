@@ -2,6 +2,7 @@ UsePlugin 'yankround.vim'
 
 let g:yankround_max_history = 100
 let g:yankround_use_region_hl = 1
+let g:yankround_region_hl_groupname = 'Visual'
 
 map p <Plug>(yankround-p)
 map P <Plug>(yankround-P)

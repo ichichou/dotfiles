@@ -523,6 +523,10 @@ Plug 'w0ng/vim-hybrid'
 
 call plug#end()
 
+" Colorscheme Config
+" ----------------------------------------
+runtime! config/colorscheme.vim
+
 " Plugin Config
 " ----------------------------------------
 let s:plugs = get(s:, 'plugs', get(g:, 'plugs', {}))
