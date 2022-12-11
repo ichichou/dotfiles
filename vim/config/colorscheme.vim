@@ -33,6 +33,12 @@ augroup vimrc
   autocmd VimEnter,ColorScheme * highlight! link HighlightedyankRegion Visual
   autocmd VimEnter,ColorScheme * highlight! link ExtraWhitespace IncSearch
 
+  autocmd VimEnter,ColorScheme * highlight! link EasyMotionTarget ErrorMsg
+  autocmd VimEnter,ColorScheme * highlight! link EasyMotionShade Comment
+  autocmd VimEnter,ColorScheme * highlight! link EasyMotionTarget2First MatchParen
+  autocmd VimEnter,ColorScheme * highlight! link EasyMotionTarget2Second MatchParen
+  autocmd VimEnter,ColorScheme * highlight! link EasyMotionMoveHL Search
+  autocmd VimEnter,ColorScheme * highlight! link EasyMotionIncSearch Search
 augroup END
 
 " Colorscheme

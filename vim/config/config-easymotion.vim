@@ -16,10 +16,3 @@ map s <Plug>(easymotion-bd-f2)
 nmap s <Plug>(easymotion-overwin-f2)
 " map f <Plug>(easymotion-bd-fl)
 " map F <Plug>(easymotion-bd-fl)
-
-" highlight link EasyMotionTarget ErrorMsg
-" highlight link EasyMotionShade Comment
-" highlight link EasyMotionTarget2First MatchParen
-" highlight link EasyMotionTarget2Second MatchParen
-" highlight link EasyMotionMoveHL Search
-" highlight link EasyMotionIncSearch Search
