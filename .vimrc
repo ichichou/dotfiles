@@ -216,7 +216,7 @@ inoremap <expr> <CR> pumvisible() ? '<C-y>' : '<CR>'
 " Quit by Q
 " ----------------------------------------
 augroup vimrc
-  autocmd FileType help,qf,man,ref,diff nnoremap <silent> <buffer> q <Cmd>quit!<CR>
+  autocmd FileType help,qf,man,ref,diff,quickrun nnoremap <silent> <buffer> q <Cmd>quit!<CR>
   autocmd QuickFixCmdPost *grep*,make if len(getqflist()) != 0 | cwindow | endif
 augroup END
 
