@@ -396,12 +396,12 @@ Plug 'previm/previm', {'for': 'markdown'}
 Plug 'vim-jp/syntax-vim-ex', {'for': 'vim'}
 
 Plug 'godlygeek/tabular'
-Plug 'joker1007/vim-markdown-quote-syntax', {'for': 'markdown'}
+" Plug 'joker1007/vim-markdown-quote-syntax', {'for': 'markdown'}
 Plug 'rcmdnk/vim-markdown', {'for': 'markdown'}
 
 " Edditing
 " ----------------------------------------
-Plug 'LeafCage/yankround.vim'
+" Plug 'LeafCage/yankround.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
 Plug 'cocopon/vaffle.vim'
@@ -411,7 +411,9 @@ Plug 'haya14busa/vim-asterisk'
 Plug 'kana/vim-niceblock'
 Plug 'kana/vim-repeat'
 Plug 'kana/vim-smartinput'
+Plug 'machakann/vim-highlightedyank'
 Plug 'mattn/vim-maketable'
+Plug 'rcmdnk/yankround.vim'
 Plug 'tyru/caw.vim'
 Plug 'tyru/open-browser.vim'
 
@@ -463,7 +465,9 @@ endif
 Plug 'arcticicestudio/nord-vim'
 Plug 'cocopon/iceberg.vim'
 Plug 'jacoborus/tender.vim'
+Plug 'sainnhe/edge'
 Plug 'sainnhe/everforest'
+Plug 'sainnhe/gruvbox-material'
 Plug 'sainnhe/sonokai'
 Plug 'w0ng/vim-hybrid'
 
