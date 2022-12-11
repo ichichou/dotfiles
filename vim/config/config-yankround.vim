@@ -8,5 +8,7 @@ map P <Plug>(yankround-P)
 map gp <Plug>(yankround-gp)
 map gP <Plug>(yankround-gP)
 
-nmap <C-p> <Plug>(yankround-prev)
-nmap <C-n> <Plug>(yankround-next)
+nnoremap <silent> <SID>(c-n) <Cmd>bnext<CR>
+nnoremap <silent> <SID>(c-p) <Cmd>bprevious<CR>
+nmap <expr> <C-n> yankround#is_active() ? '<Plug>(yankround-next)' : '<SID>(c-n)'
+nmap <expr> <C-p> yankround#is_active() ? '<Plug>(yankround-prev)' : '<SID>(c-p)'

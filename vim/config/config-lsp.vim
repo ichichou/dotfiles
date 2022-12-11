@@ -5,9 +5,6 @@ function! s:on_lsp_buffer_enabled() abort
     setlocal signcolumn=yes
     nmap <buffer> gd <plug>(lsp-definition)
     nmap <buffer> gr <plug>(lsp-rename)
-    inoremap <expr> <CR> pumvisible() ? '<C-y>' : '<CR>'
-    " inoremap <expr> <C-n> pumvisible() ? '<Down>' : '<C-n>'
-    " inoremap <expr> <C-p> pumvisible() ? '<Up>' : '<C-p>'
 endfunction
 
 augroup lsp_install

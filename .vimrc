@@ -205,8 +205,15 @@ nnoremap <C-h> <C-^>
 
 nnoremap <silent> <Esc><Esc> <Cmd>nohlsearch<CR>
 nnoremap <silent> <Leader>t <Cmd>terminal ++close<CR>
-" nnoremap <silent> <C-> <Cmd>bnext<CR>
-" nnoremap <silent> <C-> <Cmd>bprevious<CR>
+" nnoremap <silent> <SID>(c-n) <Cmd>bnext<CR>
+" nnoremap <silent> <SID>(c-p) <Cmd>bprevious<CR>
+
+" Completion
+" ----------------------------------------
+inoremap <expr> <CR> pumvisible() ? '<C-y>' : '<CR>'
+" inoremap <expr> <C-n> pumvisible() ? '<Down>' : '<C-n>'
+" inoremap <expr> <C-p> pumvisible() ? '<Up>' : '<C-p>'
+
 " Quit by Q
 " ----------------------------------------
 augroup vimrc
