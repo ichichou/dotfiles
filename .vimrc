@@ -206,8 +206,6 @@ nnoremap <C-h> <C-^>
 
 nnoremap <silent> <Esc><Esc> <Cmd>nohlsearch<CR>
 nnoremap <silent> <Leader>t <Cmd>terminal ++close<CR>
-" nnoremap <silent> <SID>(c-n) <Cmd>bnext<CR>
-" nnoremap <silent> <SID>(c-p) <Cmd>bprevious<CR>
 
 " Completion
 " ----------------------------------------
@@ -430,11 +428,6 @@ else
   call plug#begin('~/.vim/plugged')
 endif
 
-" Vim-Polyglot
-" ----------------------------------------
-let g:polyglot_disabled = ['markdown.plugin', 'csv.plugin', 'r-lang.plugin']
-Plug 'sheerun/vim-polyglot'
-
 " Language Server
 " ----------------------------------------
 if !has('nvim')
@@ -462,15 +455,23 @@ Plug 'godlygeek/tabular'
 " Plug 'joker1007/vim-markdown-quote-syntax', {'for': 'markdown'}
 Plug 'rcmdnk/vim-markdown', {'for': 'markdown'}
 
+if has('nvim')
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+else
+  let g:polyglot_disabled = ['markdown.plugin', 'csv.plugin', 'r-lang.plugin']
+  Plug 'sheerun/vim-polyglot'
+endif
+
 " Edditing
 " ----------------------------------------
-" Plug 'LeafCage/yankround.vim'
+Plug 'AndrewRadev/linediff.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
 Plug 'cocopon/vaffle.vim'
 Plug 'cohama/vim-smartinput-endwise'
 Plug 'easymotion/vim-easymotion'
 Plug 'haya14busa/vim-asterisk'
+Plug 'haya14busa/vim-edgemotion'
 Plug 'kana/vim-niceblock'
 Plug 'kana/vim-repeat'
 Plug 'kana/vim-smartinput'
@@ -492,7 +493,6 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'rbtnn/vim-ambiwidth'
 
 if has('nvim')
-  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'MunifTanjim/nui.nvim'
   " Plug 'rcarriga/nvim-notify'
   Plug 'folke/noice.nvim'
@@ -501,7 +501,7 @@ else
   Plug 'itchyny/lightline.vim'
 endif
 
-" Operator / Text Object
+" Operator & Text Object
 " ----------------------------------------
 Plug 'kana/vim-operator-user'
 Plug 'haya14busa/vim-operator-flashy'

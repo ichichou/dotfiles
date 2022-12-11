@@ -9,7 +9,7 @@ map P <Plug>(yankround-P)
 map gp <Plug>(yankround-gp)
 map gP <Plug>(yankround-gP)
 
-nnoremap <silent> <SID>(c-n) <Cmd>bnext<CR>
-nnoremap <silent> <SID>(c-p) <Cmd>bprevious<CR>
 nmap <expr> <C-n> yankround#is_active() ? '<Plug>(yankround-next)' : '<SID>(c-n)'
 nmap <expr> <C-p> yankround#is_active() ? '<Plug>(yankround-prev)' : '<SID>(c-p)'
+map <silent> <SID>(c-n) <Plug>(edgemotion-j)
+map <silent> <SID>(c-p) <Plug>(edgemotion-k)
