@@ -343,6 +343,43 @@ endfunction
 " endfunction
 "
 " autocmd vimrc FileType markdown nnoremap <expr> <buffer> <Leader>d <SID>put_timestamp()
+" Zk Journal
+" ----------------------------------------
+nnoremap <Leader>m <Nop>
+nnoremap [zk] <Nop>
+nmap <Leader>m [zk]
+nnoremap [zk]n <Cmd>ZkOpenJournal<CR>
+nnoremap [zk]j <Cmd>ZkSearchJournal<CR>
+" nnoremap <expr> [zk]n <SID>open_journal()
+" nnoremap <expr> [zk]j <SID>search_journal()
+
+let s:zk_dir = expand('$ZK_NOTEBOOK_DIR')
+let s:journal_dir = s:zk_dir . '/journal'
+
+function! s:open_journal() abort
+  let date = strftime('%Y-%m-%d')
+  let file_name = date . '.md'
+  let file_path = s:journal_dir . '/' . file_name
+  let file_path_short = 'zk/journal/' . file_name
+
+  let win_id = bufwinid(file_path_short)
+  if win_id > 0
+    call win_gotoid(win_id)
+  else
+    execute 'edit' file_path
+  endif
+endfunction
+
+function! s:search_journal() abort
+  if FindPlugin('fzf.vim')
+    execute 'Files' s:journal_dir
+  else
+    execute 'edit' s:journal_dir
+  endif
+endfunction
+
+command! -nargs=0 ZkOpenJournal call s:open_journal()
+command! -nargs=0 ZkSearchJournal call s:search_journal()
 
 " Syntax Info
 " ----------------------------------------
