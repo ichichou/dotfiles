@@ -213,6 +213,13 @@ inoremap <expr> <CR> pumvisible() ? '<C-y>' : '<CR>'
 " inoremap <expr> <C-n> pumvisible() ? '<Down>' : '<C-n>'
 " inoremap <expr> <C-p> pumvisible() ? '<Up>' : '<C-p>'
 
+" Window
+" ----------------------------------------
+nnoremap t <Nop>
+nmap t <C-w>
+nnoremap <silent> <C-w>. <Cmd>bnext<CR>
+nnoremap <silent> <C-w>, <Cmd>bprevious<CR>
+
 " Quit by Q
 " ----------------------------------------
 augroup vimrc
@@ -226,10 +233,10 @@ augroup vimrc
   autocmd FileType markdown inoremap <buffer> <Tab> <C-t>
   autocmd FileType markdown inoremap <buffer> <S-Tab> <C-d>
   autocmd FileType markdown inoremap <buffer> <C-d> <Delete>
-  autocmd FileType markdown
-  \ nnoremap <buffer> <Leader>d o## <C-r>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
-  autocmd FileType markdown
-  \ nnoremap <buffer> <Leader>D o<CR>## <C-r>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
+  " autocmd FileType markdown
+  "\ nnoremap <buffer> <Leader>d o## <C-r>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
+  " autocmd FileType markdown
+  "\ nnoremap <buffer> <Leader>D o<CR>## <C-r>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
 augroup END
 
 " Vimrc
@@ -244,30 +251,6 @@ if has('gui_running')
 else
   nnoremap <silent> <Leader>. <Cmd>source $MYVIMRC<CR><Cmd>nohlsearch<CR>
 endif
-
-" Window & Tabpage
-" ----------------------------------------
-nnoremap t <Nop>
-nnoremap [window] <Nop>
-nmap t [window]
-
-nnoremap [window]s <C-w>s
-nnoremap [window]v <C-w>v
-nnoremap [window]= <C-w>=
-
-nnoremap [window]h <C-w>h
-nnoremap [window]j <C-w>j
-nnoremap [window]k <C-w>k
-nnoremap [window]l <C-w>l
-
-nnoremap [window]H <C-w>H
-nnoremap [window]J <C-w>J
-nnoremap [window]K <C-w>K
-nnoremap [window]L <C-w>L
-
-nnoremap <silent> [window]t <Cmd>tabnew<CR>
-nnoremap <silent> [window]n <Cmd>bnext<CR>
-nnoremap <silent> [window]p <Cmd>bprevious<CR>
 
 " Nop
 " ----------------------------------------
@@ -311,11 +294,14 @@ autocmd vimrc VimEnter,DiffUpdated * call s:set_diff_mode()
 
 " DiffOfig (tweaked)
 " ----------------------------------------
-command! DiffOrig vert new | set bt=nofile ft=diff | r ++edit #
-\ | 0d_ | diffthis | wincmd p | diffthis
+command! DiffOrig vertical new | set buftype=nofile filetype=diff
+\ | read ++edit # | 0delete_ | diffthis | wincmd p | diffthis
 
 " Insert Blank Lines
 " ----------------------------------------
+nnoremap <expr> go <SID>blank_below()
+nnoremap <expr> gO <SID>blank_above()
+
 function! s:blank_below(type = '') abort
   if a:type == ''
     set operatorfunc=function('s:blank_below')
@@ -337,9 +323,6 @@ function! s:blank_above(type = '') abort
     call append(line('.') - 1, '')
   endfor
 endfunction
-
-nnoremap <expr> go <SID>blank_below()
-nnoremap <expr> gO <SID>blank_above()
 
 " Time Stamp
 " ----------------------------------------
@@ -404,7 +387,7 @@ function! s:get_syn_info()
 endfunction
 command! -nargs=0 SyntaxInfo call s:get_syn_info()
 
-" Cursor Highlight in Active Window
+" Auto No Cursorline
 " ----------------------------------------
 augroup vimrc
   autocmd VimEnter,BufWinEnter,WinEnter * setlocal cursorline
