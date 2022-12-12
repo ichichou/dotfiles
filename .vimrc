@@ -326,23 +326,35 @@ endfunction
 
 " Time Stamp
 " ----------------------------------------
-" function! s:put_timestamp() abort
-"     let l:timestamp = '## ' . strftime('%Y-%m-%d %H:%M:%S')
-"     let l:blank = nr2char(10)
-"
-"     if strlen(getline('.')) > 0
-"         put =l:blank . l:timestamp . l:blank
-"         normal! i
-"     elseif strlen(getline(line('.') - 1)) > 0
-"         put =l:timestamp . l:blank
-"         normal! i
-"     else
-"         call append(getline('.') - 1, l:timestamp)
-"         normal! i
-"     endif
-" endfunction
-"
-" autocmd vimrc FileType markdown nnoremap <expr> <buffer> <Leader>d <SID>put_timestamp()
+augroup vimrc
+  " autocmd FileType markdown nnoremap <expr> <buffer> <Leader>d <SID>timestamp_below()
+  " autocmd FileType markdown nnoremap <expr> <buffer> <Leader>D <SID>
+  autocmd FileType markdown nnoremap <silent> <buffer> <Leader>d <Cmd>TimeStampBelow<CR>
+  autocmd FileType markdown nnoremap <silent> <buffer> <Leader>D <Cmd>TimeStampAbove<CR>
+augroup END
+
+let s:timestamp = '## ' . strftime('%Y-%m-%d %H:%M:%S')
+
+function! s:timestamp_below() abort
+  if strlen(getline('.')) > 0
+    put =nr2char(10) . s:timestamp
+    put =nr2char(10)
+  elseif strlen(getline(line('.') - 1)) > 0
+    put =s:timestamp
+    put =nr2char(10)
+  else
+    call append(line('.') - 1, s:timestamp)
+  endif
+  normal! i
+endfunction
+
+function! s:timestamp_above() abort
+  call append(line('.') - 1, s:timestamp)
+endfunction
+
+command! -nargs=0 TimeStampBelow call s:timestamp_below()
+command! -nargs=0 TimeStampAbove call s:timestamp_above()
+
 " Zk Journal
 " ----------------------------------------
 nnoremap <Leader>m <Nop>
