@@ -107,11 +107,11 @@ if !has('nvim')
   let &t_Cs = "\e[4:3m"
   let &t_Ce = "\e[4:0m"
 
-  if has('vim_starting')
-    let &t_SI .= "\e[6 q"
-    let &t_EI .= "\e[2 q"
-    let &t_SR .= "\e[4 q"
-  endif
+  " if has('vim_starting')
+  "   let &t_SI .= "\e[6 q"
+  "   let &t_EI .= "\e[2 q"
+  "   let &t_SR .= "\e[4 q"
+  " endif
 endif
 
 set title
@@ -345,11 +345,12 @@ function! s:timestamp_below() abort
   else
     call append(line('.') - 1, s:timestamp)
   endif
-  normal! i
+  startinsert
 endfunction
 
 function! s:timestamp_above() abort
-  call append(line('.') - 1, s:timestamp)
+  " call append(line('.') - 1, s:timestamp)
+  put! =s:timestamp
 endfunction
 
 command! -nargs=0 TimeStampBelow call s:timestamp_below()
