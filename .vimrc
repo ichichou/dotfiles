@@ -453,7 +453,7 @@ augroup END
 
 " Convert Hankaku/Zenkaku
 " ----------------------------------------
-runtime! scripts/hz_ja.vim
+" runtime! scripts/hz_ja.vim
 
 " Plugins
 " ========================================
