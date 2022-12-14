@@ -324,62 +324,71 @@ function! s:blank_above(type = '') abort
   endfor
 endfunction
 
-" Time Stamp
+" Timestamp
 " ----------------------------------------
 augroup vimrc
   " autocmd FileType markdown nnoremap <expr> <buffer> <Leader>d <SID>timestamp_below()
-  " autocmd FileType markdown nnoremap <expr> <buffer> <Leader>D <SID>
-  autocmd FileType markdown nnoremap <silent> <buffer> <Leader>d <Cmd>TimeStampBelow<CR>
-  autocmd FileType markdown nnoremap <silent> <buffer> <Leader>D <Cmd>TimeStampAbove<CR>
+  " autocmd FileType markdown nnoremap <expr> <buffer> <Leader>D <SID>timestamp_above()
+  autocmd FileType markdown nnoremap <buffer> <Leader>d <Cmd>TimestampBelow<CR>
+  autocmd FileType markdown nnoremap <buffer> <Leader>D <Cmd>TimestampAbove<CR>
 augroup END
 
-let s:timestamp = '## ' . strftime('%Y-%m-%d %H:%M:%S')
+function! s:set_timestamp() abort
+  let timestamp = '## ' . strftime('%Y-%m-%d %H:%M:%S')
+  return timestamp
+endfunction
 
 function! s:timestamp_below() abort
+  let timestamp = s:set_timestamp()
+  let blank = nr2char(10)
+
   if strlen(getline('.')) > 0
-    put =nr2char(10) . s:timestamp
-    put =nr2char(10)
+    put =blank . timestamp
+    put =blank
   elseif strlen(getline(line('.') - 1)) > 0
-    put =s:timestamp
-    put =nr2char(10)
+    put =timestamp
+    put =blank
   else
-    call append(line('.') - 1, s:timestamp)
+    call append(line('.') - 1, timestamp)
   endif
   startinsert
 endfunction
 
 function! s:timestamp_above() abort
-  " call append(line('.') - 1, s:timestamp)
-  put! =s:timestamp
+  let timestamp = s:set_timestamp()
+
+  if strlen(getline('.')) > 0
+    put! =timestamp
+  else
+    call setline(line('.'), timestamp)
+  endif
 endfunction
 
-command! -nargs=0 TimeStampBelow call s:timestamp_below()
-command! -nargs=0 TimeStampAbove call s:timestamp_above()
+command! -nargs=0 TimestampBelow call s:timestamp_below()
+command! -nargs=0 TimestampAbove call s:timestamp_above()
 
 " Zk Journal
 " ----------------------------------------
 nnoremap <Leader>m <Nop>
 nnoremap [zk] <Nop>
 nmap <Leader>m [zk]
-nnoremap [zk]n <Cmd>ZkOpenJournal<CR>
-nnoremap [zk]j <Cmd>ZkSearchJournal<CR>
 " nnoremap <expr> [zk]n <SID>open_journal()
 " nnoremap <expr> [zk]j <SID>search_journal()
+nnoremap [zk]n <Cmd>ZkOpenJournal<CR>
+nnoremap [zk]j <Cmd>ZkSearchJournal<CR>
 
 let s:zk_dir = expand('$ZK_NOTEBOOK_DIR')
 let s:journal_dir = s:zk_dir . '/journal'
 
 function! s:open_journal() abort
-  let date = strftime('%Y-%m-%d')
-  let file_name = date . '.md'
-  let file_path = s:journal_dir . '/' . file_name
-  let file_path_short = 'zk/journal/' . file_name
+  let file_name = strftime('%Y-%m-%d') . '.md'
+  let file_path_pattern = 'zk/journal/' . file_name
+  let win_id = bufwinid(file_path_pattern)
 
-  let win_id = bufwinid(file_path_short)
   if win_id > 0
     call win_gotoid(win_id)
   else
-    execute 'edit' file_path
+    execute 'edit' s:journal_dir . '/' . file_name
   endif
 endfunction
 
