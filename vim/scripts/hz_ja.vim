@@ -68,33 +68,33 @@ command! -nargs=0 -range Zenkaku <line1>,<line2>call <SID>ToggleLineWise('Zenkak
 command! -nargs=0 -range ToggleHZ <line1>,<line2>call <SID>ToggleLineWise('Toggle')
 command! -nargs=1 -range -complete=custom,HzjaConvertComplete HzjaConvert <line1>,<line2>call <SID>HzjaConvert(<q-args>)
 
-vnoremap <silent> gHL <C-¥><C-N>:call <SID>HzjaConvertVisual('han_all')<CR>
-vnoremap <silent> gZL <C-¥><C-N>:call <SID>HzjaConvertVisual('zen_all')<CR>
-vnoremap <silent> gHA <C-¥><C-N>:call <SID>HzjaConvertVisual('han_ascii')<CR>
-vnoremap <silent> gZA <C-¥><C-N>:call <SID>HzjaConvertVisual('zen_ascii')<CR>
-vnoremap <silent> gHM <C-¥><C-N>:call <SID>HzjaConvertVisual('han_kigou')<CR>
-vnoremap <silent> gZM <C-¥><C-N>:call <SID>HzjaConvertVisual('zen_kigou')<CR>
-vnoremap <silent> gHW <C-¥><C-N>:call <SID>HzjaConvertVisual('han_eisu')<CR>
-vnoremap <silent> gZW <C-¥><C-N>:call <SID>HzjaConvertVisual('zen_eisu')<CR>
-vnoremap <silent> gHJ <C-¥><C-N>:call <SID>HzjaConvertVisual('han_kana')<CR>
-vnoremap <silent> gZJ <C-¥><C-N>:call <SID>HzjaConvertVisual('zen_kana')<CR>
+" vnoremap <silent> gHL <C-¥><C-N>:call <SID>HzjaConvertVisual('han_all')<CR>
+" vnoremap <silent> gZL <C-¥><C-N>:call <SID>HzjaConvertVisual('zen_all')<CR>
+" vnoremap <silent> gHA <C-¥><C-N>:call <SID>HzjaConvertVisual('han_ascii')<CR>
+" vnoremap <silent> gZA <C-¥><C-N>:call <SID>HzjaConvertVisual('zen_ascii')<CR>
+" vnoremap <silent> gHM <C-¥><C-N>:call <SID>HzjaConvertVisual('han_kigou')<CR>
+" vnoremap <silent> gZM <C-¥><C-N>:call <SID>HzjaConvertVisual('zen_kigou')<CR>
+" vnoremap <silent> gHW <C-¥><C-N>:call <SID>HzjaConvertVisual('han_eisu')<CR>
+" vnoremap <silent> gZW <C-¥><C-N>:call <SID>HzjaConvertVisual('zen_eisu')<CR>
+" vnoremap <silent> gHJ <C-¥><C-N>:call <SID>HzjaConvertVisual('han_kana')<CR>
+" vnoremap <silent> gZJ <C-¥><C-N>:call <SID>HzjaConvertVisual('zen_kana')<CR>
 
-vnoremap <silent> gHH <C-¥><C-N>:call <SID>HzjaConvertVisual('han_ascii')<CR>
-vnoremap <silent> gZZ <C-¥><C-N>:call <SID>HzjaConvertVisual('zen_kana')<CR>
+" vnoremap <silent> gHH <C-¥><C-N>:call <SID>HzjaConvertVisual('han_ascii')<CR>
+" vnoremap <silent> gZZ <C-¥><C-N>:call <SID>HzjaConvertVisual('zen_kana')<CR>
 
-if has('gui_running')
-  vnoremenu 1.120 PopUp.-SEP3-	<Nop>
-  vnoremenu 1.130.100 PopUp.全角→半角(&H).全部(&L) <C-¥><C-N>:call <SID>HzjaConvertVisual('han_all')<CR>
-  vnoremenu 1.130.110 PopUp.全角→半角(&H).ASCII(&A) <C-¥><C-N>:call <SID>HzjaConvertVisual('han_ascii')<CR>
-  vnoremenu 1.130.120 PopUp.全角→半角(&H).記号(&M) <C-¥><C-N>:call <SID>HzjaConvertVisual('han_kigou')<CR>
-  vnoremenu 1.130.130 PopUp.全角→半角(&H).英数(&W) <C-¥><C-N>:call <SID>HzjaConvertVisual('han_eisu')<CR>
-  vnoremenu 1.130.140 PopUp.全角→半角(&H).カタカナ(&J) <C-¥><C-N>:call <SID>HzjaConvertVisual('han_kana')<CR>
-  vnoremenu 1.140.100 PopUp.半角→全角(&Z).全部(&L) <C-¥><C-N>:call <SID>HzjaConvertVisual('zen_all')<CR>
-  vnoremenu 1.140.110 PopUp.半角→全角(&Z).ASCII(&A) <C-¥><C-N>:call <SID>HzjaConvertVisual('zen_ascii')<CR>
-  vnoremenu 1.140.120 PopUp.半角→全角(&Z).記号(&M) <C-¥><C-N>:call <SID>HzjaConvertVisual('zen_kigou')<CR>
-  vnoremenu 1.140.130 PopUp.半角→全角(&Z).英数(&W) <C-¥><C-N>:call <SID>HzjaConvertVisual('zen_eisu')<CR>
-  vnoremenu 1.140.140 PopUp.半角→全角(&Z).カタカナ(&J) <C-¥><C-N>:call <SID>HzjaConvertVisual('zen_kana')<CR>
-endif
+" if has('gui_running')
+"   vnoremenu 1.120 PopUp.-SEP3-	<Nop>
+"   vnoremenu 1.130.100 PopUp.全角→半角(&H).全部(&L) <C-¥><C-N>:call <SID>HzjaConvertVisual('han_all')<CR>
+"   vnoremenu 1.130.110 PopUp.全角→半角(&H).ASCII(&A) <C-¥><C-N>:call <SID>HzjaConvertVisual('han_ascii')<CR>
+"   vnoremenu 1.130.120 PopUp.全角→半角(&H).記号(&M) <C-¥><C-N>:call <SID>HzjaConvertVisual('han_kigou')<CR>
+"   vnoremenu 1.130.130 PopUp.全角→半角(&H).英数(&W) <C-¥><C-N>:call <SID>HzjaConvertVisual('han_eisu')<CR>
+"   vnoremenu 1.130.140 PopUp.全角→半角(&H).カタカナ(&J) <C-¥><C-N>:call <SID>HzjaConvertVisual('han_kana')<CR>
+"   vnoremenu 1.140.100 PopUp.半角→全角(&Z).全部(&L) <C-¥><C-N>:call <SID>HzjaConvertVisual('zen_all')<CR>
+"   vnoremenu 1.140.110 PopUp.半角→全角(&Z).ASCII(&A) <C-¥><C-N>:call <SID>HzjaConvertVisual('zen_ascii')<CR>
+"   vnoremenu 1.140.120 PopUp.半角→全角(&Z).記号(&M) <C-¥><C-N>:call <SID>HzjaConvertVisual('zen_kigou')<CR>
+"   vnoremenu 1.140.130 PopUp.半角→全角(&Z).英数(&W) <C-¥><C-N>:call <SID>HzjaConvertVisual('zen_eisu')<CR>
+"   vnoremenu 1.140.140 PopUp.半角→全角(&Z).カタカナ(&J) <C-¥><C-N>:call <SID>HzjaConvertVisual('zen_kana')<CR>
+" endif
 
 function! HzjaConvertComplete(argleand, cmdline, curpos)
   call s:Initialize()
