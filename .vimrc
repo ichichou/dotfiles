@@ -90,6 +90,7 @@ augroup vimrc
 augroup END
 
 set diffopt=internal,filler,closeoff,vertical,indent-heuristic,algorithm:histogram
+let g:vim_indent_cont = 0
 
 if !has('nvim')
   set mouse=a
@@ -138,7 +139,6 @@ autocmd vimrc FileType vim setlocal foldmethod=marker
 if has('nvim')
   set cmdheight=0
   set laststatus=3
-  " set winbar=%f
   set listchars=eol:¬,tab:>\ ,space:\ ,trail:-,nbsp:+,extends:>,precedes:<
 else
   set laststatus=2
