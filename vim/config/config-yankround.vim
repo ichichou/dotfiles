@@ -11,5 +11,8 @@ map gP <Plug>(yankround-gP)
 
 nmap <expr> <C-n> yankround#is_active() ? '<Plug>(yankround-next)' : '<SID>(c-n)'
 nmap <expr> <C-p> yankround#is_active() ? '<Plug>(yankround-prev)' : '<SID>(c-p)'
-map <silent> <SID>(c-n) <Plug>(edgemotion-j)
-map <silent> <SID>(c-p) <Plug>(edgemotion-k)
+
+nmap <silent> <SID>(c-n) <Plug>(edgemotion-j)
+nmap <silent> <SID>(c-p) <Plug>(edgemotion-k)
+vmap <silent> <C-n> <Plug>(edgemotion-j)
+vmap <silent> <C-p> <Plug>(edgemotion-k)
