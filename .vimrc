@@ -451,6 +451,10 @@ augroup vimrc
   autocmd WinLeave * setlocal nocursorline
 augroup END
 
+" Convert Hankaku/Zenkaku
+" ----------------------------------------
+runtime! scripts/hz_ja.vim
+
 " Plugins
 " ========================================
 let g:data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'

@@ -68,6 +68,9 @@ command! -nargs=0 -range Zenkaku <line1>,<line2>call <SID>ToggleLineWise('Zenkak
 command! -nargs=0 -range ToggleHZ <line1>,<line2>call <SID>ToggleLineWise('Toggle')
 command! -nargs=1 -range -complete=custom,HzjaConvertComplete HzjaConvert <line1>,<line2>call <SID>HzjaConvert(<q-args>)
 
+command! -nargs=0 -range HanAscii <line1>,<line2>call <SID>HzjaConvertVisual('han_ascii')<CR>
+command! -nargs=0 -range ZenKana <line1>,<line2>call <SID>HzjaConvertVisual('zen_kana')<CR>
+
 " vnoremap <silent> gHL <C-¥><C-N>:call <SID>HzjaConvertVisual('han_all')<CR>
 " vnoremap <silent> gZL <C-¥><C-N>:call <SID>HzjaConvertVisual('zen_all')<CR>
 " vnoremap <silent> gHA <C-¥><C-N>:call <SID>HzjaConvertVisual('han_ascii')<CR>
