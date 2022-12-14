@@ -204,11 +204,12 @@ noremap - <C-x>
 nnoremap U <C-r>
 nnoremap <C-h> <C-^>
 
-nnoremap <silent> <Esc><Esc> <Cmd>nohlsearch<CR>
-nnoremap <silent> <Leader>t <Cmd>terminal ++close<CR>
+nnoremap <Esc><Esc> <Cmd>nohlsearch<CR>
+nnoremap <Leader>t <Cmd>terminal ++close<CR>
 
-" Completion
+" Search & Completion
 " ----------------------------------------
+nnoremap & <Cmd>&&<CR>
 inoremap <expr> <CR> pumvisible() ? '<C-y>' : '<CR>'
 " inoremap <expr> <C-n> pumvisible() ? '<Down>' : '<C-n>'
 " inoremap <expr> <C-p> pumvisible() ? '<Up>' : '<C-p>'
@@ -217,13 +218,13 @@ inoremap <expr> <CR> pumvisible() ? '<C-y>' : '<CR>'
 " ----------------------------------------
 nnoremap t <Nop>
 nmap t <C-w>
-nnoremap <silent> <C-w>. <Cmd>bnext<CR>
-nnoremap <silent> <C-w>, <Cmd>bprevious<CR>
+nnoremap <C-w>. <Cmd>bnext<CR>
+nnoremap <C-w>, <Cmd>bprevious<CR>
 
 " Quit by Q
 " ----------------------------------------
 augroup vimrc
-  autocmd FileType help,qf,man,ref,diff,quickrun nnoremap <silent> <buffer> q <Cmd>quit!<CR>
+  autocmd FileType help,qf,man,ref,diff,quickrun nnoremap <buffer> q <Cmd>quit!<CR>
   autocmd QuickFixCmdPost *grep*,make if len(getqflist()) != 0 | cwindow | endif
 augroup END
 
@@ -233,23 +234,20 @@ augroup vimrc
   autocmd FileType markdown inoremap <buffer> <Tab> <C-t>
   autocmd FileType markdown inoremap <buffer> <S-Tab> <C-d>
   autocmd FileType markdown inoremap <buffer> <C-d> <Delete>
-  " autocmd FileType markdown
-  "\ nnoremap <buffer> <Leader>d o## <C-r>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
-  " autocmd FileType markdown
-  "\ nnoremap <buffer> <Leader>D o<CR>## <C-r>=strftime('%Y-%m-%d %H:%M:%S')<CR><CR>
 augroup END
 
 " Vimrc
 " ----------------------------------------
-nnoremap <silent> <Leader><Leader> <Cmd>edit $MYVIMRC<CR>
-nnoremap <silent> <Leader>/ <Cmd>edit $HOME/dotfiles/vim/config<CR>
+nnoremap <Leader><Leader> <Cmd>edit $MYVIMRC<CR>
+nnoremap <Leader>/ <Cmd>edit $HOME/dotfiles/vim/config<CR>
 
 if has('gui_running')
-  nnoremap <silent> <Leader><lt> <Cmd>edit $MYGVIMRC<CR>
-  nnoremap <silent> <Leader>.
+  nnoremap <Leader><lt> <Cmd>edit $MYGVIMRC<CR>
+  nnoremap <Leader>.
   \ <Cmd>source $MYVIMRC<CR><Cmd>source $MYGVIMRC<CR><Cmd>nohlsearch<CR>
 else
-  nnoremap <silent> <Leader>. <Cmd>source $MYVIMRC<CR><Cmd>nohlsearch<CR>
+  nnoremap <Leader>.
+  \ <Cmd>source $MYVIMRC<CR><Cmd>nohlsearch<CR>
 endif
 
 " Nop
