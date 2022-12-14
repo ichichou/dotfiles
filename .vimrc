@@ -487,6 +487,13 @@ endif
 
 " Language
 " ----------------------------------------
+if has('nvim')
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+else
+  let g:polyglot_disabled = ['markdown.plugin', 'csv.plugin', 'r-lang.plugin']
+  Plug 'sheerun/vim-polyglot'
+endif
+
 Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
 Plug 'mechatroner/rainbow_csv', {'for': 'csv'}
 Plug 'prettier/vim-prettier', {'do': 'yarn install --frozen-lockfile --production', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html']}
@@ -496,13 +503,6 @@ Plug 'vim-jp/syntax-vim-ex', {'for': 'vim'}
 Plug 'godlygeek/tabular'
 " Plug 'joker1007/vim-markdown-quote-syntax', {'for': 'markdown'}
 Plug 'rcmdnk/vim-markdown', {'for': 'markdown'}
-
-if has('nvim')
-  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-else
-  let g:polyglot_disabled = ['markdown.plugin', 'csv.plugin', 'r-lang.plugin']
-  Plug 'sheerun/vim-polyglot'
-endif
 
 " Edditing
 " ----------------------------------------
