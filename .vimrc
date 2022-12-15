@@ -136,13 +136,13 @@ set matchpairs+=（:）,「:」,『:』,〈:〉,《:》,【:】,〔:〕,［:］,
 set nofoldenable
 autocmd vimrc FileType vim setlocal foldmethod=marker
 
-if has('nvim')
+if !has('nvim')
+  set laststatus=2
+  set listchars=eol:¬,tab:»\ ,space:\ ,trail:\ ,nbsp:~,extends:>,precedes:<
+else
   set cmdheight=0
   set laststatus=3
   set listchars=eol:¬,tab:>\ ,space:\ ,trail:-,nbsp:+,extends:>,precedes:<
-else
-  set laststatus=2
-  set listchars=eol:¬,tab:»\ ,space:\ ,trail:\ ,nbsp:~,extends:>,precedes:<
 endif
 
 " Search & Completion
@@ -155,12 +155,12 @@ set gdefault
 set wildoptions=pum,tagfile
 set pumheight=10
 set shortmess+=mrF
-set shortmess-=S
 
-if has('nvim')
-  set completeopt=menuone,noinsert
-else
+if !has('nvim')
+  set shortmess-=S
   set completeopt=menuone,noinsert,popup
+else
+  set completeopt=menuone,noinsert
 endif
 
 if executable('rg')
@@ -451,7 +451,7 @@ augroup vimrc
   autocmd WinLeave * setlocal nocursorline
 augroup END
 
-" Convert Hankaku/Zenkaku
+" Hankaku/Zenkaku
 " ----------------------------------------
 " runtime! scripts/hz_ja.vim
 
@@ -464,10 +464,10 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-if has('nvim')
-  call plug#begin(stdpath('data') . '/plugged')
-else
+if !has('nvim')
   call plug#begin('~/.vim/plugged')
+else
+  call plug#begin(stdpath('data') . '/plugged')
 endif
 
 " Language Server
@@ -480,18 +480,15 @@ if !has('nvim')
   Plug 'mattn/vim-lsp-icons'
   Plug 'hrsh7th/vim-vsnip'
   Plug 'hrsh7th/vim-vsnip-integ'
-  " Plug 'vim-denops/denops.vim'
-  " Plug 'Shougo/ddc.vim'
-  " Plug 'shun/ddc-vim-lsp'
 endif
 
 " Language
 " ----------------------------------------
-if has('nvim')
-  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-else
+if !has('nvim')
   let g:polyglot_disabled = ['markdown.plugin', 'csv.plugin', 'r-lang.plugin']
   Plug 'sheerun/vim-polyglot'
+else
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 endif
 
 Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
@@ -535,13 +532,13 @@ Plug 'itchyny/vim-highlighturl'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'rbtnn/vim-ambiwidth'
 
-if has('nvim')
+if !has('nvim')
+  Plug 'cocopon/lightline-hybrid.vim'
+  Plug 'itchyny/lightline.vim'
+else
   Plug 'MunifTanjim/nui.nvim'
   " Plug 'rcarriga/nvim-notify'
   Plug 'folke/noice.nvim'
-else
-  Plug 'cocopon/lightline-hybrid.vim'
-  Plug 'itchyny/lightline.vim'
 endif
 
 " Operator & Text Object
