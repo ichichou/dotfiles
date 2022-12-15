@@ -192,6 +192,7 @@ noremap gk k
 noremap x "_x
 noremap X "_X
 nnoremap Y y$
+nnoremap & <Cmd>&&<CR>
 inoremap <C-u> <C-g>u<C-u>
 inoremap <C-w> <C-g>u<C-w>
 cnoremap <C-n> <Down>
