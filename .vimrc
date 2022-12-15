@@ -152,15 +152,13 @@ set ignorecase
 set smartcase
 set gdefault
 
+set completeopt=menuone,noinsert
 set wildoptions=pum,tagfile
-set pumheight=10
+set pumheight=20
 set shortmess+=mrF
 
 if !has('nvim')
   set shortmess-=S
-  set completeopt=menuone,noinsert,popup
-else
-  set completeopt=menuone,noinsert
 endif
 
 if executable('rg')
@@ -209,8 +207,9 @@ nnoremap <Leader>t <Cmd>terminal ++close<CR>
 
 " Search & Completion
 " ----------------------------------------
-nnoremap & <Cmd>&&<CR>
 inoremap <expr> <CR> pumvisible() ? '<C-y>' : '<CR>'
+inoremap <expr> <Tab> pumvisible() ? '<C-n>' : '<Tab>'
+inoremap <expr> <S-Tab> pumvisible() ? '<C-p>' : '<S-Tab>'
 " inoremap <expr> <C-n> pumvisible() ? '<Down>' : '<C-n>'
 " inoremap <expr> <C-p> pumvisible() ? '<Up>' : '<C-p>'
 

@@ -16,8 +16,8 @@ augroup END
 " let g:lsp_preview_float = 0
 " let g:lsp_text_edit_enabled = 0
 " let g:lsp_completion_documentation_enabled = 0
-let g:lsp_preview_max_width = 100
-" let g:lsp_preview_max_height = 80
+" let g:lsp_preview_max_width = 200
+" let g:lsp_preview_max_height = 100
 
 " Diagnostics
 " let g:lsp_diagnostics_enabled = 0
@@ -33,14 +33,26 @@ let g:lsp_inlay_hints_enabled = 1
 " let g:lsp_document_highlight_delay = 200
 
 " Semantic Highlight
-let g:lsp_semantic_enabled = 1
+" let g:lsp_semantic_enabled = 1
 " let g:lsp_semantic_delay = 200
 
-UsePlugin 'asyncomplete.vim:'
-UsePlugin 'asyncomplete-lsp.vim:'
-
 " Asyncomplete
-let g:asyncomplete_auto_completeopt = 0
-" let g:asyncomplete_auto_popup = 0
-" let g:asyncomplete_popup_delay = 200
-" let g:asyncomplete_min_chars = 0
+if FindPlugin('asyncomplete.vim')
+  " let g:asyncomplete_auto_completeopt = 0
+  " let g:asyncomplete_auto_popup = 0
+  " let g:asyncomplete_popup_delay = 200
+  " let g:asyncomplete_min_chars = 0
+
+  function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+  endfunction
+
+  inoremap <silent> <expr> <CR>
+    \ pumvisible() ? asyncomplete#close_popup() : '<CR>'
+  inoremap <silent> <expr> <TAB>
+    \ pumvisible() ? '<C-n>' :
+    \ <SID>check_back_space() ? '<TAB>' :
+    \ asyncomplete#force_refresh()
+  inoremap <expr> <S-TAB> pumvisible() ? '<C-p>' : '<C-h>'
+endif
