@@ -73,6 +73,7 @@ set shiftround
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+let g:vim_indent_cont = 0
 
 augroup vimrc
   autocmd FileType c,cpp,java setlocal tabstop=4 softtabstop=4 shiftwidth=4 cindent
@@ -90,7 +91,6 @@ augroup vimrc
 augroup END
 
 set diffopt=internal,filler,closeoff,vertical,indent-heuristic,algorithm:histogram
-let g:vim_indent_cont = 0
 
 if !has('nvim')
   set mouse=a
@@ -544,7 +544,7 @@ endif
 " Operator & Text Object
 " ----------------------------------------
 Plug 'kana/vim-operator-user'
-Plug 'haya14busa/vim-operator-flashy'
+" Plug 'haya14busa/vim-operator-flashy'
 Plug 'kana/vim-operator-replace'
 Plug 'rhysd/vim-operator-surround'
 
