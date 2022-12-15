@@ -1,3 +1,3 @@
 UsePlugin 'noice.nvim'
 
-lua require("noice").setup()
+lua require('noice').setup()

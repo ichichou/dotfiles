@@ -53,6 +53,7 @@ set nowritebackup
 set shell=fish
 set history=10000
 set helplang=ja,en
+set spelllang+=cjk
 set nrformats=bin,hex
 set clipboard=unnamed,unnamedplus
 set ttyfast
@@ -139,10 +140,12 @@ autocmd vimrc FileType vim setlocal foldmethod=marker
 if !has('nvim')
   set laststatus=2
   set listchars=eol:¬,tab:»\ ,space:\ ,trail:\ ,nbsp:~,extends:>,precedes:<
+  set fillchars+=vert:│
 else
   set cmdheight=0
   set laststatus=3
   set listchars=eol:¬,tab:>\ ,space:\ ,trail:-,nbsp:+,extends:>,precedes:<
+  " set fillchars+=horiz:━,horizup:┻,horizdown:┳,vert:┃,vertleft:┫,vertright:┣,verthoriz:╋,
 endif
 
 " Search & Completion
@@ -290,7 +293,7 @@ function! s:set_diff_mode() abort
 endfunction
 autocmd vimrc VimEnter,DiffUpdated * call s:set_diff_mode()
 
-" DiffOfig (tweaked)
+" DiffOfig (Tweaked)
 " ----------------------------------------
 command! DiffOrig vertical new | set buftype=nofile filetype=diff
 \ | read ++edit # | 0delete_ | diffthis | wincmd p | diffthis
@@ -446,10 +449,16 @@ command! -nargs=0 SyntaxInfo call s:get_syn_info()
 
 " Auto No Cursorline
 " ----------------------------------------
-augroup vimrc
-  autocmd VimEnter,BufWinEnter,WinEnter * setlocal cursorline
-  autocmd WinLeave * setlocal nocursorline
-augroup END
+" augroup vimrc
+"   autocmd VimEnter,BufWinEnter,WinEnter * setlocal cursorline
+"   autocmd WinLeave * setlocal nocursorline
+" augroup END
+
+" Highlight on Yank
+" ----------------------------------------
+if has('nvim')
+  autocmd vimrc TextYankPost * silent! lua vim.highlight.on_yank {higroup='Visual', timeout=200, on_visual=false}
+endif
 
 " Hankaku/Zenkaku
 " ----------------------------------------
@@ -498,10 +507,9 @@ Plug 'previm/previm', {'for': 'markdown'}
 Plug 'vim-jp/syntax-vim-ex', {'for': 'vim'}
 
 Plug 'godlygeek/tabular'
-" Plug 'joker1007/vim-markdown-quote-syntax', {'for': 'markdown'}
 Plug 'rcmdnk/vim-markdown', {'for': 'markdown'}
 
-" Edditing
+" Editing
 " ----------------------------------------
 Plug 'AndrewRadev/linediff.vim'
 Plug 'airblade/vim-gitgutter'
@@ -514,7 +522,6 @@ Plug 'haya14busa/vim-edgemotion'
 Plug 'kana/vim-niceblock'
 Plug 'kana/vim-repeat'
 Plug 'kana/vim-smartinput'
-Plug 'machakann/vim-highlightedyank'
 Plug 'mattn/vim-maketable'
 Plug 'rcmdnk/yankround.vim'
 Plug 'thinca/vim-quickrun'
@@ -525,6 +532,10 @@ packadd! matchit
 set runtimepath+=/opt/homebrew/opt/fzf
 Plug 'junegunn/fzf.vim'
 
+if !has('nvim')
+  Plug 'machakann/vim-highlightedyank'
+endif
+
 " Appearance
 " ----------------------------------------
 Plug 'haya14busa/is.vim'
@@ -534,11 +545,13 @@ Plug 'rbtnn/vim-ambiwidth'
 
 if !has('nvim')
   Plug 'cocopon/lightline-hybrid.vim'
+  Plug 'delphinus/vim-auto-cursorline'
   Plug 'itchyny/lightline.vim'
 else
   Plug 'MunifTanjim/nui.nvim'
   " Plug 'rcarriga/nvim-notify'
   Plug 'folke/noice.nvim'
+  Plug 'delphinus/auto-cursorline.nvim'
 endif
 
 " Operator & Text Object
