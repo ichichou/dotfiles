@@ -103,7 +103,7 @@ BetterTouchTool が使えるようになった後は以下の設定にする：
 ### 2. プラグインマネージャー
 #### Fisher
 1. [Fisher のインストールコマンド](https://github.com/jorgebucaran/fisher)を実行。
-1. `$ fisher jethrokuan/z jethrokuan/fzf rafaelrinaldi/pure`
+1. `$ fisher jethrokuan/z jethrokuan/fzf pure-fish/pure`
 
 #### NPM
 1. `$ npm -g install npm`
