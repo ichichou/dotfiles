@@ -103,13 +103,16 @@ endif
 set termguicolors
 
 if !has('nvim')
+  " True Color
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
+  " Undercurl
   let &t_Cs = "\e[4:3m"
   let &t_Ce = "\e[4:0m"
 
   " if has('vim_starting')
+  "   " Corsor Style
   "   let &t_SI .= "\e[6 q"
   "   let &t_EI .= "\e[2 q"
   "   let &t_SR .= "\e[4 q"
