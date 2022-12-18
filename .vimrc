@@ -226,10 +226,19 @@ inoremap <expr> <S-Tab> pumvisible() ? '<C-p>' : '<S-Tab>'
 
 " Window
 " ----------------------------------------
-nnoremap t <Nop>
 nmap t <C-w>
 nnoremap <C-w>. <Cmd>bnext<CR>
 nnoremap <C-w>, <Cmd>bprevious<CR>
+
+nmap <C-w>+ <C-w>+<SID>ws
+nmap <C-w>- <C-w>-<SID>ws
+nmap <C-w>> <C-w>><SID>ws
+nmap <C-w>< <C-w><<SID>ws
+nnoremap <script> <SID>ws+ <C-w>+<SID>ws
+nnoremap <script> <SID>ws- <C-w>-<SID>ws
+nnoremap <script> <SID>ws> <C-w>><SID>ws
+nnoremap <script> <SID>ws< <C-w><<SID>ws
+nmap <SID>ws <Nop>
 
 " Quit by Q
 " ----------------------------------------
