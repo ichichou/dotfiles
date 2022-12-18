@@ -22,9 +22,9 @@ nnoremap <silent> [fzf]b <Cmd>Buffers<CR>
 nnoremap <silent> [fzf]c <Cmd>Colors<CR>
 nnoremap <silent> [fzf]f <Cmd>Files<CR>
 nnoremap <silent> [fzf]h <Cmd>History<CR>
-nnoremap <silent> [fzf]l <Cmd>BLines<CR>
+nnoremap <silent> [fzf]l <Cmd>Lines<CR>
 nnoremap <silent> [fzf]m <Cmd>Marks<CR>
+nnoremap <silent> [fzf]r <Cmd>Rg<CR>
 nnoremap <silent> [fzf]t <Cmd>Filetypes<CR>
 
-" nnoremap [fzf]r <Cmd>Rg<Space>
 nnoremap <silent> <Leader>b <Cmd>Buffers<CR>
