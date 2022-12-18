@@ -43,7 +43,12 @@ augroup END
 
 " Colorscheme
 set background=dark
-let s:colorscheme = 'everforest'
+
+if !has('nvim')
+  let s:colorscheme = 'everforest'
+else
+  let s:colorscheme = 'nordfox'
+endif
 
 execute 'colorscheme' s:colorscheme
 let g:lightline_colorscheme = s:colorscheme
