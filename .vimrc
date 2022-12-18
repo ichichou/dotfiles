@@ -509,6 +509,19 @@ if !has('nvim')
   Plug 'hrsh7th/vim-vsnip-integ'
 endif
 
+" Completion
+" ----------------------------------------
+if !has('nvim')
+  Plug 'vim-denops/denops.vim'
+  Plug 'Shougo/pum.vim'
+  Plug 'Shougo/ddc.vim'
+  Plug 'Shougo/ddc-ui-native'
+  Plug 'Shougo/ddc-around'
+  Plug 'Shougo/ddc-matcher_head'
+  Plug 'Shougo/ddc-sorter_rank'
+  Plug 'Shougo/ddc-converter_remove_overlap'
+endif
+
 " Language
 " ----------------------------------------
 if !has('nvim')
