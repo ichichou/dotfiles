@@ -81,6 +81,7 @@ augroup vimrc
   autocmd FileType go setlocal tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
   autocmd FileType html,css setlocal tabstop=2 softtabstop=2 shiftwidth=2
   autocmd FileType json setlocal tabstop=2 softtabstop=2 shiftwidth=2
+  autocmd FileType lua setlocal tabstop=2 softtabstop=2 shiftwidth=2
   autocmd FileType nim setlocal tabstop=2 softtabstop=2 shiftwidth=2
   autocmd FileType r setlocal tabstop=2 softtabstop=2 shiftwidth=2
   autocmd FileType vim setlocal tabstop=2 softtabstop=2 shiftwidth=2
@@ -621,3 +622,6 @@ endfunction
 command! -nargs=1 UsePlugin if !FindPlugin(<args>) | finish | endif
 
 runtime! config/config-*.vim
+if has('nvim')
+  runtime! config/config-*.lua
+endif
