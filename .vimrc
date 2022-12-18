@@ -198,7 +198,7 @@ noremap gk k
 noremap x "_x
 noremap X "_X
 nnoremap Y y$
-nnoremap & <Cmd>&&<CR>
+nnoremap & :&&<CR>
 inoremap <C-u> <C-g>u<C-u>
 inoremap <C-w> <C-g>u<C-w>
 cnoremap <C-n> <Down>
@@ -206,11 +206,15 @@ cnoremap <C-p> <Up>
 
 noremap + <C-a>
 noremap - <C-x>
+noremap g+ g<C-a>
+noremap g- g<C-x>
 nnoremap U <C-r>
 nnoremap <C-h> <C-^>
+" inoremap <C-d> <Delete>
 
 nnoremap <Esc><Esc> <Cmd>nohlsearch<CR>
 nnoremap <Leader>t <Cmd>terminal ++close<CR>
+cnoremap <C-x> <C-r>=expand('%:p')<CR>
 
 " Search & Completion
 " ----------------------------------------
@@ -460,7 +464,8 @@ command! -nargs=0 SyntaxInfo call s:get_syn_info()
 " Highlight on Yank
 " ----------------------------------------
 if has('nvim')
-  autocmd vimrc TextYankPost * silent! lua vim.highlight.on_yank {higroup='Visual', timeout=200, on_visual=false}
+  autocmd vimrc TextYankPost * silent! lua
+  \ vim.highlight.on_yank {higroup='Visual', timeout=200, on_visual=false}
 endif
 
 " Hankaku/Zenkaku
