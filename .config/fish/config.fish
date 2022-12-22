@@ -128,9 +128,11 @@ end
 set -x EDITOR vim
 
 ### Fzf
-set -x FZF_LEGACY_KEYBINDINGS 0
-set -x FZF_DEFAULT_COMMAND 'rg --files --hidden --follow --glob "!.git/*"'
-set -x FZF_FIND_FILE_COMMAND $FZF_DEFAULT_COMMAND
+set -x FZF_DEFAULT_COMMAND 'fd --type file --strip-cwd-prefix --hidden --follow --exclude .git'
+set -x FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
+# set -x FZF_DEFAULT_OPTS '--height 40% --info=inline --border'
+set -x FZF_CTRL_T_OPTS '--preview "bat --style=numbers --color=always --line-range :500 {}"'
+# set -x FZF_CTRL_R_OPTS '--layout=reverse'
 
 ### Zk
 set -x ZK_NOTEBOOK_DIR ~/repos/zk
