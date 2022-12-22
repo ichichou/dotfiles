@@ -71,9 +71,9 @@ set breakindent
 set expandtab
 set smarttab
 set shiftround
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+setglobal tabstop=4
+setglobal softtabstop=4
+setglobal shiftwidth=4
 let g:vim_indent_cont = 0
 
 augroup vimrc
