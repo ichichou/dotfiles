@@ -1,0 +1,1 @@
+require('auto-cursorline').setup()
