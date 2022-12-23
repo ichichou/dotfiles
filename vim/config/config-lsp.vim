@@ -35,24 +35,3 @@ let g:lsp_inlay_hints_enabled = 1
 " Semantic Highlight
 " let g:lsp_semantic_enabled = 1
 " let g:lsp_semantic_delay = 200
-
-" Asyncomplete
-if FindPlugin('asyncomplete.vim')
-  " let g:asyncomplete_auto_completeopt = 0
-  " let g:asyncomplete_auto_popup = 0
-  " let g:asyncomplete_popup_delay = 200
-  " let g:asyncomplete_min_chars = 0
-
-  function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~ '\s'
-  endfunction
-
-  inoremap <silent> <expr> <CR>
-    \ pumvisible() ? asyncomplete#close_popup() : '<CR>'
-  inoremap <silent> <expr> <TAB>
-    \ pumvisible() ? '<C-n>' :
-    \ <SID>check_back_space() ? '<TAB>' :
-    \ asyncomplete#force_refresh()
-  inoremap <expr> <S-TAB> pumvisible() ? '<C-p>' : '<C-h>'
-endif
