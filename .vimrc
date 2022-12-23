@@ -71,23 +71,23 @@ set breakindent
 set expandtab
 set smarttab
 set shiftround
-setglobal tabstop=4
-setglobal softtabstop=4
-setglobal shiftwidth=4
+set tabstop=4
+set shiftwidth=4
+set softtabstop=-1
 
 augroup vimrc
-  autocmd FileType c,cpp,java setlocal tabstop=4 softtabstop=4 shiftwidth=4 cindent
-  autocmd FileType go setlocal tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
-  autocmd FileType html,css setlocal tabstop=2 softtabstop=2 shiftwidth=2
-  autocmd FileType json setlocal tabstop=2 softtabstop=2 shiftwidth=2
-  autocmd FileType lua setlocal tabstop=2 softtabstop=2 shiftwidth=2
-  autocmd FileType nim setlocal tabstop=2 softtabstop=2 shiftwidth=2
-  autocmd FileType r setlocal tabstop=2 softtabstop=2 shiftwidth=2
-  autocmd FileType vim setlocal tabstop=2 softtabstop=2 shiftwidth=2
+  autocmd FileType css setlocal tabstop=2 shiftwidth=2
+  autocmd FileType go setlocal noexpandtab
+  autocmd FileType html setlocal tabstop=2 shiftwidth=2
+  autocmd FileType json setlocal tabstop=2 shiftwidth=2
+  autocmd FileType lua setlocal tabstop=2 shiftwidth=2
+  autocmd FileType nim setlocal tabstop=2 shiftwidth=2
+  autocmd FileType r setlocal tabstop=2 shiftwidth=2
+  autocmd FileType vim setlocal tabstop=2 shiftwidth=2
 augroup END
-let g:vim_indent_cont = shiftwidth() * 2
 
 augroup vimrc
+  autocmd FileType vim let g:vim_indent_cont = shiftwidth() * 2
   autocmd FileType gitcommit setlocal fileencoding=utf-8
   autocmd BufRead,BufNewFile *.{txt,text} setlocal filetype=markdown
 augroup END
@@ -526,6 +526,7 @@ endif
 " ----------------------------------------
 if !has('nvim')
   let g:polyglot_disabled = ['markdown.plugin', 'csv.plugin', 'r-lang.plugin']
+  " let g:polyglot_disabled = ['sensible', 'markdown.plugin', 'csv.plugin', 'r-lang.plugin']
   Plug 'sheerun/vim-polyglot'
 else
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
