@@ -74,7 +74,6 @@ set shiftround
 setglobal tabstop=4
 setglobal softtabstop=4
 setglobal shiftwidth=4
-let g:vim_indent_cont = 0
 
 augroup vimrc
   autocmd FileType c,cpp,java setlocal tabstop=4 softtabstop=4 shiftwidth=4 cindent
@@ -86,6 +85,7 @@ augroup vimrc
   autocmd FileType r setlocal tabstop=2 softtabstop=2 shiftwidth=2
   autocmd FileType vim setlocal tabstop=2 softtabstop=2 shiftwidth=2
 augroup END
+let g:vim_indent_cont = shiftwidth() * 2
 
 augroup vimrc
   autocmd FileType gitcommit setlocal fileencoding=utf-8
