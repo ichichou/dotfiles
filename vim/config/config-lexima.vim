@@ -13,7 +13,7 @@ if FindPlugin('asyncomplete.vim')
   inoremap <silent><expr> <CR> pumvisible() ?
      \ asyncomplete#close_popup() :
      \ '<C-r>=lexima#expand("<LT>CR>", "i")<CR>'
-elseif FindPlugin('ddc.vim') && FindPlugin('pum.vim')
+elseif FindPlugin('ddc.vim')
   inoremap <silent><expr> <CR> pum#visible() ?
      \ '<Cmd>call pum#map#confirm()<CR>' :
      \ '<C-r>=lexima#expand("<LT>CR>", "i")<CR>'
