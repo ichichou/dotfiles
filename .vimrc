@@ -500,8 +500,8 @@ endif
 " Language Server
 " ----------------------------------------
 if !has('nvim')
-  Plug 'prabirshrestha/asyncomplete.vim'
-  Plug 'prabirshrestha/asyncomplete-lsp.vim'
+  " Plug 'prabirshrestha/asyncomplete.vim'
+  " Plug 'prabirshrestha/asyncomplete-lsp.vim'
   Plug 'prabirshrestha/vim-lsp'
   Plug 'mattn/vim-lsp-settings'
   Plug 'mattn/vim-lsp-icons'
@@ -512,14 +512,15 @@ endif
 " Completion
 " ----------------------------------------
 if !has('nvim')
-  " Plug 'vim-denops/denops.vim'
-  " Plug 'Shougo/pum.vim'
-  " Plug 'Shougo/ddc.vim'
-  " Plug 'Shougo/ddc-ui-native'
-  " Plug 'Shougo/ddc-around'
-  " Plug 'Shougo/ddc-matcher_head'
-  " Plug 'Shougo/ddc-sorter_rank'
-  " Plug 'Shougo/ddc-converter_remove_overlap'
+  Plug 'vim-denops/denops.vim'
+  Plug 'Shougo/pum.vim'
+  Plug 'Shougo/ddc.vim'
+  Plug 'Shougo/ddc-ui-native'
+  Plug 'Shougo/ddc-converter_remove_overlap'
+  Plug 'Shougo/ddc-matcher_head'
+  Plug 'Shougo/ddc-sorter_rank'
+  Plug 'Shougo/ddc-source-around'
+  Plug 'shun/ddc-source-vim-lsp'
 endif
 
 " Language
