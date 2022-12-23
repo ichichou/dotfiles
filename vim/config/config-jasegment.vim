@@ -5,4 +5,4 @@ call jasegment#define('nonblank', {
     \ 'move-p': 'gB',
     \ 'select-i': 'iE',
     \ 'select-a': 'aE',
-\ })
+    \ })

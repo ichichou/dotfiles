@@ -6,11 +6,11 @@ UsePlugin 'fzf.vim'
 let g:fzf_buffers_jump = 1
 
 command! -bang -nargs=? -complete=dir Files
-  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
 command! -bang -nargs=* Rg
-  \ call fzf#vim#grep('rg --column --line-number --no-heading --color=always --smart-case -- ' . shellescape(<q-args>),
-  \ 1, fzf#vim#with_preview(), <bang>0)
+    \ call fzf#vim#grep('rg --column --line-number --no-heading --color=always --smart-case -- ' . shellescape(<q-args>),
+    \ 1, fzf#vim#with_preview(), <bang>0)
 
 nnoremap <Leader>f <Nop>
 nnoremap [fzf] <Nop>
