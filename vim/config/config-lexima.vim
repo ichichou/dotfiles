@@ -18,3 +18,15 @@ elseif FindPlugin('ddc.vim') && FindPlugin('pum.vim')
      \ '<Cmd>call pum#map#confirm()<CR>' :
      \ '<C-r>=lexima#expand("<LT>CR>", "i")<CR>'
 endif
+
+call lexima#add_rule({'char': '<BS>', 'at': '（\%#）', 'input': '<BS>', 'delete': 1})
+call lexima#add_rule({'char': '<BS>', 'at': '「\%#」', 'input': '<BS>', 'delete': 1})
+call lexima#add_rule({'char': '<BS>', 'at': '『\%#』', 'input': '<BS>', 'delete': 1})
+call lexima#add_rule({'char': '<BS>', 'at': '〈\%#〉', 'input': '<BS>', 'delete': 1})
+call lexima#add_rule({'char': '<BS>', 'at': '【\%#】', 'input': '<BS>', 'delete': 1})
+
+call lexima#add_rule({'char': '<BS>', 'at': '（）\%#', 'input': '<BS><BS>'})
+call lexima#add_rule({'char': '<BS>', 'at': '「」\%#', 'input': '<BS><BS>'})
+call lexima#add_rule({'char': '<BS>', 'at': '『』\%#', 'input': '<BS><BS>'})
+call lexima#add_rule({'char': '<BS>', 'at': '〈〉\%#', 'input': '<BS><BS>'})
+call lexima#add_rule({'char': '<BS>', 'at': '【】\%#', 'input': '<BS><BS>'})
