@@ -161,9 +161,10 @@ set gdefault
 set completeopt=menuone,noinsert
 set wildoptions=pum,tagfile
 set pumheight=20
-set shortmess+=mrF
+set shortmess+=cmrF
 
 if !has('nvim')
+  set shortmess+=c
   set shortmess-=S
 endif
 
@@ -201,8 +202,6 @@ nnoremap Y y$
 nnoremap & :&&<CR>
 inoremap <C-u> <C-g>u<C-u>
 inoremap <C-w> <C-g>u<C-w>
-cnoremap <C-n> <Down>
-cnoremap <C-p> <Up>
 
 noremap + <C-a>
 noremap - <C-x>
@@ -221,8 +220,6 @@ cnoremap <C-x> <C-r>=expand('%:p')<CR>
 inoremap <expr> <CR> pumvisible() ? '<C-y>' : '<CR>'
 inoremap <expr> <Tab> pumvisible() ? '<C-n>' : '<Tab>'
 inoremap <expr> <S-Tab> pumvisible() ? '<C-p>' : '<S-Tab>'
-" inoremap <expr> <C-n> pumvisible() ? '<Down>' : '<C-n>'
-" inoremap <expr> <C-p> pumvisible() ? '<Up>' : '<C-p>'
 
 " Window
 " ----------------------------------------
@@ -535,12 +532,15 @@ if !has('nvim')
   Plug 'vim-denops/denops.vim'
   Plug 'Shougo/pum.vim'
   Plug 'Shougo/ddc.vim'
-  Plug 'Shougo/ddc-ui-native'
-  Plug 'Shougo/ddc-converter_remove_overlap'
-  Plug 'Shougo/ddc-matcher_head'
-  Plug 'Shougo/ddc-sorter_rank'
+  " Plug 'Shougo/ddc-ui-native'
+  Plug 'Shougo/ddc-ui-pum'
   Plug 'Shougo/ddc-source-around'
   Plug 'shun/ddc-source-vim-lsp'
+  Plug 'Shougo/ddc-source-cmdline'
+  Plug 'Shougo/ddc-source-cmdline-history'
+  Plug 'Shougo/ddc-matcher_head'
+  Plug 'Shougo/ddc-sorter_rank'
+  Plug 'Shougo/ddc-converter_remove_overlap'
 endif
 
 " Language
