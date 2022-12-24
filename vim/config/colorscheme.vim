@@ -31,7 +31,7 @@ augroup vimrc
   autocmd VimEnter,ColorScheme * highlight! link htmlBold WarningMsg
   autocmd VimEnter,ColorScheme * highlight! link htmlBoldItalic ErrorMsg
   autocmd VimEnter,ColorScheme * highlight! link HighlightedyankRegion Visual
-  autocmd VimEnter,ColorScheme * highlight! link ExtraWhitespace IncSearch
+  autocmd VimEnter,ColorScheme * highlight! link ExtraWhitespace Visual
 
   autocmd VimEnter,ColorScheme * highlight! link EasyMotionTarget ErrorMsg
   autocmd VimEnter,ColorScheme * highlight! link EasyMotionShade Comment
