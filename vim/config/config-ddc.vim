@@ -27,13 +27,6 @@ call ddc#custom#patch_filetype(['markdown'], 'sourceParams', {
       \ })
 
 " Keymap
-" inoremap <expr> <Tab> pum#visible() ?
-"       \ '<Cmd>call pum#map#insert_relative(+1)<CR>' :
-"       \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
-"       \ '<Tab>' : ddc#map#manual_complete()
-" inoremap <expr> <S-Tab> pum#visible() ?
-"       \ '<Cmd>call pum#map#insert_relative(-1)<CR>' : '<C-h>'
-
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~ '\s'
@@ -43,7 +36,7 @@ inoremap <expr> <Tab> pum#visible() ?
       \ '<Cmd>call pum#map#insert_relative(+1)<CR>' :
       \ <SID>check_back_space() ? '<Tab>' : ddc#map#manual_complete()
 inoremap <expr> <S-Tab> pum#visible() ?
-      \ '<Cmd>call pum#map#insert_relative(-1)<CR>' : '<C-h>'
+      \ '<Cmd>call pum#map#insert_relative(-1)<CR>' : '<C-d>'
 
 " With YankRound, EdgeMotion...
 inoremap <expr> <C-n> pum#visible() ?
