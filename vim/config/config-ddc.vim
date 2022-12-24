@@ -58,9 +58,9 @@ nmap <silent> <SID>(c-p) <Plug>(edgemotion-k)
 vmap <silent> <C-n> <Plug>(edgemotion-j)
 vmap <silent> <C-p> <Plug>(edgemotion-k)
 
-inoremap <C-y> pum#visible() ?
+inoremap <expr> <C-y> pum#visible() ?
       \ '<Cmd>call pum#map#confirm()<CR>' : '<C-y>'
-inoremap <C-e> pum#visible() ?
+inoremap <expr> <C-e> pum#visible() ?
       \ '<Cmd>call pum#map#cancel()<CR>' : '<C-e>'
 
 if !FindPlugin('lexima.vim')
