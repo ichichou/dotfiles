@@ -477,6 +477,27 @@ if has('nvim')
         \ vim.highlight.on_yank {higroup='Visual', timeout=200, on_visual=false}
 endif
 
+" Vertical Help
+" ----------------------------------------
+nnoremap gK <Cmd>HelpVerticalCword<CR>
+vnoremap gK <Cmd>HelpVerticalSelected<CR>
+
+function! s:help_vertical_cword() abort
+  let word = expand('<cword>')
+  if word != ''
+    execute 'vertical help' word
+  endif
+endfunction
+
+function! s:help_vertical_selected() abort
+  execute 'silent normal! "vy'
+  let word = @v
+  execute 'vertical help' word
+endfunction
+
+command! -nargs=0 HelpVerticalCword call s:help_vertical_cword()
+command! -nargs=0 HelpVerticalSelected call s:help_vertical_selected()
+
 " Hankaku/Zenkaku
 " ----------------------------------------
 " runtime! scripts/hz_ja.vim
