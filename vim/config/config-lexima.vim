@@ -11,12 +11,12 @@ call lexima#set_default_rules()
 " Remap <CR> with completion plugin
 if FindPlugin('asyncomplete.vim')
   inoremap <silent><expr> <CR> pumvisible() ?
-     \ asyncomplete#close_popup() :
-     \ '<C-r>=lexima#expand("<LT>CR>", "i")<CR>'
+        \ asyncomplete#close_popup() :
+        \ '<C-r>=lexima#expand("<LT>CR>", "i")<CR>'
 elseif FindPlugin('ddc.vim')
   inoremap <silent><expr> <CR> pum#visible() ?
-     \ '<Cmd>call pum#map#confirm()<CR>' :
-     \ '<C-r>=lexima#expand("<LT>CR>", "i")<CR>'
+        \ '<Cmd>call pum#map#confirm()<CR>' :
+        \ '<C-r>=lexima#expand("<LT>CR>", "i")<CR>'
 endif
 
 call lexima#add_rule({'char': '<BS>', 'at': '（\%#）', 'input': '<BS>', 'delete': 1})

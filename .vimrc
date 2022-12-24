@@ -87,7 +87,6 @@ augroup vimrc
 augroup END
 
 augroup vimrc
-  autocmd FileType vim let g:vim_indent_cont = shiftwidth() * 2
   autocmd FileType gitcommit setlocal fileencoding=utf-8
   autocmd BufRead,BufNewFile *.{txt,text} setlocal filetype=markdown
 augroup END
@@ -264,10 +263,10 @@ nnoremap <Leader>/ <Cmd>edit $HOME/dotfiles/vim/config<CR>
 if has('gui_running')
   nnoremap <Leader><lt> <Cmd>edit $MYGVIMRC<CR>
   nnoremap <Leader>.
-  \ <Cmd>source $MYVIMRC<CR><Cmd>source $MYGVIMRC<CR><Cmd>nohlsearch<CR>
+        \ <Cmd>source $MYVIMRC<CR><Cmd>source $MYGVIMRC<CR><Cmd>nohlsearch<CR>
 else
   nnoremap <Leader>.
-  \ <Cmd>source $MYVIMRC<CR><Cmd>nohlsearch<CR>
+        \ <Cmd>source $MYVIMRC<CR><Cmd>nohlsearch<CR>
 endif
 
 " Nop
@@ -313,7 +312,7 @@ autocmd vimrc VimEnter,DiffUpdated * call s:set_diff_mode()
 " DiffOfig (Tweaked)
 " ----------------------------------------
 command! DiffOrig vertical new | set buftype=nofile filetype=diff
-\ | read ++edit # | 0delete_ | diffthis | wincmd p | diffthis
+      \ | read ++edit # | 0delete_ | diffthis | wincmd p | diffthis
 
 " Insert Blank Lines
 " ----------------------------------------
@@ -439,28 +438,28 @@ function! s:get_syn_attr(synid)
   let guifg = synIDattr(a:synid, 'fg', 'gui')
   let guibg = synIDattr(a:synid, 'bg', 'gui')
   return {
-    \ 'name': name,
-    \ 'ctermfg': ctermfg,
-    \ 'ctermbg': ctermbg,
-    \ 'guifg': guifg,
-    \ 'guibg': guibg
-  \ }
+        \ 'name': name,
+        \ 'ctermfg': ctermfg,
+        \ 'ctermbg': ctermbg,
+        \ 'guifg': guifg,
+        \ 'guibg': guibg
+        \ }
 endfunction
 
 function! s:get_syn_info()
   let baseSyn = s:get_syn_attr(s:get_syn_id(0))
   echo 'name: ' . baseSyn.name .
-    \ ' ctermfg: ' . baseSyn.ctermfg .
-    \ ' ctermbg: ' . baseSyn.ctermbg .
-    \ ' guifg: ' . baseSyn.guifg .
-    \ ' guibg: ' . baseSyn.guibg
+        \ ' ctermfg: ' . baseSyn.ctermfg .
+        \ ' ctermbg: ' . baseSyn.ctermbg .
+        \ ' guifg: ' . baseSyn.guifg .
+        \ ' guibg: ' . baseSyn.guibg
   let linkedSyn = s:get_syn_attr(s:get_syn_id(1))
   echo 'link to'
   echo 'name: ' . linkedSyn.name .
-    \ ' ctermfg: ' . linkedSyn.ctermfg .
-    \ ' ctermbg: ' . linkedSyn.ctermbg .
-    \ ' guifg: ' . linkedSyn.guifg .
-    \ ' guibg: ' . linkedSyn.guibg
+        \ ' ctermfg: ' . linkedSyn.ctermfg .
+        \ ' ctermbg: ' . linkedSyn.ctermbg .
+        \ ' guifg: ' . linkedSyn.guifg .
+        \ ' guibg: ' . linkedSyn.guibg
 endfunction
 command! -nargs=0 SyntaxInfo call s:get_syn_info()
 
@@ -475,7 +474,7 @@ command! -nargs=0 SyntaxInfo call s:get_syn_info()
 " ----------------------------------------
 if has('nvim')
   autocmd vimrc TextYankPost * silent! lua
-  \ vim.highlight.on_yank {higroup='Visual', timeout=200, on_visual=false}
+        \ vim.highlight.on_yank {higroup='Visual', timeout=200, on_visual=false}
 endif
 
 " Hankaku/Zenkaku
@@ -487,7 +486,7 @@ endif
 let g:data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
   silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs
-  \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
