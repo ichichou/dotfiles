@@ -579,7 +579,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'rbtnn/vim-ambiwidth'
 
 if !has('nvim')
-  Plug 'cocopon/lightline-hybrid.vim'
+  " Plug 'cocopon/lightline-hybrid.vim'
   Plug 'delphinus/vim-auto-cursorline'
   Plug 'itchyny/lightline.vim'
 else
@@ -616,13 +616,12 @@ endif
 " Plug 'arcticicestudio/nord-vim'
 Plug 'EdenEast/nightfox.nvim'
 Plug 'cocopon/iceberg.vim'
-Plug 'jacoborus/tender.vim'
 Plug 'sainnhe/edge'
 Plug 'sainnhe/everforest'
 Plug 'sainnhe/gruvbox-material'
 Plug 'sainnhe/sonokai'
 Plug 'shaunsingh/nord.nvim'
-Plug 'w0ng/vim-hybrid'
+" Plug 'w0ng/vim-hybrid'
 
 call plug#end()
 
