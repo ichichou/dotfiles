@@ -1,6 +1,6 @@
 UsePlugin 'fzf.vim'
 
-" let g:fzf_layout = {'down': '~60%'}
+" let g:fzf_layout = { 'down': '40%' }
 " let g:fzf_preview_window = ['right,50%', 'ctrl-/']
 " let g:fzf_preview_window = ['right,50%,<70(up,40%)', 'ctrl-/']
 let g:fzf_buffers_jump = 1
