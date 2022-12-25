@@ -209,10 +209,12 @@ noremap g+ g<C-a>
 noremap g- g<C-x>
 nnoremap U <C-r>
 nnoremap <C-h> <C-^>
+inoremap <C-a> <C-o>^
+inoremap <C-e> <C-o>$
 " inoremap <C-d> <Delete>
 
 nnoremap <Esc><Esc> <Cmd>nohlsearch<CR>
-nnoremap <Leader>t <Cmd>terminal ++close<CR>
+" nnoremap <Leader>t <Cmd>terminal ++close<CR>
 cnoremap <C-x> <C-r>=expand('%:p')<CR>
 
 " Search & Completion
