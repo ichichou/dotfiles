@@ -6,7 +6,7 @@ call ddc#custom#patch_global('completionMenu', 'pum.vim')
 call ddc#custom#patch_global('autoCompleteEvents', [
       \ 'InsertEnter', 'TextChangedI', 'TextChangedP', 'CmdlineChanged',
       \ ])
-call ddc#custom#patch_global('sources', ['around', 'vim-lsp', 'vsnip'])
+call ddc#custom#patch_global('sources', ['vim-lsp', 'vsnip', 'omni', 'around'])
 
 call ddc#custom#patch_global('sourceOptions', {
       \ '_': {
@@ -15,12 +15,17 @@ call ddc#custom#patch_global('sourceOptions', {
       \   'converters': ['converter_remove_overlap'],
       \   'ignoreCase': v:true,
       \ },
-      \ 'around': { 'mark': 'A' },
-      \ 'vsnip': { 'mark': 'SNIP' },
       \ 'vim-lsp': {
       \   'mark': 'LSP',
       \   'minAutoCompleteLength': 1,
       \ },
+      \ 'vsnip': {
+      \   'mark': 'VS',
+      \   'minAutoCompleteLength': 1,
+      \   'dup': v:true,
+      \ },
+      \ 'omni': { 'mark': 'Omni' },
+      \ 'around': { 'mark': 'A' },
       \ })
 
 call ddc#custom#patch_global('sourceParams', {
@@ -40,31 +45,29 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 
-if !FindPlugin('pum.vim')
-  inoremap <expr> <Tab> pumvisible() ? '<C-n>' :
-        \ <SID>check_back_space() ? '<Tab>' :
-        \ ddc#map#manual_complete()
-  inoremap <expr> <S-Tab> pumvisible() ? '<C-p>' : '<C-d>'
-  inoremap <expr> <C-e> pumvisible() ? ddc#hide('Manual') : '<C-e>'
-  " inoremap <expr> <CR> pumvisible() ? '<C-y>' : '<CR>'
-else
-  inoremap <expr> <Tab> pum#visible() ? pum#map#insert_relative(+1) :
-        \ <SID>check_back_space() ? '<Tab>' :
-        \ ddc#map#manual_complete()
-  inoremap <expr> <S-Tab> pum#visible() ? pum#map#insert_relative(-1) :
-        \ '<C-d>'
-  inoremap <expr> <C-n> pum#visible() ? pum#map#insert_relative(+1) : '<C-n>'
-  inoremap <expr> <C-p> pum#visible() ? pum#map#insert_relative(-1) : '<C-p>'
-  inoremap <expr> <Down> pum#visible() ? pum#map#select_relative(+1) : '<Down>'
-  inoremap <expr> <Up> pum#visible() ? pum#map#select_relative(-1) : '<Up>'
-  inoremap <expr> <C-y> pum#visible() ? pum#map#confirm() : '<C-y>'
-  inoremap <expr> <C-e> pum#visible() ? pum#map#cancel() : '<C-e>'
-  " inoremap <expr> <CR> pum#visible() ? pum#map#confirm() : '<CR>'
-endif
+imap <expr> <Tab>
+      \ pum#visible() ? pum#map#insert_relative(+1) :
+      \ pumvisible() ? '<C-n>' :
+      \ vsnip#jumpable(1) ? '<Plug>(vsnip-jump-next)' :
+      \ <SID>check_back_space() ? '<Tab>' : ddc#map#manual_complete()
+imap <expr> <S-Tab>
+      \ pum#visible() ? pum#map#insert_relative(-1) :
+      \ pumvisible() ? '<C-p>' :
+      \ vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-next)' : '<C-d>'
+smap <expr> <Tab> vsnip#jumpable(1) ? '<Plug>(vsnip-jump-next)' : '<Tab>'
+smap <expr> <S-Tab> vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
+inoremap <expr> <C-n> pum#visible() ? pum#map#insert_relative(+1) : '<C-n>'
+inoremap <expr> <C-p> pum#visible() ? pum#map#insert_relative(-1) : '<C-p>'
+inoremap <expr> <Down> pum#visible() ? pum#map#select_relative(+1) : '<Down>'
+inoremap <expr> <Up> pum#visible() ? pum#map#select_relative(-1) : '<Up>'
+inoremap <expr> <C-y> pum#visible() ? pum#map#confirm() : '<C-y>'
+inoremap <expr> <C-e>
+      \ pum#visible() ? pum#map#cancel() :
+      \ pumvisible() ? ddc#hide('Manual') : '<C-o>$'
 
-" Commandline Completion
+" Commandline
 " ----------------------------------------
-noremap : <Cmd>call CmdlinePre()<CR>:
+noremap ; <Cmd>call CmdlinePre()<CR>:
 
 function! CmdlinePre() abort
   cnoremap <expr> <Tab> pum#visible() ? pum#map#insert_relative(+1) : ddc#map#manual_complete()
@@ -75,6 +78,7 @@ function! CmdlinePre() abort
   cnoremap <expr> <Up> pum#map#insert_relative(-1)
   cnoremap <expr> <C-y> pum#map#confirm()
   cnoremap <expr> <C-e> pum#map#cancel()
+  cnoremap <expr> <CR> pum#visible() ? pum#map#confirm() . '<CR>' : '<CR>'
 
   " Overwrite sources
   if !exists('b:prev_buffer_config')
@@ -82,9 +86,9 @@ function! CmdlinePre() abort
   endif
   call ddc#custom#patch_buffer('cmdlineSources', ['cmdline', 'cmdline-history', 'around'])
   call ddc#custom#patch_buffer('sourceOptions', {
-        \ '_': { 'minAutoCompleteLength': 1 },
-        \ 'cmdline': { 'mark': 'CMD' },
-        \ 'cmdline-history': { 'mark': 'HIST' },
+        \ '_': { 'minAutoCompleteLength': 2 },
+        \ 'cmdline': { 'mark': 'Cmd' },
+        \ 'cmdline-history': { 'mark': 'Hist' },
         \ })
 
   autocmd User DDCCmdlineLeave ++once call CmdlinePost()
@@ -103,6 +107,7 @@ function! CmdlinePost() abort
   silent! cunmap <Up>
   silent! cunmap <C-y>
   silent! cunmap <C-e>
+  silent! cunmap <CR>
 
   " Restore sources
   if exists('b:prev_buffer_config')
@@ -119,8 +124,13 @@ function! s:skkeleton_pre() abort
   let s:prev_buffer_config = ddc#custom#get_buffer()
   call ddc#custom#patch_buffer('sources', ['skkeleton'])
   call ddc#custom#patch_buffer('sourceOptions', {
-        \ '_': { 'minAutoCompleteLength': 1 },
-        \ 'skkeleton': { 'mark': 'SKK' },
+        \ 'skkeleton': {
+        \   'mark': 'SKK',
+        \   'matchers': ['skkeleton'],
+        \   'sorters': [],
+        \   'minAutoCompleteLength': 2,
+        \   'isVolatile': v:true,
+        \ },
         \ })
 endfunction
 
