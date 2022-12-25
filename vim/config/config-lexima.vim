@@ -20,14 +20,12 @@ call lexima#add_rule({'char': '<BS>', 'at': '『』\%#', 'input': '<BS><BS>'})
 call lexima#add_rule({'char': '<BS>', 'at': '〈〉\%#', 'input': '<BS><BS>'})
 call lexima#add_rule({'char': '<BS>', 'at': '【】\%#', 'input': '<BS><BS>'})
 
+inoremap <silent><expr> <CR>
+      \ pum#visible() ? pum#map#confirm() :
+      \ pumvisible() ? '<C-y>' :
+      \ lexima#expand('<LT>CR>', 'i')
+
 if FindPlugin('asyncomplete.vim')
   inoremap <silent><expr> <CR> pumvisible() ?
         \ asyncomplete#close_popup() : lexima#expand('<LT>CR>', 'i')
-endif
-
-if !FindPlugin('pum.vim')
-  inoremap <silent><expr> <CR> pumvisible() ? '<C-y>' : lexima#expand('<LT>CR>', 'i')
-else
-  inoremap <silent><expr> <CR> pum#visible() ?
-        \ pum#map#confirm() : lexima#expand('<LT>CR>', 'i')
 endif
