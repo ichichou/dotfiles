@@ -252,6 +252,8 @@ augroup vimrc
   autocmd FileType markdown inoremap <buffer> <Tab> <C-t>
   autocmd FileType markdown inoremap <buffer> <S-Tab> <C-d>
   autocmd FileType markdown inoremap <buffer> <C-d> <Delete>
+  autocmd FileType markdown setlocal comments=b:*,b:-,b:+,b:1.,nb:>
+  autocmd FileType markdown setlocal formatoptions+=jro formatoptions-=c
 augroup END
 
 " Vimrc
