@@ -390,15 +390,15 @@ command! -nargs=0 TimestampAbove call s:timestamp_above()
 nnoremap <Leader>m <Nop>
 nnoremap [zk] <Nop>
 nmap <Leader>m [zk]
-" nnoremap <expr> [zk]n <SID>open_journal()
-" nnoremap <expr> [zk]j <SID>search_journal()
-nnoremap [zk]n <Cmd>ZkOpenJournal<CR>
-nnoremap [zk]j <Cmd>ZkSearchJournal<CR>
+" nnoremap <expr> [zk]n <SID>open_journal_file()
+" nnoremap <expr> [zk]j <SID>open_journal_dir()
+nnoremap [zk]n <Cmd>ZkOpenJournalFile<CR>
+nnoremap [zk]j <Cmd>ZkOpenJournalDir<CR>
 
 let s:zk_dir = expand('$ZK_NOTEBOOK_DIR')
 let s:journal_dir = s:zk_dir . '/journal'
 
-function! s:open_journal() abort
+function! s:open_journal_file() abort
   let file_name = strftime('%Y-%m-%d') . '.md'
   let file_path_pattern = 'zk/journal/' . file_name
   let win_id = bufwinid(file_path_pattern)
@@ -410,16 +410,12 @@ function! s:open_journal() abort
   endif
 endfunction
 
-function! s:search_journal() abort
-  if FindPlugin('fzf.vim')
-    execute 'Files' s:journal_dir
-  else
-    execute 'edit' s:journal_dir
-  endif
+function! s:open_journal_dir() abort
+  execute 'edit' s:journal_dir
 endfunction
 
-command! -nargs=0 ZkOpenJournal call s:open_journal()
-command! -nargs=0 ZkSearchJournal call s:search_journal()
+command! -nargs=0 ZkOpenJournalFile call s:open_journal_file()
+command! -nargs=0 ZkOpenJournalDir call s:open_journal_dir()
 
 " Syntax Info
 " ----------------------------------------
