@@ -538,6 +538,7 @@ if !has('nvim')
   Plug 'Shougo/ddc-ui-pum'
   Plug 'Shougo/ddc-source-around'
   Plug 'shun/ddc-source-vim-lsp'
+  Plug 'Shougo/ddc-source-omni'
   Plug 'Shougo/ddc-source-cmdline'
   Plug 'Shougo/ddc-source-cmdline-history'
   Plug 'Shougo/ddc-matcher_head'
@@ -589,9 +590,9 @@ packadd! matchit
 set runtimepath+=/opt/homebrew/opt/fzf
 Plug 'junegunn/fzf.vim'
 
-" if !has('nvim')
-"   Plug 'machakann/vim-highlightedyank'
-" endif
+if !has('nvim')
+  Plug 'machakann/vim-highlightedyank'
+endif
 
 " Appearance
 " ----------------------------------------
@@ -614,7 +615,7 @@ endif
 " Operator & Text Object
 " ----------------------------------------
 Plug 'kana/vim-operator-user'
-Plug 'haya14busa/vim-operator-flashy'
+" Plug 'haya14busa/vim-operator-flashy'
 Plug 'kana/vim-operator-replace'
 
 Plug 'kana/vim-textobj-user'
@@ -627,10 +628,8 @@ Plug 'brglng/vim-im-select'
 Plug 'deton/jasegment.vim'
 Plug 'deton/jasentence.vim'
 Plug 'haya14busa/vim-migemo'
-
-if !has('nvim')
-  Plug 'vim-jp/vimdoc-ja'
-endif
+Plug 'vim-jp/vimdoc-ja'
+Plug 'vim-skk/skkeleton'
 
 " Colorscheme
 " ----------------------------------------
