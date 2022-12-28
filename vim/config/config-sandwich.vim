@@ -2,20 +2,23 @@ UsePlugin 'vim-sandwich'
 
 let g:sandwich_no_default_key_mappings = 1
 
-nmap S <Nop>
-xmap S <Nop>
+nmap s <Nop>
+xmap s <Nop>
 
-nmap S <Plug>(sandwich-add)
-xmap S <Plug>(sandwich-add)
-omap S <Plug>(sandwich-add)
+nmap s <Plug>(sandwich-add)
+xmap s <Plug>(sandwich-add)
+omap s <Plug>(sandwich-add)
+nmap S <Plug>(sandwich-add)$
+xmap S <Plug>(sandwich-add)$
+omap S <Plug>(sandwich-add)$
 
-nmap Sd <Plug>(sandwich-delete)
-xmap Sd <Plug>(sandwich-delete)
-nmap Sdb <Plug>(sandwich-delete-auto)
+nmap sd <Plug>(sandwich-delete)
+xmap sd <Plug>(sandwich-delete)
+nmap sdb <Plug>(sandwich-delete-auto)
 
-nmap Sc <Plug>(sandwich-replace)
-xmap Sc <Plug>(sandwich-replace)
-nmap Scb <Plug>(sandwich-replace-auto)
+nmap sc <Plug>(sandwich-replace)
+xmap sc <Plug>(sandwich-replace)
+nmap scb <Plug>(sandwich-replace-auto)
 
 xmap ib <Plug>(textobj-sandwich-auto-i)
 xmap ab <Plug>(textobj-sandwich-auto-a)
