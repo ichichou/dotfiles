@@ -133,7 +133,7 @@ set sidescrolloff=5
 set updatetime=100
 set belloff=all
 
-set showmatch
+" set showmatch
 set matchtime=1
 set matchpairs+=（:）,「:」,『:』,〈:〉,《:》,【:】,〔:〕,［:］,｛:｝,‘:’,“:”
 
@@ -588,9 +588,9 @@ packadd! matchit
 set runtimepath+=/opt/homebrew/opt/fzf
 Plug 'junegunn/fzf.vim'
 
-if !has('nvim')
-  Plug 'machakann/vim-highlightedyank'
-endif
+" if !has('nvim')
+"   Plug 'machakann/vim-highlightedyank'
+" endif
 
 " Appearance
 " ----------------------------------------
@@ -613,7 +613,7 @@ endif
 " Operator & Text Object
 " ----------------------------------------
 Plug 'kana/vim-operator-user'
-" Plug 'haya14busa/vim-operator-flashy'
+Plug 'haya14busa/vim-operator-flashy'
 Plug 'kana/vim-operator-replace'
 
 Plug 'kana/vim-textobj-user'
