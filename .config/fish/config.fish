@@ -98,8 +98,8 @@ abbr -ag gcob git checkout -b
 abbr -ag gd git difftool
 abbr -ag gf git fetch
 abbr -ag gfp git fetch --prune
-abbr -ag gl git log --graph --oneline
-abbr -ag glp git log --patch
+abbr -ag gl git log --graph --oneline -n 10
+abbr -ag glp git log --patch -n 10
 abbr -ag gmv git mv --verbose
 abbr -ag gpl git pull
 abbr -ag gps git push
@@ -109,6 +109,7 @@ abbr -ag gr git reset HEAD
 abbr -ag grh git reset --hard HEAD
 abbr -ag grl git reflog
 abbr -ag grm git rm
+abbr -ag grv git revert
 abbr -ag gs git status --short --branch
 abbr -ag gsh git show
 abbr -ag gss git status
