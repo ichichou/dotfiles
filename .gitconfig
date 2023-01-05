@@ -43,33 +43,5 @@
     process = git-lfs filter-process
     required = true
 
-[alias]
-    # a = add
-    # aa = add --all
-    # br = branch
-    # bra = branch --all
-    # brd = branch --delete
-    # cl = clone
-    # cm = commit
-    # cma = commit --all
-    # co = checkout
-    # cob = checkout -b
-    # di = diff
-    # dit = difftool
-    # fe = fetch
-    # fep = fetch --prune
-    # lg = log
-    # lgf = log --graph --oneline --decorate --follow
-    # lgg = log --graph --oneline --decorate
-    # lgp = log --patch
-    # mg = merge
-    # mgt = mergetool
-    # mv = mv --verbose
-    # pl = pull
-    # ps = push
-    # psd = push --delete
-    # psu = push --set-upstream
-    # rl = reflog
-    # s = status --short --branch
-    # sh = show
-    # ss = status
+[credential]
+	helper = osxkeychain
