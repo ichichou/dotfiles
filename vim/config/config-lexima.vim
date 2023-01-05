@@ -24,6 +24,10 @@ call lexima#add_rule({'char': '（', 'at': '\%#$', 'input_after': '）'})
 call lexima#add_rule({'char': '「', 'at': '\%#$', 'input_after': '」'})
 call lexima#add_rule({'char': '『', 'at': '\%#$', 'input_after': '』'})
 
+call lexima#add_rule({'char': '）', 'at': '\%#）', 'leave': 1})
+call lexima#add_rule({'char': '」', 'at': '\%#」', 'leave': 1})
+call lexima#add_rule({'char': '』', 'at': '\%#』', 'leave': 1})
+
 inoremap <silent><expr> <CR>
       \ pum#visible() ? pum#map#confirm() :
       \ pumvisible() ? '<C-y>' :
