@@ -147,7 +147,7 @@ if !has('nvim')
 else
   set cmdheight=0
   set laststatus=3
-  set listchars=eol:¬,tab:>\ ,space:\ ,trail:-,nbsp:+,extends:>,precedes:<
+  set listchars=eol:¬,tab:>\ ,space:\ ,trail:\ ,nbsp:~,extends:>,precedes:<
   " set fillchars+=horiz:━,horizup:┻,horizdown:┳,vert:┃,vertleft:┫,vertright:┣,verthoriz:╋,
 endif
 
