@@ -151,6 +151,32 @@ else
   " set fillchars+=horiz:━,horizup:┻,horizdown:┳,vert:┃,vertleft:┫,vertright:┣,verthoriz:╋,
 endif
 
+set statusline=%!SetStatusLine()
+
+function! SetStatusLine() abort
+  if &fileencoding != ''
+    let fenc = &fileencoding
+  else
+    let fenc = &encoding
+  endif
+
+  if &filetype != ''
+    let ft = &filetype
+  else
+    let ft = 'no ft'
+  endif
+
+  if col('.') < 10
+      let c = '%c  '
+  else 
+      let c = '%c '
+  endif
+
+  return ' %t %m%='
+        \ . '%{&ff}' . ' | ' . fenc . ' | ' . ft
+        \ . '     %p%%  %l:' . c
+endfunction
+
 " Search & Completion
 " ========================================
 set hlsearch
