@@ -235,12 +235,12 @@ noremap g+ g<C-a>
 noremap g- g<C-x>
 nnoremap U <C-r>
 nnoremap <C-h> <C-^>
-inoremap <C-a> <C-o>^
-inoremap <C-e> <C-o>$
 " inoremap <C-d> <Delete>
 
 nnoremap <Esc><Esc> <Cmd>nohlsearch<CR>
-" nnoremap <Leader>t <Cmd>terminal ++close<CR>
+inoremap <C-a> <Cmd>call cursor(0, 1)<CR>
+inoremap <C-e> <Cmd>call cursor(0, col('$'))<CR>
+cnoremap <C-a> <C-b>
 cnoremap <C-x> <C-r>=expand('%:p')<CR>
 
 " Search & Completion

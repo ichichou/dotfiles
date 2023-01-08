@@ -63,7 +63,7 @@ inoremap <expr> <Up> pum#visible() ? pum#map#select_relative(-1) : '<Up>'
 inoremap <expr> <C-y> pum#visible() ? pum#map#confirm() : '<C-y>'
 inoremap <expr> <C-e>
       \ pum#visible() ? pum#map#cancel() :
-      \ pumvisible() ? ddc#hide('Manual') : '<C-o>$'
+      \ pumvisible() ? ddc#hide('Manual') : '<Cmd>call cursor(0, col('$'))<CR>'
 
 " Commandline
 " ----------------------------------------
@@ -77,7 +77,7 @@ function! CmdlinePre() abort
   cnoremap <expr> <Down> pum#map#insert_relative(+1)
   cnoremap <expr> <Up> pum#map#insert_relative(-1)
   cnoremap <expr> <C-y> pum#map#confirm()
-  cnoremap <expr> <C-e> pum#map#cancel()
+  cnoremap <expr> <C-e> pum#visible() ? pum#map#cancel() : '<C-e>'
   cnoremap <expr> <CR> pum#visible() ? pum#map#confirm() . '<CR>' : '<CR>'
 
   " Overwrite sources
