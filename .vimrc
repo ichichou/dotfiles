@@ -154,27 +154,37 @@ endif
 set statusline=%!SetStatusLine()
 
 function! SetStatusLine() abort
-  if &fileencoding != ''
-    let fenc = &fileencoding
+  let fenc = &fileencoding != '' ? &fileencoding : &encoding
+  let ft   = &filetype     != '' ? &filetype     : 'no ft'
+
+  let p = line('.') * 100 / line('$')
+  if p < 10
+    let pp = '     ' . p . '%%'
+  elseif p < 100
+    let pp = '    ' . p . '%%'
   else
-    let fenc = &encoding
+    let pp = '   ' . p . '%%'
   endif
 
-  if &filetype != ''
-    let ft = &filetype
+  if line('.') < 10
+    let l = '    %l:'
+  elseif line('.') < 100
+    let l = '   %l:'
   else
-    let ft = 'no ft'
+    let l = '  %l:'
   endif
 
   if col('.') < 10
-      let c = '%c  '
-  else 
-      let c = '%c '
+    let c = '%c   '
+  elseif col('.') < 100
+    let c = '%c  '
+  else
+    let c = '%c '
   endif
 
   return ' %t %m%='
-        \ . '%{&ff}' . ' | ' . fenc . ' | ' . ft
-        \ . '     %p%%  %l:' . c
+        \ . '%{&fileformat}' . ' | ' . fenc . ' | ' . ft
+        \ . pp . l . c
 endfunction
 
 " Search & Completion
