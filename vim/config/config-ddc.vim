@@ -45,40 +45,54 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 
-imap <expr> <Tab>
-      \ pum#visible() ? pum#map#insert_relative(+1) :
-      \ pumvisible() ? '<C-n>' :
-      \ vsnip#jumpable(1) ? '<Plug>(vsnip-jump-next)' :
-      \ <SID>check_back_space() ? '<Tab>' : ddc#map#manual_complete()
-imap <expr> <S-Tab>
-      \ pum#visible() ? pum#map#insert_relative(-1) :
-      \ pumvisible() ? '<C-p>' :
-      \ vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-next)' : '<C-d>'
-smap <expr> <Tab> vsnip#jumpable(1) ? '<Plug>(vsnip-jump-next)' : '<Tab>'
-smap <expr> <S-Tab> vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
-inoremap <expr> <C-n> pum#visible() ? pum#map#insert_relative(+1) : '<C-n>'
-inoremap <expr> <C-p> pum#visible() ? pum#map#insert_relative(-1) : '<C-p>'
-inoremap <expr> <Down> pum#visible() ? pum#map#select_relative(+1) : '<Down>'
-inoremap <expr> <Up> pum#visible() ? pum#map#select_relative(-1) : '<Up>'
-inoremap <expr> <C-y> pum#visible() ? pum#map#confirm() : '<C-y>'
-inoremap <expr> <C-e>
-      \ pum#visible() ? pum#map#cancel() :
-      \ pumvisible() ? ddc#hide('Manual') : '<Cmd>call cursor(0, col('$'))<CR>'
+if FindPlugin('pum.vim')
+  imap <expr> <Tab>
+        \ pum#visible()           ? pum#map#insert_relative(+1) :
+        \ vsnip#jumpable(1)       ? '<Plug>(vsnip-jump-next)' :
+        \ <SID>check_back_space() ? '<Tab>' : ddc#map#manual_complete()
+  imap <expr> <S-Tab>
+        \ pum#visible()      ? pum#map#insert_relative(-1) :
+        \ vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-next)' : '<C-d>'
+  inoremap <expr> <C-e>
+        \ pum#visible() ? pum#map#cancel() :
+        \ '<Cmd>call cursor(0, col("$"))<CR>'
+  inoremap <expr> <C-n> pum#map#insert_relative(+1)
+  inoremap <expr> <C-p> pum#map#insert_relative(-1)
+  inoremap <expr> <Down> pum#visible() ? pum#map#select_relative(+1) : '<Down>'
+  inoremap <expr> <Up>   pum#visible() ? pum#map#select_relative(-1) : '<Up>'
+  inoremap <expr> <C-y>  pum#visible() ? pum#map#confirm() : '<C-y>'
+endif
+
+if !FindPlugin('pum.vim')
+  imap <expr> <Tab>
+        \ pumvisible()            ? '<C-n>' :
+        \ vsnip#jumpable(1)       ? '<Plug>(vsnip-jump-next)' :
+        \ <SID>check_back_space() ? '<Tab>' : ddc#map#manual_complete()
+  imap <expr> <S-Tab>
+        \ pumvisible()       ? '<C-p>' :
+        \ vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-next)' : '<C-d>'
+  inoremap <expr> <C-e>
+        \ pumvisible() ? ddc#hide('Manual') :
+        \ '<Cmd>call cursor(0, col("$"))<CR>'
+endif
+
+smap <expr> <Tab>   vsnip#jumpable(1)  ? '<Plug>(vsnip-jump-next)' : '<Tab>'
+smap <expr> <S-Tab> vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<S-Tab>'
 
 " Commandline
 " ----------------------------------------
 noremap ; <Cmd>call CmdlinePre()<CR>:
 
 function! CmdlinePre() abort
-  cnoremap <expr> <Tab> pum#visible() ? pum#map#insert_relative(+1) : ddc#map#manual_complete()
+  cnoremap <expr> <Tab>
+        \ pum#visible() ? pum#map#insert_relative(+1) :
+        \ ddc#map#manual_complete()
   cnoremap <expr> <S-Tab> pum#map#insert_relative(-1)
-  " cnoremap <expr> <C-n> pum#map#insert_relative(+1)
-  " cnoremap <expr> <C-p> pum#map#insert_relative(-1)
-  cnoremap <expr> <Down> pum#map#insert_relative(+1)
-  cnoremap <expr> <Up> pum#map#insert_relative(-1)
-  cnoremap <expr> <C-y> pum#map#confirm()
-  cnoremap <expr> <C-e> pum#visible() ? pum#map#cancel() : '<C-e>'
-  cnoremap <expr> <CR> pum#visible() ? pum#map#confirm() . '<CR>' : '<CR>'
+  cnoremap <expr> <C-n>   pum#map#insert_relative(+1)
+  cnoremap <expr> <C-p>   pum#map#insert_relative(-1)
+  cnoremap <expr> <C-y>   pum#map#confirm()
+  cnoremap <expr> <C-e>   pum#visible() ? pum#map#cancel() : '<C-e>'
+  " cnoremap <expr> <CR>    pum#visible() ? pum#map#confirm() . '<CR>' : '<CR>'
 
   " Overwrite sources
   if !exists('b:prev_buffer_config')
@@ -87,8 +101,8 @@ function! CmdlinePre() abort
   call ddc#custom#patch_buffer('cmdlineSources', ['cmdline', 'cmdline-history', 'around'])
   call ddc#custom#patch_buffer('sourceOptions', {
         \ '_': { 'minAutoCompleteLength': 2 },
-        \ 'cmdline': { 'mark': 'Cmd' },
-        \ 'cmdline-history': { 'mark': 'Hist' },
+        \ 'cmdline': { 'mark': 'CMD' },
+        \ 'cmdline-history': { 'mark': 'HIST' },
         \ })
 
   autocmd User DDCCmdlineLeave ++once call CmdlinePost()
@@ -101,13 +115,11 @@ endfunction
 function! CmdlinePost() abort
   silent! cunmap <Tab>
   silent! cunmap <S-Tab>
-  " silent! cunmap <C-n>
-  " silent! cunmap <C-p>
-  silent! cunmap <Down>
-  silent! cunmap <Up>
+  silent! cunmap <C-n>
+  silent! cunmap <C-p>
   silent! cunmap <C-y>
   silent! cunmap <C-e>
-  silent! cunmap <CR>
+  " silent! cunmap <CR>
 
   " Restore sources
   if exists('b:prev_buffer_config')
