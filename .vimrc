@@ -639,10 +639,10 @@ endif
 " Operator & Text Object
 " ----------------------------------------
 Plug 'kana/vim-operator-user'
+Plug 'kana/vim-textobj-user'
+
 Plug 'haya14busa/vim-operator-flashy'
 Plug 'kana/vim-operator-replace'
-
-Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-line'
 
@@ -652,6 +652,7 @@ Plug 'brglng/vim-im-select'
 Plug 'deton/jasegment.vim'
 Plug 'deton/jasentence.vim'
 Plug 'haya14busa/vim-migemo'
+Plug 'mattn/learn-vimscript'
 Plug 'vim-jp/vimdoc-ja'
 Plug 'vim-skk/skkeleton'
 
