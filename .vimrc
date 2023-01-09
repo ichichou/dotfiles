@@ -381,10 +381,8 @@ endfunction
 " Timestamp
 " ----------------------------------------
 augroup vimrc
-  " autocmd FileType markdown nnoremap <expr> <buffer> <Leader>d <SID>timestamp_below()
-  " autocmd FileType markdown nnoremap <expr> <buffer> <Leader>D <SID>timestamp_above()
-  autocmd FileType markdown nnoremap <buffer> <Leader>d <Cmd>TimestampBelow<CR>
-  autocmd FileType markdown nnoremap <buffer> <Leader>D <Cmd>TimestampAbove<CR>
+  autocmd FileType markdown nnoremap <buffer> <Leader>d <Cmd>call <SID>timestamp_below()<CR>
+  autocmd FileType markdown nnoremap <buffer> <Leader>D <Cmd>call <SID>timestamp_above()<CR>
 augroup END
 
 function! s:set_timestamp() abort
@@ -418,18 +416,13 @@ function! s:timestamp_above() abort
   endif
 endfunction
 
-command! -nargs=0 TimestampBelow call s:timestamp_below()
-command! -nargs=0 TimestampAbove call s:timestamp_above()
-
 " Zk Journal
 " ----------------------------------------
 nnoremap <Leader>m <Nop>
 nnoremap [zk] <Nop>
 nmap <Leader>m [zk]
-" nnoremap <expr> [zk]n <SID>open_journal_file()
-" nnoremap <expr> [zk]j <SID>open_journal_dir()
-nnoremap [zk]n <Cmd>ZkOpenJournalFile<CR>
-nnoremap [zk]j <Cmd>ZkOpenJournalDir<CR>
+nnoremap [zk]n <Cmd>call <SID>open_journal_file()<CR>
+nnoremap [zk]j <Cmd>call <SID>open_journal_dir()<CR>
 
 let s:zk_dir = expand('$ZK_NOTEBOOK_DIR')
 let s:journal_dir = s:zk_dir . '/journal'
@@ -449,9 +442,6 @@ endfunction
 function! s:open_journal_dir() abort
   execute 'edit' s:journal_dir
 endfunction
-
-command! -nargs=0 ZkOpenJournalFile call s:open_journal_file()
-command! -nargs=0 ZkOpenJournalDir call s:open_journal_dir()
 
 " Syntax Info
 " ----------------------------------------
@@ -512,8 +502,8 @@ endif
 
 " Vertical Help
 " ----------------------------------------
-nnoremap gK <Cmd>HelpVerticalCword<CR>
-vnoremap gK <Cmd>HelpVerticalSelected<CR>
+nnoremap gK <Cmd>call <SID>help_vertical_cword()<CR>
+vnoremap gK <Cmd>call <SID>help_vertical_selected()<CR>
 
 function! s:help_vertical_cword() abort
   let word = expand('<cword>')
@@ -528,8 +518,6 @@ function! s:help_vertical_selected() abort
   execute 'vertical help' word
 endfunction
 
-command! -nargs=0 HelpVerticalCword call s:help_vertical_cword()
-command! -nargs=0 HelpVerticalSelected call s:help_vertical_selected()
 
 " Hankaku/Zenkaku
 " ----------------------------------------
