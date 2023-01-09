@@ -248,8 +248,8 @@ nnoremap <C-h> <C-^>
 " inoremap <C-d> <Delete>
 
 nnoremap <Esc><Esc> <Cmd>nohlsearch<CR>
-inoremap <C-a> <Cmd>call cursor(0, 1)<CR>
-inoremap <C-e> <Cmd>call cursor(0, col('$'))<CR>
+inoremap <C-a> <Cmd>normal! ^<CR>
+inoremap <C-e> <Cmd>normal! $<CR>
 cnoremap <C-a> <C-b>
 cnoremap <C-x> <C-r>=expand('%:p')<CR>
 
