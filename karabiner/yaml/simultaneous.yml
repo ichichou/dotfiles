@@ -105,7 +105,7 @@ rules:
     - key_code: left_arrow
       repeat: false
 
-- description: "[Simul] R + G / H + U / F + B / N + J → ; / ! ?"
+- description: "[Simul] R + G / H + U / F + B / N + J → : / ! ?"
   manipulators:
   # R + G → Semicolon
   - type: basic
@@ -115,6 +115,8 @@ rules:
       - key_code: g
     to:
     - key_code: semicolon
+      modifiers:
+      - shift
       repeat: false
     conditions:
     - type: input_source_if
