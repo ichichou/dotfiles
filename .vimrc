@@ -166,11 +166,11 @@ function! SetStatusLine() abort
 
   let p = line('.') * 100 / line('$')
   if p < 10
-    let pp = '     ' . p . '%%'
+    let pp = '       ' . p . '%%'
   elseif p < 100
-    let pp = '    ' . p . '%%'
+    let pp = '      ' . p . '%%'
   else
-    let pp = '   ' . p . '%%'
+    let pp = '     ' . p . '%%'
   endif
 
   if line('.') < 10
