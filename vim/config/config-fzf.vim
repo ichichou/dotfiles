@@ -5,9 +5,9 @@ UsePlugin 'fzf.vim'
 " let g:fzf_preview_window = ['right,50%,<70(up,40%)', 'ctrl-/']
 let g:fzf_buffers_jump = 1
 
-nnoremap <Leader>t <Nop>
+nnoremap <Leader>f <Nop>
 nnoremap [fzf] <Nop>
-nmap <Leader>t [fzf]
+nmap <Leader>f [fzf]
 
 nnoremap [fzf]b <Cmd>Buffers<CR>
 nnoremap [fzf]c <Cmd>Colors<CR>
@@ -20,7 +20,7 @@ nnoremap [fzf]r <Cmd>Registers<CR>
 nnoremap [fzf]t <Cmd>Filetypes<CR>
 
 nnoremap <Leader>b <Cmd>Buffers<CR>
-nnoremap <Leader>f <Cmd>Files<CR>
+nnoremap <Leader>t <Cmd>Files<CR>
 
 command! -bang -nargs=? -complete=dir Files
       \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
