@@ -22,6 +22,13 @@ if !has('nvim')
   source $VIMRUNTIME/defaults.vim
 endif
 
+let g:no_vimrc_example = 1
+let g:no_gvimrc_example = 1
+let g:macvim_skip_colorscheme = 1
+if has('gui_macvim')
+  let g:macvim_skip_cmd_opt_movement = 1
+endif
+
 let g:did_install_default_menus = 1
 let g:did_install_syntax_menu   = 1
 let g:loaded_2html_plugin       = 1
