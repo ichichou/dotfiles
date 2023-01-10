@@ -2,6 +2,7 @@
 abbr -ag cp cp -iv
 abbr -ag e exit
 abbr -ag lns ln -snfv
+abbr -ag lnsmvim ln -snfv /opt/homebrew/Cellar/macvim/
 abbr -ag mv mv -iv
 abbr -ag nd nextd
 abbr -ag pd prevd
