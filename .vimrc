@@ -255,6 +255,7 @@ nnoremap <C-h> <C-^>
 " inoremap <C-d> <Delete>
 
 nnoremap <Esc><Esc> <Cmd>nohlsearch<CR>
+nnoremap <Leader>e <Cmd>execute 'silent! !mvim %' \| redraw!<CR>
 inoremap <C-a> <Cmd>normal! ^<CR>
 inoremap <C-e> <Cmd>normal! $<CR>
 cnoremap <C-a> <C-b>
