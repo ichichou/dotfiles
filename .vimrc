@@ -400,14 +400,13 @@ endfunction
 
 function! s:timestamp_below() abort
   let timestamp = s:set_timestamp()
-  let blank = nr2char(10)
 
   if strlen(getline('.')) > 0
-    put =blank . timestamp
-    put =blank
+    call append('.', ['', timestamp, ''])
+    call cursor(line('.') + 3, 1)
   elseif strlen(getline(line('.') - 1)) > 0
-    put =timestamp
-    put =blank
+    call append('.', [timestamp, ''])
+    call cursor(line('.') + 2, 1)
   else
     call append(line('.') - 1, timestamp)
   endif
@@ -418,7 +417,7 @@ function! s:timestamp_above() abort
   let timestamp = s:set_timestamp()
 
   if strlen(getline('.')) > 0
-    put! =timestamp
+    call append(line('.') - 1, timestamp)
   else
     call setline(line('.'), timestamp)
   endif
