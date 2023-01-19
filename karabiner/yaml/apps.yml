@@ -34,7 +34,7 @@ rules:
       - "^org\\.alacritty$"
 
 # [Alacritty] Command-Q 長押しでのみ Alacritty を終了
-- description: "[Alacritty] LCommand-Q (held down) → Alacritty を終了"
+- description: "[Alacritty] LCommand-Q (held down) → Quit Alacritty"
   manipulators:
   - type: basic
     from:
@@ -53,6 +53,43 @@ rules:
     - type: frontmost_application_if
       bundle_identifiers:
       - "^org\\.alacritty$"
+
+# ──── MacVim ────
+
+# [MacVim] Command-W を無効化
+- description: "[MacVim] Command-W → Invalid"
+  manipulators:
+  - type: basic
+    from:
+      key_code: w
+      modifiers:
+        mandatory:
+        - command
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^org\\.vim\\.MacVim$"
+
+# [MacVim] Command-Q 長押しでのみ Alacritty を終了
+- description: "[MacVim] LCommand-Q (held down) → Quit MacVim"
+  manipulators:
+  - type: basic
+    from:
+      key_code: q
+      modifiers:
+        mandatory:
+        - left_command
+    to_if_held_down:
+    - key_code: q
+      modifiers:
+      - command
+      repeat: false
+    parameters:
+      basic.to_if_held_down_threshold_milliseconds: 1000
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^org\\.vim\\.MacVim$"
 
 # ──── Google Chrome ────
 
