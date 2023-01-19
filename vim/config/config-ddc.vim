@@ -1,6 +1,5 @@
 UsePlugin 'ddc.vim'
 
-" call ddc#custom#patch_global('ui', 'native')
 call ddc#custom#patch_global('ui', 'pum')
 call ddc#custom#patch_global('completionMenu', 'pum.vim')
 call ddc#custom#patch_global('autoCompleteEvents', [
@@ -24,7 +23,7 @@ call ddc#custom#patch_global('sourceOptions', {
       \   'minAutoCompleteLength': 1,
       \   'dup': v:true,
       \ },
-      \ 'omni': { 'mark': 'Omni' },
+      \ 'omni': { 'mark': 'O' },
       \ 'around': { 'mark': 'A' },
       \ })
 
@@ -40,42 +39,112 @@ autocmd vimrc User PumCompleteDone call vsnip_integ#on_complete_done(g:pum#compl
 
 " Keymap
 " ----------------------------------------
-function! s:check_back_space() abort
+function! s:exists_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 
+function! s:imap_tab() abort
+  if FindPlugin('pum.vim')
+    if pum#visible()
+      return pum#map#insert_relative(+1)
+    elseif vsnip#jumpable(1)
+      return '<Plug>(vsnip-jump-next)'
+    elseif !s:exists_back_space()
+      return ddc#map#manual_complete()
+    else
+      return '<Tab>'
+    endif
+
+  elseif !FindPlugin('pum.vim')
+    if pumvisible()
+      return '<C-n>'
+    elseif vsnip#jumpable(1)
+      return '<Plug>(vsnip-jump-next)'
+    elseif !s:exists_back_space()
+      return ddc#map#manual_complete()
+    else
+      return '<Tab>'
+    endif
+  endif
+endfunction
+
+function! s:imap_shift_tab() abort
+  if FindPlugin('pum.vim')
+    if pum#visible()
+      return pum#map#insert_relative(-1)
+    elseif vsnip#jumpable(-1)
+      return '<Plug>(vsnip-jump-prev)'
+    else
+      return '<C-d>'
+    endif
+
+  elseif !FindPlugin('pum.vim')
+    if pumvisible()
+      return '<C-p>'
+    elseif vsnip#jumpable(-1)
+      return '<Plug>(vsnip-jump-prev)'
+    else
+      return '<C-d>'
+    endif
+  endif
+endfunction
+
+function! s:imap_ctrl_e() abort
+  if FindPlugin('pum.vim')
+    if pum#visible()
+      return pum#map#cancel()
+    else
+      return '<Cmd>call cursor(0, col("$"))<CR>'
+    endif
+
+  elseif !FindPlugin('pum.vim')
+    if pumvisible()
+      return ddc#hide('Manual')
+    else
+      return '<Cmd>call cursor(0, col("$"))<CR>'
+    endif
+  endif
+endfunction
+
 if FindPlugin('pum.vim')
   imap <expr> <Tab>
-        \ pum#visible()           ? pum#map#insert_relative(+1) :
-        \ vsnip#jumpable(1)       ? '<Plug>(vsnip-jump-next)' :
-        \ <SID>check_back_space() ? '<Tab>' : ddc#map#manual_complete()
+        \ pum#visible()             ? pum#map#insert_relative(+1) :
+        \ vsnip#jumpable(1)         ? '<Plug>(vsnip-jump-next)'   :
+        \ !<SID>exists_back_space() ? ddc#map#manual_complete()   :
+        \ '<Tab>'
   imap <expr> <S-Tab>
         \ pum#visible()      ? pum#map#insert_relative(-1) :
-        \ vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-next)' : '<C-d>'
+        \ vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)'   :
+        \ '<C-d>'
   inoremap <expr> <C-e>
         \ pum#visible() ? pum#map#cancel() :
         \ '<Cmd>call cursor(0, col("$"))<CR>'
-  inoremap <expr> <C-n> pum#map#insert_relative(+1)
-  inoremap <expr> <C-p> pum#map#insert_relative(-1)
-  inoremap <expr> <Down> pum#visible() ? pum#map#select_relative(+1) : '<Down>'
-  inoremap <expr> <Up>   pum#visible() ? pum#map#select_relative(-1) : '<Up>'
-  inoremap <expr> <C-y>  pum#visible() ? pum#map#confirm() : '<C-y>'
+  inoremap <expr> <C-y>   pum#visible() ? pum#map#confirm() : '<C-y>'
+  inoremap <expr> <C-n>   pum#map#insert_relative(+1)
+  inoremap <expr> <C-p>   pum#map#insert_relative(-1)
+  inoremap <expr> <Down>  pum#visible() ? pum#map#select_relative(+1) : '<Down>'
+  inoremap <expr> <Up>    pum#visible() ? pum#map#select_relative(-1) : '<Up>'
 endif
 
 if !FindPlugin('pum.vim')
   imap <expr> <Tab>
-        \ pumvisible()            ? '<C-n>' :
-        \ vsnip#jumpable(1)       ? '<Plug>(vsnip-jump-next)' :
-        \ <SID>check_back_space() ? '<Tab>' : ddc#map#manual_complete()
+        \ pumvisible()              ? '<C-n>'                   :
+        \ vsnip#jumpable(1)         ? '<Plug>(vsnip-jump-next)' :
+        \ !<SID>exists_back_space() ? ddc#map#manual_complete() :
+        \ '<Tab>'
   imap <expr> <S-Tab>
-        \ pumvisible()       ? '<C-p>' :
-        \ vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-next)' : '<C-d>'
+        \ pumvisible()       ? '<C-p>'                   :
+        \ vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' :
+        \ '<C-d>'
   inoremap <expr> <C-e>
         \ pumvisible() ? ddc#hide('Manual') :
         \ '<Cmd>call cursor(0, col("$"))<CR>'
 endif
 
+" imap <expr> <Tab>   <SID>imap_tab()
+" imap <expr> <S-Tab> <SID>imap_shift_tab()
+" imap <expr> <C-e>   <SID>imap_ctrl_e()
 smap <expr> <Tab>   vsnip#jumpable(1)  ? '<Plug>(vsnip-jump-next)' : '<Tab>'
 smap <expr> <S-Tab> vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<S-Tab>'
 
@@ -84,14 +153,13 @@ smap <expr> <S-Tab> vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<S-Tab>'
 noremap ; <Cmd>call CmdlinePre()<CR>:
 
 function! CmdlinePre() abort
-  cnoremap <expr> <Tab>
-        \ pum#visible() ? pum#map#insert_relative(+1) :
+  cnoremap <expr> <Tab>   pum#visible() ? pum#map#insert_relative(+1) :
         \ ddc#map#manual_complete()
   cnoremap <expr> <S-Tab> pum#map#insert_relative(-1)
+  cnoremap <expr> <C-e>   pum#visible() ? pum#map#cancel() : '<C-e>'
+  cnoremap <expr> <C-y>   pum#map#confirm()
   cnoremap <expr> <C-n>   pum#map#insert_relative(+1)
   cnoremap <expr> <C-p>   pum#map#insert_relative(-1)
-  cnoremap <expr> <C-y>   pum#map#confirm()
-  cnoremap <expr> <C-e>   pum#visible() ? pum#map#cancel() : '<C-e>'
   " cnoremap <expr> <CR>    pum#visible() ? pum#map#confirm() . '<CR>' : '<CR>'
 
   " Overwrite sources
@@ -129,32 +197,6 @@ function! CmdlinePost() abort
     call ddc#custom#set_buffer({})
   endif
 endfunction
-
-" Skkeleton
-" ----------------------------------------
-function! s:skkeleton_pre() abort
-  let s:prev_buffer_config = ddc#custom#get_buffer()
-  call ddc#custom#patch_buffer('sources', ['skkeleton'])
-  call ddc#custom#patch_buffer('sourceOptions', {
-        \ 'skkeleton': {
-        \   'mark': 'SKK',
-        \   'matchers': ['skkeleton'],
-        \   'sorters': [],
-        \   'minAutoCompleteLength': 2,
-        \   'isVolatile': v:true,
-        \ },
-        \ })
-endfunction
-
-function! s:skkeleton_post() abort
-  call ddc#custom#set_buffer(s:prev_buffer_config)
-endfunction
-
-augroup ddc
-  autocmd!
-  autocmd User skkeleton-enable-pre call s:skkeleton_pre()
-  autocmd User skkeleton-disable-pre call s:skkeleton_post()
-augroup END
 
 " Enable ddc.vim
 " ----------------------------------------
