@@ -145,6 +145,7 @@ set -x pure_show_jobs true
 ## Path
 fish_add_path /usr/local/opt/avr-gcc@7/bin
 fish_add_path /Users/kazu/go/bin
+fish_add_path /Users/kazu/.ghcup/bin
 
 ## Greeting
 set fish_greeting
