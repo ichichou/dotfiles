@@ -533,7 +533,7 @@ augroup vimrc
   autocmd InsertLeave * call s:save_ime_and_set_default_ime()
 augroup END
 
-let s:ime_cmd = 'macism'
+let s:ime_cmd = 'im-select'
 let s:default_ime = 'jp.sourceforge.inputmethod.aquaskk.Ascii'
 
 function! s:restore_ime() abort
@@ -620,7 +620,7 @@ Plug 'rcmdnk/vim-markdown', {'for': 'markdown'}
 " Editing
 " ----------------------------------------
 Plug 'AndrewRadev/linediff.vim'
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
 Plug 'cocopon/vaffle.vim'
 Plug 'cohama/lexima.vim'
@@ -633,6 +633,7 @@ Plug 'kana/vim-niceblock'
 Plug 'kana/vim-repeat'
 Plug 'machakann/vim-sandwich'
 Plug 'mattn/vim-maketable'
+Plug 'mhinz/vim-signify'
 Plug 'rcmdnk/yankround.vim'
 Plug 'thinca/vim-quickrun'
 Plug 'tyru/caw.vim'
