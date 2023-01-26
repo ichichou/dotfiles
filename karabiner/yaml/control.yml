@@ -114,18 +114,3 @@ rules:
 #         - right_control
 #     to:
 #     - key_code: return_or_enter
-
-- description: "[Control] RControl-LCommand-Space → Emoji Palette"
-  manipulators:
-  - type: basic
-    from:
-      key_code: e
-      modifiers:
-        mandatory:
-        - right_control
-        - left_command
-    to:
-    - key_code: spacebar
-      modifiers:
-      - control
-      - command
