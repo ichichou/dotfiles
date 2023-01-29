@@ -91,6 +91,72 @@ rules:
       bundle_identifiers:
       - "^org\\.vim\\.MacVim$"
 
+# ──── Slack ────
+
+# [Slack] Command-K 後に英語入力にする
+- description: "[Slack] Command-K → Command-K, 英数"
+  manipulators:
+  - type: basic
+    from:
+      key_code: k
+      modifiers:
+        mandatory:
+        - command
+    to:
+    - key_code: k
+      modifiers:
+      - command
+    - key_code: japanese_eisuu
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.tinyspeck\\.slackmacgap$"
+
+# ──── Superhuman ────
+
+# [Superhuman] Command-K 後に英語入力にする
+- description: "[Superhuman] Command-K → Command-K, 英数"
+  manipulators:
+  - type: basic
+    from:
+      key_code: k
+      modifiers:
+        mandatory:
+        - command
+    to:
+    - key_code: k
+      modifiers:
+      - command
+    - key_code: japanese_eisuu
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.superhuman\\.electron$"
+
+# ──── Linear ────
+
+# [Linear] Command-K 後に英語入力にする
+- description: "[Linear] Command-K → Command-K, 英数"
+  manipulators:
+  - type: basic
+    from:
+      key_code: k
+      modifiers:
+        mandatory:
+        - command
+    to:
+    - key_code: k
+      modifiers:
+      - command
+    - key_code: japanese_eisuu
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.linear$"
+
 # ──── Google Chrome ────
 
 # [Chrome] Command-W のリピートを無効化
@@ -158,6 +224,8 @@ rules:
 
 - description: "[Microsoft Office] Unix Keymaps"
   manipulators:
+
+  # [Word] Control-H → Delete
   - type: basic
     from:
       key_code: h
@@ -172,6 +240,7 @@ rules:
       bundle_identifiers:
       - "^com\\.microsoft\\.Word$"
 
+  # [Excel] Control-H → Delete
   - type: basic
     from:
       key_code: h
@@ -186,6 +255,7 @@ rules:
       bundle_identifiers:
       - "^com\\.microsoft\\.Excel$"
 
+  # [Powerpoint] Control-H → Delete
   - type: basic
     from:
       key_code: h
@@ -200,6 +270,7 @@ rules:
       bundle_identifiers:
       - "^com\\.microsoft\\.Powerpoint$"
 
+  # [Word] Control-D → Fn-Delete
   - type: basic
     from:
       key_code: d
@@ -214,6 +285,7 @@ rules:
       bundle_identifiers:
       - "^com\\.microsoft\\.Word$"
 
+  # [Excel] Control-D → Fn-Delete
   - type: basic
     from:
       key_code: d
@@ -228,6 +300,7 @@ rules:
       bundle_identifiers:
       - "^com\\.microsoft\\.Excel$"
 
+  # [Powerpoint] Control-D → Fn-Delete
   - type: basic
     from:
       key_code: d
@@ -242,6 +315,7 @@ rules:
       bundle_identifiers:
       - "^com\\.microsoft\\.Powerpoint$"
 
+  # [Word] Control-A → 行頭へ移動
   - type: basic
     from:
       key_code: a
@@ -256,6 +330,7 @@ rules:
       bundle_identifiers:
       - "^com\\.microsoft\\.Word$"
 
+  # [Excel] Control-A → 行頭へ移動
   - type: basic
     from:
       key_code: a
@@ -270,6 +345,7 @@ rules:
       bundle_identifiers:
       - "^com\\.microsoft\\.Excel$"
 
+  # [Powerpoint] Control-A → 行頭へ移動
   - type: basic
     from:
       key_code: a
@@ -284,6 +360,7 @@ rules:
       bundle_identifiers:
       - "^com\\.microsoft\\.Powerpoint$"
 
+  # [Word] Control-E → 行末へ移動
   - type: basic
     from:
       key_code: e
@@ -298,6 +375,7 @@ rules:
       bundle_identifiers:
       - "^com\\.microsoft\\.Word$"
 
+  # [Excel] Control-E → 行末へ移動
   - type: basic
     from:
       key_code: e
@@ -312,6 +390,7 @@ rules:
       bundle_identifiers:
       - "^com\\.microsoft\\.Excel$"
 
+  # [Powerpoint] Control-E → 行末へ移動
   - type: basic
     from:
       key_code: e
@@ -326,6 +405,7 @@ rules:
       bundle_identifiers:
       - "^com\\.microsoft\\.Powerpoint$"
 
+  # [Word] Control-K → 行末まで削除
   - type: basic
     from:
       key_code: k
@@ -344,6 +424,7 @@ rules:
       bundle_identifiers:
       - "^com\\.microsoft\\.Word$"
 
+  # [Excel] Control-K → 行末まで削除
   - type: basic
     from:
       key_code: k
@@ -362,6 +443,7 @@ rules:
       bundle_identifiers:
       - "^com\\.microsoft\\.Excel$"
 
+  # [Powerpoint] Control-K → 行末まで削除
   - type: basic
     from:
       key_code: k
