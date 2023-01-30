@@ -93,15 +93,15 @@ rules:
 
 # ──── Slack ────
 
-# [Slack] Command-K 後に英語入力にする
-- description: "[Slack] Command-K → Command-K, 英数"
+# [Slack] RCommand-K 後に英語入力にする（LCommand-K → Up との競合回避）
+- description: "[Slack] RCommand-K → Command-K, 英数"
   manipulators:
   - type: basic
     from:
       key_code: k
       modifiers:
         mandatory:
-        - command
+        - right_command
     to:
     - key_code: k
       modifiers:
@@ -115,15 +115,15 @@ rules:
 
 # ──── Superhuman ────
 
-# [Superhuman] Command-K 後に英語入力にする
-- description: "[Superhuman] Command-K → Command-K, 英数"
+# [Superhuman] RCommand-K 後に英語入力にする（LCommand-K → Up との競合回避）
+- description: "[Superhuman] RCommand-K → Command-K, 英数"
   manipulators:
   - type: basic
     from:
       key_code: k
       modifiers:
         mandatory:
-        - command
+        - right_command
     to:
     - key_code: k
       modifiers:
@@ -137,15 +137,15 @@ rules:
 
 # ──── Linear ────
 
-# [Linear] Command-K 後に英語入力にする
-- description: "[Linear] Command-K → Command-K, 英数"
+# [Linear] RCommand-K 後に英語入力にする（LCommand-K → Up との競合回避）
+- description: "[Linear] RCommand-K → Command-K, 英数"
   manipulators:
   - type: basic
     from:
       key_code: k
       modifiers:
         mandatory:
-        - command
+        - right_command
     to:
     - key_code: k
       modifiers:
