@@ -533,7 +533,7 @@ augroup vimrc
   autocmd InsertLeave * call s:save_ime_and_set_default_ime()
 augroup END
 
-let s:ime_cmd = 'im-select'
+let s:ime_cmd = 'macism'
 let s:default_ime = 'jp.sourceforge.inputmethod.aquaskk.Ascii'
 
 function! s:restore_ime() abort
