@@ -48,7 +48,7 @@ rules:
       - command
       repeat: false
     parameters:
-      basic.to_if_held_down_threshold_milliseconds: 1000
+      basic.to_if_held_down_threshold_milliseconds: 500
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
@@ -85,7 +85,7 @@ rules:
       - command
       repeat: false
     parameters:
-      basic.to_if_held_down_threshold_milliseconds: 1000
+      basic.to_if_held_down_threshold_milliseconds: 500
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
@@ -159,46 +159,6 @@ rules:
 
 # ──── Google Chrome ────
 
-# [Chrome] Command-W のリピートを無効化
-- description: "[Chrome] LCommand-W → Repeat: False"
-  manipulators:
-  - type: basic
-    from:
-      key_code: w
-      modifiers:
-        mandatory:
-        - left_command
-    to:
-    - key_code: w
-      modifiers:
-      - command
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "^com\\.google\\.Chrome$"
-
-# [Chrome] Command-Q 長押しでのみ Chrome を終了
-- description: "[Chrome] LCommand-Q (held down) → Chrome を終了"
-  manipulators:
-  - type: basic
-    from:
-      key_code: q
-      modifiers:
-        mandatory:
-        - left_command
-    to_if_held_down:
-    - key_code: q
-      modifiers:
-      - command
-      repeat: false
-    parameters:
-      basic.to_if_held_down_threshold_milliseconds: 1000
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "^com\\.google\\.Chrome$"
-
 # [Chrome] スプレッドシートでの検索・置換
 - description: "[Chrome] LShift-LCommand-F → Shift-Command-H"
   manipulators:
@@ -219,6 +179,69 @@ rules:
     - type: frontmost_application_if
       bundle_identifiers:
       - "^com\\.google\\.Chrome$"
+
+# [Chrome] Command-W のリピートを無効化
+- description: "[Chrome] LCommand-W → Repeat: False"
+  manipulators:
+  - type: basic
+    from:
+      key_code: w
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: w
+      modifiers:
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.google\\.Chrome$"
+
+# [Chrome] Command-Q 長押しでのみ Chrome を終了
+# - description: "[Chrome] LCommand-Q (held down) → Chrome を終了"
+#   manipulators:
+#   - type: basic
+#     from:
+#       key_code: q
+#       modifiers:
+#         mandatory:
+#         - left_command
+#     to_if_held_down:
+#     - key_code: q
+#       modifiers:
+#       - command
+#       repeat: false
+#     parameters:
+#       basic.to_if_held_down_threshold_milliseconds: 500
+#     conditions:
+#     - type: frontmost_application_if
+#       bundle_identifiers:
+#       - "^com\\.google\\.Chrome$"
+
+# ──── Sidekick ────
+
+# [Sidekick] スプレッドシートでの検索・置換
+- description: "[Sidekick] LShift-LCommand-F → Shift-Command-H"
+  manipulators:
+  - type: basic
+    from:
+      key_code: f
+      modifiers:
+        mandatory:
+        - left_shift
+        - left_command
+    to:
+    - key_code: h
+      modifiers:
+      - shift
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.pushplaylabs\\.sidekick$"
 
 # ──── Microsoft Office ────
 
