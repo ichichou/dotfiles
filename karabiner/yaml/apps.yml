@@ -243,6 +243,48 @@ rules:
       bundle_identifiers:
       - "^com\\.pushplaylabs\\.sidekick$"
 
+# [Sidekick] Shift-Command-A でセッション一覧を開く
+- description: "[Sidekick] LShift-LCommand-A → Shift-Option-W"
+  manipulators:
+  - type: basic
+    from:
+      key_code: a
+      modifiers:
+        mandatory:
+        - left_shift
+        - left_command
+    to:
+    - key_code: w
+      modifiers:
+      - shift
+      - option
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.pushplaylabs\\.sidekick$"
+
+# [Sidekick] Shift-Command-S で Sidecar を開く
+- description: "[Sidekick] LShift-LCommand-S → Shift-Option-S"
+  manipulators:
+  - type: basic
+    from:
+      key_code: s
+      modifiers:
+        mandatory:
+        - left_shift
+        - left_command
+    to:
+    - key_code: s
+      modifiers:
+      - shift
+      - option
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.pushplaylabs\\.sidekick$"
+
 # ──── Microsoft Office ────
 
 - description: "[Microsoft Office] Unix Keymaps"
