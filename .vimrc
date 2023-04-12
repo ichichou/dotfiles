@@ -230,9 +230,9 @@ endif
 "  tmap                                   x
 
 let g:mapleader = ','
-" let g:maplocalleader = ''
+let g:maplocalleader = '\'
 
-noremap \ ,
+" noremap \ ,
 noremap ; :
 noremap : ;
 noremap j gj
@@ -573,29 +573,29 @@ endif
 if !has('nvim')
   " Plug 'prabirshrestha/asyncomplete.vim'
   " Plug 'prabirshrestha/asyncomplete-lsp.vim'
-  Plug 'prabirshrestha/vim-lsp'
-  Plug 'mattn/vim-lsp-settings'
-  Plug 'mattn/vim-lsp-icons'
-  Plug 'hrsh7th/vim-vsnip'
-  Plug 'hrsh7th/vim-vsnip-integ'
+  " Plug 'prabirshrestha/vim-lsp'
+  " Plug 'mattn/vim-lsp-settings'
+  " Plug 'mattn/vim-lsp-icons'
+  " Plug 'hrsh7th/vim-vsnip'
+  " Plug 'hrsh7th/vim-vsnip-integ'
 endif
 
 " Completion
 " ----------------------------------------
 if !has('nvim')
-  Plug 'vim-denops/denops.vim'
-  Plug 'Shougo/pum.vim'
-  Plug 'Shougo/ddc.vim'
+  " Plug 'vim-denops/denops.vim'
+  " Plug 'Shougo/pum.vim'
+  " Plug 'Shougo/ddc.vim'
   " Plug 'Shougo/ddc-ui-native'
-  Plug 'Shougo/ddc-ui-pum'
-  Plug 'Shougo/ddc-source-around'
-  Plug 'shun/ddc-source-vim-lsp'
-  Plug 'Shougo/ddc-source-omni'
-  Plug 'Shougo/ddc-source-cmdline'
-  Plug 'Shougo/ddc-source-cmdline-history'
-  Plug 'Shougo/ddc-matcher_head'
-  Plug 'Shougo/ddc-sorter_rank'
-  Plug 'Shougo/ddc-converter_remove_overlap'
+  " Plug 'Shougo/ddc-ui-pum'
+  " Plug 'Shougo/ddc-source-around'
+  " Plug 'shun/ddc-source-vim-lsp'
+  " Plug 'Shougo/ddc-source-omni'
+  " Plug 'Shougo/ddc-source-cmdline'
+  " Plug 'Shougo/ddc-source-cmdline-history'
+  " Plug 'Shougo/ddc-matcher_head'
+  " Plug 'Shougo/ddc-sorter_rank'
+  " Plug 'Shougo/ddc-converter_remove_overlap'
 endif
 
 " Language
@@ -608,7 +608,7 @@ else
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 endif
 
-Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
+Plug 'jalvesaq/Nvim-R', {'for': 'r', 'branch': 'stable'}
 Plug 'mechatroner/rainbow_csv', {'for': 'csv'}
 Plug 'prettier/vim-prettier', {'do': 'yarn install --frozen-lockfile --production', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html']}
 Plug 'previm/previm', {'for': 'markdown'}
