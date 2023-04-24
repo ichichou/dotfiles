@@ -196,31 +196,28 @@ rules:
 - description: "[Hyper] Hyper - Alpha Key → Launch App"
   manipulators:
 
-  # Q: Dato (toggle menu shortcut)
-  - type: basic
-    from:
-      key_code: q
-    to:
-    - key_code: d
-      modifiers:
-      - command
-      - option
-    conditions: *hyper_mode
+  # # Q:
+  # - type: basic
+  #   from:
+  #     key_code: q
+  #   to:
+  #   - shell_command: open -a ""
+  #   conditions: *hyper_mode
 
-  # W: Asana
-  - type: basic
-    from:
-      key_code: w
-    to:
-    - shell_command: open -a "Asana"
-    conditions: *hyper_mode
+  # # W:
+  # - type: basic
+  #   from:
+  #     key_code: w
+  #   to:
+  #   - shell_command: open -a ""
+  #   conditions: *hyper_mode
 
-  # E:
+  # E: Cron
   - type: basic
     from:
       key_code: e
     to:
-    - shell_command: open -a "Preview"
+    - shell_command: open -a "cron"
     conditions: *hyper_mode
 
   # # R:
@@ -263,13 +260,13 @@ rules:
     - shell_command: open -a "safari"
     conditions: *hyper_mode
 
-  # F: Ferdi
-  - type: basic
-    from:
-      key_code: f
-    to:
-    - shell_command: open -a "ferdi"
-    conditions: *hyper_mode
+  # # F:
+  # - type: basic
+  #   from:
+  #     key_code: f
+  #   to:
+  #   - shell_command: open -a ""
+  #   conditions: *hyper_mode
 
   # # G:
   # - type: basic
@@ -295,12 +292,12 @@ rules:
     - shell_command: open -a "textwell"
     conditions: *hyper_mode
 
-  # C: Google Chrome
+  # C: Sidekick
   - type: basic
     from:
       key_code: c
     to:
-    - shell_command: open -a "google chrome"
+    - shell_command: open -a "sidekick"
     conditions: *hyper_mode
 
   # V: Sidekick
@@ -344,15 +341,15 @@ rules:
     from:
       key_code: i
     to:
-    - shell_command: open -a "Linear"
+    - shell_command: open -a "linear"
     conditions: *hyper_mode
 
-  # O: Remember The Milk
+  # O: Todoist
   - type: basic
     from:
       key_code: o
     to:
-    - shell_command: open -a "Todoist"
+    - shell_command: open -a "todoist"
     conditions: *hyper_mode
 
   # # P:
@@ -408,7 +405,7 @@ rules:
     from:
       key_code: "n"
     to:
-    - shell_command: open -a "RStudio"
+    - shell_command: open -a "rstudio"
     conditions: *hyper_mode
 
   # M: MacVim
