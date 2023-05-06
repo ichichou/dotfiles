@@ -204,13 +204,13 @@ rules:
   #   - shell_command: open -a ""
   #   conditions: *hyper_mode
 
-  # # W:
-  # - type: basic
-  #   from:
-  #     key_code: w
-  #   to:
-  #   - shell_command: open -a ""
-  #   conditions: *hyper_mode
+  # W: Arc
+  - type: basic
+    from:
+      key_code: w
+    to:
+    - shell_command: open -a "arc"
+    conditions: *hyper_mode
 
   # E: Cron
   - type: basic
