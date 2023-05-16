@@ -243,8 +243,8 @@ rules:
       bundle_identifiers:
       - "^com\\.pushplaylabs\\.sidekick$"
 
-# [Sidekick] Shift-Command-A でセッション一覧を開く
-- description: "[Sidekick] LShift-LCommand-A → Shift-Option-W"
+# [Sidekick] Shift-Command-A でセッション一覧を開く（Sidekick でショートカット変更した上で）
+- description: "[Sidekick] LShift-LCommand-A → Command-S"
   manipulators:
   - type: basic
     from:
@@ -254,10 +254,9 @@ rules:
         - left_shift
         - left_command
     to:
-    - key_code: w
+    - key_code: s
       modifiers:
-      - shift
-      - option
+      - command
       repeat: false
     conditions:
     - type: frontmost_application_if
