@@ -257,7 +257,7 @@ nnoremap <C-h> <C-^>
 nnoremap <Esc><Esc> <Cmd>nohlsearch<CR>
 nnoremap <Leader>e <Cmd>execute 'silent! !mvim --remote-silent %' \| redraw!<CR>
 inoremap <C-a> <Cmd>normal! ^<CR>
-inoremap <C-e> <Cmd>normal! $<CR>
+inoremap <C-e> <Cmd>normal! $l<CR>
 cnoremap <C-a> <C-b>
 cnoremap <C-x> <C-r>=expand('%:p')<CR>
 
@@ -500,7 +500,7 @@ command! -nargs=0 SyntaxInfo call s:get_syn_info()
 "   autocmd WinLeave * setlocal nocursorline
 " augroup END
 
-" Highlight on Yank
+" Highlight on Yank (Neovim)
 " ----------------------------------------
 if has('nvim')
   autocmd vimrc TextYankPost * silent! lua
