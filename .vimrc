@@ -497,7 +497,7 @@ command! -nargs=0 SyntaxInfo call s:get_syn_info()
 "   autocmd WinLeave * setlocal nocursorline
 " augroup END
 
-" Highlight on Yank (Neovim)
+" Highlight on Yank
 " ----------------------------------------
 if has('nvim')
   autocmd vimrc TextYankPost * silent! lua
@@ -564,16 +564,21 @@ endif
 " Language Server
 " ----------------------------------------
 if !has('nvim')
-  " Plug 'prabirshrestha/asyncomplete.vim'
-  " Plug 'prabirshrestha/asyncomplete-lsp.vim'
-  " Plug 'prabirshrestha/vim-lsp'
-  " Plug 'mattn/vim-lsp-settings'
-  " Plug 'mattn/vim-lsp-icons'
-  " Plug 'hrsh7th/vim-vsnip'
-  " Plug 'hrsh7th/vim-vsnip-integ'
+  Plug 'prabirshrestha/vim-lsp'
+  Plug 'mattn/vim-lsp-settings'
+  Plug 'mattn/vim-lsp-icons'
+else
+  " Plug 'neovim/nvim-lspconfig'
 endif
 
-" Completion
+" Completion - Asyncomplete
+" ----------------------------------------
+if !has('nvim')
+  Plug 'prabirshrestha/asyncomplete.vim'
+  Plug 'prabirshrestha/asyncomplete-lsp.vim'
+endif
+
+" Completion - Ddc
 " ----------------------------------------
 if !has('nvim')
   " Plug 'vim-denops/denops.vim'
@@ -591,6 +596,18 @@ if !has('nvim')
   " Plug 'Shougo/ddc-converter_remove_overlap'
 endif
 
+" Completion - nvim-cmp
+" ----------------------------------------
+if !has('nvim')
+else
+  " Plug 'hrsh7th/cmp-buffer'
+  " Plug 'hrsh7th/cmp-cmdline'
+  " Plug 'hrsh7th/cmp-nvim-lsp'
+  " Plug 'hrsh7th/cmp-path'
+  " Plug 'hrsh7th/cmp-vsnip'
+  " Plug 'hrsh7th/nvim-cmp'
+endif
+
 " Language
 " ----------------------------------------
 if !has('nvim')
@@ -600,14 +617,13 @@ else
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 endif
 
+Plug 'godlygeek/tabular'
 Plug 'jalvesaq/Nvim-R', {'for': 'r', 'branch': 'stable'}
 Plug 'mechatroner/rainbow_csv', {'for': 'csv'}
 Plug 'prettier/vim-prettier', {'do': 'yarn install --frozen-lockfile --production', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html']}
 Plug 'previm/previm', {'for': 'markdown'}
-Plug 'vim-jp/syntax-vim-ex', {'for': 'vim'}
-
-Plug 'godlygeek/tabular'
 Plug 'rcmdnk/vim-markdown', {'for': 'markdown'}
+Plug 'vim-jp/syntax-vim-ex', {'for': 'vim'}
 
 " Editing
 " ----------------------------------------
@@ -618,6 +634,8 @@ Plug 'cohama/lexima.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'haya14busa/vim-asterisk'
 Plug 'haya14busa/vim-edgemotion'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'kana/vim-niceblock'
@@ -630,10 +648,17 @@ Plug 'thinca/vim-quickrun'
 Plug 'tyru/caw.vim'
 Plug 'tyru/open-browser.vim'
 
-packadd! matchit
-set runtimepath+=/opt/homebrew/opt/fzf
-Plug 'junegunn/fzf.vim'
+if !has('nvim')
+  set runtimepath+=/opt/homebrew/opt/fzf
+  Plug 'junegunn/fzf.vim'
+  " Plug 'machakann/vim-highlightedyank'
+else
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim', {'tag': '0.1.1'}
+  Plug 'mickael-menu/zk-nvim'
+endif
 
+packadd! matchit
 
 " Appearance
 " ----------------------------------------
@@ -676,12 +701,12 @@ Plug 'vim-jp/vimdoc-ja'
 " Colorscheme
 " ----------------------------------------
 " Plug 'arcticicestudio/nord-vim'
-Plug 'EdenEast/nightfox.nvim'
+" Plug 'EdenEast/nightfox.nvim'
 " Plug 'cocopon/iceberg.vim'
-Plug 'sainnhe/edge'
+" Plug 'sainnhe/edge'
 Plug 'sainnhe/everforest'
-Plug 'sainnhe/gruvbox-material'
-Plug 'sainnhe/sonokai'
+" Plug 'sainnhe/gruvbox-material'
+" Plug 'sainnhe/sonokai'
 Plug 'shaunsingh/nord.nvim'
 
 call plug#end()
