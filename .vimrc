@@ -155,7 +155,6 @@ else
   set cmdheight=0
   set laststatus=3
   set listchars=eol:¬,tab:>\ ,space:\ ,trail:\ ,nbsp:~,extends:>,precedes:<
-  " set fillchars+=horiz:━,horizup:┻,horizdown:┳,vert:┃,vertleft:┫,vertright:┣,verthoriz:╋,
 endif
 
 set statusline=%!SetStatusLine()
@@ -232,7 +231,6 @@ endif
 let g:mapleader = ','
 let g:maplocalleader = '\'
 
-" noremap \ ,
 noremap ; :
 noremap : ;
 noremap j gj
@@ -252,7 +250,6 @@ noremap g+ g<C-a>
 noremap g- g<C-x>
 nnoremap U <C-r>
 nnoremap <C-h> <C-^>
-" inoremap <C-d> <Delete>
 
 nnoremap <Esc><Esc> <Cmd>nohlsearch<CR>
 nnoremap <Leader>e <Cmd>execute 'silent! !mvim --remote-silent %' \| redraw!<CR>
@@ -549,10 +546,6 @@ function! s:save_ime_and_set_default_ime() abort
   endif
 endfunction
 
-" Hankaku/Zenkaku
-" ----------------------------------------
-" runtime! scripts/hz_ja.vim
-
 " Plugins
 " ========================================
 let g:data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
@@ -602,7 +595,6 @@ endif
 " ----------------------------------------
 if !has('nvim')
   let g:polyglot_disabled = ['markdown.plugin', 'csv.plugin', 'r-lang.plugin']
-  " let g:polyglot_disabled = ['sensible', 'markdown.plugin', 'csv.plugin', 'r-lang.plugin']
   Plug 'sheerun/vim-polyglot'
 else
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -620,7 +612,6 @@ Plug 'rcmdnk/vim-markdown', {'for': 'markdown'}
 " Editing
 " ----------------------------------------
 Plug 'AndrewRadev/linediff.vim'
-" Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
 Plug 'cocopon/vaffle.vim'
 Plug 'cohama/lexima.vim'
@@ -643,9 +634,6 @@ packadd! matchit
 set runtimepath+=/opt/homebrew/opt/fzf
 Plug 'junegunn/fzf.vim'
 
-" if !has('nvim')
-"   Plug 'machakann/vim-highlightedyank'
-" endif
 
 " Appearance
 " ----------------------------------------
@@ -655,12 +643,10 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'rbtnn/vim-ambiwidth'
 
 if !has('nvim')
-  " Plug 'cocopon/lightline-hybrid.vim'
   Plug 'delphinus/vim-auto-cursorline'
   Plug 'itchyny/lightline.vim'
 else
   Plug 'MunifTanjim/nui.nvim'
-  " Plug 'rcarriga/nvim-notify'
   Plug 'folke/noice.nvim'
   Plug 'delphinus/auto-cursorline.nvim'
 endif
@@ -697,7 +683,6 @@ Plug 'sainnhe/everforest'
 Plug 'sainnhe/gruvbox-material'
 Plug 'sainnhe/sonokai'
 Plug 'shaunsingh/nord.nvim'
-" Plug 'w0ng/vim-hybrid'
 
 call plug#end()
 
