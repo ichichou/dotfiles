@@ -4,59 +4,7 @@ title: "04. Control Key"
 
 rules:
 
-- description: "[Control] Caps Lock + J/L (simul) → かな/英数, RControl"
-  manipulators:
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: j
-      - key_code: caps_lock
-      simultaneous_options:
-        key_up_when: all
-    to:
-    - key_code: japanese_kana
-    - key_code: right_control
-      lazy: true
-
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: l
-      - key_code: caps_lock
-      simultaneous_options:
-        key_up_when: all
-    to:
-    - key_code: japanese_eisuu
-    - key_code: right_control
-      lazy: true
-
-- description: "[Control] RControl + J/L (simul) → かな/英数, RControl"
-  manipulators:
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: j
-      - key_code: right_control
-      simultaneous_options:
-        key_up_when: all
-    to:
-    - key_code: japanese_kana
-    - key_code: right_control
-      lazy: true
-
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: l
-      - key_code: right_control
-      simultaneous_options:
-        key_up_when: all
-    to:
-    - key_code: japanese_eisuu
-    - key_code: right_control
-      lazy: true
-
-- description: "[Control] Caps Lock → Control/ESC"
+- description: "[Control] Caps Lock → RControl/ESC"
   manipulators:
   - type: basic
     from:
@@ -70,7 +18,7 @@ rules:
     to_if_alone:
     - key_code: escape
 
-- description: "[Control] RControl → Control/ESC"
+- description: "[Control] RControl → RControl/ESC"
   manipulators:
   - type: basic
     from:
@@ -84,7 +32,7 @@ rules:
     to_if_alone:
     - key_code: escape
 
-- description: "[Control] RCotrol-J/L → かな/英数"
+- description: "[Control] RControl-J/L → かな/英数"
   manipulators:
   - type: basic
     from:
@@ -103,14 +51,3 @@ rules:
         - right_control
     to:
     - key_code: japanese_eisuu
-
-# - description: "[Control] RControl-M → Return"
-#   manipulators:
-#   - type: basic
-#     from:
-#       key_code: m
-#       modifiers:
-#         mandatory:
-#         - right_control
-#     to:
-#     - key_code: return_or_enter
