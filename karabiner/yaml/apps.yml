@@ -33,7 +33,7 @@ rules:
       bundle_identifiers:
       - "^org\\.alacritty$"
 
-# [Alacritty] Command-Q 長押しでのみ Alacritty を終了
+# [Alacritty] LCommand-Q 長押しでのみ終了
 - description: "[Alacritty] LCommand-Q (held down) → Quit Alacritty"
   manipulators:
   - type: basic
@@ -70,7 +70,7 @@ rules:
       bundle_identifiers:
       - "^org\\.vim\\.MacVim$"
 
-# [MacVim] Command-Q 長押しでのみ Alacritty を終了
+# [MacVim] LCommand-Q 長押しでのみ終了
 - description: "[MacVim] LCommand-Q (held down) → Quit MacVim"
   manipulators:
   - type: basic
@@ -180,7 +180,7 @@ rules:
       bundle_identifiers:
       - "^com\\.google\\.Chrome$"
 
-# [Chrome] Command-W のリピートを無効化
+# [Chrome] LCommand-W のリピートを無効化
 - description: "[Chrome] LCommand-W → Repeat: False"
   manipulators:
   - type: basic
@@ -198,27 +198,6 @@ rules:
     - type: frontmost_application_if
       bundle_identifiers:
       - "^com\\.google\\.Chrome$"
-
-# [Chrome] Command-Q 長押しでのみ Chrome を終了
-# - description: "[Chrome] LCommand-Q (held down) → Chrome を終了"
-#   manipulators:
-#   - type: basic
-#     from:
-#       key_code: q
-#       modifiers:
-#         mandatory:
-#         - left_command
-#     to_if_held_down:
-#     - key_code: q
-#       modifiers:
-#       - command
-#       repeat: false
-#     parameters:
-#       basic.to_if_held_down_threshold_milliseconds: 500
-#     conditions:
-#     - type: frontmost_application_if
-#       bundle_identifiers:
-#       - "^com\\.google\\.Chrome$"
 
 # ──── Sidekick ────
 
@@ -243,7 +222,26 @@ rules:
       bundle_identifiers:
       - "^com\\.pushplaylabs\\.sidekick$"
 
-# [Sidekick] Shift-Command-A でセッション一覧を開く（Sidekick でショートカット変更した上で）
+# [Sidekick] LCommand-W のリピートを無効化
+- description: "[Sidekick] LCommand-W → Repeat: False"
+  manipulators:
+  - type: basic
+    from:
+      key_code: w
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: w
+      modifiers:
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.pushplaylabs\\.sidekick$"
+
+# [Sidekick] LShift-LCommand-A でセッション一覧を開く（Sidekick でショートカット変更した上で）
 - description: "[Sidekick] LShift-LCommand-A → Command-S"
   manipulators:
   - type: basic
@@ -263,7 +261,7 @@ rules:
       bundle_identifiers:
       - "^com\\.pushplaylabs\\.sidekick$"
 
-# [Sidekick] Shift-Command-S で Sidecar を開く
+# [Sidekick] LShift-LCommand-S で Sidecar を開く
 - description: "[Sidekick] LShift-LCommand-S → Shift-Option-S"
   manipulators:
   - type: basic
@@ -283,6 +281,341 @@ rules:
     - type: frontmost_application_if
       bundle_identifiers:
       - "^com\\.pushplaylabs\\.sidekick$"
+
+# ──── Bike ────
+
+- description: "[Bike] Outliner Commands"
+  manipulators:
+
+  # [Bike] Control-Right → Indent Row
+  - type: basic
+    from:
+      key_code: right_arrow
+      modifiers:
+        mandatory:
+        - control
+    to:
+    - key_code: right_arrow
+      modifiers:
+      - command
+      - control
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.hogbaysoftware\\.Bike$"
+
+  # [Bike] Control-Left → Unindent Row
+  - type: basic
+    from:
+      key_code: left_arrow
+      modifiers:
+        mandatory:
+        - control
+    to:
+    - key_code: left_arrow
+      modifiers:
+      - command
+      - control
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.hogbaysoftware\\.Bike$"
+
+  # [Bike] Control-Up → Move Row Up
+  - type: basic
+    from:
+      key_code: up_arrow
+      modifiers:
+        mandatory:
+        - control
+    to:
+    - key_code: up_arrow
+      modifiers:
+      - command
+      - control
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.hogbaysoftware\\.Bike$"
+
+  # [Bike] Control-Down → Move Row Down
+  - type: basic
+    from:
+      key_code: down_arrow
+      modifiers:
+        mandatory:
+        - control
+    to:
+    - key_code: down_arrow
+      modifiers:
+      - command
+      - control
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.hogbaysoftware\\.Bike$"
+
+  # [Bike] Control-LCommand-L → Indent Row
+  - type: basic
+    from:
+      key_code: l
+      modifiers:
+        mandatory:
+        - control
+        - left_command
+    to:
+    - key_code: right_arrow
+      modifiers:
+      - command
+      - control
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.hogbaysoftware\\.Bike$"
+
+  # [Bike] Control-LCommand-H → Unindent Row
+  - type: basic
+    from:
+      key_code: h
+      modifiers:
+        mandatory:
+        - control
+        - left_command
+    to:
+    - key_code: left_arrow
+      modifiers:
+      - command
+      - control
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.hogbaysoftware\\.Bike$"
+
+  # [Bike] Control-LCommand-K → Move Row Up
+  - type: basic
+    from:
+      key_code: k
+      modifiers:
+        mandatory:
+        - control
+        - left_command
+    to:
+    - key_code: up_arrow
+      modifiers:
+      - command
+      - control
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.hogbaysoftware\\.Bike$"
+
+  # [Bike] Control-LCommand-J → Move Row Down
+  - type: basic
+    from:
+      key_code: j
+      modifiers:
+        mandatory:
+        - control
+        - command
+    to:
+    - key_code: down_arrow
+      modifiers:
+      - command
+      - control
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.hogbaysoftware\\.Bike$"
+
+  # [Bike] Option-Right → Focus In
+  - type: basic
+    from:
+      key_code: right_arrow
+      modifiers:
+        mandatory:
+        - option
+    to:
+    - key_code: right_arrow
+      modifiers:
+      - command
+      - option
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.hogbaysoftware\\.Bike$"
+
+  # [Bike] Option-Left → Focus Out
+  - type: basic
+    from:
+      key_code: left_arrow
+      modifiers:
+        mandatory:
+        - option
+    to:
+    - key_code: left_arrow
+      modifiers:
+      - command
+      - option
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.hogbaysoftware\\.Bike$"
+
+  # [Bike] Option-LCommand-L → Focus In
+  - type: basic
+    from:
+      key_code: l
+      modifiers:
+        mandatory:
+        - option
+        - left_command
+    to:
+    - key_code: right_arrow
+      modifiers:
+      - command
+      - option
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.hogbaysoftware\\.Bike$"
+
+  # [Bike] Option-LCommand-H → Focus Out
+  - type: basic
+    from:
+      key_code: h
+      modifiers:
+        mandatory:
+        - option
+        - left_command
+    to:
+    - key_code: left_arrow
+      modifiers:
+      - command
+      - option
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.hogbaysoftware\\.Bike$"
+
+  # [Bike] LCommand-Period → Focus In
+  - type: basic
+    from:
+      key_code: period
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: right_arrow
+      modifiers:
+      - command
+      - option
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.hogbaysoftware\\.Bike$"
+
+  # [Bike] LCommand-Comma → Focus Out
+  - type: basic
+    from:
+      key_code: comma
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: left_arrow
+      modifiers:
+      - command
+      - option
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.hogbaysoftware\\.Bike$"
+
+  # [Bike] Command-O → Expand Row
+  - type: basic
+    from:
+      key_code: o
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: "0"
+      modifiers:
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.hogbaysoftware\\.Bike$"
+
+  # [Bike] Command-I → Collapse Row
+  - type: basic
+    from:
+      key_code: i
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: "9"
+      modifiers:
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.hogbaysoftware\\.Bike$"
+
+  # [Bike] Control-Command-O → Expand All Rows
+  - type: basic
+    from:
+      key_code: o
+      modifiers:
+        mandatory:
+        - control
+        - left_command
+    to:
+    - key_code: "0"
+      modifiers:
+      - control
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.hogbaysoftware\\.Bike$"
+
+  # [Bike] Control-Command-I → Collapse All Rows
+  - type: basic
+    from:
+      key_code: i
+      modifiers:
+        mandatory:
+        - control
+        - left_command
+    to:
+    - key_code: "9"
+      modifiers:
+      - control
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.hogbaysoftware\\.Bike$"
 
 # ──── Microsoft Office ────
 
