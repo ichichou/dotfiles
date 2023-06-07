@@ -50,6 +50,9 @@ template = "journal.md"
 [group.journal.extra]
 # key = "value"
 
+[group.journal.tool]
+# editor = ""
+
 [group.draft]
 paths = ["draft"]
 
@@ -59,6 +62,9 @@ template = "draft.md"
 
 [group.draft.extra]
 # key = "value"
+
+[group.draft.tool]
+# editor = ""
 
 # MARKDOWN SETTINGS
 [format.markdown]
