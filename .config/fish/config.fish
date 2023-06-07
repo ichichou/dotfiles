@@ -115,6 +115,9 @@ abbr -ag gs git status --short --branch
 abbr -ag gsh git show
 abbr -ag gss git status
 
+## Alias
+alias bike "open -a 'bike'"
+
 ## Function
 ### Auto ls
 functions --copy cd standard_cd
