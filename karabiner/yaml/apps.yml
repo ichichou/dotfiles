@@ -617,6 +617,200 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
+# ──── WorkFlowy ────
+
+- description: "[WorkFlowy] Outliner Commands"
+  manipulators:
+
+  # [WorkFlowy] Control-Right → Indent
+  - type: basic
+    from:
+      key_code: right_arrow
+      modifiers:
+        mandatory:
+        - control
+    to:
+    - key_code: tab
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.workflowy\\.desktop$"
+
+  # [WorkFlowy] Control-Left → Outdent
+  - type: basic
+    from:
+      key_code: left_arrow
+      modifiers:
+        mandatory:
+        - control
+    to:
+    - key_code: tab
+      modifiers:
+      - shift
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.workflowy\\.desktop$"
+
+  # [WorkFlowy] Control-LCommand-L → Indent
+  - type: basic
+    from:
+      key_code: l
+      modifiers:
+        mandatory:
+        - control
+        - left_command
+    to:
+    - key_code: tab
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.workflowy\\.desktop$"
+
+  # [WorkFlowy] Control-LCommand-H → Outdent
+  - type: basic
+    from:
+      key_code: h
+      modifiers:
+        mandatory:
+        - control
+        - left_command
+    to:
+    - key_code: tab
+      modifiers:
+      - shift
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.workflowy\\.desktop$"
+
+  # [WorkFlowy] Control-Up → Move Up
+  - type: basic
+    from:
+      key_code: up_arrow
+      modifiers:
+        mandatory:
+        - control
+    to:
+    - key_code: up_arrow
+      modifiers:
+      - shift
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.workflowy\\.desktop$"
+
+  # [WorkFlowy] Control-Down → Move Down
+  - type: basic
+    from:
+      key_code: down_arrow
+      modifiers:
+        mandatory:
+        - control
+    to:
+    - key_code: down_arrow
+      modifiers:
+      - shift
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.workflowy\\.desktop$"
+
+  # [WorkFlowy] Control-LCommand-K → Move Up
+  - type: basic
+    from:
+      key_code: k
+      modifiers:
+        mandatory:
+        - control
+        - left_command
+    to:
+    - key_code: up_arrow
+      modifiers:
+      - shift
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.workflowy\\.desktop$"
+
+  # [WorkFlowy] Control-LCommand-J → Move Down
+  - type: basic
+    from:
+      key_code: j
+      modifiers:
+        mandatory:
+        - control
+        - left_command
+    to:
+    - key_code: down_arrow
+      modifiers:
+      - shift
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.workflowy\\.desktop$"
+
+  # [WorkFlowy] Command-O → Expand
+  - type: basic
+    from:
+      key_code: o
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: down_arrow
+      modifiers:
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.workflowy\\.desktop$"
+
+  # [WorkFlowy] Command-I → Collapse
+  - type: basic
+    from:
+      key_code: i
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: up_arrow
+      modifiers:
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.workflowy\\.desktop$"
+
+  # [WorkFlowy] RControl-I → Delete
+  - type: basic
+    from:
+      key_code: h
+      modifiers:
+        mandatory:
+        - right_control
+    to:
+    - key_code: delete_or_backspace
+      repeat: true
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.workflowy\\.desktop$"
+
 # ──── Microsoft Office ────
 
 - description: "[Microsoft Office] Unix Keymaps"
