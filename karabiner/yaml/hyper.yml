@@ -336,12 +336,12 @@ rules:
     - shell_command: open -a "bike"
     conditions: *hyper_mode
 
-  # I: Linear
+  # I: WorkFlowy
   - type: basic
     from:
       key_code: i
     to:
-    - shell_command: open -a "linear"
+    - shell_command: open -a "workflowy"
     conditions: *hyper_mode
 
   # O: Todoist
