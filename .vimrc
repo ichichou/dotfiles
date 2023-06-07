@@ -611,15 +611,15 @@ endif
 " Language
 " ----------------------------------------
 if !has('nvim')
-  let g:polyglot_disabled = ['markdown.plugin', 'csv.plugin', 'r-lang.plugin']
+  let g:polyglot_disabled = ['markdown.plugin', 'r-lang.plugin']
   Plug 'sheerun/vim-polyglot'
 else
-  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 endif
 
 Plug 'godlygeek/tabular'
 Plug 'jalvesaq/Nvim-R', {'for': 'r', 'branch': 'stable'}
-Plug 'mechatroner/rainbow_csv', {'for': 'csv'}
+" Plug 'mechatroner/rainbow_csv', {'for': 'csv'}
 Plug 'prettier/vim-prettier', {'do': 'yarn install --frozen-lockfile --production', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html']}
 Plug 'previm/previm', {'for': 'markdown'}
 Plug 'rcmdnk/vim-markdown', {'for': 'markdown'}
@@ -647,6 +647,8 @@ Plug 'rcmdnk/yankround.vim'
 Plug 'thinca/vim-quickrun'
 Plug 'tyru/caw.vim'
 Plug 'tyru/open-browser.vim'
+Plug 'vim-scripts/VOoM'
+Plug 'vimoutliner/vimoutliner'
 
 if !has('nvim')
   set runtimepath+=/opt/homebrew/opt/fzf
