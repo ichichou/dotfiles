@@ -545,7 +545,7 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
-  # [Bike] Command-O → Expand Row
+  # [Bike] LCommand-O → Expand Row
   - type: basic
     from:
       key_code: o
@@ -562,7 +562,7 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
-  # [Bike] Command-I → Collapse Row
+  # [Bike] LCommand-I → Collapse Row
   - type: basic
     from:
       key_code: i
@@ -579,7 +579,7 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
-  # [Bike] Control-Command-O → Expand All Rows
+  # [Bike] Control-LCommand-O → Expand All Rows
   - type: basic
     from:
       key_code: o
@@ -598,7 +598,7 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
-  # [Bike] Control-Command-I → Collapse All Rows
+  # [Bike] Control-LCommand-I → Collapse All Rows
   - type: basic
     from:
       key_code: i
@@ -610,6 +610,61 @@ rules:
     - key_code: "9"
       modifiers:
       - control
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.hogbaysoftware\\.Bike$"
+
+  # [Bike] Shift-LCommand-O → Expand All Rows
+  - type: basic
+    from:
+      key_code: o
+      modifiers:
+        mandatory:
+        - shift
+        - left_command
+    to:
+    - key_code: "0"
+      modifiers:
+      - control
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.hogbaysoftware\\.Bike$"
+
+  # [Bike] Shift-LCommand-I → Collapse All Rows
+  - type: basic
+    from:
+      key_code: i
+      modifiers:
+        mandatory:
+        - shift
+        - left_command
+    to:
+    - key_code: "9"
+      modifiers:
+      - control
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.hogbaysoftware\\.Bike$"
+
+  # [Bike] RControl-M → Command-Return
+  - type: basic
+    from:
+      key_code: m
+      modifiers:
+        mandatory:
+        - right_control
+    to:
+    - key_code: return_or_enter
+      modifiers:
       - command
       repeat: false
     conditions:
