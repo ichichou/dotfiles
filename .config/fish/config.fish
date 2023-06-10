@@ -20,6 +20,9 @@ abbr -ag vi vim
 abbr -ag yqj yq eval -o=json
 abbr -ag yqy yq eval -P
 
+### Functions
+abbr -ag jo journal
+
 ### exa/ls
 if test -e "/opt/homebrew/bin/exa"
     abbr -ag la exa -al --git
