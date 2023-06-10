@@ -3,9 +3,10 @@ rules:
 
 # ──── Finder ────
 
-# [Finder] Command-P を無効化
-- description: "[Finder] Command-P → Invalid"
+- description: "[App] Finder"
   manipulators:
+
+  # [Finder] Command-P → Invalid
   - type: basic
     from:
       key_code: p
@@ -19,9 +20,10 @@ rules:
 
 # ──── Alacritty ────
 
-# [Alacritty] Command-W を無効化
-- description: "[Alacritty] Command-W → Invalid"
+- description: "[App] Alacritty"
   manipulators:
+
+  # [Alacritty] Command-W → Invalid
   - type: basic
     from:
       key_code: w
@@ -33,9 +35,8 @@ rules:
       bundle_identifiers:
       - "^org\\.alacritty$"
 
-# [Alacritty] LCommand-Q 長押しでのみ終了
-- description: "[Alacritty] LCommand-Q (held down) → Quit Alacritty"
-  manipulators:
+  # [Alacritty] LCommand-Q (held down) → Quit Alacritty
+  # LCommand-Q 長押しでのみ終了
   - type: basic
     from:
       key_code: q
@@ -56,9 +57,10 @@ rules:
 
 # ──── MacVim ────
 
-# [MacVim] Command-W を無効化
-- description: "[MacVim] Command-W → Invalid"
+- description: "[App] MacVim"
   manipulators:
+
+  # [MacVim] Command-W → Invalid
   - type: basic
     from:
       key_code: w
@@ -70,9 +72,8 @@ rules:
       bundle_identifiers:
       - "^org\\.vim\\.MacVim$"
 
-# [MacVim] LCommand-Q 長押しでのみ終了
-- description: "[MacVim] LCommand-Q (held down) → Quit MacVim"
-  manipulators:
+  # [MacVim] LCommand-Q (held down) → Quit MacVim
+  # LCommand-Q 長押しでのみ終了
   - type: basic
     from:
       key_code: q
@@ -93,9 +94,11 @@ rules:
 
 # ──── Slack ────
 
-# [Slack] RCommand-K 後に英語入力にする（LCommand-K → Up との競合回避）
-- description: "[Slack] RCommand-K → Command-K, 英数"
+- description: "[App] Slack"
   manipulators:
+
+  # [Slack] RCommand-K → Command-K, Eisuu
+  # RCommand-K 後に英語入力にする (LCommand-K → Up との競合回避)
   - type: basic
     from:
       key_code: k
@@ -115,9 +118,11 @@ rules:
 
 # ──── Superhuman ────
 
-# [Superhuman] RCommand-K 後に英語入力にする（LCommand-K → Up との競合回避）
-- description: "[Superhuman] RCommand-K → Command-K, 英数"
+- description: "[App] Superhuman"
   manipulators:
+
+  # [Superhuman] RCommand-K → Command-K, Eisuu
+  # RCommand-K 後に英語入力にする (LCommand-K → Up との競合回避)
   - type: basic
     from:
       key_code: k
@@ -137,9 +142,11 @@ rules:
 
 # ──── Linear ────
 
-# [Linear] RCommand-K 後に英語入力にする（LCommand-K → Up との競合回避）
-- description: "[Linear] RCommand-K → Command-K, 英数"
+- description: "[App] Linear"
   manipulators:
+
+  # [Linear] RCommand-K → Command-K, Eisuu
+  # RCommand-K 後に英語入力にする (LCommand-K → Up との競合回避)
   - type: basic
     from:
       key_code: k
@@ -159,9 +166,11 @@ rules:
 
 # ──── Google Chrome ────
 
-# [Chrome] スプレッドシートでの検索・置換
-- description: "[Chrome] LShift-LCommand-F → Shift-Command-H"
+- description: "[App] Google Chrome"
   manipulators:
+
+  # [Chrome] LShift-LCommand-F → Shift-Command-H
+  # スプレッドシートでの検索・置換
   - type: basic
     from:
       key_code: f
@@ -180,9 +189,7 @@ rules:
       bundle_identifiers:
       - "^com\\.google\\.Chrome$"
 
-# [Chrome] LCommand-W のリピートを無効化
-- description: "[Chrome] LCommand-W → Repeat: False"
-  manipulators:
+  # [Chrome] LCommand-W → Repeat: False
   - type: basic
     from:
       key_code: w
@@ -201,9 +208,11 @@ rules:
 
 # ──── Sidekick ────
 
-# [Sidekick] スプレッドシートでの検索・置換
-- description: "[Sidekick] LShift-LCommand-F → Shift-Command-H"
+- description: "[App] Sidekick"
   manipulators:
+
+  # [Sidekick] LShift-LCommand-F → Shift-Command-H
+  # スプレッドシートでの検索・置換
   - type: basic
     from:
       key_code: f
@@ -222,9 +231,7 @@ rules:
       bundle_identifiers:
       - "^com\\.pushplaylabs\\.sidekick$"
 
-# [Sidekick] LCommand-W のリピートを無効化
-- description: "[Sidekick] LCommand-W → Repeat: False"
-  manipulators:
+  # [Sidekick] LCommand-W → Repeat: False
   - type: basic
     from:
       key_code: w
@@ -241,9 +248,8 @@ rules:
       bundle_identifiers:
       - "^com\\.pushplaylabs\\.sidekick$"
 
-# [Sidekick] LShift-LCommand-A でセッション一覧を開く（Sidekick でショートカット変更した上で）
-- description: "[Sidekick] LShift-LCommand-A → Command-S"
-  manipulators:
+  # [Sidekick] LShift-LCommand-A → Command-S
+  # セッション一覧を開く (Sidekick でのショートカット変更が必要)
   - type: basic
     from:
       key_code: a
@@ -261,9 +267,8 @@ rules:
       bundle_identifiers:
       - "^com\\.pushplaylabs\\.sidekick$"
 
-# [Sidekick] LShift-LCommand-S で Sidecar を開く
-- description: "[Sidekick] LShift-LCommand-S → Shift-Option-S"
-  manipulators:
+  # [Sidekick] LShift-LCommand-S → Shift-Option-S
+  # サイドカーを表示／非表示
   - type: basic
     from:
       key_code: s
@@ -284,7 +289,7 @@ rules:
 
 # ──── Bike ────
 
-- description: "[Bike] Outliner Commands"
+- description: "[App] Bike"
   manipulators:
 
   # [Bike] Control-Right → Indent Row
@@ -672,9 +677,27 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
+  # [Bike] LCommand-D → Shift-Command-D
+  - type: basic
+    from:
+      key_code: d
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: d
+      modifiers:
+      - shift
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.hogbaysoftware\\.Bike$"
+
 # ──── WorkFlowy ────
 
-- description: "[WorkFlowy] Outliner Commands"
+- description: "[App] WorkFlowy"
   manipulators:
 
   # [WorkFlowy] Control-Right → Indent
@@ -866,9 +889,27 @@ rules:
       bundle_identifiers:
       - "^com\\.workflowy\\.desktop$"
 
+  # [WorkFlowy] LCommand-D → Shift-Command-D
+  - type: basic
+    from:
+      key_code: d
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: d
+      modifiers:
+      - shift
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.workflowy\\.desktop$"
+
 # ──── Microsoft Office ────
 
-- description: "[Microsoft Office] Unix Keymaps"
+- description: "[App] Microsoft Office"
   manipulators:
 
   # [Word] Control-H → Delete
