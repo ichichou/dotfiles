@@ -561,6 +561,10 @@ else
   call plug#begin(stdpath('data') . '/plugged')
 endif
 
+" Library
+" ----------------------------------------
+Plug 'vim-denops/denops.vim'
+
 " Language Server
 " ----------------------------------------
 if !has('nvim')
@@ -581,7 +585,6 @@ endif
 " Completion - Ddc
 " ----------------------------------------
 if !has('nvim')
-  " Plug 'vim-denops/denops.vim'
   " Plug 'Shougo/pum.vim'
   " Plug 'Shougo/ddc.vim'
   " Plug 'Shougo/ddc-ui-native'
@@ -658,6 +661,7 @@ else
   " Plug 'nvim-lua/plenary.nvim'
   " Plug 'nvim-telescope/telescope.nvim', {'tag': '0.1.1'}
   " Plug 'mickael-menu/zk-nvim'
+  " Plug 'lewis6991/gitsigns.nvim'
 endif
 
 packadd! matchit
@@ -697,6 +701,7 @@ endif
 Plug 'deton/jasegment.vim'
 Plug 'deton/jasentence.vim'
 Plug 'haya14busa/vim-migemo'
+" Plug 'lambdalisue/kensaku.vim'
 Plug 'mattn/learn-vimscript'
 Plug 'vim-jp/vimdoc-ja'
 
