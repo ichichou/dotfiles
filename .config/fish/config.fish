@@ -129,6 +129,18 @@ function cd
     end
 end
 
+### Journal
+function journal
+    set today (date +"%Y-%m-%d")
+    set journal_file (string join "" $today ".bike")
+    set journal_path (string join "" "$HOME/Dropbox/Journal/" $journal_file)
+    if test -e $journal_path
+        open -a "bike" $journal_path
+    else
+        touch $journal_path; and open -a "bike" $journal_path
+    end
+end
+
 ## Environment Variable
 set -x EDITOR vim
 
