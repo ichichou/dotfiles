@@ -3,18 +3,17 @@
 # Required parameters:
 # @raycast.schemaVersion 1
 # @raycast.title Journal
-# @raycast.mode compact
+# @raycast.mode silent
+# @raycast.currentDirectoryPath ~/Dropbox/Journal
 
 # Optional parameters:
 # @raycast.icon 🤖
 
 today=`date +"%Y-%m-%d"`
-journal_file="${today}.bike"
-journal_dir="${HOME}/Dropbox/Journal/"
-journal_path="${journal_dir}${journal_file}"
+file="${today}.bike"
 
-if [ -e "${journal_path}" ]; then
-    open -a "bike" "${journal_path}"
+if [ -e "${file}" ]; then
+    open -a "bike" "${file}"
 else
-    touch "${journal_path}" && open -a "bike" "${journal_path}"
+    touch "${file}" && open -a "bike" "${file}"
 fi
