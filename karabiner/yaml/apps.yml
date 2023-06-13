@@ -310,7 +310,7 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
-  # [Bike] Control-Left → Unindent Row
+  # [Bike] Control-Left → Outdent Row
   - type: basic
     from:
       key_code: left_arrow
@@ -383,7 +383,7 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
-  # [Bike] Control-LCommand-H → Unindent Row
+  # [Bike] Control-LCommand-H → Outdent Row
   - type: basic
     from:
       key_code: h
@@ -688,6 +688,24 @@ rules:
     - key_code: d
       modifiers:
       - shift
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.hogbaysoftware\\.Bike$"
+
+  # [Bike] LCommand-G → Option-Command-G
+  - type: basic
+    from:
+      key_code: g
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: g
+      modifiers:
+      - option
       - command
       repeat: false
     conditions:
