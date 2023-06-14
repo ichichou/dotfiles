@@ -13,6 +13,7 @@ rules:
         - any
     to:
     - key_code: return_or_enter
+      repeat: false
 
 - description: "[Command] LCommand-RCommand → ESC"
   manipulators:
@@ -24,6 +25,7 @@ rules:
         - left_command
     to:
     - key_code: escape
+      repeat: false
 
 - description: "[Command] LCommand-H/J/K/L → Left/Down/Up/Right"
   manipulators:
