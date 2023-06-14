@@ -713,12 +713,12 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
-# ──── WorkFlowy ────
+# ──── Workflowy ────
 
-- description: "[App] WorkFlowy"
+- description: "[App] Workflowy"
   manipulators:
 
-  # [WorkFlowy] Control-Right → Indent
+  # [Workflowy] Control-Right → Indent
   - type: basic
     from:
       key_code: right_arrow
@@ -733,7 +733,7 @@ rules:
       bundle_identifiers:
       - "^com\\.workflowy\\.desktop$"
 
-  # [WorkFlowy] Control-Left → Outdent
+  # [Workflowy] Control-Left → Outdent
   - type: basic
     from:
       key_code: left_arrow
@@ -750,7 +750,7 @@ rules:
       bundle_identifiers:
       - "^com\\.workflowy\\.desktop$"
 
-  # [WorkFlowy] Control-LCommand-L → Indent
+  # [Workflowy] Control-LCommand-L → Indent
   - type: basic
     from:
       key_code: l
@@ -766,7 +766,7 @@ rules:
       bundle_identifiers:
       - "^com\\.workflowy\\.desktop$"
 
-  # [WorkFlowy] Control-LCommand-H → Outdent
+  # [Workflowy] Control-LCommand-H → Outdent
   - type: basic
     from:
       key_code: h
@@ -784,7 +784,7 @@ rules:
       bundle_identifiers:
       - "^com\\.workflowy\\.desktop$"
 
-  # [WorkFlowy] Control-Up → Move Up
+  # [Workflowy] Control-Up → Move Up
   - type: basic
     from:
       key_code: up_arrow
@@ -802,7 +802,7 @@ rules:
       bundle_identifiers:
       - "^com\\.workflowy\\.desktop$"
 
-  # [WorkFlowy] Control-Down → Move Down
+  # [Workflowy] Control-Down → Move Down
   - type: basic
     from:
       key_code: down_arrow
@@ -820,7 +820,7 @@ rules:
       bundle_identifiers:
       - "^com\\.workflowy\\.desktop$"
 
-  # [WorkFlowy] Control-LCommand-K → Move Up
+  # [Workflowy] Control-LCommand-K → Move Up
   - type: basic
     from:
       key_code: k
@@ -839,7 +839,7 @@ rules:
       bundle_identifiers:
       - "^com\\.workflowy\\.desktop$"
 
-  # [WorkFlowy] Control-LCommand-J → Move Down
+  # [Workflowy] Control-LCommand-J → Move Down
   - type: basic
     from:
       key_code: j
@@ -858,7 +858,7 @@ rules:
       bundle_identifiers:
       - "^com\\.workflowy\\.desktop$"
 
-  # [WorkFlowy] Command-O → Expand
+  # [Workflowy] Command-O → Expand
   - type: basic
     from:
       key_code: o
@@ -875,7 +875,7 @@ rules:
       bundle_identifiers:
       - "^com\\.workflowy\\.desktop$"
 
-  # [WorkFlowy] Command-I → Collapse
+  # [Workflowy] Command-I → Collapse
   - type: basic
     from:
       key_code: i
@@ -892,7 +892,7 @@ rules:
       bundle_identifiers:
       - "^com\\.workflowy\\.desktop$"
 
-  # [WorkFlowy] RControl-I → Delete
+  # [Workflowy] RControl-I → Delete
   - type: basic
     from:
       key_code: h
@@ -907,7 +907,7 @@ rules:
       bundle_identifiers:
       - "^com\\.workflowy\\.desktop$"
 
-  # [WorkFlowy] LCommand-D → Shift-Command-D
+  # [Workflowy] LCommand-D → Shift-Command-D
   - type: basic
     from:
       key_code: d
