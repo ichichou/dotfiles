@@ -33,6 +33,7 @@ brew "trash"
 brew "vim"
 brew "yq"
 brew "z"
+brew "zk"
 
 cask "appcleaner"
 cask "aquaskk"
