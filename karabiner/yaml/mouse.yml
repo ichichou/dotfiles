@@ -1,0 +1,74 @@
+title: "02. Mouse"
+rules:
+
+- description: "[Mouse] Kensington's SlimBlade & ExpertMouse"
+  manipulators:
+
+  # Command - 左上ボタン → Shift-Control-Tab (前のタブ)
+  # KensingtonWorks での設定が必要
+  - type: basic
+    from:
+      key_code: "3"
+      modifiers:
+        mandatory:
+        - shift
+        - option
+        - command
+        - control
+    to:
+    - key_code: tab
+      modifiers:
+      - shift
+      - control
+      repeat: false
+
+  # Command - 右上ボタン →Control-Tab (次のタブ)
+  # KensingtonWorks での設定が必要
+  - type: basic
+    from:
+      key_code: "4"
+      modifiers:
+        mandatory:
+        - shift
+        - option
+        - command
+        - control
+    to:
+    - key_code: tab
+      modifiers:
+      - control
+      repeat: false
+
+  # 左上ボタン → Command-Left (戻る)
+  # KensingtonWorks での設定が必要
+  - type: basic
+    from:
+      key_code: "3"
+      modifiers:
+        mandatory:
+        - shift
+        - option
+        - control
+    to:
+    - key_code: left_arrow
+      modifiers:
+      - command
+      repeat: false
+
+  # 右上ボタン → Option-Command-Control-Up (Mission Control)
+  # KensingtonWorks での設定が必要
+  - type: basic
+    from:
+      key_code: "4"
+      modifiers:
+        mandatory:
+        - shift
+        - option
+        - control
+    to:
+    - key_code: up_arrow
+      modifiers:
+      - option
+      - command
+      - control
+      repeat: false
