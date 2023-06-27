@@ -118,9 +118,6 @@ abbr -ag gs git status --short --branch
 abbr -ag gsh git show
 abbr -ag gss git status
 
-## Alias
-alias bike "open -a 'bike'"
-
 ## Function
 ### Auto ls
 functions --copy cd standard_cd
@@ -166,6 +163,7 @@ set -x pure_show_jobs true
 fish_add_path /usr/local/opt/avr-gcc@7/bin
 fish_add_path /Users/kazu/go/bin
 fish_add_path /Users/kazu/.ghcup/bin
+fish_add_path /Users/kazu/command
 
 ## Greeting
 set fish_greeting
