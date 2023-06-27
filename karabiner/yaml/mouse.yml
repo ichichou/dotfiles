@@ -1,70 +1,68 @@
 title: "02. Mouse"
+
+aliases:
+
+- conditions: &kensington
+  - type: device_if
+    identifiers:
+
+    # SlimBlade Pro (Bluetooth)
+    - vendor_id: 1149
+      product_id: 32980
+
+    # SlimBlade Pro (2.4 GHz)
+    - vendor_id: 1149
+      product_id: 32982
+
 rules:
 
 - description: "[Mouse] Kensington's SlimBlade & ExpertMouse"
   manipulators:
 
-  # Command - 左上ボタン → Shift-Control-Tab (前のタブ)
-  # KensingtonWorks での設定が必要
+  # LCommand-ボタン3 → Shift-Control-Tab (前のタブ)
   - type: basic
     from:
-      key_code: "3"
+      pointing_button: button3
       modifiers:
         mandatory:
-        - shift
-        - option
-        - command
-        - control
+        - left_command
     to:
     - key_code: tab
       modifiers:
       - shift
       - control
       repeat: false
+    conditions: *kensington
 
-  # Command - 右上ボタン →Control-Tab (次のタブ)
-  # KensingtonWorks での設定が必要
+  # LCommand-ボタン4 →Control-Tab (次のタブ)
   - type: basic
     from:
-      key_code: "4"
+      pointing_button: button4
       modifiers:
         mandatory:
-        - shift
-        - option
-        - command
-        - control
+        - left_command
     to:
     - key_code: tab
       modifiers:
       - control
       repeat: false
+    conditions: *kensington
 
-  # 左上ボタン → Command-Left (戻る)
-  # KensingtonWorks での設定が必要
+  # ボタン3 → Command-Left (戻る)
   - type: basic
     from:
-      key_code: "3"
-      modifiers:
-        mandatory:
-        - shift
-        - option
-        - control
+      pointing_button: button3
     to:
     - key_code: left_arrow
       modifiers:
       - command
       repeat: false
+    conditions: *kensington
 
-  # 右上ボタン → Option-Command-Control-Up (Mission Control)
-  # KensingtonWorks での設定が必要
+  # ボタン4 → Option-Command-Control-Up (Mission Control)
   - type: basic
     from:
-      key_code: "4"
-      modifiers:
-        mandatory:
-        - shift
-        - option
-        - control
+      pointing_button: button4
     to:
     - key_code: up_arrow
       modifiers:
@@ -72,3 +70,4 @@ rules:
       - command
       - control
       repeat: false
+    conditions: *kensington
