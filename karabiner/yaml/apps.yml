@@ -287,6 +287,30 @@ rules:
       bundle_identifiers:
       - "^com\\.pushplaylabs\\.sidekick$"
 
+# ──── Safari ────
+
+- description: "[App] Safari"
+  manipulators:
+
+  # [Safari] LCommand-S → Shift-Command-L
+  # サイドバーを表示／非表示
+  - type: basic
+    from:
+      key_code: s
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: l
+      modifiers:
+      - shift
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.apple\\.Safari$"
+
 # ──── Bike ────
 
 - description: "[App] Bike"
@@ -713,6 +737,42 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
+  # [Bike] Shift-Command-V → Command-V
+  - type: basic
+    from:
+      key_code: v
+      modifiers:
+        mandatory:
+        - shift
+        - command
+    to:
+    - key_code: v
+      modifiers:
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.hogbaysoftware\\.Bike$"
+
+  # [Bike] LCommand-Delete → Shift-Command-K
+  - type: basic
+    from:
+      key_code: delete_or_backspace
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: k
+      modifiers:
+      - shift
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.hogbaysoftware\\.Bike$"
+
 # ──── Workflowy ────
 
 - description: "[App] Workflowy"
@@ -892,7 +952,7 @@ rules:
       bundle_identifiers:
       - "^com\\.workflowy\\.desktop$"
 
-  # [Workflowy] RControl-I → Delete
+  # [Workflowy] RControl-H → Delete
   - type: basic
     from:
       key_code: h
@@ -916,6 +976,24 @@ rules:
         - left_command
     to:
     - key_code: d
+      modifiers:
+      - shift
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.workflowy\\.desktop$"
+
+  # [Workflowy] LCommand-Delete → Shift-Command-Delete
+  - type: basic
+    from:
+      key_code: delete_or_backspace
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: delete_or_space
       modifiers:
       - shift
       - command
