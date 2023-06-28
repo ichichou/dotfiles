@@ -16,7 +16,7 @@ aliases:
 
 rules:
 
-- description: "[Mouse] Kensington's SlimBlade & ExpertMouse"
+- description: "[Mouse] Kensington's Trackball"
   manipulators:
 
   # LCommand-ボタン3 → Shift-Control-Tab (前のタブ)
@@ -53,21 +53,17 @@ rules:
     from:
       pointing_button: button3
     to:
-    - key_code: left_arrow
+    - key_code: open_bracket
       modifiers:
       - command
       repeat: false
     conditions: *kensington
 
-  # ボタン4 → Option-Command-Control-Up (Mission Control)
+  # ボタン4 → Mission Control
   - type: basic
     from:
       pointing_button: button4
     to:
-    - key_code: up_arrow
-      modifiers:
-      - option
-      - command
-      - control
+    - key_code: mission_control
       repeat: false
     conditions: *kensington
