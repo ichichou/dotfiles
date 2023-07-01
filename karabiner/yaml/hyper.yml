@@ -204,20 +204,20 @@ rules:
   #   - shell_command: open -a ""
   #   conditions: *hyper_mode
 
-  # W: Arc
+  # W: Cron
   - type: basic
     from:
       key_code: w
     to:
-    - shell_command: open -a "arc"
+    - shell_command: open -a "cron"
     conditions: *hyper_mode
 
-  # E: Cron
+  # E: Arc
   - type: basic
     from:
       key_code: e
     to:
-    - shell_command: open -a "cron"
+    - shell_command: open -a "arc"
     conditions: *hyper_mode
 
   # # R:
@@ -336,12 +336,12 @@ rules:
     - shell_command: open -a "bike"
     conditions: *hyper_mode
 
-  # I: WorkFlowy
+  # I: Linear
   - type: basic
     from:
       key_code: i
     to:
-    - shell_command: open -a "workflowy"
+    - shell_command: open -a "linear"
     conditions: *hyper_mode
 
   # O: Todoist
