@@ -773,6 +773,24 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
+  # [Bike] RControl-O → Shift-Command-G
+  - type: basic
+    from:
+      key_code: o
+      modifiers:
+        mandatory:
+        - right_control
+    to:
+    - key_code: g
+      modifiers:
+      - option
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.hogbaysoftware\\.Bike$"
+
 # ──── Workflowy ────
 
 - description: "[App] Workflowy"
