@@ -1011,7 +1011,7 @@ rules:
         mandatory:
         - left_command
     to:
-    - key_code: delete_or_space
+    - key_code: delete_or_backspace
       modifiers:
       - shift
       - command
