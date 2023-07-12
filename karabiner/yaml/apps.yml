@@ -364,7 +364,7 @@ rules:
       modifiers:
       - command
       - control
-      repeat: false
+      repeat: true
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
@@ -382,7 +382,7 @@ rules:
       modifiers:
       - command
       - control
-      repeat: false
+      repeat: true
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
@@ -439,7 +439,7 @@ rules:
       modifiers:
       - command
       - control
-      repeat: false
+      repeat: true
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
@@ -458,81 +458,7 @@ rules:
       modifiers:
       - command
       - control
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "^com\\.hogbaysoftware\\.Bike$"
-
-  # [Bike] Option-Right → Focus In
-  - type: basic
-    from:
-      key_code: right_arrow
-      modifiers:
-        mandatory:
-        - option
-    to:
-    - key_code: right_arrow
-      modifiers:
-      - command
-      - option
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "^com\\.hogbaysoftware\\.Bike$"
-
-  # [Bike] Option-Left → Focus Out
-  - type: basic
-    from:
-      key_code: left_arrow
-      modifiers:
-        mandatory:
-        - option
-    to:
-    - key_code: left_arrow
-      modifiers:
-      - command
-      - option
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "^com\\.hogbaysoftware\\.Bike$"
-
-  # [Bike] Option-LCommand-L → Focus In
-  - type: basic
-    from:
-      key_code: l
-      modifiers:
-        mandatory:
-        - option
-        - left_command
-    to:
-    - key_code: right_arrow
-      modifiers:
-      - command
-      - option
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "^com\\.hogbaysoftware\\.Bike$"
-
-  # [Bike] Option-LCommand-H → Focus Out
-  - type: basic
-    from:
-      key_code: h
-      modifiers:
-        mandatory:
-        - option
-        - left_command
-    to:
-    - key_code: left_arrow
-      modifiers:
-      - command
-      - option
-      repeat: false
+      repeat: true
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
@@ -685,6 +611,7 @@ rules:
       - "^com\\.hogbaysoftware\\.Bike$"
 
   # [Bike] RControl-M → Command-Return
+  # New Row
   - type: basic
     from:
       key_code: m
@@ -701,15 +628,17 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
-  # [Bike] LCommand-D → Shift-Command-D
+  # [Bike] Shift-RControl-M → Shift-Command-Return
+  # New Indented Row
   - type: basic
     from:
-      key_code: d
+      key_code: m
       modifiers:
         mandatory:
-        - left_command
+        - shift
+        - right_control
     to:
-    - key_code: d
+    - key_code: return_or_enter
       modifiers:
       - shift
       - command
@@ -720,6 +649,7 @@ rules:
       - "^com\\.hogbaysoftware\\.Bike$"
 
   # [Bike] LCommand-G → Option-Command-G
+  # Group Rows
   - type: basic
     from:
       key_code: g
@@ -737,17 +667,18 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
-  # [Bike] Shift-Command-V → Command-V
+  # [Bike] LCommand-D → Shift-Command-D
+  # Duplicate Rows
   - type: basic
     from:
-      key_code: v
+      key_code: d
       modifiers:
         mandatory:
-        - shift
-        - command
+        - left_command
     to:
-    - key_code: v
+    - key_code: d
       modifiers:
+      - shift
       - command
       repeat: false
     conditions:
@@ -756,6 +687,7 @@ rules:
       - "^com\\.hogbaysoftware\\.Bike$"
 
   # [Bike] LCommand-Delete → Shift-Command-K
+  # Delete Rows
   - type: basic
     from:
       key_code: delete_or_backspace
@@ -773,16 +705,53 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
-  # [Bike] RControl-O → Shift-Command-G
+  # [Bike] RControl-N → Command-Down
   - type: basic
     from:
-      key_code: o
+      key_code: "n"
       modifiers:
         mandatory:
         - right_control
     to:
-    - key_code: g
+    - key_code: down_arrow
       modifiers:
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.hogbaysoftware\\.Bike$"
+
+  # [Bike] RControl-P → Command-Up
+  - type: basic
+    from:
+      key_code: p
+      modifiers:
+        mandatory:
+        - right_control
+    to:
+    - key_code: up_arrow
+      modifiers:
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.hogbaysoftware\\.Bike$"
+
+  # [Bike] Shift-Command-V → Shift-Option-Command-V
+  # Paste and Match Style
+  - type: basic
+    from:
+      key_code: v
+      modifiers:
+        mandatory:
+        - shift
+        - command
+    to:
+    - key_code: v
+      modifiers:
+      - shift
       - option
       - command
       repeat: false
@@ -986,6 +955,7 @@ rules:
       - "^com\\.workflowy\\.desktop$"
 
   # [Workflowy] LCommand-D → Shift-Command-D
+  # Duplicate Rows
   - type: basic
     from:
       key_code: d
@@ -1004,6 +974,7 @@ rules:
       - "^com\\.workflowy\\.desktop$"
 
   # [Workflowy] LCommand-Delete → Shift-Command-Delete
+  # Delete Rows
   - type: basic
     from:
       key_code: delete_or_backspace
