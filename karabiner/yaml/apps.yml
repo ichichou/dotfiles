@@ -760,6 +760,25 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
+  # [Bike] RCommand-K → Command-K, Eisuu
+  # RCommand-K 後に英語入力にする (LCommand-K → Up との競合回避)
+  - type: basic
+    from:
+      key_code: k
+      modifiers:
+        mandatory:
+        - right_command
+    to:
+    - key_code: k
+      modifiers:
+      - command
+    - key_code: japanese_eisuu
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.hogbaysoftware\\.Bike$"
+
 # ──── Workflowy ────
 
 - description: "[App] Workflowy"
