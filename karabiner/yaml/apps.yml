@@ -760,14 +760,14 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
-  # [Bike] RCommand-E → Command-E, Eisuu
-  # RCommand-E 後に英語入力にする (LCommand-E → Up との競合回避)
+  # [Bike] L/RCommand-E → Command-E, Eisuu
+  # L/RCommand-E 後に英語入力にする
   - type: basic
     from:
       key_code: e
       modifiers:
         mandatory:
-        - right_command
+        - command
     to:
     - key_code: e
       modifiers:
