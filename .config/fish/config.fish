@@ -23,12 +23,12 @@ abbr -ag yqy yq eval -P
 ### Functions
 abbr -ag jo journal
 
-### exa/ls
-if test -e "/opt/homebrew/bin/exa"
-    abbr -ag la exa -al --git
-    abbr -ag ll exa -1a
-    abbr -ag ls exa -a
-    abbr -ag lsa exa
+### eza/ls
+if test -e "/opt/homebrew/bin/eza"
+    abbr -ag la eza -al --git
+    abbr -ag ll eza -1a
+    abbr -ag ls eza -a
+    abbr -ag lsa eza
 else
     abbr -ag la ls -AlG
     abbr -ag ll ls -1AG
@@ -122,8 +122,8 @@ abbr -ag gss git status
 ### Auto ls
 functions --copy cd standard_cd
 function cd
-    if test -e "/opt/homebrew/bin/exa"
-        standard_cd $argv; and exa -a
+    if test -e "/opt/homebrew/bin/eza"
+        standard_cd $argv; and eza -a
     else
         standard_cd $argv; and ls -AG
     end

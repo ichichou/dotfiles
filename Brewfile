@@ -6,7 +6,7 @@ tap "itchyny/tap"
 
 brew "bat"
 brew "cmigemo"
-brew "exa"
+brew "eza"
 brew "fd"
 brew "fish"
 brew "fzf"
