@@ -4,7 +4,8 @@
 # @raycast.schemaVersion 1
 # @raycast.title Journal
 # @raycast.mode silent
-# @raycast.currentDirectoryPath ~/Dropbox/Journal
+# @raycast.currentDirectoryPath ~/Library/CloudStorage/Box-Box/Journal
+
 
 # Optional parameters:
 # @raycast.icon 🤖

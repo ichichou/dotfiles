@@ -4,7 +4,7 @@
 # @raycast.schemaVersion 1
 # @raycast.title Draft
 # @raycast.mode silent
-# @raycast.currentDirectoryPath ~/Dropbox/Draft
+# @raycast.currentDirectoryPath ~/Library/CloudStorage/Box-Box/Draft
 
 # Optional parameters:
 # @raycast.icon 🤖
