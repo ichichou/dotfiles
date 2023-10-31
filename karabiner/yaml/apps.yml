@@ -287,6 +287,48 @@ rules:
       bundle_identifiers:
       - "^com\\.pushplaylabs\\.sidekick$"
 
+# ──── Arc ────
+
+- description: "[App] Arc"
+  manipulators:
+
+  # [Arc] LShift-LCommand-F → Shift-Command-H
+  # スプレッドシートでの検索・置換
+  - type: basic
+    from:
+      key_code: f
+      modifiers:
+        mandatory:
+        - left_shift
+        - left_command
+    to:
+    - key_code: h
+      modifiers:
+      - shift
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^company\\.thebrowser\\.Browser$"
+
+  # [Arc] LCommand-W → Repeat: False
+  - type: basic
+    from:
+      key_code: w
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: w
+      modifiers:
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^company\\.thebrowser\\.Browser$"
+
 # ──── Safari ────
 
 - description: "[App] Safari"
@@ -310,6 +352,85 @@ rules:
     - type: frontmost_application_if
       bundle_identifiers:
       - "^com\\.apple\\.Safari$"
+
+# ──── Notion ────
+
+- description: "[App] Notion"
+  manipulators:
+
+  # [Notion] Control-Up → Move Block Up
+  - type: basic
+    from:
+      key_code: up_arrow
+      modifiers:
+        mandatory:
+        - control
+    to:
+    - key_code: up_arrow
+      modifiers:
+      - shift
+      - command
+      repeat: true
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^notion\\.id$"
+
+  # [Arc] Control-Down → Move Block Down
+  - type: basic
+    from:
+      key_code: down_arrow
+      modifiers:
+        mandatory:
+        - control
+    to:
+    - key_code: down_arrow
+      modifiers:
+      - shift
+      - command
+      repeat: true
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^notion\\.id$"
+
+  # [Arc] Control-LCommand-K → Move Block Up
+  - type: basic
+    from:
+      key_code: k
+      modifiers:
+        mandatory:
+        - control
+        - left_command
+    to:
+    - key_code: up_arrow
+      modifiers:
+      - shift
+      - command
+      repeat: true
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^notion\\.id$"
+
+  # [Arc] Control-LCommand-J → Move Block Down
+  - type: basic
+    from:
+      key_code: j
+      modifiers:
+        mandatory:
+        - control
+        - command
+    to:
+    - key_code: down_arrow
+      modifiers:
+      - shift
+      - command
+      repeat: true
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^notion\\.id$"
 
 # ──── Bike ────
 
