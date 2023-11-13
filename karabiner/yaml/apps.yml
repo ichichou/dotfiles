@@ -376,7 +376,7 @@ rules:
       bundle_identifiers:
       - "^notion\\.id$"
 
-  # [Arc] Control-Down → Move Block Down
+  # [Notion] Control-Down → Move Block Down
   - type: basic
     from:
       key_code: down_arrow
@@ -394,7 +394,7 @@ rules:
       bundle_identifiers:
       - "^notion\\.id$"
 
-  # [Arc] Control-LCommand-K → Move Block Up
+  # [Notion] Control-LCommand-K → Move Block Up
   - type: basic
     from:
       key_code: k
@@ -413,7 +413,7 @@ rules:
       bundle_identifiers:
       - "^notion\\.id$"
 
-  # [Arc] Control-LCommand-J → Move Block Down
+  # [Notion] Control-LCommand-J → Move Block Down
   - type: basic
     from:
       key_code: j
@@ -426,6 +426,21 @@ rules:
       modifiers:
       - shift
       - command
+      repeat: true
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^notion\\.id$"
+
+  # [Notion] Control-H → Delete
+  - type: basic
+    from:
+      key_code: h
+      modifiers:
+        mandatory:
+        - control
+    to:
+    - key_code: delete_or_backspace
       repeat: true
     conditions:
     - type: frontmost_application_if
