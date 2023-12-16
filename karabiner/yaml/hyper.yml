@@ -284,13 +284,13 @@ rules:
     - shell_command: open -a "zoom.us"
     conditions: *hyper_mode
 
-  # X: Notes.app
-  - type: basic
-    from:
-      key_code: x
-    to:
-    - shell_command: open -a "notes"
-    conditions: *hyper_mode
+  # # X:
+  # - type: basic
+  #   from:
+  #     key_code: x
+  #   to:
+  #   - shell_command: open -a ""
+  #   conditions: *hyper_mode
 
   # C: Sidekick
   - type: basic
@@ -408,13 +408,13 @@ rules:
     - shell_command: open -a "notion"
     conditions: *hyper_mode
 
-  # # M:
-  # - type: basic
-  #   from:
-  #     key_code: m
-  #   to:
-  #   - shell_command: open -a ""
-  #   conditions: *hyper_mode
+  # M: Notes.app
+  - type: basic
+    from:
+      key_code: m
+    to:
+    - shell_command: open -a "notes"
+    conditions: *hyper_mode
 
   # # Comma:
   # - type: basic
