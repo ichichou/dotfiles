@@ -196,7 +196,7 @@ rules:
 - description: "[Hyper] Hyper - Alpha Key → Launch App"
   manipulators:
 
-  # # Q:
+  # Q:
   # - type: basic
   #   from:
   #     key_code: q
@@ -220,7 +220,7 @@ rules:
     - shell_command: open -a "arc"
     conditions: *hyper_mode
 
-  # # R:
+  # R:
   # - type: basic
   #   from:
   #     key_code: r
@@ -228,7 +228,7 @@ rules:
   #   - shell_command: open -a ""
   #   conditions: *hyper_mode
 
-  # # T:
+  # T:
   # - type: basic
   #   from:
   #     key_code: t
@@ -260,7 +260,7 @@ rules:
     - shell_command: open -a "safari"
     conditions: *hyper_mode
 
-  # # F:
+  # F:
   # - type: basic
   #   from:
   #     key_code: f
@@ -268,7 +268,7 @@ rules:
   #   - shell_command: open -a ""
   #   conditions: *hyper_mode
 
-  # # G:
+  # G:
   # - type: basic
   #   from:
   #     key_code: g
@@ -284,7 +284,7 @@ rules:
     - shell_command: open -a "zoom.us"
     conditions: *hyper_mode
 
-  # # X:
+  # X:
   # - type: basic
   #   from:
   #     key_code: x
@@ -308,7 +308,7 @@ rules:
     - shell_command: open -a "bitwarden"
     conditions: *hyper_mode
 
-  # # B:
+  # B:
   # - type: basic
   #   from:
   #     key_code: b
@@ -320,7 +320,7 @@ rules:
 # ----- HJKL; -----
 # ----- NM,./ -----
 
-  # # Y:
+  # Y:
   # - type: basic
   #   from:
   #     key_code: "y"
@@ -344,7 +344,7 @@ rules:
     - shell_command: open -a "linear"
     conditions: *hyper_mode
 
-  # # O:
+  # O:
   # - type: basic
   #   from:
   #     key_code: o
@@ -352,7 +352,7 @@ rules:
   #   - shell_command: open -a ""
   #   conditions: *hyper_mode
 
-  # # P:
+  # P:
   # - type: basic
   #   from:
   #     key_code: p
@@ -416,7 +416,7 @@ rules:
     - shell_command: open -a "notes"
     conditions: *hyper_mode
 
-  # # Comma:
+  # Comma:
   # - type: basic
   #   from:
   #     key_code: comma
@@ -424,7 +424,7 @@ rules:
   #   - shell_command: open -a ""
   #   conditions: *hyper_mode
 
-  # # Period:
+  # Period:
   # - type: basic
   #   from:
   #     key_code: period
@@ -432,7 +432,7 @@ rules:
   #   - shell_command: open -a ""
   #   conditions: *hyper_mode
 
-  # # Slash:
+  # Slash:
   # - type: basic
   #   from:
   #     key_code: slash
