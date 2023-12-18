@@ -212,13 +212,13 @@ rules:
     - shell_command: open -a "cron"
     conditions: *hyper_mode
 
-  # E: Arc
-  - type: basic
-    from:
-      key_code: e
-    to:
-    - shell_command: open -a "arc"
-    conditions: *hyper_mode
+  # E:
+  # - type: basic
+  #   from:
+  #     key_code: e
+  #   to:
+  #   - shell_command: open -a ""
+  #   conditions: *hyper_mode
 
   # R:
   # - type: basic
@@ -292,12 +292,12 @@ rules:
   #   - shell_command: open -a ""
   #   conditions: *hyper_mode
 
-  # C: Sidekick
+  # C: Arc
   - type: basic
     from:
       key_code: c
     to:
-    - shell_command: open -a "sidekick"
+    - shell_command: open -a "arc"
     conditions: *hyper_mode
 
   # V: Bitwarden
