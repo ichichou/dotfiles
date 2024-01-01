@@ -76,8 +76,8 @@ style = "Regular"
 [window]
 decorations = "full"
 dynamic_title = true
-history = 10000
-multiplier = 3
+# history = 10000
+# multiplier = 3
 title = "Alacritty"
 
 [window.dimensions]
