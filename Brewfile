@@ -5,14 +5,12 @@ tap "homebrew/cask-fonts"
 tap "itchyny/tap"
 
 brew "bat"
-brew "cmigemo"
 brew "eza"
 brew "fd"
 brew "fish"
 brew "fzf"
 brew "gh"
 brew "git"
-brew "go"
 brew "graphviz"
 brew "icu4c"
 brew "im-select"
@@ -68,13 +66,16 @@ cask "workflowy"
 cask "zoom"
 
 cask "font-cantarell"
+cask "font-commit-mono"
 cask "font-fira-code"
 cask "font-hack-nerd-font"
 cask "font-hack"
 cask "font-jetbrains-mono"
+cask "font-juliamono"
 cask "font-lato"
 cask "font-noto-sans-jp"
 cask "font-noto-serif-jp"
+cask "font-source-code-pro"
 
 mas "AdGuard for Safari", id: 1440147259
 mas "Amphetamine", id: 937984704
@@ -82,5 +83,4 @@ mas "Bitwarden", id: 1352778147
 mas "Keepa - Price Tracker", id: 1533805339
 mas "LINE", id: 539883307
 mas "Save to Raindrop.io", id: 1549370672
-mas "Textwell", id: 905944937
 mas "Yoink", id: 457622435
