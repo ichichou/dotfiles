@@ -1,18 +1,16 @@
 # How to Initialize macOS
 
-
 ## クリーンインストール前の作業
 
 * **Homebrew**……`Brewfile` を更新。
 * **AquaSKK**……ユーザー辞書をバックアップ。
     * ユーザー辞書はシンボリックリンクでは機能しないため（Box に実体を置けない）。
-    * `$ cp -fv ~/Library/Application Support/AquaSKK/skk-jisyo.utf8 ~/dotfiles/aquaskk/skk-jisyo.utf8`
-* **Alfred**……スニペットをエクスポート（各スニペットコレクションを右クリック）。
-
+    * 場所： `~/Library/Application Support/AquaSKK/skk-jisyo.utf8`
 
 ## クリーンインストール
 
 ### クリーンインストール手順
+
 **NOTE:** 最新版の macOS では手順が異なるかもしれない。
 
 1. `Command-R` を押しながら Mac を起動 →「macOSユーティリティ」が起動する。
@@ -23,6 +21,7 @@
 1. 「macOSを再インストール」を開いてインストールを進める。
 
 ### インストール時の設定
+
 * 「コンピュータアカウントを作成」：
 
 | 項目           | 入力内容 | メモ                                                     |
@@ -33,34 +32,27 @@
 * 「エクスプレス設定」：
     * `設定をカスタマイズ` から不必要なものを無効化。
 
-
 ## システム環境設定
 
 ### 一般
+
 * `書類を開くときはタブで開く`：`常に`……プレビューアプリで複数の PDF がひとつのウィンドウで開かれるようになる。
 
 ### Dock とメニューバー
+
 不要なメニューバーアイコンを非表示にする。
 
 ### Spotlight
+
 `検索結果` ですべてのチェックを外す。
 
-### 通知と集中モード
-* `集中モード` → `おやすみモード`
-    * `即時通知を許可`：チェック
-    * `着信を許可`：`すべての人`
-    * `自動的にオンにする`：`0:00 毎日`
-    * `集中モード状況を共有`：チェックを外す
-* `集中モード` → `睡眠`
-    * `即時通知を許可`：チェックを外す
-    * `着信を許可`：`すべての人`
-    * `集中モード状況を共有`：チェックを外す
-
 ### キーボード
+
 * `入力ソース`……`U.S.` や `英語` を外すには、`日本語` の設定で `英字` にチェックを入れる。`U.S.` や `英語` を消したあとは `日本語` も消していい。
 * `ショートカット`……（最終セクションに記載）
 
 ### トラックパッド
+
 BetterTouchTool が使えるようになった後は以下の設定にする：
 
 * `調べる＆データ検出`：チェックを外す
@@ -71,20 +63,23 @@ BetterTouchTool が使えるようになった後は以下の設定にする：
 * `デスクトップを表示`：チェックを外す
 
 ### 共有
+
 * `コンピューター名`……他のデバイスなどで表示される。
 * `ローカルホスト名`……ローカルネット上でユニークである必要がある。
 
 ### プリンタとスキャナ
-ネットワーク上のプリンタを選択する。ドライバは Mac 標準のドライバが対応していれば自動選択される。
 
+ネットワーク上のプリンタを選択する。ドライバは Mac 標準のドライバが対応していれば自動選択される。
 
 ## Homebrew
 
 ### 1. Homebrew のインストール
+
 1. `$ xcode-select --install`……Command Line Tools をインストール。
 1. [Homebrew 公式サイト](https://brew.sh/)のコマンドを実行。
 
 ### 2. Brewfile でインストール
+
 1. App Store にサインイン（mas-cli 用）。
 1. `$ cd ~/Downloads/`
 1. `$ curl -LO https://raw.githubusercontent.com/ichichou/dotfiles/master/Brewfile`
@@ -94,6 +89,7 @@ BetterTouchTool が使えるようになった後は以下の設定にする：
 ## CLI によるセットアップ
 
 ### 1. init.sh
+
 1. `$ cd ~`
 1. `$ git clone https://github.com/ichichou/dotfiles.git`
 1. `$ sh ~/dotfiles/init.sh`
@@ -101,15 +97,16 @@ BetterTouchTool が使えるようになった後は以下の設定にする：
 **NOTE:** init.sh を2回以上実行すると、`~/.config/karabiner/complex_modifications` の中にシンボリックリンクが入れ子になってしまうかもしれない。これが起こったら `unlink` コマンドで修正する。
 
 ### 2. プラグインマネージャー
+
 #### Fisher
+
+（保留）
+
 1. [Fisher のインストールコマンド](https://github.com/jorgebucaran/fisher)を実行。
 1. `$ fisher jethrokuan/z jethrokuan/fzf pure-fish/pure`
 
-#### NPM
-1. `$ npm -g install npm`
-1. `$ npm -g install eslint htmlhint prettier`
-
 ### 3. システム環境設定（CLI）
+
 * `defaults write -g InitialKeyRepeat -int 10`……キーリピートが始まるまでの時間（ミリ秒）
 * `defaults write -g KeyRepeat -int 1`……キーリピートの速度
 * `defaults write com.apple.dock expose-animation-duration -float 0.15`……Expose などのアニメーション速度（効果なし？）
@@ -117,10 +114,10 @@ BetterTouchTool が使えるようになった後は以下の設定にする：
 * `defaults write com.apple.dock autohide-time-modifier -float 0.15`……Dock が隠れるときの速度
 * `defaults write com.apple.dock showhidden -bool true`……ウィンドウが隠れている Dock アイコンを半透明にする
 
-
 ## アプリケーション設定
 
 ### Finder
+
 1. ホームディレクトリを開く。
 1. 環境設定から設定。
 1. 表示オプション：
@@ -131,6 +128,7 @@ BetterTouchTool が使えるようになった後は以下の設定にする：
     1. `$ killall Finder`
 
 ### Terminal
+
 1. 環境設定：
     * `開くシェル`：`デフォルトのログインシェル`……fish は .zshrc／.bash_profile から起動する。
     * `フォント`：`Hack Regular 12`
@@ -138,10 +136,12 @@ BetterTouchTool が使えるようになった後は以下の設定にする：
     * `Unicode 東アジア A（曖昧）の文字を W（広）にする`：チェック
 
 ### Karabiner-Elements
+
 * Simple modifications……`caps_lock`：`right_control`
 * Complex modifications → Parameters……`to_if_alone_timeout_milliseconds`：`200`
 
 ### BetterTouchTool
+
 * トラックパッドとマウスジェスチャの設定：（最終セクションに記載）
 * ベーシック：
     * `ウィンドウスナップを有効にする`：チェックを外す
@@ -150,22 +150,12 @@ BetterTouchTool が使えるようになった後は以下の設定にする：
     * `描画ストロークカラー`：`スカイ・不透明度70％`
     * `マウスの位置を復元する`：チェックを外す
 
-### Alfred
-* キーマップを変更：
-    * Hotkey：`Control - Return`
-    * Clipboard History：`Control - Command - V`
-    * Snippets：`Control - Command - S`
-* スニペットをインポート。
-
 ### Google Chrome
+
 * Chrome で `Work` と `Private` のユーザーを作成する。
-* Mouse Dictionary に[英辞郎データ](https://booth.pm/ja/items/777563)を読み込む。
-* ZenzaWatch をインストールする：
-    1. [開発版ページ](https://github.com/kphrx/ZenzaWatch/tree/playlist-deploy/dist)で `ZenzaWatch-dev.user.js` をクリック。
-    1. `Raw` をクリック。
-    1. Tampermonkey の画面が開くので `インストール` をクリック。
 
 ### Git
+
 diff-highlight にシンボリックリンクを貼る。
 
 M1 Mac 版 Homebrew の場合：
@@ -176,18 +166,8 @@ sudo ln -snfv \
 /usr/local/bin/diff-highlight
 ```
 
-Intel Mac 版 Homebrew の場合：
-
-```
-sudo ln -snfv \
-/usr/local/share/git-core/contrib/diff-highlight/diff-highlight \
-/usr/local/bin/diff-highlight
-```
-
-### Box Drive
-* `Config/` を `オフライン利用可` にする。
-
 ### AquaSKK
+
 1. AquaSKK をインストールする。
     * Brewfile からインストール済みのはず（Homebrew 版と PKG 版に違いはない）。
     * インストールは、設定ファイルを格納するディレクトリや関連ファイルを何も作成していない状態でやる必要がある。
@@ -223,10 +203,10 @@ sudo ln -snfv \
     1. ユーザー辞書をコピーする：
         * `$ cp -fv ~/dotfiles/aquaskk/skk-jisyo.utf8 ~/Library/Application\ Support/AquaSKK/skk-jisyo.utf8`
 
-
 ## 秘密鍵の作成・登録
 
 ### 1. 公開鍵・秘密鍵を生成
+
 **NOTE:** 鍵の生成はローカルホスト名を変更した後にやったほうがいいかもしれない。
 
 1: `$ ssh-keygen -t rsa -b 4096`
@@ -256,6 +236,7 @@ $ ls -l ~/.ssh/
 ```
 
 ### 2. 秘密鍵を ssh-agent に登録
+
 1: 以下のコマンドを実行：
 
 ```
@@ -314,26 +295,24 @@ $ ssh -T git@github.com
 ```
 
 ### 4. リポジトリを復元
+
 1. `$ mkdir ~/repos; cd ~/repos/`
 1. 必要なリポジトリを `git clone` する。
 
 
 ## その他の設定
 
-### フォントのインストール
-Adobe フォントは Homebrew でサポートされていないため、手動でインストールする必要がある：
-
-* [Source Han Code JP](https://github.com/adobe-fonts/source-han-code-jp/releases)
-* [Source Code Pro](https://fonts.google.com/specimen/Source+Code+Pro)
-
 ### キーボード → ショートカット
+
 #### Launchpad と Dock
+
 | 項目                                 | 設定                              |
 | ---                                  | ---                               |
 | Dockを自動的に表示/非表示のオン/オフ | チェック外す                      |
 | Launchpadを表示                      | `Control - Option - Command - ↓` |
 
 #### Mission Control
+
 | 項目                       | 設定                                     |
 | ---                        | ---                                      |
 | Mission Control            | `Control - Option - Command - ↑`        |
@@ -345,6 +324,7 @@ Adobe フォントは Homebrew でサポートされていないため、手動�
 | （以下デスクトップ10まで） | （同様に）                               |
 
 #### 入力ソース
+
 | 項目                           | 設定           |
 | ---                            | ---            |
 | 前の入力ソースを選択           | チェックを外す |
@@ -353,6 +333,7 @@ Adobe フォントは Homebrew でサポートされていないため、手動�
 **NOTE:** `前の入力ソースを選択` はチェックを外しても、入力ソースを追加したときに勝手にチェックが入るので注意。都度チェックを外す必要がある。
 
 #### サービス
+
 | 項目         | 設定           |
 | ---          | ---            |
 | Googleで検索 | チェックを外す |
@@ -360,11 +341,13 @@ Adobe フォントは Homebrew でサポートされていないため、手動�
 | 辞書で調べる | なし           |
 
 #### Spotlight
+
 | 項目                | 設定           |
 | ---                 | ---            |
 | Spotlight検索を表示 | チェックを外す |
 
 #### アプリケーション
+
 | 項目         | 設定                                     |
 | ---          | ---                                      |
 | すべてしまう | `Shift - Control - Option - Command - M` |
@@ -374,7 +357,9 @@ Adobe フォントは Homebrew でサポートされていないため、手動�
 | Minimize     | `Control - Option - Command - M`         |
 
 ### BetterTouchTool
+
 #### トラックパッド
+
 すべてのアプリ：
 
 | アクション                         | 割り当て                |
@@ -406,6 +391,7 @@ Chrome：
 | Shift + 3本指で右にスワイプ | `Shift - Command - Fn - ↑` |
 
 #### マウスジェスチャー
+
 すべてのアプリ：
 
 | ジェスチャー | 割り当て      |
