@@ -1,11 +1,7 @@
 options(
     radian.ctrl_key_map = list(
         list(key = "-", value = " <- "),
-    ),
-    radian.ctrl_key_map = list(
         list(key = "=", value = " = "),
-    ),
-    radian.ctrl_key_map = list(
         list(key = ".", value = " %>% ")
     )
 )
