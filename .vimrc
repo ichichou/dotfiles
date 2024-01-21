@@ -246,7 +246,6 @@ nnoremap U <C-r>
 nnoremap <C-h> <C-^>
 
 nnoremap <Esc><Esc> <Cmd>nohlsearch<CR>
-nnoremap <Leader>e <Cmd>execute 'silent! !mvim --remote-silent %' \| redraw!<CR>
 inoremap <C-a> <Cmd>normal! ^<CR>
 inoremap <C-e> <Cmd>normal! $l<CR>
 cnoremap <C-a> <C-b>
@@ -345,7 +344,7 @@ function! s:set_diff_mode() abort
 endfunction
 autocmd vimrc VimEnter,DiffUpdated * call s:set_diff_mode()
 
-" DiffOfig (Tweaked)
+" DiffOrig (Tweaked)
 " ----------------------------------------
 command! DiffOrig vertical new | set buftype=nofile filetype=diff
       \ | read ++edit # | 0delete_ | diffthis | wincmd p | diffthis
@@ -588,17 +587,18 @@ endif
 " ----------------------------------------
 if has('nvim')
   " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-  let g:polyglot_disabled = ['markdown.plugin', 'r-lang.plugin']
+  " let g:polyglot_disabled = ['markdown.plugin', 'r-lang.plugin']
+  let g:polyglot_disabled = ['markdown.plugin']
   Plug 'sheerun/vim-polyglot'
 else
-  let g:polyglot_disabled = ['markdown.plugin', 'r-lang.plugin']
+  " let g:polyglot_disabled = ['markdown.plugin', 'r-lang.plugin']
+  let g:polyglot_disabled = ['markdown.plugin']
   Plug 'sheerun/vim-polyglot'
 endif
 
 Plug 'godlygeek/tabular'
 Plug 'jalvesaq/Nvim-R', {'for': 'r', 'branch': 'stable'}
 " Plug 'mechatroner/rainbow_csv', {'for': 'csv'}
-Plug 'prettier/vim-prettier', {'do': 'yarn install --frozen-lockfile --production', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html']}
 Plug 'previm/previm', {'for': 'markdown'}
 Plug 'rcmdnk/vim-markdown', {'for': 'markdown'}
 Plug 'vim-jp/syntax-vim-ex', {'for': 'vim'}
