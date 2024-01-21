@@ -700,7 +700,7 @@ endif
 " Plug 'brglng/vim-im-select'
 Plug 'deton/jasegment.vim'
 Plug 'deton/jasentence.vim'
-Plug 'haya14busa/vim-migemo'
+" Plug 'haya14busa/vim-migemo'
 " Plug 'lambdalisue/kensaku.vim'
 Plug 'mattn/learn-vimscript'
 Plug 'vim-jp/vimdoc-ja'
