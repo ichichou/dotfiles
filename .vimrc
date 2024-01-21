@@ -143,7 +143,7 @@ autocmd vimrc FileType vim setlocal foldmethod=marker
 
 if !has('nvim')
   set laststatus=2
-  set listchars=eol:¬,tab:»\ ,space:\ ,trail:\ ,nbsp:~,extends:>,precedes:<
+  set listchars=eol:↲,tab:»\ ,space:\ ,trail:\ ,nbsp:%,extends:>,precedes:<
   set fillchars+=vert:│
 else
   set cmdheight=0
