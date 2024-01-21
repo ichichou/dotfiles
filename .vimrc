@@ -78,19 +78,13 @@ set breakindent
 set expandtab
 set smarttab
 set shiftround
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=0
 set softtabstop=-1
 
 augroup vimrc
-  autocmd FileType css setlocal tabstop=2 shiftwidth=2
+  autocmd FileType python setlocal tabstop=4
   autocmd FileType go setlocal noexpandtab
-  autocmd FileType html setlocal tabstop=2 shiftwidth=2
-  autocmd FileType json setlocal tabstop=2 shiftwidth=2
-  autocmd FileType lua setlocal tabstop=2 shiftwidth=2
-  autocmd FileType nim setlocal tabstop=2 shiftwidth=2
-  autocmd FileType r setlocal tabstop=2 shiftwidth=2
-  autocmd FileType vim setlocal tabstop=2 shiftwidth=2
 augroup END
 
 augroup vimrc
