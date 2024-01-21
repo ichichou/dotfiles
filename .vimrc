@@ -141,14 +141,14 @@ set matchpairs+=（:）,「:」,『:』,〈:〉,《:》,【:】,〔:〕,［:］,
 set nofoldenable
 autocmd vimrc FileType vim setlocal foldmethod=marker
 
-if !has('nvim')
-  set laststatus=2
-  set listchars=eol:↲,tab:»\ ,space:\ ,trail:\ ,nbsp:%,extends:>,precedes:<
-  set fillchars+=vert:│
-else
+if has('nvim')
   set cmdheight=0
   set laststatus=3
   set listchars=eol:¬,tab:>\ ,space:\ ,trail:\ ,nbsp:~,extends:>,precedes:<
+else
+  set laststatus=2
+  set listchars=eol:↲,tab:»\ ,space:\ ,trail:\ ,nbsp:%,extends:>,precedes:<
+  set fillchars+=vert:│
 endif
 
 set statusline=%!SetStatusLine()
@@ -549,10 +549,10 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-if !has('nvim')
-  call plug#begin('~/.vim/plugged')
-else
+if has('nvim')
   call plug#begin(stdpath('data') . '/plugged')
+else
+  call plug#begin('~/.vim/plugged')
 endif
 
 " Library
@@ -561,57 +561,38 @@ Plug 'vim-denops/denops.vim'
 
 " Language Server
 " ----------------------------------------
-if !has('nvim')
+if has('nvim')
+  " Plug 'neovim/nvim-lspconfig'
+  " Plug 'neoclide/coc.nvim', {'branch': 'release'}
+else
   Plug 'prabirshrestha/vim-lsp'
   Plug 'mattn/vim-lsp-settings'
   Plug 'mattn/vim-lsp-icons'
-else
-  " Plug 'neovim/nvim-lspconfig'
 endif
 
-" Completion - Asyncomplete
+" Completion
 " ----------------------------------------
-if !has('nvim')
-  Plug 'prabirshrestha/asyncomplete.vim'
-  Plug 'prabirshrestha/asyncomplete-lsp.vim'
-endif
-
-" Completion - Ddc
-" ----------------------------------------
-if !has('nvim')
-  " Plug 'Shougo/pum.vim'
-  " Plug 'Shougo/ddc.vim'
-  " Plug 'Shougo/ddc-ui-native'
-  " Plug 'Shougo/ddc-ui-pum'
-  " Plug 'Shougo/ddc-source-around'
-  " Plug 'shun/ddc-source-vim-lsp'
-  " Plug 'Shougo/ddc-source-omni'
-  " Plug 'Shougo/ddc-source-cmdline'
-  " Plug 'Shougo/ddc-source-cmdline-history'
-  " Plug 'Shougo/ddc-matcher_head'
-  " Plug 'Shougo/ddc-sorter_rank'
-  " Plug 'Shougo/ddc-converter_remove_overlap'
-endif
-
-" Completion - nvim-cmp
-" ----------------------------------------
-if !has('nvim')
-else
+if has('nvim')
   " Plug 'hrsh7th/cmp-buffer'
   " Plug 'hrsh7th/cmp-cmdline'
   " Plug 'hrsh7th/cmp-nvim-lsp'
   " Plug 'hrsh7th/cmp-path'
   " Plug 'hrsh7th/cmp-vsnip'
   " Plug 'hrsh7th/nvim-cmp'
+else
+  Plug 'prabirshrestha/asyncomplete.vim'
+  Plug 'prabirshrestha/asyncomplete-lsp.vim'
 endif
 
 " Language
 " ----------------------------------------
-if !has('nvim')
+if has('nvim')
+  " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   let g:polyglot_disabled = ['markdown.plugin', 'r-lang.plugin']
   Plug 'sheerun/vim-polyglot'
 else
-  " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  let g:polyglot_disabled = ['markdown.plugin', 'r-lang.plugin']
+  Plug 'sheerun/vim-polyglot'
 endif
 
 Plug 'godlygeek/tabular'
@@ -647,15 +628,15 @@ Plug 'tyru/open-browser.vim'
 Plug 'vim-scripts/VOoM'
 Plug 'vimoutliner/vimoutliner'
 
-if !has('nvim')
-  set runtimepath+=/opt/homebrew/opt/fzf
-  Plug 'junegunn/fzf.vim'
-  " Plug 'machakann/vim-highlightedyank'
-else
+if has('nvim')
   " Plug 'nvim-lua/plenary.nvim'
   " Plug 'nvim-telescope/telescope.nvim', {'tag': '0.1.1'}
   " Plug 'mickael-menu/zk-nvim'
   " Plug 'lewis6991/gitsigns.nvim'
+else
+  set runtimepath+=/opt/homebrew/opt/fzf
+  Plug 'junegunn/fzf.vim'
+  " Plug 'machakann/vim-highlightedyank'
 endif
 
 packadd! matchit
@@ -667,13 +648,13 @@ Plug 'itchyny/vim-highlighturl'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'rbtnn/vim-ambiwidth'
 
-if !has('nvim')
-  Plug 'delphinus/vim-auto-cursorline'
-  Plug 'itchyny/lightline.vim'
-else
+if has('nvim')
   Plug 'MunifTanjim/nui.nvim'
   Plug 'folke/noice.nvim'
   Plug 'delphinus/auto-cursorline.nvim'
+else
+  Plug 'delphinus/vim-auto-cursorline'
+  Plug 'itchyny/lightline.vim'
 endif
 
 " Operator & Text Object
