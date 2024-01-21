@@ -290,6 +290,15 @@ augroup vimrc
   autocmd FileType markdown setlocal formatoptions+=jro formatoptions-=c
 augroup END
 
+" R
+" ----------------------------------------
+augroup vimrc
+  autocmd FileType r inoremap <buffer> <expr> \i
+        \ <SID>exists_back_space() ? '<-<Space>' : '<Space><-<Space>'
+  autocmd FileType r inoremap <buffer> <expr> \m
+        \ <SID>exists_back_space() ? '\|><Space>' : '<Space>\|><Space>'
+augroup END
+
 " Vimrc
 " ----------------------------------------
 nnoremap <Leader><Leader> <Cmd>edit $MYVIMRC<CR>
@@ -374,6 +383,13 @@ function! s:blank_above(type = '') abort
   for i in range(v:count1)
     call append(line('.') - 1, '')
   endfor
+endfunction
+
+" Exists Back Space
+" ----------------------------------------
+function! s:exists_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 
 " Timestamp
