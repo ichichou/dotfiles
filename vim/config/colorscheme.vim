@@ -44,7 +44,7 @@ augroup END
 " Colorscheme
 set background=dark
 
-if !has('nvim')
+if has('nvim')
   let s:colorscheme = 'everforest'
 else
   let s:colorscheme = 'everforest'

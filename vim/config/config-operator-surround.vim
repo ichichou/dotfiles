@@ -1,7 +1,7 @@
 UsePlugin 'vim-operator-surround'
 
 nnoremap S <Nop>
-map S <Plug>(operator-surround-append)
+map S  <Plug>(operator-surround-append)
 map Sd <Plug>(operator-surround-delete)
 map Sc <Plug>(operator-surround-replace)
 

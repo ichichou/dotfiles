@@ -1,6 +1,6 @@
 UsePlugin 'fzf.vim'
 
-" let g:fzf_layout = { 'down': '40%' }
+" let g:fzf_layout = {'down': '40%'}
 " let g:fzf_preview_window = ['right,50%', 'ctrl-/']
 " let g:fzf_preview_window = ['right,50%,<70(up,40%)', 'ctrl-/']
 let g:fzf_buffers_jump = 1
@@ -26,20 +26,20 @@ command! -bang -nargs=? -complete=dir Files
       \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
 command! -bang -nargs=* Rg
-      \ call fzf#vim#grep('rg --column --line-number --no-heading --color=always --smart-case -- ' . shellescape(<q-args>),
-      \ 1, fzf#vim#with_preview(), <bang>0)
+      \ call fzf#vim#grep('rg --column --line-number --no-heading --color=always --smart-case -- '
+      \ .. shellescape(<q-args>), 1, fzf#vim#with_preview(), <bang>0)
 
 " Registers
-function! s:fzf_registers() abort
-  let reg = execute('registers')
+function! s:FzfRegisters() abort
+  let reg  = execute('registers')
   let regs = split(reg, '\n')
   call remove(regs, 0)
-  call fzf#run({'source': regs, 'sink': funcref('s:paste'), 'window': {'width': 0.9, 'height': 0.5}})
-  " call fzf#run({'source': regs, 'sink': funcref('s:paste'), 'down': '30%'})
+  call fzf#run({'source': regs, 'sink': funcref('s:Paste'), 'window': {'width': 0.9, 'height': 0.5}})
+  " call fzf#run({'source': regs, 'sink': funcref('s:Paste'), 'down': '30%'})
 endfunction
 
-function! s:paste(sink) abort
-  execute 'normal!' strcharpart(a:sink, 5, 2) . 'p'
+function! s:Paste(sink) abort
+  execute 'normal!' strcharpart(a:sink, 5, 2) .. 'p'
 endfunction
 
-command! -nargs=0 Registers call s:fzf_registers()
+command! -nargs=0 Registers call s:FzfRegisters()

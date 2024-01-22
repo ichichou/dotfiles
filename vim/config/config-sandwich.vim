@@ -12,12 +12,12 @@ nmap S <Plug>(sandwich-add)$
 xmap S <Plug>(sandwich-add)$
 omap S <Plug>(sandwich-add)$
 
-nmap sd <Plug>(sandwich-delete)
-xmap sd <Plug>(sandwich-delete)
+nmap sd  <Plug>(sandwich-delete)
+xmap sd  <Plug>(sandwich-delete)
 nmap sdb <Plug>(sandwich-delete-auto)
 
-nmap sc <Plug>(sandwich-replace)
-xmap sc <Plug>(sandwich-replace)
+nmap sc  <Plug>(sandwich-replace)
+xmap sc  <Plug>(sandwich-replace)
 nmap scb <Plug>(sandwich-replace-auto)
 
 xmap ib <Plug>(textobj-sandwich-auto-i)
