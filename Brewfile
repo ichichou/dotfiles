@@ -1,9 +1,9 @@
-cask_args appdir: '/Applications'
+cask_args appdir: "/Applications"
 tap "homebrew/cask"
 tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
-tap "itchyny/tap"
 
+# CLI Apps
 brew "bat"
 brew "eza"
 brew "fd"
@@ -13,7 +13,6 @@ brew "gh"
 brew "git"
 brew "graphviz"
 brew "icu4c"
-brew "im-select"
 brew "itchyny/tap/mmv"
 brew "macism"
 brew "mas"
@@ -32,6 +31,7 @@ brew "yq"
 brew "z"
 brew "zk"
 
+# GUI Apps
 cask "alacritty"
 cask "appcleaner"
 cask "aquaskk"
@@ -41,9 +41,7 @@ cask "bike"
 cask "box-drive"
 cask "cleanshot"
 cask "coteditor"
-cask "cron"
 cask "discord"
-cask "dropbox"
 cask "google-chrome"
 cask "google-drive"
 cask "google-japanese-ime"
@@ -52,6 +50,7 @@ cask "linear-linear"
 cask "logi-options-plus"
 cask "microsoft-office"
 cask "notion"
+cask "notion-calendar"
 cask "numi"
 cask "raycast"
 cask "rectangle"
@@ -66,10 +65,10 @@ cask "vlc"
 cask "workflowy"
 cask "zoom"
 
+# Font
 cask "font-cantarell"
 cask "font-commit-mono"
 cask "font-fira-code"
-cask "font-hack-nerd-font"
 cask "font-hack"
 cask "font-jetbrains-mono"
 cask "font-juliamono"
@@ -78,6 +77,7 @@ cask "font-noto-sans-jp"
 cask "font-noto-serif-jp"
 cask "font-source-code-pro"
 
+# App Store
 mas "AdGuard for Safari", id: 1440147259
 mas "Amphetamine", id: 937984704
 mas "Bitwarden", id: 1352778147
