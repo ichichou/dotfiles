@@ -584,6 +584,7 @@ endif
 " Library
 " ----------------------------------------
 Plug 'vim-denops/denops.vim'
+" Plug 'vim-denops/denops-helloworld.vim'
 
 " Language Server
 " ----------------------------------------
@@ -697,13 +698,16 @@ endif
 
 " Japanese Support
 " ----------------------------------------
-" Plug 'brglng/vim-im-select'
 Plug 'deton/jasegment.vim'
 Plug 'deton/jasentence.vim'
-" Plug 'haya14busa/vim-migemo'
+" Plug 'lambdalisue/kensaku-command.vim'
+" Plug 'lambdalisue/kensaku-search.vim'
 " Plug 'lambdalisue/kensaku.vim'
-Plug 'mattn/learn-vimscript'
-Plug 'vim-jp/vimdoc-ja'
+
+if !has('nvim')
+  Plug 'mattn/learn-vimscript'
+  Plug 'vim-jp/vimdoc-ja'
+endif
 
 " Colorscheme
 " ----------------------------------------
