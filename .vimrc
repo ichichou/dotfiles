@@ -153,45 +153,7 @@ else
   set fillchars+=vert:│
 endif
 
-set statusline=%!<SID>SetStatusLine()
-
-function! s:SetStatusLine() abort
-  let fenc = &fileencoding != '' ? &fileencoding : &encoding
-  let ft   = &filetype     != '' ? &filetype     : 'no ft'
-
-  let p = line('.') * 100 / line('$')
-  let pp
-  let l
-  let c
-
-  if p < 10
-    let pp = '       ' .. p .. '%%'
-  elseif p < 100
-    let pp = '      ' .. p .. '%%'
-  else
-    let pp = '     ' .. p .. '%%'
-  endif
-
-  if line('.') < 10
-    let l = '    %l:'
-  elseif line('.') < 100
-    let l = '   %l:'
-  else
-    let l = '  %l:'
-  endif
-
-  if col('.') < 10
-    let c = '%c   '
-  elseif col('.') < 100
-    let c = '%c  '
-  else
-    let c = '%c '
-  endif
-
-  return ' %t %m%='
-        \ .. '%{&fileformat}' .. ' | ' .. fenc .. ' | ' .. ft
-        \ .. pp .. l .. c
-endfunction
+set statusline=%!SetStatusLine()
 
 " Search & Completion
 " ========================================
@@ -279,13 +241,6 @@ nnoremap <script> <SID>ws> <C-w>><SID>ws
 nnoremap <script> <SID>ws< <C-w><<SID>ws
 nmap <SID>ws <Nop>
 
-" Quit by Q
-" ----------------------------------------
-augroup vimrc
-  autocmd FileType help,qf,man,ref,diff,quickrun nnoremap <buffer> q <Cmd>quit!<CR>
-  autocmd QuickFixCmdPost *grep*,make if len(getqflist()) != 0 | cwindow | endif
-augroup END
-
 " Vimrc
 " ----------------------------------------
 nnoremap <Leader>, <Cmd>edit $MYVIMRC<CR>
@@ -346,18 +301,110 @@ inoremap <D-7> <Nop>
 inoremap <D-8> <Nop>
 inoremap <D-9> <Nop>
 
-" Command & Function
+" Auto Command
 " ========================================
+
+" Quit by Q
+" ----------------------------------------
+augroup vimrc
+  autocmd FileType help,qf,man,ref,diff,quickrun nnoremap <buffer> q <Cmd>quit!<CR>
+  autocmd QuickFixCmdPost *grep*,make if len(getqflist()) != 0 | cwindow | endif
+augroup END
 
 " Diff Mode
 " ----------------------------------------
+autocmd vimrc VimEnter,DiffUpdated * call s:SetDiffMode()
+
 function! s:SetDiffMode() abort
   if &diff
     setlocal nospell
     setlocal wrap<
   endif
 endfunction
-autocmd vimrc VimEnter,DiffUpdated * call s:SetDiffMode()
+
+" Auto No Cursorline
+" ----------------------------------------
+" augroup vimrc
+"   autocmd VimEnter,BufWinEnter,WinEnter * setlocal cursorline
+"   autocmd WinLeave * setlocal nocursorline
+" augroup END
+
+" Highlight on Yank
+" ----------------------------------------
+if has('nvim')
+  autocmd vimrc TextYankPost * silent! lua
+        \ vim.highlight.on_yank {higroup='Visual', timeout=200, on_visual=false}
+endif
+
+" Auto IME On/Off
+" ----------------------------------------
+augroup vimrc
+  autocmd VimEnter * let s:prev_ime = ''
+  autocmd InsertEnter * call s:RestoreIme()
+  autocmd InsertLeave * call s:SaveImeAndSetDefaultIme()
+augroup END
+
+let s:ime_cmd = 'macism'
+let s:default_ime = 'jp.sourceforge.inputmethod.aquaskk.Ascii'
+
+function! s:RestoreIme() abort
+  if s:prev_ime != '' && s:prev_ime != s:default_ime
+    call system(s:ime_cmd .. ' ' .. s:prev_ime)
+  endif
+endfunction
+
+function! s:SaveImeAndSetDefaultIme() abort
+  let s:prev_ime = system(s:ime_cmd)
+  if s:prev_ime != s:default_ime
+    call system(s:ime_cmd .. ' ' .. s:default_ime)
+  endif
+endfunction
+
+" Command & Function
+" ========================================
+
+" Check Back Space (global)
+" ----------------------------------------
+function! g:CheckBackSpace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+" Set Status Line (global)
+" ----------------------------------------
+function! g:SetStatusLine() abort
+  let fenc = &fileencoding != '' ? &fileencoding : &encoding
+  let ft   = &filetype     != '' ? &filetype     : 'no ft'
+
+  let p = line('.') * 100 / line('$')
+  if p < 10
+    let pp = '       ' .. p .. '%%'
+  elseif p < 100
+    let pp = '      ' .. p .. '%%'
+  else
+    let pp = '     ' .. p .. '%%'
+  endif
+
+  if line('.') < 10
+    let l = '    %l:'
+  elseif line('.') < 100
+    let l = '   %l:'
+  else
+    let l = '  %l:'
+  endif
+
+  if col('.') < 10
+    let c = '%c   '
+  elseif col('.') < 100
+    let c = '%c  '
+  else
+    let c = '%c '
+  endif
+
+  return ' %t %m%='
+        \ .. '%{&fileformat}' .. ' | ' .. fenc .. ' | ' .. ft
+        \ .. pp .. l .. c
+endfunction
 
 " DiffOrig (tweaked)
 " ----------------------------------------
@@ -391,11 +438,68 @@ function! s:BlankAbove(type = '') abort
   endfor
 endfunction
 
-" Check Back Space (global)
+" Vertical Help
 " ----------------------------------------
-function! g:CheckBackSpace() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
+nnoremap gK <Cmd>call <SID>HelpVerticalCword()<CR>
+vnoremap gK <Cmd>call <SID>HelpVerticalSelected()<CR>
+
+function! s:HelpVerticalCword() abort
+  let word = expand('<cword>')
+  if word != ''
+    execute 'vertical help' word
+  endif
+endfunction
+
+function! s:HelpVerticalSelected() abort
+  execute 'silent normal! "vy'
+  let word = @v
+  execute 'vertical help' word
+endfunction
+
+" Syntax Info
+" ----------------------------------------
+command! -nargs=0 SyntaxInfo call s:GetSynInfo()
+
+function! s:GetSynId(transparent)
+  let synid = synID(line('.'), col('.'), 1)
+  if a:transparent
+    return synIDtrans(synid)
+  else
+    return synid
+  endif
+endfunction
+
+function! s:GetSynAttr(synid)
+  let name    = synIDattr(a:synid, 'name')
+  let ctermfg = synIDattr(a:synid, 'fg', 'cterm')
+  let ctermbg = synIDattr(a:synid, 'bg', 'cterm')
+  let guifg   = synIDattr(a:synid, 'fg', 'gui')
+  let guibg   = synIDattr(a:synid, 'bg', 'gui')
+  return {
+        \ 'name':    name,
+        \ 'ctermfg': ctermfg,
+        \ 'ctermbg': ctermbg,
+        \ 'guifg':   guifg,
+        \ 'guibg':   guibg
+        \ }
+endfunction
+
+function! s:GetSynInfo()
+  let baseSyn = s:GetSynAttr(s:GetSynId(0))
+  echo
+        \ 'name: '     .. baseSyn.name ..
+        \ ' ctermfg: ' .. baseSyn.ctermfg ..
+        \ ' ctermbg: ' .. baseSyn.ctermbg ..
+        \ ' guifg: '   .. baseSyn.guifg ..
+        \ ' guibg: '   .. baseSyn.guibg
+  let linkedSyn = s:GetSynAttr(s:GetSynId(1))
+  echo 'link to'
+  echo
+        \ 'name: '     .. linkedSyn.name ..
+        \ ' ctermfg: ' .. linkedSyn.ctermfg ..
+        \ ' ctermbg: ' .. linkedSyn.ctermbg ..
+        \ ' guifg: '   .. linkedSyn.guifg ..
+        \ ' guibg: '   .. linkedSyn.guibg
 endfunction
 
 " Timestamp
@@ -460,108 +564,6 @@ endfunction
 
 function! s:OpenJournalDir() abort
   execute 'edit' s:journal_dir
-endfunction
-
-" Syntax Info
-" ----------------------------------------
-function! s:GetSynId(transparent)
-  let synid = synID(line('.'), col('.'), 1)
-  if a:transparent
-    return synIDtrans(synid)
-  else
-    return synid
-  endif
-endfunction
-
-function! s:GetSynAttr(synid)
-  let name    = synIDattr(a:synid, 'name')
-  let ctermfg = synIDattr(a:synid, 'fg', 'cterm')
-  let ctermbg = synIDattr(a:synid, 'bg', 'cterm')
-  let guifg   = synIDattr(a:synid, 'fg', 'gui')
-  let guibg   = synIDattr(a:synid, 'bg', 'gui')
-  return {
-        \ 'name':    name,
-        \ 'ctermfg': ctermfg,
-        \ 'ctermbg': ctermbg,
-        \ 'guifg':   guifg,
-        \ 'guibg':   guibg
-        \ }
-endfunction
-
-function! s:GetSynInfo()
-  let baseSyn = s:GetSynAttr(s:GetSynId(0))
-  echo
-        \ 'name: '     .. baseSyn.name ..
-        \ ' ctermfg: ' .. baseSyn.ctermfg ..
-        \ ' ctermbg: ' .. baseSyn.ctermbg ..
-        \ ' guifg: '   .. baseSyn.guifg ..
-        \ ' guibg: '   .. baseSyn.guibg
-  let linkedSyn = s:GetSynAttr(s:GetSynId(1))
-  echo 'link to'
-  echo
-        \ 'name: '     .. linkedSyn.name ..
-        \ ' ctermfg: ' .. linkedSyn.ctermfg ..
-        \ ' ctermbg: ' .. linkedSyn.ctermbg ..
-        \ ' guifg: '   .. linkedSyn.guifg ..
-        \ ' guibg: '   .. linkedSyn.guibg
-endfunction
-
-command! -nargs=0 SyntaxInfo call s:GetSynInfo()
-
-" Auto No Cursorline
-" ----------------------------------------
-" augroup vimrc
-"   autocmd VimEnter,BufWinEnter,WinEnter * setlocal cursorline
-"   autocmd WinLeave * setlocal nocursorline
-" augroup END
-
-" Highlight on Yank
-" ----------------------------------------
-if has('nvim')
-  autocmd vimrc TextYankPost * silent! lua
-        \ vim.highlight.on_yank {higroup='Visual', timeout=200, on_visual=false}
-endif
-
-" Vertical Help
-" ----------------------------------------
-nnoremap gK <Cmd>call <SID>HelpVerticalCword()<CR>
-vnoremap gK <Cmd>call <SID>HelpVerticalSelected()<CR>
-
-function! s:HelpVerticalCword() abort
-  let word = expand('<cword>')
-  if word != ''
-    execute 'vertical help' word
-  endif
-endfunction
-
-function! s:HelpVerticalSelected() abort
-  execute 'silent normal! "vy'
-  let word = @v
-  execute 'vertical help' word
-endfunction
-
-" Auto IME On/Off
-" ----------------------------------------
-augroup vimrc
-  autocmd VimEnter * let s:prev_ime = ''
-  autocmd InsertEnter * call s:RestoreIme()
-  autocmd InsertLeave * call s:SaveImeAndSetDefaultIme()
-augroup END
-
-let s:ime_cmd = 'macism'
-let s:default_ime = 'jp.sourceforge.inputmethod.aquaskk.Ascii'
-
-function! s:RestoreIme() abort
-  if s:prev_ime != '' && s:prev_ime != s:default_ime
-    call system(s:ime_cmd .. ' ' .. s:prev_ime)
-  endif
-endfunction
-
-function! s:SaveImeAndSetDefaultIme() abort
-  let s:prev_ime = system(s:ime_cmd)
-  if s:prev_ime != s:default_ime
-    call system(s:ime_cmd .. ' ' .. s:default_ime)
-  endif
 endfunction
 
 " Plugins
