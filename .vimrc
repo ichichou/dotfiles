@@ -103,25 +103,6 @@ endif
 
 " Appearance
 " ========================================
-set termguicolors
-
-if !has('nvim')
-  " True Color
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-
-  " Undercurl
-  let &t_Cs = "\e[4:3m"
-  let &t_Ce = "\e[4:0m"
-
-  " if has('vim_starting')
-  "   " Corsor Style
-  "   let &t_SI .= "\e[6 q"
-  "   let &t_EI .= "\e[2 q"
-  "   let &t_SR .= "\e[4 q"
-  " endif
-endif
-
 set title
 set number
 set signcolumn=yes
@@ -143,6 +124,8 @@ set matchpairs+=（:）,「:」,『:』,〈:〉,《:》,【:】,〔:〕,［:］,
 set nofoldenable
 autocmd vimrc FileType vim setlocal foldmethod=marker
 
+set statusline=%!SetStatusLine()
+
 if has('nvim')
   set cmdheight=0
   set laststatus=3
@@ -153,7 +136,24 @@ else
   set fillchars+=vert:│
 endif
 
-set statusline=%!SetStatusLine()
+set termguicolors
+
+if !has('nvim')
+  " True Color
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+  " Undercurl
+  let &t_Cs = "\e[4:3m"
+  let &t_Ce = "\e[4:0m"
+
+  " if has('vim_starting')
+  "   " Corsor Style
+  "   let &t_SI .= "\e[6 q"
+  "   let &t_SR .= "\e[4 q"
+  "   let &t_EI .= "\e[2 q"
+  " endif
+endif
 
 " Search & Completion
 " ========================================
@@ -268,10 +268,12 @@ augroup END
 " R
 " ----------------------------------------
 augroup vimrc
-  autocmd FileType r inoremap <buffer> <expr> <Bslash>i
-        \ <SID>CheckBackSpace() ? '<lt>-<Space>' : '<Space><lt>-<Space>'
-  autocmd FileType r inoremap <buffer> <expr> <Bslash>m
-        \ <SID>CheckBackSpace() ? '<Bar>><Space>' : '<Space><Bar>><Space>'
+  autocmd FileType r inoremap <buffer> <expr> <Bslash>i CheckBackSpace()
+        \ ? '<lt>-<Space>'
+        \ : '<Space><lt>-<Space>'
+  autocmd FileType r inoremap <buffer> <expr> <Bslash>m CheckBackSpace()
+        \ ? '<Bar>><Space>'
+        \ : '<Space><Bar>><Space>'
 augroup END
 
 " Nop
@@ -313,9 +315,9 @@ augroup END
 
 " Diff Mode
 " ----------------------------------------
-autocmd vimrc VimEnter,DiffUpdated * call s:SetDiffMode()
+autocmd vimrc VimEnter,DiffUpdated * call s:set_diff_mode()
 
-function! s:SetDiffMode() abort
+function! s:set_diff_mode() abort
   if &diff
     setlocal nospell
     setlocal wrap<
@@ -340,20 +342,20 @@ endif
 " ----------------------------------------
 augroup vimrc
   autocmd VimEnter * let s:prev_ime = ''
-  autocmd InsertEnter * call s:RestoreIme()
-  autocmd InsertLeave * call s:SaveImeAndSetDefaultIme()
+  autocmd InsertEnter * call s:restore_ime()
+  autocmd InsertLeave * call s:save_ime_and_set_default_ime()
 augroup END
 
 let s:ime_cmd = 'macism'
 let s:default_ime = 'jp.sourceforge.inputmethod.aquaskk.Ascii'
 
-function! s:RestoreIme() abort
+function! s:restore_ime() abort
   if s:prev_ime != '' && s:prev_ime != s:default_ime
     call system(s:ime_cmd .. ' ' .. s:prev_ime)
   endif
 endfunction
 
-function! s:SaveImeAndSetDefaultIme() abort
+function! s:save_ime_and_set_default_ime() abort
   let s:prev_ime = system(s:ime_cmd)
   if s:prev_ime != s:default_ime
     call system(s:ime_cmd .. ' ' .. s:default_ime)
@@ -413,12 +415,12 @@ command! DiffOrig vertical new | set buftype=nofile filetype=diff
 
 " Insert Blank Lines
 " ----------------------------------------
-nnoremap <expr> go <SID>BlankBelow()
-nnoremap <expr> gO <SID>BlankAbove()
+nnoremap <expr> go <SID>blank_below()
+nnoremap <expr> gO <SID>blank_above()
 
-function! s:BlankBelow(type = '') abort
+function! s:blank_below(type = '') abort
   if a:type == ''
-    set operatorfunc=function('s:BlankBelow')
+    set operatorfunc=function('s:blank_below')
     return 'g@ '
   endif
 
@@ -427,9 +429,9 @@ function! s:BlankBelow(type = '') abort
   endfor
 endfunction
 
-function! s:BlankAbove(type = '') abort
+function! s:blank_above(type = '') abort
   if a:type == ''
-    set operatorfunc=function('s:BlankAbove')
+    set operatorfunc=function('s:blank_above')
     return 'g@ '
   endif
 
@@ -440,17 +442,17 @@ endfunction
 
 " Vertical Help
 " ----------------------------------------
-nnoremap gK <Cmd>call <SID>HelpVerticalCword()<CR>
-vnoremap gK <Cmd>call <SID>HelpVerticalSelected()<CR>
+nnoremap gK <Cmd>call <SID>help_vertical_cword()<CR>
+vnoremap gK <Cmd>call <SID>help_vertical_selected()<CR>
 
-function! s:HelpVerticalCword() abort
+function! s:help_vertical_cword() abort
   let word = expand('<cword>')
   if word != ''
     execute 'vertical help' word
   endif
 endfunction
 
-function! s:HelpVerticalSelected() abort
+function! s:help_vertical_selected() abort
   execute 'silent normal! "vy'
   let word = @v
   execute 'vertical help' word
@@ -458,9 +460,9 @@ endfunction
 
 " Syntax Info
 " ----------------------------------------
-command! -nargs=0 SyntaxInfo call s:GetSynInfo()
+command! -nargs=0 SyntaxInfo call s:get_syn_info()
 
-function! s:GetSynId(transparent)
+function! s:get_syn_id(transparent)
   let synid = synID(line('.'), col('.'), 1)
   if a:transparent
     return synIDtrans(synid)
@@ -469,7 +471,7 @@ function! s:GetSynId(transparent)
   endif
 endfunction
 
-function! s:GetSynAttr(synid)
+function! s:get_syn_attr(synid)
   let name    = synIDattr(a:synid, 'name')
   let ctermfg = synIDattr(a:synid, 'fg', 'cterm')
   let ctermbg = synIDattr(a:synid, 'bg', 'cterm')
@@ -484,15 +486,15 @@ function! s:GetSynAttr(synid)
         \ }
 endfunction
 
-function! s:GetSynInfo()
-  let baseSyn = s:GetSynAttr(s:GetSynId(0))
+function! s:get_syn_info()
+  let baseSyn = s:get_syn_attr(s:get_syn_id(0))
   echo
         \ 'name: '     .. baseSyn.name ..
         \ ' ctermfg: ' .. baseSyn.ctermfg ..
         \ ' ctermbg: ' .. baseSyn.ctermbg ..
         \ ' guifg: '   .. baseSyn.guifg ..
         \ ' guibg: '   .. baseSyn.guibg
-  let linkedSyn = s:GetSynAttr(s:GetSynId(1))
+  let linkedSyn = s:get_syn_attr(s:get_syn_id(1))
   echo 'link to'
   echo
         \ 'name: '     .. linkedSyn.name ..
@@ -505,17 +507,17 @@ endfunction
 " Timestamp
 " ----------------------------------------
 augroup vimrc
-  autocmd FileType markdown nnoremap <buffer> <Leader>d <Cmd>call <SID>TimestampBelow()<CR>
-  autocmd FileType markdown nnoremap <buffer> <Leader>D <Cmd>call <SID>TimestampAbove()<CR>
+  autocmd FileType markdown nnoremap <buffer> <Leader>d <Cmd>call <SID>timestamp_below()<CR>
+  autocmd FileType markdown nnoremap <buffer> <Leader>D <Cmd>call <SID>timestamp_above()<CR>
 augroup END
 
-function! s:SetTimestamp() abort
+function! s:set_timestamp() abort
   let timestamp = '## ' .. strftime('%Y-%m-%d %H:%M:%S')
   return timestamp
 endfunction
 
-function! s:TimestampBelow() abort
-  let timestamp = s:SetTimestamp()
+function! s:timestamp_below() abort
+  let timestamp = s:set_timestamp()
 
   if strlen(getline('.')) > 0
     call append('.', ['', timestamp, ''])
@@ -529,8 +531,8 @@ function! s:TimestampBelow() abort
   startinsert
 endfunction
 
-function! s:TimestampAbove() abort
-  let timestamp = s:SetTimestamp()
+function! s:timestamp_above() abort
+  let timestamp = s:set_timestamp()
 
   if strlen(getline('.')) > 0
     call append(line('.') - 1, timestamp)
@@ -544,13 +546,13 @@ endfunction
 nnoremap <Leader>m <Nop>
 nnoremap [zk] <Nop>
 nmap <Leader>m [zk]
-nnoremap [zk]n <Cmd>call <SID>OpenJournalFile()<CR>
-nnoremap [zk]j <Cmd>call <SID>OpenJournalDir()<CR>
+nnoremap [zk]n <Cmd>call <SID>open_journal_file()<CR>
+nnoremap [zk]j <Cmd>call <SID>open_journal_dir()<CR>
 
 let s:zk_dir = expand('$ZK_NOTEBOOK_DIR')
 let s:journal_dir = s:zk_dir .. '/journal'
 
-function! s:OpenJournalFile() abort
+function! s:open_journal_file() abort
   let file_name = strftime('%Y-%m-%d') .. '.md'
   let file_path_pattern = 'zk/journal/' .. file_name
   let win_id = bufwinid(file_path_pattern)
@@ -562,7 +564,7 @@ function! s:OpenJournalFile() abort
   endif
 endfunction
 
-function! s:OpenJournalDir() abort
+function! s:open_journal_dir() abort
   execute 'edit' s:journal_dir
 endfunction
 
@@ -662,6 +664,8 @@ if has('nvim')
 else
   set runtimepath+=/opt/homebrew/opt/fzf
   Plug 'junegunn/fzf.vim'
+  " Plug 'ctrlpvim/ctrlp.vim'
+  " Plug 'mattn/ctrlp-matchfuzzy'
   " Plug 'machakann/vim-highlightedyank'
 endif
 
