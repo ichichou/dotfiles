@@ -2,7 +2,6 @@
 abbr -ag cp cp -iv
 abbr -ag e exit
 abbr -ag lns ln -snfv
-abbr -ag lnsmvim ln -snfv /opt/homebrew/Cellar/macvim/
 abbr -ag mv mv -iv
 abbr -ag nd nextd
 abbr -ag pd prevd
@@ -10,7 +9,6 @@ abbr -ag reload exec fish
 
 ### Apps
 abbr -ag a bat
-abbr -ag fc vim ~/dotfiles/.config/fish/config.fish
 abbr -ag mvi mvim
 abbr -ag nvi nvim
 abbr -ag r radian
@@ -48,7 +46,7 @@ end
 ### z
 abbr -ag j z
 abbr -ag jd z dotfiles
-abbr -ag jdl z downloads
+abbr -ag jl z downloads
 abbr -ag jr z repos
 abbr -ag jk z zk
 
@@ -77,6 +75,7 @@ abbr -ag b brew
 abbr -ag bc brew cleanup
 abbr -ag bd brew doctor
 abbr -ag bdep brew deps
+abbr -ag bg brew upgrade
 abbr -ag bi brew info
 abbr -ag bin brew install
 abbr -ag bl brew list
@@ -84,7 +83,6 @@ abbr -ag bo brew outdated
 abbr -ag brm brew autoremove
 abbr -ag bs brew search
 abbr -ag bu brew update
-abbr -ag bug brew upgrade
 abbr -ag bun brew uninstall
 abbr -ag buse brew uses
 
@@ -133,7 +131,7 @@ end
 function journal
     set today (date +"%Y-%m-%d")
     set journal_file "$today.bike"
-    set journal_dir "$HOME/Dropbox/Journal"
+    set journal_dir "$HOME/Library/CloudStorage/Box-Box/Journal"
     set journal_path "$journal_dir/$journal_file"
 
     if test -e $journal_path
