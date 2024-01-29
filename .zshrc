@@ -66,11 +66,11 @@ fi
 
 alias b="brew"
 alias g="git"
-alias mvi="mvim"
 alias vi="vim"
 
 if [[ -o interactive ]]; then
     exec fish
 fi
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
+[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
