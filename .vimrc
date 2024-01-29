@@ -86,6 +86,7 @@ set softtabstop=-1
 
 augroup vimrc
   autocmd FileType python setlocal tabstop=4
+  autocmd FileType haskell setlocal tabstop=4
   autocmd FileType go setlocal noexpandtab
 augroup END
 
@@ -147,12 +148,12 @@ if !has('nvim')
   let &t_Cs = "\e[4:3m"
   let &t_Ce = "\e[4:0m"
 
-  " if has('vim_starting')
-  "   " Corsor Style
-  "   let &t_SI .= "\e[6 q"
-  "   let &t_SR .= "\e[4 q"
-  "   let &t_EI .= "\e[2 q"
-  " endif
+  if has('vim_starting')
+    " Corsor Style
+    let &t_SI .= "\e[6 q"
+    let &t_SR .= "\e[4 q"
+    let &t_EI .= "\e[2 q"
+  endif
 endif
 
 " Search & Completion
@@ -165,10 +166,11 @@ set gdefault
 set completeopt=menuone,noinsert
 set wildoptions=pum,tagfile
 set pumheight=20
-set shortmess+=cmrF
 
-if !has('nvim')
-  set shortmess+=c
+if has('nvim')
+  set shortmess+=cmr
+else
+  set shortmess+=cmrF
   set shortmess-=S
 endif
 
@@ -180,15 +182,19 @@ endif
 " Keymap
 " ========================================
 
-"        Normal  Visual  Insert  Command  Terminal
-"        ------  ------  ------  -------  --------
-"  map   x       x
-"  map!                  x       x
-"  nmap  x
-"  vmap          x
-"  imap                  x
-"  cmap                          x
-"  tmap                                   x
+"        Norm   Ins   Cmd   Vis   Sel   Opr   Term   Lang
+"       ------ ----- ----- ----- ----- ----- ------ ------
+" map    yes     -     -    yes   yes   yes    -      -
+" nmap   yes     -     -     -     -     -     -      -
+" map!    -     yes   yes    -     -     -     -      -
+" imap    -     yes    -     -     -     -     -      -
+" cmap    -      -    yes    -     -     -     -      -
+" vmap    -      -     -    yes   yes    -     -      -
+" xmap    -      -     -    yes    -     -     -      -
+" smap    -      -     -     -    yes    -     -      -
+" omap    -      -     -     -     -    yes    -      -
+" tmap    -      -     -     -     -     -    yes     -
+" lmap    -     yes   yes    -     -     -     -     yes
 
 let g:mapleader = ','
 let g:maplocalleader = '\'
@@ -324,18 +330,11 @@ function! s:set_diff_mode() abort
   endif
 endfunction
 
-" Auto No Cursorline
-" ----------------------------------------
-" augroup vimrc
-"   autocmd VimEnter,BufWinEnter,WinEnter * setlocal cursorline
-"   autocmd WinLeave * setlocal nocursorline
-" augroup END
-
 " Highlight on Yank
 " ----------------------------------------
 if has('nvim')
   autocmd vimrc TextYankPost * silent! lua
-        \ vim.highlight.on_yank {higroup='Visual', timeout=200, on_visual=false}
+        \ vim.highlight.on_yank { higroup='Visual', timeout=200, on_visual=false }
 endif
 
 " Auto IME On/Off
@@ -586,18 +585,41 @@ endif
 " Library
 " ----------------------------------------
 Plug 'vim-denops/denops.vim'
-" Plug 'vim-denops/denops-helloworld.vim'
+
+if has('nvim')
+  Plug 'MunifTanjim/nui.nvim'
+  Plug 'nvim-lua/plenary.nvim'
+endif
 
 " Language Server
 " ----------------------------------------
 if has('nvim')
   " Plug 'neovim/nvim-lspconfig'
-  " Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  " Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 else
   Plug 'prabirshrestha/vim-lsp'
   Plug 'mattn/vim-lsp-settings'
   Plug 'mattn/vim-lsp-icons'
 endif
+
+" Language Support
+" ----------------------------------------
+if has('nvim')
+  " Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+  let g:polyglot_disabled = ['markdown.plugin']
+  Plug 'sheerun/vim-polyglot'
+else
+  let g:polyglot_disabled = ['markdown.plugin']
+  Plug 'sheerun/vim-polyglot'
+endif
+
+Plug 'JuliaEditorSupport/julia-vim'
+Plug 'jalvesaq/Nvim-R', { 'for': 'r', 'branch': 'stable' }
+" Plug 'mechatroner/rainbow_csv', { 'for': 'csv' }
+Plug 'previm/previm', { 'for': 'markdown' }
+Plug 'rcmdnk/vim-markdown', { 'for': 'markdown' }
+Plug 'vim-jp/syntax-vim-ex', { 'for': 'vim' }
+Plug 'kat0h/bufpreview.vim', { 'do': 'deno task prepare' }
 
 " Completion
 " ----------------------------------------
@@ -613,78 +635,72 @@ else
   Plug 'prabirshrestha/asyncomplete-lsp.vim'
 endif
 
-" Language
+" Fuzzy Finder
 " ----------------------------------------
 if has('nvim')
-  " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-  let g:polyglot_disabled = ['markdown.plugin']
-  Plug 'sheerun/vim-polyglot'
-else
-  let g:polyglot_disabled = ['markdown.plugin']
-  Plug 'sheerun/vim-polyglot'
-endif
-
-Plug 'godlygeek/tabular'
-Plug 'jalvesaq/Nvim-R', {'for': 'r', 'branch': 'stable'}
-" Plug 'mechatroner/rainbow_csv', {'for': 'csv'}
-Plug 'previm/previm', {'for': 'markdown'}
-Plug 'rcmdnk/vim-markdown', {'for': 'markdown'}
-Plug 'vim-jp/syntax-vim-ex', {'for': 'vim'}
-
-" Editing
-" ----------------------------------------
-Plug 'AndrewRadev/linediff.vim'
-Plug 'alvan/vim-closetag'
-Plug 'cocopon/vaffle.vim'
-Plug 'cohama/lexima.vim'
-Plug 'easymotion/vim-easymotion'
-Plug 'haya14busa/vim-asterisk'
-Plug 'haya14busa/vim-edgemotion'
-Plug 'hrsh7th/vim-vsnip'
-Plug 'hrsh7th/vim-vsnip-integ'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/vim-peekaboo'
-Plug 'kana/vim-niceblock'
-Plug 'kana/vim-repeat'
-Plug 'machakann/vim-sandwich'
-Plug 'mattn/vim-maketable'
-Plug 'mhinz/vim-signify'
-Plug 'rcmdnk/yankround.vim'
-Plug 'thinca/vim-quickrun'
-Plug 'tyru/caw.vim'
-Plug 'tyru/open-browser.vim'
-Plug 'vim-scripts/VOoM'
-Plug 'vimoutliner/vimoutliner'
-
-if has('nvim')
-  " Plug 'nvim-lua/plenary.nvim'
-  " Plug 'nvim-telescope/telescope.nvim', {'tag': '0.1.1'}
-  " Plug 'mickael-menu/zk-nvim'
-  " Plug 'lewis6991/gitsigns.nvim'
+  set runtimepath+=/opt/homebrew/opt/fzf
+  Plug 'junegunn/fzf.vim'
+  " Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
 else
   set runtimepath+=/opt/homebrew/opt/fzf
   Plug 'junegunn/fzf.vim'
   " Plug 'ctrlpvim/ctrlp.vim'
   " Plug 'mattn/ctrlp-matchfuzzy'
-  " Plug 'machakann/vim-highlightedyank'
 endif
 
+" Editing
+" ----------------------------------------
+Plug 'AndrewRadev/linediff.vim'
+Plug 'alvan/vim-closetag'
+Plug 'cohama/lexima.vim'
+Plug 'godlygeek/tabular'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
+Plug 'kana/vim-niceblock'
+Plug 'kana/vim-repeat'
+" Plug 'kana/vim-smartchr'
+Plug 'machakann/vim-sandwich'
+Plug 'mattn/vim-maketable'
+Plug 'rcmdnk/yankround.vim'
+Plug 'thinca/vim-quickrun'
+Plug 'tyru/caw.vim'
+Plug 'vim-scripts/VOoM'
+Plug 'vimoutliner/vimoutliner'
+
 packadd! matchit
+
+if has('nvim')
+  " Plug 'mickael-menu/zk-nvim'
+endif
+
+" Movement
+" ----------------------------------------
+Plug 'cocopon/vaffle.vim'
+" Plug 'easymotion/vim-easymotion'
+Plug 'haya14busa/vim-asterisk'
+Plug 'haya14busa/vim-edgemotion'
+Plug 'kana/vim-smartword'
+Plug 'tyru/open-browser.vim'
+Plug 'yuki-yano/fuzzy-motion.vim'
 
 " Appearance
 " ----------------------------------------
 Plug 'haya14busa/is.vim'
 Plug 'itchyny/vim-highlighturl'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/vim-peekaboo'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'rbtnn/vim-ambiwidth'
 
 if has('nvim')
-  Plug 'MunifTanjim/nui.nvim'
   Plug 'folke/noice.nvim'
   Plug 'delphinus/auto-cursorline.nvim'
+  Plug 'lewis6991/gitsigns.nvim'
 else
   Plug 'delphinus/vim-auto-cursorline'
   Plug 'itchyny/lightline.vim'
+  " Plug 'machakann/vim-highlightedyank'
+  Plug 'mhinz/vim-signify'
 endif
 
 " Operator & Text Object
@@ -704,9 +720,8 @@ endif
 " ----------------------------------------
 Plug 'deton/jasegment.vim'
 Plug 'deton/jasentence.vim'
-" Plug 'lambdalisue/kensaku-command.vim'
-" Plug 'lambdalisue/kensaku-search.vim'
-" Plug 'lambdalisue/kensaku.vim'
+Plug 'lambdalisue/kensaku-search.vim'
+Plug 'lambdalisue/kensaku.vim'
 
 if !has('nvim')
   Plug 'mattn/learn-vimscript'
