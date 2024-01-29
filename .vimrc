@@ -167,12 +167,8 @@ set completeopt=menuone,noinsert
 set wildoptions=pum,tagfile
 set pumheight=20
 
-if has('nvim')
-  set shortmess+=cmr
-else
-  set shortmess+=cmrF
-  set shortmess-=S
-endif
+set shortmess+=cmrF
+set shortmess-=S
 
 if executable('rg')
   set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
@@ -230,6 +226,11 @@ cnoremap <C-x> <C-r>=expand('%:p')<CR>
 inoremap <expr> <CR>    pumvisible() ? '<C-y>' : '<CR>'
 inoremap <expr> <Tab>   pumvisible() ? '<C-n>' : '<Tab>'
 inoremap <expr> <S-Tab> pumvisible() ? '<C-p>' : '<S-Tab>'
+
+if has('nvim')
+  cnoremap <expr> <Up>   pumvisible() ? '<C-p>' : '<Up>'
+  cnoremap <expr> <Down> pumvisible() ? '<C-n>' : '<Down>'
+endif
 
 " Window
 " ----------------------------------------
@@ -594,6 +595,9 @@ endif
 " Language Server
 " ----------------------------------------
 if has('nvim')
+  Plug 'prabirshrestha/vim-lsp'
+  Plug 'mattn/vim-lsp-settings'
+  Plug 'mattn/vim-lsp-icons'
   " Plug 'neovim/nvim-lspconfig'
   " Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 else
@@ -602,28 +606,11 @@ else
   Plug 'mattn/vim-lsp-icons'
 endif
 
-" Language Support
-" ----------------------------------------
-if has('nvim')
-  " Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
-  let g:polyglot_disabled = ['markdown.plugin']
-  Plug 'sheerun/vim-polyglot'
-else
-  let g:polyglot_disabled = ['markdown.plugin']
-  Plug 'sheerun/vim-polyglot'
-endif
-
-Plug 'JuliaEditorSupport/julia-vim'
-Plug 'jalvesaq/Nvim-R', { 'for': 'r', 'branch': 'stable' }
-" Plug 'mechatroner/rainbow_csv', { 'for': 'csv' }
-Plug 'previm/previm', { 'for': 'markdown' }
-Plug 'rcmdnk/vim-markdown', { 'for': 'markdown' }
-Plug 'vim-jp/syntax-vim-ex', { 'for': 'vim' }
-Plug 'kat0h/bufpreview.vim', { 'do': 'deno task prepare' }
-
 " Completion
 " ----------------------------------------
 if has('nvim')
+  Plug 'prabirshrestha/asyncomplete.vim'
+  Plug 'prabirshrestha/asyncomplete-lsp.vim'
   " Plug 'hrsh7th/cmp-buffer'
   " Plug 'hrsh7th/cmp-cmdline'
   " Plug 'hrsh7th/cmp-nvim-lsp'
@@ -647,6 +634,25 @@ else
   " Plug 'ctrlpvim/ctrlp.vim'
   " Plug 'mattn/ctrlp-matchfuzzy'
 endif
+
+" Language Support
+" ----------------------------------------
+if has('nvim')
+  " Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+  let g:polyglot_disabled = ['markdown.plugin']
+  Plug 'sheerun/vim-polyglot'
+else
+  let g:polyglot_disabled = ['markdown.plugin']
+  Plug 'sheerun/vim-polyglot'
+endif
+
+Plug 'JuliaEditorSupport/julia-vim'
+Plug 'jalvesaq/Nvim-R', { 'for': 'r', 'branch': 'stable' }
+" Plug 'mechatroner/rainbow_csv', { 'for': 'csv' }
+Plug 'previm/previm', { 'for': 'markdown' }
+Plug 'rcmdnk/vim-markdown', { 'for': 'markdown' }
+Plug 'vim-jp/syntax-vim-ex', { 'for': 'vim' }
+Plug 'kat0h/bufpreview.vim', { 'do': 'deno task prepare' }
 
 " Editing
 " ----------------------------------------
