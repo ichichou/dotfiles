@@ -1,5 +1,5 @@
 require('gitsigns').setup {
-  signcolumn = false,
-  numhl      = true,
+  signcolumn = true,
+  numhl      = false,
   linehl     = false,
 }

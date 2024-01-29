@@ -1,11 +1,12 @@
 UsePlugin 'asyncomplete.vim'
 
-" let g:asyncomplete_auto_completeopt = 0
-" let g:asyncomplete_auto_popup = 0
-" let g:asyncomplete_popup_delay = 200
-" let g:asyncomplete_min_chars = 0
+let g:asyncomplete_auto_completeopt = 0
+" If 1, set completeopt=menuone,noinsert,noselect
 
-" If exists lexima, <CR> is mapped in config-lexima.vim
+" let g:asyncomplete_min_chars = 2
+" let g:asyncomplete_popup_delay = 200
+
+" If exists Lexima, <CR> is mapped in config-lexima.vim
 if !FindPlugin('lexima.vim')
   inoremap <silent> <expr> <CR> pumvisible()
         \ ? asyncomplete#close_popup()
@@ -17,6 +18,6 @@ inoremap <silent> <expr> <TAB> pumvisible()
       \ : CheckBackSpace()
       \   ? '<TAB>'
       \   : asyncomplete#force_refresh()
-inoremap <expr> <S-TAB> pumvisible()
+inoremap <silent> <expr> <S-TAB> pumvisible()
       \ ? '<C-p>'
       \ : '<C-h>'
