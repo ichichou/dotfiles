@@ -1,4 +1,23 @@
-live_config_reload = true
+[env]
+TERM = "alacritty"
+
+[window]
+dynamic_padding = true
+
+[window.padding]
+x = 3
+y = 3
+
+[window.dimensions]
+columns = 120
+lines = 50
+
+[font]
+size = 12.0
+
+[font.normal]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Regular"
 
 [colors]
 draw_bold_text_with_bright_colors = true
@@ -57,33 +76,3 @@ text = "CellForeground"
 [colors.vi_mode_cursor]
 cursor = "#d8dee9"
 text = "#2e3440"
-
-[cursor.style]
-blinking = "Off"
-shape = "Block"
-
-[env]
-TERM = "alacritty"
-
-[font]
-builtin_box_drawing = true
-size = 12.0
-
-[font.normal]
-family = "JetBrainsMono Nerd Font Mono"
-style = "Regular"
-
-[window]
-decorations = "full"
-dynamic_title = true
-# history = 10000
-# multiplier = 3
-title = "Alacritty"
-
-[window.dimensions]
-columns = 120
-lines = 50
-
-[window.padding]
-x = 4
-y = 4
