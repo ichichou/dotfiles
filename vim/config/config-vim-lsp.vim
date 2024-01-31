@@ -1,6 +1,6 @@
 UsePlugin 'vim-lsp'
 
-function! s:OnLspBufferEnabled() abort
+function! s:on_lsp_buffer_enabled() abort
   setlocal omnifunc=lsp#complete
   setlocal signcolumn=yes
   nmap <buffer> gd <Plug>(lsp-definition)
@@ -9,10 +9,11 @@ endfunction
 
 augroup lsp_install
   autocmd!
-  autocmd User lsp_buffer_enabled call s:OnLspBufferEnabled()
+  autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
 
 " Completion
+
 " let g:lsp_preview_float = 0
 " let g:lsp_text_edit_enabled = 0
 " let g:lsp_completion_documentation_enabled = 0
@@ -20,6 +21,7 @@ augroup END
 " let g:lsp_preview_max_height = 100
 
 " Diagnostics
+
 " let g:lsp_diagnostics_enabled = 0
 let g:lsp_diagnostics_echo_cursor  = 1
 let g:lsp_diagnostics_echo_delay   = 200
@@ -33,5 +35,21 @@ let g:lsp_inlay_hints_enabled = 1
 " let g:lsp_document_highlight_delay = 200
 
 " Semantic Highlight
+
 " let g:lsp_semantic_enabled = 1
 " let g:lsp_semantic_delay   = 200
+
+" Haskell
+
+if executable('haskell-language-server-wrapper')
+  autocmd User lsp_setup call lsp#register_server({
+        \ 'name': 'haskell-language-server-wrapper',
+        \ 'cmd': {server_info->['haskell-language-server-wrapper', '--lsp']},
+        \ 'root_uri': {server_info->lsp#utils#path_to_uri(
+        \   lsp#utils#find_nearest_parent_file_directory(
+        \     lsp#utils#get_buffer_path(),
+        \     ['.cabal', 'stack.yaml', 'cabal.project', 'package.yaml', 'hie.yaml', '.git'],
+        \ ))},
+        \ 'whitelist': ['haskell', 'lhaskell'],
+        \ })
+endif

@@ -592,7 +592,7 @@ if has('nvim')
   Plug 'nvim-lua/plenary.nvim'
 endif
 
-" Language Server
+" LSP
 " ----------------------------------------
 if has('nvim')
   Plug 'prabirshrestha/vim-lsp'
