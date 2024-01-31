@@ -1,4 +1,7 @@
-## Abbr
+# Abbr ==========
+
+# General ----------
+
 abbr -ag cp cp -iv
 abbr -ag e exit
 abbr -ag lns ln -snfv
@@ -7,7 +10,8 @@ abbr -ag nd nextd
 abbr -ag pd prevd
 abbr -ag reload exec fish
 
-### Apps
+# Apps ----------
+
 abbr -ag a bat
 abbr -ag mvi mvim
 abbr -ag nvi nvim
@@ -18,10 +22,12 @@ abbr -ag vi vim
 abbr -ag yqj yq eval -o=json
 abbr -ag yqy yq eval -P
 
-### Functions
+# Functions ----------
+
 abbr -ag jo journal
 
-### eza/ls
+# eza/ls ----------
+
 if test -e "/opt/homebrew/bin/eza"
     abbr -ag la eza -al --git
     abbr -ag ll eza -1a
@@ -34,7 +40,8 @@ else
     abbr -ag lsa ls
 end
 
-### trash/rm
+# trash/rm ----------
+
 if test -e "/opt/homebrew/bin/trash"
     abbr -ag rm trash
     abbr -ag rmds trash .DS_Store
@@ -43,14 +50,16 @@ else
     abbr -ag rmds rm -iv .DS_Store
 end
 
-### z
+# z ----------
+
 abbr -ag j z
 abbr -ag jd z dotfiles
 abbr -ag jl z downloads
 abbr -ag jr z repos
 abbr -ag jk z zk
 
-### zk
+# zk ----------
+
 abbr -ag k zk
 abbr -ag kc zk config
 abbr -ag ke zk edit -i
@@ -70,7 +79,8 @@ abbr -ag kdl zk list -i draft
 abbr -ag kdn zk new draft
 abbr -ag kds zk save_draft
 
-### Homebrew
+# Homebrew ----------
+
 abbr -ag b brew
 abbr -ag bc brew cleanup
 abbr -ag bd brew doctor
@@ -86,7 +96,8 @@ abbr -ag bu brew update
 abbr -ag bun brew uninstall
 abbr -ag buse brew uses
 
-### Git
+# Git ----------
+
 abbr -ag g git
 abbr -ag ga git add
 abbr -ag gaa git add --all
@@ -116,8 +127,10 @@ abbr -ag gs git status --short --branch
 abbr -ag gsh git show
 abbr -ag gss git status
 
-## Function
-### Auto ls
+# Function ==========
+
+# Auto ls ----------
+
 functions --copy cd standard_cd
 function cd
     if test -e "/opt/homebrew/bin/eza"
@@ -127,7 +140,8 @@ function cd
     end
 end
 
-### Journal
+# Journal ----------
+
 function journal
     set today (date +"%Y-%m-%d")
     set journal_file "$today.bike"
@@ -141,33 +155,42 @@ function journal
     end
 end
 
-## Environment Variable
-set -x EDITOR vim
+# Environment Variables ==========
 
-### Fzf
-# set -x FZF_DEFAULT_COMMAND "rg --files --hidden --follow --glob '!.git/*'"
-set -x FZF_DEFAULT_COMMAND "fd --type file --strip-cwd-prefix --hidden --follow --exclude .git"
-set -x FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND"
-# set -x FZF_DEFAULT_OPTS "--height 40% --info=inline --border"
-set -x FZF_CTRL_T_OPTS "--preview 'bat --style=numbers --color=always --line-range :500 {}'"
-# set -x FZF_CTRL_R_OPTS "--layout=reverse"
+set -gx EDITOR vim
 
-### Zk
-set -x ZK_NOTEBOOK_DIR ~/repos/zk
+# Fzf ----------
 
-### Pure
-set -x pure_show_jobs true
+# set -gx FZF_DEFAULT_COMMAND "rg --files --hidden --follow --glob '!.git/*'"
+set -gx FZF_DEFAULT_COMMAND "fd --type file --strip-cwd-prefix --hidden --follow --exclude .git"
+set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
+# set -gx FZF_DEFAULT_OPTS "--height 40% --info=inline --border"
+set -gx FZF_CTRL_T_OPTS "--preview 'bat --style=numbers --color=always --line-range :500 {}'"
+# set -gx FZF_CTRL_R_OPTS "--layout=reverse"
 
-## Path
-fish_add_path /Users/kazu/go/bin
-fish_add_path /Users/kazu/.ghcup/bin
-fish_add_path /Users/kazu/command
+# Zk ----------
+
+set -gx ZK_NOTEBOOK_DIR ~/repos/zk
+
+# Pure ----------
+
+set -gx pure_show_jobs true
+
+# fish_user_paths ==========
+
+# fish_add_path /opt/homebrew/bin
 fish_add_path /opt/homebrew/opt/icu4c/bin
+fish_add_path $HOME/command
+fish_add_path $HOME/go/bin
+fish_add_path $HOME/.ghcup/bin
+fish_add_path $HOME/.cabal/bin
 
-## Greeting
+# Greeting ==========
+
 set fish_greeting
 
-## Keybind
+# Keybind ==========
+
 bind -e \cl
 bind -e \cj
 bind -e \cf
