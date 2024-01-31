@@ -12,34 +12,34 @@ augroup lsp_install
   autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
 
-" Completion
+" Diagnostics --------------------
 
-" let g:lsp_preview_float = 0
-" let g:lsp_text_edit_enabled = 0
-" let g:lsp_completion_documentation_enabled = 0
-" let g:lsp_preview_max_width = 200
-" let g:lsp_preview_max_height = 100
+if !has('nvim')
+  let g:lsp_diagnostics_virtual_text_enabled = 0
+endif
 
-" Diagnostics
-
-" let g:lsp_diagnostics_enabled = 0
-let g:lsp_diagnostics_echo_cursor  = 1
-let g:lsp_diagnostics_echo_delay   = 200
+" let g:lsp_diagnostics_echo_cursor  = 1
 let g:lsp_diagnostics_float_cursor = 1
-let g:lsp_diagnostics_float_delay  = 200
-let g:lsp_diagnostics_signs_delay  = 200
+let g:lsp_inlay_hints_enabled      = 1
+let g:lsp_diagnostics_float_insert_mode_enabled = 0
+
+let g:lsp_diagnostics_echo_delay           = 200
+let g:lsp_diagnostics_float_delay          = 200
+let g:lsp_diagnostics_highlights_delay     = 200
+let g:lsp_diagnostics_signs_delay          = 200
 let g:lsp_diagnostics_virtual_text_delay   = 200
 let g:lsp_document_code_action_signs_delay = 200
-let g:lsp_inlay_hints_enabled = 1
-" let g:lsp_inlay_hints_delay = 200
-" let g:lsp_document_highlight_delay = 200
+let g:lsp_inlay_hints_delay                = 200
+let g:lsp_document_highlight_delay         = 200
 
-" Semantic Highlight
+" Semantic Highlight --------------------
 
-" let g:lsp_semantic_enabled = 1
+let g:lsp_semantic_enabled = 1
 " let g:lsp_semantic_delay   = 200
 
-" Haskell
+" Languages ====================
+
+" Haskell --------------------
 
 if executable('haskell-language-server-wrapper')
   autocmd User lsp_setup call lsp#register_server({
