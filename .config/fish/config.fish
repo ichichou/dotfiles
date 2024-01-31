@@ -178,7 +178,6 @@ set -gx pure_show_jobs true
 
 # fish_user_paths ==========
 
-# fish_add_path /opt/homebrew/bin
 fish_add_path /opt/homebrew/opt/icu4c/bin
 fish_add_path $HOME/command
 fish_add_path $HOME/go/bin
