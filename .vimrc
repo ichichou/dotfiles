@@ -163,7 +163,7 @@ set ignorecase
 set smartcase
 set gdefault
 
-set completeopt=menuone,noinsert
+set completeopt=menuone,noinsert,noselect
 set wildoptions=pum,tagfile
 set pumheight=20
 
@@ -619,6 +619,8 @@ if has('nvim')
   " Plug 'hrsh7th/nvim-cmp'
 else
   Plug 'prabirshrestha/asyncomplete.vim'
+  Plug 'prabirshrestha/asyncomplete-buffer.vim'
+  Plug 'prabirshrestha/asyncomplete-file.vim'
   Plug 'prabirshrestha/asyncomplete-lsp.vim'
 endif
 
@@ -647,12 +649,14 @@ else
 endif
 
 Plug 'JuliaEditorSupport/julia-vim'
+Plug 'alx741/vim-hindent', { 'for': 'haskell' }
 Plug 'jalvesaq/Nvim-R', { 'for': 'r', 'branch': 'stable' }
 " Plug 'mechatroner/rainbow_csv', { 'for': 'csv' }
+Plug 'kat0h/bufpreview.vim', { 'do': 'deno task prepare' }
 Plug 'previm/previm', { 'for': 'markdown' }
 Plug 'rcmdnk/vim-markdown', { 'for': 'markdown' }
+" Plug 'sdiehl/vim-ormolu', { 'for': 'haskell' }
 Plug 'vim-jp/syntax-vim-ex', { 'for': 'vim' }
-Plug 'kat0h/bufpreview.vim', { 'do': 'deno task prepare' }
 
 " Editing
 " ----------------------------------------
