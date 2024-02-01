@@ -568,6 +568,10 @@ function! s:open_journal_dir() abort
   execute 'edit' s:journal_dir
 endfunction
 
+" Cd Current Directory
+" ----------------------------------------
+command! -nargs=0 CdCurrentFile lcd %:h
+
 " Plugins
 " ========================================
 let g:data_dir = has('nvim') ? stdpath('data') .. '/site' : '~/.vim'
@@ -650,6 +654,7 @@ endif
 
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'alx741/vim-hindent', { 'for': 'haskell' }
+Plug 'fladson/vim-kitty'
 Plug 'jalvesaq/Nvim-R', { 'for': 'r', 'branch': 'stable' }
 " Plug 'mechatroner/rainbow_csv', { 'for': 'csv' }
 Plug 'kat0h/bufpreview.vim', { 'do': 'deno task prepare' }
