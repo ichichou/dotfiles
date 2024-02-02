@@ -424,13 +424,13 @@ rules:
   #   - shell_command: open -a ""
   #   conditions: *hyper_mode
 
-  # Period:
-  # - type: basic
-  #   from:
-  #     key_code: period
-  #   to:
-  #   - shell_command: open -a ""
-  #   conditions: *hyper_mode
+  # Period: Kitty
+  - type: basic
+    from:
+      key_code: period
+    to:
+    - shell_command: open -a "kitty"
+    conditions: *hyper_mode
 
   # Slash:
   # - type: basic
