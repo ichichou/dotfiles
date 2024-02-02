@@ -700,6 +700,7 @@ Plug 'yuki-yano/fuzzy-motion.vim'
 
 " Appearance
 " ----------------------------------------
+Plug 'gko/vim-coloresque'
 Plug 'haya14busa/is.vim'
 Plug 'itchyny/vim-highlighturl'
 Plug 'junegunn/goyo.vim'
