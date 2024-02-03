@@ -4,7 +4,7 @@ UsePlugin 'asyncomplete.vim'
 let g:asyncomplete_auto_completeopt = 0
 
 " let g:asyncomplete_min_chars = 2
-" let g:asyncomplete_popup_delay = 200
+let g:asyncomplete_popup_delay = 200
 
 " Keymaps --------------------
 
