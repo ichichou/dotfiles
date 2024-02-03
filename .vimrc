@@ -87,6 +87,7 @@ set softtabstop=-1
 augroup vimrc
   autocmd FileType python setlocal tabstop=4
   autocmd FileType haskell setlocal tabstop=4
+  autocmd FileType rust setlocal tabstop=4
   autocmd FileType go setlocal noexpandtab
 augroup END
 
@@ -662,7 +663,7 @@ Plug 'jalvesaq/Nvim-R', { 'for': 'r', 'branch': 'stable' }
 Plug 'kat0h/bufpreview.vim', { 'do': 'deno task prepare' }
 Plug 'previm/previm', { 'for': 'markdown' }
 Plug 'rcmdnk/vim-markdown', { 'for': 'markdown' }
-Plug 'sdiehl/vim-ormolu', { 'for': 'haskell' }
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'vim-jp/syntax-vim-ex', { 'for': 'vim' }
 
 " Editing
