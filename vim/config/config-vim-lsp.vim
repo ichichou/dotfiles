@@ -3,8 +3,13 @@ UsePlugin 'vim-lsp'
 function! s:on_lsp_buffer_enabled() abort
   setlocal omnifunc=lsp#complete
   setlocal signcolumn=yes
+
   nmap <buffer> gd <Plug>(lsp-definition)
   nmap <buffer> gr <Plug>(lsp-rename)
+  nmap <buffer> gq <Plug>(lsp-document-format)
+  vmap <buffer> gq <Plug>(lsp-document-range-format)
+
+  let g:lsp_format_sync_timeout = 1000
 endfunction
 
 augroup lsp_install
