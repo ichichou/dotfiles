@@ -130,10 +130,12 @@ set statusline=%!SetStatusLine()
 if has('nvim')
   set cmdheight=0
   set laststatus=3
-  set listchars=eol:↲,tab:»\ ,space:\ ,trail:\ ,nbsp:%,extends:>,precedes:<
+  " set listchars=eol:↲,tab:»\ ,space:\ ,trail:\ ,nbsp:%,extends:>,precedes:<
+  set listchars=eol:↲,tab:▶\ ,space:\ ,trail:\ ,nbsp:%,extends:▷,precedes:◁
 else
   set laststatus=2
-  set listchars=eol:↲,tab:»\ ,space:\ ,trail:\ ,nbsp:%,extends:>,precedes:<
+  " set listchars=eol:↲,tab:»\ ,space:\ ,trail:\ ,nbsp:%,extends:>,precedes:<
+  set listchars=eol:↲,tab:▶\ ,space:\ ,trail:\ ,nbsp:%,extends:▷,precedes:◁
   set fillchars+=vert:│
 endif
 
@@ -660,7 +662,7 @@ Plug 'jalvesaq/Nvim-R', { 'for': 'r', 'branch': 'stable' }
 Plug 'kat0h/bufpreview.vim', { 'do': 'deno task prepare' }
 Plug 'previm/previm', { 'for': 'markdown' }
 Plug 'rcmdnk/vim-markdown', { 'for': 'markdown' }
-" Plug 'sdiehl/vim-ormolu', { 'for': 'haskell' }
+Plug 'sdiehl/vim-ormolu', { 'for': 'haskell' }
 Plug 'vim-jp/syntax-vim-ex', { 'for': 'vim' }
 
 " Editing
