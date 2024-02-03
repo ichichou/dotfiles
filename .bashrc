@@ -22,8 +22,7 @@ alias b="brew"
 alias g="git"
 alias vi="vim"
 
-## Fzf
+## Environment Variables
 [ -f "$HOME/.fzf.bash" ] && source "$HOME/.fzf.bash"
-
-## GHCup
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
+. "$HOME/.cargo/env"

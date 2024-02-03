@@ -183,6 +183,7 @@ fish_add_path $HOME/command
 fish_add_path $HOME/go/bin
 fish_add_path $HOME/.ghcup/bin
 fish_add_path $HOME/.cabal/bin
+fish_add_path $HOME/.cargo/bin
 
 # Greeting ==========
 
