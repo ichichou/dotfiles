@@ -275,17 +275,6 @@ augroup vimrc
   autocmd FileType markdown setlocal formatoptions+=jro formatoptions-=c
 augroup END
 
-" R
-" ----------------------------------------
-augroup vimrc
-  autocmd FileType r inoremap <buffer> <expr> <Bslash>i CheckBackSpace()
-        \ ? '<lt>-<Space>'
-        \ : '<Space><lt>-<Space>'
-  autocmd FileType r inoremap <buffer> <expr> <Bslash>m CheckBackSpace()
-        \ ? '<Bar>><Space>'
-        \ : '<Space><Bar>><Space>'
-augroup END
-
 " Nop
 " ----------------------------------------
 noremap ZZ    <Nop>
@@ -676,7 +665,7 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'kana/vim-niceblock'
 Plug 'kana/vim-repeat'
-" Plug 'kana/vim-smartchr'
+Plug 'kana/vim-smartchr'
 Plug 'machakann/vim-sandwich'
 Plug 'mattn/vim-maketable'
 Plug 'rcmdnk/yankround.vim'
