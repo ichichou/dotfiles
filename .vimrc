@@ -687,6 +687,7 @@ Plug 'cocopon/vaffle.vim'
 Plug 'haya14busa/vim-asterisk'
 Plug 'haya14busa/vim-edgemotion'
 Plug 'kana/vim-smartword'
+Plug 'lambdalisue/fern.vim'
 Plug 'tyru/open-browser.vim'
 Plug 'yuki-yano/fuzzy-motion.vim'
 
