@@ -8,9 +8,9 @@ xmap s <Nop>
 nmap s <Plug>(sandwich-add)
 xmap s <Plug>(sandwich-add)
 omap s <Plug>(sandwich-add)
-" nmap S <Plug>(sandwich-add)$
-" xmap S <Plug>(sandwich-add)$
-" omap S <Plug>(sandwich-add)$
+nmap S <Plug>(sandwich-add)$
+xmap S <Plug>(sandwich-add)$
+omap S <Plug>(sandwich-add)$
 
 nmap sd  <Plug>(sandwich-delete)
 xmap sd  <Plug>(sandwich-delete)

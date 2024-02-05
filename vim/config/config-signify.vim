@@ -5,7 +5,7 @@ nmap <Leader>gk <Plug>(signify-prev-hunk)
 nmap <Leader>gJ 9999<Leader>gj
 nmap <Leader>gK 9999<Leader>gk
 
-nmap <Leader>gp <Cmd>SignifyHunkDiff<CR>
+nmap <Leader>gd <Cmd>SignifyHunkDiff<CR>
 nmap <Leader>gu <Cmd>SignifyHunkUndo<CR>
 
 function! s:ShowCurrentHunk() abort
