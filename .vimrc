@@ -366,29 +366,19 @@ endfunction
 
 " Set Status Line (global)
 " ----------------------------------------
+let s:mode_map = {
+      \ 'n': '  NORMAL ', 'i': '  INSERT ', 'R':      ' REPLACE ',
+      \ 'v': '  VISUAL ', 'V': '  V-LINE ', "\<C-v>": ' V-BLOCK ', 'c': ' COMMAND ',
+      \ 's': '  SELECT ', 'S': '  S-LINE ', "\<C-s>": ' S-BLOCK ', 't': ' TERMINAL '
+      \ }
+
+function! g:GetMode() abort
+  return get(s:mode_map, mode(), '')
+endfunction
+
 function! g:SetStatusLine() abort
   let fenc = &fileencoding != '' ? &fileencoding : &encoding
   let ft   = &filetype     != '' ? &filetype     : 'no ft'
-
-  " Mode
-  if mode()     =~# 'n'
-    let mode = '  NORMAL '
-  elseif mode() =~# 'i'
-    let mode = '  INSERT '
-  elseif mode() =~# 'c'
-    let mode = ' COMMAND '
-  elseif mode() =~# 'R'
-    let mode = ' REPLACE '
-  elseif mode() =~# 'v'
-    let mode = '  VISUAL '
-  elseif mode() =~# 'V'
-    let mode = '  V-LINE '
-  " elseif mode() =~# '\x16'
-  else
-    let mode = ' V-BLOCK '
-  " else
-  "   let mode = '  ?????? '
-  endif
 
   " Percent
   let pct_num = line('.') * 100 / line('$')
@@ -419,7 +409,8 @@ function! g:SetStatusLine() abort
   endif
 
   return
-        \ mode .. '| %t %m'
+        \ GetMode()
+        \ .. '| %t %m'
         \ .. '%='
         \ .. '%{&fileformat}' .. ' | ' .. fenc .. ' | ' .. ft
         \ .. percentage .. lines .. cols
