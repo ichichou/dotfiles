@@ -52,3 +52,4 @@ endif
 
 execute 'colorscheme' s:colorscheme
 let g:lightline_colorscheme = s:colorscheme
+" let g:lightline_colorscheme = 'gruvbox_material'

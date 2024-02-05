@@ -762,7 +762,7 @@ endif
 " Plug 'cocopon/iceberg.vim'
 " Plug 'sainnhe/edge'
 Plug 'sainnhe/everforest'
-" Plug 'sainnhe/gruvbox-material'
+Plug 'sainnhe/gruvbox-material'
 " Plug 'sainnhe/sonokai'
 Plug 'shaunsingh/nord.nvim'
 
