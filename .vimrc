@@ -131,10 +131,12 @@ set statusline=%!SetStatusLine()
 if has('nvim')
   set cmdheight=0
   set laststatus=3
-  set listchars=eol:↲,tab:▶\ ,trail:\ ,nbsp:~,extends:▷,precedes:◁
+  " set listchars=eol:↲,tab:▶\ ,trail:\ ,nbsp:~,extends:▷,precedes:◁
+  set listchars=tab:▶\ ,trail:\ ,nbsp:~,extends:▷,precedes:◁
 else
   set laststatus=2
-  set listchars=eol:↲,tab:▶\ ,trail:\ ,nbsp:~,extends:▷,precedes:◁
+  " set listchars=eol:↲,tab:▶\ ,trail:\ ,nbsp:~,extends:▷,precedes:◁
+  set listchars=tab:▶\ ,trail:\ ,nbsp:~,extends:▷,precedes:◁
   set fillchars+=vert:│
 endif
 
