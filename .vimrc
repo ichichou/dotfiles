@@ -743,7 +743,7 @@ if has('nvim')
   Plug 'lewis6991/gitsigns.nvim'
 else
   Plug 'delphinus/vim-auto-cursorline'
-  Plug 'itchyny/lightline.vim'
+  " Plug 'itchyny/lightline.vim'
   " Plug 'machakann/vim-highlightedyank'
   Plug 'mhinz/vim-signify'
 endif
