@@ -131,12 +131,10 @@ set statusline=%!SetStatusLine()
 if has('nvim')
   set cmdheight=0
   set laststatus=3
-  " set listchars=eol:↲,tab:»\ ,space:\ ,trail:\ ,nbsp:%,extends:>,precedes:<
-  set listchars=eol:↲,tab:▶\ ,space:\ ,trail:\ ,nbsp:%,extends:▷,precedes:◁
+  set listchars=eol:↲,tab:▶\ ,trail:\ ,nbsp:~,extends:▷,precedes:◁
 else
   set laststatus=2
-  " set listchars=eol:↲,tab:»\ ,space:\ ,trail:\ ,nbsp:%,extends:>,precedes:<
-  set listchars=eol:↲,tab:▶\ ,space:\ ,trail:\ ,nbsp:%,extends:▷,precedes:◁
+  set listchars=eol:↲,tab:▶\ ,trail:\ ,nbsp:~,extends:▷,precedes:◁
   set fillchars+=vert:│
 endif
 
@@ -579,6 +577,16 @@ else
   call plug#begin('~/.vim/plugged')
 endif
 
+nnoremap <Leader>p <Nop>
+nnoremap [plug] <Nop>
+nmap <Leader>p [plug]
+
+nnoremap [plug]s <Cmd>PlugStatus<CR>
+nnoremap [plug]i <Cmd>PlugInstall<CR>
+nnoremap [plug]c <Cmd>PlugClean<CR>
+nnoremap [plug]u <Cmd>PlugUpdate<CR>
+nnoremap [plug]g <Cmd>PlugUpgrade<CR>
+
 " Library
 " ----------------------------------------
 Plug 'vim-denops/denops.vim'
@@ -605,8 +613,10 @@ endif
 " Completion
 " ----------------------------------------
 if has('nvim')
-  Plug 'prabirshrestha/asyncomplete.vim'
+  Plug 'prabirshrestha/asyncomplete-buffer.vim'
+  Plug 'prabirshrestha/asyncomplete-file.vim'
   Plug 'prabirshrestha/asyncomplete-lsp.vim'
+  Plug 'prabirshrestha/asyncomplete.vim'
   " Plug 'hrsh7th/cmp-buffer'
   " Plug 'hrsh7th/cmp-cmdline'
   " Plug 'hrsh7th/cmp-nvim-lsp'
