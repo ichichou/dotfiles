@@ -682,14 +682,20 @@ endif
 
 " Movement
 " ----------------------------------------
-Plug 'cocopon/vaffle.vim'
 " Plug 'easymotion/vim-easymotion'
 Plug 'haya14busa/vim-asterisk'
 Plug 'haya14busa/vim-edgemotion'
 Plug 'kana/vim-smartword'
-Plug 'lambdalisue/fern.vim'
 Plug 'tyru/open-browser.vim'
 Plug 'yuki-yano/fuzzy-motion.vim'
+
+" Filer
+" ----------------------------------------
+" Plug 'cocopon/vaffle.vim'
+Plug 'lambdalisue/fern-hijack.vim'
+Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+Plug 'lambdalisue/fern.vim'
+
 
 " Appearance
 " ----------------------------------------
@@ -698,6 +704,8 @@ Plug 'haya14busa/is.vim'
 Plug 'itchyny/vim-highlighturl'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-peekaboo'
+Plug 'lambdalisue/glyph-palette.vim'
+Plug 'lambdalisue/nerdfont.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'rbtnn/vim-ambiwidth'
 
