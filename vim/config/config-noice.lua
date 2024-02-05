@@ -17,7 +17,10 @@ require("noice").setup({
         padding = { 1, 2 },
       },
       win_options = {
-        winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
+        winhighlight = {
+          NormalFloat = "NormalFloat",
+          FloatBorder = "FloatBorder",
+        },
       },
     },
 
