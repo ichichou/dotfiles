@@ -368,34 +368,59 @@ function! g:SetStatusLine() abort
   let fenc = &fileencoding != '' ? &fileencoding : &encoding
   let ft   = &filetype     != '' ? &filetype     : 'no ft'
 
-  let p = line('.') * 100 / line('$')
-  if p < 10
-    let pp = '       ' .. p .. '%%'
-  elseif p < 100
-    let pp = '      ' .. p .. '%%'
+  " Mode
+  if mode()     =~# 'n'
+    let mode = '  NORMAL '
+  elseif mode() =~# 'i'
+    let mode = '  INSERT '
+  elseif mode() =~# 'c'
+    let mode = ' COMMAND '
+  elseif mode() =~# 'R'
+    let mode = ' REPLACE '
+  elseif mode() =~# 'v'
+    let mode = '  VISUAL '
+  elseif mode() =~# 'V'
+    let mode = '  V-LINE '
+  " elseif mode() =~# '\x16'
   else
-    let pp = '     ' .. p .. '%%'
+    let mode = ' V-BLOCK '
+  " else
+  "   let mode = '  ?????? '
   endif
 
+  " Percent
+  let pct_num = line('.') * 100 / line('$')
+  if pct_num < 10
+    let percentage = '     ' .. pct_num .. '%%'
+  elseif pct_num < 100
+    let percentage = '    ' .. pct_num .. '%%'
+  else
+    let percentage = '   ' .. pct_num .. '%%'
+  endif
+
+  " Lines
   if line('.') < 10
-    let l = '    %l:'
+    let lines = '    %l:'
   elseif line('.') < 100
-    let l = '   %l:'
+    let lines = '   %l:'
   else
-    let l = '  %l:'
+    let lines = '  %l:'
   endif
 
+  " Columns
   if col('.') < 10
-    let c = '%c   '
+    let cols = '%c   '
   elseif col('.') < 100
-    let c = '%c  '
+    let cols = '%c  '
   else
-    let c = '%c '
+    let cols = '%c '
   endif
 
-  return ' %t %m%='
+  return
+        \ mode .. '| %t %m'
+        \ .. '%='
         \ .. '%{&fileformat}' .. ' | ' .. fenc .. ' | ' .. ft
-        \ .. pp .. l .. c
+        \ .. percentage .. lines .. cols
 endfunction
 
 " DiffOrig (tweaked)
