@@ -16,7 +16,7 @@ lines = 50
 size = 12.0
 
 [font.normal]
-family = "JetBrainsMono Nerd Font Mono"
+family = "Hack Nerd Font"
 style = "Regular"
 
 [colors]
