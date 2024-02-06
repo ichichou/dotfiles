@@ -6,8 +6,9 @@ nmap <Leader>g [signify]
 
 nmap [signify]j <Plug>(signify-next-hunk)
 nmap [signify]k <Plug>(signify-prev-hunk)
-nmap [signify]J 9999<Leader>gj
-nmap [signify]K 9999<Leader>gk
+
+nmap [signify]n <Plug>(signify-next-hunk)
+nmap [signify]p <Plug>(signify-prev-hunk)
 
 nmap [signify]d <Cmd>SignifyHunkDiff<CR>
 nmap [signify]u <Cmd>SignifyHunkUndo<CR>
