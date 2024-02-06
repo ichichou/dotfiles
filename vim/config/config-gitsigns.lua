@@ -28,7 +28,7 @@ require('gitsigns').setup {
     end, {expr=true})
 
     -- Actions
-    map('n', '<Leader>gd', gs.preview_hunk)
+    map('n', '<Leader>gd', gs.preview_hunk_inline)
 
   end
 }
