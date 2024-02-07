@@ -6,6 +6,9 @@ let g:hybrid_custom_term_colors = 1
 let g:nord_italic    = 1
 let g:nord_underline = 1
 
+" shaunsingh/nord.nvim
+let g:nord_borders = 1
+
 " Everforest
 let g:everforest_background = 'medium'
 let g:everforest_better_performance = 1

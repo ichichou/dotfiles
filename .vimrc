@@ -65,13 +65,12 @@ set helplang=ja,en
 set spelllang+=cjk
 set nrformats=bin,hex
 set clipboard=unnamed,unnamedplus
-set ttyfast
 
 set textwidth=0
 set virtualedit=onemore
 set whichwrap=b,s,h,l,<,>,[,]
 set backspace=indent,eol,start
-set nostartofline
+" set nostartofline
 
 set autoindent
 set smartindent
@@ -91,11 +90,6 @@ augroup vimrc
   autocmd FileType go setlocal noexpandtab
 augroup END
 
-augroup vimrc
-  autocmd FileType gitcommit setlocal fileencoding=utf-8
-  autocmd BufRead,BufNewFile *.{txt,text} setlocal filetype=markdown
-augroup END
-
 set diffopt=internal,filler,closeoff,vertical,indent-heuristic,algorithm:histogram
 
 if !has('nvim')
@@ -112,6 +106,7 @@ set cursorline
 set noshowmode
 set display=lastline
 set list
+set listchars=tab:▶\ ,trail:\ ,nbsp:~,extends:▷,precedes:◁
 
 set sidescroll=1
 set scrolloff=0
@@ -131,13 +126,9 @@ set statusline=%!SetStatusLine()
 if has('nvim')
   set cmdheight=0
   set laststatus=3
-  " set listchars=eol:↲,tab:▶\ ,trail:\ ,nbsp:~,extends:▷,precedes:◁
-  set listchars=tab:▶\ ,trail:\ ,nbsp:~,extends:▷,precedes:◁
 else
   set laststatus=2
-  " set listchars=eol:↲,tab:▶\ ,trail:\ ,nbsp:~,extends:▷,precedes:◁
-  set listchars=tab:▶\ ,trail:\ ,nbsp:~,extends:▷,precedes:◁
-  set fillchars+=vert:│
+  set fillchars=vert:│,fold:·,foldsep:│
 endif
 
 set termguicolors
@@ -271,7 +262,7 @@ augroup vimrc
   autocmd FileType markdown inoremap <buffer> <Tab>   <C-t>
   autocmd FileType markdown inoremap <buffer> <S-Tab> <C-d>
   autocmd FileType markdown inoremap <buffer> <C-d>   <Delete>
-  autocmd FileType markdown setlocal comments=b:*,b:-,b:+,b:1.,nb:>
+  autocmd FileType markdown setlocal comments=b:*,b:-,b:+,b:1.,nb:>,fb:•
   autocmd FileType markdown setlocal formatoptions+=jro formatoptions-=c
 augroup END
 
@@ -304,6 +295,13 @@ inoremap <D-9> <Nop>
 
 " Auto Command
 " ========================================
+
+" Filetype
+" ----------------------------------------
+augroup vimrc
+  autocmd FileType gitcommit setlocal fileencoding=utf-8
+  autocmd BufRead,BufNewFile *.{txt,text} setlocal filetype=markdown
+augroup END
 
 " Quit by Q
 " ----------------------------------------
