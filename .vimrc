@@ -174,8 +174,8 @@ set shortmess+=cmrF
 set shortmess-=S
 
 if executable('rg')
-  set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
-  set grepformat=%f:%l:%c:%m,%f:%l:%m
+  let &grepprg = 'rg --vimgrep --smart-case'
+  set grepformat=%f:%l:%c:%m
 endif
 
 " Keymap
@@ -631,10 +631,10 @@ endif
 " Completion
 " ----------------------------------------
 if has('nvim')
-  Plug 'prabirshrestha/asyncomplete-buffer.vim'
-  Plug 'prabirshrestha/asyncomplete-file.vim'
-  Plug 'prabirshrestha/asyncomplete-lsp.vim'
-  Plug 'prabirshrestha/asyncomplete.vim'
+  " Plug 'prabirshrestha/asyncomplete-buffer.vim'
+  " Plug 'prabirshrestha/asyncomplete-file.vim'
+  " Plug 'prabirshrestha/asyncomplete-lsp.vim'
+  " Plug 'prabirshrestha/asyncomplete.vim'
   " Plug 'hrsh7th/cmp-buffer'
   " Plug 'hrsh7th/cmp-cmdline'
   " Plug 'hrsh7th/cmp-nvim-lsp'
@@ -642,10 +642,10 @@ if has('nvim')
   " Plug 'hrsh7th/cmp-vsnip'
   " Plug 'hrsh7th/nvim-cmp'
 else
-  Plug 'prabirshrestha/asyncomplete.vim'
-  Plug 'prabirshrestha/asyncomplete-buffer.vim'
-  Plug 'prabirshrestha/asyncomplete-file.vim'
-  Plug 'prabirshrestha/asyncomplete-lsp.vim'
+  " Plug 'prabirshrestha/asyncomplete.vim'
+  " Plug 'prabirshrestha/asyncomplete-buffer.vim'
+  " Plug 'prabirshrestha/asyncomplete-file.vim'
+  " Plug 'prabirshrestha/asyncomplete-lsp.vim'
 endif
 
 " Fuzzy Finder
