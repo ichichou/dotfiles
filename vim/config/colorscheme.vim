@@ -2,10 +2,8 @@
 let g:hybrid_custom_term_colors = 1
 " let g:lightline_hybrid_style = 'plain'
 
-" Nord (nord-vim & nord.nvim)
-let g:nord_uniform_diff_background = 1
-let g:nord_italic = 1
-let g:nord_italic_comments = 1
+" nordtheme/vim
+let g:nord_italic    = 1
 let g:nord_underline = 1
 
 " Everforest
@@ -45,9 +43,9 @@ augroup END
 set background=dark
 
 if has('nvim')
-  let s:colorscheme = 'everforest'
+  let s:colorscheme = 'nord'
 else
-  let s:colorscheme = 'everforest'
+  let s:colorscheme = 'nord'
 endif
 
 execute 'colorscheme' s:colorscheme
