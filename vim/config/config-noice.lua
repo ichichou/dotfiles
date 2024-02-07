@@ -13,29 +13,29 @@ require("noice").setup({
 
     cmdline_popup = {
       border = {
-        style = "none",
-        padding = { 1, 2 },
-      },
-      win_options = {
-        winhighlight = {
-          NormalFloat = "NormalFloat",
-          FloatBorder = "FloatBorder",
-        },
+        style = "single"
       },
     },
 
     -- cmdline_popup = {
     --   border = {
-    --     style = "single"
+    --     style = "none",
+    --     padding = { 1, 2 },
+    --   },
+    --   win_options = {
+    --     winhighlight = {
+    --       NormalFloat = "NormalFloat",
+    --       FloatBorder = "FloatBorder",
+    --     },
     --   },
     -- },
 
-    -- mini = {
-    --   timeout = 5000,
-    --   position = {
-    --     row = 0,
-    --   },
-    -- },
+    mini = {
+      timeout = 5000,
+      position = {
+        row = 0,
+      },
+    },
 
   },
 })
