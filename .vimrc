@@ -665,23 +665,22 @@ endif
 " ----------------------------------------
 if has('nvim')
   " Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
-  let g:polyglot_disabled = ['markdown.plugin']
+  let g:polyglot_disabled = ['markdown.plugin', 'r-lang.plugin']
   Plug 'sheerun/vim-polyglot'
 else
-  let g:polyglot_disabled = ['markdown.plugin']
+  let g:polyglot_disabled = ['markdown.plugin', 'r-lang.plugin']
   Plug 'sheerun/vim-polyglot'
 endif
 
-Plug 'JuliaEditorSupport/julia-vim'
-Plug 'alx741/vim-hindent', { 'for': 'haskell' }
-Plug 'fladson/vim-kitty'
-Plug 'jalvesaq/Nvim-R', { 'for': 'r', 'branch': 'stable' }
-" Plug 'mechatroner/rainbow_csv', { 'for': 'csv' }
-Plug 'kat0h/bufpreview.vim', { 'do': 'deno task prepare' }
-Plug 'previm/previm', { 'for': 'markdown' }
-Plug 'rcmdnk/vim-markdown', { 'for': 'markdown' }
-Plug 'rust-lang/rust.vim', { 'for': 'rust' }
-Plug 'vim-jp/syntax-vim-ex', { 'for': 'vim' }
+Plug 'JuliaEditorSupport/julia-vim', { 'for': 'julia' }
+Plug 'alx741/vim-hindent',           { 'for': 'haskell' }
+Plug 'fladson/vim-kitty',            { 'for': 'kitty' }
+Plug 'jalvesaq/Nvim-R',              { 'for': 'r', 'branch': 'stable' }
+" Plug 'mechatroner/rainbow_csv',      { 'for': 'csv' }
+Plug 'kat0h/bufpreview.vim',         { 'for': 'markdown', 'do': 'deno task prepare' }
+" Plug 'previm/previm',                { 'for': 'markdown' }
+Plug 'rcmdnk/vim-markdown',          { 'for': 'markdown' }
+Plug 'vim-jp/syntax-vim-ex',         { 'for': 'vim' }
 
 " Editing
 " ----------------------------------------
