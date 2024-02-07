@@ -774,14 +774,18 @@ endif
 
 " Colorscheme
 " ----------------------------------------
-" Plug 'arcticicestudio/nord-vim'
 " Plug 'EdenEast/nightfox.nvim'
 " Plug 'cocopon/iceberg.vim'
 " Plug 'sainnhe/edge'
 Plug 'sainnhe/everforest'
-Plug 'sainnhe/gruvbox-material'
+" Plug 'sainnhe/gruvbox-material'
 " Plug 'sainnhe/sonokai'
-Plug 'shaunsingh/nord.nvim'
+
+if has('nvim')
+  Plug 'shaunsingh/nord.nvim'
+else
+  Plug 'nordtheme/vim'
+endif
 
 call plug#end()
 
