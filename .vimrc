@@ -332,27 +332,27 @@ endif
 
 " Auto IME On/Off
 " ----------------------------------------
-augroup vimrc
-  autocmd VimEnter * let s:prev_ime = ''
-  autocmd InsertEnter * call s:restore_ime()
-  autocmd InsertLeave * call s:save_ime_and_set_default_ime()
-augroup END
-
-let s:ime_cmd = 'macism'
-let s:default_ime = 'jp.sourceforge.inputmethod.aquaskk.Ascii'
-
-function! s:restore_ime() abort
-  if s:prev_ime != '' && s:prev_ime != s:default_ime
-    call system(s:ime_cmd .. ' ' .. s:prev_ime)
-  endif
-endfunction
-
-function! s:save_ime_and_set_default_ime() abort
-  let s:prev_ime = system(s:ime_cmd)
-  if s:prev_ime != s:default_ime
-    call system(s:ime_cmd .. ' ' .. s:default_ime)
-  endif
-endfunction
+" augroup vimrc
+"   autocmd VimEnter * let s:prev_ime = ''
+"   autocmd InsertEnter * call s:restore_ime()
+"   autocmd InsertLeave * call s:save_ime_and_set_default_ime()
+" augroup END
+"
+" let s:ime_cmd = 'macism'
+" let s:default_ime = 'jp.sourceforge.inputmethod.aquaskk.Ascii'
+"
+" function! s:restore_ime() abort
+"   if s:prev_ime != '' && s:prev_ime != s:default_ime
+"     call system(s:ime_cmd .. ' ' .. s:prev_ime)
+"   endif
+" endfunction
+"
+" function! s:save_ime_and_set_default_ime() abort
+"   let s:prev_ime = system(s:ime_cmd)
+"   if s:prev_ime != s:default_ime
+"     call system(s:ime_cmd .. ' ' .. s:default_ime)
+"   endif
+" endfunction
 
 " Command & Function
 " ========================================
