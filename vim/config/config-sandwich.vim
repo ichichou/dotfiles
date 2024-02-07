@@ -16,9 +16,9 @@ nmap sd  <Plug>(sandwich-delete)
 xmap sd  <Plug>(sandwich-delete)
 nmap sdb <Plug>(sandwich-delete-auto)
 
-nmap sc  <Plug>(sandwich-replace)
-xmap sc  <Plug>(sandwich-replace)
-nmap scb <Plug>(sandwich-replace-auto)
+nmap sr  <Plug>(sandwich-replace)
+xmap sr  <Plug>(sandwich-replace)
+nmap srb <Plug>(sandwich-replace-auto)
 
 xmap ib <Plug>(textobj-sandwich-auto-i)
 xmap ab <Plug>(textobj-sandwich-auto-a)
@@ -31,16 +31,16 @@ omap as <Plug>(textobj-sandwich-query-a)
 
 let g:sandwich#recipes = deepcopy(g:sandwich#default_recipes)
 let g:sandwich#recipes += [
-      \ {'buns': ['**', '**'], 'input': ['*'], 'filetype': ['markdown']},
-      \ {'buns': ['（', '）'], 'input': ['p']},
-      \ {'buns': ['「', '」'], 'input': ['b']},
-      \ {'buns': ['『', '』'], 'input': ['d']},
-      \ {'buns': ['〈', '〉']},
-      \ {'buns': ['《', '》']},
-      \ {'buns': ['【', '】']},
-      \ {'buns': ['〔', '〕']},
-      \ {'buns': ['［', '］']},
-      \ {'buns': ['｛', '｝']},
-      \ {'buns': ['‘', '’']},
-      \ {'buns': ['“', '”']},
+      \ { 'buns': ['**', '**'], 'input': ['*'], 'filetype': ['markdown'] },
+      \ { 'buns': ['（', '）'], 'input': ['j('] },
+      \ { 'buns': ['「', '」'], 'input': ['j['] },
+      \ { 'buns': ['『', '』'], 'input': ['j{'] },
+      \ { 'buns': ['〈', '〉'] },
+      \ { 'buns': ['《', '》'] },
+      \ { 'buns': ['【', '】'] },
+      \ { 'buns': ['〔', '〕'] },
+      \ { 'buns': ['［', '］'] },
+      \ { 'buns': ['｛', '｝'] },
+      \ { 'buns': ['‘', '’'] },
+      \ { 'buns': ['“', '”'] },
       \ ]

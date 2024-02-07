@@ -1,3 +1,3 @@
 UsePlugin 'ctrlp.vim'
 
-let g:ctrlp_match_func = {'match': 'ctrlp_matchfuzzy#matcher'}
+let g:ctrlp_match_func = { 'match': 'ctrlp_matchfuzzy#matcher' }
