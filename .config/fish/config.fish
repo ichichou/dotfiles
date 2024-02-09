@@ -4,6 +4,7 @@ set -gx fish_greeting
 set -gx EDITOR vim
 set -gx ZK_NOTEBOOK_DIR ~/repos/zk
 set -gx pure_show_jobs true
+# set -gx LS_COLORS (vivid generate nord)
 
 # FZF
 set -gx FZF_DEFAULT_COMMAND "fd --type file --strip-cwd-prefix --hidden --follow --exclude .git"
@@ -12,6 +13,11 @@ set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
 # set -gx FZF_DEFAULT_OPTS "--height 40% --info=inline --border"
 set -gx FZF_CTRL_T_OPTS "--preview 'bat --style=numbers --color=always --line-range :500 {}'"
 # set -gx FZF_CTRL_R_OPTS "--layout=reverse"
+
+# LS_COLORS
+if test -e "/opt/homebrew/bin/vivid"
+    set -gx LS_COLORS (vivid generate nord)
+end
 
 # PATH -----------------------------------------------------
 
