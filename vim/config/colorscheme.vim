@@ -48,7 +48,7 @@ set background=dark
 if has('nvim')
   let s:colorscheme = 'nord'
 else
-  let s:colorscheme = 'nord'
+  let s:colorscheme = 'everforest'
 endif
 
 execute 'colorscheme' s:colorscheme
