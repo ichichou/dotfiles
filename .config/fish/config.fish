@@ -48,6 +48,7 @@ abbr -ag a bat
 abbr -ag mvi mvim
 abbr -ag nvi nvim
 abbr -ag r radian
+abbr -ag ra ranger
 abbr -ag t tig
 abbr -ag ts tig status
 abbr -ag vi vim
