@@ -1,6 +1,32 @@
 require("noice").setup({
   cmdline = {
     -- view = "cmdline",
+    format = {
+      cmdline = {
+        title = "",
+        icon = ">",
+      },
+      search_down = {
+        title = "",
+        icon = "⇣",
+      },
+      search_up = {
+        title = "",
+        icon = "⇡",
+      },
+      filter = {
+        title = "",
+        icon = "$",
+      },
+      lua = {
+        title = "",
+        icon = "☾",
+      },
+      help = {
+        title = "",
+        icon = "?",
+      },
+    },
   },
 
   messages = {

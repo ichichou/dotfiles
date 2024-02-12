@@ -9,8 +9,9 @@ if FindPlugin('fern-renderer-nerdfont.vim')
 endif
 
 nnoremap <silent> <Leader>v <Cmd>Fern %:h<CR>
-" nnoremap <silent> <Leader>v <Cmd>Fern . -reveal=%<CR>
 " nnoremap <silent> <Leader>v <Cmd>Fern %:h -drawer -keep -toggle<CR>
+
+" nnoremap <silent> <Leader>v <Cmd>Fern . -reveal=%<CR>
 " nnoremap <silent> <Leader>v <Cmd>Fern . -reveal=% -drawer -keep -toggle<CR>
 
 function! s:init_fern() abort

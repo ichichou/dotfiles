@@ -128,7 +128,7 @@ if has('nvim')
   set laststatus=3
 else
   set laststatus=2
-  set fillchars=vert:│,fold:·,foldsep:│
+  set fillchars=vert:│,fold:·,foldsep:│,eob:·
 endif
 
 set termguicolors
@@ -670,13 +670,13 @@ else
   Plug 'sheerun/vim-polyglot'
 endif
 
-Plug 'alx741/vim-hindent',           { 'for': 'haskell' }
-Plug 'fladson/vim-kitty',            { 'for': 'kitty' }
-Plug 'jalvesaq/Nvim-R',              { 'for': 'r', 'branch': 'stable' }
-Plug 'mechatroner/rainbow_csv',      { 'for': 'csv' }
-Plug 'kat0h/bufpreview.vim',         { 'for': 'markdown', 'do': 'deno task prepare' }
-Plug 'rcmdnk/vim-markdown',          { 'for': 'markdown' }
-Plug 'vim-jp/syntax-vim-ex',         { 'for': 'vim' }
+Plug 'alx741/vim-hindent',      { 'for': 'haskell' }
+Plug 'fladson/vim-kitty',       { 'for': 'kitty' }
+Plug 'jalvesaq/Nvim-R',         { 'for': 'r', 'branch': 'stable' }
+Plug 'mechatroner/rainbow_csv', { 'for': 'csv' }
+Plug 'kat0h/bufpreview.vim',    { 'for': 'markdown', 'do': 'deno task prepare' }
+Plug 'rcmdnk/vim-markdown',     { 'for': 'markdown' }
+Plug 'vim-jp/syntax-vim-ex',    { 'for': 'vim' }
 
 " Editing
 " ----------------------------------------
@@ -694,7 +694,6 @@ Plug 'mattn/vim-maketable'
 Plug 'rcmdnk/yankround.vim'
 Plug 'thinca/vim-quickrun'
 Plug 'tyru/caw.vim'
-Plug 'vim-scripts/VOoM'
 Plug 'vimoutliner/vimoutliner'
 
 packadd! matchit
@@ -706,29 +705,30 @@ endif
 " Movement
 " ----------------------------------------
 " Plug 'easymotion/vim-easymotion'
-Plug 'haya14busa/vim-asterisk'
+" Plug 'haya14busa/is.vim'
+" Plug 'haya14busa/vim-asterisk'
 Plug 'haya14busa/vim-edgemotion'
+Plug 'junegunn/vim-slash'
 Plug 'kana/vim-smartword'
+Plug 'mattn/vim-findroot'
 Plug 'tyru/open-browser.vim'
 Plug 'yuki-yano/fuzzy-motion.vim'
 
 " Filer
 " ----------------------------------------
-" Plug 'cocopon/vaffle.vim'
-Plug 'lambdalisue/fern-hijack.vim'
-Plug 'lambdalisue/fern-renderer-nerdfont.vim'
-Plug 'lambdalisue/fern.vim'
-
+Plug 'cocopon/vaffle.vim'
+" Plug 'lambdalisue/fern-hijack.vim'
+" Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+" Plug 'lambdalisue/fern.vim'
 
 " Appearance
 " ----------------------------------------
-Plug 'gko/vim-coloresque'
-Plug 'haya14busa/is.vim'
+" Plug 'gko/vim-coloresque'
 Plug 'itchyny/vim-highlighturl'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-peekaboo'
-Plug 'lambdalisue/glyph-palette.vim'
-Plug 'lambdalisue/nerdfont.vim'
+" Plug 'lambdalisue/glyph-palette.vim'
+" Plug 'lambdalisue/nerdfont.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'rbtnn/vim-ambiwidth'
 

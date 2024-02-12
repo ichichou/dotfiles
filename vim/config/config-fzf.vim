@@ -21,12 +21,14 @@ nnoremap [fzf]t <Cmd>Filetypes<CR>
 
 nnoremap <Leader>b <Cmd>Buffers<CR>
 nnoremap <Leader>t <Cmd>Files<CR>
+nnoremap <Leader>h <Cmd>History<CR>
 
 command! -bang -nargs=? -complete=dir Files
       \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
 command! -bang -nargs=* Rg
-      \ call fzf#vim#grep('rg --column --line-number --no-heading --color=always --smart-case -- '
+      \ call fzf#vim#grep('rg --column --line-number'
+      \ .. ' --no-heading --color=always --smart-case -- '
       \ .. shellescape(<q-args>), 1, fzf#vim#with_preview(), <bang>0)
 
 " Registers
