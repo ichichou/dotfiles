@@ -4,7 +4,7 @@ require("noice").setup({
     format = {
       cmdline = {
         title = "",
-        icon = ">",
+        icon = ">_",
       },
       search_down = {
         title = "",
