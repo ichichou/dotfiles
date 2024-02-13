@@ -84,10 +84,10 @@ set shiftwidth=0
 set softtabstop=-1
 
 augroup vimrc
-  autocmd FileType python setlocal tabstop=4
-  autocmd FileType haskell setlocal tabstop=4
-  autocmd FileType rust setlocal tabstop=4
   autocmd FileType go setlocal noexpandtab
+  autocmd FileType haskell setlocal tabstop=4
+  autocmd FileType python setlocal tabstop=4
+  autocmd FileType rust setlocal tabstop=4
 augroup END
 
 set diffopt=internal,filler,closeoff,vertical,indent-heuristic,algorithm:histogram
@@ -209,7 +209,8 @@ noremap g- g<C-x>
 nnoremap U <C-r>
 nnoremap <C-h> <C-^>
 
-nnoremap <Esc><Esc> <Cmd>nohlsearch<CR>
+nnoremap <Esc><Esc> <Cmd>nohlsearch\| redraw!<CR>
+nnoremap <C-;> <Cmd>nohlsearch \| redraw!<CR>
 inoremap <C-a> <Cmd>normal! ^<CR>
 inoremap <C-e> <Cmd>normal! $l<CR>
 cnoremap <C-a> <C-b>
@@ -670,13 +671,14 @@ else
   Plug 'sheerun/vim-polyglot'
 endif
 
-Plug 'alx741/vim-hindent',      { 'for': 'haskell' }
-Plug 'fladson/vim-kitty',       { 'for': 'kitty' }
-Plug 'jalvesaq/Nvim-R',         { 'for': 'r', 'branch': 'stable' }
-Plug 'mechatroner/rainbow_csv', { 'for': 'csv' }
-Plug 'kat0h/bufpreview.vim',    { 'for': 'markdown', 'do': 'deno task prepare' }
-Plug 'rcmdnk/vim-markdown',     { 'for': 'markdown' }
-Plug 'vim-jp/syntax-vim-ex',    { 'for': 'vim' }
+Plug 'alx741/vim-hindent',         { 'for': 'haskell' }
+Plug 'fladson/vim-kitty',          { 'for': 'kitty' }
+Plug 'itchyny/vim-haskell-indent', { 'for': 'haskell' }
+Plug 'jalvesaq/Nvim-R',            { 'for': 'r', 'branch': 'stable' }
+Plug 'kat0h/bufpreview.vim',       { 'for': 'markdown', 'do': 'deno task prepare' }
+Plug 'mechatroner/rainbow_csv',    { 'for': 'csv' }
+Plug 'rcmdnk/vim-markdown',        { 'for': 'markdown' }
+Plug 'vim-jp/syntax-vim-ex',       { 'for': 'vim' }
 
 " Editing
 " ----------------------------------------
