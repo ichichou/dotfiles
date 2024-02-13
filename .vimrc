@@ -673,6 +673,7 @@ endif
 
 Plug 'alx741/vim-hindent',         { 'for': 'haskell' }
 Plug 'fladson/vim-kitty',          { 'for': 'kitty' }
+Plug 'guns/vim-sexp',              { 'for': ['scheme', 'clojure'] }
 Plug 'itchyny/vim-haskell-indent', { 'for': 'haskell' }
 Plug 'jalvesaq/Nvim-R',            { 'for': 'r', 'branch': 'stable' }
 Plug 'kat0h/bufpreview.vim',       { 'for': 'markdown', 'do': 'deno task prepare' }
@@ -680,6 +681,7 @@ Plug 'liquidz/dps-parinfer',       { 'for': ['scheme', 'clojure'] }
 Plug 'luochen1990/rainbow',        { 'for': ['scheme', 'clojure'] }
 Plug 'mechatroner/rainbow_csv',    { 'for': 'csv' }
 Plug 'rcmdnk/vim-markdown',        { 'for': 'markdown' }
+Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': ['scheme', 'clojure'] }
 Plug 'vim-jp/syntax-vim-ex',       { 'for': 'vim' }
 
 " Editing
