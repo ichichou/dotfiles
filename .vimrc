@@ -115,10 +115,10 @@ set updatetime=100
 set belloff=all
 
 set noshowmatch
-set matchtime=1
+set matchtime=0
 set matchpairs+=（:）,「:」,『:』,〈:〉,《:》,【:】,〔:〕,［:］,｛:｝,‘:’,“:”
 
-set nofoldenable
+" set nofoldenable
 autocmd vimrc FileType vim setlocal foldmethod=marker
 
 set statusline=%!SetStatusLine()
@@ -676,6 +676,8 @@ Plug 'fladson/vim-kitty',          { 'for': 'kitty' }
 Plug 'itchyny/vim-haskell-indent', { 'for': 'haskell' }
 Plug 'jalvesaq/Nvim-R',            { 'for': 'r', 'branch': 'stable' }
 Plug 'kat0h/bufpreview.vim',       { 'for': 'markdown', 'do': 'deno task prepare' }
+Plug 'liquidz/dps-parinfer',       { 'for': ['scheme', 'clojure'] }
+Plug 'luochen1990/rainbow',        { 'for': ['scheme', 'clojure'] }
 Plug 'mechatroner/rainbow_csv',    { 'for': 'csv' }
 Plug 'rcmdnk/vim-markdown',        { 'for': 'markdown' }
 Plug 'vim-jp/syntax-vim-ex',       { 'for': 'vim' }
