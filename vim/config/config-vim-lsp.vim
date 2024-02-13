@@ -1,5 +1,13 @@
 UsePlugin 'vim-lsp'
 
+" SETUP  =========================================
+
+augroup lsp_install
+  autocmd!
+  autocmd User lsp_setup call s:lsp_setup()
+  autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
+
 function! s:on_lsp_buffer_enabled() abort
   setlocal omnifunc=lsp#complete
   setlocal signcolumn=yes
@@ -12,12 +20,9 @@ function! s:on_lsp_buffer_enabled() abort
   let g:lsp_format_sync_timeout = 1000
 endfunction
 
-augroup lsp_install
-  autocmd!
-  autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
-augroup END
+" CONFIG =========================================
 
-" Diagnostics --------------------
+" DIAGNOSTICS ------------------------------------
 
 if !has('nvim')
   let g:lsp_diagnostics_virtual_text_enabled = 0
@@ -37,32 +42,34 @@ let g:lsp_document_code_action_signs_delay = 200
 let g:lsp_inlay_hints_delay                = 200
 let g:lsp_document_highlight_delay         = 200
 
-" Semantic Highlight --------------------
+" SEMANTIC HIGHLIGHT -----------------------------
 
 let g:lsp_semantic_enabled = 1
 " let g:lsp_semantic_delay   = 200
 
-" Languages ====================
+" LANGUAGES ======================================
 
-" Haskell --------------------
+" HASKELL ----------------------------------------
 
-if executable('haskell-language-server-wrapper')
-  autocmd User lsp_setup call lsp#register_server({
-        \ 'name': 'haskell-language-server-wrapper',
-        \ 'cmd': { server_info->['haskell-language-server-wrapper', '--lsp'] },
-        \ 'allowlist': ['haskell', 'lhaskell'],
-        \ 'root_uri': { server_info->lsp#utils#path_to_uri(
-        \   lsp#utils#find_nearest_parent_file_directory(
-        \     lsp#utils#get_buffer_path(),
-        \     ['.cabal', 'stack.yaml', 'cabal.project', 'package.yaml', 'hie.yaml', '.git'],
-        \ ))},
-        \ 'workspace_config': {
-        \   'haskell': {
-        \     'formattingProvider': 'fourmolu',
-        \     'plugin': {
-        \       'fourmolu': {
-        \         'config': {
-        \           'external': v:true,
-        \ }}}}},
-        \ })
-endif
+function! s:lsp_setup() abort
+  if executable('haskell-language-server-wrapper')
+    call lsp#register_server({
+          \ 'name': 'haskell-language-server-wrapper',
+          \ 'cmd': { server_info->['haskell-language-server-wrapper', '--lsp'] },
+          \ 'allowlist': ['haskell', 'lhaskell'],
+          \ 'root_uri': { server_info->lsp#utils#path_to_uri(
+          \   lsp#utils#find_nearest_parent_file_directory(
+          \     lsp#utils#get_buffer_path(),
+          \     ['.cabal', 'stack.yaml', 'cabal.project', 'package.yaml', 'hie.yaml', '.git'],
+          \ ))},
+          \ 'workspace_config': {
+          \   'haskell': {
+          \     'formattingProvider': 'fourmolu',
+          \     'plugin': {
+          \       'fourmolu': {
+          \         'config': {
+          \           'external': v:true,
+          \ }}}}},
+          \ })
+  endif
+endfunction
