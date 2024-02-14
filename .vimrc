@@ -61,7 +61,7 @@ set nowritebackup
 
 set shell=fish
 set history=10000
-set helplang=ja,en
+set helplang=ja
 set spelllang+=cjk
 set nrformats=bin,hex
 set clipboard=unnamed,unnamedplus
@@ -84,8 +84,9 @@ set shiftwidth=0
 set softtabstop=-1
 
 augroup vimrc
-  autocmd FileType go setlocal noexpandtab
+  autocmd FileType go setlocal noexpandtab tabstop=4
   autocmd FileType haskell setlocal tabstop=4
+  autocmd FileType julia setlocal tabstop=4
   autocmd FileType python setlocal tabstop=4
   autocmd FileType rust setlocal tabstop=4
 augroup END
@@ -251,10 +252,10 @@ nnoremap <Leader>/ <Cmd>edit $HOME/dotfiles/vim/config<CR>
 if has('gui_running')
   nnoremap <Leader><lt> <Cmd>edit $MYGVIMRC<CR>
   nnoremap <Leader>.
-        \ <Cmd>source $MYVIMRC<CR><Cmd>source $MYGVIMRC<CR><Cmd>nohlsearch<CR>
+        \ <Cmd>source $MYVIMRC \| source $MYGVIMRC \| nohlsearch \| redraw!<CR>
 else
   nnoremap <Leader>.
-        \ <Cmd>source $MYVIMRC<CR><Cmd>nohlsearch<CR>
+        \ <Cmd>source $MYVIMRC \| nohlsearch \| redraw!<CR>
 endif
 
 " Markdown
