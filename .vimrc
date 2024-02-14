@@ -433,7 +433,7 @@ function! s:blank_below(type = '') abort
   endif
 
   for i in range(v:count1)
-    call append(line('.'), '')
+    call append('.', '')
   endfor
 endfunction
 
@@ -471,7 +471,7 @@ endfunction
 command! -nargs=0 SyntaxInfo call s:get_syn_info()
 
 function! s:get_syn_id(transparent)
-  let synid = synID(line('.'), col('.'), 1)
+  let synid = synID('.', col('.'), 1)
   if a:transparent
     return synIDtrans(synid)
   else
@@ -545,7 +545,7 @@ function! s:timestamp_above() abort
   if strlen(getline('.')) > 0
     call append(line('.') - 1, timestamp)
   else
-    call setline(line('.'), timestamp)
+    call setline('.', timestamp)
   endif
 endfunction
 
