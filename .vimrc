@@ -1,6 +1,8 @@
-" ========================================
+"
 " .vimrc
-" ========================================
+"
+
+" SETUP ==========================================
 
 set encoding=utf-8
 scriptencoding utf-8
@@ -50,8 +52,10 @@ let g:loaded_zip                = 1
 let g:loaded_zipPlugin          = 1
 let g:skip_loading_mswin        = 1
 
-" Editing
-" ========================================
+" OPTIONS ========================================
+
+" Editing ----------------------------------------
+
 set hidden
 set autoread
 set switchbuf=usetab,uselast
@@ -98,8 +102,8 @@ if !has('nvim')
   set ttymouse=xterm2
 endif
 
-" Appearance
-" ========================================
+" Appearance -------------------------------------
+
 set title
 set number
 set signcolumn=yes
@@ -151,8 +155,8 @@ if !has('nvim')
   endif
 endif
 
-" Search & Completion
-" ========================================
+" Search & Completion ----------------------------
+
 set hlsearch
 set ignorecase
 set smartcase
@@ -170,8 +174,7 @@ if executable('rg')
   set grepformat=%f:%l:%c:%m
 endif
 
-" Keymap
-" ========================================
+" KEYMAP =========================================
 
 "        Norm   Ins   Cmd   Vis   Sel   Opr   Term   Lang
 "       ------ ----- ----- ----- ----- ----- ------ ------
@@ -186,6 +189,8 @@ endif
 " omap    -      -     -     -     -    yes    -      -
 " tmap    -      -     -     -     -     -    yes     -
 " lmap    -     yes   yes    -     -     -     -     yes
+
+" General ----------------------------------------
 
 let g:mapleader = ','
 let g:maplocalleader = '\'
@@ -217,8 +222,8 @@ inoremap <C-e> <Cmd>normal! $l<CR>
 cnoremap <C-a> <C-b>
 cnoremap <C-x> <C-r>=expand('%:p')<CR>
 
-" Search & Completion
-" ----------------------------------------
+" Search & Completion ----------------------------
+
 inoremap <expr> <CR>    pumvisible() ? '<C-y>' : '<CR>'
 inoremap <expr> <Tab>   pumvisible() ? '<C-n>' : '<Tab>'
 inoremap <expr> <S-Tab> pumvisible() ? '<C-p>' : '<S-Tab>'
@@ -228,8 +233,8 @@ if has('nvim')
   cnoremap <expr> <Down> pumvisible() ? '<C-n>' : '<Down>'
 endif
 
-" Window
-" ----------------------------------------
+" Window -----------------------------------------
+
 nmap t <C-w>
 nnoremap <C-w>. <Cmd>bnext<CR>
 nnoremap <C-w>, <Cmd>bprevious<CR>
@@ -244,8 +249,8 @@ nnoremap <script> <SID>ws> <C-w>><SID>ws
 nnoremap <script> <SID>ws< <C-w><<SID>ws
 nmap <SID>ws <Nop>
 
-" Vimrc
-" ----------------------------------------
+" Vimrc ------------------------------------------
+
 nnoremap <Leader>, <Cmd>edit $MYVIMRC<CR>
 nnoremap <Leader>/ <Cmd>edit $HOME/dotfiles/vim/config<CR>
 
@@ -258,8 +263,8 @@ else
         \ <Cmd>source $MYVIMRC \| nohlsearch \| redraw!<CR>
 endif
 
-" Markdown
-" ----------------------------------------
+" Markdown ---------------------------------------
+
 augroup vimrc
   autocmd FileType markdown inoremap <buffer> <Tab>   <C-t>
   autocmd FileType markdown inoremap <buffer> <S-Tab> <C-d>
@@ -268,8 +273,8 @@ augroup vimrc
   autocmd FileType markdown setlocal formatoptions+=jro formatoptions-=c
 augroup END
 
-" Nop
-" ----------------------------------------
+" Nop --------------------------------------------
+
 noremap ZZ    <Nop>
 noremap ZQ    <Nop>
 noremap Q     <Nop>
@@ -295,25 +300,24 @@ inoremap <D-7> <Nop>
 inoremap <D-8> <Nop>
 inoremap <D-9> <Nop>
 
-" Auto Command
-" ========================================
+" AUTO COMMAND ===================================
 
-" Filetype
-" ----------------------------------------
+" Filetype ---------------------------------------
+
 augroup vimrc
   autocmd FileType gitcommit setlocal fileencoding=utf-8
   autocmd BufRead,BufNewFile *.{txt,text} setlocal filetype=markdown
 augroup END
 
-" Quit by Q
-" ----------------------------------------
+" Quit by Q --------------------------------------
+
 augroup vimrc
   autocmd FileType help,qf,man,ref,diff,quickrun nnoremap <buffer> q <Cmd>quit!<CR>
   autocmd QuickFixCmdPost *grep*,make if len(getqflist()) != 0 | cwindow | endif
 augroup END
 
-" Diff Mode
-" ----------------------------------------
+" Diff Mode --------------------------------------
+
 autocmd vimrc VimEnter,DiffUpdated * call s:set_diff_mode()
 
 function! s:set_diff_mode() abort
@@ -323,15 +327,15 @@ function! s:set_diff_mode() abort
   endif
 endfunction
 
-" Highlight on Yank
-" ----------------------------------------
+" Highlight on Yank ------------------------------
+
 if has('nvim')
   autocmd vimrc TextYankPost * silent! lua
         \ vim.highlight.on_yank { higroup='Visual', timeout=200, on_visual=false }
 endif
 
-" Auto IME On/Off
-" ----------------------------------------
+" Auto IME On/Off --------------------------------
+
 " augroup vimrc
 "   autocmd VimEnter * let s:prev_ime = ''
 "   autocmd InsertEnter * call s:restore_ime()
@@ -354,18 +358,17 @@ endif
 "   endif
 " endfunction
 
-" Command & Function
-" ========================================
+" COMMAND & FUNCTION =============================
 
-" Check Back Space (global)
-" ----------------------------------------
+" Check Back Space (global) ----------------------
+
 function! g:CheckBackSpace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 
-" Set Status Line (global)
-" ----------------------------------------
+" Set Status Line (global) -----------------------
+
 let s:mode_map = {
       \ 'n': '  NORMAL ', 'i': '  INSERT ', 'R':      ' REPLACE ',
       \ 'v': '  VISUAL ', 'V': '  V-LINE ', "\<C-v>": ' V-BLOCK ', 'c': ' COMMAND ',
@@ -416,13 +419,13 @@ function! g:SetStatusLine() abort
         \ .. percentage .. lines .. cols
 endfunction
 
-" DiffOrig (tweaked)
-" ----------------------------------------
+" DiffOrig (tweaked) -----------------------------
+
 command! DiffOrig vertical new | set buftype=nofile filetype=diff
       \ | read ++edit # | 0delete_ | diffthis | wincmd p | diffthis
 
-" Insert Blank Lines
-" ----------------------------------------
+" Insert Blank Lines -----------------------------
+
 nnoremap <expr> go <SID>blank_below()
 nnoremap <expr> gO <SID>blank_above()
 
@@ -448,8 +451,8 @@ function! s:blank_above(type = '') abort
   endfor
 endfunction
 
-" Vertical Help
-" ----------------------------------------
+" Vertical Help ----------------------------------
+
 nnoremap gK <Cmd>call <SID>help_vertical_cword()<CR>
 vnoremap gK <Cmd>call <SID>help_vertical_selected()<CR>
 
@@ -466,8 +469,8 @@ function! s:help_vertical_selected() abort
   execute 'vertical help' word
 endfunction
 
-" Syntax Info
-" ----------------------------------------
+" Syntax Info ------------------------------------
+
 command! -nargs=0 SyntaxInfo call s:get_syn_info()
 
 function! s:get_syn_id(transparent)
@@ -512,8 +515,8 @@ function! s:get_syn_info()
         \ ' guibg: '   .. linkedSyn.guibg
 endfunction
 
-" Timestamp
-" ----------------------------------------
+" Timestamp --------------------------------------
+
 augroup vimrc
   autocmd FileType markdown nnoremap <buffer> <Leader>d <Cmd>call <SID>timestamp_below()<CR>
   autocmd FileType markdown nnoremap <buffer> <Leader>D <Cmd>call <SID>timestamp_above()<CR>
@@ -549,8 +552,8 @@ function! s:timestamp_above() abort
   endif
 endfunction
 
-" Zk Journal
-" ----------------------------------------
+" Zk Journal -------------------------------------
+
 nnoremap <Leader>m <Nop>
 nnoremap [zk] <Nop>
 nmap <Leader>m [zk]
@@ -576,12 +579,10 @@ function! s:open_journal_dir() abort
   execute 'edit' s:journal_dir
 endfunction
 
-" Cd Current Directory
-" ----------------------------------------
+" Cd Current File --------------------------------
+
 command! -nargs=0 CdCurrentFile lcd %:h
 
-" Plugins
-" ========================================
 " Print tabstop, shiftwidth, softtabstop ---------
 
 nnoremap <expr> <Leader>a <SID>print_indents()
@@ -604,6 +605,8 @@ function! s:put_trailing_separater() abort
   let sep = repeat('-', width - col('$'))
   call setline('.', str .. ' ' .. sep)
 endfunction
+
+" PLUGIN =========================================
 
 let g:data_dir = has('nvim') ? stdpath('data') .. '/site' : '~/.vim'
 if empty(glob(data_dir .. '/autoload/plug.vim'))
@@ -628,8 +631,8 @@ nnoremap [plug]c <Cmd>PlugClean<CR>
 nnoremap [plug]u <Cmd>PlugUpdate<CR>
 nnoremap [plug]g <Cmd>PlugUpgrade<CR>
 
-" Library
-" ----------------------------------------
+" Library ----------------------------------------
+
 Plug 'vim-denops/denops.vim'
 
 if has('nvim')
@@ -637,8 +640,8 @@ if has('nvim')
   Plug 'nvim-lua/plenary.nvim'
 endif
 
-" LSP
-" ----------------------------------------
+" LSP --------------------------------------------
+
 if has('nvim')
   Plug 'prabirshrestha/vim-lsp'
   Plug 'mattn/vim-lsp-settings'
@@ -651,8 +654,8 @@ else
   Plug 'mattn/vim-lsp-icons'
 endif
 
-" Completion
-" ----------------------------------------
+" Completion -------------------------------------
+
 if has('nvim')
   " Plug 'prabirshrestha/asyncomplete-buffer.vim'
   " Plug 'prabirshrestha/asyncomplete-file.vim'
@@ -671,8 +674,8 @@ else
   " Plug 'prabirshrestha/asyncomplete-lsp.vim'
 endif
 
-" Fuzzy Finder
-" ----------------------------------------
+" Fuzzy Finder -----------------------------------
+
 if has('nvim')
   set runtimepath+=/opt/homebrew/opt/fzf
   Plug 'junegunn/fzf.vim'
@@ -684,8 +687,8 @@ else
   " Plug 'mattn/ctrlp-matchfuzzy'
 endif
 
-" Language Support
-" ----------------------------------------
+" Language Support -------------------------------
+
 if has('nvim')
   " Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
   let g:polyglot_disabled = ['markdown.plugin', 'r-lang.plugin', 'csv.plugin']
@@ -708,8 +711,8 @@ Plug 'rcmdnk/vim-markdown',        { 'for': 'markdown' }
 Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': ['scheme', 'clojure'] }
 Plug 'vim-jp/syntax-vim-ex',       { 'for': 'vim' }
 
-" Editing
-" ----------------------------------------
+" Editing ----------------------------------------
+
 Plug 'AndrewRadev/linediff.vim'
 Plug 'alvan/vim-closetag'
 Plug 'cohama/lexima.vim'
@@ -732,8 +735,8 @@ if has('nvim')
   " Plug 'mickael-menu/zk-nvim'
 endif
 
-" Movement
-" ----------------------------------------
+" Movement ---------------------------------------
+
 " Plug 'easymotion/vim-easymotion'
 " Plug 'haya14busa/is.vim'
 " Plug 'haya14busa/vim-asterisk'
@@ -744,15 +747,15 @@ Plug 'mattn/vim-findroot'
 Plug 'tyru/open-browser.vim'
 Plug 'yuki-yano/fuzzy-motion.vim'
 
-" Filer
-" ----------------------------------------
+" Filer ------------------------------------------
+
 Plug 'cocopon/vaffle.vim'
 " Plug 'lambdalisue/fern-hijack.vim'
 " Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 " Plug 'lambdalisue/fern.vim'
 
-" Appearance
-" ----------------------------------------
+" Appearance -------------------------------------
+
 " Plug 'gko/vim-coloresque'
 Plug 'itchyny/vim-highlighturl'
 Plug 'junegunn/goyo.vim'
@@ -773,8 +776,8 @@ else
   Plug 'mhinz/vim-signify'
 endif
 
-" Operator & Text Object
-" ----------------------------------------
+" Operator & Text Object -------------------------
+
 Plug 'kana/vim-operator-user'
 Plug 'kana/vim-textobj-user'
 
@@ -788,8 +791,8 @@ else
   Plug 'kana/vim-textobj-entire'
 endif
 
-" Japanese Support
-" ----------------------------------------
+" Japanese Support -------------------------------
+
 Plug 'deton/jasegment.vim'
 Plug 'deton/jasentence.vim'
 Plug 'lambdalisue/kensaku-search.vim'
@@ -797,9 +800,8 @@ Plug 'lambdalisue/kensaku.vim'
 Plug 'mattn/learn-vimscript'
 Plug 'vim-jp/vimdoc-ja'
 
+" Colorscheme ------------------------------------
 
-" Colorscheme
-" ----------------------------------------
 " Plug 'EdenEast/nightfox.nvim'
 " Plug 'cocopon/iceberg.vim'
 " Plug 'sainnhe/edge'
@@ -815,12 +817,12 @@ endif
 
 call plug#end()
 
-" Colorscheme Config
-" ----------------------------------------
+" Colorscheme Config -----------------------------
+
 runtime! config/colorscheme.vim
 
-" Plugin Config
-" ----------------------------------------
+" Plugin Config ----------------------------------
+
 let s:plugs = get(s:, 'plugs', get(g:, 'plugs', {}))
 function! FindPlugin(name) abort
   return has_key(s:plugs, a:name) ? isdirectory(s:plugs[a:name].dir) : 0
