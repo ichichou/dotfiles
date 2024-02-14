@@ -757,7 +757,9 @@ Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-operator-replace'
 Plug 'kana/vim-textobj-line'
 
-if !has('nvim')
+if has('nvim')
+  Plug 'chrisgrieser/nvim-various-textobjs'
+else
   Plug 'haya14busa/vim-operator-flashy'
   Plug 'kana/vim-textobj-entire'
 endif
@@ -768,11 +770,9 @@ Plug 'deton/jasegment.vim'
 Plug 'deton/jasentence.vim'
 Plug 'lambdalisue/kensaku-search.vim'
 Plug 'lambdalisue/kensaku.vim'
+Plug 'mattn/learn-vimscript'
+Plug 'vim-jp/vimdoc-ja'
 
-if !has('nvim')
-  Plug 'mattn/learn-vimscript'
-  Plug 'vim-jp/vimdoc-ja'
-endif
 
 " Colorscheme
 " ----------------------------------------
