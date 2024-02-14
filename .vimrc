@@ -582,6 +582,29 @@ command! -nargs=0 CdCurrentFile lcd %:h
 
 " Plugins
 " ========================================
+" Print tabstop, shiftwidth, softtabstop ---------
+
+nnoremap <expr> <Leader>a <SID>print_indents()
+command! -nargs=0 PrintIndents call s:print_indents()
+
+function! s:print_indents() abort
+  let ts = &tabstop
+  let sw = &shiftwidth
+  let sts = &softtabstop
+  echo 'tabstop: ' .. ts .. ', shiftwidth: ' .. sw .. ', softtabstop: ' .. sts
+endfunction
+
+" Put Trailing Separater -------------------------
+
+command! PutTrailingSeparater call s:put_trailing_separater()
+
+function! s:put_trailing_separater() abort
+  let width = 50
+  let str = getline('.')
+  let sep = repeat('-', width - col('$'))
+  call setline('.', str .. ' ' .. sep)
+endfunction
+
 let g:data_dir = has('nvim') ? stdpath('data') .. '/site' : '~/.vim'
 if empty(glob(data_dir .. '/autoload/plug.vim'))
   silent execute '!curl -fLo ' .. data_dir .. '/autoload/plug.vim --create-dirs
