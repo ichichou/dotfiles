@@ -948,21 +948,6 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
-  # [Bike] Control-Tab → Tab
-  - type: basic
-    from:
-      key_code: tab
-      modifiers:
-        mandatory:
-        - control
-    to:
-    - key_code: tab
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "^com\\.hogbaysoftware\\.Bike$"
-
 # ──── Workflowy ────
 
 - description: "[App] Workflowy"
