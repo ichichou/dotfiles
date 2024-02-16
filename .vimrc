@@ -471,7 +471,7 @@ endfunction
 
 " Syntax Info ------------------------------------
 
-command! -nargs=0 SyntaxInfo call s:get_syn_info()
+command! SyntaxInfo call s:get_syn_info()
 
 function! s:get_syn_id(transparent)
   let synid = synID('.', col('.'), 1)
@@ -581,12 +581,12 @@ endfunction
 
 " Cd Current File --------------------------------
 
-command! -nargs=0 CdCurrentFile lcd %:h
+command! CdCurrentFile lcd %:h
 
 " Print tabstop, shiftwidth, softtabstop ---------
 
 nnoremap <expr> <Leader>a <SID>print_indents()
-command! -nargs=0 PrintIndents call s:print_indents()
+command! PrintIndents call s:print_indents()
 
 function! s:print_indents() abort
   let ts = &tabstop

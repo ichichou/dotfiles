@@ -23,15 +23,19 @@ nnoremap <Leader>b <Cmd>Buffers<CR>
 nnoremap <Leader>t <Cmd>Files<CR>
 nnoremap <Leader>h <Cmd>History<CR>
 
+" Files
 command! -bang -nargs=? -complete=dir Files
       \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
+" Rg
 command! -bang -nargs=* Rg
       \ call fzf#vim#grep('rg --column --line-number'
       \ .. ' --no-heading --color=always --smart-case -- '
       \ .. shellescape(<q-args>), 1, fzf#vim#with_preview(), <bang>0)
 
 " Registers
+command! Registers call s:FzfRegisters()
+
 function! s:FzfRegisters() abort
   let reg  = execute('registers')
   let regs = split(reg, '\n')
@@ -43,5 +47,3 @@ endfunction
 function! s:Paste(sink) abort
   execute 'normal!' strcharpart(a:sink, 5, 2) .. 'p'
 endfunction
-
-command! -nargs=0 Registers call s:FzfRegisters()
