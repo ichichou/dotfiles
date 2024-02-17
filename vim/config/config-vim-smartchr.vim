@@ -1,8 +1,5 @@
 UsePlugin 'vim-smartchr'
 
-inoremap <expr> + smartchr#loop(' + ', '+')
-inoremap <expr> - smartchr#loop(' - ', '-')
-inoremap <expr> = smartchr#loop(' = ', ' == ', '=')
 inoremap <expr> _ smartchr#loop('_', ' -> ', ' <lt>- ')
 
 augroup smartchr
@@ -15,30 +12,27 @@ augroup smartchr
 augroup END
 
 function! s:haskell_map() abort
-  inoremap <buffer> <expr> + smartchr#loop(' + ', ' ++ ', '+')
-  inoremap <buffer> <expr> - smartchr#loop(' - ', '-- ',  '-')
   inoremap <buffer> <expr> : smartchr#loop(':', ' :: ')
+  inoremap <buffer> <expr> o smartchr#loop('o', 'otherwise')
+  inoremap <buffer> <expr> w smartchr#loop('w', 'where')
 endfunction
 
 function! s:julia_map() abort
   inoremap <buffer> <expr> <Bslash> smartchr#loop('<Bslash>', 'function ')
+  inoremap <buffer> <expr> f smartchr#loop('f', 'function ')
 endfunction
 
 function! s:markdown_map() abort
-  iunmap +
-  iunmap -
-  inoremap <buffer> <expr> = smartchr#loop('=', ' = ')
 endfunction
 
 function! s:r_map() abort
   inoremap <buffer> <expr> _ smartchr#loop('_', ' <lt>- ')
   inoremap <buffer> <expr> > smartchr#loop('>', ' <Bar>> ')
+  inoremap <buffer> <expr> i smartchr#loop('i', ' <lt>- ')
+  inoremap <buffer> <expr> m smartchr#loop('m', ' <Bar>> ')
 endfunction
 
 function! s:vim_map() abort
-  iunmap +
-  iunmap -
-  inoremap <buffer> <expr> . smartchr#loop('.', ' .. ')
   inoremap <buffer> <expr> : smartchr#loop(':', 'command! ')
-  inoremap <buffer> <expr> <Bslash><Bslash> smartchr#loop('function! ', '<Bslash><Bslash>')
+  inoremap <buffer> <expr> f smartchr#loop('f', 'function! ')
 endfunction

@@ -10,7 +10,7 @@ let g:haskell_enable_typeroles        = 1
 let g:haskell_enable_static_pointers  = 1
 let g:haskell_backpack                = 1
 
-" let g:haskell_indent_disable = 1
+let g:haskell_indent_disable = 1
 
 " rust.vim ---------------------------------------
 
