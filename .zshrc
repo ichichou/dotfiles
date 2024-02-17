@@ -74,3 +74,12 @@ fi
 
 [ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+path=('/Users/kazu/.juliaup/bin' $path)
+export PATH
+
+# <<< juliaup initialize <<<
