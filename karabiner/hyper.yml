@@ -1,6 +1,6 @@
 title: "05. Hyper key"
 
-# ===== Aliases =====
+# Aliases ========================================
 
 aliases:
 
@@ -15,11 +15,11 @@ aliases:
     name: hyper_mode
     value: 1
 
-# ===== Rules =====
+# Rules ==========================================
 
 rules:
 
-# ----- 1234567890 -----
+# 1234567890 -------------------------------------
 
 - description: "[Hyper] Hyper - Num Key → Change Desktop"
   manipulators:
@@ -104,7 +104,7 @@ rules:
       modifiers: *hyper_key
     conditions: *hyper_mode
 
-# ----- QWERTYUIOP → 1234567890 -----
+# QWERTYUIOP → 1234567890 ----------------------
 
 # - description: "[Hyper] Hyper - Q-P → Hyper - 1-0"
 #   manipulators:
@@ -189,58 +189,76 @@ rules:
 #       modifiers: *hyper_key
 #     conditions: *hyper_mode
 
-# ----- QWERT -----
-# ----- ASDFG -----
-# ----- ZXCVB -----
+# QWERT
+# ASDFG ------------------------------------------
+# ZXCVB
 
 - description: "[Hyper] Hyper - Alpha Key → Launch App"
   manipulators:
 
   # Q:
-  # - type: basic
-  #   from:
-  #     key_code: q
-  #   to:
-  #   - shell_command: open -a ""
-  #   conditions: *hyper_mode
+  - type: basic
+    from:
+      key_code: q
+    to:
+    - key_code: q
+      modifiers: *hyper_key
+      repeat: false
+    # - shell_command: open -a ""
+    conditions: *hyper_mode
 
   # W: Notion Calendar
   - type: basic
     from:
       key_code: w
     to:
+    # - key_code: w
+    #   modifiers: *hyper_key
+    #   repeat: false
     - shell_command: open -a "notion calendar"
     conditions: *hyper_mode
 
   # E:
-  # - type: basic
-  #   from:
-  #     key_code: e
-  #   to:
-  #   - shell_command: open -a ""
-  #   conditions: *hyper_mode
+  - type: basic
+    from:
+      key_code: e
+    to:
+    - key_code: e
+      modifiers: *hyper_key
+      repeat: false
+    # - shell_command: open -a ""
+    conditions: *hyper_mode
 
   # R:
-  # - type: basic
-  #   from:
-  #     key_code: r
-  #   to:
-  #   - shell_command: open -a ""
-  #   conditions: *hyper_mode
+  - type: basic
+    from:
+      key_code: r
+    to:
+    - key_code: r
+      modifiers: *hyper_key
+      repeat: false
+    # - shell_command: open -a ""
+    conditions: *hyper_mode
 
   # T:
-  # - type: basic
-  #   from:
-  #     key_code: t
-  #   to:
-  #   - shell_command: open -a ""
-  #   conditions: *hyper_mode
+  - type: basic
+    from:
+      key_code: t
+    to:
+    - key_code: t
+      modifiers: *hyper_key
+      repeat: false
+    # - shell_command: open -a ""
+    conditions: *hyper_mode
 
   # A: Finder
   - type: basic
     from:
       key_code: a
     to:
+    # - key_code: a
+    #   modifiers: *hyper_key
+    #   repeat: false
     - shell_command: open -a "finder"
     conditions: *hyper_mode
 
@@ -249,6 +267,9 @@ rules:
     from:
       key_code: s
     to:
+    # - key_code: s
+    #   modifiers: *hyper_key
+    #   repeat: false
     - shell_command: open -a "slack"
     conditions: *hyper_mode
 
@@ -257,82 +278,112 @@ rules:
     from:
       key_code: d
     to:
+    # - key_code: d
+    #   modifiers: *hyper_key
+    #   repeat: false
     - shell_command: open -a "safari"
     conditions: *hyper_mode
 
   # F:
-  # - type: basic
-  #   from:
-  #     key_code: f
-  #   to:
-  #   - shell_command: open -a ""
-  #   conditions: *hyper_mode
+  - type: basic
+    from:
+      key_code: f
+    to:
+    - key_code: f
+      modifiers: *hyper_key
+      repeat: false
+    # - shell_command: open -a ""
+    conditions: *hyper_mode
 
   # G:
-  # - type: basic
-  #   from:
-  #     key_code: g
-  #   to:
-  #   - shell_command: open -a ""
-  #   conditions: *hyper_mode
+  - type: basic
+    from:
+      key_code: g
+    to:
+    - key_code: g
+      modifiers: *hyper_key
+      repeat: false
+    # - shell_command: open -a ""
+    conditions: *hyper_mode
 
   # Z: Zoom
   - type: basic
     from:
       key_code: z
     to:
+    # - key_code: z
+    #   modifiers: *hyper_key
+    #   repeat: false
     - shell_command: open -a "zoom.us"
     conditions: *hyper_mode
 
   # X:
-  # - type: basic
-  #   from:
-  #     key_code: x
-  #   to:
-  #   - shell_command: open -a ""
-  #   conditions: *hyper_mode
+  - type: basic
+    from:
+      key_code: x
+    to:
+    - key_code: x
+      modifiers: *hyper_key
+      repeat: false
+    # - shell_command: open -a ""
+    conditions: *hyper_mode
 
   # C: Arc
   - type: basic
     from:
       key_code: c
     to:
+    # - key_code: c
+    #   modifiers: *hyper_key
+    #   repeat: false
     - shell_command: open -a "arc"
     conditions: *hyper_mode
 
   # V:
-  # - type: basic
-  #   from:
-  #     key_code: v
-  #   to:
-  #   - shell_command: open -a ""
-  #   conditions: *hyper_mode
+  - type: basic
+    from:
+      key_code: v
+    to:
+    - key_code: v
+      modifiers: *hyper_key
+      repeat: false
+    # - shell_command: open -a ""
+    conditions: *hyper_mode
 
   # B: Bitwarden
   - type: basic
     from:
       key_code: b
     to:
+    # - key_code: b
+    #   modifiers: *hyper_key
+    #   repeat: false
     - shell_command: open -a "bitwarden"
     conditions: *hyper_mode
 
-# ----- YUIOP -----
-# ----- HJKL; -----
-# ----- NM,./ -----
+# YUIOP
+# HJKL; ------------------------------------------
+# NM,./
 
   # Y:
-  # - type: basic
-  #   from:
-  #     key_code: "y"
-  #   to:
-  #   - shell_command: open -a ""
-  #   conditions: *hyper_mode
+  - type: basic
+    from:
+      key_code: "y"
+    to:
+    - key_code: "y"
+      modifiers: *hyper_key
+      repeat: false
+    # - shell_command: open -a ""
+    conditions: *hyper_mode
 
   # U: RStudio
   - type: basic
     from:
       key_code: u
     to:
+    # - key_code: u
+    #   modifiers: *hyper_key
+    #   repeat: false
     - shell_command: open -a "rstudio"
     conditions: *hyper_mode
 
@@ -341,30 +392,42 @@ rules:
     from:
       key_code: i
     to:
+    # - key_code: i
+    #   modifiers: *hyper_key
+    #   repeat: false
     - shell_command: open -a "linear"
     conditions: *hyper_mode
 
   # O:
-  # - type: basic
-  #   from:
-  #     key_code: o
-  #   to:
-  #   - shell_command: open -a ""
-  #   conditions: *hyper_mode
+  - type: basic
+    from:
+      key_code: o
+    to:
+    - key_code: o
+      modifiers: *hyper_key
+      repeat: false
+    # - shell_command: open -a ""
+    conditions: *hyper_mode
 
   # P:
-  # - type: basic
-  #   from:
-  #     key_code: p
-  #   to:
-  #   - shell_command: open -a ""
-  #   conditions: *hyper_mode
+  - type: basic
+    from:
+      key_code: p
+    to:
+    - key_code: p
+      modifiers: *hyper_key
+      repeat: false
+    # - shell_command: open -a ""
+    conditions: *hyper_mode
 
   # H: Superhuman
   - type: basic
     from:
       key_code: h
     to:
+    # - key_code: h
+    #   modifiers: *hyper_key
+    #   repeat: false
     - shell_command: open -a "superhuman"
     conditions: *hyper_mode
 
@@ -373,6 +436,9 @@ rules:
     from:
       key_code: j
     to:
+    # - key_code: j
+    #   modifiers: *hyper_key
+    #   repeat: false
     - shell_command: open -a "bike"
     conditions: *hyper_mode
 
@@ -381,6 +447,9 @@ rules:
     from:
       key_code: k
     to:
+    # - key_code: k
+    #   modifiers: *hyper_key
+    #   repeat: false
     - shell_command: open -a "coteditor"
     conditions: *hyper_mode
 
@@ -389,6 +458,9 @@ rules:
     from:
       key_code: l
     to:
+    # - key_code: l
+    #   modifiers: *hyper_key
+    #   repeat: false
     - shell_command: open -a "kitty"
     conditions: *hyper_mode
 
@@ -397,6 +469,9 @@ rules:
     from:
       key_code: semicolon
     to:
+    # - key_code: semicolon
+    #   modifiers: *hyper_key
+    #   repeat: false
     - shell_command: open -a "line"
     conditions: *hyper_mode
 
@@ -405,6 +480,9 @@ rules:
     from:
       key_code: "n"
     to:
+    # - key_code: "n"
+    #   modifiers: *hyper_key
+    #   repeat: false
     - shell_command: open -a "notion"
     conditions: *hyper_mode
 
@@ -413,34 +491,46 @@ rules:
     from:
       key_code: m
     to:
+    # - key_code: m
+    #   modifiers: *hyper_key
+    #   repeat: false
     - shell_command: open -a "notes"
     conditions: *hyper_mode
 
   # Comma:
-  # - type: basic
-  #   from:
-  #     key_code: comma
-  #   to:
-  #   - shell_command: open -a ""
-  #   conditions: *hyper_mode
+  - type: basic
+    from:
+      key_code: comma
+    to:
+    - key_code: comma
+      modifiers: *hyper_key
+      repeat: false
+    # - shell_command: open -a ""
+    conditions: *hyper_mode
 
   # Period:
-  # - type: basic
-  #   from:
-  #     key_code: period
-  #   to:
-  #   - shell_command: open -a ""
-  #   conditions: *hyper_mode
+  - type: basic
+    from:
+      key_code: period
+    to:
+    - key_code: period
+      modifiers: *hyper_key
+      repeat: false
+    # - shell_command: open -a ""
+    conditions: *hyper_mode
 
   # Slash:
-  # - type: basic
-  #   from:
-  #     key_code: slash
-  #   to:
-  #   - shell_command: open -a ""
-  #   conditions: *hyper_mode
+  - type: basic
+    from:
+      key_code: slash
+    to:
+    - key_code: slash
+      modifiers: *hyper_key
+      repeat: false
+    # - shell_command: open -a ""
+    conditions: *hyper_mode
 
-# ----- Spacebar -----
+# Spacebar ---------------------------------------
 
   # - type: basic
   #   from:
@@ -449,7 +539,7 @@ rules:
   #   - shell_command: open -a ""
   #   conditions: *hyper_mode
 
-# ----- Hyper Key -----
+# Hyper Key --------------------------------------
 
 - description: "[Hyper] Tab → Hyper/Tab"
   manipulators:
