@@ -1,10 +1,16 @@
 UsePlugin 'asyncomplete.vim'
 
+" Auto Completion
+" let g:asyncomplete_auto_popup = 1
+" let g:asyncomplete_popup_delay = 200
+" let g:asyncomplete_min_chars = 2
+
+" Manual Completion
+let g:asyncomplete_auto_popup = 0
+let g:asyncomplete_popup_delay = 0
+
 " If 1, set completeopt=menuone,noinsert,noselect
 let g:asyncomplete_auto_completeopt = 0
-
-" let g:asyncomplete_min_chars = 2
-let g:asyncomplete_popup_delay = 200
 
 " KEYMAPS ----------------------------------------
 
@@ -23,6 +29,14 @@ inoremap <silent> <expr> <TAB> pumvisible()
 inoremap <silent> <expr> <S-TAB> pumvisible()
       \ ? '<C-p>'
       \ : '<C-h>'
+
+inoremap <silent> <expr> <C-n> pumvisible()
+      \ ? '<C-n>'
+      \ : asyncomplete#force_refresh()
+
+inoremap <silent> <expr> <C-p> pumvisible()
+      \ ? '<C-p>'
+      \ : asyncomplete#force_refresh()
 
 " SOURCES ----------------------------------------
 

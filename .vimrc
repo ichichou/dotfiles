@@ -658,10 +658,10 @@ endif
 " Completion -------------------------------------
 
 if has('nvim')
-  " Plug 'prabirshrestha/asyncomplete-buffer.vim'
-  " Plug 'prabirshrestha/asyncomplete-file.vim'
-  " Plug 'prabirshrestha/asyncomplete-lsp.vim'
-  " Plug 'prabirshrestha/asyncomplete.vim'
+  Plug 'prabirshrestha/asyncomplete-buffer.vim'
+  Plug 'prabirshrestha/asyncomplete-file.vim'
+  Plug 'prabirshrestha/asyncomplete-lsp.vim'
+  Plug 'prabirshrestha/asyncomplete.vim'
   " Plug 'hrsh7th/cmp-buffer'
   " Plug 'hrsh7th/cmp-cmdline'
   " Plug 'hrsh7th/cmp-nvim-lsp'
@@ -669,10 +669,10 @@ if has('nvim')
   " Plug 'hrsh7th/cmp-vsnip'
   " Plug 'hrsh7th/nvim-cmp'
 else
-  " Plug 'prabirshrestha/asyncomplete.vim'
-  " Plug 'prabirshrestha/asyncomplete-buffer.vim'
-  " Plug 'prabirshrestha/asyncomplete-file.vim'
-  " Plug 'prabirshrestha/asyncomplete-lsp.vim'
+  Plug 'prabirshrestha/asyncomplete.vim'
+  Plug 'prabirshrestha/asyncomplete-buffer.vim'
+  Plug 'prabirshrestha/asyncomplete-file.vim'
+  Plug 'prabirshrestha/asyncomplete-lsp.vim'
 endif
 
 " Fuzzy Finder -----------------------------------
