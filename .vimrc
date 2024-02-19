@@ -75,6 +75,7 @@ set virtualedit=onemore
 set whichwrap=b,s,h,l,<,>,[,]
 set backspace=indent,eol,start
 " set nostartofline
+set autochdir
 
 set autoindent
 set smartindent
@@ -691,17 +692,17 @@ endif
 
 if has('nvim')
   " Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
-  let g:polyglot_disabled = ['markdown.plugin', 'r-lang.plugin', 'csv.plugin']
+  let g:polyglot_disabled = ['autoindent', 'sensible', 'csv', 'markdown', 'r-lang']
   Plug 'sheerun/vim-polyglot'
 else
-  let g:polyglot_disabled = ['markdown.plugin', 'r-lang.plugin', 'csv.plugin']
+  let g:polyglot_disabled = ['autoindent', 'sensible', 'csv', 'markdown', 'r-lang']
   Plug 'sheerun/vim-polyglot'
 endif
 
 Plug 'alx741/vim-hindent',         { 'for': 'haskell' }
 Plug 'fladson/vim-kitty',          { 'for': 'kitty' }
 Plug 'guns/vim-sexp',              { 'for': ['scheme', 'clojure'] }
-Plug 'itchyny/vim-haskell-indent', { 'for': 'haskell' }
+" Plug 'itchyny/vim-haskell-indent', { 'for': 'haskell' }
 Plug 'jalvesaq/Nvim-R',            { 'for': 'r', 'branch': 'stable' }
 Plug 'kat0h/bufpreview.vim',       { 'for': 'markdown', 'do': 'deno task prepare' }
 Plug 'liquidz/dps-parinfer',       { 'for': ['scheme', 'clojure'] }
