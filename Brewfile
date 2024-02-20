@@ -3,7 +3,8 @@ tap "homebrew/cask"
 tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 
-# CLI Apps
+# CLI Apps ---------------------------------------
+
 brew "bat"
 brew "csvlens"
 brew "eza"
@@ -12,10 +13,8 @@ brew "fish"
 brew "fzf"
 brew "gh"
 brew "git"
-brew "graphviz"
 brew "icu4c"
 brew "itchyny/tap/mmv"
-brew "macism"
 brew "mas"
 brew "neovim"
 brew "pandoc"
@@ -34,7 +33,8 @@ brew "yq"
 brew "z"
 brew "zk"
 
-# GUI Apps
+# GUI Apps ---------------------------------------
+
 cask "alacritty"
 cask "appcleaner"
 cask "aquaskk"
@@ -68,7 +68,8 @@ cask "vlc"
 cask "workflowy"
 cask "zoom"
 
-# Font
+# Fonts -------------------------------------------
+
 cask "font-cantarell"
 cask "font-commit-mono"
 cask "font-fira-code"
@@ -82,7 +83,8 @@ cask "font-noto-sans-jp"
 cask "font-noto-serif-jp"
 cask "font-source-code-pro"
 
-# App Store
+# App Store --------------------------------------
+
 mas "AdGuard for Safari", id: 1440147259
 mas "Amphetamine", id: 937984704
 mas "Bitwarden", id: 1352778147
