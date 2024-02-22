@@ -9,7 +9,7 @@ config="${HOME}/.config"
 
 cd $dot
 for file in .??*; do
-  [[ -d $file ]] && continue
+  [[ -e $file ]] && continue
   [[ $file == ".gitignore" ]] && continue
   [[ $file == ".DS_Store" ]] && continue
 
@@ -31,9 +31,8 @@ directories=($dir_alacritty $dir_bat $dir_fish \
   $dir_git $dir_kitty $dir_nvim $dir_ranger $dir_zk)
 
 for d in ${directories[@]}; do
-  if [[ ! -d $d ]]; then
-    mkdir $d
-  fi
+  [[ -e $d ]] && continue
+  mkdir $d
 done
 
 # .config (files) --------------------------------
@@ -59,7 +58,7 @@ ln -snfv ${dot}/vim/config/ ${dir_nvim}/config
 
 # .vim -------------------------------------------
 
-if [[ ! -d ${HOME}/.vim/colors ]]; then
+if [[ ! -e ${HOME}/.vim/colors ]]; then
   mkdir -p ${HOME}/.vim/colors
 fi
 
