@@ -16,6 +16,7 @@ let g:nord_borders = 1
 
 let g:everforest_background = 'medium'
 let g:everforest_better_performance = 1
+let g:everforest_disable_italic_comment = 1
 
 " Sonokai ----------------------------------------
 
