@@ -21,11 +21,10 @@ if !FindPlugin('lexima.vim')
         \ : '<CR>'
 endif
 
-inoremap <silent> <expr> <TAB> pumvisible()
-      \ ? '<C-n>'
-      \ : CheckBackSpace()
-      \   ? '<TAB>'
-      \   : asyncomplete#force_refresh()
+inoremap <silent> <expr> <TAB>
+      \ pumvisible()       ? '<C-n>'
+      \ : CheckBackSpace() ? '<TAB>'
+      \ : asyncomplete#force_refresh()
 inoremap <silent> <expr> <S-TAB> pumvisible()
       \ ? '<C-p>'
       \ : '<C-h>'
