@@ -480,6 +480,25 @@ rules:
       bundle_identifiers:
       - "^notion\\.id$"
 
+  # [Notion] Shift-Command-A → Control-Command-H
+  - type: basic
+    from:
+      key_code: a
+      modifiers:
+        mandatory:
+        - shift
+        - command
+    to:
+    - key_code: h
+      modifiers:
+      - control
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^notion\\.id$"
+
 # ──── Bike ────
 
 - description: "[App] Bike"
