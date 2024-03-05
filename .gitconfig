@@ -44,4 +44,4 @@
     required = true
 
 [credential]
-	helper = osxkeychain
+    helper = osxkeychain
