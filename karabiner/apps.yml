@@ -499,6 +499,24 @@ rules:
       bundle_identifiers:
       - "^notion\\.id$"
 
+  # [Notion] Shift-Command-C → Command-L
+  - type: basic
+    from:
+      key_code: c
+      modifiers:
+        mandatory:
+        - shift
+        - command
+    to:
+    - key_code: l
+      modifiers:
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^notion\\.id$"
+
 # ──── Bike ────
 
 - description: "[App] Bike"
