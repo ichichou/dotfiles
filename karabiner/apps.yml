@@ -57,40 +57,40 @@ rules:
 
 # ──── MacVim ────
 
-- description: "[App] MacVim"
-  manipulators:
-
-  # [MacVim] Command-W → Invalid
-  - type: basic
-    from:
-      key_code: w
-      modifiers:
-        mandatory:
-        - command
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "^org\\.vim\\.MacVim$"
-
-  # [MacVim] LCommand-Q (held down) → Quit MacVim
-  # LCommand-Q 長押しでのみ終了
-  - type: basic
-    from:
-      key_code: q
-      modifiers:
-        mandatory:
-        - left_command
-    to_if_held_down:
-    - key_code: q
-      modifiers:
-      - command
-      repeat: false
-    parameters:
-      basic.to_if_held_down_threshold_milliseconds: 500
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "^org\\.vim\\.MacVim$"
+# - description: "[App] MacVim"
+#   manipulators:
+#
+#   # [MacVim] Command-W → Invalid
+#   - type: basic
+#     from:
+#       key_code: w
+#       modifiers:
+#         mandatory:
+#         - command
+#     conditions:
+#     - type: frontmost_application_if
+#       bundle_identifiers:
+#       - "^org\\.vim\\.MacVim$"
+#
+#   # [MacVim] LCommand-Q (held down) → Quit MacVim
+#   # LCommand-Q 長押しでのみ終了
+#   - type: basic
+#     from:
+#       key_code: q
+#       modifiers:
+#         mandatory:
+#         - left_command
+#     to_if_held_down:
+#     - key_code: q
+#       modifiers:
+#       - command
+#       repeat: false
+#     parameters:
+#       basic.to_if_held_down_threshold_milliseconds: 500
+#     conditions:
+#     - type: frontmost_application_if
+#       bundle_identifiers:
+#       - "^org\\.vim\\.MacVim$"
 
 # ──── Slack ────
 
