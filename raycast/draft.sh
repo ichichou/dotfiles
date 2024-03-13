@@ -9,7 +9,8 @@
 # Optional parameters:
 # @raycast.icon 🤖
 
-datetime=`date +"%Y%m%d%H%M%S"`
+datetime=$(date +%Y%m%d%H%M%S)
 file="${datetime}.bike"
 
-touch ${file} && open -a "bike" ${file}
+touch $file
+open -a "bike" $file

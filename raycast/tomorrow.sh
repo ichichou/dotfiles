@@ -9,11 +9,10 @@
 # Optional parameters:
 # @raycast.icon 🤖
 
-tomorrow=`date -v +1d +%Y-%m-%d`
+tomorrow=$(date -v +1d +%Y-%m-%d)
 file="${tomorrow}.bike"
 
-if [ -e "${file}" ]; then
-    open -a "bike" "${file}"
-else
-    touch "${file}" && open -a "bike" "${file}"
+if [ ! -e $file ]; then
+  touch $file
 fi
+open -a "bike" $file

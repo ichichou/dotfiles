@@ -9,11 +9,10 @@
 # Optional parameters:
 # @raycast.icon 🤖
 
-today=`date +%Y-%m-%d`
+today=$(date +%Y-%m-%d)
 file="${today}.bike"
 
-if [ -e "${file}" ]; then
-    open -a "bike" "${file}"
-else
-    touch "${file}" && open -a "bike" "${file}"
+if [ ! -e $file ]; then
+  touch $file
 fi
+open -a "bike" $file
