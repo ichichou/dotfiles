@@ -694,16 +694,17 @@ if has('nvim')
   " Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
   let g:polyglot_disabled = ['autoindent', 'sensible', 'csv', 'markdown', 'r-lang']
   Plug 'sheerun/vim-polyglot'
+  Plug 'R-nvim/R.nvim', { 'for': 'r'}
 else
   let g:polyglot_disabled = ['autoindent', 'sensible', 'csv', 'markdown', 'r-lang']
   Plug 'sheerun/vim-polyglot'
+  Plug 'jalvesaq/Nvim-R', { 'for': 'r'}
 endif
 
 Plug 'alx741/vim-hindent',         { 'for': 'haskell' }
 Plug 'fladson/vim-kitty',          { 'for': 'kitty' }
 Plug 'guns/vim-sexp',              { 'for': ['scheme', 'clojure'] }
 " Plug 'itchyny/vim-haskell-indent', { 'for': 'haskell' }
-Plug 'jalvesaq/Nvim-R',            { 'for': 'r', 'branch': 'stable' }
 Plug 'kat0h/bufpreview.vim',       { 'for': 'markdown', 'do': 'deno task prepare' }
 Plug 'liquidz/dps-parinfer',       { 'for': ['scheme', 'clojure'] }
 Plug 'luochen1990/rainbow',        { 'for': ['scheme', 'clojure'] }
