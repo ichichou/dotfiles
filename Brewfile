@@ -44,10 +44,8 @@ cask "bike"
 cask "box-drive"
 cask "cleanshot"
 cask "coteditor"
-cask "discord"
 cask "google-chrome"
 cask "google-drive"
-cask "google-japanese-ime"
 cask "karabiner-elements"
 cask "kitty"
 cask "linear-linear"
@@ -74,9 +72,7 @@ cask "font-cantarell"
 cask "font-commit-mono"
 cask "font-fira-code"
 cask "font-hack"
-cask "font-hack-nerd-font"
 cask "font-jetbrains-mono"
-cask "font-jetbrains-mono-nerd-font"
 cask "font-juliamono"
 cask "font-lato"
 cask "font-noto-sans-jp"
@@ -85,10 +81,10 @@ cask "font-source-code-pro"
 
 # App Store --------------------------------------
 
-mas "AdGuard for Safari", id: 1440147259
-mas "Amphetamine", id: 937984704
-mas "Bitwarden", id: 1352778147
+mas "AdGuard for Safari",    id: 1440147259
+mas "Amphetamine",           id: 937984704
+mas "Bitwarden",             id: 1352778147
 mas "Keepa - Price Tracker", id: 1533805339
-mas "LINE", id: 539883307
-mas "Save to Raindrop.io", id: 1549370672
-mas "Yoink", id: 457622435
+mas "LINE",                  id: 539883307
+mas "Save to Raindrop.io",   id: 1549370672
+mas "Yoink",                 id: 457622435
