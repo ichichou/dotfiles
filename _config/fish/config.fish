@@ -43,10 +43,10 @@ abbr -ag mv mv -iv
 abbr -ag nd nextd
 abbr -ag pd prevd
 abbr -ag reload exec fish
+abbr -ag rmds rm -iv .DS_Store
 
 # APPS
 abbr -ag a bat
-abbr -ag mvi mvim
 abbr -ag nvi nvim
 abbr -ag r radian
 abbr -ag ra ranger
@@ -178,4 +178,13 @@ function journal
     else
         touch $journal_path; and open -a "bike" $journal_path
     end
+end
+
+# FIND & REMOVE .DS_STORE
+function dsstore
+  if test -e "/opt/homebrew/bin/fd"
+    fd -H '^\.DS_Store$' -tf -X rm
+  else
+    find . -name '.DS_Store' -type f -delete
+  end
 end
