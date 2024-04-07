@@ -15,7 +15,7 @@ set -gx FZF_CTRL_T_OPTS "--preview 'bat --style=numbers --color=always --line-ra
 
 # LS_COLORS
 if test -e "/opt/homebrew/bin/vivid"
-    set -gx LS_COLORS (vivid generate iceberg-dark)
+  set -gx LS_COLORS (vivid generate iceberg-dark)
 end
 
 # PATH -----------------------------------------------------
@@ -30,8 +30,8 @@ fish_add_path $HOME/.juliaup/bin
 
 # KEYBIND --------------------------------------------------
 
-bind -e \cl
 bind -e \cj
+bind -e \cl
 
 # ABBR -----------------------------------------------------
 
@@ -61,24 +61,22 @@ abbr -ag jo journal
 
 # EZA / LS
 if test -e "/opt/homebrew/bin/eza"
-    abbr -ag la eza -al --git
-    abbr -ag ll eza -1a
-    abbr -ag ls eza -a
-    abbr -ag lsa eza
+  abbr -ag la eza -al --git
+  abbr -ag ll eza -1a
+  abbr -ag ls eza -a
+  abbr -ag lsa eza
 else
-    abbr -ag la ls -AlG
-    abbr -ag ll ls -1AG
-    abbr -ag ls ls -AG
-    abbr -ag lsa ls
+  abbr -ag la ls -AlG
+  abbr -ag ll ls -1AG
+  abbr -ag ls ls -AG
+  abbr -ag lsa ls
 end
 
 # TRASH / RM
 if test -e "/opt/homebrew/bin/trash"
-    abbr -ag rm trash
-    abbr -ag rmds trash .DS_Store
+  abbr -ag rm trash
 else
-    abbr -ag rm rm -iv
-    abbr -ag rmds rm -iv .DS_Store
+  abbr -ag rm rm -iv
 end
 
 # Z
@@ -159,25 +157,25 @@ abbr -ag gss git status
 # AUTO LS
 functions --copy cd standard_cd
 function cd
-    if test -e "/opt/homebrew/bin/eza"
-        standard_cd $argv; and eza -a
-    else
-        standard_cd $argv; and ls -AG
-    end
+  if test -e "/opt/homebrew/bin/eza"
+    standard_cd $argv; and eza -a
+  else
+    standard_cd $argv; and ls -AG
+  end
 end
 
 # JOURNAL
 function journal
-    set today (date +"%Y-%m-%d")
-    set journal_file "$today.bike"
-    set journal_dir "$HOME/Library/CloudStorage/Box-Box/Journal"
-    set journal_path "$journal_dir/$journal_file"
+  set today (date +"%Y-%m-%d")
+  set journal_file "$today.bike"
+  set journal_dir "$HOME/Library/CloudStorage/Box-Box/Journal"
+  set journal_path "$journal_dir/$journal_file"
 
-    if test -e $journal_path
-        open -a "bike" $journal_path
-    else
-        touch $journal_path; and open -a "bike" $journal_path
-    end
+  if test -e $journal_path
+    open -a "bike" $journal_path
+  else
+    touch $journal_path; and open -a "bike" $journal_path
+  end
 end
 
 # FIND & REMOVE .DS_STORE
