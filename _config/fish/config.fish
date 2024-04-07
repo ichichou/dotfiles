@@ -43,7 +43,7 @@ abbr -ag mv mv -iv
 abbr -ag nd nextd
 abbr -ag pd prevd
 abbr -ag reload exec fish
-abbr -ag rmds rm -iv .DS_Store
+abbr -ag rmds rm .DS_Store
 
 # APPS
 abbr -ag a bat
