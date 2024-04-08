@@ -237,6 +237,7 @@ endif
 " Window -----------------------------------------
 
 nmap t <C-w>
+nnoremap <C-w>t <C-w>w
 nnoremap <C-w>. <Cmd>bnext<CR>
 nnoremap <C-w>, <Cmd>bprevious<CR>
 
