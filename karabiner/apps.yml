@@ -116,6 +116,24 @@ rules:
       bundle_identifiers:
       - "^com\\.tinyspeck\\.slackmacgap$"
 
+  # [Slack] RControl-Slash → Command-K, Eisuu
+  - type: basic
+    from:
+      key_code: slash
+      modifiers:
+        mandatory:
+        - right_control
+    to:
+    - key_code: k
+      modifiers:
+      - command
+    - key_code: japanese_eisuu
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.tinyspeck\\.slackmacgap$"
+
   # [Slack] LControl-1 - 6 → Command-1 - 6
   - type: basic
     from:
@@ -237,6 +255,24 @@ rules:
       bundle_identifiers:
       - "^com\\.superhuman\\.electron$"
 
+  # [Superhuman] RControl-Slash → Command-K, Eisuu
+  - type: basic
+    from:
+      key_code: slash
+      modifiers:
+        mandatory:
+        - right_control
+    to:
+    - key_code: k
+      modifiers:
+      - command
+    - key_code: japanese_eisuu
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.superhuman\\.electron$"
+
 # ──── Linear ────
 
 - description: "[App] Linear"
@@ -250,6 +286,24 @@ rules:
       modifiers:
         mandatory:
         - right_command
+    to:
+    - key_code: k
+      modifiers:
+      - command
+    - key_code: japanese_eisuu
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.linear$"
+
+  # [Linear] RControl-Slash → Command-K, Eisuu
+  - type: basic
+    from:
+      key_code: slash
+      modifiers:
+        mandatory:
+        - right_control
     to:
     - key_code: k
       modifiers:
