@@ -335,7 +335,7 @@ rules:
       repeat: false
     conditions: *edit_right
 
-  # R -> Center Window (Shift-Command-Option-C)
+  # R -> Center Window (Shift-Control-Option-C)
   - type: basic
     from:
       key_code: r
@@ -343,7 +343,7 @@ rules:
     - key_code: c
       modifiers:
       - shift
-      - command
+      - control
       - option
       repeat: false
     conditions: *edit_right
