@@ -21,7 +21,7 @@ aliases:
 
 rules:
 
-# Edit Mode Key ----------------------------------
+# Edit Mode Keys (for Shingeta Layout) -----------
 
 - description: "[Edit Mode] Edit Mode Keys"
   manipulators:
@@ -112,10 +112,12 @@ rules:
     - key_code: u
     parameters: *thresh_ms
 
-# Right Keys Mapping (for Left Edit Mode Key) ----
+# Edit Mode Mappings -----------------------------
 
-- description: "[Edit Mode] Right Keys Mapping"
+- description: "[Edit Mode] Mapping"
   manipulators:
+
+# Right Keys (for Left Edit Mode Key) ------------
 
   # Y -> Option-Delete
   - type: basic
@@ -128,30 +130,41 @@ rules:
       repeat: false
     conditions: *edit_left
 
-  # U -> Undo
+  # U -> Tab (Shift-Tab)
   - type: basic
     from:
       key_code: u
-    to:
-    - key_code: z
       modifiers:
-      - command
+        optional:
+        - shift
+    to:
+    - key_code: tab
+      modifiers:
+        optional:
+        - shift
       repeat: false
     conditions: *edit_left
 
-  # I -> Tab
+  # I -> {
   - type: basic
     from:
       key_code: i
     to:
-    - key_code: tab
+    - key_code: open_bracket
+      modifiers:
+      - shift
       repeat: false
     conditions: *edit_left
 
-  # O -> Invalid
+  # O -> }
   - type: basic
     from:
       key_code: o
+    to:
+    - key_code: close_bracket
+      modifiers:
+      - shift
+      repeat: false
     conditions: *edit_left
 
   # P -> Invalid
@@ -160,37 +173,61 @@ rules:
       key_code: p
     conditions: *edit_left
 
-  # H -> Left Arrow
+  # H -> Left (with modifiers)
   - type: basic
     from:
       key_code: h
+      modifiers:
+        optional:
+        - shift
+        - command
+        - control
+        - option
     to:
     - key_code: left_arrow
       repeat: true
     conditions: *edit_left
 
-  # J -> Down Arrow
+  # J -> Down (with modifiers)
   - type: basic
     from:
       key_code: j
+      modifiers:
+        optional:
+        - shift
+        - command
+        - control
+        - option
     to:
     - key_code: down_arrow
       repeat: true
     conditions: *edit_left
 
-  # K -> Up Arrow
+  # K -> Up (with modifiers)
   - type: basic
     from:
       key_code: k
+      modifiers:
+        optional:
+        - shift
+        - command
+        - control
+        - option
     to:
     - key_code: up_arrow
       repeat: true
     conditions: *edit_left
 
-  # L -> Right Arrow
+  # L -> Right (with modifiers)
   - type: basic
     from:
       key_code: l
+      modifiers:
+        optional:
+        - shift
+        - command
+        - control
+        - option
     to:
     - key_code: right_arrow
       repeat: true
@@ -229,195 +266,208 @@ rules:
       repeat: false
     conditions: *edit_left
 
-  # Comma -> Kana
+  # Comma -> Control-A
   - type: basic
     from:
       key_code: comma
     to:
-    - key_code: japanese_kana
+    - key_code: a
+      modifiers:
+      - control
       repeat: false
     conditions: *edit_left
 
-  # Period -> Eisuu
+  # Period -> Control-E
   - type: basic
     from:
       key_code: period
     to:
-    - key_code: japanese_eisuu
+    - key_code: e
+      modifiers:
+      - control
       repeat: false
     conditions: *edit_left
 
-  # Slash -> Invalid
+  # Slash -> Command-Left
   - type: basic
     from:
       key_code: slash
+    to:
+    - key_code: left_arrow
+      modifiers:
+      - command
+      repeat: false
     conditions: *edit_left
 
-# Left Keys Mapping (for Right Edit Mode Key) ----
+# Left Keys (for Right Edit Mode Key) ------------
 
-- description: "[Edit Mode] Left Keys Mapping"
-  manipulators:
-
-  # Q -> Command-Q
+  # Q -> Shift-Command-S
   - type: basic
     from:
       key_code: q
     to:
-    - key_code: q
+    - key_code: s
       modifiers:
+      - shift
       - command
       repeat: false
     conditions: *edit_right
 
-  # W -> Command-W
+  # W -> (
   - type: basic
     from:
       key_code: w
     to:
-    - key_code: w
+    - key_code: "9"
       modifiers:
-      - command
+      - shift
       repeat: false
     conditions: *edit_right
 
-  # E -> Command-E
+  # E -> )
   - type: basic
     from:
       key_code: e
     to:
-    - key_code: e
+    - key_code: "0"
       modifiers:
-      - command
+      - shift
       repeat: false
     conditions: *edit_right
 
-  # R -> Command-R
+  # R -> Center Window (Shift-Command-Option-C)
   - type: basic
     from:
       key_code: r
     to:
-    - key_code: r
+    - key_code: c
       modifiers:
+      - shift
       - command
+      - option
       repeat: false
     conditions: *edit_right
 
-  # T -> Command-T
+  # T -> Shift-Command-T
   - type: basic
     from:
       key_code: t
     to:
     - key_code: t
       modifiers:
+      - shift
       - command
       repeat: false
     conditions: *edit_right
 
-  # A -> Command-A
+  # A -> Shift-Command-A
   - type: basic
     from:
       key_code: a
     to:
     - key_code: a
       modifiers:
+      - shift
       - command
       repeat: false
     conditions: *edit_right
 
-  # S -> Command-S
+  # S -> [
   - type: basic
     from:
       key_code: s
     to:
-    - key_code: s
-      modifiers:
-      - command
+    - key_code: open_bracket
       repeat: false
     conditions: *edit_right
 
-  # D -> Command-D
+  # D -> ]
   - type: basic
     from:
       key_code: d
     to:
-    - key_code: d
-      modifiers:
-      - command
+    - key_code: close_bracket
       repeat: false
     conditions: *edit_right
 
-  # F -> Command-F
+  # F -> Clipboard (Command-Control-V)
   - type: basic
     from:
       key_code: f
     to:
-    - key_code: f
+    - key_code: v
       modifiers:
       - command
+      - control
       repeat: false
     conditions: *edit_right
 
-  # G -> Command-G
+  # G -> Snippets (Command-Control-S)
   - type: basic
     from:
       key_code: g
     to:
-    - key_code: g
+    - key_code: s
       modifiers:
       - command
+      - control
       repeat: false
     conditions: *edit_right
 
-  # Z -> Command-Z
+  # Z -> Redo (Shift-Command-Z)
   - type: basic
     from:
       key_code: z
     to:
     - key_code: z
       modifiers:
+      - shift
       - command
       repeat: false
     conditions: *edit_right
 
-  # X -> Command-X
+  # X -> Left Half Window (Control-Option-Left)
   - type: basic
     from:
       key_code: x
     to:
-    - key_code: x
+    - key_code: left_arrow
       modifiers:
-      - command
+      - control
+      - option
       repeat: false
     conditions: *edit_right
 
-  # C -> Command-C
+  # C -> Right Half Window (Control-Option-Right)
   - type: basic
     from:
       key_code: c
     to:
-    - key_code: c
+    - key_code: right_arrow
       modifiers:
-      - command
+      - control
+      - option
       repeat: false
     conditions: *edit_right
 
-  # V -> Command-V
+  # V -> Paste Special (Shift-Command-V)
   - type: basic
     from:
       key_code: v
     to:
     - key_code: v
       modifiers:
+      - shift
       - command
       repeat: false
     conditions: *edit_right
 
-  # B -> Command-B
+  # B -> Paste (Command-V)
   - type: basic
     from:
       key_code: b
     to:
-    - key_code: b
+    - key_code: v
       modifiers:
       - command
       repeat: false
