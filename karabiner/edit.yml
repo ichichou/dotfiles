@@ -1,0 +1,424 @@
+title: "02'. Edit Mode"
+
+# ALIASES ========================================
+
+aliases:
+
+- conditions: &edit_left
+  - type: variable_if
+    name: edit_left
+    value: 1
+
+- conditions: &edit_right
+  - type: variable_if
+    name: edit_right
+    value: 1
+
+- parameters: &thresh_ms
+    basic.simultaneous_threshold_milliseconds: 20
+
+# RULES ==========================================
+
+rules:
+
+# Edit Mode Key ----------------------------------
+
+- description: "Edit Mode Key"
+  manipulators:
+
+  # Left - D + F (strict)
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: d
+      - key_code: f
+      simultaneous_options:
+        key_down_order: strict
+        to_after_key_up:
+        - set_variable:
+            name: edit_left
+            value: 0
+    to:
+    - set_variable:
+        name: edit_left
+        value: 1
+    to_if_alone:
+    - key_code: k
+    - key_code: a
+    - key_code: "n"
+    - key_code: "n"
+    parameters: *thresh_ms
+
+  # Left - D + F
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: d
+      - key_code: f
+      simultaneous_options:
+        to_after_key_up:
+        - set_variable:
+            name: edit_left
+            value: 0
+    to:
+    - set_variable:
+        name: edit_left
+        value: 1
+    to_if_alone:
+    - key_code: "n"
+    - key_code: "n"
+    - key_code: k
+    - key_code: a
+    parameters: *thresh_ms
+
+  # Right - J + K (strict)
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: j
+      - key_code: k
+      simultaneous_options:
+        key_down_order: strict
+        to_after_key_up:
+        - set_variable:
+            name: edit_right
+            value: 0
+    to:
+    - set_variable:
+        name: edit_right
+        value: 1
+    to_if_alone:
+    - key_code: u
+    - key_code: i
+    parameters: *thresh_ms
+
+  # Right - J + K
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: j
+      - key_code: k
+      simultaneous_options:
+        to_after_key_up:
+        - set_variable:
+            name: edit_right
+            value: 0
+    to:
+    - set_variable:
+        name: edit_right
+        value: 1
+    to_if_alone:
+    - key_code: i
+    - key_code: u
+    parameters: *thresh_ms
+
+# Edit Mode Mapping (Left Edit Key) --------------
+
+- description: "Edit Mode Mapping (Left Edit Key)"
+  manipulators:
+
+  # Y -> Option-Delete
+  - type: basic
+    from:
+      key_code: "y"
+    to:
+    - key_code: delete_or_backspace
+      modifiers:
+      - option
+      repeat: false
+    conditions: *edit_left
+
+  # U -> Undo
+  - type: basic
+    from:
+      key_code: u
+    to:
+    - key_code: z
+      modifiers:
+      - command
+      repeat: false
+    conditions: *edit_left
+
+  # I -> Tab
+  - type: basic
+    from:
+      key_code: i
+    to:
+    - key_code: tab
+      repeat: false
+    conditions: *edit_left
+
+  # O -> Invalid
+  - type: basic
+    from:
+      key_code: o
+    conditions: *edit_left
+
+  # P -> Invalid
+  - type: basic
+    from:
+      key_code: p
+    conditions: *edit_left
+
+  # H -> Left Arrow
+  - type: basic
+    from:
+      key_code: h
+    to:
+    - key_code: left_arrow
+      repeat: true
+    conditions: *edit_left
+
+  # J -> Down Arrow
+  - type: basic
+    from:
+      key_code: j
+    to:
+    - key_code: down_arrow
+      repeat: true
+    conditions: *edit_left
+
+  # K -> Up Arrow
+  - type: basic
+    from:
+      key_code: k
+    to:
+    - key_code: up_arrow
+      repeat: true
+    conditions: *edit_left
+
+  # L -> Right Arrow
+  - type: basic
+    from:
+      key_code: l
+    to:
+    - key_code: right_arrow
+      repeat: true
+    conditions: *edit_left
+
+  # Semi Colon -> Delete Forward
+  - type: basic
+    from:
+      key_code: semicolon
+    to:
+    - key_code: delete_forward
+      repeat: true
+    conditions: *edit_left
+
+  # Quote -> Invalid
+  - type: basic
+    from:
+      key_code: quote
+    conditions: *edit_left
+
+  # N -> Delete
+  - type: basic
+    from:
+      key_code: "n"
+    to:
+    - key_code: delete_or_backspace
+      repeat: true
+    conditions: *edit_left
+
+  # M -> Return
+  - type: basic
+    from:
+      key_code: m
+    to:
+    - key_code: return_or_enter
+      repeat: false
+    conditions: *edit_left
+
+  # Comma -> Kana
+  - type: basic
+    from:
+      key_code: comma
+    to:
+    - key_code: japanese_kana
+      repeat: false
+    conditions: *edit_left
+
+  # Period -> Eisuu
+  - type: basic
+    from:
+      key_code: period
+    to:
+    - key_code: japanese_eisuu
+      repeat: false
+    conditions: *edit_left
+
+  # Slash -> Invalid
+  - type: basic
+    from:
+      key_code: slash
+    conditions: *edit_left
+
+# Edit Mode Mapping (Right Edit Key) -------------
+
+- description: "Edit Mode Mapping (Right Edit Key)"
+  manipulators:
+
+  # Q -> Command-Q
+  - type: basic
+    from:
+      key_code: q
+    to:
+    - key_code: q
+      modifiers:
+      - command
+      repeat: false
+    conditions: *edit_right
+
+  # W -> Command-W
+  - type: basic
+    from:
+      key_code: w
+    to:
+    - key_code: w
+      modifiers:
+      - command
+      repeat: false
+    conditions: *edit_right
+
+  # E -> Command-E
+  - type: basic
+    from:
+      key_code: e
+    to:
+    - key_code: e
+      modifiers:
+      - command
+      repeat: false
+    conditions: *edit_right
+
+  # R -> Command-R
+  - type: basic
+    from:
+      key_code: r
+    to:
+    - key_code: r
+      modifiers:
+      - command
+      repeat: false
+    conditions: *edit_right
+
+  # T -> Command-T
+  - type: basic
+    from:
+      key_code: t
+    to:
+    - key_code: t
+      modifiers:
+      - command
+      repeat: false
+    conditions: *edit_right
+
+  # A -> Command-A
+  - type: basic
+    from:
+      key_code: a
+    to:
+    - key_code: a
+      modifiers:
+      - command
+      repeat: false
+    conditions: *edit_right
+
+  # S -> Command-S
+  - type: basic
+    from:
+      key_code: s
+    to:
+    - key_code: s
+      modifiers:
+      - command
+      repeat: false
+    conditions: *edit_right
+
+  # D -> Command-D
+  - type: basic
+    from:
+      key_code: d
+    to:
+    - key_code: d
+      modifiers:
+      - command
+      repeat: false
+    conditions: *edit_right
+
+  # F -> Command-F
+  - type: basic
+    from:
+      key_code: f
+    to:
+    - key_code: f
+      modifiers:
+      - command
+      repeat: false
+    conditions: *edit_right
+
+  # G -> Command-G
+  - type: basic
+    from:
+      key_code: g
+    to:
+    - key_code: g
+      modifiers:
+      - command
+      repeat: false
+    conditions: *edit_right
+
+  # Z -> Command-Z
+  - type: basic
+    from:
+      key_code: z
+    to:
+    - key_code: z
+      modifiers:
+      - command
+      repeat: false
+    conditions: *edit_right
+
+  # X -> Command-X
+  - type: basic
+    from:
+      key_code: x
+    to:
+    - key_code: x
+      modifiers:
+      - command
+      repeat: false
+    conditions: *edit_right
+
+  # C -> Command-C
+  - type: basic
+    from:
+      key_code: c
+    to:
+    - key_code: c
+      modifiers:
+      - command
+      repeat: false
+    conditions: *edit_right
+
+  # V -> Command-V
+  - type: basic
+    from:
+      key_code: v
+    to:
+    - key_code: v
+      modifiers:
+      - command
+      repeat: false
+    conditions: *edit_right
+
+  # B -> Command-B
+  - type: basic
+    from:
+      key_code: b
+    to:
+    - key_code: b
+      modifiers:
+      - command
+      repeat: false
+    conditions: *edit_right
