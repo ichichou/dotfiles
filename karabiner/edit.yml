@@ -1,4 +1,4 @@
-title: "02'. Edit Mode"
+title: "02-1. Edit Mode"
 
 # ALIASES ========================================
 
@@ -23,7 +23,7 @@ rules:
 
 # Edit Mode Key ----------------------------------
 
-- description: "Edit Mode Key"
+- description: "[Edit Mode] Edit Mode Keys"
   manipulators:
 
   # Left - D + F (strict)
@@ -112,9 +112,9 @@ rules:
     - key_code: u
     parameters: *thresh_ms
 
-# Edit Mode Mapping (Left Edit Key) --------------
+# Right Keys Mapping (for Left Edit Mode Key) ----
 
-- description: "Edit Mode Mapping (Left Edit Key)"
+- description: "[Edit Mode] Right Keys Mapping"
   manipulators:
 
   # Y -> Option-Delete
@@ -253,9 +253,9 @@ rules:
       key_code: slash
     conditions: *edit_left
 
-# Edit Mode Mapping (Right Edit Key) -------------
+# Left Keys Mapping (for Right Edit Mode Key) ----
 
-- description: "Edit Mode Mapping (Right Edit Key)"
+- description: "[Edit Mode] Left Keys Mapping"
   manipulators:
 
   # Q -> Command-Q
