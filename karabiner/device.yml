@@ -73,175 +73,177 @@ rules:
 
 # 修飾キーを文字キーと元の修飾キー兼用にする
 # 文字キーを単に別の文字キーに変更するのは Simple Modifications で対応
+#
+# 修飾キーと兼用する必要がなかったので無効化
 
-- description: "[Device] RShift → Slash/RShift (Lofree Flow)"
-  manipulators:
-
-  # Apps: RControl-RShift -> Command-K, Eisuu
-  # Slack, Superhuman, Linear
-  - type: basic
-    from:
-      key_code: right_shift
-      modifiers:
-        mandatory:
-        - right_control
-    to:
-    - key_code: k
-      modifiers:
-      - command
-    - key_code: japanese_eisuu
-      repeat: false
-    conditions:
-    - type: device_if
-      identifiers:
-      - description: "Lofree Flow84"
-        vendor_id: 1452
-        product_id: 591
-      # - description: "Apple Internal Keyboard"
-      #   vendor_id: 1452
-      #   product_id: 834
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "^com\\.tinyspeck\\.slackmacgap$"
-      - "^com\\.superhuman\\.electron$"
-      - "^com\\.linear$"
-
-  # Control: RControl-RShift -> Command-K
-  - type: basic
-    from:
-      key_code: right_shift
-      modifiers:
-        mandatory:
-        - right_control
-    to:
-    - key_code: k
-      modifiers:
-      - command
-      repeat: false
-    conditions: *device
-
-  # Edit Mode: RShift -> Command-Left
-  - type: basic
-    from:
-      key_code: right_shift
-    to:
-    - key_code: left_arrow
-      modifiers:
-      - command
-      repeat: false
-    conditions:
-    - type: device_if
-      identifiers:
-      - description: "Lofree Flow84"
-        vendor_id: 1452
-        product_id: 591
-      # - description: "Apple Internal Keyboard"
-      #   vendor_id: 1452
-      #   product_id: 834
-    - type: variable_if
-      name: edit_left
-      value: 1
-
-  # Hyper Mode: RShift -> Invalid
-  - type: basic
-    from:
-      key_code: right_shift
-    to:
-    - key_code: slash
-      modifiers:
-      - shift
-      - command
-      - control
-      - option
-      repeat: false
-    # - shell_command: open -a ""
-    conditions:
-    - type: device_if
-      identifiers:
-      - description: "Lofree Flow84"
-        vendor_id: 1452
-        product_id: 591
-      # - description: "Apple Internal Keyboard"
-      #   vendor_id: 1452
-      #   product_id: 834
-    - type: variable_if
-      name: hyper_mode
-      value: 1
-
-  # 新下駄配列：中指シフト（ヴ）
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: d
-      - key_code: right_shift
-      modifiers: *optional_shift
-    to:
-    - key_code: v
-    - key_code: u
-      repeat: false
-    conditions: *shingeta
-
-  # 新下駄配列：薬指シフト（ちぇ）
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: s
-      - key_code: right_shift
-      modifiers: *optional_shift
-    to:
-    - key_code: t
-    - key_code: "y"
-    - key_code: e
-      repeat: false
-    conditions: *shingeta
-
-  # 新下駄配列：小指上段シフト（ぉ）
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: q
-      - key_code: right_shift
-      modifiers: *optional_shift
-    to:
-    - key_code: x
-    - key_code: o
-      repeat: false
-    conditions: *shingeta
-
-  # 新下駄配列: ベース（ぶ）
-  - type: basic
-    from:
-      key_code: right_shift
-      modifiers: *optional_shift
-    to:
-    - key_code: right_shift
-      lazy: true
-    to_if_alone:
-    - key_code: b
-    - key_code: u
-    conditions: *shingeta
-
-  # Symbol Mode: RShift
-  - type: basic
-    from:
-      key_code: right_shift
-    to:
-    - key_code: backslash
-    - key_code: slash
-      repeat: false
-    conditions: *symbol
-
-  # RShift -> Slash/RShift
-  - type: basic
-    from:
-      key_code: right_shift
-      modifiers: *optional_any
-    to:
-    - key_code: right_shift
-      lazy: true
-    to_if_alone:
-    - key_code: slash
-    conditions: *device
+# - description: "[Device] RShift → Slash/RShift (Lofree Flow)"
+#   manipulators:
+#
+#   # Apps: RControl-RShift -> Command-K, Eisuu
+#   # Slack, Superhuman, Linear
+#   - type: basic
+#     from:
+#       key_code: right_shift
+#       modifiers:
+#         mandatory:
+#         - right_control
+#     to:
+#     - key_code: k
+#       modifiers:
+#       - command
+#     - key_code: japanese_eisuu
+#       repeat: false
+#     conditions:
+#     - type: device_if
+#       identifiers:
+#       - description: "Lofree Flow84"
+#         vendor_id: 1452
+#         product_id: 591
+#       # - description: "Apple Internal Keyboard"
+#       #   vendor_id: 1452
+#       #   product_id: 834
+#     - type: frontmost_application_if
+#       bundle_identifiers:
+#       - "^com\\.tinyspeck\\.slackmacgap$"
+#       - "^com\\.superhuman\\.electron$"
+#       - "^com\\.linear$"
+#
+#   # Control: RControl-RShift -> Command-K
+#   - type: basic
+#     from:
+#       key_code: right_shift
+#       modifiers:
+#         mandatory:
+#         - right_control
+#     to:
+#     - key_code: k
+#       modifiers:
+#       - command
+#       repeat: false
+#     conditions: *device
+#
+#   # Edit Mode: RShift -> Command-Left
+#   - type: basic
+#     from:
+#       key_code: right_shift
+#     to:
+#     - key_code: left_arrow
+#       modifiers:
+#       - command
+#       repeat: false
+#     conditions:
+#     - type: device_if
+#       identifiers:
+#       - description: "Lofree Flow84"
+#         vendor_id: 1452
+#         product_id: 591
+#       # - description: "Apple Internal Keyboard"
+#       #   vendor_id: 1452
+#       #   product_id: 834
+#     - type: variable_if
+#       name: edit_left
+#       value: 1
+#
+#   # Hyper Mode: RShift -> Invalid
+#   - type: basic
+#     from:
+#       key_code: right_shift
+#     to:
+#     - key_code: slash
+#       modifiers:
+#       - shift
+#       - command
+#       - control
+#       - option
+#       repeat: false
+#     # - shell_command: open -a ""
+#     conditions:
+#     - type: device_if
+#       identifiers:
+#       - description: "Lofree Flow84"
+#         vendor_id: 1452
+#         product_id: 591
+#       # - description: "Apple Internal Keyboard"
+#       #   vendor_id: 1452
+#       #   product_id: 834
+#     - type: variable_if
+#       name: hyper_mode
+#       value: 1
+#
+#   # 新下駄配列：中指シフト（ヴ）
+#   - type: basic
+#     from:
+#       simultaneous:
+#       - key_code: d
+#       - key_code: right_shift
+#       modifiers: *optional_shift
+#     to:
+#     - key_code: v
+#     - key_code: u
+#       repeat: false
+#     conditions: *shingeta
+#
+#   # 新下駄配列：薬指シフト（ちぇ）
+#   - type: basic
+#     from:
+#       simultaneous:
+#       - key_code: s
+#       - key_code: right_shift
+#       modifiers: *optional_shift
+#     to:
+#     - key_code: t
+#     - key_code: "y"
+#     - key_code: e
+#       repeat: false
+#     conditions: *shingeta
+#
+#   # 新下駄配列：小指上段シフト（ぉ）
+#   - type: basic
+#     from:
+#       simultaneous:
+#       - key_code: q
+#       - key_code: right_shift
+#       modifiers: *optional_shift
+#     to:
+#     - key_code: x
+#     - key_code: o
+#       repeat: false
+#     conditions: *shingeta
+#
+#   # 新下駄配列: ベース（ぶ）
+#   - type: basic
+#     from:
+#       key_code: right_shift
+#       modifiers: *optional_shift
+#     to:
+#     - key_code: right_shift
+#       lazy: true
+#     to_if_alone:
+#     - key_code: b
+#     - key_code: u
+#     conditions: *shingeta
+#
+#   # Symbol Mode: RShift
+#   - type: basic
+#     from:
+#       key_code: right_shift
+#     to:
+#     - key_code: backslash
+#     - key_code: slash
+#       repeat: false
+#     conditions: *symbol
+#
+#   # RShift -> Slash/RShift
+#   - type: basic
+#     from:
+#       key_code: right_shift
+#       modifiers: *optional_any
+#     to:
+#     - key_code: right_shift
+#       lazy: true
+#     to_if_alone:
+#     - key_code: slash
+#     conditions: *device
 
 # LShift (for Angle Mod) -------------------------
 
