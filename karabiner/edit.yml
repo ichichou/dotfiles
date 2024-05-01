@@ -14,6 +14,16 @@ aliases:
     name: edit_right
     value: 1
 
+- conditions: &ime_on
+  - type: input_source_if
+    input_sources:
+    - language: ja
+
+- conditions: &ime_off
+  - type: input_source_unless
+    input_sources:
+    - language: ja
+
 - parameters: &thresh_ms
     basic.simultaneous_threshold_milliseconds: 20
 
@@ -21,12 +31,102 @@ aliases:
 
 rules:
 
-# Edit Mode Keys (for Shingeta Layout) -----------
+# Edit Mode Keys ---------------------------------
 
 - description: "[Edit Mode] Edit Mode Keys"
   manipulators:
 
-  # Left - D + F (strict)
+# IME Off ----------------------------------------
+
+  # Left: D + F (D -> F)
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: d
+      - key_code: f
+      simultaneous_options:
+        key_down_order: strict
+        to_after_key_up:
+        - set_variable:
+            name: edit_left
+            value: 0
+    to:
+    - set_variable:
+        name: edit_left
+        value: 1
+    to_if_alone:
+    - key_code: d
+    - key_code: f
+    conditions: *ime_off
+    parameters: *thresh_ms
+
+  # Left: D + F
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: d
+      - key_code: f
+      simultaneous_options:
+        to_after_key_up:
+        - set_variable:
+            name: edit_left
+            value: 0
+    to:
+    - set_variable:
+        name: edit_left
+        value: 1
+    to_if_alone:
+    - key_code: f
+    - key_code: d
+    conditions: *ime_off
+    parameters: *thresh_ms
+
+  # Right: J + K (J -> K)
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: j
+      - key_code: k
+      simultaneous_options:
+        key_down_order: strict
+        to_after_key_up:
+        - set_variable:
+            name: edit_right
+            value: 0
+    to:
+    - set_variable:
+        name: edit_right
+        value: 1
+    to_if_alone:
+    - key_code: j
+    - key_code: k
+    conditions: *ime_off
+    parameters: *thresh_ms
+
+  # Right: J + K
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: j
+      - key_code: k
+      simultaneous_options:
+        to_after_key_up:
+        - set_variable:
+            name: edit_right
+            value: 0
+    to:
+    - set_variable:
+        name: edit_right
+        value: 1
+    to_if_alone:
+    - key_code: k
+    - key_code: j
+    conditions: *ime_off
+    parameters: *thresh_ms
+
+# IME On (Shingeta Layout) -----------------------
+
+  # Left: D + F (D -> F)
   - type: basic
     from:
       simultaneous:
@@ -47,9 +147,10 @@ rules:
     - key_code: a
     - key_code: "n"
     - key_code: "n"
+    conditions: *ime_on
     parameters: *thresh_ms
 
-  # Left - D + F
+  # Left: D + F
   - type: basic
     from:
       simultaneous:
@@ -69,9 +170,10 @@ rules:
     - key_code: "n"
     - key_code: k
     - key_code: a
+    conditions: *ime_on
     parameters: *thresh_ms
 
-  # Right - J + K (strict)
+  # Right: J + K (J -> K)
   - type: basic
     from:
       simultaneous:
@@ -90,9 +192,10 @@ rules:
     to_if_alone:
     - key_code: u
     - key_code: i
+    conditions: *ime_on
     parameters: *thresh_ms
 
-  # Right - J + K
+  # Right: J + K
   - type: basic
     from:
       simultaneous:
@@ -110,6 +213,7 @@ rules:
     to_if_alone:
     - key_code: i
     - key_code: u
+    conditions: *ime_on
     parameters: *thresh_ms
 
 # Edit Mode Mappings -----------------------------
