@@ -1,0 +1,114 @@
+title: "00. Device"
+
+# DEVECES ========================================
+
+# Apple Internal Keyoard
+# vendor_id: 1452
+# product_id: 834
+
+# Lofree Flow84
+# vendor_id: 1452
+# product_id: 591
+
+# ALIASES ========================================
+
+aliases:
+
+- conditions: &ime_on
+  - type: device_if
+    identifiers:
+    - description: "Lofree Flow84"
+      vendor_id: 1452
+      product_id: 591
+    # - description: "Apple Internal Keyboard"
+    #   vendor_id: 1452
+    #   product_id: 834
+  - type: input_source_if
+    input_sources:
+    - language: ja
+
+- conditions: &ime_off
+  - type: device_if
+    identifiers:
+    - description: "Lofree Flow84"
+      vendor_id: 1452
+      product_id: 591
+    # - description: "Apple Internal Keyboard"
+    #   vendor_id: 1452
+    #   product_id: 834
+  - type: input_source_unless
+    input_sources:
+    - language: ja
+
+# RULES ==========================================
+
+rules:
+
+# 修飾キーを文字キーと元の修飾キー兼用にする
+# 文字キーを単に別の文字キーに変更するのは Simple Modifications で対応
+
+# For Angle Mod
+- description: "[Device] LShift → Z/LShift (Lofree Flow)"
+  manipulators:
+
+  # IME Off
+  - type: basic
+    from:
+      key_code: left_shift
+      modifiers:
+        optional:
+        - any
+    to:
+    - key_code: left_shift
+      lazy: true
+    to_if_alone:
+    - key_code: z
+    conditions: *ime_off
+
+  # IME On (Shingeta)
+  - type: basic
+    from:
+      key_code: left_shift
+      modifiers:
+        optional:
+        - any
+    to:
+    - key_code: left_shift
+      lazy: true
+    to_if_alone:
+    - key_code: s
+    - key_code: u
+    conditions: *ime_on
+
+# For Wide Mod
+- description: "[Device] RShift → Slash/RShift (Lofree Flow)"
+  manipulators:
+
+  # IME Off
+  - type: basic
+    from:
+      key_code: right_shift
+      modifiers:
+        optional:
+        - any
+    to:
+    - key_code: right_shift
+      lazy: true
+    to_if_alone:
+    - key_code: slash
+    conditions: *ime_off
+
+  # IME On (Shingeta)
+  - type: basic
+    from:
+      key_code: right_shift
+      modifiers:
+        optional:
+        - any
+    to:
+    - key_code: right_shift
+      lazy: true
+    to_if_alone:
+    - key_code: b
+    - key_code: u
+    conditions: *ime_on
