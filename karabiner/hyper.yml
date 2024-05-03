@@ -1,6 +1,6 @@
-title: "05. Hyper key"
+title: "06. Hyper Key"
 
-# Aliases ========================================
+# ALIASES ========================================
 
 aliases:
 
@@ -15,13 +15,31 @@ aliases:
     name: hyper_mode
     value: 1
 
-# Rules ==========================================
+# RULES ==========================================
 
 rules:
 
+# Hyper Key --------------------------------------
+
+- description: "[Hyper] Tab → Hyper/Tab"
+  manipulators:
+  - type: basic
+    from:
+      key_code: tab
+    to_if_alone:
+    - key_code: tab
+    to:
+    - set_variable:
+        name: hyper_mode
+        value: 1
+    to_after_key_up:
+    - set_variable:
+        name: hyper_mode
+        value: 0
+
 # 1234567890 -------------------------------------
 
-- description: "[Hyper] Hyper - Num Key → Change Desktop"
+- description: "[Hyper] Num Key → Change Desktop"
   manipulators:
 
   - type: basic
@@ -104,97 +122,13 @@ rules:
       modifiers: *hyper_key
     conditions: *hyper_mode
 
-# QWERTYUIOP → 1234567890 ----------------------
 
-# - description: "[Hyper] Hyper - Q-P → Hyper - 1-0"
-#   manipulators:
-#
-#   - type: basic
-#     from:
-#       key_code: q
-#     to:
-#     - key_code: "1"
-#       modifiers: *hyper_key
-#     conditions: *hyper_mode
-#
-#   - type: basic
-#     from:
-#       key_code: w
-#     to:
-#     - key_code: "2"
-#       modifiers: *hyper_key
-#     conditions: *hyper_mode
-#
-#   - type: basic
-#     from:
-#       key_code: e
-#     to:
-#     - key_code: "3"
-#       modifiers: *hyper_key
-#     conditions: *hyper_mode
-#
-#   - type: basic
-#     from:
-#       key_code: r
-#     to:
-#     - key_code: "4"
-#       modifiers: *hyper_key
-#     conditions: *hyper_mode
-#
-#   - type: basic
-#     from:
-#       key_code: t
-#     to:
-#     - key_code: "5"
-#       modifiers: *hyper_key
-#     conditions: *hyper_mode
-#
-#   - type: basic
-#     from:
-#       key_code: "y"
-#     to:
-#     - key_code: "6"
-#       modifiers: *hyper_key
-#     conditions: *hyper_mode
-#
-#   - type: basic
-#     from:
-#       key_code: u
-#     to:
-#     - key_code: "7"
-#       modifiers: *hyper_key
-#     conditions: *hyper_mode
-#
-#   - type: basic
-#     from:
-#       key_code: i
-#     to:
-#     - key_code: "8"
-#       modifiers: *hyper_key
-#     conditions: *hyper_mode
-#
-#   - type: basic
-#     from:
-#       key_code: o
-#     to:
-#     - key_code: "9"
-#       modifiers: *hyper_key
-#     conditions: *hyper_mode
-#
-#   - type: basic
-#     from:
-#       key_code: p
-#     to:
-#     - key_code: "0"
-#       modifiers: *hyper_key
-#     conditions: *hyper_mode
+# Letter Keys ------------------------------------
 
-# QWERT
-# ASDFG ------------------------------------------
-# ZXCVB
-
-- description: "[Hyper] Hyper - Alpha Key → Launch App"
+- description: "[Hyper] Letter Key → Launch App"
   manipulators:
+
+  # Left Keys - QWERT ASDFG ZXCVB ----------------
 
   # Q:
   - type: basic
@@ -361,9 +295,7 @@ rules:
     - shell_command: open -a "bitwarden"
     conditions: *hyper_mode
 
-# YUIOP
-# HJKL; ------------------------------------------
-# NM,./
+  # Right Keys - YUIOP HJKL; NM,./ ---------------
 
   # Y:
   - type: basic
@@ -530,83 +462,14 @@ rules:
     # - shell_command: open -a ""
     conditions: *hyper_mode
 
-# Spacebar ---------------------------------------
+  # Spacebar -------------------------------------
 
-  # - type: basic
-  #   from:
-  #     key_code: spacebar
-  #   to:
-  #   - shell_command: open -a ""
-  #   conditions: *hyper_mode
-
-# Hyper Key --------------------------------------
-
-- description: "[Hyper] Tab → Hyper/Tab"
-  manipulators:
   - type: basic
     from:
-      key_code: tab
-    to_if_alone:
-    - key_code: tab
+      key_code: spacebar
     to:
-    - set_variable:
-        name: hyper_mode
-        value: 1
-    to_after_key_up:
-    - set_variable:
-        name: hyper_mode
-        value: 0
-
-# - description: "[Hyper] Return → Hyper/Return"
-#   manipulators:
-#   - type: basic
-#     from:
-#       key_code: return_or_enter
-#     to_if_alone:
-#     - key_code: return_or_enter
-#     to:
-#     - set_variable:
-#         name: hyper_mode
-#         value: 1
-#     to_after_key_up:
-#     - set_variable:
-#         name: hyper_mode
-#         value: 0
-
-# - description: "[Hyper] F13/F14 → One Shot Hyper Mode"
-#   manipulators:
-#   - type: basic
-#     from:
-#       key_code: f13
-#     to:
-#     - set_variable:
-#         name: hyper_mode
-#         value: 1
-#     to_delayed_action:
-#       to_if_invoked:
-#       - set_variable:
-#           name: hyper_mode
-#           value: 0
-#       to_if_canceled:
-#       - set_variable:
-#           name: hyper_mode
-#           value: 0
-#     parameters: *delay_time_to_cancel_one_shot_hyper_mode
-#
-#   - type: basic
-#     from:
-#       key_code: f14
-#     to:
-#     - set_variable:
-#         name: hyper_mode
-#         value: 1
-#     to_delayed_action:
-#       to_if_invoked:
-#       - set_variable:
-#           name: hyper_mode
-#           value: 0
-#       to_if_canceled:
-#       - set_variable:
-#           name: hyper_mode
-#           value: 0
-#     parameters: *delay_time_to_cancel_one_shot_hyper_mode
+    - key_code: spacebar
+      modifiers: *hyper_key
+      repeat: false
+    # - shell_command: open -a ""
+    conditions: *hyper_mode

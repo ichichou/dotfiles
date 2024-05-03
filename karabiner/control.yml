@@ -1,22 +1,23 @@
-title: "04. Control Key"
+title: "05. Control Key"
 
 # ===== Rules =====
 
 rules:
 
-- description: "[Control] Caps Lock → RControl/ESC"
-  manipulators:
-  - type: basic
-    from:
-      key_code: caps_lock
-      modifiers:
-        optional:
-        - any
-    to:
-    - key_code: right_control
-      lazy: true
-    to_if_alone:
-    - key_code: escape
+# Simple Modifications で Caps Lock -> RControl とするため不要
+# - description: "[Control] Caps Lock → RControl/ESC"
+#   manipulators:
+#   - type: basic
+#     from:
+#       key_code: caps_lock
+#       modifiers:
+#         optional:
+#         - any
+#     to:
+#     - key_code: right_control
+#       lazy: true
+#     to_if_alone:
+#     - key_code: escape
 
 - description: "[Control] RControl → RControl/ESC"
   manipulators:
@@ -60,6 +61,8 @@ rules:
       modifiers:
         mandatory:
         - right_control
+        optional:
+        - any
     to:
     - key_code: return_or_enter
       repeat: false

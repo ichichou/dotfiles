@@ -1,4 +1,4 @@
-title: "03. Command Key"
+title: "04. Command Key"
 rules:
 
 - description: "[Command] LCommand-Space → Return"
@@ -27,7 +27,7 @@ rules:
     - key_code: escape
       repeat: false
 
-- description: "[Command] LCommand-H/J/K/L → Left/Down/Up/Right"
+- description: "[Command] LCommand-HJKL → Arrow Keys"
   manipulators:
   - type: basic
     from:
@@ -73,7 +73,7 @@ rules:
     to:
     - key_code: right_arrow
 
-- description: "[Command] LCommand-Grave → Command-@"
+- description: "[Command] LCommand-` → Command-@"
   manipulators:
   - type: basic
     from:

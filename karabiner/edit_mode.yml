@@ -1,8 +1,18 @@
-title: "02-1. Edit Mode"
+title: "03. Edit Mode"
 
 # ALIASES ========================================
 
 aliases:
+
+- conditions: &ime_off
+  - type: input_source_unless
+    input_sources:
+    - language: ja
+
+- conditions: &ime_on
+  - type: input_source_if
+    input_sources:
+    - language: ja
 
 - conditions: &edit_left
   - type: variable_if
@@ -13,16 +23,6 @@ aliases:
   - type: variable_if
     name: edit_right
     value: 1
-
-- conditions: &ime_on
-  - type: input_source_if
-    input_sources:
-    - language: ja
-
-- conditions: &ime_off
-  - type: input_source_unless
-    input_sources:
-    - language: ja
 
 - parameters: &thresh_ms
     basic.simultaneous_threshold_milliseconds: 20
@@ -36,7 +36,7 @@ rules:
 - description: "[Edit Mode] Edit Mode Keys"
   manipulators:
 
-# IME Off ----------------------------------------
+  # IME Off --------------------------------------
 
   # Left: D + F (D -> F)
   - type: basic
@@ -60,7 +60,7 @@ rules:
     conditions: *ime_off
     parameters: *thresh_ms
 
-  # Left: D + F
+  # Left: D + F (D <-> F)
   - type: basic
     from:
       simultaneous:
@@ -103,7 +103,7 @@ rules:
     conditions: *ime_off
     parameters: *thresh_ms
 
-  # Right: J + K
+  # Right: J + K (J <-> K)
   - type: basic
     from:
       simultaneous:
@@ -124,7 +124,7 @@ rules:
     conditions: *ime_off
     parameters: *thresh_ms
 
-# IME On (Shingeta Layout) -----------------------
+  # IME On (Shingeta Layout) ---------------------
 
   # Left: D + F (D -> F)
   - type: basic
@@ -150,7 +150,7 @@ rules:
     conditions: *ime_on
     parameters: *thresh_ms
 
-  # Left: D + F
+  # Left: D + F (D <-> F)
   - type: basic
     from:
       simultaneous:
@@ -195,7 +195,7 @@ rules:
     conditions: *ime_on
     parameters: *thresh_ms
 
-  # Right: J + K
+  # Right: J + K (J <-> K)
   - type: basic
     from:
       simultaneous:
@@ -221,7 +221,7 @@ rules:
 - description: "[Edit Mode] Mapping"
   manipulators:
 
-# Right Keys (for Left Edit Mode Key) ------------
+  # Right Keys (for Left Edit Mode Key) ----------
 
   # Y -> Option-Delete
   - type: basic
@@ -234,40 +234,31 @@ rules:
       repeat: false
     conditions: *edit_left
 
-  # U -> Tab (Shift-Tab)
+  # U -> Invalid
   - type: basic
     from:
       key_code: u
-      modifiers:
-        optional:
-        - shift
-    to:
-    - key_code: tab
-      modifiers:
-        optional:
-        - shift
-      repeat: false
     conditions: *edit_left
 
-  # I -> {
+  # I -> Command-[
   - type: basic
     from:
       key_code: i
     to:
     - key_code: open_bracket
       modifiers:
-      - shift
+      - command
       repeat: false
     conditions: *edit_left
 
-  # O -> }
+  # O -> Command-]
   - type: basic
     from:
       key_code: o
     to:
     - key_code: close_bracket
       modifiers:
-      - shift
+      - command
       repeat: false
     conditions: *edit_left
 
@@ -277,73 +268,58 @@ rules:
       key_code: p
     conditions: *edit_left
 
-  # H -> Left (with modifiers)
+  # H -> Left
   - type: basic
     from:
       key_code: h
       modifiers:
         optional:
-        - shift
-        - command
-        - control
-        - option
+        - any
     to:
     - key_code: left_arrow
       repeat: true
     conditions: *edit_left
 
-  # J -> Down (with modifiers)
+  # J -> Down
   - type: basic
     from:
       key_code: j
       modifiers:
         optional:
-        - shift
-        - command
-        - control
-        - option
+        - any
     to:
     - key_code: down_arrow
       repeat: true
     conditions: *edit_left
 
-  # K -> Up (with modifiers)
+  # K -> Up
   - type: basic
     from:
       key_code: k
       modifiers:
         optional:
-        - shift
-        - command
-        - control
-        - option
+        - any
     to:
     - key_code: up_arrow
       repeat: true
     conditions: *edit_left
 
-  # L -> Right (with modifiers)
+  # L -> Right
   - type: basic
     from:
       key_code: l
       modifiers:
         optional:
-        - shift
-        - command
-        - control
-        - option
+        - any
     to:
     - key_code: right_arrow
       repeat: true
     conditions: *edit_left
 
-  # Semi Colon -> Delete Forward
+  # Semi Colon -> Invalid
   - type: basic
     from:
       key_code: semicolon
-    to:
-    - key_code: delete_forward
-      repeat: true
     conditions: *edit_left
 
   # Quote -> Invalid
@@ -361,13 +337,13 @@ rules:
       repeat: true
     conditions: *edit_left
 
-  # M -> Return
+  # M -> Delete Forward
   - type: basic
     from:
       key_code: m
     to:
-    - key_code: return_or_enter
-      repeat: false
+    - key_code: delete_forward
+      repeat: true
     conditions: *edit_left
 
   # Comma -> Control-A
@@ -392,51 +368,39 @@ rules:
       repeat: false
     conditions: *edit_left
 
-  # Slash -> Command-Left
+  # Slash -> Invalid
   - type: basic
     from:
       key_code: slash
+    conditions: *edit_left
+
+  # Space -> Return
+  - type: basic
+    from:
+      key_code: spacebar
     to:
-    - key_code: left_arrow
-      modifiers:
-      - command
+    - key_code: return_or_enter
       repeat: false
     conditions: *edit_left
 
-# Left Keys (for Right Edit Mode Key) ------------
+  # Left Keys (for Right Edit Mode Key) ----------
 
-  # Q -> Shift-Command-S
+  # Q -> Invalid
   - type: basic
     from:
       key_code: q
-    to:
-    - key_code: s
-      modifiers:
-      - shift
-      - command
-      repeat: false
     conditions: *edit_right
 
-  # W -> (
+  # W -> Invalid
   - type: basic
     from:
       key_code: w
-    to:
-    - key_code: "9"
-      modifiers:
-      - shift
-      repeat: false
     conditions: *edit_right
 
-  # E -> )
+  # E -> Invalid
   - type: basic
     from:
       key_code: e
-    to:
-    - key_code: "0"
-      modifiers:
-      - shift
-      repeat: false
     conditions: *edit_right
 
   # R -> Center Window (Shift-Control-Option-C)
@@ -464,76 +428,10 @@ rules:
       repeat: false
     conditions: *edit_right
 
-  # A -> Shift-Command-A
+  # A -> Left Half Window (Control-Option-Left)
   - type: basic
     from:
       key_code: a
-    to:
-    - key_code: a
-      modifiers:
-      - shift
-      - command
-      repeat: false
-    conditions: *edit_right
-
-  # S -> [
-  - type: basic
-    from:
-      key_code: s
-    to:
-    - key_code: open_bracket
-      repeat: false
-    conditions: *edit_right
-
-  # D -> ]
-  - type: basic
-    from:
-      key_code: d
-    to:
-    - key_code: close_bracket
-      repeat: false
-    conditions: *edit_right
-
-  # F -> Clipboard (Command-Control-V)
-  - type: basic
-    from:
-      key_code: f
-    to:
-    - key_code: v
-      modifiers:
-      - command
-      - control
-      repeat: false
-    conditions: *edit_right
-
-  # G -> Snippets (Command-Control-S)
-  - type: basic
-    from:
-      key_code: g
-    to:
-    - key_code: s
-      modifiers:
-      - command
-      - control
-      repeat: false
-    conditions: *edit_right
-
-  # Z -> Redo (Shift-Command-Z)
-  - type: basic
-    from:
-      key_code: z
-    to:
-    - key_code: z
-      modifiers:
-      - shift
-      - command
-      repeat: false
-    conditions: *edit_right
-
-  # X -> Left Half Window (Control-Option-Left)
-  - type: basic
-    from:
-      key_code: x
     to:
     - key_code: left_arrow
       modifiers:
@@ -542,10 +440,34 @@ rules:
       repeat: false
     conditions: *edit_right
 
-  # C -> Right Half Window (Control-Option-Right)
+  # S -> Left 1/3 Window (Control-Option-D)
   - type: basic
     from:
-      key_code: c
+      key_code: s
+    to:
+    - key_code: d
+      modifiers:
+      - control
+      - option
+      repeat: false
+    conditions: *edit_right
+
+  # D -> Right 1/3 Window (Control-Option-G)
+  - type: basic
+    from:
+      key_code: d
+    to:
+    - key_code: g
+      modifiers:
+      - control
+      - option
+      repeat: false
+    conditions: *edit_right
+
+  # F -> Right Half Window (Control-Option-Right)
+  - type: basic
+    from:
+      key_code: f
     to:
     - key_code: right_arrow
       modifiers:
@@ -554,25 +476,71 @@ rules:
       repeat: false
     conditions: *edit_right
 
-  # V -> Paste Special (Shift-Command-V)
+  # G -> Invalid
+  - type: basic
+    from:
+      key_code: g
+    conditions: *edit_right
+
+  # Z -> Left Quarter Window (Control-Option-Z)
+  - type: basic
+    from:
+      key_code: z
+    to:
+    - key_code: z
+      modifiers:
+      - control
+      - option
+      repeat: false
+    conditions: *edit_right
+
+  # X -> Left 3/4 Window (Control-Option-X)
+  - type: basic
+    from:
+      key_code: x
+    to:
+    - key_code: x
+      modifiers:
+      - control
+      - option
+      repeat: false
+    conditions: *edit_right
+
+  # C -> Right 3/4 Window (Control-Option-V)
+  - type: basic
+    from:
+      key_code: c
+    to:
+    - key_code: v
+      modifiers:
+      - control
+      - option
+      repeat: false
+    conditions: *edit_right
+
+  # V -> Right Quarter Window (Control-Option-B)
   - type: basic
     from:
       key_code: v
     to:
-    - key_code: v
+    - key_code: b
       modifiers:
-      - shift
-      - command
+      - control
+      - option
       repeat: false
     conditions: *edit_right
 
-  # B -> Paste (Command-V)
+  # B -> Invalid
   - type: basic
     from:
       key_code: b
+    conditions: *edit_right
+
+  # Space -> Return
+  - type: basic
+    from:
+      key_code: spacebar
     to:
-    - key_code: v
-      modifiers:
-      - command
+    - key_code: return_or_enter
       repeat: false
     conditions: *edit_right

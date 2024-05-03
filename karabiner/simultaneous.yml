@@ -1,7 +1,7 @@
 title: "02. Simultaneous"
 rules:
 
-- description: "[Simul] V + M / V + N → Return"
+- description: "[Simul] V+M / V+N → Return"
   manipulators:
   - type: basic
     from:
@@ -21,47 +21,7 @@ rules:
     - key_code: return_or_enter
       repeat: false
 
-# - description: "[Simul] F + J → Sticky Shift"
-#   manipulators:
-#   - type: basic
-#     from:
-#       simultaneous:
-#       - key_code: f
-#       - key_code: j
-#     to:
-#     - sticky_modifier:
-#         left_shift: toggle
-
-# - description: "[Simul] F + J → Sticky Shift / AquaSKK StickyKey"
-#   manipulators:
-#   - type: basic
-#     from:
-#       simultaneous:
-#       - key_code: f
-#       - key_code: j
-#     to:
-#     - sticky_modifier:
-#         left_shift: toggle
-#     conditions:
-#     - type: input_source_unless
-#       input_sources:
-#       - language: ja
-#
-#   - type: basic
-#     from:
-#       simultaneous:
-#       - key_code: f
-#       - key_code: j
-#     to:
-#     - key_code: comma
-#       modifiers:
-#       - shift
-#     conditions:
-#     - type: input_source_if
-#       input_sources:
-#       - language: ja
-
-- description: "[Simul] F + J → AquaSKK ToggleKana"
+- description: "[Simul] F+J → ToggleKana (AquaSKK)"
   manipulators:
   - type: basic
     from:
@@ -77,8 +37,10 @@ rules:
       input_sources:
       - language: ja
 
-- description: "[Simul] F + G / H + J → [] / ()"
+- description: "[Simul] F+G → [], H+J → ()"
   manipulators:
+
+  # F+G -> []
   - type: basic
     from:
       simultaneous:
@@ -90,6 +52,7 @@ rules:
     - key_code: left_arrow
       repeat: false
 
+  # H+J -> ()
   - type: basic
     from:
       simultaneous:
@@ -105,9 +68,10 @@ rules:
     - key_code: left_arrow
       repeat: false
 
-- description: "[Simul] R + G / H + U / F + B / N + J → : / ! ?"
+- description: "[Simul] R+G → :, H+U → /, F+B → !, N+J → ?"
   manipulators:
-  # R + G → Semicolon
+
+  # R+G -> :
   - type: basic
     from:
       simultaneous:
@@ -123,7 +87,7 @@ rules:
       input_sources:
       - language: en
 
-  # H + U → Slash
+  # H+U -> /
   - type: basic
     from:
       simultaneous:
@@ -137,7 +101,7 @@ rules:
       input_sources:
       - language: en
 
-  # F + B → !
+  # F+B -> !
   - type: basic
     from:
       simultaneous:
@@ -153,7 +117,7 @@ rules:
       input_sources:
       - language: en
 
-  # N + J → ?
+  # N+J -> ?
   - type: basic
     from:
       simultaneous:
@@ -169,9 +133,10 @@ rules:
       input_sources:
       - language: en
 
-- description: "[Simul] V + B / N + M → 英数/かな"
+- description: "[Simul] V+B → 英数, N+M → かな"
   manipulators:
-  # V + B → 英数
+
+  # V+B -> 英数
   - type: basic
     from:
       simultaneous:
@@ -181,7 +146,7 @@ rules:
     - key_code: japanese_eisuu
       repeat: false
 
-  # N + M → かな
+  # N+M -> かな
   - type: basic
     from:
       simultaneous:

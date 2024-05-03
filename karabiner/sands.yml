@@ -1,4 +1,4 @@
-title: "06. SandS"
+title: "07. SandS"
 rules:
 
 - description: "[SandS] Space and LShift"
@@ -15,7 +15,7 @@ rules:
     to_if_alone:
     - key_code: spacebar
 
-- description: "[SandS] Return and RControl"
+- description: "[SandS] Return and LControl"
   manipulators:
   - type: basic
     from:
@@ -24,35 +24,7 @@ rules:
         optional:
         - any
     to:
-    - key_code: right_control
+    - key_code: left_control
       lazy: true
     to_if_alone:
     - key_code: return_or_enter
-
-# - description: "[SandS] Space and RControl"
-#   manipulators:
-#   - type: basic
-#     from:
-#       key_code: spacebar
-#       modifiers:
-#         optional:
-#         - any
-#     to:
-#     - key_code: right_control
-#       lazy: true
-#     to_if_alone:
-#     - key_code: spacebar
-#
-# - description: "[SandS] Return and LShift"
-#   manipulators:
-#   - type: basic
-#     from:
-#       key_code: return_or_enter
-#       modifiers:
-#         optional:
-#         - any
-#     to:
-#     - key_code: left_shift
-#       lazy: true
-#     to_if_alone:
-#     - key_code: return_or_enter

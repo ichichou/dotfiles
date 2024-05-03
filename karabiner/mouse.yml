@@ -1,4 +1,6 @@
-title: "02. Mouse"
+title: "21. Mouse"
+
+# ALIASES =======================================
 
 aliases:
 
@@ -14,12 +16,14 @@ aliases:
     - vendor_id: 1149
       product_id: 32982
 
+# RULES ==========================================
+
 rules:
 
 - description: "[Mouse] Kensington's Trackball"
   manipulators:
 
-  # LCommand-ボタン3 → Shift-Control-Tab (前のタブ)
+  # LCommand-ボタン3 -> Shift-Control-Tab (前のタブ)
   - type: basic
     from:
       pointing_button: button3
@@ -34,7 +38,7 @@ rules:
       repeat: false
     conditions: *kensington
 
-  # LCommand-ボタン4 →Control-Tab (次のタブ)
+  # LCommand-ボタン4 -> Control-Tab (次のタブ)
   - type: basic
     from:
       pointing_button: button4
@@ -48,7 +52,7 @@ rules:
       repeat: false
     conditions: *kensington
 
-  # ボタン3 → Command-Left (戻る)
+  # ボタン3 -> Command-Left (戻る)
   - type: basic
     from:
       pointing_button: button3
@@ -59,7 +63,7 @@ rules:
       repeat: false
     conditions: *kensington
 
-  # ボタン4 → Mission Control
+  # ボタン4 -> Mission Control
   - type: basic
     from:
       pointing_button: button4
