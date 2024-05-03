@@ -124,8 +124,8 @@ set noshowmatch
 set matchtime=0
 set matchpairs+=（:）,「:」,『:』,〈:〉,《:》,【:】,〔:〕,［:］,｛:｝,‘:’,“:”
 
+set foldmethod=marker
 " set nofoldenable
-autocmd vimrc FileType vim setlocal foldmethod=marker
 
 set statusline=%!SetStatusLine()
 
