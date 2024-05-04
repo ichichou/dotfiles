@@ -1,4 +1,4 @@
-title: "10. Canary (row stagger)"
+title: "10. Canary (angle mod)"
 
 # ALIASES ========================================
 
@@ -19,7 +19,7 @@ aliases:
 # RULES ==========================================
 
 rules:
-- description: "[Keyboard Layout] Canary (row stagger)"
+- description: "[Keyboard Layout] Canary (angle mod)"
   manipulators:
 
   # Upper Row ------------------------------------
@@ -244,7 +244,7 @@ rules:
       key_code: z
       modifiers: *optional_shift
     to:
-    - key_code: q
+    - key_code: j
       repeat: true
     conditions: *base
 
@@ -254,7 +254,7 @@ rules:
       key_code: x
       modifiers: *optional_shift
     to:
-    - key_code: j
+    - key_code: v
       repeat: true
     conditions: *base
 
@@ -264,7 +264,7 @@ rules:
       key_code: c
       modifiers: *optional_shift
     to:
-    - key_code: v
+    - key_code: d
       repeat: true
     conditions: *base
 
@@ -274,7 +274,7 @@ rules:
       key_code: v
       modifiers: *optional_shift
     to:
-    - key_code: d
+    - key_code: g
       repeat: true
     conditions: *base
 
@@ -284,7 +284,7 @@ rules:
       key_code: b
       modifiers: *optional_shift
     to:
-    - key_code: g
+    - key_code: q
       repeat: true
     conditions: *base
 
