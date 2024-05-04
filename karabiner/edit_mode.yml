@@ -383,6 +383,42 @@ rules:
       repeat: false
     conditions: *edit_left
 
+  # Return -> Maximize Window (Control-Option-Return)
+  - type: basic
+    from:
+      key_code: return_or_enter
+    to:
+    - key_code: return_or_enter
+      modifiers:
+      - control
+      - option
+      repeat: false
+    conditions: *edit_right
+
+  # Delete -> Restore Window (Control-Option-Delete)
+  - type: basic
+    from:
+      key_code: delete_or_backspace
+    to:
+    - key_code: delete_or_backspace
+      modifiers:
+      - control
+      - option
+      repeat: false
+    conditions: *edit_right
+
+  # Backslash -> Center Window (Control-Option-C)
+  - type: basic
+    from:
+      key_code: return_or_enter
+    to:
+    - key_code: c
+      modifiers:
+      - control
+      - option
+      repeat: false
+    conditions: *edit_right
+
   # Left Keys (for Right Edit Mode Key) ----------
 
   # Q -> Invalid
