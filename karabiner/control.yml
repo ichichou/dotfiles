@@ -81,19 +81,3 @@ rules:
       modifiers:
       - command
       repeat: false
-
-# LCommand-K -> Up Arrow とするための代替キーマップ
-- description: "[Control] LShift-RControl-K → Command-K"
-  manipulators:
-  - type: basic
-    from:
-      key_code: k
-      modifiers:
-        mandatory:
-        - left_shift
-        - right_control
-    to:
-    - key_code: k
-      modifiers:
-      - command
-      repeat: false

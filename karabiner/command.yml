@@ -27,8 +27,72 @@ rules:
     - key_code: escape
       repeat: false
 
+- description: "[Command] LCommand-LOption-HJKL → Command-HJKL"
+  manipulators:
+
+  - type: basic
+    from:
+      key_code: h
+      modifiers:
+        mandatory:
+        - left_command
+        - left_option
+        optional:
+        - any
+    to:
+    - key_code: h
+      modifiers:
+      - command
+      repeat: false
+
+  - type: basic
+    from:
+      key_code: j
+      modifiers:
+        mandatory:
+        - left_command
+        - left_option
+        optional:
+        - any
+    to:
+    - key_code: j
+      modifiers:
+      - command
+      repeat: false
+
+  - type: basic
+    from:
+      key_code: k
+      modifiers:
+        mandatory:
+        - left_command
+        - left_option
+        optional:
+        - any
+    to:
+    - key_code: k
+      modifiers:
+      - command
+      repeat: false
+
+  - type: basic
+    from:
+      key_code: l
+      modifiers:
+        mandatory:
+        - left_command
+        - left_option
+        optional:
+        - any
+    to:
+    - key_code: l
+      modifiers:
+      - command
+      repeat: false
+
 - description: "[Command] LCommand-HJKL → Arrow Keys"
   manipulators:
+
   - type: basic
     from:
       key_code: h
@@ -92,6 +156,7 @@ rules:
 
 - description: "[Command] LCommad/RCommand → 英数/かな"
   manipulators:
+
   - type: basic
     from:
       key_code: left_command
