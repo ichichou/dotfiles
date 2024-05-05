@@ -393,7 +393,7 @@ rules:
       - control
       - option
       repeat: false
-    conditions: *edit_right
+    conditions: *edit_left
 
   # Delete -> Restore Window (Control-Option-Delete)
   - type: basic
@@ -405,7 +405,7 @@ rules:
       - control
       - option
       repeat: false
-    conditions: *edit_right
+    conditions: *edit_left
 
   # Backslash -> Center Window (Control-Option-C)
   - type: basic
@@ -417,7 +417,7 @@ rules:
       - control
       - option
       repeat: false
-    conditions: *edit_right
+    conditions: *edit_left
 
   # Left Keys (for Right Edit Mode Key) ----------
 
