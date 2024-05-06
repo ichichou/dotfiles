@@ -1,0 +1,363 @@
+title: "04. Symbol Layer"
+rules:
+
+- description: "[Symbol] RCommand-Key → Symbol"
+  manipulators:
+
+  # Q -> .
+  - type: basic
+    from:
+      key_code: q
+      modifiers:
+        mandatory:
+        - right_command
+    to:
+    - key_code: period
+      repeat: false
+
+  # W -> +
+  - type: basic
+    from:
+      key_code: w
+      modifiers:
+        mandatory:
+        - right_command
+    to:
+    - key_code: equal_sign
+      modifiers:
+      - shift
+      repeat: false
+
+  # E -> _
+  - type: basic
+    from:
+      key_code: e
+      modifiers:
+        mandatory:
+        - right_command
+    to:
+    - key_code: hyphen
+      modifiers:
+      - shift
+      repeat: false
+
+  # R -> !
+  - type: basic
+    from:
+      key_code: r
+      modifiers:
+        mandatory:
+        - right_command
+    to:
+    - key_code: "1"
+      modifiers:
+      - shift
+      repeat: false
+
+  # T -> |
+  - type: basic
+    from:
+      key_code: t
+      modifiers:
+        mandatory:
+        - right_command
+    to:
+    - key_code: backslash
+      modifiers:
+      - shift
+      repeat: false
+
+  # Y -> ~
+  - type: basic
+    from:
+      key_code: "y"
+      modifiers:
+        mandatory:
+        - right_command
+    to:
+    - key_code: grave_accent_and_tilde
+      modifiers:
+      - shift
+      repeat: false
+
+  # U -> ?
+  - type: basic
+    from:
+      key_code: u
+      modifiers:
+        mandatory:
+        - right_command
+    to:
+    - key_code: slash
+      modifiers:
+      - shift
+      repeat: false
+
+  # I -> ^
+  - type: basic
+    from:
+      key_code: i
+      modifiers:
+        mandatory:
+        - right_command
+    to:
+    - key_code: "6"
+      modifiers:
+      - shift
+      repeat: false
+
+  # O -> $
+  - type: basic
+    from:
+      key_code: o
+      modifiers:
+        mandatory:
+        - right_command
+    to:
+    - key_code: "4"
+      modifiers:
+      - shift
+      repeat: false
+
+  # P -> Invalid
+  - type: basic
+    from:
+      key_code: p
+      modifiers:
+        mandatory:
+        - right_command
+
+  # A -> *
+  - type: basic
+    from:
+      key_code: a
+      modifiers:
+        mandatory:
+        - right_command
+    to:
+    - key_code: "8"
+      modifiers:
+      - shift
+      repeat: false
+
+  # S -> =
+  - type: basic
+    from:
+      key_code: s
+      modifiers:
+        mandatory:
+        - right_command
+    to:
+    - key_code: equal_sign
+      repeat: false
+
+  # D -> -
+  - type: basic
+    from:
+      key_code: d
+      modifiers:
+        mandatory:
+        - right_command
+    to:
+    - key_code: hyphen
+      repeat: false
+
+  # F -> 0
+  - type: basic
+    from:
+      key_code: f
+      modifiers:
+        mandatory:
+        - right_command
+    to:
+    - key_code: "0"
+      repeat: false
+
+  # G -> @
+  - type: basic
+    from:
+      key_code: g
+      modifiers:
+        mandatory:
+        - right_command
+    to:
+    - key_code: "2"
+      modifiers:
+      - shift
+      repeat: false
+
+  # H -> &
+  - type: basic
+    from:
+      key_code: h
+      modifiers:
+        mandatory:
+        - right_command
+    to:
+    - key_code: 7
+      modifiers:
+      - shift
+      repeat: false
+
+  # J -> 1
+  - type: basic
+    from:
+      key_code: j
+      modifiers:
+        mandatory:
+        - right_command
+    to:
+    - key_code: "1"
+      repeat: false
+
+  # K -> %
+  - type: basic
+    from:
+      key_code: k
+      modifiers:
+        mandatory:
+        - right_command
+    to:
+    - key_code: "5"
+      modifiers:
+      - shift
+      repeat: false
+
+  # L -> #
+  - type: basic
+    from:
+      key_code: l
+      modifiers:
+        mandatory:
+        - right_command
+    to:
+    - key_code: "3"
+      modifiers:
+      - shift
+      repeat: false
+
+  # Semicolon -> Invalid
+  - type: basic
+    from:
+      key_code: Semicolon
+      modifiers:
+        mandatory:
+        - right_command
+
+  # Quote -> Invalid
+  - type: basic
+    from:
+      key_code: quote
+      modifiers:
+        mandatory:
+        - right_command
+
+  # Z -> 8
+  - type: basic
+    from:
+      key_code: z
+      modifiers:
+        mandatory:
+        - right_command
+    to:
+    - key_code: "8"
+      repeat: false
+
+  # X -> 6
+  - type: basic
+    from:
+      key_code: x
+      modifiers:
+        mandatory:
+        - right_command
+    to:
+    - key_code: "6"
+      repeat: false
+
+  # C -> 4
+  - type: basic
+    from:
+      key_code: c
+      modifiers:
+        mandatory:
+        - right_command
+    to:
+    - key_code: "4"
+      repeat: false
+
+  # V -> 2
+  - type: basic
+    from:
+      key_code: v
+      modifiers:
+        mandatory:
+        - right_command
+    to:
+    - key_code: "2"
+      repeat: false
+
+  # B -> \
+  - type: basic
+    from:
+      key_code: b
+      modifiers:
+        mandatory:
+        - right_command
+    to:
+    - key_code: backslash
+      repeat: false
+
+  # N -> `
+  - type: basic
+    from:
+      key_code: "n"
+      modifiers:
+        mandatory:
+        - right_command
+    to:
+    - key_code: grave_accent_and_tilde
+      repeat: false
+
+  # M -> 3
+  - type: basic
+    from:
+      key_code: m
+      modifiers:
+        mandatory:
+        - right_command
+    to:
+    - key_code: "3"
+      repeat: false
+
+  # Comma -> 5
+  - type: basic
+    from:
+      key_code: comma
+      modifiers:
+        mandatory:
+        - right_command
+    to:
+    - key_code: "5"
+      repeat: false
+
+  # Period -> 7
+  - type: basic
+    from:
+      key_code: period
+      modifiers:
+        mandatory:
+        - right_command
+    to:
+    - key_code: "7"
+      repeat: false
+
+  # Slash -> 9
+  - type: basic
+    from:
+      key_code: slash
+      modifiers:
+        mandatory:
+        - right_command
+    to:
+    - key_code: "9"
+      repeat: false
