@@ -6,7 +6,7 @@ rules:
 
 # Upper Row --------------------------------------
 
-  # Q -> .
+  # Q -> ,
   - type: basic
     from:
       key_code: q
@@ -14,8 +14,7 @@ rules:
         mandatory:
         - right_command
     to:
-    - key_code: period
-      repeat: false
+    - key_code: comma
 
   # W -> +
   - type: basic
@@ -28,7 +27,6 @@ rules:
     - key_code: equal_sign
       modifiers:
       - shift
-      repeat: false
 
   # E -> _
   - type: basic
@@ -41,7 +39,6 @@ rules:
     - key_code: hyphen
       modifiers:
       - shift
-      repeat: false
 
   # R -> !
   - type: basic
@@ -54,7 +51,6 @@ rules:
     - key_code: "1"
       modifiers:
       - shift
-      repeat: false
 
   # T -> |
   - type: basic
@@ -67,9 +63,8 @@ rules:
     - key_code: backslash
       modifiers:
       - shift
-      repeat: false
 
-  # Y -> ~
+  # Y -> `
   - type: basic
     from:
       key_code: "y"
@@ -78,9 +73,6 @@ rules:
         - right_command
     to:
     - key_code: grave_accent_and_tilde
-      modifiers:
-      - shift
-      repeat: false
 
   # U -> ?
   - type: basic
@@ -93,7 +85,6 @@ rules:
     - key_code: slash
       modifiers:
       - shift
-      repeat: false
 
   # I -> ^
   - type: basic
@@ -106,7 +97,6 @@ rules:
     - key_code: "6"
       modifiers:
       - shift
-      repeat: false
 
   # O -> $
   - type: basic
@@ -119,39 +109,46 @@ rules:
     - key_code: "4"
       modifiers:
       - shift
-      repeat: false
 
-  # P -> Invalid
+  # P -> .
   - type: basic
     from:
       key_code: p
       modifiers:
         mandatory:
         - right_command
+    to:
+    - key_code: period
 
-  # Open Bracket -> Invalid
+  # Open Bracket -> [
   - type: basic
     from:
       key_code: open_bracket
       modifiers:
         mandatory:
         - right_command
+    to:
+    - key_code: open_bracket
 
-  # Close Bracket -> Invalid
+  # Close Bracket -> ]
   - type: basic
     from:
       key_code: close_bracket
       modifiers:
         mandatory:
         - right_command
+    to:
+    - key_code: close_bracket
 
-  # Backslash -> Invalid
+  # Backslash -> \
   - type: basic
     from:
       key_code: backslash
       modifiers:
         mandatory:
         - right_command
+    to:
+    - key_code: backslash
 
 # Home Row ---------------------------------------
 
@@ -166,7 +163,6 @@ rules:
     - key_code: "8"
       modifiers:
       - shift
-      repeat: false
 
   # S -> =
   - type: basic
@@ -177,7 +173,6 @@ rules:
         - right_command
     to:
     - key_code: equal_sign
-      repeat: false
 
   # D -> -
   - type: basic
@@ -188,7 +183,6 @@ rules:
         - right_command
     to:
     - key_code: hyphen
-      repeat: false
 
   # F -> 0
   - type: basic
@@ -199,7 +193,6 @@ rules:
         - right_command
     to:
     - key_code: "0"
-      repeat: false
 
   # G -> @
   - type: basic
@@ -212,7 +205,6 @@ rules:
     - key_code: "2"
       modifiers:
       - shift
-      repeat: false
 
   # H -> &
   - type: basic
@@ -222,10 +214,9 @@ rules:
         mandatory:
         - right_command
     to:
-    - key_code: 7
+    - key_code: "7"
       modifiers:
       - shift
-      repeat: false
 
   # J -> 1
   - type: basic
@@ -236,7 +227,6 @@ rules:
         - right_command
     to:
     - key_code: "1"
-      repeat: false
 
   # K -> %
   - type: basic
@@ -249,7 +239,6 @@ rules:
     - key_code: "5"
       modifiers:
       - shift
-      repeat: false
 
   # L -> #
   - type: basic
@@ -262,23 +251,26 @@ rules:
     - key_code: "3"
       modifiers:
       - shift
-      repeat: false
 
-  # Semicolon -> Invalid
+  # Semicolon -> ;
   - type: basic
     from:
       key_code: semicolon
       modifiers:
         mandatory:
         - right_command
+    to:
+    - key_code: semicolon
 
-  # Quote -> Invalid
+  # Quote -> '
   - type: basic
     from:
       key_code: quote
       modifiers:
         mandatory:
         - right_command
+    to:
+    - key_code: quote
 
 # Lower Row --------------------------------------
 
@@ -291,7 +283,6 @@ rules:
         - right_command
     to:
     - key_code: "8"
-      repeat: false
 
   # X -> 6
   - type: basic
@@ -302,7 +293,6 @@ rules:
         - right_command
     to:
     - key_code: "6"
-      repeat: false
 
   # C -> 4
   - type: basic
@@ -313,7 +303,6 @@ rules:
         - right_command
     to:
     - key_code: "4"
-      repeat: false
 
   # V -> 2
   - type: basic
@@ -324,7 +313,6 @@ rules:
         - right_command
     to:
     - key_code: "2"
-      repeat: false
 
   # B -> \
   - type: basic
@@ -335,9 +323,8 @@ rules:
         - right_command
     to:
     - key_code: backslash
-      repeat: false
 
-  # N -> `
+  # N -> ~
   - type: basic
     from:
       key_code: "n"
@@ -346,7 +333,8 @@ rules:
         - right_command
     to:
     - key_code: grave_accent_and_tilde
-      repeat: false
+      modifiers:
+      - shift
 
   # M -> 3
   - type: basic
@@ -357,7 +345,6 @@ rules:
         - right_command
     to:
     - key_code: "3"
-      repeat: false
 
   # Comma -> 5
   - type: basic
@@ -368,7 +355,6 @@ rules:
         - right_command
     to:
     - key_code: "5"
-      repeat: false
 
   # Period -> 7
   - type: basic
@@ -379,7 +365,6 @@ rules:
         - right_command
     to:
     - key_code: "7"
-      repeat: false
 
   # Slash -> 9
   - type: basic
@@ -390,4 +375,13 @@ rules:
         - right_command
     to:
     - key_code: "9"
-      repeat: false
+
+  # Space -> Whitespace
+  - type: basic
+    from:
+      key_code: spacebar
+      modifiers:
+        mandatory:
+        - right_command
+    to:
+    - key_code: spacebar
