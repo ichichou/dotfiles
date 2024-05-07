@@ -1635,6 +1635,975 @@ rules:
 
 # }}}
 
+# Graphite {{{
+
+- description: "[Keyboard Layout] Graphite"
+  manipulators:
+
+  # Upper Row ------------------------------------
+
+  # Q
+  - type: basic
+    from:
+      key_code: q
+      modifiers: *optional_shift
+    to:
+    - key_code: b
+      repeat: true
+    conditions: *base
+
+  # W
+  - type: basic
+    from:
+      key_code: w
+      modifiers: *optional_shift
+    to:
+    - key_code: l
+      repeat: true
+    conditions: *base
+
+  # E
+  - type: basic
+    from:
+      key_code: e
+      modifiers: *optional_shift
+    to:
+    - key_code: d
+      repeat: true
+    conditions: *base
+
+  # R
+  - type: basic
+    from:
+      key_code: r
+      modifiers: *optional_shift
+    to:
+    - key_code: w
+      repeat: true
+    conditions: *base
+
+  # T
+  - type: basic
+    from:
+      key_code: t
+      modifiers: *optional_shift
+    to:
+    - key_code: z
+      repeat: true
+    conditions: *base
+
+  # Y
+  - type: basic
+    from:
+      key_code: "y"
+      modifiers: *optional_shift
+    to:
+    - key_code: quote
+      repeat: true
+    conditions: *base
+
+  # U
+  - type: basic
+    from:
+      key_code: u
+      modifiers: *optional_shift
+    to:
+    - key_code: f
+      repeat: true
+    conditions: *base
+
+  # I
+  - type: basic
+    from:
+      key_code: i
+      modifiers: *optional_shift
+    to:
+    - key_code: o
+      repeat: true
+    conditions: *base
+
+  # O
+  - type: basic
+    from:
+      key_code: o
+      modifiers: *optional_shift
+    to:
+    - key_code: u
+      repeat: true
+    conditions: *base
+
+  # P
+  - type: basic
+    from:
+      key_code: p
+      modifiers: *optional_shift
+    to:
+    - key_code: j
+      repeat: true
+    conditions: *base
+
+  # Home Row -------------------------------------
+
+  # A
+  - type: basic
+    from:
+      key_code: a
+      modifiers: *optional_shift
+    to:
+    - key_code: "n"
+      repeat: true
+    conditions: *base
+
+  # S
+  - type: basic
+    from:
+      key_code: s
+      modifiers: *optional_shift
+    to:
+    - key_code: r
+      repeat: true
+    conditions: *base
+
+  # D
+  - type: basic
+    from:
+      key_code: d
+      modifiers: *optional_shift
+    to:
+    - key_code: t
+      repeat: true
+    conditions: *base
+
+  # F
+  - type: basic
+    from:
+      key_code: f
+      modifiers: *optional_shift
+    to:
+    - key_code: s
+      repeat: true
+    conditions: *base
+
+  # G
+  - type: basic
+    from:
+      key_code: g
+      modifiers: *optional_shift
+    to:
+    - key_code: g
+      repeat: true
+    conditions: *base
+
+  # H
+  - type: basic
+    from:
+      key_code: h
+      modifiers: *optional_shift
+    to:
+    - key_code: "y"
+      repeat: true
+    conditions: *base
+
+  # J
+  - type: basic
+    from:
+      key_code: j
+      modifiers: *optional_shift
+    to:
+    - key_code: h
+      repeat: true
+    conditions: *base
+
+  # K
+  - type: basic
+    from:
+      key_code: k
+      modifiers: *optional_shift
+    to:
+    - key_code: a
+      repeat: true
+    conditions: *base
+
+  # L
+  - type: basic
+    from:
+      key_code: l
+      modifiers: *optional_shift
+    to:
+    - key_code: e
+      repeat: true
+    conditions: *base
+
+  # Semicolon
+  - type: basic
+    from:
+      key_code: semicolon
+      modifiers: *optional_shift
+    to:
+    - key_code: i
+      repeat: true
+    conditions: *base
+
+  # Quote
+  - type: basic
+    from:
+      key_code: quote
+      modifiers: *optional_shift
+    to:
+    - key_code: comma
+      repeat: true
+    conditions: *base
+
+  # Lower Row ------------------------------------
+
+  # Z
+  - type: basic
+    from:
+      key_code: z
+      modifiers: *optional_shift
+    to:
+    - key_code: q
+      repeat: true
+    conditions: *base
+
+  # X
+  - type: basic
+    from:
+      key_code: x
+      modifiers: *optional_shift
+    to:
+    - key_code: x
+      repeat: true
+    conditions: *base
+
+  # C
+  - type: basic
+    from:
+      key_code: c
+      modifiers: *optional_shift
+    to:
+    - key_code: m
+      repeat: true
+    conditions: *base
+
+  # V
+  - type: basic
+    from:
+      key_code: v
+      modifiers: *optional_shift
+    to:
+    - key_code: c
+      repeat: true
+    conditions: *base
+
+  # B
+  - type: basic
+    from:
+      key_code: b
+      modifiers: *optional_shift
+    to:
+    - key_code: v
+      repeat: true
+    conditions: *base
+
+  # N
+  - type: basic
+    from:
+      key_code: "n"
+      modifiers: *optional_shift
+    to:
+    - key_code: k
+      repeat: true
+    conditions: *base
+
+  # M
+  - type: basic
+    from:
+      key_code: m
+      modifiers: *optional_shift
+    to:
+    - key_code: p
+      repeat: true
+    conditions: *base
+
+  # Comma
+  - type: basic
+    from:
+      key_code: comma
+      modifiers: *optional_shift
+    to:
+    - key_code: period
+      repeat: true
+    conditions: *base
+
+  # Period
+  - type: basic
+    from:
+      key_code: period
+      modifiers: *optional_shift
+    to:
+    - key_code: semicolon
+      repeat: true
+    conditions: *base
+
+  # Slash
+  - type: basic
+    from:
+      key_code: slash
+      modifiers: *optional_shift
+    to:
+    - key_code: slash
+      repeat: true
+    conditions: *base
+
+# }}}
+
+# Gallium v2 {{{
+
+- description: "[Keyboard Layout] Gallium v2"
+  manipulators:
+
+  # Upper Row ------------------------------------
+
+  # Q
+  - type: basic
+    from:
+      key_code: q
+      modifiers: *optional_shift
+    to:
+    - key_code: b
+      repeat: true
+    conditions: *base
+
+  # W
+  - type: basic
+    from:
+      key_code: w
+      modifiers: *optional_shift
+    to:
+    - key_code: l
+      repeat: true
+    conditions: *base
+
+  # E
+  - type: basic
+    from:
+      key_code: e
+      modifiers: *optional_shift
+    to:
+    - key_code: d
+      repeat: true
+    conditions: *base
+
+  # R
+  - type: basic
+    from:
+      key_code: r
+      modifiers: *optional_shift
+    to:
+    - key_code: c
+      repeat: true
+    conditions: *base
+
+  # T
+  - type: basic
+    from:
+      key_code: t
+      modifiers: *optional_shift
+    to:
+    - key_code: v
+      repeat: true
+    conditions: *base
+
+  # Y
+  - type: basic
+    from:
+      key_code: "y"
+      modifiers: *optional_shift
+    to:
+    - key_code: j
+      repeat: true
+    conditions: *base
+
+  # U
+  - type: basic
+    from:
+      key_code: u
+      modifiers: *optional_shift
+    to:
+    - key_code: f
+      repeat: true
+    conditions: *base
+
+  # I
+  - type: basic
+    from:
+      key_code: i
+      modifiers: *optional_shift
+    to:
+    - key_code: o
+      repeat: true
+    conditions: *base
+
+  # O
+  - type: basic
+    from:
+      key_code: o
+      modifiers: *optional_shift
+    to:
+    - key_code: u
+      repeat: true
+    conditions: *base
+
+  # P
+  - type: basic
+    from:
+      key_code: p
+      modifiers: *optional_shift
+    to:
+    - key_code: comma
+      repeat: true
+    conditions: *base
+
+  # Home Row -------------------------------------
+
+  # A
+  - type: basic
+    from:
+      key_code: a
+      modifiers: *optional_shift
+    to:
+    - key_code: "n"
+      repeat: true
+    conditions: *base
+
+  # S
+  - type: basic
+    from:
+      key_code: s
+      modifiers: *optional_shift
+    to:
+    - key_code: r
+      repeat: true
+    conditions: *base
+
+  # D
+  - type: basic
+    from:
+      key_code: d
+      modifiers: *optional_shift
+    to:
+    - key_code: t
+      repeat: true
+    conditions: *base
+
+  # F
+  - type: basic
+    from:
+      key_code: f
+      modifiers: *optional_shift
+    to:
+    - key_code: s
+      repeat: true
+    conditions: *base
+
+  # G
+  - type: basic
+    from:
+      key_code: g
+      modifiers: *optional_shift
+    to:
+    - key_code: g
+      repeat: true
+    conditions: *base
+
+  # H
+  - type: basic
+    from:
+      key_code: h
+      modifiers: *optional_shift
+    to:
+    - key_code: "y"
+      repeat: true
+    conditions: *base
+
+  # J
+  - type: basic
+    from:
+      key_code: j
+      modifiers: *optional_shift
+    to:
+    - key_code: h
+      repeat: true
+    conditions: *base
+
+  # K
+  - type: basic
+    from:
+      key_code: k
+      modifiers: *optional_shift
+    to:
+    - key_code: a
+      repeat: true
+    conditions: *base
+
+  # L
+  - type: basic
+    from:
+      key_code: l
+      modifiers: *optional_shift
+    to:
+    - key_code: e
+      repeat: true
+    conditions: *base
+
+  # Semicolon
+  - type: basic
+    from:
+      key_code: semicolon
+      modifiers: *optional_shift
+    to:
+    - key_code: i
+      repeat: true
+    conditions: *base
+
+  # Quote
+  - type: basic
+    from:
+      key_code: quote
+      modifiers: *optional_shift
+    to:
+    - key_code: slash
+      repeat: true
+    conditions: *base
+
+  # Lower Row ------------------------------------
+
+  # Z
+  - type: basic
+    from:
+      key_code: z
+      modifiers: *optional_shift
+    to:
+    - key_code: x
+      repeat: true
+    conditions: *base
+
+  # X
+  - type: basic
+    from:
+      key_code: x
+      modifiers: *optional_shift
+    to:
+    - key_code: q
+      repeat: true
+    conditions: *base
+
+  # C
+  - type: basic
+    from:
+      key_code: c
+      modifiers: *optional_shift
+    to:
+    - key_code: m
+      repeat: true
+    conditions: *base
+
+  # V
+  - type: basic
+    from:
+      key_code: v
+      modifiers: *optional_shift
+    to:
+    - key_code: w
+      repeat: true
+    conditions: *base
+
+  # B
+  - type: basic
+    from:
+      key_code: b
+      modifiers: *optional_shift
+    to:
+    - key_code: z
+      repeat: true
+    conditions: *base
+
+  # N
+  - type: basic
+    from:
+      key_code: "n"
+      modifiers: *optional_shift
+    to:
+    - key_code: k
+      repeat: true
+    conditions: *base
+
+  # M
+  - type: basic
+    from:
+      key_code: m
+      modifiers: *optional_shift
+    to:
+    - key_code: p
+      repeat: true
+    conditions: *base
+
+  # Comma
+  - type: basic
+    from:
+      key_code: comma
+      modifiers: *optional_shift
+    to:
+    - key_code: quote
+      repeat: true
+    conditions: *base
+
+  # Period
+  - type: basic
+    from:
+      key_code: period
+      modifiers: *optional_shift
+    to:
+    - key_code: semicolon
+      repeat: true
+    conditions: *base
+
+  # Slash
+  - type: basic
+    from:
+      key_code: slash
+      modifiers: *optional_shift
+    to:
+    - key_code: period
+      repeat: true
+    conditions: *base
+
+# }}}
+
+# Gallium v1 {{{
+
+- description: "[Keyboard Layout] Gallium v1"
+  manipulators:
+
+  # Upper Row ------------------------------------
+
+  # Q
+  - type: basic
+    from:
+      key_code: q
+      modifiers: *optional_shift
+    to:
+    - key_code: b
+      repeat: true
+    conditions: *base
+
+  # W
+  - type: basic
+    from:
+      key_code: w
+      modifiers: *optional_shift
+    to:
+    - key_code: l
+      repeat: true
+    conditions: *base
+
+  # E
+  - type: basic
+    from:
+      key_code: e
+      modifiers: *optional_shift
+    to:
+    - key_code: d
+      repeat: true
+    conditions: *base
+
+  # R
+  - type: basic
+    from:
+      key_code: r
+      modifiers: *optional_shift
+    to:
+    - key_code: c
+      repeat: true
+    conditions: *base
+
+  # T
+  - type: basic
+    from:
+      key_code: t
+      modifiers: *optional_shift
+    to:
+    - key_code: v
+      repeat: true
+    conditions: *base
+
+  # Y
+  - type: basic
+    from:
+      key_code: "y"
+      modifiers: *optional_shift
+    to:
+    - key_code: z
+      repeat: true
+    conditions: *base
+
+  # U
+  - type: basic
+    from:
+      key_code: u
+      modifiers: *optional_shift
+    to:
+    - key_code: "y"
+      repeat: true
+    conditions: *base
+
+  # I
+  - type: basic
+    from:
+      key_code: i
+      modifiers: *optional_shift
+    to:
+    - key_code: o
+      repeat: true
+    conditions: *base
+
+  # O
+  - type: basic
+    from:
+      key_code: o
+      modifiers: *optional_shift
+    to:
+    - key_code: u
+      repeat: true
+    conditions: *base
+
+  # P
+  - type: basic
+    from:
+      key_code: p
+      modifiers: *optional_shift
+    to:
+    - key_code: comma
+      repeat: true
+    conditions: *base
+
+  # Home Row -------------------------------------
+
+  # A
+  - type: basic
+    from:
+      key_code: a
+      modifiers: *optional_shift
+    to:
+    - key_code: "n"
+      repeat: true
+    conditions: *base
+
+  # S
+  - type: basic
+    from:
+      key_code: s
+      modifiers: *optional_shift
+    to:
+    - key_code: r
+      repeat: true
+    conditions: *base
+
+  # D
+  - type: basic
+    from:
+      key_code: d
+      modifiers: *optional_shift
+    to:
+    - key_code: t
+      repeat: true
+    conditions: *base
+
+  # F
+  - type: basic
+    from:
+      key_code: f
+      modifiers: *optional_shift
+    to:
+    - key_code: s
+      repeat: true
+    conditions: *base
+
+  # G
+  - type: basic
+    from:
+      key_code: g
+      modifiers: *optional_shift
+    to:
+    - key_code: g
+      repeat: true
+    conditions: *base
+
+  # H
+  - type: basic
+    from:
+      key_code: h
+      modifiers: *optional_shift
+    to:
+    - key_code: p
+      repeat: true
+    conditions: *base
+
+  # J
+  - type: basic
+    from:
+      key_code: j
+      modifiers: *optional_shift
+    to:
+    - key_code: h
+      repeat: true
+    conditions: *base
+
+  # K
+  - type: basic
+    from:
+      key_code: k
+      modifiers: *optional_shift
+    to:
+    - key_code: a
+      repeat: true
+    conditions: *base
+
+  # L
+  - type: basic
+    from:
+      key_code: l
+      modifiers: *optional_shift
+    to:
+    - key_code: e
+      repeat: true
+    conditions: *base
+
+  # Semicolon
+  - type: basic
+    from:
+      key_code: semicolon
+      modifiers: *optional_shift
+    to:
+    - key_code: i
+      repeat: true
+    conditions: *base
+
+  # Quote
+  - type: basic
+    from:
+      key_code: quote
+      modifiers: *optional_shift
+    to:
+    - key_code: slash
+      repeat: true
+    conditions: *base
+
+  # Lower Row ------------------------------------
+
+  # Z
+  - type: basic
+    from:
+      key_code: z
+      modifiers: *optional_shift
+    to:
+    - key_code: q
+      repeat: true
+    conditions: *base
+
+  # X
+  - type: basic
+    from:
+      key_code: x
+      modifiers: *optional_shift
+    to:
+    - key_code: x
+      repeat: true
+    conditions: *base
+
+  # C
+  - type: basic
+    from:
+      key_code: c
+      modifiers: *optional_shift
+    to:
+    - key_code: m
+      repeat: true
+    conditions: *base
+
+  # V
+  - type: basic
+    from:
+      key_code: v
+      modifiers: *optional_shift
+    to:
+    - key_code: w
+      repeat: true
+    conditions: *base
+
+  # B
+  - type: basic
+    from:
+      key_code: b
+      modifiers: *optional_shift
+    to:
+    - key_code: j
+      repeat: true
+    conditions: *base
+
+  # N
+  - type: basic
+    from:
+      key_code: "n"
+      modifiers: *optional_shift
+    to:
+    - key_code: k
+      repeat: true
+    conditions: *base
+
+  # M
+  - type: basic
+    from:
+      key_code: m
+      modifiers: *optional_shift
+    to:
+    - key_code: f
+      repeat: true
+    conditions: *base
+
+  # Comma
+  - type: basic
+    from:
+      key_code: comma
+      modifiers: *optional_shift
+    to:
+    - key_code: quote
+      repeat: true
+    conditions: *base
+
+  # Period
+  - type: basic
+    from:
+      key_code: period
+      modifiers: *optional_shift
+    to:
+    - key_code: semicolon
+      repeat: true
+    conditions: *base
+
+  # Slash
+  - type: basic
+    from:
+      key_code: slash
+      modifiers: *optional_shift
+    to:
+    - key_code: period
+      repeat: true
+    conditions: *base
+
+# }}}
+
 # Nerps {{{
 
 - description: "[Keyboard Layout] Nerps"
@@ -2281,9 +3250,9 @@ rules:
 
 # }}}
 
-# Arensito {{{
+# Colemak {{{
 
-- description: "[Keyboard Layout] Arensito"
+- description: "[Keyboard Layout] Colemak"
   manipulators:
 
   # Upper Row ------------------------------------
@@ -2304,7 +3273,7 @@ rules:
       key_code: w
       modifiers: *optional_shift
     to:
-    - key_code: l
+    - key_code: w
       repeat: true
     conditions: *base
 
@@ -2314,7 +3283,7 @@ rules:
       key_code: e
       modifiers: *optional_shift
     to:
-    - key_code: comma
+    - key_code: f
       repeat: true
     conditions: *base
 
@@ -2334,7 +3303,7 @@ rules:
       key_code: t
       modifiers: *optional_shift
     to:
-    - key_code: semicolon
+    - key_code: g
       repeat: true
     conditions: *base
 
@@ -2344,7 +3313,7 @@ rules:
       key_code: "y"
       modifiers: *optional_shift
     to:
-    - key_code: slash
+    - key_code: j
       repeat: true
     conditions: *base
 
@@ -2354,7 +3323,7 @@ rules:
       key_code: u
       modifiers: *optional_shift
     to:
-    - key_code: f
+    - key_code: l
       repeat: true
     conditions: *base
 
@@ -2374,7 +3343,7 @@ rules:
       key_code: o
       modifiers: *optional_shift
     to:
-    - key_code: d
+    - key_code: "y"
       repeat: true
     conditions: *base
 
@@ -2384,7 +3353,7 @@ rules:
       key_code: p
       modifiers: *optional_shift
     to:
-    - key_code: k
+    - key_code: semicolon
       repeat: true
     conditions: *base
 
@@ -2416,7 +3385,7 @@ rules:
       key_code: d
       modifiers: *optional_shift
     to:
-    - key_code: e
+    - key_code: s
       repeat: true
     conditions: *base
 
@@ -2426,7 +3395,7 @@ rules:
       key_code: f
       modifiers: *optional_shift
     to:
-    - key_code: "n"
+    - key_code: t
       repeat: true
     conditions: *base
 
@@ -2436,7 +3405,7 @@ rules:
       key_code: g
       modifiers: *optional_shift
     to:
-    - key_code: b
+    - key_code: d
       repeat: true
     conditions: *base
 
@@ -2446,7 +3415,7 @@ rules:
       key_code: h
       modifiers: *optional_shift
     to:
-    - key_code: g
+    - key_code: h
       repeat: true
     conditions: *base
 
@@ -2456,7 +3425,7 @@ rules:
       key_code: j
       modifiers: *optional_shift
     to:
-    - key_code: s
+    - key_code: "n"
       repeat: true
     conditions: *base
 
@@ -2466,7 +3435,7 @@ rules:
       key_code: k
       modifiers: *optional_shift
     to:
-    - key_code: i
+    - key_code: e
       repeat: true
     conditions: *base
 
@@ -2476,7 +3445,7 @@ rules:
       key_code: l
       modifiers: *optional_shift
     to:
-    - key_code: t
+    - key_code: i
       repeat: true
     conditions: *base
 
@@ -2518,7 +3487,7 @@ rules:
       key_code: x
       modifiers: *optional_shift
     to:
-    - key_code: w
+    - key_code: x
       repeat: true
     conditions: *base
 
@@ -2528,7 +3497,7 @@ rules:
       key_code: c
       modifiers: *optional_shift
     to:
-    - key_code: period
+    - key_code: c
       repeat: true
     conditions: *base
 
@@ -2538,7 +3507,7 @@ rules:
       key_code: v
       modifiers: *optional_shift
     to:
-    - key_code: h
+    - key_code: v
       repeat: true
     conditions: *base
 
@@ -2546,332 +3515,9 @@ rules:
   - type: basic
     from:
       key_code: b
-      modifiers: *optional_shift
-    to:
-    - key_code: j
-      repeat: true
-    conditions: *base
-
-  # N
-  - type: basic
-    from:
-      key_code: "n"
-      modifiers: *optional_shift
-    to:
-    - key_code: v
-      repeat: true
-    conditions: *base
-
-  # M
-  - type: basic
-    from:
-      key_code: m
-      modifiers: *optional_shift
-    to:
-    - key_code: c
-      repeat: true
-    conditions: *base
-
-  # Comma
-  - type: basic
-    from:
-      key_code: comma
-      modifiers: *optional_shift
-    to:
-    - key_code: "y"
-      repeat: true
-    conditions: *base
-
-  # Period
-  - type: basic
-    from:
-      key_code: period
-      modifiers: *optional_shift
-    to:
-    - key_code: m
-      repeat: true
-    conditions: *base
-
-  # Slash
-  - type: basic
-    from:
-      key_code: slash
-      modifiers: *optional_shift
-    to:
-    - key_code: x
-      repeat: true
-    conditions: *base
-
-# }}}
-
-# Capewell 0.9.3 {{{
-
-- description: "[Keyboard Layout] Capewell 0.9.3"
-  manipulators:
-
-  # Upper Row ------------------------------------
-
-  # Q
-  - type: basic
-    from:
-      key_code: q
-      modifiers: *optional_shift
-    to:
-    - key_code: period
-      repeat: true
-    conditions: *base
-
-  # W
-  - type: basic
-    from:
-      key_code: w
-      modifiers: *optional_shift
-    to:
-    - key_code: "y"
-      repeat: true
-    conditions: *base
-
-  # E
-  - type: basic
-    from:
-      key_code: e
-      modifiers: *optional_shift
-    to:
-    - key_code: m
-      repeat: true
-    conditions: *base
-
-  # R
-  - type: basic
-    from:
-      key_code: r
-      modifiers: *optional_shift
-    to:
-    - key_code: d
-      repeat: true
-    conditions: *base
-
-  # T
-  - type: basic
-    from:
-      key_code: t
-      modifiers: *optional_shift
-    to:
-    - key_code: f
-      repeat: true
-    conditions: *base
-
-  # Y
-  - type: basic
-    from:
-      key_code: "y"
-      modifiers: *optional_shift
-    to:
-    - key_code: j
-      repeat: true
-    conditions: *base
-
-  # U
-  - type: basic
-    from:
-      key_code: u
-      modifiers: *optional_shift
-    to:
-    - key_code: p
-      repeat: true
-    conditions: *base
-
-  # I
-  - type: basic
-    from:
-      key_code: i
-      modifiers: *optional_shift
-    to:
-    - key_code: l
-      repeat: true
-    conditions: *base
-
-  # O
-  - type: basic
-    from:
-      key_code: o
-      modifiers: *optional_shift
-    to:
-    - key_code: u
-      repeat: true
-    conditions: *base
-
-  # P
-  - type: basic
-    from:
-      key_code: p
-      modifiers: *optional_shift
-    to:
-    - key_code: q
-      repeat: true
-    conditions: *base
-
-  # Home Row -------------------------------------
-
-  # A
-  - type: basic
-    from:
-      key_code: a
-      modifiers: *optional_shift
-    to:
-    - key_code: a
-      repeat: true
-    conditions: *base
-
-  # S
-  - type: basic
-    from:
-      key_code: s
-      modifiers: *optional_shift
-    to:
-    - key_code: e
-      repeat: true
-    conditions: *base
-
-  # D
-  - type: basic
-    from:
-      key_code: d
-      modifiers: *optional_shift
-    to:
-    - key_code: r
-      repeat: true
-    conditions: *base
-
-  # F
-  - type: basic
-    from:
-      key_code: f
-      modifiers: *optional_shift
-    to:
-    - key_code: s
-      repeat: true
-    conditions: *base
-
-  # G
-  - type: basic
-    from:
-      key_code: g
-      modifiers: *optional_shift
-    to:
-    - key_code: g
-      repeat: true
-    conditions: *base
-
-  # H
-  - type: basic
-    from:
-      key_code: h
       modifiers: *optional_shift
     to:
     - key_code: b
-      repeat: true
-    conditions: *base
-
-  # J
-  - type: basic
-    from:
-      key_code: j
-      modifiers: *optional_shift
-    to:
-    - key_code: t
-      repeat: true
-    conditions: *base
-
-  # K
-  - type: basic
-    from:
-      key_code: k
-      modifiers: *optional_shift
-    to:
-    - key_code: "n"
-      repeat: true
-    conditions: *base
-
-  # L
-  - type: basic
-    from:
-      key_code: l
-      modifiers: *optional_shift
-    to:
-    - key_code: i
-      repeat: true
-    conditions: *base
-
-  # Semicolon
-  - type: basic
-    from:
-      key_code: semicolon
-      modifiers: *optional_shift
-    to:
-    - key_code: o
-      repeat: true
-    conditions: *base
-
-  # Quote
-  - type: basic
-    from:
-      key_code: quote
-      modifiers: *optional_shift
-    to:
-    - key_code: slash
-      repeat: true
-    conditions: *base
-
-  # Lower Row ------------------------------------
-
-  # Z
-  - type: basic
-    from:
-      key_code: z
-      modifiers: *optional_shift
-    to:
-    - key_code: x
-      repeat: true
-    conditions: *base
-
-  # X
-  - type: basic
-    from:
-      key_code: x
-      modifiers: *optional_shift
-    to:
-    - key_code: z
-      repeat: true
-    conditions: *base
-
-  # C
-  - type: basic
-    from:
-      key_code: c
-      modifiers: *optional_shift
-    to:
-    - key_code: c
-      repeat: true
-    conditions: *base
-
-  # V
-  - type: basic
-    from:
-      key_code: v
-      modifiers: *optional_shift
-    to:
-    - key_code: v
-      repeat: true
-    conditions: *base
-
-  # B
-  - type: basic
-    from:
-      key_code: b
-      modifiers: *optional_shift
-    to:
-    - key_code: semicolon
       repeat: true
     conditions: *base
 
@@ -2891,7 +3537,7 @@ rules:
       key_code: m
       modifiers: *optional_shift
     to:
-    - key_code: w
+    - key_code: m
       repeat: true
     conditions: *base
 
@@ -2901,7 +3547,7 @@ rules:
       key_code: comma
       modifiers: *optional_shift
     to:
-    - key_code: h
+    - key_code: comma
       repeat: true
     conditions: *base
 
@@ -2911,7 +3557,7 @@ rules:
       key_code: period
       modifiers: *optional_shift
     to:
-    - key_code: comma
+    - key_code: period
       repeat: true
     conditions: *base
 
@@ -2921,7 +3567,7 @@ rules:
       key_code: slash
       modifiers: *optional_shift
     to:
-    - key_code: quote
+    - key_code: slash
       repeat: true
     conditions: *base
 
@@ -3250,9 +3896,332 @@ rules:
 
 # }}}
 
-# Colemak {{{
+# Capewell 0.9.3 {{{
 
-- description: "[Keyboard Layout] Colemak"
+- description: "[Keyboard Layout] Capewell 0.9.3"
+  manipulators:
+
+  # Upper Row ------------------------------------
+
+  # Q
+  - type: basic
+    from:
+      key_code: q
+      modifiers: *optional_shift
+    to:
+    - key_code: period
+      repeat: true
+    conditions: *base
+
+  # W
+  - type: basic
+    from:
+      key_code: w
+      modifiers: *optional_shift
+    to:
+    - key_code: "y"
+      repeat: true
+    conditions: *base
+
+  # E
+  - type: basic
+    from:
+      key_code: e
+      modifiers: *optional_shift
+    to:
+    - key_code: m
+      repeat: true
+    conditions: *base
+
+  # R
+  - type: basic
+    from:
+      key_code: r
+      modifiers: *optional_shift
+    to:
+    - key_code: d
+      repeat: true
+    conditions: *base
+
+  # T
+  - type: basic
+    from:
+      key_code: t
+      modifiers: *optional_shift
+    to:
+    - key_code: f
+      repeat: true
+    conditions: *base
+
+  # Y
+  - type: basic
+    from:
+      key_code: "y"
+      modifiers: *optional_shift
+    to:
+    - key_code: j
+      repeat: true
+    conditions: *base
+
+  # U
+  - type: basic
+    from:
+      key_code: u
+      modifiers: *optional_shift
+    to:
+    - key_code: p
+      repeat: true
+    conditions: *base
+
+  # I
+  - type: basic
+    from:
+      key_code: i
+      modifiers: *optional_shift
+    to:
+    - key_code: l
+      repeat: true
+    conditions: *base
+
+  # O
+  - type: basic
+    from:
+      key_code: o
+      modifiers: *optional_shift
+    to:
+    - key_code: u
+      repeat: true
+    conditions: *base
+
+  # P
+  - type: basic
+    from:
+      key_code: p
+      modifiers: *optional_shift
+    to:
+    - key_code: q
+      repeat: true
+    conditions: *base
+
+  # Home Row -------------------------------------
+
+  # A
+  - type: basic
+    from:
+      key_code: a
+      modifiers: *optional_shift
+    to:
+    - key_code: a
+      repeat: true
+    conditions: *base
+
+  # S
+  - type: basic
+    from:
+      key_code: s
+      modifiers: *optional_shift
+    to:
+    - key_code: e
+      repeat: true
+    conditions: *base
+
+  # D
+  - type: basic
+    from:
+      key_code: d
+      modifiers: *optional_shift
+    to:
+    - key_code: r
+      repeat: true
+    conditions: *base
+
+  # F
+  - type: basic
+    from:
+      key_code: f
+      modifiers: *optional_shift
+    to:
+    - key_code: s
+      repeat: true
+    conditions: *base
+
+  # G
+  - type: basic
+    from:
+      key_code: g
+      modifiers: *optional_shift
+    to:
+    - key_code: g
+      repeat: true
+    conditions: *base
+
+  # H
+  - type: basic
+    from:
+      key_code: h
+      modifiers: *optional_shift
+    to:
+    - key_code: b
+      repeat: true
+    conditions: *base
+
+  # J
+  - type: basic
+    from:
+      key_code: j
+      modifiers: *optional_shift
+    to:
+    - key_code: t
+      repeat: true
+    conditions: *base
+
+  # K
+  - type: basic
+    from:
+      key_code: k
+      modifiers: *optional_shift
+    to:
+    - key_code: "n"
+      repeat: true
+    conditions: *base
+
+  # L
+  - type: basic
+    from:
+      key_code: l
+      modifiers: *optional_shift
+    to:
+    - key_code: i
+      repeat: true
+    conditions: *base
+
+  # Semicolon
+  - type: basic
+    from:
+      key_code: semicolon
+      modifiers: *optional_shift
+    to:
+    - key_code: o
+      repeat: true
+    conditions: *base
+
+  # Quote
+  - type: basic
+    from:
+      key_code: quote
+      modifiers: *optional_shift
+    to:
+    - key_code: slash
+      repeat: true
+    conditions: *base
+
+  # Lower Row ------------------------------------
+
+  # Z
+  - type: basic
+    from:
+      key_code: z
+      modifiers: *optional_shift
+    to:
+    - key_code: x
+      repeat: true
+    conditions: *base
+
+  # X
+  - type: basic
+    from:
+      key_code: x
+      modifiers: *optional_shift
+    to:
+    - key_code: z
+      repeat: true
+    conditions: *base
+
+  # C
+  - type: basic
+    from:
+      key_code: c
+      modifiers: *optional_shift
+    to:
+    - key_code: c
+      repeat: true
+    conditions: *base
+
+  # V
+  - type: basic
+    from:
+      key_code: v
+      modifiers: *optional_shift
+    to:
+    - key_code: v
+      repeat: true
+    conditions: *base
+
+  # B
+  - type: basic
+    from:
+      key_code: b
+      modifiers: *optional_shift
+    to:
+    - key_code: semicolon
+      repeat: true
+    conditions: *base
+
+  # N
+  - type: basic
+    from:
+      key_code: "n"
+      modifiers: *optional_shift
+    to:
+    - key_code: k
+      repeat: true
+    conditions: *base
+
+  # M
+  - type: basic
+    from:
+      key_code: m
+      modifiers: *optional_shift
+    to:
+    - key_code: w
+      repeat: true
+    conditions: *base
+
+  # Comma
+  - type: basic
+    from:
+      key_code: comma
+      modifiers: *optional_shift
+    to:
+    - key_code: h
+      repeat: true
+    conditions: *base
+
+  # Period
+  - type: basic
+    from:
+      key_code: period
+      modifiers: *optional_shift
+    to:
+    - key_code: comma
+      repeat: true
+    conditions: *base
+
+  # Slash
+  - type: basic
+    from:
+      key_code: slash
+      modifiers: *optional_shift
+    to:
+    - key_code: quote
+      repeat: true
+    conditions: *base
+
+# }}}
+
+# Arensito {{{
+
+- description: "[Keyboard Layout] Arensito"
   manipulators:
 
   # Upper Row ------------------------------------
@@ -3273,7 +4242,7 @@ rules:
       key_code: w
       modifiers: *optional_shift
     to:
-    - key_code: w
+    - key_code: l
       repeat: true
     conditions: *base
 
@@ -3283,7 +4252,7 @@ rules:
       key_code: e
       modifiers: *optional_shift
     to:
-    - key_code: f
+    - key_code: comma
       repeat: true
     conditions: *base
 
@@ -3303,7 +4272,7 @@ rules:
       key_code: t
       modifiers: *optional_shift
     to:
-    - key_code: g
+    - key_code: semicolon
       repeat: true
     conditions: *base
 
@@ -3313,7 +4282,7 @@ rules:
       key_code: "y"
       modifiers: *optional_shift
     to:
-    - key_code: j
+    - key_code: slash
       repeat: true
     conditions: *base
 
@@ -3323,7 +4292,7 @@ rules:
       key_code: u
       modifiers: *optional_shift
     to:
-    - key_code: l
+    - key_code: f
       repeat: true
     conditions: *base
 
@@ -3343,7 +4312,7 @@ rules:
       key_code: o
       modifiers: *optional_shift
     to:
-    - key_code: "y"
+    - key_code: d
       repeat: true
     conditions: *base
 
@@ -3353,7 +4322,7 @@ rules:
       key_code: p
       modifiers: *optional_shift
     to:
-    - key_code: semicolon
+    - key_code: k
       repeat: true
     conditions: *base
 
@@ -3385,7 +4354,7 @@ rules:
       key_code: d
       modifiers: *optional_shift
     to:
-    - key_code: s
+    - key_code: e
       repeat: true
     conditions: *base
 
@@ -3395,7 +4364,7 @@ rules:
       key_code: f
       modifiers: *optional_shift
     to:
-    - key_code: t
+    - key_code: "n"
       repeat: true
     conditions: *base
 
@@ -3405,7 +4374,7 @@ rules:
       key_code: g
       modifiers: *optional_shift
     to:
-    - key_code: d
+    - key_code: b
       repeat: true
     conditions: *base
 
@@ -3415,7 +4384,7 @@ rules:
       key_code: h
       modifiers: *optional_shift
     to:
-    - key_code: h
+    - key_code: g
       repeat: true
     conditions: *base
 
@@ -3425,7 +4394,7 @@ rules:
       key_code: j
       modifiers: *optional_shift
     to:
-    - key_code: "n"
+    - key_code: s
       repeat: true
     conditions: *base
 
@@ -3435,7 +4404,7 @@ rules:
       key_code: k
       modifiers: *optional_shift
     to:
-    - key_code: e
+    - key_code: i
       repeat: true
     conditions: *base
 
@@ -3445,7 +4414,7 @@ rules:
       key_code: l
       modifiers: *optional_shift
     to:
-    - key_code: i
+    - key_code: t
       repeat: true
     conditions: *base
 
@@ -3487,7 +4456,7 @@ rules:
       key_code: x
       modifiers: *optional_shift
     to:
-    - key_code: x
+    - key_code: w
       repeat: true
     conditions: *base
 
@@ -3497,7 +4466,7 @@ rules:
       key_code: c
       modifiers: *optional_shift
     to:
-    - key_code: c
+    - key_code: period
       repeat: true
     conditions: *base
 
@@ -3507,7 +4476,7 @@ rules:
       key_code: v
       modifiers: *optional_shift
     to:
-    - key_code: v
+    - key_code: h
       repeat: true
     conditions: *base
 
@@ -3517,7 +4486,7 @@ rules:
       key_code: b
       modifiers: *optional_shift
     to:
-    - key_code: b
+    - key_code: j
       repeat: true
     conditions: *base
 
@@ -3527,7 +4496,7 @@ rules:
       key_code: "n"
       modifiers: *optional_shift
     to:
-    - key_code: k
+    - key_code: v
       repeat: true
     conditions: *base
 
@@ -3537,7 +4506,7 @@ rules:
       key_code: m
       modifiers: *optional_shift
     to:
-    - key_code: m
+    - key_code: c
       repeat: true
     conditions: *base
 
@@ -3547,7 +4516,7 @@ rules:
       key_code: comma
       modifiers: *optional_shift
     to:
-    - key_code: comma
+    - key_code: "y"
       repeat: true
     conditions: *base
 
@@ -3557,7 +4526,7 @@ rules:
       key_code: period
       modifiers: *optional_shift
     to:
-    - key_code: period
+    - key_code: m
       repeat: true
     conditions: *base
 
@@ -3567,8 +4536,9 @@ rules:
       key_code: slash
       modifiers: *optional_shift
     to:
-    - key_code: slash
+    - key_code: x
       repeat: true
     conditions: *base
 
 # }}}
+
