@@ -1,7 +1,7 @@
 title: "01. Apps"
 rules:
 
-# FINDER -----------------------------------------
+# Finder {{{
 
 - description: "[App] Finder"
   manipulators:
@@ -18,44 +18,48 @@ rules:
       bundle_identifiers:
       - "^com\\.apple\\.finder$"
 
-# ALACRITTY --------------------------------------
+# }}}
 
-- description: "[App] Alacritty"
-  manipulators:
+# Alacritty {{{
 
-  # [Alacritty] Command-W -> Invalid
-  - type: basic
-    from:
-      key_code: w
-      modifiers:
-        mandatory:
-        - command
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "^org\\.alacritty$"
+# - description: "[App] Alacritty"
+#   manipulators:
+#
+#   # [Alacritty] Command-W -> Invalid
+#   - type: basic
+#     from:
+#       key_code: w
+#       modifiers:
+#         mandatory:
+#         - command
+#     conditions:
+#     - type: frontmost_application_if
+#       bundle_identifiers:
+#       - "^org\\.alacritty$"
+#
+#   # [Alacritty] LCommand-Q (held down) -> Quit Alacritty
+#   # LCommand-Q 長押しでのみ終了
+#   - type: basic
+#     from:
+#       key_code: q
+#       modifiers:
+#         mandatory:
+#         - left_command
+#     to_if_held_down:
+#     - key_code: q
+#       modifiers:
+#       - command
+#       repeat: false
+#     parameters:
+#       basic.to_if_held_down_threshold_milliseconds: 500
+#     conditions:
+#     - type: frontmost_application_if
+#       bundle_identifiers:
+#       - "^org\\.alacritty$"
 
-  # [Alacritty] LCommand-Q (held down) -> Quit Alacritty
-  # LCommand-Q 長押しでのみ終了
-  - type: basic
-    from:
-      key_code: q
-      modifiers:
-        mandatory:
-        - left_command
-    to_if_held_down:
-    - key_code: q
-      modifiers:
-      - command
-      repeat: false
-    parameters:
-      basic.to_if_held_down_threshold_milliseconds: 500
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "^org\\.alacritty$"
+# }}}
 
-# MACVIM -----------------------------------------
+# Macvim {{{
 
 # - description: "[App] MacVim"
 #   manipulators:
@@ -92,19 +96,40 @@ rules:
 #       bundle_identifiers:
 #       - "^org\\.vim\\.MacVim$"
 
-# SLACK ------------------------------------------
+# }}}
+
+# Slack {{{
 
 - description: "[App] Slack"
   manipulators:
 
-  # [Slack] RCommand-K -> Command-K, Eisuu
-  # RCommand-K 後に英語入力にする (LCommand-K -> Up との競合回避)
+  # # [Slack] RCommand-K -> Command-K, Eisuu
+  # # RCommand-K 後に英語入力にする (LCommand-K -> Up との競合回避)
+  # - type: basic
+  #   from:
+  #     key_code: k
+  #     modifiers:
+  #       mandatory:
+  #       - right_command
+  #   to:
+  #   - key_code: k
+  #     modifiers:
+  #     - command
+  #   - key_code: japanese_eisuu
+  #     repeat: false
+  #   conditions:
+  #   - type: frontmost_application_if
+  #     bundle_identifiers:
+  #     - "^com\\.tinyspeck\\.slackmacgap$"
+
+  # [Slack] LCommand-LOption-K -> Command-K, Eisuu
   - type: basic
     from:
       key_code: k
       modifiers:
         mandatory:
-        - right_command
+        - left_command
+        - left_option
     to:
     - key_code: k
       modifiers:
@@ -231,19 +256,40 @@ rules:
       bundle_identifiers:
       - "^com\\.tinyspeck\\.slackmacgap$"
 
-# SUPERHUMAN -------------------------------------
+# }}}
+
+# Superhuman {{{
 
 - description: "[App] Superhuman"
   manipulators:
 
-  # [Superhuman] RCommand-K -> Command-K, Eisuu
-  # RCommand-K 後に英語入力にする (LCommand-K -> Up との競合回避)
+  # # [Superhuman] RCommand-K -> Command-K, Eisuu
+  # # RCommand-K 後に英語入力にする (LCommand-K -> Up との競合回避)
+  # - type: basic
+  #   from:
+  #     key_code: k
+  #     modifiers:
+  #       mandatory:
+  #       - right_command
+  #   to:
+  #   - key_code: k
+  #     modifiers:
+  #     - command
+  #   - key_code: japanese_eisuu
+  #     repeat: false
+  #   conditions:
+  #   - type: frontmost_application_if
+  #     bundle_identifiers:
+  #     - "^com\\.superhuman\\.electron$"
+
+  # [Superhuman] LCommand-LOption-K -> Command-K, Eisuu
   - type: basic
     from:
       key_code: k
       modifiers:
         mandatory:
-        - right_command
+        - left_command
+        - left_option
     to:
     - key_code: k
       modifiers:
@@ -273,19 +319,40 @@ rules:
       bundle_identifiers:
       - "^com\\.superhuman\\.electron$"
 
-# LINEAR -----------------------------------------
+# }}}
+
+# Linear {{{
 
 - description: "[App] Linear"
   manipulators:
 
-  # [Linear] RCommand-K -> Command-K, Eisuu
-  # RCommand-K 後に英語入力にする (LCommand-K -> Up との競合回避)
+  # # [Linear] RCommand-K -> Command-K, Eisuu
+  # # RCommand-K 後に英語入力にする (LCommand-K -> Up との競合回避)
+  # - type: basic
+  #   from:
+  #     key_code: k
+  #     modifiers:
+  #       mandatory:
+  #       - right_command
+  #   to:
+  #   - key_code: k
+  #     modifiers:
+  #     - command
+  #   - key_code: japanese_eisuu
+  #     repeat: false
+  #   conditions:
+  #   - type: frontmost_application_if
+  #     bundle_identifiers:
+  #     - "^com\\.linear$"
+
+  # [Linear] LCommand-LOption-K -> Command-K, Eisuu
   - type: basic
     from:
       key_code: k
       modifiers:
         mandatory:
-        - right_command
+        - left_command
+        - left_option
     to:
     - key_code: k
       modifiers:
@@ -348,130 +415,136 @@ rules:
       bundle_identifiers:
       - "^com\\.linear$"
 
-# GOOGLE CHROME ----------------------------------
+# }}}
 
-- description: "[App] Google Chrome"
-  manipulators:
+# Google Chrome {{{
 
-  # [Chrome] LShift-LCommand-F -> Shift-Command-H
-  # スプレッドシートでの検索・置換
-  - type: basic
-    from:
-      key_code: f
-      modifiers:
-        mandatory:
-        - left_shift
-        - left_command
-    to:
-    - key_code: h
-      modifiers:
-      - shift
-      - command
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "^com\\.google\\.Chrome$"
+# - description: "[App] Google Chrome"
+#   manipulators:
+#
+#   # [Chrome] LShift-LCommand-F -> Shift-Command-H
+#   # スプレッドシートでの検索・置換
+#   - type: basic
+#     from:
+#       key_code: f
+#       modifiers:
+#         mandatory:
+#         - left_shift
+#         - left_command
+#     to:
+#     - key_code: h
+#       modifiers:
+#       - shift
+#       - command
+#       repeat: false
+#     conditions:
+#     - type: frontmost_application_if
+#       bundle_identifiers:
+#       - "^com\\.google\\.Chrome$"
+#
+#   # [Chrome] LCommand-W -> Repeat: False
+#   - type: basic
+#     from:
+#       key_code: w
+#       modifiers:
+#         mandatory:
+#         - left_command
+#     to:
+#     - key_code: w
+#       modifiers:
+#       - command
+#       repeat: false
+#     conditions:
+#     - type: frontmost_application_if
+#       bundle_identifiers:
+#       - "^com\\.google\\.Chrome$"
 
-  # [Chrome] LCommand-W -> Repeat: False
-  - type: basic
-    from:
-      key_code: w
-      modifiers:
-        mandatory:
-        - left_command
-    to:
-    - key_code: w
-      modifiers:
-      - command
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "^com\\.google\\.Chrome$"
+# }}}
 
-# SIDEKICK ---------------------------------------
+# Sidekick {{{
 
-- description: "[App] Sidekick"
-  manipulators:
+# - description: "[App] Sidekick"
+#   manipulators:
+#
+#   # [Sidekick] LShift-LCommand-F -> Shift-Command-H
+#   # スプレッドシートでの検索・置換
+#   - type: basic
+#     from:
+#       key_code: f
+#       modifiers:
+#         mandatory:
+#         - left_shift
+#         - left_command
+#     to:
+#     - key_code: h
+#       modifiers:
+#       - shift
+#       - command
+#       repeat: false
+#     conditions:
+#     - type: frontmost_application_if
+#       bundle_identifiers:
+#       - "^com\\.pushplaylabs\\.sidekick$"
+#
+#   # [Sidekick] LCommand-W -> Repeat: False
+#   - type: basic
+#     from:
+#       key_code: w
+#       modifiers:
+#         mandatory:
+#         - left_command
+#     to:
+#     - key_code: w
+#       modifiers:
+#       - command
+#       repeat: false
+#     conditions:
+#     - type: frontmost_application_if
+#       bundle_identifiers:
+#       - "^com\\.pushplaylabs\\.sidekick$"
+#
+#   # [Sidekick] LShift-LCommand-A -> Command-S
+#   # セッション一覧を開く (Sidekick でのショートカット変更が必要)
+#   - type: basic
+#     from:
+#       key_code: a
+#       modifiers:
+#         mandatory:
+#         - left_shift
+#         - left_command
+#     to:
+#     - key_code: s
+#       modifiers:
+#       - command
+#       repeat: false
+#     conditions:
+#     - type: frontmost_application_if
+#       bundle_identifiers:
+#       - "^com\\.pushplaylabs\\.sidekick$"
+#
+#   # [Sidekick] LShift-LCommand-S -> Shift-Option-S
+#   # サイドカーを表示／非表示
+#   - type: basic
+#     from:
+#       key_code: s
+#       modifiers:
+#         mandatory:
+#         - left_shift
+#         - left_command
+#     to:
+#     - key_code: s
+#       modifiers:
+#       - shift
+#       - option
+#       repeat: false
+#     conditions:
+#     - type: frontmost_application_if
+#       bundle_identifiers:
+#       - "^com\\.pushplaylabs\\.sidekick$"
 
-  # [Sidekick] LShift-LCommand-F -> Shift-Command-H
-  # スプレッドシートでの検索・置換
-  - type: basic
-    from:
-      key_code: f
-      modifiers:
-        mandatory:
-        - left_shift
-        - left_command
-    to:
-    - key_code: h
-      modifiers:
-      - shift
-      - command
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "^com\\.pushplaylabs\\.sidekick$"
+# }}}
 
-  # [Sidekick] LCommand-W -> Repeat: False
-  - type: basic
-    from:
-      key_code: w
-      modifiers:
-        mandatory:
-        - left_command
-    to:
-    - key_code: w
-      modifiers:
-      - command
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "^com\\.pushplaylabs\\.sidekick$"
-
-  # [Sidekick] LShift-LCommand-A -> Command-S
-  # セッション一覧を開く (Sidekick でのショートカット変更が必要)
-  - type: basic
-    from:
-      key_code: a
-      modifiers:
-        mandatory:
-        - left_shift
-        - left_command
-    to:
-    - key_code: s
-      modifiers:
-      - command
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "^com\\.pushplaylabs\\.sidekick$"
-
-  # [Sidekick] LShift-LCommand-S -> Shift-Option-S
-  # サイドカーを表示／非表示
-  - type: basic
-    from:
-      key_code: s
-      modifiers:
-        mandatory:
-        - left_shift
-        - left_command
-    to:
-    - key_code: s
-      modifiers:
-      - shift
-      - option
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "^com\\.pushplaylabs\\.sidekick$"
-
-# ARC --------------------------------------------
+# Arc {{{
 
 - description: "[App] Arc"
   manipulators:
@@ -531,31 +604,35 @@ rules:
       bundle_identifiers:
       - "^company\\.thebrowser\\.Browser$"
 
-# SAFARI -----------------------------------------
+# }}}
 
-- description: "[App] Safari"
-  manipulators:
+# Safari {{{
 
-  # [Safari] LCommand-S -> Shift-Command-L
-  # サイドバーを表示／非表示
-  - type: basic
-    from:
-      key_code: s
-      modifiers:
-        mandatory:
-        - left_command
-    to:
-    - key_code: l
-      modifiers:
-      - shift
-      - command
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "^com\\.apple\\.Safari$"
+# - description: "[App] Safari"
+#   manipulators:
+#
+#   # [Safari] LCommand-S -> Shift-Command-L
+#   # サイドバーを表示／非表示
+#   - type: basic
+#     from:
+#       key_code: s
+#       modifiers:
+#         mandatory:
+#         - left_command
+#     to:
+#     - key_code: l
+#       modifiers:
+#       - shift
+#       - command
+#       repeat: false
+#     conditions:
+#     - type: frontmost_application_if
+#       bundle_identifiers:
+#       - "^com\\.apple\\.Safari$"
 
-# NOTION -----------------------------------------
+# }}}
+
+# Notion {{{
 
 - description: "[App] Notion"
   manipulators:
@@ -686,7 +763,9 @@ rules:
       bundle_identifiers:
       - "^notion\\.id$"
 
-# BIKE -------------------------------------------
+# }}}
+
+# Bike {{{
 
 - description: "[App] Bike"
   manipulators:
@@ -1135,14 +1214,13 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
-  # [Bike] L/RCommand-E -> Command-E, Eisuu
-  # L/RCommand-E 後に英語入力にする
+  # [Bike] LCommand-E -> Command-E, Eisuu
   - type: basic
     from:
       key_code: e
       modifiers:
         mandatory:
-        - command
+        - left_command
     to:
     - key_code: e
       modifiers:
@@ -1154,7 +1232,9 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
-# WORKFLOWY --------------------------------------
+# }}}
+
+# Workflowy {{{
 
 - description: "[App] Workflowy"
   manipulators:
@@ -1386,7 +1466,9 @@ rules:
       bundle_identifiers:
       - "^com\\.workflowy\\.desktop$"
 
-# MICROSOFT OFFICE -------------------------------
+# }}}
+
+# Microsoft Office {{{
 
 - description: "[App] Microsoft Office"
   manipulators:
@@ -1627,3 +1709,5 @@ rules:
     - type: frontmost_application_if
       bundle_identifiers:
       - "^com\\.microsoft\\.Powerpoint$"
+
+# }}}
