@@ -1,7 +1,7 @@
-title: "04. Symbol Layer"
+title: "04. Symbols Layer"
 rules:
 
-- description: "[Symbol] RCommand-Key → Symbol"
+- description: "[Symbols] RCommand-Key → Symbol"
   manipulators:
 
 # Upper Row --------------------------------------
@@ -252,7 +252,7 @@ rules:
       modifiers:
       - shift
 
-  # Semicolon -> ;
+  # Semicolon -> :
   - type: basic
     from:
       key_code: semicolon
@@ -261,6 +261,8 @@ rules:
         - right_command
     to:
     - key_code: semicolon
+      modifiers:
+      - shift
 
   # Quote -> '
   - type: basic
