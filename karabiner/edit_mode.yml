@@ -14,18 +14,13 @@ aliases:
     input_sources:
     - language: ja
 
-- conditions: &edit_left
+- conditions: &edit
   - type: variable_if
-    name: edit_left
-    value: 1
-
-- conditions: &edit_right
-  - type: variable_if
-    name: edit_right
+    name: edit
     value: 1
 
 - parameters: &thresh_ms
-    basic.simultaneous_threshold_milliseconds: 20
+    basic.simultaneous_threshold_milliseconds: 50
 
 # RULES ==========================================
 
@@ -48,11 +43,11 @@ rules:
         key_down_order: strict
         to_after_key_up:
         - set_variable:
-            name: edit_left
+            name: edit
             value: 0
     to:
     - set_variable:
-        name: edit_left
+        name: edit
         value: 1
     to_if_alone:
     - key_code: d
@@ -69,11 +64,11 @@ rules:
       simultaneous_options:
         to_after_key_up:
         - set_variable:
-            name: edit_left
+            name: edit
             value: 0
     to:
     - set_variable:
-        name: edit_left
+        name: edit
         value: 1
     to_if_alone:
     - key_code: f
@@ -91,11 +86,11 @@ rules:
         key_down_order: strict
         to_after_key_up:
         - set_variable:
-            name: edit_right
+            name: edit
             value: 0
     to:
     - set_variable:
-        name: edit_right
+        name: edit
         value: 1
     to_if_alone:
     - key_code: j
@@ -112,11 +107,11 @@ rules:
       simultaneous_options:
         to_after_key_up:
         - set_variable:
-            name: edit_right
+            name: edit
             value: 0
     to:
     - set_variable:
-        name: edit_right
+        name: edit
         value: 1
     to_if_alone:
     - key_code: k
@@ -136,11 +131,11 @@ rules:
         key_down_order: strict
         to_after_key_up:
         - set_variable:
-            name: edit_left
+            name: edit
             value: 0
     to:
     - set_variable:
-        name: edit_left
+        name: edit
         value: 1
     to_if_alone:
     - key_code: k
@@ -159,11 +154,11 @@ rules:
       simultaneous_options:
         to_after_key_up:
         - set_variable:
-            name: edit_left
+            name: edit
             value: 0
     to:
     - set_variable:
-        name: edit_left
+        name: edit
         value: 1
     to_if_alone:
     - key_code: "n"
@@ -183,11 +178,11 @@ rules:
         key_down_order: strict
         to_after_key_up:
         - set_variable:
-            name: edit_right
+            name: edit
             value: 0
     to:
     - set_variable:
-        name: edit_right
+        name: edit
         value: 1
     to_if_alone:
     - key_code: u
@@ -204,11 +199,11 @@ rules:
       simultaneous_options:
         to_after_key_up:
         - set_variable:
-            name: edit_right
+            name: edit
             value: 0
     to:
     - set_variable:
-        name: edit_right
+        name: edit
         value: 1
     to_if_alone:
     - key_code: i
@@ -221,7 +216,7 @@ rules:
 - description: "[Edit Mode] Mapping"
   manipulators:
 
-  # Right Keys (for Left Edit Mode Key) ----------
+  # Right Keys -----------------------------------
 
   # Y -> Option-Delete
   - type: basic
@@ -232,13 +227,13 @@ rules:
       modifiers:
       - option
       repeat: false
-    conditions: *edit_left
+    conditions: *edit
 
   # U -> Invalid
   - type: basic
     from:
       key_code: u
-    conditions: *edit_left
+    conditions: *edit
 
   # I -> Command-[
   - type: basic
@@ -249,7 +244,7 @@ rules:
       modifiers:
       - command
       repeat: false
-    conditions: *edit_left
+    conditions: *edit
 
   # O -> Command-]
   - type: basic
@@ -260,13 +255,13 @@ rules:
       modifiers:
       - command
       repeat: false
-    conditions: *edit_left
+    conditions: *edit
 
   # P -> Invalid
   - type: basic
     from:
       key_code: p
-    conditions: *edit_left
+    conditions: *edit
 
   # H -> Left
   - type: basic
@@ -278,7 +273,7 @@ rules:
     to:
     - key_code: left_arrow
       repeat: true
-    conditions: *edit_left
+    conditions: *edit
 
   # J -> Down
   - type: basic
@@ -290,7 +285,7 @@ rules:
     to:
     - key_code: down_arrow
       repeat: true
-    conditions: *edit_left
+    conditions: *edit
 
   # K -> Up
   - type: basic
@@ -302,7 +297,7 @@ rules:
     to:
     - key_code: up_arrow
       repeat: true
-    conditions: *edit_left
+    conditions: *edit
 
   # L -> Right
   - type: basic
@@ -314,19 +309,19 @@ rules:
     to:
     - key_code: right_arrow
       repeat: true
-    conditions: *edit_left
+    conditions: *edit
 
-  # Semi Colon -> Invalid
+  # Semicolon -> Invalid
   - type: basic
     from:
       key_code: semicolon
-    conditions: *edit_left
+    conditions: *edit
 
   # Quote -> Invalid
   - type: basic
     from:
       key_code: quote
-    conditions: *edit_left
+    conditions: *edit
 
   # N -> Delete
   - type: basic
@@ -335,7 +330,7 @@ rules:
     to:
     - key_code: delete_or_backspace
       repeat: true
-    conditions: *edit_left
+    conditions: *edit
 
   # M -> Delete Forward
   - type: basic
@@ -344,7 +339,7 @@ rules:
     to:
     - key_code: delete_forward
       repeat: true
-    conditions: *edit_left
+    conditions: *edit
 
   # Comma -> Control-A
   - type: basic
@@ -355,7 +350,7 @@ rules:
       modifiers:
       - control
       repeat: false
-    conditions: *edit_left
+    conditions: *edit
 
   # Period -> Control-E
   - type: basic
@@ -366,22 +361,13 @@ rules:
       modifiers:
       - control
       repeat: false
-    conditions: *edit_left
+    conditions: *edit
 
   # Slash -> Invalid
   - type: basic
     from:
       key_code: slash
-    conditions: *edit_left
-
-  # Space -> Return
-  - type: basic
-    from:
-      key_code: spacebar
-    to:
-    - key_code: return_or_enter
-      repeat: false
-    conditions: *edit_left
+    conditions: *edit
 
   # Return -> Maximize Window (Control-Option-Return)
   - type: basic
@@ -393,7 +379,7 @@ rules:
       - control
       - option
       repeat: false
-    conditions: *edit_left
+    conditions: *edit
 
   # Delete -> Restore Window (Control-Option-Delete)
   - type: basic
@@ -405,7 +391,7 @@ rules:
       - control
       - option
       repeat: false
-    conditions: *edit_left
+    conditions: *edit
 
   # Backslash -> Center Window (Control-Option-C)
   - type: basic
@@ -417,27 +403,27 @@ rules:
       - control
       - option
       repeat: false
-    conditions: *edit_left
+    conditions: *edit
 
-  # Left Keys (for Right Edit Mode Key) ----------
+  # Left Keys ------------------------------------
 
   # Q -> Invalid
   - type: basic
     from:
       key_code: q
-    conditions: *edit_right
+    conditions: *edit
 
   # W -> Invalid
   - type: basic
     from:
       key_code: w
-    conditions: *edit_right
+    conditions: *edit
 
   # E -> Invalid
   - type: basic
     from:
       key_code: e
-    conditions: *edit_right
+    conditions: *edit
 
   # R -> Center Window (Shift-Control-Option-C)
   - type: basic
@@ -450,7 +436,7 @@ rules:
       - control
       - option
       repeat: false
-    conditions: *edit_right
+    conditions: *edit
 
   # T -> Shift-Command-T
   - type: basic
@@ -462,7 +448,7 @@ rules:
       - shift
       - command
       repeat: false
-    conditions: *edit_right
+    conditions: *edit
 
   # A -> Left Half Window (Control-Option-Left)
   - type: basic
@@ -474,7 +460,7 @@ rules:
       - control
       - option
       repeat: false
-    conditions: *edit_right
+    conditions: *edit
 
   # S -> Left 1/3 Window (Control-Option-D)
   - type: basic
@@ -486,7 +472,7 @@ rules:
       - control
       - option
       repeat: false
-    conditions: *edit_right
+    conditions: *edit
 
   # D -> Right 1/3 Window (Control-Option-G)
   - type: basic
@@ -498,7 +484,7 @@ rules:
       - control
       - option
       repeat: false
-    conditions: *edit_right
+    conditions: *edit
 
   # F -> Right Half Window (Control-Option-Right)
   - type: basic
@@ -510,13 +496,13 @@ rules:
       - control
       - option
       repeat: false
-    conditions: *edit_right
+    conditions: *edit
 
   # G -> Invalid
   - type: basic
     from:
       key_code: g
-    conditions: *edit_right
+    conditions: *edit
 
   # Z -> Left Quarter Window (Control-Option-Z)
   - type: basic
@@ -528,7 +514,7 @@ rules:
       - control
       - option
       repeat: false
-    conditions: *edit_right
+    conditions: *edit
 
   # X -> Left 3/4 Window (Control-Option-X)
   - type: basic
@@ -540,7 +526,7 @@ rules:
       - control
       - option
       repeat: false
-    conditions: *edit_right
+    conditions: *edit
 
   # C -> Right 3/4 Window (Control-Option-V)
   - type: basic
@@ -552,7 +538,7 @@ rules:
       - control
       - option
       repeat: false
-    conditions: *edit_right
+    conditions: *edit
 
   # V -> Right Quarter Window (Control-Option-B)
   - type: basic
@@ -564,13 +550,15 @@ rules:
       - control
       - option
       repeat: false
-    conditions: *edit_right
+    conditions: *edit
 
   # B -> Invalid
   - type: basic
     from:
       key_code: b
-    conditions: *edit_right
+    conditions: *edit
+
+  # Other Keys -----------------------------------
 
   # Space -> Return
   - type: basic
@@ -579,4 +567,4 @@ rules:
     to:
     - key_code: return_or_enter
       repeat: false
-    conditions: *edit_right
+    conditions: *edit
