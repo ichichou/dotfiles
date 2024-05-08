@@ -387,3 +387,4 @@ rules:
         - right_command
     to:
     - key_code: spacebar
+      repeat: false

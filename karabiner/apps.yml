@@ -1,103 +1,6 @@
 title: "01. Apps"
 rules:
 
-# Finder {{{
-
-- description: "[App] Finder"
-  manipulators:
-
-  # [Finder] Command-P -> Invalid
-  - type: basic
-    from:
-      key_code: p
-      modifiers:
-        mandatory:
-        - command
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "^com\\.apple\\.finder$"
-
-# }}}
-
-# Alacritty {{{
-
-# - description: "[App] Alacritty"
-#   manipulators:
-#
-#   # [Alacritty] Command-W -> Invalid
-#   - type: basic
-#     from:
-#       key_code: w
-#       modifiers:
-#         mandatory:
-#         - command
-#     conditions:
-#     - type: frontmost_application_if
-#       bundle_identifiers:
-#       - "^org\\.alacritty$"
-#
-#   # [Alacritty] LCommand-Q (held down) -> Quit Alacritty
-#   # LCommand-Q 長押しでのみ終了
-#   - type: basic
-#     from:
-#       key_code: q
-#       modifiers:
-#         mandatory:
-#         - left_command
-#     to_if_held_down:
-#     - key_code: q
-#       modifiers:
-#       - command
-#       repeat: false
-#     parameters:
-#       basic.to_if_held_down_threshold_milliseconds: 500
-#     conditions:
-#     - type: frontmost_application_if
-#       bundle_identifiers:
-#       - "^org\\.alacritty$"
-
-# }}}
-
-# Macvim {{{
-
-# - description: "[App] MacVim"
-#   manipulators:
-#
-#   # [MacVim] Command-W -> Invalid
-#   - type: basic
-#     from:
-#       key_code: w
-#       modifiers:
-#         mandatory:
-#         - command
-#     conditions:
-#     - type: frontmost_application_if
-#       bundle_identifiers:
-#       - "^org\\.vim\\.MacVim$"
-#
-#   # [MacVim] LCommand-Q (held down) -> Quit MacVim
-#   # LCommand-Q 長押しでのみ終了
-#   - type: basic
-#     from:
-#       key_code: q
-#       modifiers:
-#         mandatory:
-#         - left_command
-#     to_if_held_down:
-#     - key_code: q
-#       modifiers:
-#       - command
-#       repeat: false
-#     parameters:
-#       basic.to_if_held_down_threshold_milliseconds: 500
-#     conditions:
-#     - type: frontmost_application_if
-#       bundle_identifiers:
-#       - "^org\\.vim\\.MacVim$"
-
-# }}}
-
 # Slack {{{
 
 - description: "[App] Slack"
@@ -122,29 +25,10 @@ rules:
   #     bundle_identifiers:
   #     - "^com\\.tinyspeck\\.slackmacgap$"
 
-  # [Slack] LCommand-LOption-K -> Command-K, Eisuu
+  # [Slack] RControl-Semicolon -> Command-K, Eisuu
   - type: basic
     from:
-      key_code: k
-      modifiers:
-        mandatory:
-        - left_command
-        - left_option
-    to:
-    - key_code: k
-      modifiers:
-      - command
-    - key_code: japanese_eisuu
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "^com\\.tinyspeck\\.slackmacgap$"
-
-  # [Slack] RControl-Slash -> Command-K, Eisuu
-  - type: basic
-    from:
-      key_code: slash
+      key_code: semicolon
       modifiers:
         mandatory:
         - right_control
@@ -282,29 +166,10 @@ rules:
   #     bundle_identifiers:
   #     - "^com\\.superhuman\\.electron$"
 
-  # [Superhuman] LCommand-LOption-K -> Command-K, Eisuu
+  # [Superhuman] RControl-Semicolon -> Command-K, Eisuu
   - type: basic
     from:
-      key_code: k
-      modifiers:
-        mandatory:
-        - left_command
-        - left_option
-    to:
-    - key_code: k
-      modifiers:
-      - command
-    - key_code: japanese_eisuu
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "^com\\.superhuman\\.electron$"
-
-  # [Superhuman] RControl-Slash -> Command-K, Eisuu
-  - type: basic
-    from:
-      key_code: slash
+      key_code: semicolon
       modifiers:
         mandatory:
         - right_control
@@ -345,29 +210,10 @@ rules:
   #     bundle_identifiers:
   #     - "^com\\.linear$"
 
-  # [Linear] LCommand-LOption-K -> Command-K, Eisuu
+  # [Linear] RControl-Semicolon -> Command-K, Eisuu
   - type: basic
     from:
-      key_code: k
-      modifiers:
-        mandatory:
-        - left_command
-        - left_option
-    to:
-    - key_code: k
-      modifiers:
-      - command
-    - key_code: japanese_eisuu
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "^com\\.linear$"
-
-  # [Linear] RControl-Slash -> Command-K, Eisuu
-  - type: basic
-    from:
-      key_code: slash
+      key_code: semicolon
       modifiers:
         mandatory:
         - right_control
@@ -417,360 +263,16 @@ rules:
 
 # }}}
 
-# Google Chrome {{{
-
-# - description: "[App] Google Chrome"
-#   manipulators:
-#
-#   # [Chrome] LShift-LCommand-F -> Shift-Command-H
-#   # スプレッドシートでの検索・置換
-#   - type: basic
-#     from:
-#       key_code: f
-#       modifiers:
-#         mandatory:
-#         - left_shift
-#         - left_command
-#     to:
-#     - key_code: h
-#       modifiers:
-#       - shift
-#       - command
-#       repeat: false
-#     conditions:
-#     - type: frontmost_application_if
-#       bundle_identifiers:
-#       - "^com\\.google\\.Chrome$"
-#
-#   # [Chrome] LCommand-W -> Repeat: False
-#   - type: basic
-#     from:
-#       key_code: w
-#       modifiers:
-#         mandatory:
-#         - left_command
-#     to:
-#     - key_code: w
-#       modifiers:
-#       - command
-#       repeat: false
-#     conditions:
-#     - type: frontmost_application_if
-#       bundle_identifiers:
-#       - "^com\\.google\\.Chrome$"
-
-# }}}
-
-# Sidekick {{{
-
-# - description: "[App] Sidekick"
-#   manipulators:
-#
-#   # [Sidekick] LShift-LCommand-F -> Shift-Command-H
-#   # スプレッドシートでの検索・置換
-#   - type: basic
-#     from:
-#       key_code: f
-#       modifiers:
-#         mandatory:
-#         - left_shift
-#         - left_command
-#     to:
-#     - key_code: h
-#       modifiers:
-#       - shift
-#       - command
-#       repeat: false
-#     conditions:
-#     - type: frontmost_application_if
-#       bundle_identifiers:
-#       - "^com\\.pushplaylabs\\.sidekick$"
-#
-#   # [Sidekick] LCommand-W -> Repeat: False
-#   - type: basic
-#     from:
-#       key_code: w
-#       modifiers:
-#         mandatory:
-#         - left_command
-#     to:
-#     - key_code: w
-#       modifiers:
-#       - command
-#       repeat: false
-#     conditions:
-#     - type: frontmost_application_if
-#       bundle_identifiers:
-#       - "^com\\.pushplaylabs\\.sidekick$"
-#
-#   # [Sidekick] LShift-LCommand-A -> Command-S
-#   # セッション一覧を開く (Sidekick でのショートカット変更が必要)
-#   - type: basic
-#     from:
-#       key_code: a
-#       modifiers:
-#         mandatory:
-#         - left_shift
-#         - left_command
-#     to:
-#     - key_code: s
-#       modifiers:
-#       - command
-#       repeat: false
-#     conditions:
-#     - type: frontmost_application_if
-#       bundle_identifiers:
-#       - "^com\\.pushplaylabs\\.sidekick$"
-#
-#   # [Sidekick] LShift-LCommand-S -> Shift-Option-S
-#   # サイドカーを表示／非表示
-#   - type: basic
-#     from:
-#       key_code: s
-#       modifiers:
-#         mandatory:
-#         - left_shift
-#         - left_command
-#     to:
-#     - key_code: s
-#       modifiers:
-#       - shift
-#       - option
-#       repeat: false
-#     conditions:
-#     - type: frontmost_application_if
-#       bundle_identifiers:
-#       - "^com\\.pushplaylabs\\.sidekick$"
-
-# }}}
-
-# Arc {{{
-
-- description: "[App] Arc"
-  manipulators:
-
-  # [Arc] LShift-LCommand-F -> Shift-Command-H
-  # スプレッドシートでの検索・置換
-  - type: basic
-    from:
-      key_code: f
-      modifiers:
-        mandatory:
-        - left_shift
-        - left_command
-    to:
-    - key_code: h
-      modifiers:
-      - shift
-      - command
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "^company\\.thebrowser\\.Browser$"
-
-  # [Arc] LCommand-W -> Repeat: False
-  - type: basic
-    from:
-      key_code: w
-      modifiers:
-        mandatory:
-        - left_command
-    to:
-    - key_code: w
-      modifiers:
-      - command
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "^company\\.thebrowser\\.Browser$"
-
-  # [Arc] Command-T -> Command-T, Eisuu
-  - type: basic
-    from:
-      key_code: t
-      modifiers:
-        mandatory:
-        - command
-    to:
-    - key_code: t
-      modifiers:
-      - command
-    - key_code: japanese_eisuu
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "^company\\.thebrowser\\.Browser$"
-
-# }}}
-
-# Safari {{{
-
-# - description: "[App] Safari"
-#   manipulators:
-#
-#   # [Safari] LCommand-S -> Shift-Command-L
-#   # サイドバーを表示／非表示
-#   - type: basic
-#     from:
-#       key_code: s
-#       modifiers:
-#         mandatory:
-#         - left_command
-#     to:
-#     - key_code: l
-#       modifiers:
-#       - shift
-#       - command
-#       repeat: false
-#     conditions:
-#     - type: frontmost_application_if
-#       bundle_identifiers:
-#       - "^com\\.apple\\.Safari$"
-
-# }}}
-
-# Notion {{{
-
-- description: "[App] Notion"
-  manipulators:
-
-  # [Notion] Control-Up -> Move Block Up
-  - type: basic
-    from:
-      key_code: up_arrow
-      modifiers:
-        mandatory:
-        - control
-    to:
-    - key_code: up_arrow
-      modifiers:
-      - shift
-      - command
-      repeat: true
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "^notion\\.id$"
-
-  # [Notion] Control-Down -> Move Block Down
-  - type: basic
-    from:
-      key_code: down_arrow
-      modifiers:
-        mandatory:
-        - control
-    to:
-    - key_code: down_arrow
-      modifiers:
-      - shift
-      - command
-      repeat: true
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "^notion\\.id$"
-
-  # [Notion] Control-LCommand-K -> Move Block Up
-  - type: basic
-    from:
-      key_code: k
-      modifiers:
-        mandatory:
-        - control
-        - left_command
-    to:
-    - key_code: up_arrow
-      modifiers:
-      - shift
-      - command
-      repeat: true
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "^notion\\.id$"
-
-  # [Notion] Control-LCommand-J -> Move Block Down
-  - type: basic
-    from:
-      key_code: j
-      modifiers:
-        mandatory:
-        - control
-        - command
-    to:
-    - key_code: down_arrow
-      modifiers:
-      - shift
-      - command
-      repeat: true
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "^notion\\.id$"
-
-  # [Notion] Control-H -> Delete
-  - type: basic
-    from:
-      key_code: h
-      modifiers:
-        mandatory:
-        - control
-    to:
-    - key_code: delete_or_backspace
-      repeat: true
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "^notion\\.id$"
-
-  # [Notion] Shift-Command-A -> Control-Command-H
-  - type: basic
-    from:
-      key_code: a
-      modifiers:
-        mandatory:
-        - shift
-        - command
-    to:
-    - key_code: h
-      modifiers:
-      - control
-      - command
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "^notion\\.id$"
-
-  # [Notion] Shift-Command-C -> Command-L
-  - type: basic
-    from:
-      key_code: c
-      modifiers:
-        mandatory:
-        - shift
-        - command
-    to:
-    - key_code: l
-      modifiers:
-      - command
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "^notion\\.id$"
-
-# }}}
-
 # Bike {{{
 
 - description: "[App] Bike"
   manipulators:
 
-  # [Bike] Control-Right -> Indent Row
+  # Movement -------------------------------------
+
+  # Indent Row
+
+  # Control-Right -> Indent Row
   - type: basic
     from:
       key_code: right_arrow
@@ -788,61 +290,7 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
-  # [Bike] Control-Left -> Outdent Row
-  - type: basic
-    from:
-      key_code: left_arrow
-      modifiers:
-        mandatory:
-        - control
-    to:
-    - key_code: left_arrow
-      modifiers:
-      - command
-      - control
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "^com\\.hogbaysoftware\\.Bike$"
-
-  # [Bike] Control-Up -> Move Row Up
-  - type: basic
-    from:
-      key_code: up_arrow
-      modifiers:
-        mandatory:
-        - control
-    to:
-    - key_code: up_arrow
-      modifiers:
-      - command
-      - control
-      repeat: true
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "^com\\.hogbaysoftware\\.Bike$"
-
-  # [Bike] Control-Down -> Move Row Down
-  - type: basic
-    from:
-      key_code: down_arrow
-      modifiers:
-        mandatory:
-        - control
-    to:
-    - key_code: down_arrow
-      modifiers:
-      - command
-      - control
-      repeat: true
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "^com\\.hogbaysoftware\\.Bike$"
-
-  # [Bike] Control-LCommand-L -> Indent Row
+  # Control-LCommand-L -> Indent Row
   - type: basic
     from:
       key_code: l
@@ -861,7 +309,27 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
-  # [Bike] Control-LCommand-H -> Outdent Row
+  # Outdent Row
+
+  # Control-Left -> Outdent Row
+  - type: basic
+    from:
+      key_code: left_arrow
+      modifiers:
+        mandatory:
+        - control
+    to:
+    - key_code: left_arrow
+      modifiers:
+      - command
+      - control
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.hogbaysoftware\\.Bike$"
+
+  # Control-LCommand-H -> Outdent Row
   - type: basic
     from:
       key_code: h
@@ -880,7 +348,27 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
-  # [Bike] Control-LCommand-K -> Move Row Up
+  # Move Row Up
+
+  # Control-Up -> Move Row Up
+  - type: basic
+    from:
+      key_code: up_arrow
+      modifiers:
+        mandatory:
+        - control
+    to:
+    - key_code: up_arrow
+      modifiers:
+      - command
+      - control
+      repeat: true
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.hogbaysoftware\\.Bike$"
+
+  # Control-LCommand-K -> Move Row Up
   - type: basic
     from:
       key_code: k
@@ -899,7 +387,27 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
-  # [Bike] Control-LCommand-J -> Move Row Down
+  # Move Row Down
+
+  # Control-Down -> Move Row Down
+  - type: basic
+    from:
+      key_code: down_arrow
+      modifiers:
+        mandatory:
+        - control
+    to:
+    - key_code: down_arrow
+      modifiers:
+      - command
+      - control
+      repeat: true
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.hogbaysoftware\\.Bike$"
+
+  # Control-LCommand-J -> Move Row Down
   - type: basic
     from:
       key_code: j
@@ -918,7 +426,9 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
-  # [Bike] LCommand-Period -> Focus In
+  # Focus In/Out
+
+  # LCommand-Period -> Focus In
   - type: basic
     from:
       key_code: period
@@ -936,7 +446,7 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
-  # [Bike] LCommand-Comma -> Focus Out
+  # LCommand-Comma -> Focus Out
   - type: basic
     from:
       key_code: comma
@@ -954,7 +464,9 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
-  # # [Bike] LCommand-O -> Expand Row
+  # Expand/Collapse Row
+
+  # # LCommand-O -> Expand Row
   # - type: basic
   #   from:
   #     key_code: o
@@ -971,7 +483,7 @@ rules:
   #     bundle_identifiers:
   #     - "^com\\.hogbaysoftware\\.Bike$"
 
-  # # [Bike] LCommand-I -> Collapse Row
+  # # LCommand-I -> Collapse Row
   # - type: basic
   #   from:
   #     key_code: i
@@ -988,7 +500,9 @@ rules:
   #     bundle_identifiers:
   #     - "^com\\.hogbaysoftware\\.Bike$"
 
-  # [Bike] Control-LCommand-O -> Expand All Rows
+  # Expand All Rows
+
+  # Control-LCommand-O -> Expand All Rows
   - type: basic
     from:
       key_code: o
@@ -1007,26 +521,7 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
-  # [Bike] Control-LCommand-I -> Collapse All Rows
-  - type: basic
-    from:
-      key_code: i
-      modifiers:
-        mandatory:
-        - control
-        - left_command
-    to:
-    - key_code: "9"
-      modifiers:
-      - control
-      - command
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "^com\\.hogbaysoftware\\.Bike$"
-
-  # [Bike] Shift-LCommand-O -> Expand All Rows
+  # Shift-LCommand-O -> Expand All Rows
   - type: basic
     from:
       key_code: o
@@ -1045,7 +540,28 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
-  # [Bike] Shift-LCommand-I -> Collapse All Rows
+  # Collapse All Rows
+
+  # Control-LCommand-I -> Collapse All Rows
+  - type: basic
+    from:
+      key_code: i
+      modifiers:
+        mandatory:
+        - control
+        - left_command
+    to:
+    - key_code: "9"
+      modifiers:
+      - control
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.hogbaysoftware\\.Bike$"
+
+  # Shift-LCommand-I -> Collapse All Rows
   - type: basic
     from:
       key_code: i
@@ -1064,37 +580,21 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
-  # [Bike] RControl-M -> Command-Return
-  # New Row
+  # Others
+
+  # RControl-M -> New Row (Command-Return)
+  # Shift-RControl-M -> New Indented Row (Shift-Command-Return)
   - type: basic
     from:
       key_code: m
       modifiers:
         mandatory:
         - right_control
-    to:
-    - key_code: return_or_enter
-      modifiers:
-      - command
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "^com\\.hogbaysoftware\\.Bike$"
-
-  # [Bike] Shift-RControl-M -> Shift-Command-Return
-  # New Indented Row
-  - type: basic
-    from:
-      key_code: m
-      modifiers:
-        mandatory:
+        optional:
         - shift
-        - right_control
     to:
     - key_code: return_or_enter
       modifiers:
-      - shift
       - command
       repeat: false
     conditions:
@@ -1102,8 +602,7 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
-  # [Bike] LCommand-G -> Option-Command-G
-  # Group Rows
+  # LCommand-G -> Group Rows (Option-Command-G)
   - type: basic
     from:
       key_code: g
@@ -1121,8 +620,7 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
-  # [Bike] LCommand-D -> Shift-Command-D
-  # Duplicate Rows
+  # LCommand-D -> Duplicate Rows (Shift-Command-D)
   - type: basic
     from:
       key_code: d
@@ -1140,8 +638,7 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
-  # [Bike] LCommand-Delete -> Shift-Command-K
-  # Delete Rows
+  # LCommand-Delete -> Delete Rows (Shift-Command-K)
   - type: basic
     from:
       key_code: delete_or_backspace
@@ -1159,7 +656,7 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
-  # [Bike] RControl-N -> Command-Down
+  # RControl-N/P -> Command-Down/Up
   - type: basic
     from:
       key_code: "n"
@@ -1176,7 +673,6 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
-  # [Bike] RControl-P -> Command-Up
   - type: basic
     from:
       key_code: p
@@ -1193,8 +689,7 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
-  # [Bike] Shift-Command-V -> Shift-Option-Command-V
-  # Paste and Match Style
+  # Shift-Command-V -> Paste and Match Style (Shift-Option-Command-V)
   - type: basic
     from:
       key_code: v
@@ -1214,7 +709,7 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
-  # [Bike] LCommand-E -> Command-E, Eisuu
+  # LCommand-E -> Command-E, Eisuu
   - type: basic
     from:
       key_code: e
@@ -1468,6 +963,220 @@ rules:
 
 # }}}
 
+# Finder {{{
+
+- description: "[App] Finder"
+  manipulators:
+
+  # [Finder] Command-P -> Invalid
+  - type: basic
+    from:
+      key_code: p
+      modifiers:
+        mandatory:
+        - command
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^com\\.apple\\.finder$"
+
+# }}}
+
+# Arc {{{
+
+- description: "[App] Arc"
+  manipulators:
+
+  # [Arc] LShift-LCommand-F -> Shift-Command-H
+  # スプレッドシートでの検索・置換
+  - type: basic
+    from:
+      key_code: f
+      modifiers:
+        mandatory:
+        - left_shift
+        - left_command
+    to:
+    - key_code: h
+      modifiers:
+      - shift
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^company\\.thebrowser\\.Browser$"
+
+  # [Arc] LCommand-W -> Repeat: False
+  - type: basic
+    from:
+      key_code: w
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: w
+      modifiers:
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^company\\.thebrowser\\.Browser$"
+
+  # [Arc] Command-T -> Command-T, Eisuu
+  - type: basic
+    from:
+      key_code: t
+      modifiers:
+        mandatory:
+        - command
+    to:
+    - key_code: t
+      modifiers:
+      - command
+    - key_code: japanese_eisuu
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^company\\.thebrowser\\.Browser$"
+
+# }}}
+
+# Notion {{{
+
+- description: "[App] Notion"
+  manipulators:
+
+  # [Notion] Control-Up -> Move Block Up
+  - type: basic
+    from:
+      key_code: up_arrow
+      modifiers:
+        mandatory:
+        - control
+    to:
+    - key_code: up_arrow
+      modifiers:
+      - shift
+      - command
+      repeat: true
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^notion\\.id$"
+
+  # [Notion] Control-Down -> Move Block Down
+  - type: basic
+    from:
+      key_code: down_arrow
+      modifiers:
+        mandatory:
+        - control
+    to:
+    - key_code: down_arrow
+      modifiers:
+      - shift
+      - command
+      repeat: true
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^notion\\.id$"
+
+  # [Notion] Control-LCommand-K -> Move Block Up
+  - type: basic
+    from:
+      key_code: k
+      modifiers:
+        mandatory:
+        - control
+        - left_command
+    to:
+    - key_code: up_arrow
+      modifiers:
+      - shift
+      - command
+      repeat: true
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^notion\\.id$"
+
+  # [Notion] Control-LCommand-J -> Move Block Down
+  - type: basic
+    from:
+      key_code: j
+      modifiers:
+        mandatory:
+        - control
+        - command
+    to:
+    - key_code: down_arrow
+      modifiers:
+      - shift
+      - command
+      repeat: true
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^notion\\.id$"
+
+  # [Notion] Control-H -> Delete
+  - type: basic
+    from:
+      key_code: h
+      modifiers:
+        mandatory:
+        - control
+    to:
+    - key_code: delete_or_backspace
+      repeat: true
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^notion\\.id$"
+
+  # [Notion] Shift-Command-A -> Control-Command-H
+  - type: basic
+    from:
+      key_code: a
+      modifiers:
+        mandatory:
+        - shift
+        - command
+    to:
+    - key_code: h
+      modifiers:
+      - control
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^notion\\.id$"
+
+  # [Notion] Shift-Command-C -> Command-L
+  - type: basic
+    from:
+      key_code: c
+      modifiers:
+        mandatory:
+        - shift
+        - command
+    to:
+    - key_code: l
+      modifiers:
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "^notion\\.id$"
+
+# }}}
+
 # Microsoft Office {{{
 
 - description: "[App] Microsoft Office"
@@ -1709,5 +1418,236 @@ rules:
     - type: frontmost_application_if
       bundle_identifiers:
       - "^com\\.microsoft\\.Powerpoint$"
+
+# }}}
+
+# Alacritty {{{
+
+# - description: "[App] Alacritty"
+#   manipulators:
+#
+#   # [Alacritty] Command-W -> Invalid
+#   - type: basic
+#     from:
+#       key_code: w
+#       modifiers:
+#         mandatory:
+#         - command
+#     conditions:
+#     - type: frontmost_application_if
+#       bundle_identifiers:
+#       - "^org\\.alacritty$"
+#
+#   # [Alacritty] LCommand-Q (held down) -> Quit Alacritty
+#   # LCommand-Q 長押しでのみ終了
+#   - type: basic
+#     from:
+#       key_code: q
+#       modifiers:
+#         mandatory:
+#         - left_command
+#     to_if_held_down:
+#     - key_code: q
+#       modifiers:
+#       - command
+#       repeat: false
+#     parameters:
+#       basic.to_if_held_down_threshold_milliseconds: 500
+#     conditions:
+#     - type: frontmost_application_if
+#       bundle_identifiers:
+#       - "^org\\.alacritty$"
+
+# }}}
+
+# Macvim {{{
+
+# - description: "[App] MacVim"
+#   manipulators:
+#
+#   # [MacVim] Command-W -> Invalid
+#   - type: basic
+#     from:
+#       key_code: w
+#       modifiers:
+#         mandatory:
+#         - command
+#     conditions:
+#     - type: frontmost_application_if
+#       bundle_identifiers:
+#       - "^org\\.vim\\.MacVim$"
+#
+#   # [MacVim] LCommand-Q (held down) -> Quit MacVim
+#   # LCommand-Q 長押しでのみ終了
+#   - type: basic
+#     from:
+#       key_code: q
+#       modifiers:
+#         mandatory:
+#         - left_command
+#     to_if_held_down:
+#     - key_code: q
+#       modifiers:
+#       - command
+#       repeat: false
+#     parameters:
+#       basic.to_if_held_down_threshold_milliseconds: 500
+#     conditions:
+#     - type: frontmost_application_if
+#       bundle_identifiers:
+#       - "^org\\.vim\\.MacVim$"
+
+# }}}
+
+# Safari {{{
+
+# - description: "[App] Safari"
+#   manipulators:
+#
+#   # [Safari] LCommand-S -> Shift-Command-L
+#   # サイドバーを表示／非表示
+#   - type: basic
+#     from:
+#       key_code: s
+#       modifiers:
+#         mandatory:
+#         - left_command
+#     to:
+#     - key_code: l
+#       modifiers:
+#       - shift
+#       - command
+#       repeat: false
+#     conditions:
+#     - type: frontmost_application_if
+#       bundle_identifiers:
+#       - "^com\\.apple\\.Safari$"
+
+# }}}
+
+# Google Chrome {{{
+
+# - description: "[App] Google Chrome"
+#   manipulators:
+#
+#   # [Chrome] LShift-LCommand-F -> Shift-Command-H
+#   # スプレッドシートでの検索・置換
+#   - type: basic
+#     from:
+#       key_code: f
+#       modifiers:
+#         mandatory:
+#         - left_shift
+#         - left_command
+#     to:
+#     - key_code: h
+#       modifiers:
+#       - shift
+#       - command
+#       repeat: false
+#     conditions:
+#     - type: frontmost_application_if
+#       bundle_identifiers:
+#       - "^com\\.google\\.Chrome$"
+#
+#   # [Chrome] LCommand-W -> Repeat: False
+#   - type: basic
+#     from:
+#       key_code: w
+#       modifiers:
+#         mandatory:
+#         - left_command
+#     to:
+#     - key_code: w
+#       modifiers:
+#       - command
+#       repeat: false
+#     conditions:
+#     - type: frontmost_application_if
+#       bundle_identifiers:
+#       - "^com\\.google\\.Chrome$"
+
+# }}}
+
+# Sidekick {{{
+
+# - description: "[App] Sidekick"
+#   manipulators:
+#
+#   # [Sidekick] LShift-LCommand-F -> Shift-Command-H
+#   # スプレッドシートでの検索・置換
+#   - type: basic
+#     from:
+#       key_code: f
+#       modifiers:
+#         mandatory:
+#         - left_shift
+#         - left_command
+#     to:
+#     - key_code: h
+#       modifiers:
+#       - shift
+#       - command
+#       repeat: false
+#     conditions:
+#     - type: frontmost_application_if
+#       bundle_identifiers:
+#       - "^com\\.pushplaylabs\\.sidekick$"
+#
+#   # [Sidekick] LCommand-W -> Repeat: False
+#   - type: basic
+#     from:
+#       key_code: w
+#       modifiers:
+#         mandatory:
+#         - left_command
+#     to:
+#     - key_code: w
+#       modifiers:
+#       - command
+#       repeat: false
+#     conditions:
+#     - type: frontmost_application_if
+#       bundle_identifiers:
+#       - "^com\\.pushplaylabs\\.sidekick$"
+#
+#   # [Sidekick] LShift-LCommand-A -> Command-S
+#   # セッション一覧を開く (Sidekick でのショートカット変更が必要)
+#   - type: basic
+#     from:
+#       key_code: a
+#       modifiers:
+#         mandatory:
+#         - left_shift
+#         - left_command
+#     to:
+#     - key_code: s
+#       modifiers:
+#       - command
+#       repeat: false
+#     conditions:
+#     - type: frontmost_application_if
+#       bundle_identifiers:
+#       - "^com\\.pushplaylabs\\.sidekick$"
+#
+#   # [Sidekick] LShift-LCommand-S -> Shift-Option-S
+#   # サイドカーを表示／非表示
+#   - type: basic
+#     from:
+#       key_code: s
+#       modifiers:
+#         mandatory:
+#         - left_shift
+#         - left_command
+#     to:
+#     - key_code: s
+#       modifiers:
+#       - shift
+#       - option
+#       repeat: false
+#     conditions:
+#     - type: frontmost_application_if
+#       bundle_identifiers:
+#       - "^com\\.pushplaylabs\\.sidekick$"
 
 # }}}
