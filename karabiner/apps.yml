@@ -22,7 +22,7 @@ rules:
   #   conditions:
   #   - type: frontmost_application_if
   #     bundle_identifiers:
-  #     - "^com\\.tinyspeck\\.slackmacgap$"
+  #     - "com.tinyspeck.slackmacgap"
 
   # [Slack] RControl-Semicolon -> Command-K, Eisuu
   - type: basic
@@ -40,7 +40,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.tinyspeck\\.slackmacgap$"
+      - "com.tinyspeck.slackmacgap"
 
   # [Slack] LControl-1 - 6 -> Command-1 - 6
   - type: basic
@@ -57,7 +57,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.tinyspeck\\.slackmacgap$"
+      - "com.tinyspeck.slackmacgap"
 
   - type: basic
     from:
@@ -73,7 +73,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.tinyspeck\\.slackmacgap$"
+      - "com.tinyspeck.slackmacgap"
 
   - type: basic
     from:
@@ -89,7 +89,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.tinyspeck\\.slackmacgap$"
+      - "com.tinyspeck.slackmacgap"
 
   - type: basic
     from:
@@ -105,7 +105,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.tinyspeck\\.slackmacgap$"
+      - "com.tinyspeck.slackmacgap"
 
   - type: basic
     from:
@@ -121,7 +121,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.tinyspeck\\.slackmacgap$"
+      - "com.tinyspeck.slackmacgap"
 
   - type: basic
     from:
@@ -137,7 +137,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.tinyspeck\\.slackmacgap$"
+      - "com.tinyspeck.slackmacgap"
 
 # }}}
 
@@ -160,7 +160,7 @@ rules:
   #   conditions:
   #   - type: frontmost_application_if
   #     bundle_identifiers:
-  #     - "^com\\.superhuman\\.electron$"
+  #     - "com.superhuman.electron"
 
   # [Superhuman] RControl-Semicolon -> Command-K, Eisuu
   - type: basic
@@ -178,7 +178,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.superhuman\\.electron$"
+      - "com.superhuman.electron"
 
 # }}}
 
@@ -201,7 +201,7 @@ rules:
   #   conditions:
   #   - type: frontmost_application_if
   #     bundle_identifiers:
-  #     - "^com\\.linear$"
+  #     - "com.linear"
 
   # [Linear] RControl-Semicolon -> Command-K, Eisuu
   - type: basic
@@ -219,7 +219,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.linear$"
+      - "com.linear"
 
   # [Linear] RControl-N/P -> Command-Down/Up
   - type: basic
@@ -236,7 +236,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.linear$"
+      - "com.linear"
 
   - type: basic
     from:
@@ -252,7 +252,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.linear$"
+      - "com.linear"
 
 # }}}
 
@@ -278,7 +278,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.hogbaysoftware\\.Bike$"
+      - "com.hogbaysoftware.Bike"
 
   # [Bike] Control-LCommand-L -> Indent Row
   - type: basic
@@ -297,7 +297,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.hogbaysoftware\\.Bike$"
+      - "com.hogbaysoftware.Bike"
 
   # Outdent Row
 
@@ -317,7 +317,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.hogbaysoftware\\.Bike$"
+      - "com.hogbaysoftware.Bike"
 
   # [Bike] Control-LCommand-H -> Outdent Row
   - type: basic
@@ -336,7 +336,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.hogbaysoftware\\.Bike$"
+      - "com.hogbaysoftware.Bike"
 
   # Move Row Up
 
@@ -356,7 +356,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.hogbaysoftware\\.Bike$"
+      - "com.hogbaysoftware.Bike"
 
   # [Bike] Control-LCommand-K -> Move Row Up
   - type: basic
@@ -375,7 +375,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.hogbaysoftware\\.Bike$"
+      - "com.hogbaysoftware.Bike"
 
   # Move Row Down
 
@@ -395,7 +395,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.hogbaysoftware\\.Bike$"
+      - "com.hogbaysoftware.Bike"
 
   # [Bike] Control-LCommand-J -> Move Row Down
   - type: basic
@@ -414,7 +414,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.hogbaysoftware\\.Bike$"
+      - "com.hogbaysoftware.Bike"
 
   # Focus In/Out
 
@@ -434,7 +434,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.hogbaysoftware\\.Bike$"
+      - "com.hogbaysoftware.Bike"
 
   # [Bike] LCommand-Comma -> Focus Out
   - type: basic
@@ -452,7 +452,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.hogbaysoftware\\.Bike$"
+      - "com.hogbaysoftware.Bike"
 
   # Expand/Collapse Row
 
@@ -471,7 +471,7 @@ rules:
   #   conditions:
   #   - type: frontmost_application_if
   #     bundle_identifiers:
-  #     - "^com\\.hogbaysoftware\\.Bike$"
+  #     - "com.hogbaysoftware.Bike"
 
   # # [Bike] LCommand-I -> Collapse Row
   # - type: basic
@@ -488,7 +488,7 @@ rules:
   #   conditions:
   #   - type: frontmost_application_if
   #     bundle_identifiers:
-  #     - "^com\\.hogbaysoftware\\.Bike$"
+  #     - "com.hogbaysoftware.Bike"
 
   # Expand All Rows
 
@@ -509,7 +509,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.hogbaysoftware\\.Bike$"
+      - "com.hogbaysoftware.Bike"
 
   # [Bike] Shift-LCommand-O -> Expand All Rows
   - type: basic
@@ -528,7 +528,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.hogbaysoftware\\.Bike$"
+      - "com.hogbaysoftware.Bike"
 
   # Collapse All Rows
 
@@ -549,7 +549,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.hogbaysoftware\\.Bike$"
+      - "com.hogbaysoftware.Bike"
 
   # [Bike] Shift-LCommand-I -> Collapse All Rows
   - type: basic
@@ -568,7 +568,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.hogbaysoftware\\.Bike$"
+      - "com.hogbaysoftware.Bike"
 
   # Others
 
@@ -590,7 +590,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.hogbaysoftware\\.Bike$"
+      - "com.hogbaysoftware.Bike"
 
   # [Bike] LCommand-G -> Group Rows (Option-Command-G)
   - type: basic
@@ -608,7 +608,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.hogbaysoftware\\.Bike$"
+      - "com.hogbaysoftware.Bike"
 
   # [Bike] LCommand-D -> Duplicate Rows (Shift-Command-D)
   - type: basic
@@ -626,7 +626,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.hogbaysoftware\\.Bike$"
+      - "com.hogbaysoftware.Bike"
 
   # [Bike] LCommand-Delete -> Delete Rows (Shift-Command-K)
   - type: basic
@@ -644,7 +644,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.hogbaysoftware\\.Bike$"
+      - "com.hogbaysoftware.Bike"
 
   # [Bike] RControl-N/P -> Command-Down/Up
   - type: basic
@@ -661,7 +661,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.hogbaysoftware\\.Bike$"
+      - "com.hogbaysoftware.Bike"
 
   - type: basic
     from:
@@ -677,7 +677,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.hogbaysoftware\\.Bike$"
+      - "com.hogbaysoftware.Bike"
 
   # [Bike] Shift-Command-V -> Paste and Match Style (Shift-Option-Command-V)
   - type: basic
@@ -697,7 +697,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.hogbaysoftware\\.Bike$"
+      - "com.hogbaysoftware.Bike"
 
   # [Bike] LCommand-E -> Command-E, Eisuu
   - type: basic
@@ -715,7 +715,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.hogbaysoftware\\.Bike$"
+      - "com.hogbaysoftware.Bike"
 
 # }}}
 
@@ -734,7 +734,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.workflowy\\.desktop$"
+      - "com.workflowy.desktop"
 
   # [Workflowy] Control-Left -> Outdent
   - type: basic
@@ -751,7 +751,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.workflowy\\.desktop$"
+      - "com.workflowy.desktop"
 
   # [Workflowy] Control-LCommand-L -> Indent
   - type: basic
@@ -767,7 +767,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.workflowy\\.desktop$"
+      - "com.workflowy.desktop"
 
   # [Workflowy] Control-LCommand-H -> Outdent
   - type: basic
@@ -785,7 +785,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.workflowy\\.desktop$"
+      - "com.workflowy.desktop"
 
   # [Workflowy] Control-Up -> Move Up
   - type: basic
@@ -803,7 +803,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.workflowy\\.desktop$"
+      - "com.workflowy.desktop"
 
   # [Workflowy] Control-Down -> Move Down
   - type: basic
@@ -821,7 +821,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.workflowy\\.desktop$"
+      - "com.workflowy.desktop"
 
   # [Workflowy] Control-LCommand-K -> Move Up
   - type: basic
@@ -840,7 +840,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.workflowy\\.desktop$"
+      - "com.workflowy.desktop"
 
   # [Workflowy] Control-LCommand-J -> Move Down
   - type: basic
@@ -859,7 +859,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.workflowy\\.desktop$"
+      - "com.workflowy.desktop"
 
   # [Workflowy] Command-O -> Expand
   - type: basic
@@ -876,7 +876,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.workflowy\\.desktop$"
+      - "com.workflowy.desktop"
 
   # [Workflowy] Command-I -> Collapse
   - type: basic
@@ -893,7 +893,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.workflowy\\.desktop$"
+      - "com.workflowy.desktop"
 
   # [Workflowy] RControl-H -> Delete
   - type: basic
@@ -908,7 +908,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.workflowy\\.desktop$"
+      - "com.workflowy.desktop"
 
   # [Workflowy] LCommand-D -> Shift-Command-D
   # Duplicate Rows
@@ -927,7 +927,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.workflowy\\.desktop$"
+      - "com.workflowy.desktop"
 
   # [Workflowy] LCommand-Delete -> Shift-Command-Delete
   # Delete Rows
@@ -946,7 +946,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.workflowy\\.desktop$"
+      - "com.workflowy.desktop"
 
 # }}}
 
@@ -962,7 +962,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.apple\\.finder$"
+      - "com.apple.finder"
 
 # }}}
 
@@ -986,7 +986,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^company\\.thebrowser\\.Browser$"
+      - "company.thebrowser.Browser"
 
   # [Arc] LCommand-W -> Repeat: False
   - type: basic
@@ -1003,7 +1003,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^company\\.thebrowser\\.Browser$"
+      - "company.thebrowser.Browser"
 
   # [Arc] Command-T -> Command-T, Eisuu
   - type: basic
@@ -1021,7 +1021,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^company\\.thebrowser\\.Browser$"
+      - "company.thebrowser.Browser"
 
 # }}}
 
@@ -1043,7 +1043,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^notion\\.id$"
+      - "notion.id"
 
   # [Notion] Control-Down -> Move Block Down
   - type: basic
@@ -1061,7 +1061,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^notion\\.id$"
+      - "notion.id"
 
   # [Notion] Control-LCommand-K -> Move Block Up
   - type: basic
@@ -1080,7 +1080,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^notion\\.id$"
+      - "notion.id"
 
   # [Notion] Control-LCommand-J -> Move Block Down
   - type: basic
@@ -1099,7 +1099,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^notion\\.id$"
+      - "notion.id"
 
   # [Notion] Control-H -> Delete
   - type: basic
@@ -1114,7 +1114,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^notion\\.id$"
+      - "notion.id"
 
   # [Notion] Shift-Command-A -> Control-Command-H
   - type: basic
@@ -1133,7 +1133,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^notion\\.id$"
+      - "notion.id"
 
   # [Notion] Shift-Command-C -> Command-L
   - type: basic
@@ -1151,7 +1151,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^notion\\.id$"
+      - "notion.id"
 
 # }}}
 
@@ -1170,7 +1170,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.microsoft\\.Word$"
+      - "com.microsoft.Word"
 
   # [Excel] Control-H -> Delete
   - type: basic
@@ -1185,7 +1185,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.microsoft\\.Excel$"
+      - "com.microsoft.Excel"
 
   # [Powerpoint] Control-H -> Delete
   - type: basic
@@ -1200,7 +1200,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.microsoft\\.Powerpoint$"
+      - "com.microsoft.Powerpoint"
 
   # [Word] Control-D -> Fn-Delete
   - type: basic
@@ -1215,7 +1215,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.microsoft\\.Word$"
+      - "com.microsoft.Word"
 
   # [Excel] Control-D -> Fn-Delete
   - type: basic
@@ -1230,7 +1230,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.microsoft\\.Excel$"
+      - "com.microsoft.Excel"
 
   # [Powerpoint] Control-D -> Fn-Delete
   - type: basic
@@ -1245,7 +1245,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.microsoft\\.Powerpoint$"
+      - "com.microsoft.Powerpoint"
 
   # [Word] Control-A -> 行頭へ移動
   - type: basic
@@ -1260,7 +1260,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.microsoft\\.Word$"
+      - "com.microsoft.Word"
 
   # [Excel] Control-A -> 行頭へ移動
   - type: basic
@@ -1275,7 +1275,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.microsoft\\.Excel$"
+      - "com.microsoft.Excel"
 
   # [Powerpoint] Control-A -> 行頭へ移動
   - type: basic
@@ -1290,7 +1290,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.microsoft\\.Powerpoint$"
+      - "com.microsoft.Powerpoint"
 
   # [Word] Control-E -> 行末へ移動
   - type: basic
@@ -1305,7 +1305,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.microsoft\\.Word$"
+      - "com.microsoft.Word"
 
   # [Excel] Control-E -> 行末へ移動
   - type: basic
@@ -1320,7 +1320,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.microsoft\\.Excel$"
+      - "com.microsoft.Excel"
 
   # [Powerpoint] Control-E -> 行末へ移動
   - type: basic
@@ -1335,7 +1335,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.microsoft\\.Powerpoint$"
+      - "com.microsoft.Powerpoint"
 
   # [Word] Control-K -> 行末まで削除
   - type: basic
@@ -1354,7 +1354,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.microsoft\\.Word$"
+      - "com.microsoft.Word"
 
   # [Excel] Control-K -> 行末まで削除
   - type: basic
@@ -1373,7 +1373,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.microsoft\\.Excel$"
+      - "com.microsoft.Excel"
 
   # [Powerpoint] Control-K -> 行末まで削除
   - type: basic
@@ -1392,7 +1392,7 @@ rules:
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "^com\\.microsoft\\.Powerpoint$"
+      - "com.microsoft.Powerpoint"
 
 # }}}
 
@@ -1408,7 +1408,7 @@ rules:
 #     conditions:
 #     - type: frontmost_application_if
 #       bundle_identifiers:
-#       - "^org\\.alacritty$"
+#       - "org.alacritty"
 #
 #   # [Alacritty] LCommand-Q (held down) -> Quit Alacritty
 #   # LCommand-Q 長押しでのみ終了
@@ -1428,7 +1428,7 @@ rules:
 #     conditions:
 #     - type: frontmost_application_if
 #       bundle_identifiers:
-#       - "^org\\.alacritty$"
+#       - "org.alacritty"
 
 # }}}
 
@@ -1444,7 +1444,7 @@ rules:
 #     conditions:
 #     - type: frontmost_application_if
 #       bundle_identifiers:
-#       - "^org\\.vim\\.MacVim$"
+#       - "org.vim.MacVim"
 #
 #   # [MacVim] LCommand-Q (held down) -> Quit MacVim
 #   # LCommand-Q 長押しでのみ終了
@@ -1464,7 +1464,7 @@ rules:
 #     conditions:
 #     - type: frontmost_application_if
 #       bundle_identifiers:
-#       - "^org\\.vim\\.MacVim$"
+#       - "org.vim.MacVim"
 
 # }}}
 
@@ -1487,7 +1487,7 @@ rules:
 #     conditions:
 #     - type: frontmost_application_if
 #       bundle_identifiers:
-#       - "^com\\.apple\\.Safari$"
+#       - "com.apple.Safari"
 
 # }}}
 
@@ -1511,7 +1511,7 @@ rules:
 #     conditions:
 #     - type: frontmost_application_if
 #       bundle_identifiers:
-#       - "^com\\.google\\.Chrome$"
+#       - "com.google.Chrome"
 #
 #   # [Chrome] LCommand-W -> Repeat: False
 #   - type: basic
@@ -1528,7 +1528,7 @@ rules:
 #     conditions:
 #     - type: frontmost_application_if
 #       bundle_identifiers:
-#       - "^com\\.google\\.Chrome$"
+#       - "com.google.Chrome"
 
 # }}}
 
@@ -1552,7 +1552,7 @@ rules:
 #     conditions:
 #     - type: frontmost_application_if
 #       bundle_identifiers:
-#       - "^com\\.pushplaylabs\\.sidekick$"
+#       - "com.pushplaylabs.sidekick"
 #
 #   # [Sidekick] LCommand-W -> Repeat: False
 #   - type: basic
@@ -1569,7 +1569,7 @@ rules:
 #     conditions:
 #     - type: frontmost_application_if
 #       bundle_identifiers:
-#       - "^com\\.pushplaylabs\\.sidekick$"
+#       - "com.pushplaylabs.sidekick"
 #
 #   # [Sidekick] LShift-LCommand-A -> Command-S
 #   # セッション一覧を開く (Sidekick でのショートカット変更が必要)
@@ -1588,7 +1588,7 @@ rules:
 #     conditions:
 #     - type: frontmost_application_if
 #       bundle_identifiers:
-#       - "^com\\.pushplaylabs\\.sidekick$"
+#       - "com.pushplaylabs.sidekick"
 #
 #   # [Sidekick] LShift-LCommand-S -> Shift-Option-S
 #   # サイドカーを表示／非表示
@@ -1608,6 +1608,6 @@ rules:
 #     conditions:
 #     - type: frontmost_application_if
 #       bundle_identifiers:
-#       - "^com\\.pushplaylabs\\.sidekick$"
+#       - "com.pushplaylabs.sidekick"
 
 # }}}

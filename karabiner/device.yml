@@ -103,9 +103,9 @@ rules:
 #       #   product_id: 834
 #     - type: frontmost_application_if
 #       bundle_identifiers:
-#       - "^com\\.tinyspeck\\.slackmacgap$"
-#       - "^com\\.superhuman\\.electron$"
-#       - "^com\\.linear$"
+#       - "com.tinyspeck.slackmacgap"
+#       - "com.superhuman.electron"
+#       - "com.linear"
 #
 #   # Control: RControl-RShift -> Command-K
 #   - type: basic

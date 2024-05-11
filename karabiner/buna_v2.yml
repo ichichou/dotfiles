@@ -40,7 +40,7 @@ aliases:
     value: 1
   - type: frontmost_application_unless
     bundle_identifiers:
-    - "^com\\.apple\\.loginwindow$"
+    - "com.apple.loginwindow"
 
 - conditions: &left_shifted
   - type: input_source_if
@@ -54,7 +54,7 @@ aliases:
     value: 1
   - type: frontmost_application_unless
     bundle_identifiers:
-    - "^com\\.apple\\.loginwindow$"
+    - "com.apple.loginwindow"
 
 - conditions: &right_shifted
   - type: input_source_if
@@ -68,7 +68,7 @@ aliases:
     value: 1
   - type: frontmost_application_unless
     bundle_identifiers:
-    - "^com\\.apple\\.loginwindow$"
+    - "com.apple.loginwindow"
 
 - conditions: &symbol
   - type: variable_if
@@ -76,7 +76,7 @@ aliases:
     value: 1
   - type: frontmost_application_unless
     bundle_identifiers:
-    - "^com\\.apple\\.loginwindow$"
+    - "com.apple.loginwindow"
 
 # RULES ==========================================
 
@@ -1333,7 +1333,7 @@ rules:
       value: 1
     - type: frontmost_application_unless
       bundle_identifiers:
-      - "^com\\.apple\\.loginwindow$"
+      - "com.apple.loginwindow"
 
   # 右中指シフトキー
   #
@@ -1371,7 +1371,7 @@ rules:
       value: 1
     - type: frontmost_application_unless
       bundle_identifiers:
-      - "^com\\.apple\\.loginwindow$"
+      - "com.apple.loginwindow"
 
   # Symbol Mode Mapping --------------------------
 
