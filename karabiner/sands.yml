@@ -1,8 +1,9 @@
-title: "07. SandS"
+title: "08. SandS"
 rules:
-
-- description: "[SandS] Space and LShift"
+- description: "8. SandS"
   manipulators:
+
+  # Space and LShift
   - type: basic
     from:
       key_code: spacebar
@@ -15,8 +16,7 @@ rules:
     to_if_alone:
     - key_code: spacebar
 
-- description: "[SandS] Return and LControl"
-  manipulators:
+  # Return and LControl
   - type: basic
     from:
       key_code: return_or_enter

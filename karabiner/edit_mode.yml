@@ -25,11 +25,10 @@ aliases:
 # RULES ==========================================
 
 rules:
+- description: "3. Edit Mode"
+  manipulators:
 
 # Edit Mode Keys ---------------------------------
-
-- description: "[Edit Mode] Edit Mode Keys"
-  manipulators:
 
   # IME Off --------------------------------------
 
@@ -211,10 +210,7 @@ rules:
     conditions: *ime_on
     parameters: *thresh_ms
 
-# Edit Mode Mappings -----------------------------
-
-- description: "[Edit Mode] Mapping"
-  manipulators:
+# Edit Mode Mapping -----------------------------
 
   # Right Keys -----------------------------------
 

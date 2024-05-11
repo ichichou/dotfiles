@@ -1,7 +1,6 @@
 title: "04. Symbols Layer"
 rules:
-
-- description: "[Symbols] RCommand-Key → Symbol"
+- description: "4. Symbols Layer"
   manipulators:
 
 # Upper Row --------------------------------------

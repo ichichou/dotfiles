@@ -1,10 +1,9 @@
-title: "01. Apps"
+title: "01. Application-Specific"
 rules:
+- description: "1. Application-Specific"
+  manipulators:
 
 # Slack {{{
-
-- description: "[App] Slack"
-  manipulators:
 
   # # [Slack] RCommand-K -> Command-K, Eisuu
   # # RCommand-K 後に英語入力にする (LCommand-K -> Up との競合回避)
@@ -144,9 +143,6 @@ rules:
 
 # Superhuman {{{
 
-- description: "[App] Superhuman"
-  manipulators:
-
   # # [Superhuman] RCommand-K -> Command-K, Eisuu
   # # RCommand-K 後に英語入力にする (LCommand-K -> Up との競合回避)
   # - type: basic
@@ -187,9 +183,6 @@ rules:
 # }}}
 
 # Linear {{{
-
-- description: "[App] Linear"
-  manipulators:
 
   # # [Linear] RCommand-K -> Command-K, Eisuu
   # # RCommand-K 後に英語入力にする (LCommand-K -> Up との競合回避)
@@ -265,14 +258,11 @@ rules:
 
 # Bike {{{
 
-- description: "[App] Bike"
-  manipulators:
-
   # Movement -------------------------------------
 
   # Indent Row
 
-  # Control-Right -> Indent Row
+  # [Bike] Control-Right -> Indent Row
   - type: basic
     from:
       key_code: right_arrow
@@ -290,7 +280,7 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
-  # Control-LCommand-L -> Indent Row
+  # [Bike] Control-LCommand-L -> Indent Row
   - type: basic
     from:
       key_code: l
@@ -311,7 +301,7 @@ rules:
 
   # Outdent Row
 
-  # Control-Left -> Outdent Row
+  # [Bike] Control-Left -> Outdent Row
   - type: basic
     from:
       key_code: left_arrow
@@ -329,7 +319,7 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
-  # Control-LCommand-H -> Outdent Row
+  # [Bike] Control-LCommand-H -> Outdent Row
   - type: basic
     from:
       key_code: h
@@ -350,7 +340,7 @@ rules:
 
   # Move Row Up
 
-  # Control-Up -> Move Row Up
+  # [Bike] Control-Up -> Move Row Up
   - type: basic
     from:
       key_code: up_arrow
@@ -368,7 +358,7 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
-  # Control-LCommand-K -> Move Row Up
+  # [Bike] Control-LCommand-K -> Move Row Up
   - type: basic
     from:
       key_code: k
@@ -389,7 +379,7 @@ rules:
 
   # Move Row Down
 
-  # Control-Down -> Move Row Down
+  # [Bike] Control-Down -> Move Row Down
   - type: basic
     from:
       key_code: down_arrow
@@ -407,7 +397,7 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
-  # Control-LCommand-J -> Move Row Down
+  # [Bike] Control-LCommand-J -> Move Row Down
   - type: basic
     from:
       key_code: j
@@ -428,7 +418,7 @@ rules:
 
   # Focus In/Out
 
-  # LCommand-Period -> Focus In
+  # [Bike] LCommand-Period -> Focus In
   - type: basic
     from:
       key_code: period
@@ -446,7 +436,7 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
-  # LCommand-Comma -> Focus Out
+  # [Bike] LCommand-Comma -> Focus Out
   - type: basic
     from:
       key_code: comma
@@ -466,7 +456,7 @@ rules:
 
   # Expand/Collapse Row
 
-  # # LCommand-O -> Expand Row
+  # # [Bike] LCommand-O -> Expand Row
   # - type: basic
   #   from:
   #     key_code: o
@@ -483,7 +473,7 @@ rules:
   #     bundle_identifiers:
   #     - "^com\\.hogbaysoftware\\.Bike$"
 
-  # # LCommand-I -> Collapse Row
+  # # [Bike] LCommand-I -> Collapse Row
   # - type: basic
   #   from:
   #     key_code: i
@@ -502,7 +492,7 @@ rules:
 
   # Expand All Rows
 
-  # Control-LCommand-O -> Expand All Rows
+  # [Bike] Control-LCommand-O -> Expand All Rows
   - type: basic
     from:
       key_code: o
@@ -521,7 +511,7 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
-  # Shift-LCommand-O -> Expand All Rows
+  # [Bike] Shift-LCommand-O -> Expand All Rows
   - type: basic
     from:
       key_code: o
@@ -542,7 +532,7 @@ rules:
 
   # Collapse All Rows
 
-  # Control-LCommand-I -> Collapse All Rows
+  # [Bike] Control-LCommand-I -> Collapse All Rows
   - type: basic
     from:
       key_code: i
@@ -561,7 +551,7 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
-  # Shift-LCommand-I -> Collapse All Rows
+  # [Bike] Shift-LCommand-I -> Collapse All Rows
   - type: basic
     from:
       key_code: i
@@ -582,8 +572,8 @@ rules:
 
   # Others
 
-  # RControl-M -> New Row (Command-Return)
-  # Shift-RControl-M -> New Indented Row (Shift-Command-Return)
+  # [Bike] RControl-M -> New Row (Command-Return)
+  # [Bike] Shift-RControl-M -> New Indented Row (Shift-Command-Return)
   - type: basic
     from:
       key_code: m
@@ -602,7 +592,7 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
-  # LCommand-G -> Group Rows (Option-Command-G)
+  # [Bike] LCommand-G -> Group Rows (Option-Command-G)
   - type: basic
     from:
       key_code: g
@@ -620,7 +610,7 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
-  # LCommand-D -> Duplicate Rows (Shift-Command-D)
+  # [Bike] LCommand-D -> Duplicate Rows (Shift-Command-D)
   - type: basic
     from:
       key_code: d
@@ -638,7 +628,7 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
-  # LCommand-Delete -> Delete Rows (Shift-Command-K)
+  # [Bike] LCommand-Delete -> Delete Rows (Shift-Command-K)
   - type: basic
     from:
       key_code: delete_or_backspace
@@ -656,7 +646,7 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
-  # RControl-N/P -> Command-Down/Up
+  # [Bike] RControl-N/P -> Command-Down/Up
   - type: basic
     from:
       key_code: "n"
@@ -689,7 +679,7 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
-  # Shift-Command-V -> Paste and Match Style (Shift-Option-Command-V)
+  # [Bike] Shift-Command-V -> Paste and Match Style (Shift-Option-Command-V)
   - type: basic
     from:
       key_code: v
@@ -709,7 +699,7 @@ rules:
       bundle_identifiers:
       - "^com\\.hogbaysoftware\\.Bike$"
 
-  # LCommand-E -> Command-E, Eisuu
+  # [Bike] LCommand-E -> Command-E, Eisuu
   - type: basic
     from:
       key_code: e
@@ -730,9 +720,6 @@ rules:
 # }}}
 
 # Workflowy {{{
-
-- description: "[App] Workflowy"
-  manipulators:
 
   # [Workflowy] Control-Right -> Indent
   - type: basic
@@ -965,9 +952,6 @@ rules:
 
 # Finder {{{
 
-- description: "[App] Finder"
-  manipulators:
-
   # [Finder] Command-P -> Invalid
   - type: basic
     from:
@@ -983,9 +967,6 @@ rules:
 # }}}
 
 # Arc {{{
-
-- description: "[App] Arc"
-  manipulators:
 
   # [Arc] LShift-LCommand-F -> Shift-Command-H
   # スプレッドシートでの検索・置換
@@ -1045,9 +1026,6 @@ rules:
 # }}}
 
 # Notion {{{
-
-- description: "[App] Notion"
-  manipulators:
 
   # [Notion] Control-Up -> Move Block Up
   - type: basic
@@ -1178,9 +1156,6 @@ rules:
 # }}}
 
 # Microsoft Office {{{
-
-- description: "[App] Microsoft Office"
-  manipulators:
 
   # [Word] Control-H -> Delete
   - type: basic
@@ -1423,9 +1398,6 @@ rules:
 
 # Alacritty {{{
 
-# - description: "[App] Alacritty"
-#   manipulators:
-#
 #   # [Alacritty] Command-W -> Invalid
 #   - type: basic
 #     from:
@@ -1462,9 +1434,6 @@ rules:
 
 # Macvim {{{
 
-# - description: "[App] MacVim"
-#   manipulators:
-#
 #   # [MacVim] Command-W -> Invalid
 #   - type: basic
 #     from:
@@ -1501,9 +1470,6 @@ rules:
 
 # Safari {{{
 
-# - description: "[App] Safari"
-#   manipulators:
-#
 #   # [Safari] LCommand-S -> Shift-Command-L
 #   # サイドバーを表示／非表示
 #   - type: basic
@@ -1527,9 +1493,6 @@ rules:
 
 # Google Chrome {{{
 
-# - description: "[App] Google Chrome"
-#   manipulators:
-#
 #   # [Chrome] LShift-LCommand-F -> Shift-Command-H
 #   # スプレッドシートでの検索・置換
 #   - type: basic
@@ -1571,9 +1534,6 @@ rules:
 
 # Sidekick {{{
 
-# - description: "[App] Sidekick"
-#   manipulators:
-#
 #   # [Sidekick] LShift-LCommand-F -> Shift-Command-H
 #   # スプレッドシートでの検索・置換
 #   - type: basic

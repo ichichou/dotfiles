@@ -1,4 +1,4 @@
-title: "06. Hyper Key"
+title: "07. Hyper Key"
 
 # ALIASES ========================================
 
@@ -18,11 +18,11 @@ aliases:
 # RULES ==========================================
 
 rules:
+- description: "7. Hyper Key"
+  manipulators:
 
 # Hyper Key --------------------------------------
 
-- description: "[Hyper] Tab → Hyper/Tab"
-  manipulators:
   - type: basic
     from:
       key_code: tab
@@ -38,9 +38,6 @@ rules:
         value: 0
 
 # 1234567890 -------------------------------------
-
-- description: "[Hyper] Num Key → Change Desktop"
-  manipulators:
 
   - type: basic
     from:
@@ -122,13 +119,9 @@ rules:
       modifiers: *hyper_key
     conditions: *hyper_mode
 
-
 # Letter Keys ------------------------------------
 
-- description: "[Hyper] Letter Key → Launch App"
-  manipulators:
-
-  # Left Keys - QWERT ASDFG ZXCVB ----------------
+  # Left Keys: QWERT ASDFG ZXCVB -----------------
 
   # Q:
   - type: basic
@@ -295,7 +288,7 @@ rules:
     - shell_command: open -a "bitwarden"
     conditions: *hyper_mode
 
-  # Right Keys - YUIOP HJKL; NM,./ ---------------
+  # Right Keys: YUIOP HJKL; NM,./ ----------------
 
   # Y:
   - type: basic

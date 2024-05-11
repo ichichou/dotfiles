@@ -1,8 +1,11 @@
 title: "02. Simultaneous"
 rules:
-
-- description: "[Simul] V+M / V+N → Return"
+- description: "2. Simultaneous"
   manipulators:
+
+# Both Hands -------------------------------------
+
+  # V+M / V+N → Return
   - type: basic
     from:
       simultaneous:
@@ -21,8 +24,7 @@ rules:
     - key_code: return_or_enter
       repeat: false
 
-- description: "[Simul] F+J → ToggleKana (AquaSKK)"
-  manipulators:
+  # F+J → ToggleKana (AquaSKK)
   - type: basic
     from:
       simultaneous:
@@ -37,8 +39,7 @@ rules:
       input_sources:
       - language: ja
 
-- description: "[Simul] F+G → [], H+J → ()"
-  manipulators:
+# One Hand ---------------------------------------
 
   # F+G -> []
   - type: basic
@@ -67,9 +68,6 @@ rules:
       - shift
     - key_code: left_arrow
       repeat: false
-
-- description: "[Simul] R+G → :, H+U → /, F+B → !, N+J → ?"
-  manipulators:
 
   # R+G -> :
   - type: basic
@@ -133,8 +131,7 @@ rules:
       input_sources:
       - language: en
 
-- description: "[Simul] V+B → 英数, N+M → かな"
-  manipulators:
+# Kana, Eisuu ------------------------------------
 
   # V+B -> 英数
   - type: basic

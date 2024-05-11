@@ -1,8 +1,9 @@
-title: "04. Command Key"
+title: "05. Command Key"
 rules:
-
-- description: "[Command] LCommand-Space → Return"
+- description: "5. Command Key"
   manipulators:
+
+  # LCommand-Space -> Return
   - type: basic
     from:
       key_code: spacebar
@@ -15,8 +16,7 @@ rules:
     - key_code: return_or_enter
       repeat: false
 
-- description: "[Command] LCommand-RCommand → ESC"
-  manipulators:
+  # LCommand-RCommand -> ESC
   - type: basic
     from:
       key_code: right_command
@@ -27,9 +27,7 @@ rules:
     - key_code: escape
       repeat: false
 
-- description: "[Command] LCommand-LOption-HJKL → Command-HJKL"
-  manipulators:
-
+  # LCommand-LOption-HJKL → Command-HJKL
   - type: basic
     from:
       key_code: h
@@ -90,9 +88,7 @@ rules:
       - command
       repeat: false
 
-- description: "[Command] LCommand-HJKL → Arrow Keys"
-  manipulators:
-
+  # LCommand-HJKL → Arrow Keys
   - type: basic
     from:
       key_code: h
@@ -137,8 +133,7 @@ rules:
     to:
     - key_code: right_arrow
 
-- description: "[Command] LCommand-` → Command-@"
-  manipulators:
+  # LCommand-` → Command-@
   - type: basic
     from:
       key_code: grave_accent_and_tilde
@@ -154,9 +149,7 @@ rules:
       - command
       repeat: false
 
-- description: "[Command] LCommad/RCommand → 英数/かな"
-  manipulators:
-
+  # LCommad/RCommand → 英数/かな
   - type: basic
     from:
       key_code: left_command

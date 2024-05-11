@@ -1,26 +1,23 @@
-title: "05. Control Key"
-
-# ===== Rules =====
-
+title: "06. Control Key"
 rules:
-
-# Simple Modifications で Caps Lock -> RControl とするため不要
-# - description: "[Control] Caps Lock → RControl/ESC"
-#   manipulators:
-#   - type: basic
-#     from:
-#       key_code: caps_lock
-#       modifiers:
-#         optional:
-#         - any
-#     to:
-#     - key_code: right_control
-#       lazy: true
-#     to_if_alone:
-#     - key_code: escape
-
-- description: "[Control] RControl → RControl/ESC"
+- description: "6. Control Key"
   manipulators:
+
+  # Simple Modifications で Caps Lock -> RControl とするため不要
+  # # Caps Lock -> RControl/ESC
+  # - type: basic
+  #   from:
+  #     key_code: caps_lock
+  #     modifiers:
+  #       optional:
+  #       - any
+  #   to:
+  #   - key_code: right_control
+  #     lazy: true
+  #   to_if_alone:
+  #   - key_code: escape
+
+  # RControl -> RControl/ESC
   - type: basic
     from:
       key_code: right_control
@@ -33,8 +30,7 @@ rules:
     to_if_alone:
     - key_code: escape
 
-- description: "[Control] RControl-J/L → かな/英数"
-  manipulators:
+  # RControl-J/L -> かな/英数
   - type: basic
     from:
       key_code: j
@@ -53,8 +49,7 @@ rules:
     to:
     - key_code: japanese_eisuu
 
-- description: "[Control] RControl-M → Return"
-  manipulators:
+  # RControl-M -> Return
   - type: basic
     from:
       key_code: m
@@ -67,12 +62,11 @@ rules:
     - key_code: return_or_enter
       repeat: false
 
-# LCommand-K -> Up Arrow とするための代替キーマップ
-- description: "[Control] RControl-Slash → Command-K"
-  manipulators:
+  # LCommand-K -> Up Arrow とするための代替キーマップ
+  # RControl-Semicolon -> Command-K
   - type: basic
     from:
-      key_code: slash
+      key_code: semicolon
       modifiers:
         mandatory:
         - right_control

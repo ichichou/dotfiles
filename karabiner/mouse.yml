@@ -19,9 +19,10 @@ aliases:
 # RULES ==========================================
 
 rules:
-
-- description: "[Mouse] Kensington's Trackball"
+- description: "21. Mouse"
   manipulators:
+
+# Kensington's Trackball -------------------------
 
   # LCommand-ボタン3 -> Shift-Control-Tab (前のタブ)
   - type: basic

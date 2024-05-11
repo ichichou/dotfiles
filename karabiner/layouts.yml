@@ -1,10 +1,8 @@
-title: "10. Keyboard Layouts"
+title: "11. Keyboard Layouts"
 
 # ALIASES ========================================
 
 aliases:
-
-# Aliases {{{
 
 - from/modifiers: &optional_shift
     optional:
@@ -18,15 +16,13 @@ aliases:
     bundle_identifiers:
     - "^com\\.apple\\.loginwindow$"
 
-# }}}
-
 # RULES ==========================================
 
 rules:
 
 # MTGAP (latest version) {{{
 
-- description: "[Keyboard Layout] MTGAP (latest version)"
+- description: "11. MTGAP (latest version)"
   manipulators:
 
   # Upper Row ------------------------------------
@@ -349,7 +345,7 @@ rules:
 
 # MTGAP (mod punct) {{{
 
-- description: "[Keyboard Layout] MTGAP (mod punct)"
+- description: "11. MTGAP (mod punct)"
   manipulators:
 
   # Upper Row ------------------------------------
@@ -672,7 +668,7 @@ rules:
 
 # MTGAP 2.0 {{{
 
-- description: "[Keyboard Layout] MTGAP 2.0"
+- description: "11. MTGAP 2.0"
   manipulators:
 
   # Upper Row ------------------------------------
@@ -995,7 +991,7 @@ rules:
 
 # Canary (ortho) {{{
 
-- description: "[Keyboard Layout] Canary (ortho)"
+- description: "11. Canary (ortho)"
   manipulators:
 
   # Upper Row ------------------------------------
@@ -1318,7 +1314,7 @@ rules:
 
 # Canary (angle mod) {{{
 
-- description: "[Keyboard Layout] Canary (angle mod)"
+- description: "11. Canary (angle mod)"
   manipulators:
 
   # Upper Row ------------------------------------
@@ -1641,7 +1637,7 @@ rules:
 
 # Sturdy {{{
 
-- description: "[Keyboard Layout] Sturdy"
+- description: "11. Sturdy"
   manipulators:
 
   # Upper Row ------------------------------------
@@ -1964,7 +1960,7 @@ rules:
 
 # Graphite {{{
 
-- description: "[Keyboard Layout] Graphite"
+- description: "11. Graphite"
   manipulators:
 
   # Upper Row ------------------------------------
@@ -2287,7 +2283,7 @@ rules:
 
 # Gallium v2 {{{
 
-- description: "[Keyboard Layout] Gallium v2"
+- description: "11. Gallium v2"
   manipulators:
 
   # Upper Row ------------------------------------
@@ -2610,7 +2606,7 @@ rules:
 
 # Gallium v1 {{{
 
-- description: "[Keyboard Layout] Gallium v1"
+- description: "11. Gallium v1"
   manipulators:
 
   # Upper Row ------------------------------------
@@ -2933,7 +2929,7 @@ rules:
 
 # Nerps {{{
 
-- description: "[Keyboard Layout] Nerps"
+- description: "11. Nerps"
   manipulators:
 
   # Upper Row ------------------------------------
@@ -3256,7 +3252,7 @@ rules:
 
 # Colemak-DH {{{
 
-- description: "[Keyboard Layout] Colemak-DH"
+- description: "11. Colemak-DH"
   manipulators:
 
   # Upper Row ------------------------------------
@@ -3579,7 +3575,7 @@ rules:
 
 # Colemak {{{
 
-- description: "[Keyboard Layout] Colemak"
+- description: "11. Colemak"
   manipulators:
 
   # Upper Row ------------------------------------
@@ -3902,7 +3898,7 @@ rules:
 
 # Workman {{{
 
-- description: "[Keyboard Layout] Workman"
+- description: "11. Workman"
   manipulators:
 
   # Upper Row ------------------------------------
@@ -4225,7 +4221,7 @@ rules:
 
 # Capewell 0.9.3 {{{
 
-- description: "[Keyboard Layout] Capewell 0.9.3"
+- description: "11. Capewell 0.9.3"
   manipulators:
 
   # Upper Row ------------------------------------
@@ -4548,7 +4544,7 @@ rules:
 
 # Arensito {{{
 
-- description: "[Keyboard Layout] Arensito"
+- description: "11. Arensito"
   manipulators:
 
   # Upper Row ------------------------------------

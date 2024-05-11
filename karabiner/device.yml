@@ -1,6 +1,6 @@
-title: "20. Device"
+title: "20. Device-Specific"
 
-# DEVECES NOTES ==================================
+# DEVECES ========================================
 
 # Apple Internal Keyoard
 # vendor_id: 1452
@@ -68,17 +68,16 @@ aliases:
 # RULES ==========================================
 
 rules:
+- description: "20-1. Lofree Flow84"
+  manipulators:
 
-# RShift (for Wide Mod) --------------------------
+  # RShift (for Wide Mod) --------------------------
 
-# 修飾キーを文字キーと元の修飾キー兼用にする
-# 文字キーを単に別の文字キーに変更するのは Simple Modifications で対応
-#
-# 修飾キーと兼用する必要がなかったので無効化
+  # 修飾キーと兼用する必要がなかったので無効化
+  #
+  # 修飾キーを文字キーと元の修飾キー兼用にする
+  # 文字キーを単に別の文字キーに変更するのは Simple Modifications で対応
 
-# - description: "[Device] RShift → Slash/RShift (Lofree Flow)"
-#   manipulators:
-#
 #   # Apps: RControl-RShift -> Command-K, Eisuu
 #   # Slack, Superhuman, Linear
 #   - type: basic
@@ -245,14 +244,11 @@ rules:
 #     - key_code: slash
 #     conditions: *device
 
-# LShift (for Angle Mod) -------------------------
+  # LShift (for Angle Mod) -------------------------
 
-# LShift -> 他のキーのアルペジオ打鍵に問題があったため無効化
-# LShift -> 次のキーとしたいところが、LShift + 次のキーとなってしまう
+  # LShift -> 他のキーのアルペジオ打鍵に問題があったため無効化
+  # LShift -> 次のキーとしたいところが、LShift + 次のキーとなってしまう
 
-# - description: "[Device] LShift → Z/LShift (Lofree Flow)"
-#   manipulators:
-#
 #   # Edit Mode: LShift -> Shift-Command-Z
 #   - type: basic
 #     from:
