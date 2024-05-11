@@ -6,7 +6,7 @@ rules:
 
 # Upper Row --------------------------------------
 
-  # Q -> ,
+  # Q -> .
   - type: basic
     from:
       key_code: q
@@ -14,7 +14,7 @@ rules:
         mandatory:
         - right_command
     to:
-    - key_code: comma
+    - key_code: period
 
   # W -> +
   - type: basic
@@ -110,7 +110,7 @@ rules:
       modifiers:
       - shift
 
-  # P -> .
+  # P -> ,
   - type: basic
     from:
       key_code: p
@@ -118,7 +118,7 @@ rules:
         mandatory:
         - right_command
     to:
-    - key_code: period
+    - key_code: comma
 
   # Open Bracket -> [
   - type: basic
