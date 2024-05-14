@@ -30,7 +30,7 @@ rules:
 
 # Edit Mode Keys ---------------------------------
 
-  # IME Off --------------------------------------
+  # IME Off (Qwerty) -----------------------------
 
   # Left: D + F (D -> F)
   - type: basic
@@ -49,12 +49,14 @@ rules:
         name: edit
         value: 1
     to_if_alone:
-    - key_code: d
-    - key_code: f
+    - key_code: d  # Qwerty
+    - key_code: f  # Qwerty
+    # - key_code: e  # MTGAP
+    # - key_code: a  # MTGAP
     conditions: *ime_off
     parameters: *thresh_ms
 
-  # Left: D + F (D <-> F)
+  # Left: D + F (F -> D)
   - type: basic
     from:
       simultaneous:
@@ -70,8 +72,10 @@ rules:
         name: edit
         value: 1
     to_if_alone:
-    - key_code: f
-    - key_code: d
+    - key_code: f  # Qwerty
+    - key_code: d  # Qwerty
+    # - key_code: a  # MTGAP
+    # - key_code: e  # MTGAP
     conditions: *ime_off
     parameters: *thresh_ms
 
@@ -92,12 +96,14 @@ rules:
         name: edit
         value: 1
     to_if_alone:
-    - key_code: j
-    - key_code: k
+    - key_code: j  # Qwerty
+    - key_code: k  # Qwerty
+    # - key_code: h  # MTGAP
+    # - key_code: t  # MTGAP
     conditions: *ime_off
     parameters: *thresh_ms
 
-  # Right: J + K (J <-> K)
+  # Right: J + K (K -> J)
   - type: basic
     from:
       simultaneous:
@@ -113,8 +119,10 @@ rules:
         name: edit
         value: 1
     to_if_alone:
-    - key_code: k
-    - key_code: j
+    - key_code: k  # Qwerty
+    - key_code: j  # Qwerty
+    # - key_code: t  # MTGAP
+    # - key_code: h  # MTGAP
     conditions: *ime_off
     parameters: *thresh_ms
 
@@ -144,7 +152,7 @@ rules:
     conditions: *ime_on
     parameters: *thresh_ms
 
-  # Left: D + F (D <-> F)
+  # Left: D + F (F -> D)
   - type: basic
     from:
       simultaneous:
@@ -189,7 +197,7 @@ rules:
     conditions: *ime_on
     parameters: *thresh_ms
 
-  # Right: J + K (J <-> K)
+  # Right: J + K (K -> J)
   - type: basic
     from:
       simultaneous:
