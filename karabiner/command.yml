@@ -133,22 +133,6 @@ rules:
     to:
     - key_code: right_arrow
 
-  # LCommand-` → Command-@
-  - type: basic
-    from:
-      key_code: grave_accent_and_tilde
-      modifiers:
-        mandatory:
-        - left_command
-        optional:
-        - any
-    to:
-    - key_code: "2"
-      modifiers:
-      - shift
-      - command
-      repeat: false
-
   # LCommad/RCommand → 英数/かな
   - type: basic
     from:

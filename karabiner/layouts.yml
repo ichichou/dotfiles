@@ -9,6 +9,9 @@ aliases:
     - shift
 
 - conditions: &base
+  - type: variable_if
+    name: alt_layout
+    value: 1
   - type: input_source_if
     input_sources:
     - language: en
@@ -348,6 +351,43 @@ rules:
 - description: "11. MTGAP (latest version)"
   manipulators:
 
+  # Layout On/Off --------------------------------
+
+  # On
+  - type: basic
+    from:
+      key_code: grave_accent_and_tilde
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - set_variable:
+        name: alt_layout
+        value: 1
+    conditions:
+    - type: variable_unless
+      name: alt_layout
+      value: 1
+    - type: input_source_if
+      input_sources:
+      - language: en
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+  # Off
+  - type: basic
+    from:
+      key_code: grave_accent_and_tilde
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - set_variable:
+        name: alt_layout
+        value: 0
+    conditions: *base
+
   # Upper Row ------------------------------------
 
   # Q
@@ -670,6 +710,43 @@ rules:
 
 - description: "11. MTGAP (mod punct)"
   manipulators:
+
+  # Layout On/Off --------------------------------
+
+  # On
+  - type: basic
+    from:
+      key_code: grave_accent_and_tilde
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - set_variable:
+        name: alt_layout
+        value: 1
+    conditions:
+    - type: variable_unless
+      name: alt_layout
+      value: 1
+    - type: input_source_if
+      input_sources:
+      - language: en
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+  # Off
+  - type: basic
+    from:
+      key_code: grave_accent_and_tilde
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - set_variable:
+        name: alt_layout
+        value: 0
+    conditions: *base
 
   # Upper Row ------------------------------------
 
@@ -994,6 +1071,43 @@ rules:
 - description: "11. MTGAP 2.0"
   manipulators:
 
+  # Layout On/Off --------------------------------
+
+  # On
+  - type: basic
+    from:
+      key_code: grave_accent_and_tilde
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - set_variable:
+        name: alt_layout
+        value: 1
+    conditions:
+    - type: variable_unless
+      name: alt_layout
+      value: 1
+    - type: input_source_if
+      input_sources:
+      - language: en
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+  # Off
+  - type: basic
+    from:
+      key_code: grave_accent_and_tilde
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - set_variable:
+        name: alt_layout
+        value: 0
+    conditions: *base
+
   # Upper Row ------------------------------------
 
   # Q
@@ -1316,6 +1430,43 @@ rules:
 
 - description: "11. Canary (ortho)"
   manipulators:
+
+  # Layout On/Off --------------------------------
+
+  # On
+  - type: basic
+    from:
+      key_code: grave_accent_and_tilde
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - set_variable:
+        name: alt_layout
+        value: 1
+    conditions:
+    - type: variable_unless
+      name: alt_layout
+      value: 1
+    - type: input_source_if
+      input_sources:
+      - language: en
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+  # Off
+  - type: basic
+    from:
+      key_code: grave_accent_and_tilde
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - set_variable:
+        name: alt_layout
+        value: 0
+    conditions: *base
 
   # Upper Row ------------------------------------
 
@@ -1640,6 +1791,43 @@ rules:
 - description: "11. Canary (angle mod)"
   manipulators:
 
+  # Layout On/Off --------------------------------
+
+  # On
+  - type: basic
+    from:
+      key_code: grave_accent_and_tilde
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - set_variable:
+        name: alt_layout
+        value: 1
+    conditions:
+    - type: variable_unless
+      name: alt_layout
+      value: 1
+    - type: input_source_if
+      input_sources:
+      - language: en
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+  # Off
+  - type: basic
+    from:
+      key_code: grave_accent_and_tilde
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - set_variable:
+        name: alt_layout
+        value: 0
+    conditions: *base
+
   # Upper Row ------------------------------------
 
   # Q
@@ -1962,6 +2150,43 @@ rules:
 
 - description: "11. Sturdy"
   manipulators:
+
+  # Layout On/Off --------------------------------
+
+  # On
+  - type: basic
+    from:
+      key_code: grave_accent_and_tilde
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - set_variable:
+        name: alt_layout
+        value: 1
+    conditions:
+    - type: variable_unless
+      name: alt_layout
+      value: 1
+    - type: input_source_if
+      input_sources:
+      - language: en
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+  # Off
+  - type: basic
+    from:
+      key_code: grave_accent_and_tilde
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - set_variable:
+        name: alt_layout
+        value: 0
+    conditions: *base
 
   # Upper Row ------------------------------------
 
@@ -2286,6 +2511,43 @@ rules:
 - description: "11. Graphite"
   manipulators:
 
+  # Layout On/Off --------------------------------
+
+  # On
+  - type: basic
+    from:
+      key_code: grave_accent_and_tilde
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - set_variable:
+        name: alt_layout
+        value: 1
+    conditions:
+    - type: variable_unless
+      name: alt_layout
+      value: 1
+    - type: input_source_if
+      input_sources:
+      - language: en
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+  # Off
+  - type: basic
+    from:
+      key_code: grave_accent_and_tilde
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - set_variable:
+        name: alt_layout
+        value: 0
+    conditions: *base
+
   # Upper Row ------------------------------------
 
   # Q
@@ -2608,6 +2870,43 @@ rules:
 
 - description: "11. Gallium v2"
   manipulators:
+
+  # Layout On/Off --------------------------------
+
+  # On
+  - type: basic
+    from:
+      key_code: grave_accent_and_tilde
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - set_variable:
+        name: alt_layout
+        value: 1
+    conditions:
+    - type: variable_unless
+      name: alt_layout
+      value: 1
+    - type: input_source_if
+      input_sources:
+      - language: en
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+  # Off
+  - type: basic
+    from:
+      key_code: grave_accent_and_tilde
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - set_variable:
+        name: alt_layout
+        value: 0
+    conditions: *base
 
   # Upper Row ------------------------------------
 
@@ -2932,6 +3231,43 @@ rules:
 - description: "11. Gallium v1"
   manipulators:
 
+  # Layout On/Off --------------------------------
+
+  # On
+  - type: basic
+    from:
+      key_code: grave_accent_and_tilde
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - set_variable:
+        name: alt_layout
+        value: 1
+    conditions:
+    - type: variable_unless
+      name: alt_layout
+      value: 1
+    - type: input_source_if
+      input_sources:
+      - language: en
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+  # Off
+  - type: basic
+    from:
+      key_code: grave_accent_and_tilde
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - set_variable:
+        name: alt_layout
+        value: 0
+    conditions: *base
+
   # Upper Row ------------------------------------
 
   # Q
@@ -3254,6 +3590,43 @@ rules:
 
 - description: "11. Nerps"
   manipulators:
+
+  # Layout On/Off --------------------------------
+
+  # On
+  - type: basic
+    from:
+      key_code: grave_accent_and_tilde
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - set_variable:
+        name: alt_layout
+        value: 1
+    conditions:
+    - type: variable_unless
+      name: alt_layout
+      value: 1
+    - type: input_source_if
+      input_sources:
+      - language: en
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+  # Off
+  - type: basic
+    from:
+      key_code: grave_accent_and_tilde
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - set_variable:
+        name: alt_layout
+        value: 0
+    conditions: *base
 
   # Upper Row ------------------------------------
 
@@ -3578,6 +3951,43 @@ rules:
 - description: "11. Colemak-DH"
   manipulators:
 
+  # Layout On/Off --------------------------------
+
+  # On
+  - type: basic
+    from:
+      key_code: grave_accent_and_tilde
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - set_variable:
+        name: alt_layout
+        value: 1
+    conditions:
+    - type: variable_unless
+      name: alt_layout
+      value: 1
+    - type: input_source_if
+      input_sources:
+      - language: en
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+  # Off
+  - type: basic
+    from:
+      key_code: grave_accent_and_tilde
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - set_variable:
+        name: alt_layout
+        value: 0
+    conditions: *base
+
   # Upper Row ------------------------------------
 
   # Q
@@ -3900,6 +4310,43 @@ rules:
 
 - description: "11. Colemak"
   manipulators:
+
+  # Layout On/Off --------------------------------
+
+  # On
+  - type: basic
+    from:
+      key_code: grave_accent_and_tilde
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - set_variable:
+        name: alt_layout
+        value: 1
+    conditions:
+    - type: variable_unless
+      name: alt_layout
+      value: 1
+    - type: input_source_if
+      input_sources:
+      - language: en
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+  # Off
+  - type: basic
+    from:
+      key_code: grave_accent_and_tilde
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - set_variable:
+        name: alt_layout
+        value: 0
+    conditions: *base
 
   # Upper Row ------------------------------------
 
@@ -4224,6 +4671,43 @@ rules:
 - description: "11. Workman"
   manipulators:
 
+  # Layout On/Off --------------------------------
+
+  # On
+  - type: basic
+    from:
+      key_code: grave_accent_and_tilde
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - set_variable:
+        name: alt_layout
+        value: 1
+    conditions:
+    - type: variable_unless
+      name: alt_layout
+      value: 1
+    - type: input_source_if
+      input_sources:
+      - language: en
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+  # Off
+  - type: basic
+    from:
+      key_code: grave_accent_and_tilde
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - set_variable:
+        name: alt_layout
+        value: 0
+    conditions: *base
+
   # Upper Row ------------------------------------
 
   # Q
@@ -4546,6 +5030,43 @@ rules:
 
 - description: "11. Capewell 0.9.3"
   manipulators:
+
+  # Layout On/Off --------------------------------
+
+  # On
+  - type: basic
+    from:
+      key_code: grave_accent_and_tilde
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - set_variable:
+        name: alt_layout
+        value: 1
+    conditions:
+    - type: variable_unless
+      name: alt_layout
+      value: 1
+    - type: input_source_if
+      input_sources:
+      - language: en
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+  # Off
+  - type: basic
+    from:
+      key_code: grave_accent_and_tilde
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - set_variable:
+        name: alt_layout
+        value: 0
+    conditions: *base
 
   # Upper Row ------------------------------------
 
@@ -4870,6 +5391,43 @@ rules:
 - description: "11. Arensito"
   manipulators:
 
+  # Layout On/Off --------------------------------
+
+  # On
+  - type: basic
+    from:
+      key_code: grave_accent_and_tilde
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - set_variable:
+        name: alt_layout
+        value: 1
+    conditions:
+    - type: variable_unless
+      name: alt_layout
+      value: 1
+    - type: input_source_if
+      input_sources:
+      - language: en
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+  # Off
+  - type: basic
+    from:
+      key_code: grave_accent_and_tilde
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - set_variable:
+        name: alt_layout
+        value: 0
+    conditions: *base
+
   # Upper Row ------------------------------------
 
   # Q
@@ -5187,4 +5745,3 @@ rules:
     conditions: *base
 
 # }}}
-
