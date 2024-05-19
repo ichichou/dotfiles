@@ -30,7 +30,7 @@ rules:
 
 # Edit Mode Keys ---------------------------------
 
-  # IME Off (Qwerty) -----------------------------
+  # IME Off (Qwerty) {{{
 
   # Left: D + F (D -> F)
   - type: basic
@@ -126,7 +126,9 @@ rules:
     conditions: *ime_off
     parameters: *thresh_ms
 
-  # IME On (Shingeta Layout) ---------------------
+  # }}}
+
+  # IME On (Shingeta Layout) {{{
 
   # Left: D + F (D -> F)
   - type: basic
@@ -217,10 +219,12 @@ rules:
     - key_code: u
     conditions: *ime_on
     parameters: *thresh_ms
+
+  # }}}
 
 # Edit Mode Mapping -----------------------------
 
-  # Right Keys -----------------------------------
+  # Right Side Keys {{{
 
   # Y -> Option-Delete
   - type: basic
@@ -321,10 +325,16 @@ rules:
       key_code: semicolon
     conditions: *edit
 
-  # Quote -> Invalid
+  # Quote -> Center Window (Control-Option-C)
   - type: basic
     from:
       key_code: quote
+    to:
+    - key_code: c
+      modifiers:
+      - control
+      - option
+      repeat: false
     conditions: *edit
 
   # N -> Delete
@@ -409,7 +419,9 @@ rules:
       repeat: false
     conditions: *edit
 
-  # Left Keys ------------------------------------
+  # }}}
+
+  # Left Side Keys {{{
 
   # Q -> Invalid
   - type: basic
@@ -562,7 +574,9 @@ rules:
       key_code: b
     conditions: *edit
 
-  # Other Keys -----------------------------------
+  # }}}
+
+  # Other Keys {{{
 
   # Space -> Return
   - type: basic
@@ -572,3 +586,5 @@ rules:
     - key_code: return_or_enter
       repeat: false
     conditions: *edit
+
+  # }}}
