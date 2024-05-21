@@ -1,4 +1,39 @@
 title: "04. AltGr"
+
+# DEVECES ========================================
+
+# Apple Internal Keyoard
+# vendor_id: 1452
+# product_id: 834
+
+# Lofree Flow84
+# vendor_id: 1452
+# product_id: 591
+
+# ALIASES ========================================
+
+aliases:
+
+# Modifier Keys ----------------------------------
+
+- from/modifiers: &modifier
+    mandatory:
+    - right_command
+
+# Conditions -------------------------------------
+
+- conditions: &devices
+  - type: device_if
+    identifiers:
+    - description: "Apple Internal Keyboard"
+      vendor_id: 1452
+      product_id: 834
+    - description: "Lofree Flow84"
+      vendor_id: 1452
+      product_id: 591
+
+# RULES ==========================================
+
 rules:
 - description: "4. AltGr"
   manipulators:
@@ -9,145 +44,132 @@ rules:
   - type: basic
     from:
       key_code: q
-      modifiers:
-        mandatory:
-        - right_command
+      modifiers: *modifier
     to:
     - key_code: period
+    conditions: *devices
 
   # W -> +
   - type: basic
     from:
       key_code: w
-      modifiers:
-        mandatory:
-        - right_command
+      modifiers: *modifier
     to:
     - key_code: equal_sign
       modifiers:
       - shift
+    conditions: *devices
 
   # E -> _
   - type: basic
     from:
       key_code: e
-      modifiers:
-        mandatory:
-        - right_command
+      modifiers: *modifier
     to:
     - key_code: hyphen
       modifiers:
       - shift
+    conditions: *devices
 
   # R -> !
   - type: basic
     from:
       key_code: r
-      modifiers:
-        mandatory:
-        - right_command
+      modifiers: *modifier
     to:
     - key_code: "1"
       modifiers:
       - shift
+    conditions: *devices
 
   # T -> |
   - type: basic
     from:
       key_code: t
-      modifiers:
-        mandatory:
-        - right_command
+      modifiers: *modifier
     to:
     - key_code: backslash
       modifiers:
       - shift
+    conditions: *devices
 
   # Y -> `
   - type: basic
     from:
       key_code: "y"
-      modifiers:
-        mandatory:
-        - right_command
+      modifiers: *modifier
     to:
     - key_code: grave_accent_and_tilde
+    conditions: *devices
 
   # U -> ?
   - type: basic
     from:
       key_code: u
-      modifiers:
-        mandatory:
-        - right_command
+      modifiers: *modifier
     to:
     - key_code: slash
       modifiers:
       - shift
+    conditions: *devices
 
   # I -> ^
   - type: basic
     from:
       key_code: i
-      modifiers:
-        mandatory:
-        - right_command
+      modifiers: *modifier
     to:
     - key_code: "6"
       modifiers:
       - shift
+    conditions: *devices
 
   # O -> $
   - type: basic
     from:
       key_code: o
-      modifiers:
-        mandatory:
-        - right_command
+      modifiers: *modifier
     to:
     - key_code: "4"
       modifiers:
       - shift
+    conditions: *devices
 
   # P -> ,
   - type: basic
     from:
       key_code: p
-      modifiers:
-        mandatory:
-        - right_command
+      modifiers: *modifier
     to:
     - key_code: comma
+    conditions: *devices
 
   # Open Bracket -> [
   - type: basic
     from:
       key_code: open_bracket
-      modifiers:
-        mandatory:
-        - right_command
+      modifiers: *modifier
     to:
     - key_code: open_bracket
+    conditions: *devices
 
   # Close Bracket -> ]
   - type: basic
     from:
       key_code: close_bracket
-      modifiers:
-        mandatory:
-        - right_command
+      modifiers: *modifier
     to:
     - key_code: close_bracket
+    conditions: *devices
 
   # Backslash -> \
   - type: basic
     from:
       key_code: backslash
-      modifiers:
-        mandatory:
-        - right_command
+      modifiers: *modifier
     to:
     - key_code: backslash
+    conditions: *devices
 
 # Home Row ---------------------------------------
 
@@ -155,123 +177,112 @@ rules:
   - type: basic
     from:
       key_code: a
-      modifiers:
-        mandatory:
-        - right_command
+      modifiers: *modifier
     to:
     - key_code: "8"
       modifiers:
       - shift
+    conditions: *devices
 
   # S -> =
   - type: basic
     from:
       key_code: s
-      modifiers:
-        mandatory:
-        - right_command
+      modifiers: *modifier
     to:
     - key_code: equal_sign
+    conditions: *devices
 
   # D -> -
   - type: basic
     from:
       key_code: d
-      modifiers:
-        mandatory:
-        - right_command
+      modifiers: *modifier
     to:
     - key_code: hyphen
+    conditions: *devices
 
   # F -> 0
   - type: basic
     from:
       key_code: f
-      modifiers:
-        mandatory:
-        - right_command
+      modifiers: *modifier
     to:
     - key_code: "0"
+    conditions: *devices
 
   # G -> @
   - type: basic
     from:
       key_code: g
-      modifiers:
-        mandatory:
-        - right_command
+      modifiers: *modifier
     to:
     - key_code: "2"
       modifiers:
       - shift
+    conditions: *devices
 
   # H -> &
   - type: basic
     from:
       key_code: h
-      modifiers:
-        mandatory:
-        - right_command
+      modifiers: *modifier
     to:
     - key_code: "7"
       modifiers:
       - shift
+    conditions: *devices
 
   # J -> 1
   - type: basic
     from:
       key_code: j
-      modifiers:
-        mandatory:
-        - right_command
+      modifiers: *modifier
     to:
     - key_code: "1"
+    conditions: *devices
 
   # K -> %
   - type: basic
     from:
       key_code: k
-      modifiers:
-        mandatory:
-        - right_command
+      modifiers: *modifier
     to:
     - key_code: "5"
       modifiers:
       - shift
+    conditions: *devices
 
   # L -> #
   - type: basic
     from:
       key_code: l
-      modifiers:
-        mandatory:
-        - right_command
+      modifiers: *modifier
     to:
     - key_code: "3"
       modifiers:
       - shift
+    conditions: *devices
 
   # Semicolon -> :
   - type: basic
     from:
       key_code: semicolon
-      modifiers:
-        mandatory:
-        - right_command
+      modifiers: *modifier
     to:
     - key_code: semicolon
       modifiers:
       - shift
+    conditions: *devices
 
   # Quote -> '
   - type: basic
     from:
       key_code: quote
-      modifiers:
-        mandatory:
-        - right_command
+      modifiers: *modifier
     to:
     - key_code: quote
+    conditions: *devices
 
 # Lower Row --------------------------------------
 
@@ -279,111 +290,102 @@ rules:
   - type: basic
     from:
       key_code: z
-      modifiers:
-        mandatory:
-        - right_command
+      modifiers: *modifier
     to:
     - key_code: "8"
+    conditions: *devices
 
   # X -> 6
   - type: basic
     from:
       key_code: x
-      modifiers:
-        mandatory:
-        - right_command
+      modifiers: *modifier
     to:
     - key_code: "6"
+    conditions: *devices
 
   # C -> 4
   - type: basic
     from:
       key_code: c
-      modifiers:
-        mandatory:
-        - right_command
+      modifiers: *modifier
     to:
     - key_code: "4"
+    conditions: *devices
 
   # V -> 2
   - type: basic
     from:
       key_code: v
-      modifiers:
-        mandatory:
-        - right_command
+      modifiers: *modifier
     to:
     - key_code: "2"
+    conditions: *devices
 
   # B -> \
   - type: basic
     from:
       key_code: b
-      modifiers:
-        mandatory:
-        - right_command
+      modifiers: *modifier
     to:
     - key_code: backslash
+    conditions: *devices
 
   # N -> ~
   - type: basic
     from:
       key_code: "n"
-      modifiers:
-        mandatory:
-        - right_command
+      modifiers: *modifier
     to:
     - key_code: grave_accent_and_tilde
       modifiers:
       - shift
+    conditions: *devices
 
   # M -> 3
   - type: basic
     from:
       key_code: m
-      modifiers:
-        mandatory:
-        - right_command
+      modifiers: *modifier
     to:
     - key_code: "3"
+    conditions: *devices
 
   # Comma -> 5
   - type: basic
     from:
       key_code: comma
-      modifiers:
-        mandatory:
-        - right_command
+      modifiers: *modifier
     to:
     - key_code: "5"
+    conditions: *devices
 
   # Period -> 7
   - type: basic
     from:
       key_code: period
-      modifiers:
-        mandatory:
-        - right_command
+      modifiers: *modifier
     to:
     - key_code: "7"
+    conditions: *devices
 
   # Slash -> 9
   - type: basic
     from:
       key_code: slash
-      modifiers:
-        mandatory:
-        - right_command
+      modifiers: *modifier
     to:
     - key_code: "9"
+    conditions: *devices
+
+# Other Keys --------------------------------------
 
   # Space -> Whitespace
   - type: basic
     from:
       key_code: spacebar
-      modifiers:
-        mandatory:
-        - right_command
+      modifiers: *modifier
     to:
     - key_code: spacebar
       repeat: false
+    conditions: *devices
