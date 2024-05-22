@@ -2,13 +2,37 @@ title: "20. Device-Specific"
 
 # DEVECES ========================================
 
+# Starndard Keyboard -----------------------------
+
 # Apple Internal Keyoard
 # vendor_id: 1452
 # product_id: 834
 
+# Nuphy Air60 V2
+# vendor_id: 6645
+# product_id: 12885
+
 # Lofree Flow84
 # vendor_id: 1452
 # product_id: 591
+
+# Vega
+# vendor_id:
+# product_id:
+
+# Ergonomic Keyboard -----------------------------
+
+# Ergo42
+# vendor_id: 48194
+# product_id: 66
+
+# Lain
+# vendor_id:
+# product_id:
+
+# Altair-X
+# vendor_id:
+# product_id:
 
 # ALIASES ========================================
 

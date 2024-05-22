@@ -2,13 +2,11 @@ title: "04. AltGr"
 
 # DEVECES ========================================
 
+# Starndard Keyboard -----------------------------
+
 # Apple Internal Keyoard
 # vendor_id: 1452
 # product_id: 834
-
-# Vega
-# vendor_id: 
-# product_id: 
 
 # Nuphy Air60 V2
 # vendor_id: 6645
@@ -18,17 +16,23 @@ title: "04. AltGr"
 # vendor_id: 1452
 # product_id: 591
 
-# Ergo42
-# vendor_id: 
-# product_id: 
+# Vega
+# vendor_id:
+# product_id:
 
-# Altair-X
-# vendor_id: 
-# product_id: 
+# Ergonomic Keyboard -----------------------------
+
+# Ergo42
+# vendor_id: 48194
+# product_id: 66
 
 # Lain
-# vendor_id: 
-# product_id: 
+# vendor_id:
+# product_id:
+
+# Altair-X
+# vendor_id:
+# product_id:
 
 # ALIASES ========================================
 
@@ -42,18 +46,31 @@ aliases:
 
 # Conditions -------------------------------------
 
+# - conditions: &devices
+#   - type: device_if
+#     identifiers:
+#     - description: "Apple Internal Keyboard"
+#       vendor_id: 1452
+#       product_id: 834
+#     - description: "Nuphy Air60 V2"
+#       vendor_id: 6645
+#       product_id: 12885
+#     - description: "Lofree Flow84"
+#       vendor_id: 1452
+#       product_id: 591
+
 - conditions: &devices
-  - type: device_if
+  - type: device_unless
     identifiers:
-    - description: "Apple Internal Keyboard"
-      vendor_id: 1452
-      product_id: 834
-    - description: "Nuphy Air60 V2"
-      vendor_id: 6645
-      product_id: 12885
-    - description: "Lofree Flow84"
-      vendor_id: 1452
-      product_id: 591
+    - description: "Ergo42"
+      vendor_id: 48194
+      product_id: 66
+    # - description: "Lain"
+    #   vendor_id:
+    #   product_id:
+    # - description: "Altair-X"
+    #   vendor_id:
+    #   product_id:
 
 # RULES ==========================================
 
