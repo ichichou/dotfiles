@@ -42,7 +42,7 @@ aliases:
     bundle_identifiers:
     - "com.apple.loginwindow"
 
-- conditions: &left_shifted
+- conditions: &left_shift
   - type: input_source_if
     input_sources:
     - language: ja
@@ -56,7 +56,7 @@ aliases:
     bundle_identifiers:
     - "com.apple.loginwindow"
 
-- conditions: &right_shifted
+- conditions: &right_shift
   - type: input_source_if
     input_sources:
     - language: ja
@@ -229,7 +229,7 @@ rules:
     - key_code: s
     - key_code: a
       repeat: false
-    conditions: *left_shifted
+    conditions: *left_shift
 
   # ぬ
   - type: basic
@@ -240,7 +240,7 @@ rules:
     - key_code: "n"
     - key_code: u
       repeat: false
-    conditions: *left_shifted
+    conditions: *left_shift
 
   # ひ
   - type: basic
@@ -251,7 +251,7 @@ rules:
     - key_code: h
     - key_code: i
       repeat: false
-    conditions: *left_shifted
+    conditions: *left_shift
 
   # む
   - type: basic
@@ -262,7 +262,7 @@ rules:
     - key_code: m
     - key_code: u
       repeat: false
-    conditions: *left_shifted
+    conditions: *left_shift
 
   # め
   - type: basic
@@ -273,7 +273,7 @@ rules:
     - key_code: m
     - key_code: e
       repeat: false
-    conditions: *left_shifted
+    conditions: *left_shift
 
   # ゆ
   - type: basic
@@ -284,7 +284,18 @@ rules:
     - key_code: "y"
     - key_code: u
       repeat: false
-    conditions: *left_shifted
+    conditions: *left_shift
+
+  # れ
+  - type: basic
+    from:
+      key_code: l
+      modifiers: *optional_shift
+    to:
+    - key_code: r
+    - key_code: e
+      repeat: false
+    conditions: *left_shift
 
   # を
   - type: basic
@@ -295,7 +306,7 @@ rules:
     - key_code: w
     - key_code: o
       repeat: false
-    conditions: *left_shifted
+    conditions: *left_shift
 
   # ぎ
   - type: basic
@@ -306,7 +317,7 @@ rules:
     - key_code: g
     - key_code: i
       repeat: false
-    conditions: *left_shifted
+    conditions: *left_shift
 
   # ぐ
   - type: basic
@@ -317,7 +328,7 @@ rules:
     - key_code: g
     - key_code: u
       repeat: false
-    conditions: *left_shifted
+    conditions: *left_shift
 
   # げ
   - type: basic
@@ -328,7 +339,7 @@ rules:
     - key_code: g
     - key_code: e
       repeat: false
-    conditions: *left_shifted
+    conditions: *left_shift
 
   # じ
   - type: basic
@@ -339,7 +350,7 @@ rules:
     - key_code: z
     - key_code: i
       repeat: false
-    conditions: *left_shifted
+    conditions: *left_shift
 
   # ず
   - type: basic
@@ -350,7 +361,7 @@ rules:
     - key_code: z
     - key_code: u
       repeat: false
-    conditions: *left_shifted
+    conditions: *left_shift
 
   # ぜ
   - type: basic
@@ -361,7 +372,7 @@ rules:
     - key_code: z
     - key_code: e
       repeat: false
-    conditions: *left_shifted
+    conditions: *left_shift
 
   # ぞ
   - type: basic
@@ -372,7 +383,7 @@ rules:
     - key_code: z
     - key_code: o
       repeat: false
-    conditions: *left_shifted
+    conditions: *left_shift
 
   # ぢ
   - type: basic
@@ -383,7 +394,7 @@ rules:
     - key_code: d
     - key_code: i
       repeat: false
-    conditions: *left_shifted
+    conditions: *left_shift
 
   # づ
   - type: basic
@@ -394,7 +405,7 @@ rules:
     - key_code: d
     - key_code: u
       repeat: false
-    conditions: *left_shifted
+    conditions: *left_shift
 
   # ば
   - type: basic
@@ -405,7 +416,7 @@ rules:
     - key_code: b
     - key_code: a
       repeat: false
-    conditions: *left_shifted
+    conditions: *left_shift
 
   # ぶ
   - type: basic
@@ -416,7 +427,7 @@ rules:
     - key_code: b
     - key_code: u
       repeat: false
-    conditions: *left_shifted
+    conditions: *left_shift
 
   # ぱ
   - type: basic
@@ -427,7 +438,7 @@ rules:
     - key_code: p
     - key_code: a
       repeat: false
-    conditions: *left_shifted
+    conditions: *left_shift
 
   # ぴ
   - type: basic
@@ -438,7 +449,7 @@ rules:
     - key_code: p
     - key_code: i
       repeat: false
-    conditions: *left_shifted
+    conditions: *left_shift
 
   # # ぷ
   # # Symbol Mode で定義
@@ -450,7 +461,7 @@ rules:
   #   - key_code: p
   #   - key_code: u
   #     repeat: false
-  #   conditions: *left_shifted
+  #   conditions: *left_shift
 
   # ぽ
   - type: basic
@@ -461,7 +472,7 @@ rules:
     - key_code: p
     - key_code: o
       repeat: false
-    conditions: *left_shifted
+    conditions: *left_shift
 
   # ゔ
   - type: basic
@@ -472,7 +483,7 @@ rules:
     - key_code: v
     - key_code: u
       repeat: false
-    conditions: *left_shifted
+    conditions: *left_shift
 
   # ぅ
   - type: basic
@@ -483,7 +494,7 @@ rules:
     - key_code: x
     - key_code: u
       repeat: false
-    conditions: *left_shifted
+    conditions: *left_shift
 
   # ゃ
   - type: basic
@@ -495,7 +506,7 @@ rules:
     - key_code: "y"
     - key_code: a
       repeat: false
-    conditions: *left_shifted
+    conditions: *left_shift
 
   # ゅ
   - type: basic
@@ -507,19 +518,19 @@ rules:
     - key_code: "y"
     - key_code: u
       repeat: false
-    conditions: *left_shifted
+    conditions: *left_shift
 
   # 長音符
   - type: basic
     from:
-      key_code: l
+      key_code: quote
       modifiers: *optional_shift
     to:
     - key_code: quote
       repeat: false
-    conditions: *left_shifted
+    conditions: *left_shift
 
-  # ・未定義）
+  # （未定義）
   - type: basic
     from:
       key_code: w
@@ -528,9 +539,9 @@ rules:
     - set_variable:
         name: left_shift
         value: 0
-    conditions: *left_shifted
+    conditions: *left_shift
 
-  # ・未定義）
+  # （未定義）
   - type: basic
     from:
       key_code: c
@@ -539,9 +550,9 @@ rules:
     - set_variable:
         name: left_shift
         value: 0
-    conditions: *left_shifted
+    conditions: *left_shift
 
-  # ・未定義）
+  # （未定義）
   - type: basic
     from:
       key_code: quote
@@ -550,7 +561,7 @@ rules:
     - set_variable:
         name: left_shift
         value: 0
-    conditions: *left_shifted
+    conditions: *left_shift
 
   # ESC
   - type: basic
@@ -561,7 +572,7 @@ rules:
     - set_variable:
         name: left_shift
         value: 0
-    conditions: *left_shifted
+    conditions: *left_shift
 
 # 中指シフト・右 --------------------------
 
@@ -573,7 +584,7 @@ rules:
     to:
     - key_code: a
       repeat: false
-    conditions: *right_shifted
+    conditions: *right_shift
 
   # え
   - type: basic
@@ -583,7 +594,7 @@ rules:
     to:
     - key_code: e
       repeat: false
-    conditions: *right_shifted
+    conditions: *right_shift
 
   # お
   - type: basic
@@ -593,7 +604,7 @@ rules:
     to:
     - key_code: o
       repeat: false
-    conditions: *right_shifted
+    conditions: *right_shift
 
   # け
   - type: basic
@@ -604,7 +615,7 @@ rules:
     - key_code: k
     - key_code: e
       repeat: false
-    conditions: *right_shifted
+    conditions: *right_shift
 
   # せ
   - type: basic
@@ -615,7 +626,7 @@ rules:
     - key_code: s
     - key_code: e
       repeat: false
-    conditions: *right_shifted
+    conditions: *right_shift
 
   # # そ
   # # Symbol mode keys で定義
@@ -627,7 +638,7 @@ rules:
   #   - key_code: s
   #   - key_code: o
   #     repeat: false
-  #   conditions: *right_shifted
+  #   conditions: *right_shift
 
   # ち
   - type: basic
@@ -638,7 +649,7 @@ rules:
     - key_code: t
     - key_code: i
       repeat: false
-    conditions: *right_shifted
+    conditions: *right_shift
 
   # つ
   - type: basic
@@ -649,7 +660,7 @@ rules:
     - key_code: t
     - key_code: u
       repeat: false
-    conditions: *right_shifted
+    conditions: *right_shift
 
   # ね
   - type: basic
@@ -660,7 +671,7 @@ rules:
     - key_code: "n"
     - key_code: e
       repeat: false
-    conditions: *right_shifted
+    conditions: *right_shift
 
   # ふ
   - type: basic
@@ -671,7 +682,7 @@ rules:
     - key_code: h
     - key_code: u
       repeat: false
-    conditions: *right_shifted
+    conditions: *right_shift
 
   # へ
   - type: basic
@@ -682,7 +693,7 @@ rules:
     - key_code: h
     - key_code: e
       repeat: false
-    conditions: *right_shifted
+    conditions: *right_shift
 
   # ほ
   - type: basic
@@ -693,7 +704,7 @@ rules:
     - key_code: h
     - key_code: o
       repeat: false
-    conditions: *right_shifted
+    conditions: *right_shift
 
   # み
   - type: basic
@@ -704,7 +715,7 @@ rules:
     - key_code: m
     - key_code: i
       repeat: false
-    conditions: *right_shifted
+    conditions: *right_shift
 
   # や
   - type: basic
@@ -715,7 +726,7 @@ rules:
     - key_code: "y"
     - key_code: a
       repeat: false
-    conditions: *right_shifted
+    conditions: *right_shift
 
   # よ
   - type: basic
@@ -726,7 +737,7 @@ rules:
     - key_code: "y"
     - key_code: o
       repeat: false
-    conditions: *right_shifted
+    conditions: *right_shift
 
   # ろ
   - type: basic
@@ -737,7 +748,7 @@ rules:
     - key_code: r
     - key_code: o
       repeat: false
-    conditions: *right_shifted
+    conditions: *right_shift
 
   # わ
   - type: basic
@@ -748,7 +759,7 @@ rules:
     - key_code: w
     - key_code: a
       repeat: false
-    conditions: *right_shifted
+    conditions: *right_shift
 
   # ご
   - type: basic
@@ -759,7 +770,7 @@ rules:
     - key_code: g
     - key_code: o
       repeat: false
-    conditions: *right_shifted
+    conditions: *right_shift
 
   # ざ
   - type: basic
@@ -770,7 +781,7 @@ rules:
     - key_code: z
     - key_code: a
       repeat: false
-    conditions: *right_shifted
+    conditions: *right_shift
 
   # ど
   - type: basic
@@ -781,7 +792,7 @@ rules:
     - key_code: d
     - key_code: o
       repeat: false
-    conditions: *right_shifted
+    conditions: *right_shift
 
   # び
   - type: basic
@@ -792,7 +803,7 @@ rules:
     - key_code: b
     - key_code: i
       repeat: false
-    conditions: *right_shifted
+    conditions: *right_shift
 
   # べ
   - type: basic
@@ -803,7 +814,7 @@ rules:
     - key_code: b
     - key_code: e
       repeat: false
-    conditions: *right_shifted
+    conditions: *right_shift
 
   # ぼ
   - type: basic
@@ -814,7 +825,7 @@ rules:
     - key_code: b
     - key_code: o
       repeat: false
-    conditions: *right_shifted
+    conditions: *right_shift
 
   # ぺ
   - type: basic
@@ -825,7 +836,7 @@ rules:
     - key_code: p
     - key_code: e
       repeat: false
-    conditions: *right_shifted
+    conditions: *right_shift
 
   # ぁ
   - type: basic
@@ -836,7 +847,7 @@ rules:
     - key_code: x
     - key_code: a
       repeat: false
-    conditions: *right_shifted
+    conditions: *right_shift
 
   # ぃ
   - type: basic
@@ -847,7 +858,7 @@ rules:
     - key_code: x
     - key_code: i
       repeat: false
-    conditions: *right_shifted
+    conditions: *right_shift
 
   # ぇ
   - type: basic
@@ -858,7 +869,7 @@ rules:
     - key_code: x
     - key_code: e
       repeat: false
-    conditions: *right_shifted
+    conditions: *right_shift
 
   # ぉ
   - type: basic
@@ -869,9 +880,9 @@ rules:
     - key_code: x
     - key_code: o
       repeat: false
-    conditions: *right_shifted
+    conditions: *right_shift
 
-  # ・未定義）
+  # （未定義）
   - type: basic
     from:
       key_code: "y"
@@ -880,9 +891,9 @@ rules:
     - set_variable:
         name: right_shift
         value: 0
-    conditions: *right_shifted
+    conditions: *right_shift
 
-  # ・未定義）
+  # （未定義）
   - type: basic
     from:
       key_code: quote
@@ -891,7 +902,7 @@ rules:
     - set_variable:
         name: right_shift
         value: 0
-    conditions: *right_shifted
+    conditions: *right_shift
 
   # ESC
   - type: basic
@@ -902,7 +913,7 @@ rules:
     - set_variable:
         name: right_shift
         value: 0
-    conditions: *right_shifted
+    conditions: *right_shift
 
 # ベース --------------------------------------
 
@@ -1125,17 +1136,6 @@ rules:
       repeat: false
     conditions: *base
 
-  # れ
-  - type: basic
-    from:
-      key_code: slash
-      modifiers: *optional_shift
-    to:
-    - key_code: r
-    - key_code: e
-      repeat: false
-    conditions: *base
-
   # ん
   - type: basic
     from:
@@ -1224,6 +1224,16 @@ rules:
       repeat: false
     conditions: *base
 
+  # 長音符
+  - type: basic
+    from:
+      key_code: slash
+      modifiers: *optional_shift
+    to:
+    - key_code: quote
+      repeat: false
+    conditions: *base
+
 # Symbol Mode ------------------------------------
 
   # Symbol Mode Key ------------------------------
@@ -1245,7 +1255,7 @@ rules:
     - set_variable:
         name: symbol
         value: 0
-    conditions: *left_shifted
+    conditions: *left_shift
 
   # そ (右シフト時)
   - type: basic
@@ -1264,7 +1274,7 @@ rules:
     - set_variable:
         name: symbol
         value: 0
-    conditions: *right_shifted
+    conditions: *right_shift
 
   # て (ベース時)
   - type: basic
