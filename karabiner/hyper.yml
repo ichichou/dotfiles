@@ -387,6 +387,7 @@ rules:
     #   modifiers: *hyper_key
     #   repeat: false
     - shell_command: open -a "kitty"
+    - key_code: japanese_eisuu
     conditions: *hyper_mode
 
   # Semicolon: Line
