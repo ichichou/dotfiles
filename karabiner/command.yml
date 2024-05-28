@@ -138,7 +138,20 @@ rules:
 
   # }}}
 
-  # RCommand -> Sticky LShift
+  # LCommand/RCommand -> Sticky LShift
+  - type: basic
+    from:
+      key_code: left_command
+      modifiers:
+        optional:
+        - any
+    to:
+    - key_code: left_command
+      lazy: true
+    to_if_alone:
+    - sticky_modifier:
+        left_shift: toggle
+
   - type: basic
     from:
       key_code: right_command
