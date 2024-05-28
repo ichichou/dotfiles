@@ -27,7 +27,8 @@ rules:
     - key_code: escape
       repeat: false
 
-  # LCommand-LOption-HJKL → Command-HJKL
+  # LCommand-LOption-HJKL -> Command-HJKL {{{
+  # LCommand-HJKL のエスケープ用
   - type: basic
     from:
       key_code: h
@@ -88,7 +89,9 @@ rules:
       - command
       repeat: false
 
-  # LCommand-HJKL → Arrow Keys
+  # }}}
+
+  # LCommand-HJKL -> Arrow Keys {{{
   - type: basic
     from:
       key_code: h
@@ -133,27 +136,29 @@ rules:
     to:
     - key_code: right_arrow
 
-  # LCommad/RCommand → 英数/かな
-  - type: basic
-    from:
-      key_code: left_command
-      modifiers:
-        optional:
-        - any
-    to:
-    - key_code: left_command
-      lazy: true
-    to_if_alone:
-    - key_code: japanese_eisuu
+  # }}}
 
-  - type: basic
-    from:
-      key_code: right_command
-      modifiers:
-        optional:
-        - any
-    to:
-    - key_code: right_command
-      lazy: true
-    to_if_alone:
-    - key_code: japanese_kana
+  # # LCommad/RCommand -> 英数/かな
+  # - type: basic
+  #   from:
+  #     key_code: left_command
+  #     modifiers:
+  #       optional:
+  #       - any
+  #   to:
+  #   - key_code: left_command
+  #     lazy: true
+  #   to_if_alone:
+  #   - key_code: japanese_eisuu
+  #
+  # - type: basic
+  #   from:
+  #     key_code: right_command
+  #     modifiers:
+  #       optional:
+  #       - any
+  #   to:
+  #   - key_code: right_command
+  #     lazy: true
+  #   to_if_alone:
+  #   - key_code: japanese_kana
