@@ -717,6 +717,24 @@ rules:
       bundle_identifiers:
       - "com.hogbaysoftware.Bike"
 
+  # [Bike] Shift-Command-S -> Command-S
+  - type: basic
+    from:
+      key_code: s
+      modifiers:
+        mandatory:
+        - shift
+        - command
+    to:
+    - key_code: s
+      modifiers:
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.hogbaysoftware.Bike"
+
 # }}}
 
 # Workflowy {{{
