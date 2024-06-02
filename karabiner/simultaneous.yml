@@ -3,9 +3,11 @@ rules:
 - description: "2. Simultaneous"
   manipulators:
 
-# Both Hands -------------------------------------
+# 両手 {{{
 
-  # V+M / V+N → Return
+  # 常時 -----------------------------------------
+
+  # VM -> Return
   - type: basic
     from:
       simultaneous:
@@ -15,16 +17,19 @@ rules:
     - key_code: return_or_enter
       repeat: false
 
+  # A; -> Sticky Shift
   - type: basic
     from:
       simultaneous:
-      - key_code: v
-      - key_code: "n"
+      - key_code: a
+      - key_code: semicolon
     to:
-    - key_code: return_or_enter
-      repeat: false
+    - sticky_modifier:
+        left_shift: toggle
 
-  # F+J → ToggleKana (AquaSKK)
+  # 日本語入力 -----------------------------------
+
+  # FJ -> ToggleKana by AquaSKK
   - type: basic
     from:
       simultaneous:
@@ -39,9 +44,13 @@ rules:
       input_sources:
       - language: ja
 
-# One Hand ---------------------------------------
+# }}}
 
-  # F+G -> []
+# 片手・横 {{{
+
+  # 常時 -----------------------------------------
+
+  # FG -> []
   - type: basic
     from:
       simultaneous:
@@ -53,12 +62,12 @@ rules:
     - key_code: left_arrow
       repeat: false
 
-  # H+J -> ()
+  # JH -> ()
   - type: basic
     from:
       simultaneous:
-      - key_code: h
       - key_code: j
+      - key_code: h
     to:
     - key_code: "9"
       modifiers:
@@ -69,12 +78,126 @@ rules:
     - key_code: left_arrow
       repeat: false
 
-  # R+G -> :
+  # 英語入力 -------------------------------------
+
+  # VB -> ''
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: v
+      - key_code: b
+    to:
+    - key_code: quote
+    - key_code: quote
+    - key_code: left_arrow
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: en
+
+  # MN -> ""
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: m
+      - key_code: "n"
+    to:
+    - key_code: quote
+      modifiers:
+      - shift
+    - key_code: quote
+      modifiers:
+      - shift
+    - key_code: left_arrow
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: en
+
+  # 日本語入力 -----------------------------------
+
+  # VB -> 〈〉
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: v
+      - key_code: b
+    to:
+    - key_code: backslash
+    - key_code: open_bracket
+    - key_code: backslash
+    - key_code: close_bracket
+    - key_code: left_arrow
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: ja
+
+  # MN -> 【】
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: m
+      - key_code: "n"
+    to:
+    - key_code: backslash
+    - key_code: open_bracket
+      modifiers:
+      - shift
+    - key_code: backslash
+    - key_code: close_bracket
+      modifiers:
+      - shift
+    - key_code: left_arrow
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: ja
+
+# }}}
+
+# 片手・斜め {{{
+
+  # 英語入力 -------------------------------------
+
+  # RG -> ;
   - type: basic
     from:
       simultaneous:
       - key_code: r
       - key_code: g
+    to:
+    - key_code: semicolon
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: en
+
+  # UH -> /
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: u
+      - key_code: h
+    to:
+    - key_code: slash
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: en
+
+  # FB -> :
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: f
+      - key_code: b
     to:
     - key_code: semicolon
       modifiers:
@@ -85,21 +208,55 @@ rules:
       input_sources:
       - language: en
 
-  # H+U -> /
+  # JN -> ?
   - type: basic
     from:
       simultaneous:
-      - key_code: h
-      - key_code: u
+      - key_code: j
+      - key_code: "n"
     to:
     - key_code: slash
+      modifiers:
+      - shift
       repeat: false
     conditions:
     - type: input_source_if
       input_sources:
       - language: en
 
-  # F+B -> !
+  # 日本語入力 -----------------------------------
+
+  # RG -> ・
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: r
+      - key_code: g
+    to:
+    - key_code: quote
+      modifiers:
+      - shift
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: ja
+
+  # UH -> ／
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: u
+      - key_code: h
+    to:
+    - key_code: slash
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: ja
+
+  # FB -> ！
   - type: basic
     from:
       simultaneous:
@@ -113,14 +270,80 @@ rules:
     conditions:
     - type: input_source_if
       input_sources:
-      - language: en
+      - language: ja
 
-  # N+J -> ?
+  # JN -> ？
   - type: basic
     from:
       simultaneous:
-      - key_code: "n"
       - key_code: j
+      - key_code: "n"
+    to:
+    - key_code: slash
+      modifiers:
+      - shift
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: ja
+
+# }}}
+
+# 片手・斜め（代替） {{{
+
+  # 英語入力 -------------------------------------
+
+  # RF -> ;
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: r
+      - key_code: f
+    to:
+    - key_code: semicolon
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: en
+
+  # UJ -> /
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: u
+      - key_code: j
+    to:
+    - key_code: slash
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: en
+
+  # FV -> :
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: f
+      - key_code: v
+    to:
+    - key_code: semicolon
+      modifiers:
+      - shift
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: en
+
+  # JM -> ?
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: j
+      - key_code: m
     to:
     - key_code: slash
       modifiers:
@@ -131,24 +354,68 @@ rules:
       input_sources:
       - language: en
 
-# Kana, Eisuu ------------------------------------
+  # 日本語入力 -----------------------------------
 
-  # V+B -> 英数
+  # RF -> ・
   - type: basic
     from:
       simultaneous:
-      - key_code: v
-      - key_code: b
+      - key_code: r
+      - key_code: f
     to:
-    - key_code: japanese_eisuu
+    - key_code: quote
+      modifiers:
+      - shift
       repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: ja
 
-  # N+M -> かな
+  # UJ -> ／
   - type: basic
     from:
       simultaneous:
-      - key_code: "n"
+      - key_code: u
+      - key_code: j
+    to:
+    - key_code: slash
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: ja
+
+  # FV -> ！
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: f
+      - key_code: v
+    to:
+    - key_code: "1"
+      modifiers:
+      - shift
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: ja
+
+  # JM -> ？
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: j
       - key_code: m
     to:
-    - key_code: japanese_kana
+    - key_code: slash
+      modifiers:
+      - shift
       repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: ja
+
+# }}}
