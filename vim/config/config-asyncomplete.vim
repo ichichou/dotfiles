@@ -23,11 +23,11 @@ endif
 
 inoremap <silent> <expr> <TAB>
       \ pumvisible()       ? '<C-n>'
-      \ : CheckBackSpace() ? '<TAB>'
+      \ : CheckBackSpace() ? '<C-t>'
       \ : asyncomplete#force_refresh()
 inoremap <silent> <expr> <S-TAB> pumvisible()
       \ ? '<C-p>'
-      \ : '<C-h>'
+      \ : '<C-d>'
 
 inoremap <silent> <expr> <C-n> pumvisible()
       \ ? '<C-n>'
@@ -55,7 +55,7 @@ function! s:asyncomplete_setup() abort
           \ }))
   endif
 
-  if FindPlugin( 'asyncomplete-buffer.vim' )
+  if FindPlugin('asyncomplete-buffer.vim')
     call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
           \ 'name': 'buffer',
           \ 'allowlist': ['*'],
