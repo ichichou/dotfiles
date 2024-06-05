@@ -5,32 +5,31 @@ rules:
 
 # Slack {{{
 
-  # # [Slack] RCommand-K -> Command-K, Eisuu
-  # # RCommand-K 後に英語入力にする (LCommand-K -> Up との競合回避)
-  # - type: basic
-  #   from:
-  #     key_code: k
-  #     modifiers:
-  #       mandatory:
-  #       - right_command
-  #   to:
-  #   - key_code: k
-  #     modifiers:
-  #     - command
-  #   - key_code: japanese_eisuu
-  #     repeat: false
-  #   conditions:
-  #   - type: frontmost_application_if
-  #     bundle_identifiers:
-  #     - "com.tinyspeck.slackmacgap"
-
-  # [Slack] RControl-Semicolon -> Command-K, Eisuu
+  # [Slack] RControl-; -> Command-K, Eisuu
   - type: basic
     from:
       key_code: semicolon
       modifiers:
         mandatory:
         - right_control
+    to:
+    - key_code: k
+      modifiers:
+      - command
+    - key_code: japanese_eisuu
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.tinyspeck.slackmacgap"
+
+  # [Slack] LCommand-; -> Command-K, Eisuu
+  - type: basic
+    from:
+      key_code: semicolon
+      modifiers:
+        mandatory:
+        - left_command
     to:
     - key_code: k
       modifiers:
@@ -143,26 +142,7 @@ rules:
 
 # Superhuman {{{
 
-  # # [Superhuman] RCommand-K -> Command-K, Eisuu
-  # # RCommand-K 後に英語入力にする (LCommand-K -> Up との競合回避)
-  # - type: basic
-  #   from:
-  #     key_code: k
-  #     modifiers:
-  #       mandatory:
-  #       - right_command
-  #   to:
-  #   - key_code: k
-  #     modifiers:
-  #     - command
-  #   - key_code: japanese_eisuu
-  #     repeat: false
-  #   conditions:
-  #   - type: frontmost_application_if
-  #     bundle_identifiers:
-  #     - "com.superhuman.electron"
-
-  # [Superhuman] RControl-Semicolon -> Command-K, Eisuu
+  # [Superhuman] RControl-; -> Command-K, Eisuu
   - type: basic
     from:
       key_code: semicolon
@@ -180,36 +160,86 @@ rules:
       bundle_identifiers:
       - "com.superhuman.electron"
 
+  # [Superhuman] LCommand-; -> Command-K, Eisuu
+  - type: basic
+    from:
+      key_code: semicolon
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: k
+      modifiers:
+      - command
+    - key_code: japanese_eisuu
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.superhuman.electron"
+
+  # [Superhuman] RControl-N/P -> Command-Down/Up
+  - type: basic
+    from:
+      key_code: "n"
+      modifiers:
+        mandatory:
+        - right_control
+    to:
+    - key_code: down_arrow
+      modifiers:
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.superhuman.electron"
+
+  - type: basic
+    from:
+      key_code: p
+      modifiers:
+        mandatory:
+        - right_control
+    to:
+    - key_code: up_arrow
+      modifiers:
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.superhuman.electron"
+
 # }}}
 
 # Linear {{{
 
-  # # [Linear] RCommand-K -> Command-K, Eisuu
-  # # RCommand-K 後に英語入力にする (LCommand-K -> Up との競合回避)
-  # - type: basic
-  #   from:
-  #     key_code: k
-  #     modifiers:
-  #       mandatory:
-  #       - right_command
-  #   to:
-  #   - key_code: k
-  #     modifiers:
-  #     - command
-  #   - key_code: japanese_eisuu
-  #     repeat: false
-  #   conditions:
-  #   - type: frontmost_application_if
-  #     bundle_identifiers:
-  #     - "com.linear"
-
-  # [Linear] RControl-Semicolon -> Command-K, Eisuu
+  # [Linear] RControl-; -> Command-K, Eisuu
   - type: basic
     from:
       key_code: semicolon
       modifiers:
         mandatory:
         - right_control
+    to:
+    - key_code: k
+      modifiers:
+      - command
+    - key_code: japanese_eisuu
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.linear"
+
+  # [Linear] LCommand-; -> Command-K, Eisuu
+  - type: basic
+    from:
+      key_code: semicolon
+      modifiers:
+        mandatory:
+        - left_command
     to:
     - key_code: k
       modifiers:
@@ -1036,6 +1066,20 @@ rules:
       - command
     - key_code: japanese_eisuu
       repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "company.thebrowser.Browser"
+
+  # [Arc] RControl-H -> Delete
+  - type: basic
+    from:
+      key_code: h
+      modifiers:
+        mandatory:
+        - right_control
+    to:
+    - key_code: delete_or_backspace
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:

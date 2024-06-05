@@ -138,7 +138,39 @@ rules:
 
   # }}}
 
-  # LCommad -> 英数
+  # LCommand-; -> Command-K
+  # LCommand-K のマッピングのエスケープ用
+  - type: basic
+    from:
+      key_code: semicolon
+      modifiers:
+        mandatory:
+        - left_command
+        optional:
+        - any
+    to:
+    - key_code: k
+      modifiers:
+      - command
+      repeat: false
+
+  # LCommand-' -> Command-H
+  # LCommand-H のマッピングのエスケープ用
+  - type: basic
+    from:
+      key_code: quote
+      modifiers:
+        mandatory:
+        - left_command
+        optional:
+        - any
+    to:
+    - key_code: h
+      modifiers:
+      - command
+      repeat: false
+
+  # LCommand -> 英数
   - type: basic
     from:
       key_code: left_command
