@@ -29,7 +29,7 @@ rules:
 
   # 日本語入力 -----------------------------------
 
-  # FJ -> ToggleKana by AquaSKK
+  # FJ -> ToggleKana in AquaSKK
   - type: basic
     from:
       simultaneous:
@@ -78,6 +78,22 @@ rules:
     - key_code: left_arrow
       repeat: false
 
+  # RT -> {}
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: r
+      - key_code: t
+    to:
+    - key_code: open_bracket
+      modifiers:
+      - shift
+    - key_code: close_bracket
+      modifiers:
+      - shift
+    - key_code: left_arrow
+      repeat: false
+
   # 英語入力 -------------------------------------
 
   # VB -> ''
@@ -109,6 +125,22 @@ rules:
     - key_code: quote
       modifiers:
       - shift
+    - key_code: left_arrow
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: en
+
+  # UY -> ''
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: u
+      - key_code: "y"
+    to:
+    - key_code: quote
+    - key_code: quote
     - key_code: left_arrow
       repeat: false
     conditions:
@@ -151,6 +183,24 @@ rules:
     - key_code: close_bracket
       modifiers:
       - shift
+    - key_code: left_arrow
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: ja
+
+  # UY -> 〈〉
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: u
+      - key_code: "y"
+    to:
+    - key_code: backslash
+    - key_code: open_bracket
+    - key_code: backslash
+    - key_code: close_bracket
     - key_code: left_arrow
       repeat: false
     conditions:
