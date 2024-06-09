@@ -3,7 +3,8 @@ rules:
 - description: "6. Control Key"
   manipulators:
 
-  # Simple Modifications で Caps Lock -> RControl とするため不要
+  # Simple Modifications で設定するため不要
+  #
   # # Caps Lock -> RControl/ESC
   # - type: basic
   #   from:
@@ -30,7 +31,7 @@ rules:
     to_if_alone:
     - key_code: escape
 
-  # RControl-J/L -> かな/英数
+  # RControl-J/L -> Kana/Eisuu
   - type: basic
     from:
       key_code: j
@@ -60,18 +61,4 @@ rules:
         - any
     to:
     - key_code: return_or_enter
-      repeat: false
-
-  # LCommand-K -> Up Arrow とするための代替キーマップ
-  # RControl-Semicolon -> Command-K
-  - type: basic
-    from:
-      key_code: semicolon
-      modifiers:
-        mandatory:
-        - right_control
-    to:
-    - key_code: k
-      modifiers:
-      - command
       repeat: false
