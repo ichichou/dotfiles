@@ -1,6 +1,6 @@
-title: "01. Application-Specific"
+title: "01. Application-specific"
 rules:
-- description: "1. Application-Specific"
+- description: "1. Application-specific"
   manipulators:
 
 # Slack {{{

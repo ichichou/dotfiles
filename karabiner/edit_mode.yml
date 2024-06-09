@@ -1,4 +1,4 @@
-title: "03. Edit Mode"
+title: "03. Edit mode"
 
 # ALIASES ========================================
 
@@ -25,7 +25,7 @@ aliases:
 # RULES ==========================================
 
 rules:
-- description: "3. Edit Mode"
+- description: "3. Edit mode"
   manipulators:
 
 # Edit Mode Keys ---------------------------------

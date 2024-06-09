@@ -1,6 +1,6 @@
-title: "05. Command Key"
+title: "05. Command key"
 rules:
-- description: "5. Command Key"
+- description: "5. Command key"
   manipulators:
 
   # LCommand-Space -> Return

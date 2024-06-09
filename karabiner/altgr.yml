@@ -1,4 +1,4 @@
-title: "04. AltGr"
+title: "04. AltGr key"
 
 # DEVECES ========================================
 
@@ -75,7 +75,7 @@ aliases:
 # RULES ==========================================
 
 rules:
-- description: "4. AltGr"
+- description: "4. AltGr key"
   manipulators:
 
 # Upper Row --------------------------------------
