@@ -23,6 +23,9 @@ rules:
       simultaneous:
       - key_code: a
       - key_code: semicolon
+      modifiers:
+        optional:
+        - shift
     to:
     - sticky_modifier:
         left_shift: toggle
