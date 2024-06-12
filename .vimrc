@@ -718,6 +718,7 @@ Plug 'vim-jp/syntax-vim-ex',       { 'for': 'vim' }
 
 Plug 'AndrewRadev/linediff.vim'
 Plug 'alvan/vim-closetag'
+Plug 'chrisbra/NrrwRgn'
 Plug 'cohama/lexima.vim'
 Plug 'godlygeek/tabular'
 Plug 'hrsh7th/vim-vsnip'
