@@ -24,6 +24,9 @@ rules:
         mandatory:
         - left_command
     to:
+    - key_code: right_command
+      lazy: true
+    to_if_alone:
     - key_code: escape
       repeat: false
 

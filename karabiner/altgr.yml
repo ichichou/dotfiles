@@ -43,6 +43,8 @@ aliases:
 - from/modifiers: &modifier
     mandatory:
     - right_command
+    optional:
+    - any
 
 # Conditions -------------------------------------
 
