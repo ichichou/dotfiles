@@ -226,21 +226,26 @@ rules:
 
   # Right Side Keys {{{
 
-  # Y -> Option-Delete
+  # Y -> Command-Tab
   - type: basic
     from:
       key_code: "y"
     to:
-    - key_code: delete_or_backspace
+    - key_code: tab
       modifiers:
-      - option
+      - command
       repeat: false
     conditions: *edit
 
-  # U -> Invalid
+  # U -> Control-Tab
   - type: basic
     from:
       key_code: u
+    to:
+    - key_code: tab
+      modifiers:
+      - control
+      repeat: false
     conditions: *edit
 
   # I -> Command-[
