@@ -17,19 +17,6 @@ rules:
     - key_code: return_or_enter
       repeat: false
 
-  # A; -> Sticky Shift
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: a
-      - key_code: semicolon
-      modifiers:
-        optional:
-        - shift
-    to:
-    - sticky_modifier:
-        left_shift: toggle
-
   # 日本語入力 -----------------------------------
 
   # FJ -> ToggleKana in AquaSKK
@@ -42,6 +29,23 @@ rules:
     - key_code: semicolon
       modifiers:
       - control
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: ja
+
+  # A; -> StickyKey in AquaSKK
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: a
+      - key_code: semicolon
+    to:
+    - key_code: comma
+      modifiers:
+      - shift
+      repeat: false
     conditions:
     - type: input_source_if
       input_sources:
