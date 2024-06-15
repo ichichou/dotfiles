@@ -490,26 +490,6 @@ rules:
       repeat: true
     conditions: *alt_layout_on
 
-  # Comma
-  - type: basic
-    from:
-      key_code: comma
-      modifiers: *optional_shift
-    to:
-    - key_code: period
-      repeat: true
-    conditions: *alt_layout_on
-
-  # Period
-  - type: basic
-    from:
-      key_code: period
-      modifiers: *optional_shift
-    to:
-    - key_code: comma
-      repeat: true
-    conditions: *alt_layout_on
-
   # Slash
   - type: basic
     from:
@@ -819,7 +799,7 @@ rules:
       key_code: comma
       modifiers: *optional_shift
     to:
-    - key_code: v
+    - key_code: g
       repeat: true
     conditions: *alt_layout_on
 
@@ -829,7 +809,7 @@ rules:
       key_code: period
       modifiers: *optional_shift
     to:
-    - key_code: g
+    - key_code: v
       repeat: true
     conditions: *alt_layout_on
 
@@ -1142,7 +1122,7 @@ rules:
       key_code: comma
       modifiers: *optional_shift
     to:
-    - key_code: v
+    - key_code: g
       repeat: true
     conditions: *alt_layout_on
 
@@ -1152,7 +1132,7 @@ rules:
       key_code: period
       modifiers: *optional_shift
     to:
-    - key_code: g
+    - key_code: v
       repeat: true
     conditions: *alt_layout_on
 
