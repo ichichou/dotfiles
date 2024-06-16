@@ -746,7 +746,7 @@ endif
 " Plug 'haya14busa/vim-asterisk'
 Plug 'haya14busa/vim-edgemotion'
 Plug 'junegunn/vim-slash'
-Plug 'kana/vim-smartword'
+" Plug 'kana/vim-smartword'
 " Plug 'mattn/vim-findroot'
 Plug 'tyru/open-browser.vim'
 Plug 'yuki-yano/fuzzy-motion.vim'
