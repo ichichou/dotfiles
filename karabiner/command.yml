@@ -186,16 +186,15 @@ rules:
     to_if_alone:
     - key_code: japanese_eisuu
 
-  # RCommand -> Sticky Shift
-  - type: basic
-    from:
-      key_code: right_command
-      modifiers:
-        optional:
-        - any
-    to:
-    - key_code: right_command
-      lazy: true
-    to_if_alone:
-    - sticky_modifier:
-        left_shift: toggle
+  # # RCommand -> Invalid
+  # - type: basic
+  #   from:
+  #     key_code: right_command
+  #     modifiers:
+  #       optional:
+  #       - any
+  #   to:
+  #   - key_code: right_command
+  #     lazy: true
+  #   to_if_alone:
+  #   - key_code:
