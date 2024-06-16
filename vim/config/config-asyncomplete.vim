@@ -1,20 +1,20 @@
 UsePlugin 'asyncomplete.vim'
 
-" Auto Completion
+" -- Auto Completion
 " let g:asyncomplete_auto_popup = 1
 " let g:asyncomplete_popup_delay = 200
 " let g:asyncomplete_min_chars = 2
 
-" Manual Completion
+" -- Manual Completion
 let g:asyncomplete_auto_popup = 0
 let g:asyncomplete_popup_delay = 0
 
-" If 1, set completeopt=menuone,noinsert,noselect
+" -- If 1, set completeopt=menuone,noinsert,noselect
 let g:asyncomplete_auto_completeopt = 0
 
 " KEYMAPS ----------------------------------------
 
-" If exists Lexima, <CR> is mapped in config-lexima.vim
+" -- If exists Lexima, <CR> is mapped in config-lexima.vim
 if !FindPlugin('lexima.vim')
   inoremap <silent> <expr> <CR> pumvisible()
         \ ? asyncomplete#close_popup()
