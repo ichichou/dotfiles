@@ -476,3 +476,26 @@ rules:
       - language: ja
 
 # }}}
+
+# 特殊 {{{
+
+  # Return + J/L -> Kana/Eisuu
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: return_or_enter
+      - key_code: j
+    to:
+    - key_code: japanese_kana
+      repeat: false
+
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: return_or_enter
+      - key_code: l
+    to:
+    - key_code: japanese_eisuu
+      repeat: false
+
+# }}}
