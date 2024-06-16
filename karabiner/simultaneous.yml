@@ -101,6 +101,26 @@ rules:
     - key_code: left_arrow
       repeat: false
 
+  # WE -> Esc
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: w
+      - key_code: e
+    to:
+    - key_code: escape
+      repeat: false
+
+  # OI -> Tab
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: o
+      - key_code: i
+    to:
+    - key_code: tab
+      repeat: false
+
   # 英語入力 -------------------------------------
 
   # VB -> ''
