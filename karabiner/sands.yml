@@ -16,7 +16,7 @@ rules:
     to_if_alone:
     - key_code: spacebar
 
-  # Return and Shift
+  # Return and RControl
   - type: basic
     from:
       key_code: return_or_enter
@@ -24,12 +24,12 @@ rules:
         optional:
         - any
     to:
-    - key_code: left_shift
+    - key_code: right_control
       lazy: true
     to_if_alone:
     - key_code: return_or_enter
 
-  # # Return and RControl
+  # # Return and Shift
   # - type: basic
   #   from:
   #     key_code: return_or_enter
@@ -37,7 +37,7 @@ rules:
   #       optional:
   #       - any
   #   to:
-  #   - key_code: right_control
+  #   - key_code: left_shift
   #     lazy: true
   #   to_if_alone:
   #   - key_code: return_or_enter
