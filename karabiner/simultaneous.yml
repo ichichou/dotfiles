@@ -7,6 +7,26 @@ rules:
 
   # 常時 -----------------------------------------
 
+  # RU -> Eisuu
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: r
+      - key_code: u
+    to:
+    - key_code: japanese_eisuu
+      repeat: false
+
+  # FJ -> Kana
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: f
+      - key_code: j
+    to:
+    - key_code: japanese_kana
+      repeat: false
+
   # VM -> Return
   - type: basic
     from:
@@ -19,12 +39,28 @@ rules:
 
   # 日本語入力 -----------------------------------
 
-  # FJ -> ToggleKana in AquaSKK
+  # # FJ -> ToggleKana in AquaSKK
+  # - type: basic
+  #   from:
+  #     simultaneous:
+  #     - key_code: f
+  #     - key_code: j
+  #   to:
+  #   - key_code: semicolon
+  #     modifiers:
+  #     - control
+  #     repeat: false
+  #   conditions:
+  #   - type: input_source_if
+  #     input_sources:
+  #     - language: ja
+
+  # GH -> ToggleKana in AquaSKK
   - type: basic
     from:
       simultaneous:
-      - key_code: f
-      - key_code: j
+      - key_code: g
+      - key_code: h
     to:
     - key_code: semicolon
       modifiers:
