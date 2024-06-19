@@ -296,15 +296,15 @@ rules:
 
 # Right Keys: YUIOP HJKL; NM,./ {{{
 
-  # Y:
+  # Y: Arc (alt)
   - type: basic
     from:
       key_code: "y"
     to:
-    - key_code: "y"
-      modifiers: *hyper_key
-      repeat: false
-    # - shell_command: open -a ""
+    # - key_code: "y"
+    #   modifiers: *hyper_key
+    #   repeat: false
+    - shell_command: open -a "arc"
     conditions: *hyper_mode
 
   # U: RStudio
