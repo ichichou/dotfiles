@@ -573,6 +573,27 @@ rules:
     - key_code: japanese_eisuu
       repeat: false
 
+  # DF + J/L -> Kana/Eisuu
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: d
+      - key_code: f
+      - key_code: j
+    to:
+    - key_code: japanese_kana
+      repeat: false
+
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: d
+      - key_code: f
+      - key_code: l
+    to:
+    - key_code: japanese_eisuu
+      repeat: false
+
   # Space + Return -> Control-Return
   - type: basic
     from:
