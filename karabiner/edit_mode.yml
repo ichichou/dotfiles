@@ -128,7 +128,7 @@ rules:
 
   # }}}
 
-  # IME On (Shingeta Layout) {{{
+  # IME On (Shingeta) {{{
 
   # Left: D + F (D -> F)
   - type: basic
