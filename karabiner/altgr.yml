@@ -1,6 +1,6 @@
 title: "04. AltGr key"
 
-# DEVECES ========================================
+# DEVECES {{{
 
 # Starndard Keyboard -----------------------------
 
@@ -17,8 +17,8 @@ title: "04. AltGr key"
 # product_id: 591
 
 # Vega
-# vendor_id:
-# product_id:
+# vendor_id: 41219
+# product_id: 21
 
 # Ergonomic Keyboard -----------------------------
 
@@ -34,7 +34,9 @@ title: "04. AltGr key"
 # vendor_id:
 # product_id:
 
-# ALIASES ========================================
+# }}}
+
+# ALIASES {{{
 
 aliases:
 
@@ -47,19 +49,6 @@ aliases:
     - any
 
 # Conditions -------------------------------------
-
-# - conditions: &devices
-#   - type: device_if
-#     identifiers:
-#     - description: "Apple Internal Keyboard"
-#       vendor_id: 1452
-#       product_id: 834
-#     - description: "Nuphy Air60 V2"
-#       vendor_id: 6645
-#       product_id: 12885
-#     - description: "Lofree Flow84"
-#       vendor_id: 1452
-#       product_id: 591
 
 - conditions: &devices
   - type: device_unless
@@ -74,13 +63,15 @@ aliases:
     #   vendor_id:
     #   product_id:
 
+# }}}
+
 # RULES ==========================================
 
 rules:
 - description: "4. AltGr key"
   manipulators:
 
-# Upper Row --------------------------------------
+# Upper Row {{{
 
   # Q -> .
   - type: basic
@@ -186,34 +177,36 @@ rules:
     - key_code: comma
     conditions: *devices
 
-  # Open Bracket -> [
-  - type: basic
-    from:
-      key_code: open_bracket
-      modifiers: *modifier
-    to:
-    - key_code: open_bracket
-    conditions: *devices
+  # # Open Bracket -> [
+  # - type: basic
+  #   from:
+  #     key_code: open_bracket
+  #     modifiers: *modifier
+  #   to:
+  #   - key_code: open_bracket
+  #   conditions: *devices
 
-  # Close Bracket -> ]
-  - type: basic
-    from:
-      key_code: close_bracket
-      modifiers: *modifier
-    to:
-    - key_code: close_bracket
-    conditions: *devices
+  # # Close Bracket -> ]
+  # - type: basic
+  #   from:
+  #     key_code: close_bracket
+  #     modifiers: *modifier
+  #   to:
+  #   - key_code: close_bracket
+  #   conditions: *devices
 
-  # Backslash -> \
-  - type: basic
-    from:
-      key_code: backslash
-      modifiers: *modifier
-    to:
-    - key_code: backslash
-    conditions: *devices
+  # # Backslash -> \
+  # - type: basic
+  #   from:
+  #     key_code: backslash
+  #     modifiers: *modifier
+  #   to:
+  #   - key_code: backslash
+  #   conditions: *devices
 
-# Home Row ---------------------------------------
+# }}}
+
+# Home Row {{{
 
   # A -> *
   - type: basic
@@ -317,16 +310,18 @@ rules:
       - shift
     conditions: *devices
 
-  # Quote -> '
-  - type: basic
-    from:
-      key_code: quote
-      modifiers: *modifier
-    to:
-    - key_code: quote
-    conditions: *devices
+  # # Quote -> '
+  # - type: basic
+  #   from:
+  #     key_code: quote
+  #     modifiers: *modifier
+  #   to:
+  #   - key_code: quote
+  #   conditions: *devices
 
-# Lower Row --------------------------------------
+# }}}
+
+# Lower Row {{{
 
   # Z -> 8
   - type: basic
@@ -420,7 +415,9 @@ rules:
     - key_code: "9"
     conditions: *devices
 
-# Other Keys --------------------------------------
+# }}}
+
+# Other Keys {{{
 
   # Space -> Whitespace
   - type: basic
@@ -431,3 +428,5 @@ rules:
     - key_code: spacebar
       repeat: false
     conditions: *devices
+
+# }}}
