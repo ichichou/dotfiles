@@ -270,10 +270,15 @@ rules:
       repeat: false
     conditions: *edit
 
-  # P -> Invalid
+  # P -> Command-]
   - type: basic
     from:
       key_code: p
+    to:
+    - key_code: close_bracket
+      modifiers:
+      - command
+      repeat: false
     conditions: *edit
 
   # H -> Left
@@ -324,10 +329,15 @@ rules:
       repeat: true
     conditions: *edit
 
-  # Semicolon -> Invalid
+  # Semicolon -> Command-[
   - type: basic
     from:
       key_code: semicolon
+    to:
+    - key_code: open_bracket
+      modifiers:
+      - command
+      repeat: false
     conditions: *edit
 
   # Quote -> Center Window (Control-Option-C)
@@ -388,42 +398,6 @@ rules:
       key_code: slash
     conditions: *edit
 
-  # Return -> Maximize Window (Control-Option-Return)
-  - type: basic
-    from:
-      key_code: return_or_enter
-    to:
-    - key_code: return_or_enter
-      modifiers:
-      - control
-      - option
-      repeat: false
-    conditions: *edit
-
-  # Delete -> Restore Window (Control-Option-Delete)
-  - type: basic
-    from:
-      key_code: delete_or_backspace
-    to:
-    - key_code: delete_or_backspace
-      modifiers:
-      - control
-      - option
-      repeat: false
-    conditions: *edit
-
-  # Backslash -> Center Window (Control-Option-C)
-  - type: basic
-    from:
-      key_code: backslash
-    to:
-    - key_code: c
-      modifiers:
-      - control
-      - option
-      repeat: false
-    conditions: *edit
-
   # }}}
 
   # Left Side Keys {{{
@@ -481,10 +455,16 @@ rules:
       repeat: false
     conditions: *edit
 
-  # A -> Left Half Window (Control-Option-Left)
+  # A -> Invalid
   - type: basic
     from:
       key_code: a
+    conditions: *edit
+
+  # S -> Left Half Window (Control-Option-Left)
+  - type: basic
+    from:
+      key_code: s
     to:
     - key_code: left_arrow
       modifiers:
@@ -493,28 +473,10 @@ rules:
       repeat: false
     conditions: *edit
 
-  # S -> [
-  - type: basic
-    from:
-      key_code: s
-    to:
-    - key_code: open_bracket
-      repeat: false
-    conditions: *edit
-
-  # D -> ]
+  # D -> Right Half Window (Control-Option-Right)
   - type: basic
     from:
       key_code: d
-    to:
-    - key_code: close_bracket
-      repeat: false
-    conditions: *edit
-
-  # F -> Right Half Window (Control-Option-Right)
-  - type: basic
-    from:
-      key_code: f
     to:
     - key_code: right_arrow
       modifiers:
@@ -523,14 +485,27 @@ rules:
       repeat: false
     conditions: *edit
 
-  # G -> Command-Tab
+  # F -> Clipboard (Command-Control-V)
+  - type: basic
+    from:
+      key_code: f
+    to:
+    - key_code: v
+      modifiers:
+      - command
+      - control
+      repeat: false
+    conditions: *edit
+
+  # G -> Snippet (Command-Control-S)
   - type: basic
     from:
       key_code: g
     to:
-    - key_code: t
+    - key_code: s
       modifiers:
       - command
+      - control
       repeat: false
     conditions: *edit
 
