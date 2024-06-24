@@ -523,10 +523,15 @@ rules:
       repeat: false
     conditions: *edit
 
-  # G -> Invalid
+  # G -> Command-Tab
   - type: basic
     from:
       key_code: g
+    to:
+    - key_code: t
+      modifiers:
+      - command
+      repeat: false
     conditions: *edit
 
   # Z -> Left Quarter Window (Control-Option-Z)
