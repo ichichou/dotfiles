@@ -582,15 +582,56 @@ rules:
       repeat: false
     conditions: *edit
 
-  # B -> Invalid
+  # B -> Command-T
   - type: basic
     from:
       key_code: b
+    to:
+    - key_code: t
+      modifiers:
+      - command
+      repeat: false
     conditions: *edit
 
   # }}}
 
   # Other Keys {{{
+
+  # Return -> Maximize Window (Control-Option-Return)
+  - type: basic
+    from:
+      key_code: return_or_enter
+    to:
+    - key_code: return_or_enter
+      modifiers:
+      - control
+      - option
+      repeat: false
+    conditions: *edit
+
+  # Delete -> Restore Window (Control-Option-Delete)
+  - type: basic
+    from:
+      key_code: delete_or_backspace
+    to:
+    - key_code: delete_or_backspace
+      modifiers:
+      - control
+      - option
+      repeat: false
+    conditions: *edit
+
+  # Backslash -> Center Window (Control-Option-C)
+  - type: basic
+    from:
+      key_code: backslash
+    to:
+    - key_code: c
+      modifiers:
+      - control
+      - option
+      repeat: false
+    conditions: *edit
 
   # Space -> Return
   - type: basic
