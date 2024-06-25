@@ -455,16 +455,10 @@ rules:
       repeat: false
     conditions: *edit
 
-  # A -> Invalid
+  # A -> Left Half Window (Control-Option-Left)
   - type: basic
     from:
       key_code: a
-    conditions: *edit
-
-  # S -> Left Half Window (Control-Option-Left)
-  - type: basic
-    from:
-      key_code: s
     to:
     - key_code: left_arrow
       modifiers:
@@ -473,22 +467,22 @@ rules:
       repeat: false
     conditions: *edit
 
-  # D -> Right Half Window (Control-Option-Right)
+  # S -> Snippet (Command-Control-S)
   - type: basic
     from:
-      key_code: d
+      key_code: s
     to:
-    - key_code: right_arrow
+    - key_code: s
       modifiers:
+      - command
       - control
-      - option
       repeat: false
     conditions: *edit
 
-  # F -> Clipboard (Command-Control-V)
+  # D -> Clipboard (Command-Control-V)
   - type: basic
     from:
-      key_code: f
+      key_code: d
     to:
     - key_code: v
       modifiers:
@@ -497,16 +491,22 @@ rules:
       repeat: false
     conditions: *edit
 
-  # G -> Snippet (Command-Control-S)
+  # F -> Right Half Window (Control-Option-Right)
+  - type: basic
+    from:
+      key_code: f
+    to:
+    - key_code: right_arrow
+      modifiers:
+      - control
+      - option
+      repeat: false
+    conditions: *edit
+
+  # G -> Invalid
   - type: basic
     from:
       key_code: g
-    to:
-    - key_code: s
-      modifiers:
-      - command
-      - control
-      repeat: false
     conditions: *edit
 
   # Z -> Left Quarter Window (Control-Option-Z)
