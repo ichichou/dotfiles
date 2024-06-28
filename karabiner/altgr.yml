@@ -56,6 +56,9 @@ aliases:
     - description: "Ergo42"
       vendor_id: 48194
       product_id: 66
+    - description: "Vega"
+      vendor_id: 41219
+      product_id: 21
     # - description: "Lain"
     #   vendor_id:
     #   product_id:
