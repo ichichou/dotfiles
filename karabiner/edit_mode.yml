@@ -281,52 +281,34 @@ rules:
       repeat: false
     conditions: *edit
 
-  # H -> Left
+  # H -> Invalid
   - type: basic
     from:
       key_code: h
-      modifiers:
-        optional:
-        - any
-    to:
-    - key_code: left_arrow
-      repeat: true
     conditions: *edit
 
-  # J -> Down
+  # J -> Kana
   - type: basic
     from:
       key_code: j
-      modifiers:
-        optional:
-        - any
     to:
-    - key_code: down_arrow
-      repeat: true
+    - key_code: japanese_kana
+      repeat: false
     conditions: *edit
 
-  # K -> Up
+  # K -> Invalid
   - type: basic
     from:
       key_code: k
-      modifiers:
-        optional:
-        - any
-    to:
-    - key_code: up_arrow
-      repeat: true
     conditions: *edit
 
-  # L -> Right
+  # L -> Eisuu
   - type: basic
     from:
       key_code: l
-      modifiers:
-        optional:
-        - any
     to:
-    - key_code: right_arrow
-      repeat: true
+    - key_code: japanese_eisuu
+      repeat: false
     conditions: *edit
 
   # Semicolon -> Command-[
@@ -408,26 +390,16 @@ rules:
       key_code: q
     conditions: *edit
 
-  # W -> (
+  # W -> Invalid
   - type: basic
     from:
       key_code: w
-    to:
-    - key_code: "9"
-      modifiers:
-      - shift
-      repeat: false
     conditions: *edit
 
-  # E -> )
+  # E -> Invalid
   - type: basic
     from:
       key_code: e
-    to:
-    - key_code: "0"
-      modifiers:
-      - shift
-      repeat: false
     conditions: *edit
 
   # R -> Center Window (Shift-Control-Option-C)
@@ -467,7 +439,7 @@ rules:
       repeat: false
     conditions: *edit
 
-  # S -> Snippet (Command-Control-S)
+  # S -> Snippet in Raycast (Command-Control-S)
   - type: basic
     from:
       key_code: s
@@ -479,7 +451,7 @@ rules:
       repeat: false
     conditions: *edit
 
-  # D -> Clipboard (Command-Control-V)
+  # D -> Clipboard in Raycast (Command-Control-V)
   - type: basic
     from:
       key_code: d
@@ -503,10 +475,14 @@ rules:
       repeat: false
     conditions: *edit
 
-  # G -> Invalid
+  # G -> Command-T
   - type: basic
     from:
       key_code: g
+    to:
+    - key_code: t
+      modifiers:
+      - command
     conditions: *edit
 
   # Z -> Left Quarter Window (Control-Option-Z)
@@ -557,13 +533,14 @@ rules:
       repeat: false
     conditions: *edit
 
-  # B -> Command-T
+  # B -> Shift-Command-V
   - type: basic
     from:
       key_code: b
     to:
-    - key_code: t
+    - key_code: v
       modifiers:
+      - shift
       - command
       repeat: false
     conditions: *edit
