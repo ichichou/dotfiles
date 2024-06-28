@@ -7,26 +7,6 @@ rules:
 
   # 常時 -----------------------------------------
 
-  # # RU -> Eisuu
-  # - type: basic
-  #   from:
-  #     simultaneous:
-  #     - key_code: r
-  #     - key_code: u
-  #   to:
-  #   - key_code: japanese_eisuu
-  #     repeat: false
-
-  # # FJ -> Kana
-  # - type: basic
-  #   from:
-  #     simultaneous:
-  #     - key_code: f
-  #     - key_code: j
-  #   to:
-  #   - key_code: japanese_kana
-  #     repeat: false
-
   # RU -> Esc
   - type: basic
     from:
@@ -75,21 +55,21 @@ rules:
       input_sources:
       - language: ja
 
-  # # GH -> ToggleKana in AquaSKK
-  # - type: basic
-  #   from:
-  #     simultaneous:
-  #     - key_code: g
-  #     - key_code: h
-  #   to:
-  #   - key_code: semicolon
-  #     modifiers:
-  #     - control
-  #     repeat: false
-  #   conditions:
-  #   - type: input_source_if
-  #     input_sources:
-  #     - language: ja
+  # GH -> StickyKey in AquaSKK
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: g
+      - key_code: h
+    to:
+    - key_code: comma
+      modifiers:
+      - shift
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: ja
 
   # A; -> StickyKey in AquaSKK
   - type: basic
@@ -125,33 +105,17 @@ rules:
     - key_code: left_arrow
       repeat: false
 
-  # JH -> ()
+  # HJ -> ()
   - type: basic
     from:
       simultaneous:
-      - key_code: j
       - key_code: h
+      - key_code: j
     to:
     - key_code: "9"
       modifiers:
       - shift
     - key_code: "0"
-      modifiers:
-      - shift
-    - key_code: left_arrow
-      repeat: false
-
-  # RT -> {}
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: r
-      - key_code: t
-    to:
-    - key_code: open_bracket
-      modifiers:
-      - shift
-    - key_code: close_bracket
       modifiers:
       - shift
     - key_code: left_arrow
@@ -170,12 +134,12 @@ rules:
     - key_code: escape
       repeat: false
 
-  # OI -> Tab
+  # IO -> Tab
   - type: basic
     from:
       simultaneous:
-      - key_code: o
       - key_code: i
+      - key_code: o
       modifiers:
         optional:
         - any
@@ -183,17 +147,41 @@ rules:
     - key_code: tab
       repeat: false
 
+  # # DF -> Kana
+  # - type: basic
+  #   from:
+  #     simultaneous:
+  #     - key_code: d
+  #     - key_code: f
+  #   to:
+  #   - key_code: japanese_kana
+  #     repeat: false
+  #
+  # # JK -> Eisuu
+  # - type: basic
+  #   from:
+  #     simultaneous:
+  #     - key_code: j
+  #     - key_code: k
+  #   to:
+  #   - key_code: japanese_eisuu
+  #     repeat: false
+
   # 英語入力 -------------------------------------
 
-  # VB -> ''
+  # VB -> {}
   - type: basic
     from:
       simultaneous:
       - key_code: v
       - key_code: b
     to:
-    - key_code: quote
-    - key_code: quote
+    - key_code: open_bracket
+      modifiers:
+      - shift
+    - key_code: close_bracket
+      modifiers:
+      - shift
     - key_code: left_arrow
       repeat: false
     conditions:
@@ -201,12 +189,12 @@ rules:
       input_sources:
       - language: en
 
-  # MN -> ""
+  # NM -> ""
   - type: basic
     from:
       simultaneous:
-      - key_code: m
       - key_code: "n"
+      - key_code: m
     to:
     - key_code: quote
       modifiers:
@@ -221,12 +209,28 @@ rules:
       input_sources:
       - language: en
 
-  # UY -> ''
+  # RT -> ''
   - type: basic
     from:
       simultaneous:
-      - key_code: u
+      - key_code: r
+      - key_code: t
+    to:
+    - key_code: quote
+    - key_code: quote
+    - key_code: left_arrow
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: en
+
+  # YU -> ''
+  - type: basic
+    from:
+      simultaneous:
       - key_code: "y"
+      - key_code: u
     to:
     - key_code: quote
     - key_code: quote
@@ -239,17 +243,19 @@ rules:
 
   # 日本語入力 -----------------------------------
 
-  # VB -> 〈〉
+  # VB -> 『』
   - type: basic
     from:
       simultaneous:
       - key_code: v
       - key_code: b
     to:
-    - key_code: backslash
     - key_code: open_bracket
-    - key_code: backslash
+      modifiers:
+      - shift
     - key_code: close_bracket
+      modifiers:
+      - shift
     - key_code: left_arrow
       repeat: false
     conditions:
@@ -257,12 +263,12 @@ rules:
       input_sources:
       - language: ja
 
-  # MN -> 【】
+  # NM -> 【】
   - type: basic
     from:
       simultaneous:
-      - key_code: m
       - key_code: "n"
+      - key_code: m
     to:
     - key_code: backslash
     - key_code: open_bracket
@@ -279,12 +285,30 @@ rules:
       input_sources:
       - language: ja
 
-  # UY -> 〈〉
+  # RT -> 〈〉
   - type: basic
     from:
       simultaneous:
-      - key_code: u
+      - key_code: r
+      - key_code: t
+    to:
+    - key_code: backslash
+    - key_code: open_bracket
+    - key_code: backslash
+    - key_code: close_bracket
+    - key_code: left_arrow
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: ja
+
+  # YU -> 〈〉
+  - type: basic
+    from:
+      simultaneous:
       - key_code: "y"
+      - key_code: u
     to:
     - key_code: backslash
     - key_code: open_bracket
@@ -560,44 +584,6 @@ rules:
 # }}}
 
 # 特殊 {{{
-
-  # Return + J/L -> Kana/Eisuu
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: return_or_enter
-      - key_code: j
-    to:
-    - key_code: japanese_kana
-      repeat: false
-
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: return_or_enter
-      - key_code: l
-    to:
-    - key_code: japanese_eisuu
-      repeat: false
-
-  # Space + J/L -> Kana/Eisuu
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: spacebar
-      - key_code: j
-    to:
-    - key_code: japanese_kana
-      repeat: false
-
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: spacebar
-      - key_code: l
-    to:
-    - key_code: japanese_eisuu
-      repeat: false
 
   # Space + Return -> Control-Return
   - type: basic
