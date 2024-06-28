@@ -32,12 +32,12 @@ rules:
 
   # IME Off (Qwerty) {{{
 
-  # Left: D + F (D -> F)
+  # Left: S + D (S -> D)
   - type: basic
     from:
       simultaneous:
+      - key_code: s
       - key_code: d
-      - key_code: f
       simultaneous_options:
         key_down_order: strict
         to_after_key_up:
@@ -49,19 +49,17 @@ rules:
         name: edit
         value: 1
     to_if_alone:
-    - key_code: d  # Qwerty
-    - key_code: f  # Qwerty
-    # - key_code: e  # MTGAP
-    # - key_code: a  # MTGAP
+    - key_code: s
+    - key_code: d
     conditions: *ime_off
     parameters: *thresh_ms
 
-  # Left: D + F (F -> D)
+  # Left: S + D (D -> S)
   - type: basic
     from:
       simultaneous:
+      - key_code: s
       - key_code: d
-      - key_code: f
       simultaneous_options:
         to_after_key_up:
         - set_variable:
@@ -72,19 +70,17 @@ rules:
         name: edit
         value: 1
     to_if_alone:
-    - key_code: f  # Qwerty
-    - key_code: d  # Qwerty
-    # - key_code: a  # MTGAP
-    # - key_code: e  # MTGAP
+    - key_code: d
+    - key_code: s
     conditions: *ime_off
     parameters: *thresh_ms
 
-  # Right: J + K (J -> K)
+  # Right: K + L (K -> L)
   - type: basic
     from:
       simultaneous:
-      - key_code: j
       - key_code: k
+      - key_code: l
       simultaneous_options:
         key_down_order: strict
         to_after_key_up:
@@ -96,19 +92,17 @@ rules:
         name: edit
         value: 1
     to_if_alone:
-    - key_code: j  # Qwerty
-    - key_code: k  # Qwerty
-    # - key_code: h  # MTGAP
-    # - key_code: t  # MTGAP
+    - key_code: k
+    - key_code: l
     conditions: *ime_off
     parameters: *thresh_ms
 
-  # Right: J + K (K -> J)
+  # Right: K + L (L -> K)
   - type: basic
     from:
       simultaneous:
-      - key_code: j
       - key_code: k
+      - key_code: l
       simultaneous_options:
         to_after_key_up:
         - set_variable:
@@ -119,10 +113,8 @@ rules:
         name: edit
         value: 1
     to_if_alone:
-    - key_code: k  # Qwerty
-    - key_code: j  # Qwerty
-    # - key_code: t  # MTGAP
-    # - key_code: h  # MTGAP
+    - key_code: l
+    - key_code: k
     conditions: *ime_off
     parameters: *thresh_ms
 
@@ -130,12 +122,12 @@ rules:
 
   # IME On (Shingeta) {{{
 
-  # Left: D + F (D -> F)
+  # Left: S + D (S -> D)
   - type: basic
     from:
       simultaneous:
+      - key_code: s
       - key_code: d
-      - key_code: f
       simultaneous_options:
         key_down_order: strict
         to_after_key_up:
@@ -147,19 +139,19 @@ rules:
         name: edit
         value: 1
     to_if_alone:
+    - key_code: t
+    - key_code: o
     - key_code: k
     - key_code: a
-    - key_code: "n"
-    - key_code: "n"
     conditions: *ime_on
     parameters: *thresh_ms
 
-  # Left: D + F (F -> D)
+  # Left: S + D (D -> S)
   - type: basic
     from:
       simultaneous:
+      - key_code: s
       - key_code: d
-      - key_code: f
       simultaneous_options:
         to_after_key_up:
         - set_variable:
@@ -170,19 +162,19 @@ rules:
         name: edit
         value: 1
     to_if_alone:
-    - key_code: "n"
-    - key_code: "n"
     - key_code: k
     - key_code: a
+    - key_code: t
+    - key_code: o
     conditions: *ime_on
     parameters: *thresh_ms
 
-  # Right: J + K (J -> K)
+  # Right: K + L (K -> L)
   - type: basic
     from:
       simultaneous:
-      - key_code: j
       - key_code: k
+      - key_code: l
       simultaneous_options:
         key_down_order: strict
         to_after_key_up:
@@ -194,17 +186,18 @@ rules:
         name: edit
         value: 1
     to_if_alone:
-    - key_code: u
+    - key_code: i
+    - key_code: s
     - key_code: i
     conditions: *ime_on
     parameters: *thresh_ms
 
-  # Right: J + K (K -> J)
+  # Right: K + L (L -> K)
   - type: basic
     from:
       simultaneous:
-      - key_code: j
       - key_code: k
+      - key_code: l
       simultaneous_options:
         to_after_key_up:
         - set_variable:
@@ -215,8 +208,9 @@ rules:
         name: edit
         value: 1
     to_if_alone:
+    - key_code: s
     - key_code: i
-    - key_code: u
+    - key_code: i
     conditions: *ime_on
     parameters: *thresh_ms
 

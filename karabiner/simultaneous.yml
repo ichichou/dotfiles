@@ -147,25 +147,25 @@ rules:
     - key_code: tab
       repeat: false
 
-  # # DF -> Kana
-  # - type: basic
-  #   from:
-  #     simultaneous:
-  #     - key_code: d
-  #     - key_code: f
-  #   to:
-  #   - key_code: japanese_kana
-  #     repeat: false
-  #
-  # # JK -> Eisuu
-  # - type: basic
-  #   from:
-  #     simultaneous:
-  #     - key_code: j
-  #     - key_code: k
-  #   to:
-  #   - key_code: japanese_eisuu
-  #     repeat: false
+  # DF -> Kana
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: d
+      - key_code: f
+    to:
+    - key_code: japanese_kana
+      repeat: false
+
+  # JK -> Eisuu
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: j
+      - key_code: k
+    to:
+    - key_code: japanese_eisuu
+      repeat: false
 
   # 英語入力 -------------------------------------
 
