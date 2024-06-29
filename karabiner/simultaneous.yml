@@ -39,6 +39,18 @@ rules:
     - key_code: return_or_enter
       repeat: false
 
+  # BN -> Command-Return (New Row in Bike)
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: b
+      - key_code: "n"
+    to:
+    - key_code: return_or_enter
+      modifiers:
+      - command
+      repeat: false
+
   # 日本語入力 -----------------------------------
 
   # FJ -> ToggleKana in AquaSKK
