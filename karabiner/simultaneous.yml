@@ -7,14 +7,16 @@ rules:
 
   # 常時 -----------------------------------------
 
-  # RU -> Esc
+  # RU -> Raycast Hotkey
   - type: basic
     from:
       simultaneous:
       - key_code: r
       - key_code: u
     to:
-    - key_code: escape
+    - key_code: spacebar
+      modifiers:
+      - control
       repeat: false
 
   # VM -> Return
@@ -595,6 +597,27 @@ rules:
     - key_code: spacebar
       modifiers:
       - control
+      repeat: false
+
+  # SD + J/L -> Kana/Eisuu
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: s
+      - key_code: d
+      - key_code: j
+    to:
+    - key_code: japanese_kana
+      repeat: false
+
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: s
+      - key_code: d
+      - key_code: l
+    to:
+    - key_code: japanese_eisuu
       repeat: false
 
 # }}}
