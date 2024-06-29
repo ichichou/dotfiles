@@ -141,8 +141,9 @@ rules:
 
   # }}}
 
+  # Escape for LCommand-K/H {{{
+
   # LCommand-; -> Command-K
-  # LCommand-K のマッピングのエスケープ用
   - type: basic
     from:
       key_code: semicolon
@@ -158,7 +159,6 @@ rules:
       repeat: false
 
   # LCommand-' -> Command-H
-  # LCommand-H のマッピングのエスケープ用
   - type: basic
     from:
       key_code: quote
@@ -173,7 +173,9 @@ rules:
       - command
       repeat: false
 
-  # LCommand -> 英数
+  # }}}
+
+  # LCommand -> Eisuu/LCommand
   - type: basic
     from:
       key_code: left_command
@@ -186,7 +188,7 @@ rules:
     to_if_alone:
     - key_code: japanese_eisuu
 
-  # # RCommand -> Invalid
+  # # RCommand -> Kana/RCommand
   # - type: basic
   #   from:
   #     key_code: right_command
@@ -197,4 +199,4 @@ rules:
   #   - key_code: right_command
   #     lazy: true
   #   to_if_alone:
-  #   - key_code:
+  #   - key_code: japanese_kana
