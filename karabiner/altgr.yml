@@ -44,27 +44,31 @@ aliases:
 
 - from/modifiers: &modifier
     mandatory:
-    - right_command
+    - right_shift
     optional:
     - any
 
 # Conditions -------------------------------------
 
 - conditions: &devices
-  - type: device_unless
+  - type: device_if
     identifiers:
-    - description: "Ergo42"
-      vendor_id: 48194
-      product_id: 66
-    - description: "Vega"
-      vendor_id: 41219
-      product_id: 21
-    # - description: "Lain"
-    #   vendor_id:
-    #   product_id:
-    # - description: "Altair-X"
-    #   vendor_id:
-    #   product_id:
+    - description: "Apple Internal Keyoard"
+      vendor_id: 1452
+      product_id: 834
+    - description: "Lofree Flow84"
+      vendor_id: 1452
+      product_id: 591
+
+# - conditions: &devices
+#   - type: device_unless
+#     identifiers:
+#     - description: "Ergo42"
+#       vendor_id: 48194
+#       product_id: 66
+#     - description: "Vega"
+#       vendor_id: 41219
+#       product_id: 21
 
 # }}}
 
@@ -73,6 +77,45 @@ aliases:
 rules:
 - description: "4. AltGr key"
   manipulators:
+
+# AltGr Key {{{
+
+  # IME Off (Qwerty)
+  - type: basic
+    from:
+      key_code: right_shift
+      modifiers:
+        optional:
+        - any
+    to:
+    - key_code: right_shift
+      lazy: true
+    to_if_alone:
+    - key_code: slash
+    conditions:
+    - type: input_source_unless
+      input_sources:
+      - language: ja
+
+  # IME On (Shingeta)
+  - type: basic
+    from:
+      key_code: right_shift
+      modifiers:
+        optional:
+        - any
+    to:
+    - key_code: right_shift
+      lazy: true
+    to_if_alone:
+    - key_code: b
+    - key_code: u
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: ja
+
+# }}}
 
 # Upper Row {{{
 
@@ -422,14 +465,23 @@ rules:
 
 # Other Keys {{{
 
-  # Space -> Whitespace
+  # RCommand -> 9
   - type: basic
     from:
-      key_code: spacebar
+      key_code: right_command
       modifiers: *modifier
     to:
-    - key_code: spacebar
-      repeat: false
+    - key_code: "9"
     conditions: *devices
+
+  # # Space -> Whitespace
+  # - type: basic
+  #   from:
+  #     key_code: spacebar
+  #     modifiers: *modifier
+  #   to:
+  #   - key_code: spacebar
+  #     repeat: false
+  #   conditions: *devices
 
 # }}}
