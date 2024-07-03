@@ -17,9 +17,6 @@ aliases:
 - to/modifiers: &to_shift
   - shift
 
-- parameters: &thresh_ms_for_same_hand_simul
-    basic.simultaneous_threshold_milliseconds: 100
-
 - parameters: &delay_ms_to_cancel_shifted
     basic.to_delayed_action_delay_milliseconds: 5000
 
@@ -1117,10 +1114,7 @@ rules:
     - set_variable:
         name: symbol
         value: 1
-    to_after_key_up:
-    - set_variable:
-        name: symbol
-        value: 0
+        key_up_value: 0
     conditions: *left_shift
 
   # そ (右シフト時)
@@ -1136,10 +1130,7 @@ rules:
     - set_variable:
         name: symbol
         value: 1
-    to_after_key_up:
-    - set_variable:
-        name: symbol
-        value: 0
+        key_up_value: 0
     conditions: *right_shift
 
   # て (ベース時)
@@ -1155,10 +1146,7 @@ rules:
     - set_variable:
         name: symbol
         value: 1
-    to_after_key_up:
-    - set_variable:
-        name: symbol
-        value: 0
+        key_up_value: 0
     conditions: *base
 
   # 中指シフトキー ---------------------------------

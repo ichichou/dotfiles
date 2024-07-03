@@ -32,10 +32,7 @@ rules:
     - set_variable:
         name: hyper_mode
         value: 1
-    to_after_key_up:
-    - set_variable:
-        name: hyper_mode
-        value: 0
+        key_up_value: 0
 
 # }}}
 

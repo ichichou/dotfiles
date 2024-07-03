@@ -2224,10 +2224,7 @@ rules:
     - set_variable:
         name: symbol
         value: 1
-    to_after_key_up:
-    - set_variable:
-        name: symbol
-        value: 0
+        key_up_value: 0
     conditions: *base
 
   # Symbol Mode Mapping --------------------------
