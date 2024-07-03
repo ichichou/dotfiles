@@ -395,16 +395,28 @@ rules:
 
   # Left Side Keys {{{
 
-  # Q -> Invalid
+  # Q -> Left Up Window (Control-Option-U)
   - type: basic
     from:
       key_code: q
+    to:
+    - key_code: u
+      modifiers:
+      - control
+      - option
+      repeat: false
     conditions: *edit
 
-  # W -> Invalid
+  # W -> Right Up Window (Control-Option-I)
   - type: basic
     from:
       key_code: w
+    to:
+    - key_code: i
+      modifiers:
+      - control
+      - option
+      repeat: false
     conditions: *edit
 
   # E -> Invalid
