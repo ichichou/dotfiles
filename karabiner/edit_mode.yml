@@ -242,25 +242,21 @@ rules:
       repeat: false
     conditions: *edit
 
-  # I -> {
+  # I -> Kana
   - type: basic
     from:
       key_code: i
     to:
-    - key_code: open_bracket
-      modifiers:
-      - shift
+    - key_code: japanese_kana
       repeat: false
     conditions: *edit
 
-  # O -> }
+  # O -> Eisuu
   - type: basic
     from:
       key_code: o
     to:
-    - key_code: close_bracket
-      modifiers:
-      - shift
+    - key_code: japanese_eisuu
       repeat: false
     conditions: *edit
 
@@ -275,34 +271,52 @@ rules:
       repeat: false
     conditions: *edit
 
-  # H -> Invalid
+  # H -> Left
   - type: basic
     from:
       key_code: h
+      modifiers:
+        optional:
+        - any
+    to:
+    - key_code: left_arrow
+      repeat: true
     conditions: *edit
 
-  # J -> Kana
+  # J -> Down
   - type: basic
     from:
       key_code: j
+      modifiers:
+        optional:
+        - any
     to:
-    - key_code: japanese_kana
-      repeat: false
+    - key_code: down_arrow
+      repeat: true
     conditions: *edit
 
-  # K -> Invalid
+  # K -> Up
   - type: basic
     from:
       key_code: k
+      modifiers:
+        optional:
+        - any
+    to:
+    - key_code: up_arrow
+      repeat: true
     conditions: *edit
 
-  # L -> Eisuu
+  # L -> Right
   - type: basic
     from:
       key_code: l
+      modifiers:
+        optional:
+        - any
     to:
-    - key_code: japanese_eisuu
-      repeat: false
+    - key_code: right_arrow
+      repeat: true
     conditions: *edit
 
   # Semicolon -> Command-[
@@ -368,10 +382,13 @@ rules:
       repeat: false
     conditions: *edit
 
-  # Slash -> Invalid
+  # Slash -> Escape
   - type: basic
     from:
       key_code: slash
+    to:
+    - key_code: escape
+      repeat: false
     conditions: *edit
 
   # }}}
