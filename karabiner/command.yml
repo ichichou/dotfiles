@@ -3,6 +3,8 @@ rules:
 - description: "5. Command key"
   manipulators:
 
+  # LCommand-Any ---------------------------------
+
   # LCommand-Space -> Return
   - type: basic
     from:
@@ -23,52 +25,19 @@ rules:
       modifiers:
         mandatory:
         - left_command
+        optional:
+        - any
     to:
-    - key_code: right_command
-      lazy: true
-    to_if_alone:
     - key_code: escape
       repeat: false
 
-  # LCommand-LOption-HJKL -> Command-HJKL {{{
-  # LCommand-HJKL のエスケープ用
+  # LCommand-; -> Command-K
   - type: basic
     from:
-      key_code: h
+      key_code: semicolon
       modifiers:
         mandatory:
         - left_command
-        - left_option
-        optional:
-        - any
-    to:
-    - key_code: h
-      modifiers:
-      - command
-      repeat: false
-
-  - type: basic
-    from:
-      key_code: j
-      modifiers:
-        mandatory:
-        - left_command
-        - left_option
-        optional:
-        - any
-    to:
-    - key_code: j
-      modifiers:
-      - command
-      repeat: false
-
-  - type: basic
-    from:
-      key_code: k
-      modifiers:
-        mandatory:
-        - left_command
-        - left_option
         optional:
         - any
     to:
@@ -77,24 +46,24 @@ rules:
       - command
       repeat: false
 
+  # LCommand-M -> Command-H
   - type: basic
     from:
-      key_code: l
+      key_code: m
       modifiers:
         mandatory:
         - left_command
-        - left_option
         optional:
         - any
     to:
-    - key_code: l
+    - key_code: h
       modifiers:
       - command
       repeat: false
 
-  # }}}
+  # LCommand-H/J/K/L -----------------------------
 
-  # LCommand-HJKL -> Arrow Keys {{{
+  # LCommand-HJKL -> Arrow Keys
   - type: basic
     from:
       key_code: h
@@ -139,41 +108,7 @@ rules:
     to:
     - key_code: right_arrow
 
-  # }}}
-
-  # Escape for LCommand-K/H {{{
-
-  # LCommand-; -> Command-K
-  - type: basic
-    from:
-      key_code: semicolon
-      modifiers:
-        mandatory:
-        - left_command
-        optional:
-        - any
-    to:
-    - key_code: k
-      modifiers:
-      - command
-      repeat: false
-
-  # LCommand-' -> Command-H
-  - type: basic
-    from:
-      key_code: quote
-      modifiers:
-        mandatory:
-        - left_command
-        optional:
-        - any
-    to:
-    - key_code: h
-      modifiers:
-      - command
-      repeat: false
-
-  # }}}
+  # Command keys ---------------------------------
 
   # LCommand -> Eisuu/LCommand
   - type: basic
@@ -188,15 +123,15 @@ rules:
     to_if_alone:
     - key_code: japanese_eisuu
 
-  # # RCommand -> Kana/RCommand
-  # - type: basic
-  #   from:
-  #     key_code: right_command
-  #     modifiers:
-  #       optional:
-  #       - any
-  #   to:
-  #   - key_code: right_command
-  #     lazy: true
-  #   to_if_alone:
-  #   - key_code: japanese_kana
+  # RCommand -> Kana/RCommand
+  - type: basic
+    from:
+      key_code: right_command
+      modifiers:
+        optional:
+        - any
+    to:
+    - key_code: right_command
+      lazy: true
+    to_if_alone:
+    - key_code: japanese_kana
