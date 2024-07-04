@@ -44,7 +44,7 @@ aliases:
 
 - from/modifiers: &modifier
     mandatory:
-    - right_shift
+    - right_option
     optional:
     - any
 
@@ -80,40 +80,40 @@ rules:
 
 # AltGr Key {{{
 
-  # IME Off (Qwerty)
-  - type: basic
-    from:
-      key_code: right_shift
-      modifiers:
-        optional:
-        - any
-    to:
-    - key_code: right_shift
-      lazy: true
-    to_if_alone:
-    - key_code: slash
-    conditions:
-    - type: input_source_unless
-      input_sources:
-      - language: ja
-
-  # IME On (Shingeta)
-  - type: basic
-    from:
-      key_code: right_shift
-      modifiers:
-        optional:
-        - any
-    to:
-    - key_code: right_shift
-      lazy: true
-    to_if_alone:
-    - key_code: b
-    - key_code: u
-    conditions:
-    - type: input_source_if
-      input_sources:
-      - language: ja
+  # # IME Off (Qwerty)
+  # - type: basic
+  #   from:
+  #     key_code: right_shift
+  #     modifiers:
+  #       optional:
+  #       - any
+  #   to_if_alone:
+  #   - key_code: slash
+  #   to:
+  #   - key_code: right_shift
+  #     lazy: true
+  #   conditions:
+  #   - type: input_source_unless
+  #     input_sources:
+  #     - language: ja
+  #
+  # # IME On (Shingeta)
+  # - type: basic
+  #   from:
+  #     key_code: right_shift
+  #     modifiers:
+  #       optional:
+  #       - any
+  #   to_if_alone:
+  #   - key_code: b
+  #   - key_code: u
+  #   to:
+  #   - key_code: right_shift
+  #     lazy: true
+  #   conditions:
+  #   - type: input_source_if
+  #     input_sources:
+  #     - language: ja
 
 # }}}
 
