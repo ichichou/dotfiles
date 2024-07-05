@@ -1,4 +1,14 @@
 title: "02. Simultaneous"
+
+# ALIASES ========================================
+
+aliases:
+
+- parameters: &short_threshold
+    basic.simultaneous_threshold_milliseconds: 20
+
+# RULES ==========================================
+
 rules:
 - description: "2. Simultaneous"
   manipulators:
@@ -147,6 +157,7 @@ rules:
     to:
     - key_code: escape
       repeat: false
+    parameters: *short_threshold
 
   # IO -> Tab
   - type: basic
@@ -160,6 +171,7 @@ rules:
     to:
     - key_code: tab
       repeat: false
+    parameters: *short_threshold
 
   # DF -> Eisuu
   - type: basic
@@ -170,6 +182,7 @@ rules:
     to:
     - key_code: japanese_eisuu
       repeat: false
+    parameters: *short_threshold
 
   # JK -> Kana
   - type: basic
@@ -180,6 +193,7 @@ rules:
     to:
     - key_code: japanese_kana
       repeat: false
+    parameters: *short_threshold
 
   # 英語入力 -------------------------------------
 
