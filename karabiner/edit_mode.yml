@@ -617,4 +617,26 @@ rules:
       repeat: false
     conditions: *edit
 
+  # 4 -> Fn-F4 (for Google Sheets)
+  - type: basic
+    from:
+      key_code: "4"
+    to:
+    - key_code: f4
+      modifiers:
+      - fn
+      repeat: false
+    conditions: *edit
+
+  # 2 -> Fn-F2 (for Excel)
+  - type: basic
+    from:
+      key_code: "2"
+    to:
+    - key_code: f2
+      modifiers:
+      - fn
+      repeat: false
+    conditions: *edit
+
   # }}}
