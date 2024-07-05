@@ -10,6 +10,9 @@ aliases:
   - control
   - option
 
+- to/modifiers: &control
+  - control
+
 - conditions: &hyper_mode
   - type: variable_if
     name: hyper_mode
@@ -38,12 +41,14 @@ rules:
 
 # Number Keys: 1234567890 {{{
 
+  # Hyper-Num -> Control-Num
+
   - type: basic
     from:
       key_code: "1"
     to:
     - key_code: "1"
-      modifiers: *hyper_key
+      modifiers: *control
     conditions: *hyper_mode
 
   - type: basic
@@ -51,7 +56,7 @@ rules:
       key_code: "2"
     to:
     - key_code: "2"
-      modifiers: *hyper_key
+      modifiers: *control
     conditions: *hyper_mode
 
   - type: basic
@@ -59,7 +64,7 @@ rules:
       key_code: "3"
     to:
     - key_code: "3"
-      modifiers: *hyper_key
+      modifiers: *control
     conditions: *hyper_mode
 
   - type: basic
@@ -67,7 +72,7 @@ rules:
       key_code: "4"
     to:
     - key_code: "4"
-      modifiers: *hyper_key
+      modifiers: *control
     conditions: *hyper_mode
 
   - type: basic
@@ -75,7 +80,7 @@ rules:
       key_code: "5"
     to:
     - key_code: "5"
-      modifiers: *hyper_key
+      modifiers: *control
     conditions: *hyper_mode
 
   - type: basic
@@ -83,7 +88,7 @@ rules:
       key_code: "6"
     to:
     - key_code: "6"
-      modifiers: *hyper_key
+      modifiers: *control
     conditions: *hyper_mode
 
   - type: basic
@@ -91,7 +96,7 @@ rules:
       key_code: "7"
     to:
     - key_code: "7"
-      modifiers: *hyper_key
+      modifiers: *control
     conditions: *hyper_mode
 
   - type: basic
@@ -99,7 +104,7 @@ rules:
       key_code: "8"
     to:
     - key_code: "8"
-      modifiers: *hyper_key
+      modifiers: *control
     conditions: *hyper_mode
 
   - type: basic
@@ -107,7 +112,7 @@ rules:
       key_code: "9"
     to:
     - key_code: "9"
-      modifiers: *hyper_key
+      modifiers: *control
     conditions: *hyper_mode
 
   - type: basic
@@ -115,7 +120,7 @@ rules:
       key_code: "0"
     to:
     - key_code: "0"
-      modifiers: *hyper_key
+      modifiers: *control
     conditions: *hyper_mode
 
 # }}}
