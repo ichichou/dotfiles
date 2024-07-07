@@ -242,21 +242,25 @@ rules:
       repeat: false
     conditions: *edit
 
-  # I -> Kana
+  # I -> {
   - type: basic
     from:
       key_code: i
     to:
-    - key_code: japanese_kana
+    - key_code: open_bracket
+      modifiers:
+      - shift
       repeat: false
     conditions: *edit
 
-  # O -> Eisuu
+  # O -> }
   - type: basic
     from:
       key_code: o
     to:
-    - key_code: japanese_eisuu
+    - key_code: close_bracket
+      modifiers:
+      - shift
       repeat: false
     conditions: *edit
 
