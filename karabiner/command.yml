@@ -3,7 +3,7 @@ rules:
 - description: "5. Command key"
   manipulators:
 
-  # LCommand-Any ---------------------------------
+  # LCommand-Any {{{
 
   # LCommand-Space -> Return
   - type: basic
@@ -25,6 +25,19 @@ rules:
       modifiers:
         mandatory:
         - left_command
+        optional:
+        - any
+    to:
+    - key_code: escape
+      repeat: false
+
+  # RCommand-LCommand -> ESC
+  - type: basic
+    from:
+      key_code: left_command
+      modifiers:
+        mandatory:
+        - right_command
         optional:
         - any
     to:
@@ -61,9 +74,11 @@ rules:
       - command
       repeat: false
 
-  # LCommand-H/J/K/L -----------------------------
+  # }}}
 
-  # LCommand-HJKL -> Arrow Keys
+  # LCommand-HJKL -> Arrow Keys {{{
+
+  # LCommand-H -> Left
   - type: basic
     from:
       key_code: h
@@ -75,6 +90,7 @@ rules:
     to:
     - key_code: left_arrow
 
+  # LCommand-J -> Down
   - type: basic
     from:
       key_code: j
@@ -86,6 +102,7 @@ rules:
     to:
     - key_code: down_arrow
 
+  # LCommand-K -> Up
   - type: basic
     from:
       key_code: k
@@ -97,6 +114,7 @@ rules:
     to:
     - key_code: up_arrow
 
+  # LCommand-L -> Right
   - type: basic
     from:
       key_code: l
@@ -108,7 +126,33 @@ rules:
     to:
     - key_code: right_arrow
 
-  # Command keys ---------------------------------
+  # }}}
+
+  # LCommand-IO -> Kana, Eisuu {{{
+
+  # LCommand-I -> Kana
+  - type: basic
+    from:
+      key_code: i
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: japanese_kana
+
+  # LCommand-O -> Eisuu
+  - type: basic
+    from:
+      key_code: o
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: japanese_eisuu
+
+  # }}}
+
+  # Command Keys {{{
 
   # LCommand -> Eisuu/LCommand
   - type: basic
@@ -135,3 +179,5 @@ rules:
       lazy: true
     to_if_alone:
     - key_code: japanese_kana
+
+  # }}}
