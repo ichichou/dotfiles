@@ -184,25 +184,25 @@ rules:
 
   # LCommand-IO -> Kana, Eisuu {{{
 
-  # LCommand-I -> Kana
-  - type: basic
-    from:
-      key_code: i
-      modifiers:
-        mandatory:
-        - left_command
-    to:
-    - key_code: japanese_kana
-
-  # LCommand-O -> Eisuu
-  - type: basic
-    from:
-      key_code: o
-      modifiers:
-        mandatory:
-        - left_command
-    to:
-    - key_code: japanese_eisuu
+  # # LCommand-I -> Kana
+  # - type: basic
+  #   from:
+  #     key_code: i
+  #     modifiers:
+  #       mandatory:
+  #       - left_command
+  #   to:
+  #   - key_code: japanese_kana
+  #
+  # # LCommand-O -> Eisuu
+  # - type: basic
+  #   from:
+  #     key_code: o
+  #     modifiers:
+  #       mandatory:
+  #       - left_command
+  #   to:
+  #   - key_code: japanese_eisuu
 
   # }}}
 
