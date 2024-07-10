@@ -182,6 +182,36 @@ rules:
 
   # }}}
 
+  # LCommand-,. -> Control-AE {{{
+
+  # LCommand-, -> Control-A
+  - type: basic
+    from:
+      key_code: comma
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: a
+      modifiers:
+      - control
+      repeat: false
+
+  # LCommand-. -> Control-E
+  - type: basic
+    from:
+      key_code: period
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: e
+      modifiers:
+      - control
+      repeat: false
+
+  # }}}
+
   # LCommand-IO -> Kana, Eisuu {{{
 
   # # LCommand-I -> Kana
