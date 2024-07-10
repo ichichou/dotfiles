@@ -17,17 +17,17 @@ rules:
 
   # 常時 -----------------------------------------
 
-  # RU -> Raycast Hotkey
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: r
-      - key_code: u
-    to:
-    - key_code: spacebar
-      modifiers:
-      - control
-      repeat: false
+  # # RU -> Raycast Hotkey
+  # - type: basic
+  #   from:
+  #     simultaneous:
+  #     - key_code: r
+  #     - key_code: u
+  #   to:
+  #   - key_code: spacebar
+  #     modifiers:
+  #     - control
+  #     repeat: false
 
   # VM -> Return
   - type: basic
