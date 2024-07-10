@@ -59,21 +59,6 @@ rules:
       - command
       repeat: false
 
-  # LCommand-' -> Command-H
-  - type: basic
-    from:
-      key_code: quote
-      modifiers:
-        mandatory:
-        - left_command
-        optional:
-        - any
-    to:
-    - key_code: h
-      modifiers:
-      - command
-      repeat: false
-
   # LCommand-U -> Command-H
   - type: basic
     from:
@@ -88,21 +73,6 @@ rules:
       modifiers:
       - command
       repeat: false
-
-  # # LCommand-M -> Command-H
-  # - type: basic
-  #   from:
-  #     key_code: m
-  #     modifiers:
-  #       mandatory:
-  #       - left_command
-  #       optional:
-  #       - any
-  #   to:
-  #   - key_code: h
-  #     modifiers:
-  #     - command
-  #     repeat: false
 
   # }}}
 
