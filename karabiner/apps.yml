@@ -1161,6 +1161,23 @@ rules:
       bundle_identifiers:
       - "notion.id"
 
+  # [Notion] Command-S -> Command-\
+  - type: basic
+    from:
+      key_code: s
+      modifiers:
+        mandatory:
+        - command
+    to:
+    - key_code: backslash
+      modifiers:
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "notion.id"
+
 # }}}
 
 # Microsoft Office {{{
