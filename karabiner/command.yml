@@ -206,6 +206,146 @@ rules:
 
   # }}}
 
+  # Home Row Mods {{{
+
+  # Command-D/K -> Command-Shift (if Home Row Mods is on)
+  - type: basic
+    from:
+      key_code: d
+      modifiers:
+        mandatory:
+        - left_command
+        - left_control
+    to:
+    - key_code: left_shift
+      modifiers:
+      - command
+      - control
+    to_if_alone:
+    - key_code: d
+      modifiers:
+      - command
+      - control
+
+  - type: basic
+    from:
+      key_code: k
+      modifiers:
+        mandatory:
+        - right_command
+        - left_control
+    to:
+    - key_code: left_shift
+      modifiers:
+      - command
+      - control
+    to_if_alone:
+    - key_code: k
+      modifiers:
+      - command
+      - control
+
+  # Command-S/L -> Command-Control (if Home Row Mods is on)
+  - type: basic
+    from:
+      key_code: s
+      modifiers:
+        mandatory:
+        - left_command
+        - left_shift
+    to:
+    - key_code: left_control
+      modifiers:
+      - command
+      - shift
+    to_if_alone:
+    - key_code: s
+      modifiers:
+      - command
+      - shift
+
+  - type: basic
+    from:
+      key_code: l
+      modifiers:
+        mandatory:
+        - right_command
+        - left_shift
+    to:
+    - key_code: left_control
+      modifiers:
+      - command
+      - shift
+    to_if_alone:
+    - key_code: l
+      modifiers:
+      - command
+      - shift
+
+  # Command-D/K -> Command-Shift
+  - type: basic
+    from:
+      key_code: d
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: left_shift
+      modifiers:
+      - command
+    to_if_alone:
+    - key_code: d
+      modifiers:
+      - command
+
+  - type: basic
+    from:
+      key_code: k
+      modifiers:
+        mandatory:
+        - right_command
+    to:
+    - key_code: left_shift
+      modifiers:
+      - command
+    to_if_alone:
+    - key_code: k
+      modifiers:
+      - command
+
+  # Command-S/L -> Command-Control
+  - type: basic
+    from:
+      key_code: s
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: left_control
+      modifiers:
+      - command
+    to_if_alone:
+    - key_code: s
+      modifiers:
+      - command
+
+  - type: basic
+    from:
+      key_code: l
+      modifiers:
+        mandatory:
+        - right_command
+    to:
+    - key_code: left_control
+      modifiers:
+      - command
+    to_if_alone:
+    - key_code: l
+      modifiers:
+      - command
+
+  # }}}
+
   # Command Keys {{{
 
   # LCommand -> Eisuu/LCommand
