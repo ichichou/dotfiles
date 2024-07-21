@@ -30,6 +30,48 @@ rules:
 
 # Edit Mode Keys ---------------------------------
 
+  # Kana, Eisuu {{{
+
+  # # Left: S + D
+  # - type: basic
+  #   from:
+  #     simultaneous:
+  #     - key_code: s
+  #     - key_code: d
+  #     simultaneous_options:
+  #       to_after_key_up:
+  #       - set_variable:
+  #           name: edit
+  #           value: 0
+  #   to:
+  #   - set_variable:
+  #       name: edit
+  #       value: 1
+  #   to_if_alone:
+  #   - key_code: japanese_eisuu
+  #   parameters: *thresh_ms
+  # 
+  # # Right: K + L
+  # - type: basic
+  #   from:
+  #     simultaneous:
+  #     - key_code: k
+  #     - key_code: l
+  #     simultaneous_options:
+  #       to_after_key_up:
+  #       - set_variable:
+  #           name: edit
+  #           value: 0
+  #   to:
+  #   - set_variable:
+  #       name: edit
+  #       value: 1
+  #   to_if_alone:
+  #   - key_code: japanese_kana
+  #   parameters: *thresh_ms
+
+  # }}}
+
   # IME Off (Qwerty) {{{
 
   # Left: S + D (S -> D)
