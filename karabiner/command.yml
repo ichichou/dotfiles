@@ -140,7 +140,24 @@ rules:
     to:
     - key_code: delete_or_backspace
 
-  # LCommand-M -> Delete Forward
+  # LCommand-M -> Control-D / Delete Forward
+  # AquaSKK が Delete Forward のキーコードを受け付けないため、
+  # 基本は Control-D、端末でだけ Delete Forward にする（Vim 用）
+  - type: basic
+    from:
+      key_code: m
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: d
+      modifiers:
+      - control
+    conditions:
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "net.kovidgoyal.kitty"
+
   - type: basic
     from:
       key_code: m
