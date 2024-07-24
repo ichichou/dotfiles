@@ -25,11 +25,8 @@ rules:
       modifiers:
         mandatory:
         - left_command
-        optional:
-        - any
-    to:
+    to_if_alone:
     - key_code: escape
-      repeat: false
 
   # RCommand-LCommand -> ESC
   - type: basic
@@ -38,11 +35,8 @@ rules:
       modifiers:
         mandatory:
         - right_command
-        optional:
-        - any
-    to:
+    to_if_alone:
     - key_code: escape
-      repeat: false
 
   # LCommand-; -> Command-K
   - type: basic
