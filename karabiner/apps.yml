@@ -394,10 +394,10 @@ rules:
 
   # Focus In/Out
 
-  # [Bike] LCommand-Period -> Focus In
+  # [Bike] LCommand-O -> Focus In
   - type: basic
     from:
-      key_code: period
+      key_code: o
       modifiers:
         mandatory:
         - left_command
@@ -412,10 +412,10 @@ rules:
       bundle_identifiers:
       - "com.hogbaysoftware.Bike"
 
-  # [Bike] LCommand-Comma -> Focus Out
+  # [Bike] LCommand-I -> Focus Out
   - type: basic
     from:
-      key_code: comma
+      key_code: i
       modifiers:
         mandatory:
         - left_command
@@ -430,62 +430,7 @@ rules:
       bundle_identifiers:
       - "com.hogbaysoftware.Bike"
 
-  # Expand/Collapse Row
-
-  # # [Bike] LCommand-O -> Expand Row
-  # - type: basic
-  #   from:
-  #     key_code: o
-  #     modifiers:
-  #       mandatory:
-  #       - left_command
-  #   to:
-  #   - key_code: "0"
-  #     modifiers:
-  #     - command
-  #     repeat: false
-  #   conditions:
-  #   - type: frontmost_application_if
-  #     bundle_identifiers:
-  #     - "com.hogbaysoftware.Bike"
-
-  # # [Bike] LCommand-I -> Collapse Row
-  # - type: basic
-  #   from:
-  #     key_code: i
-  #     modifiers:
-  #       mandatory:
-  #       - left_command
-  #   to:
-  #   - key_code: "9"
-  #     modifiers:
-  #     - command
-  #     repeat: false
-  #   conditions:
-  #   - type: frontmost_application_if
-  #     bundle_identifiers:
-  #     - "com.hogbaysoftware.Bike"
-
-  # Expand All Rows
-
-  # [Bike] Control-LCommand-O -> Expand All Rows
-  - type: basic
-    from:
-      key_code: o
-      modifiers:
-        mandatory:
-        - control
-        - left_command
-    to:
-    - key_code: "0"
-      modifiers:
-      - control
-      - command
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.hogbaysoftware.Bike"
+  # Expand/Collapse All Rows
 
   # [Bike] Shift-LCommand-O -> Expand All Rows
   - type: basic
@@ -497,27 +442,6 @@ rules:
         - left_command
     to:
     - key_code: "0"
-      modifiers:
-      - control
-      - command
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.hogbaysoftware.Bike"
-
-  # Collapse All Rows
-
-  # [Bike] Control-LCommand-I -> Collapse All Rows
-  - type: basic
-    from:
-      key_code: i
-      modifiers:
-        mandatory:
-        - control
-        - left_command
-    to:
-    - key_code: "9"
       modifiers:
       - control
       - command
@@ -586,23 +510,23 @@ rules:
       bundle_identifiers:
       - "com.hogbaysoftware.Bike"
 
-  # [Bike] LCommand-D -> Duplicate Rows (Shift-Command-D)
-  - type: basic
-    from:
-      key_code: d
-      modifiers:
-        mandatory:
-        - left_command
-    to:
-    - key_code: d
-      modifiers:
-      - shift
-      - command
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.hogbaysoftware.Bike"
+  # # [Bike] LCommand-D -> Duplicate Rows (Shift-Command-D)
+  # - type: basic
+  #   from:
+  #     key_code: d
+  #     modifiers:
+  #       mandatory:
+  #       - left_command
+  #   to:
+  #   - key_code: d
+  #     modifiers:
+  #     - shift
+  #     - command
+  #     repeat: false
+  #   conditions:
+  #   - type: frontmost_application_if
+  #     bundle_identifiers:
+  #     - "com.hogbaysoftware.Bike"
 
   # [Bike] LCommand-Delete -> Delete Rows (Shift-Command-K)
   - type: basic
@@ -715,6 +639,10 @@ rules:
 
 # Workflowy {{{
 
+  # Movement -------------------------------------
+
+  # Indent Row
+
   # [Workflowy] Control-Right -> Indent
   - type: basic
     from:
@@ -724,23 +652,6 @@ rules:
         - control
     to:
     - key_code: tab
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.workflowy.desktop"
-
-  # [Workflowy] Control-Left -> Outdent
-  - type: basic
-    from:
-      key_code: left_arrow
-      modifiers:
-        mandatory:
-        - control
-    to:
-    - key_code: tab
-      modifiers:
-      - shift
       repeat: false
     conditions:
     - type: frontmost_application_if
@@ -757,6 +668,25 @@ rules:
         - left_command
     to:
     - key_code: tab
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.workflowy.desktop"
+
+  # Outdent Row
+
+  # [Workflowy] Control-Left -> Outdent
+  - type: basic
+    from:
+      key_code: left_arrow
+      modifiers:
+        mandatory:
+        - control
+    to:
+    - key_code: tab
+      modifiers:
+      - shift
       repeat: false
     conditions:
     - type: frontmost_application_if
@@ -781,6 +711,8 @@ rules:
       bundle_identifiers:
       - "com.workflowy.desktop"
 
+  # Move Row Up
+
   # [Workflowy] Control-Up -> Move Up
   - type: basic
     from:
@@ -790,24 +722,6 @@ rules:
         - control
     to:
     - key_code: up_arrow
-      modifiers:
-      - shift
-      - command
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.workflowy.desktop"
-
-  # [Workflowy] Control-Down -> Move Down
-  - type: basic
-    from:
-      key_code: down_arrow
-      modifiers:
-        mandatory:
-        - control
-    to:
-    - key_code: down_arrow
       modifiers:
       - shift
       - command
@@ -836,6 +750,26 @@ rules:
       bundle_identifiers:
       - "com.workflowy.desktop"
 
+  # Move Row Down
+
+  # [Workflowy] Control-Down -> Move Down
+  - type: basic
+    from:
+      key_code: down_arrow
+      modifiers:
+        mandatory:
+        - control
+    to:
+    - key_code: down_arrow
+      modifiers:
+      - shift
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.workflowy.desktop"
+
   # [Workflowy] Control-LCommand-J -> Move Down
   - type: basic
     from:
@@ -855,12 +789,15 @@ rules:
       bundle_identifiers:
       - "com.workflowy.desktop"
 
-  # [Workflowy] Command-O -> Expand
+  # Expand/Collapse Row
+
+  # [Workflowy] Shift-LCommand-O -> Expand
   - type: basic
     from:
       key_code: o
       modifiers:
         mandatory:
+        - shift
         - left_command
     to:
     - key_code: down_arrow
@@ -872,12 +809,13 @@ rules:
       bundle_identifiers:
       - "com.workflowy.desktop"
 
-  # [Workflowy] Command-I -> Collapse
+  # [Workflowy] Shift-LCommand-I -> Collapse
   - type: basic
     from:
       key_code: i
       modifiers:
         mandatory:
+        - shift
         - left_command
     to:
     - key_code: up_arrow
@@ -888,6 +826,44 @@ rules:
     - type: frontmost_application_if
       bundle_identifiers:
       - "com.workflowy.desktop"
+
+  # Focus In/Out
+
+  # [Workflowy] LCommand-O -> Focus In
+  - type: basic
+    from:
+      key_code: o
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: period
+      modifiers:
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.workflowy.desktop"
+
+  # [Workflowy] LCommand-I -> Focus Out
+  - type: basic
+    from:
+      key_code: i
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: comma
+      modifiers:
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.workflowy.desktop"
+
+  # Edit -----------------------------------------
 
   # [Workflowy] RControl-H -> Delete
   - type: basic
@@ -904,27 +880,25 @@ rules:
       bundle_identifiers:
       - "com.workflowy.desktop"
 
-  # [Workflowy] LCommand-D -> Shift-Command-D
-  # Duplicate Rows
-  - type: basic
-    from:
-      key_code: d
-      modifiers:
-        mandatory:
-        - left_command
-    to:
-    - key_code: d
-      modifiers:
-      - shift
-      - command
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.workflowy.desktop"
+  # # [Workflowy] LCommand-D -> Duplicate Rows (Shift-Command-D)
+  # - type: basic
+  #   from:
+  #     key_code: d
+  #     modifiers:
+  #       mandatory:
+  #       - left_command
+  #   to:
+  #   - key_code: d
+  #     modifiers:
+  #     - shift
+  #     - command
+  #     repeat: false
+  #   conditions:
+  #   - type: frontmost_application_if
+  #     bundle_identifiers:
+  #     - "com.workflowy.desktop"
 
-  # [Workflowy] LCommand-Delete -> Shift-Command-Delete
-  # Delete Rows
+  # [Workflowy] LCommand-Delete -> Delete Rows (Shift-Command-Delete)
   - type: basic
     from:
       key_code: delete_or_backspace
