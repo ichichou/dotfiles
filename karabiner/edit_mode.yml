@@ -397,6 +397,23 @@ rules:
       repeat: true
     conditions: *edit
 
+  # M -> Control-D (unless Kitty)
+  - type: basic
+    from:
+      key_code: m
+    to:
+    - key_code: d
+      modifiers:
+      - control
+      repeat: true
+    conditions:
+    - type: variable_if
+      name: edit
+      value: 1
+    - type: fromtmost_application_unless
+      bundle_identifiers:
+      - "net.kovidgoyal.kitty"
+
   # M -> Delete Forward
   - type: basic
     from:
