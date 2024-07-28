@@ -72,6 +72,120 @@ rules:
 
   # }}}
 
+  # IME Off (MTGAP) {{{
+
+  # Left: S + D (S -> D)
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: s
+      - key_code: d
+      simultaneous_options:
+        key_down_order: strict
+        to_after_key_up:
+        - set_variable:
+            name: edit
+            value: 0
+    to:
+    - set_variable:
+        name: edit
+        value: 1
+    to_if_alone:
+    - key_code: "n"
+    - key_code: e
+    conditions:
+    - type: input_source_unless
+      input_sources:
+      - language: ja
+    - type: variable_if
+      name: alt_layout
+      value: 1
+    parameters: *thresh_ms
+
+  # Left: S + D (D -> S)
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: s
+      - key_code: d
+      simultaneous_options:
+        to_after_key_up:
+        - set_variable:
+            name: edit
+            value: 0
+    to:
+    - set_variable:
+        name: edit
+        value: 1
+    to_if_alone:
+    - key_code: e
+    - key_code: "n"
+    conditions:
+    - type: input_source_unless
+      input_sources:
+      - language: ja
+    - type: variable_if
+      name: alt_layout
+      value: 1
+    parameters: *thresh_ms
+
+  # Right: K + L (K -> L)
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: k
+      - key_code: l
+      simultaneous_options:
+        key_down_order: strict
+        to_after_key_up:
+        - set_variable:
+            name: edit
+            value: 0
+    to:
+    - set_variable:
+        name: edit
+        value: 1
+    to_if_alone:
+    - key_code: t
+    - key_code: s
+    conditions:
+    - type: input_source_unless
+      input_sources:
+      - language: ja
+    - type: variable_if
+      name: alt_layout
+      value: 1
+    parameters: *thresh_ms
+
+  # Right: K + L (L -> K)
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: k
+      - key_code: l
+      simultaneous_options:
+        to_after_key_up:
+        - set_variable:
+            name: edit
+            value: 0
+    to:
+    - set_variable:
+        name: edit
+        value: 1
+    to_if_alone:
+    - key_code: s
+    - key_code: t
+    conditions:
+    - type: input_source_unless
+      input_sources:
+      - language: ja
+    - type: variable_if
+      name: alt_layout
+      value: 1
+    parameters: *thresh_ms
+
+  # }}}
+
   # IME Off (Qwerty) {{{
 
   # Left: S + D (S -> D)
