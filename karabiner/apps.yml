@@ -1015,7 +1015,7 @@ rules:
       key_code: up_arrow
       modifiers:
         mandatory:
-        - control
+        - right_control
     to:
     - key_code: up_arrow
       modifiers:
@@ -1033,7 +1033,7 @@ rules:
       key_code: down_arrow
       modifiers:
         mandatory:
-        - control
+        - right_control
     to:
     - key_code: down_arrow
       modifiers:
@@ -1051,7 +1051,7 @@ rules:
       key_code: k
       modifiers:
         mandatory:
-        - control
+        - right_control
         - left_command
     to:
     - key_code: up_arrow
@@ -1070,8 +1070,8 @@ rules:
       key_code: j
       modifiers:
         mandatory:
-        - control
-        - command
+        - right_control
+        - left_command
     to:
     - key_code: down_arrow
       modifiers:
@@ -1089,7 +1089,7 @@ rules:
       key_code: h
       modifiers:
         mandatory:
-        - control
+        - right_control
     to:
     - key_code: delete_or_backspace
       repeat: true
@@ -1104,8 +1104,8 @@ rules:
       key_code: a
       modifiers:
         mandatory:
-        - shift
-        - command
+        - left_shift
+        - left_command
     to:
     - key_code: h
       modifiers:
@@ -1123,8 +1123,8 @@ rules:
       key_code: c
       modifiers:
         mandatory:
-        - shift
-        - command
+        - left_shift
+        - left_command
     to:
     - key_code: l
       modifiers:
@@ -1141,7 +1141,7 @@ rules:
       key_code: s
       modifiers:
         mandatory:
-        - command
+        - left_command
     to:
     - key_code: backslash
       modifiers:
