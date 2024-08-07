@@ -431,16 +431,24 @@ rules:
       repeat: false
     conditions: *edit
 
-  # H -> Invalid
+  # H -> Left * 7
   - type: basic
     from:
       key_code: h
       modifiers:
         optional:
         - any
+    to:
+    - key_code: left_arrow
+    - key_code: left_arrow
+    - key_code: left_arrow
+    - key_code: left_arrow
+    - key_code: left_arrow
+    - key_code: left_arrow
+    - key_code: left_arrow
     conditions: *edit
 
-  # J -> Kana
+  # J -> Left * 1
   - type: basic
     from:
       key_code: j
@@ -448,20 +456,21 @@ rules:
         optional:
         - any
     to:
-    - key_code: japanese_kana
-      repeat: false
+    - key_code: left_arrow
     conditions: *edit
 
-  # K -> Invalid
+  # K -> Right * 1
   - type: basic
     from:
       key_code: k
       modifiers:
         optional:
         - any
+    to:
+    - key_code: right_arrow
     conditions: *edit
 
-  # L -> Eisuu
+  # L -> Right * 7
   - type: basic
     from:
       key_code: l
@@ -469,8 +478,13 @@ rules:
         optional:
         - any
     to:
-    - key_code: japanese_eisuu
-      repeat: false
+    - key_code: right_arrow
+    - key_code: right_arrow
+    - key_code: right_arrow
+    - key_code: right_arrow
+    - key_code: right_arrow
+    - key_code: right_arrow
+    - key_code: right_arrow
     conditions: *edit
 
   # Semicolon -> Command-[
@@ -496,61 +510,80 @@ rules:
       repeat: false
     conditions: *edit
 
-  # N -> Delete
+  # N -> Shift-Left * 7
   - type: basic
     from:
       key_code: "n"
     to:
-    - key_code: delete_or_backspace
-      repeat: true
-    conditions: *edit
-
-  # M -> Control-D (unless Kitty)
-  - type: basic
-    from:
-      key_code: m
-    to:
-    - key_code: d
+    - key_code: left_arrow
       modifiers:
-      - control
-      repeat: true
-    conditions:
-    - type: variable_if
-      name: edit
-      value: 1
-    - type: fromtmost_application_unless
-      bundle_identifiers:
-      - "net.kovidgoyal.kitty"
+      - shift
+    - key_code: left_arrow
+      modifiers:
+      - shift
+    - key_code: left_arrow
+      modifiers:
+      - shift
+    - key_code: left_arrow
+      modifiers:
+      - shift
+    - key_code: left_arrow
+      modifiers:
+      - shift
+    - key_code: left_arrow
+      modifiers:
+      - shift
+    - key_code: left_arrow
+      modifiers:
+      - shift
+    conditions: *edit
 
-  # M -> Delete Forward
+  # M -> Shift-Left * 1
   - type: basic
     from:
       key_code: m
     to:
-    - key_code: delete_forward
-      repeat: true
+    - key_code: left_arrow
+      modifiers:
+      - shift
     conditions: *edit
 
-  # Comma -> Control-A
+  # Comma -> Shift-Right * 1
   - type: basic
     from:
       key_code: comma
     to:
-    - key_code: a
+    - key_code: right_arrow
       modifiers:
-      - control
-      repeat: false
+      - shift
     conditions: *edit
 
-  # Period -> Control-E
+  # Period -> Shift-Right * 7
   - type: basic
     from:
       key_code: period
     to:
-    - key_code: e
+    - key_code: right_arrow
       modifiers:
-      - control
-      repeat: false
+      - shift
+    - key_code: right_arrow
+      modifiers:
+      - shift
+    - key_code: right_arrow
+      modifiers:
+      - shift
+    - key_code: right_arrow
+      modifiers:
+      - shift
+    - key_code: right_arrow
+      modifiers:
+      - shift
+    - key_code: right_arrow
+      modifiers:
+      - shift
+    - key_code: right_arrow
+      modifiers:
+      - shift
     conditions: *edit
 
   # Slash -> Escape
