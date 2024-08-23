@@ -150,7 +150,7 @@ rules:
     - shell_command: open -a "notion calendar"
     conditions: *hyper_mode
 
-  # E: Invalid
+  # E: Hyper-E
   # Mapped to translation in Raycast
   - type: basic
     from:
