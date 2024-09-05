@@ -331,15 +331,15 @@ rules:
     - shell_command: open -a "linear"
     conditions: *hyper_mode
 
-  # O:
+  # O: Things
   - type: basic
     from:
       key_code: o
     to:
-    - key_code: o
-      modifiers: *hyper_key
-      repeat: false
-    # - shell_command: open -a ""
+    # - key_code: o
+    #   modifiers: *hyper_key
+    #   repeat: false
+    - shell_command: open -a "things3"
     conditions: *hyper_mode
 
   # P:
