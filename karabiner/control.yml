@@ -5,7 +5,7 @@ rules:
 
   # Simple Modifications で設定するため不要
   #
-  # # Caps Lock -> RControl/ESC
+  # # Caps Lock -> RControl/Esc
   # - type: basic
   #   from:
   #     key_code: caps_lock
@@ -18,7 +18,20 @@ rules:
   #   to_if_alone:
   #   - key_code: escape
 
-  # RControl -> RControl/ESC
+  # Esc -> Esc/RControl
+  - type: basic
+    from:
+      key_code: escape
+      modifiers:
+        optional:
+        - any
+    to:
+    - key_code: right_control
+      lazy: true
+    to_if_alone:
+    - key_code: escape
+
+  # RControl -> Esc/RControl
   - type: basic
     from:
       key_code: right_control
