@@ -4,19 +4,18 @@ title: "07. Hyper key"
 
 aliases:
 
-- to/modifiers: &hyper_key
-  - shift
-  - command
-  - control
-  - option
+- from/modifiers: &from_mods
+    mandatory:
+    - shift
+    - command
+    - control
+    - option
 
-- to/modifiers: &control
-  - control
-
-- conditions: &hyper_mode
-  - type: variable_if
-    name: hyper_mode
-    value: 1
+- to/modifiers: &to_mods
+  - left_shift
+  - right_command
+  - left_control
+  - left_option
 
 # RULES ==========================================
 
@@ -24,459 +23,41 @@ rules:
 - description: "7. Hyper key"
   manipulators:
 
-# Hyper Key {{{
+# Hyper Key --------------------------------------
 
   - type: basic
     from:
       key_code: tab
+      modifiers:
+        optional: any
     to_if_alone:
     - key_code: tab
     to:
-    - set_variable:
-        name: hyper_mode
-        value: 1
-        key_up_value: 0
+    - key_code: left_shift
+      modifiers:
+      - right_command
+      - left_control
+      - left_option
+      lazy: true
 
-# }}}
-
-# Number Keys: 1234567890 {{{
-
-  # Hyper-Num -> Control-Num
-
-  - type: basic
-    from:
-      key_code: "1"
-    to:
-    - key_code: "1"
-      modifiers: *control
-    conditions: *hyper_mode
-
-  - type: basic
-    from:
-      key_code: "2"
-    to:
-    - key_code: "2"
-      modifiers: *control
-    conditions: *hyper_mode
-
-  - type: basic
-    from:
-      key_code: "3"
-    to:
-    - key_code: "3"
-      modifiers: *control
-    conditions: *hyper_mode
-
-  - type: basic
-    from:
-      key_code: "4"
-    to:
-    - key_code: "4"
-      modifiers: *control
-    conditions: *hyper_mode
-
-  - type: basic
-    from:
-      key_code: "5"
-    to:
-    - key_code: "5"
-      modifiers: *control
-    conditions: *hyper_mode
-
-  - type: basic
-    from:
-      key_code: "6"
-    to:
-    - key_code: "6"
-      modifiers: *control
-    conditions: *hyper_mode
-
-  - type: basic
-    from:
-      key_code: "7"
-    to:
-    - key_code: "7"
-      modifiers: *control
-    conditions: *hyper_mode
-
-  - type: basic
-    from:
-      key_code: "8"
-    to:
-    - key_code: "8"
-      modifiers: *control
-    conditions: *hyper_mode
-
-  - type: basic
-    from:
-      key_code: "9"
-    to:
-    - key_code: "9"
-      modifiers: *control
-    conditions: *hyper_mode
-
-  - type: basic
-    from:
-      key_code: "0"
-    to:
-    - key_code: "0"
-      modifiers: *control
-    conditions: *hyper_mode
-
-# }}}
-
-# Left Keys: QWERT ASDFG ZXCVB {{{
+# Special Keys -----------------------------------
 
   # Q: Hyper-E
-  # For translation shortcut in Raycast
+  # Raycast では直接 Hyper-Q をホットキーとして設定できないため
   - type: basic
     from:
       key_code: q
+      modifiers: *from_mods
     to:
     - key_code: e
-      modifiers: *hyper_key
-      repeat: false
-    # - shell_command: open -a ""
-    conditions: *hyper_mode
+      modifiers: *to_mods
 
-  # W: Notion Calendar
-  - type: basic
-    from:
-      key_code: w
-    to:
-    # - key_code: w
-    #   modifiers: *hyper_key
-    #   repeat: false
-    - shell_command: open -a "notion calendar"
-    conditions: *hyper_mode
-
-  # E: Hyper-E
-  # Mapped to translation in Raycast
-  - type: basic
-    from:
-      key_code: e
-    to:
-    - key_code: e
-      modifiers: *hyper_key
-      repeat: false
-    # - shell_command: open -a ""
-    conditions: *hyper_mode
-
-  # R:
-  - type: basic
-    from:
-      key_code: r
-    to:
-    - key_code: r
-      modifiers: *hyper_key
-      repeat: false
-    # - shell_command: open -a ""
-    conditions: *hyper_mode
-
-  # T:
-  - type: basic
-    from:
-      key_code: t
-    to:
-    - key_code: t
-      modifiers: *hyper_key
-      repeat: false
-    # - shell_command: open -a ""
-    conditions: *hyper_mode
-
-  # A: Finder
-  - type: basic
-    from:
-      key_code: a
-    to:
-    # - key_code: a
-    #   modifiers: *hyper_key
-    #   repeat: false
-    - shell_command: open -a "finder"
-    conditions: *hyper_mode
-
-  # S: Slack
-  - type: basic
-    from:
-      key_code: s
-    to:
-    # - key_code: s
-    #   modifiers: *hyper_key
-    #   repeat: false
-    - shell_command: open -a "slack"
-    conditions: *hyper_mode
-
-  # D: Safari
-  - type: basic
-    from:
-      key_code: d
-    to:
-    # - key_code: d
-    #   modifiers: *hyper_key
-    #   repeat: false
-    - shell_command: open -a "safari"
-    conditions: *hyper_mode
-
-  # F:
-  - type: basic
-    from:
-      key_code: f
-    to:
-    - key_code: f
-      modifiers: *hyper_key
-      repeat: false
-    # - shell_command: open -a ""
-    conditions: *hyper_mode
-
-  # G:
-  - type: basic
-    from:
-      key_code: g
-    to:
-    - key_code: g
-      modifiers: *hyper_key
-      repeat: false
-    # - shell_command: open -a ""
-    conditions: *hyper_mode
-
-  # Z: Zoom
-  - type: basic
-    from:
-      key_code: z
-    to:
-    # - key_code: z
-    #   modifiers: *hyper_key
-    #   repeat: false
-    - shell_command: open -a "zoom.us"
-    conditions: *hyper_mode
-
-  # X:
-  - type: basic
-    from:
-      key_code: x
-    to:
-    - key_code: x
-      modifiers: *hyper_key
-      repeat: false
-    # - shell_command: open -a ""
-    conditions: *hyper_mode
-
-  # C: Arc
-  - type: basic
-    from:
-      key_code: c
-    to:
-    # - key_code: c
-    #   modifiers: *hyper_key
-    #   repeat: false
-    - shell_command: open -a "arc"
-    conditions: *hyper_mode
-
-  # V:
-  - type: basic
-    from:
-      key_code: v
-    to:
-    - key_code: v
-      modifiers: *hyper_key
-      repeat: false
-    # - shell_command: open -a ""
-    conditions: *hyper_mode
-
-  # B: Bitwarden
-  - type: basic
-    from:
-      key_code: b
-    to:
-    # - key_code: b
-    #   modifiers: *hyper_key
-    #   repeat: false
-    - shell_command: open -a "bitwarden"
-    conditions: *hyper_mode
-
-# }}}
-
-# Right Keys: YUIOP HJKL; NM,./ {{{
-
-  # Y: Arc (alt)
+  # Y: Arc
+  # Raycast では複数のホットキーを設定できないため
   - type: basic
     from:
       key_code: "y"
+      modifiers: *from_mods
     to:
-    # - key_code: "y"
-    #   modifiers: *hyper_key
-    #   repeat: false
-    - shell_command: open -a "arc"
-    conditions: *hyper_mode
-
-  # U: RStudio
-  - type: basic
-    from:
-      key_code: u
-    to:
-    # - key_code: u
-    #   modifiers: *hyper_key
-    #   repeat: false
-    - shell_command: open -a "rstudio"
-    conditions: *hyper_mode
-
-  # I: Linear
-  - type: basic
-    from:
-      key_code: i
-    to:
-    # - key_code: i
-    #   modifiers: *hyper_key
-    #   repeat: false
-    - shell_command: open -a "linear"
-    conditions: *hyper_mode
-
-  # O: Things
-  - type: basic
-    from:
-      key_code: o
-    to:
-    # - key_code: o
-    #   modifiers: *hyper_key
-    #   repeat: false
-    - shell_command: open -a "things3"
-    conditions: *hyper_mode
-
-  # P:
-  - type: basic
-    from:
-      key_code: p
-    to:
-    - key_code: p
-      modifiers: *hyper_key
-      repeat: false
-    # - shell_command: open -a ""
-    conditions: *hyper_mode
-
-  # H: Superhuman
-  - type: basic
-    from:
-      key_code: h
-    to:
-    # - key_code: h
-    #   modifiers: *hyper_key
-    #   repeat: false
-    - shell_command: open -a "superhuman"
-    conditions: *hyper_mode
-
-  # J: Bike
-  - type: basic
-    from:
-      key_code: j
-    to:
-    # - key_code: j
-    #   modifiers: *hyper_key
-    #   repeat: false
-    - shell_command: open -a "bike"
-    conditions: *hyper_mode
-
-  # K: CotEditor
-  - type: basic
-    from:
-      key_code: k
-    to:
-    # - key_code: k
-    #   modifiers: *hyper_key
-    #   repeat: false
-    - shell_command: open -a "coteditor"
-    conditions: *hyper_mode
-
-  # L: Kitty
-  - type: basic
-    from:
-      key_code: l
-    to:
-    # - key_code: l
-    #   modifiers: *hyper_key
-    #   repeat: false
-    - shell_command: open -a "kitty"
-    - key_code: japanese_eisuu
-    conditions: *hyper_mode
-
-  # Semicolon: Line
-  - type: basic
-    from:
-      key_code: semicolon
-    to:
-    # - key_code: semicolon
-    #   modifiers: *hyper_key
-    #   repeat: false
-    - shell_command: open -a "line"
-    conditions: *hyper_mode
-
-  # N: Notion
-  - type: basic
-    from:
-      key_code: "n"
-    to:
-    # - key_code: "n"
-    #   modifiers: *hyper_key
-    #   repeat: false
-    - shell_command: open -a "notion"
-    conditions: *hyper_mode
-
-  # M: Notes.app
-  - type: basic
-    from:
-      key_code: m
-    to:
-    # - key_code: m
-    #   modifiers: *hyper_key
-    #   repeat: false
-    - shell_command: open -a "notes"
-    conditions: *hyper_mode
-
-  # Comma:
-  - type: basic
-    from:
-      key_code: comma
-    to:
-    - key_code: comma
-      modifiers: *hyper_key
-      repeat: false
-    # - shell_command: open -a ""
-    conditions: *hyper_mode
-
-  # Period:
-  - type: basic
-    from:
-      key_code: period
-    to:
-    - key_code: period
-      modifiers: *hyper_key
-      repeat: false
-    # - shell_command: open -a ""
-    conditions: *hyper_mode
-
-  # Slash:
-  - type: basic
-    from:
-      key_code: slash
-    to:
-    - key_code: slash
-      modifiers: *hyper_key
-      repeat: false
-    # - shell_command: open -a ""
-    conditions: *hyper_mode
-
-# }}}
-
-# Other Keys {{{
-
-  # Space
-  - type: basic
-    from:
-      key_code: spacebar
-    to:
-    - key_code: spacebar
-      modifiers: *hyper_key
-      repeat: false
-    # - shell_command: open -a ""
-    conditions: *hyper_mode
-
-# }}}
+    - key_code: c
+      modifiers: *to_mods
