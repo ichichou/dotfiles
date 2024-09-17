@@ -12,10 +12,10 @@ aliases:
     - option
 
 - to/modifiers: &to_mods
-  - left_shift
+  - right_shift
   - right_command
-  - left_control
-  - left_option
+  - right_control
+  - right_option
 
 # RULES ==========================================
 
@@ -33,11 +33,11 @@ rules:
     to_if_alone:
     - key_code: tab
     to:
-    - key_code: left_shift
+    - key_code: right_shift
       modifiers:
       - right_command
-      - left_control
-      - left_option
+      - right_control
+      - right_option
       lazy: true
 
 # Special Keys -----------------------------------
