@@ -142,13 +142,13 @@ rules:
       bundle_identifiers:
       - "com.superhuman.electron"
 
-  # [Superhuman] RControl-N/P -> Command-Down/Up
+  # [Superhuman] LControl-N/P -> Command-Down/Up
   - type: basic
     from:
       key_code: "n"
       modifiers:
         mandatory:
-        - right_control
+        - left_control
     to:
     - key_code: down_arrow
       modifiers:
@@ -164,7 +164,7 @@ rules:
       key_code: p
       modifiers:
         mandatory:
-        - right_control
+        - left_control
     to:
     - key_code: up_arrow
       modifiers:
@@ -197,13 +197,13 @@ rules:
       bundle_identifiers:
       - "com.linear"
 
-  # [Linear] RControl-N/P -> Command-Down/Up
+  # [Linear] LControl-N/P -> Command-Down/Up
   - type: basic
     from:
       key_code: "n"
       modifiers:
         mandatory:
-        - right_control
+        - left_control
     to:
     - key_code: down_arrow
       modifiers:
@@ -219,7 +219,7 @@ rules:
       key_code: p
       modifiers:
         mandatory:
-        - right_control
+        - left_control
     to:
     - key_code: up_arrow
       modifiers:
@@ -472,14 +472,14 @@ rules:
 
   # Others
 
-  # [Bike] RControl-M -> New Row (Command-Return)
-  # [Bike] Shift-RControl-M -> New Indented Row (Shift-Command-Return)
+  # [Bike] LControl-M -> New Row (Command-Return)
+  # [Bike] Shift-LControl-M -> New Indented Row (Shift-Command-Return)
   - type: basic
     from:
       key_code: m
       modifiers:
         mandatory:
-        - right_control
+        - left_control
         optional:
         - shift
     to:
@@ -546,13 +546,13 @@ rules:
       bundle_identifiers:
       - "com.hogbaysoftware.Bike"
 
-  # [Bike] RControl-N/P -> Command-Down/Up
+  # [Bike] LControl-N/P -> Command-Down/Up
   - type: basic
     from:
       key_code: "n"
       modifiers:
         mandatory:
-        - right_control
+        - left_control
     to:
     - key_code: down_arrow
       modifiers:
@@ -568,7 +568,7 @@ rules:
       key_code: p
       modifiers:
         mandatory:
-        - right_control
+        - left_control
     to:
     - key_code: up_arrow
       modifiers:
@@ -865,13 +865,13 @@ rules:
 
   # Edit -----------------------------------------
 
-  # [Workflowy] RControl-H -> Delete
+  # [Workflowy] LControl-H -> Delete
   - type: basic
     from:
       key_code: h
       modifiers:
         mandatory:
-        - right_control
+        - left_control
     to:
     - key_code: delete_or_backspace
       repeat: true
@@ -991,13 +991,13 @@ rules:
       bundle_identifiers:
       - "company.thebrowser.Browser"
 
-  # [Arc] RControl-H -> Delete
+  # [Arc] LControl-H -> Delete
   - type: basic
     from:
       key_code: h
       modifiers:
         mandatory:
-        - right_control
+        - left_control
     to:
     - key_code: delete_or_backspace
     conditions:
@@ -1015,7 +1015,7 @@ rules:
       key_code: up_arrow
       modifiers:
         mandatory:
-        - right_control
+        - left_control
     to:
     - key_code: up_arrow
       modifiers:
@@ -1033,7 +1033,7 @@ rules:
       key_code: down_arrow
       modifiers:
         mandatory:
-        - right_control
+        - left_control
     to:
     - key_code: down_arrow
       modifiers:
@@ -1051,7 +1051,7 @@ rules:
       key_code: k
       modifiers:
         mandatory:
-        - right_control
+        - left_control
         - left_command
     to:
     - key_code: up_arrow
@@ -1070,7 +1070,7 @@ rules:
       key_code: j
       modifiers:
         mandatory:
-        - right_control
+        - left_control
         - left_command
     to:
     - key_code: down_arrow
@@ -1089,7 +1089,7 @@ rules:
       key_code: h
       modifiers:
         mandatory:
-        - right_control
+        - left_control
     to:
     - key_code: delete_or_backspace
       repeat: true

@@ -5,7 +5,7 @@ rules:
 
   # Simple Modifications で設定するため不要
   #
-  # # Caps Lock -> RControl/Esc
+  # # Caps Lock -> Esc/LControl
   # - type: basic
   #   from:
   #     key_code: caps_lock
@@ -13,12 +13,12 @@ rules:
   #       optional:
   #       - any
   #   to:
-  #   - key_code: right_control
+  #   - key_code: left_control
   #     lazy: true
   #   to_if_alone:
   #   - key_code: escape
 
-  # Esc -> Esc/RControl
+  # Esc -> Esc/LControl
   - type: basic
     from:
       key_code: escape
@@ -26,50 +26,53 @@ rules:
         optional:
         - any
     to:
-    - key_code: right_control
+    - key_code: left_control
       lazy: true
     to_if_alone:
     - key_code: escape
 
-  # RControl -> Esc/RControl
+  # LControl -> Esc/LControl
   - type: basic
     from:
-      key_code: right_control
+      key_code: left_control
       modifiers:
         optional:
         - any
     to:
-    - key_code: right_control
+    - key_code: left_control
       lazy: true
     to_if_alone:
     - key_code: escape
 
-  # RControl-J/L -> Kana/Eisuu
+  # LControl-J -> Kana
   - type: basic
     from:
       key_code: j
       modifiers:
         mandatory:
-        - right_control
+        - left_control
     to:
     - key_code: japanese_kana
+      repeat: false
 
+  # LControl-L -> Eisuu
   - type: basic
     from:
       key_code: l
       modifiers:
         mandatory:
-        - right_control
+        - left_control
     to:
     - key_code: japanese_eisuu
+      repeat: false
 
-  # RControl-M -> Return
+  # LControl-M -> Return
   - type: basic
     from:
       key_code: m
       modifiers:
         mandatory:
-        - right_control
+        - left_control
         optional:
         - any
     to:
