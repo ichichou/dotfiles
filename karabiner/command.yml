@@ -12,8 +12,6 @@ rules:
       modifiers:
         mandatory:
         - left_command
-        optional:
-        - any
     to:
     - key_code: return_or_enter
       repeat: false
@@ -25,8 +23,9 @@ rules:
       modifiers:
         mandatory:
         - left_command
-    to_if_alone:
+    to:
     - key_code: escape
+      repeat: false
 
   # RCommand-LCommand -> ESC
   - type: basic
@@ -35,8 +34,9 @@ rules:
       modifiers:
         mandatory:
         - right_command
-    to_if_alone:
+    to:
     - key_code: escape
+      repeat: false
 
   # LCommand-; -> Command-K
   - type: basic
@@ -45,8 +45,6 @@ rules:
       modifiers:
         mandatory:
         - left_command
-        optional:
-        - any
     to:
     - key_code: k
       modifiers:
@@ -60,8 +58,6 @@ rules:
       modifiers:
         mandatory:
         - left_command
-        optional:
-        - any
     to:
     - key_code: h
       modifiers:
@@ -134,9 +130,9 @@ rules:
     to:
     - key_code: delete_or_backspace
 
-  # LCommand-M -> Control-D / Delete Forward
+  # LCommand-M -> Control-D
   # AquaSKK が Delete Forward のキーコードを受け付けないため、
-  # 基本は Control-D、端末でだけ Delete Forward にする（Vim 用）
+  # 基本は Control-D、端末でのみ Vim 対応のために Delete Forward にする
   - type: basic
     from:
       key_code: m
@@ -152,6 +148,7 @@ rules:
       bundle_identifiers:
       - "net.kovidgoyal.kitty"
 
+  # LCommand-M -> Delete Forward
   - type: basic
     from:
       key_code: m
@@ -190,30 +187,6 @@ rules:
       modifiers:
       - control
       repeat: false
-
-  # }}}
-
-  # LCommand-IO -> Kana, Eisuu {{{
-
-  # # LCommand-I -> Kana
-  # - type: basic
-  #   from:
-  #     key_code: i
-  #     modifiers:
-  #       mandatory:
-  #       - left_command
-  #   to:
-  #   - key_code: japanese_kana
-  #
-  # # LCommand-O -> Eisuu
-  # - type: basic
-  #   from:
-  #     key_code: o
-  #     modifiers:
-  #       mandatory:
-  #       - left_command
-  #   to:
-  #   - key_code: japanese_eisuu
 
   # }}}
 
@@ -363,9 +336,6 @@ rules:
   - type: basic
     from:
       key_code: left_command
-      modifiers:
-        optional:
-        - any
     to:
     - key_code: left_command
       lazy: true
@@ -376,9 +346,6 @@ rules:
   - type: basic
     from:
       key_code: right_command
-      modifiers:
-        optional:
-        - any
     to:
     - key_code: right_command
       lazy: true

@@ -3,9 +3,8 @@ rules:
 - description: "6. Control key"
   manipulators:
 
-  # Simple Modifications で設定するため不要
-  #
   # # Caps Lock -> Esc/LControl
+  # # Simple Modifications で設定するため不要
   # - type: basic
   #   from:
   #     key_code: caps_lock
@@ -73,8 +72,6 @@ rules:
       modifiers:
         mandatory:
         - left_control
-        optional:
-        - any
     to:
     - key_code: return_or_enter
       repeat: false
