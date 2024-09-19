@@ -39,8 +39,14 @@ rules:
       - right_control
       - right_option
       lazy: true
+    conditions:
+    - type: device_unless
+      identifiers:
+      - description: "Cornelius Low-Profile"
+        vendor_id: 18003
+        product_id: 6
 
-# Special Keys -----------------------------------
+# Special Mappings -----------------------------------
 
   # Q: Hyper-E
   # Raycast では直接 Hyper-Q をホットキーとして設定できないため

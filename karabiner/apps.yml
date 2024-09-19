@@ -973,23 +973,23 @@ rules:
       bundle_identifiers:
       - "company.thebrowser.Browser"
 
-  # [Arc] Command-T -> Command-T, Eisuu
-  - type: basic
-    from:
-      key_code: t
-      modifiers:
-        mandatory:
-        - command
-    to:
-    - key_code: t
-      modifiers:
-      - command
-    - key_code: japanese_eisuu
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "company.thebrowser.Browser"
+  # # [Arc] Command-T -> Command-T, Eisuu
+  # - type: basic
+  #   from:
+  #     key_code: t
+  #     modifiers:
+  #       mandatory:
+  #       - command
+  #   to:
+  #   - key_code: t
+  #     modifiers:
+  #     - command
+  #   - key_code: japanese_eisuu
+  #     repeat: false
+  #   conditions:
+  #   - type: frontmost_application_if
+  #     bundle_identifiers:
+  #     - "company.thebrowser.Browser"
 
   # [Arc] LControl-H -> Delete
   - type: basic
