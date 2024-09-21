@@ -145,7 +145,7 @@ rules:
     - key_code: left_arrow
       repeat: false
 
-  # WE -> Tab
+  # WE -> Esc
   - type: basic
     from:
       simultaneous:
@@ -155,11 +155,11 @@ rules:
         optional:
         - any
     to:
-    - key_code: tab
+    - key_code: escape
       repeat: false
     parameters: *short_threshold
 
-  # IO -> Esc
+  # IO -> Tab
   - type: basic
     from:
       simultaneous:
@@ -169,7 +169,7 @@ rules:
         optional:
         - any
     to:
-    - key_code: escape
+    - key_code: tab
       repeat: false
     parameters: *short_threshold
 
