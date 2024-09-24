@@ -791,13 +791,12 @@ rules:
 
   # Expand/Collapse Row
 
-  # [Workflowy] Shift-LCommand-O -> Expand
+  # [Workflowy] LCommand-O -> Expand
   - type: basic
     from:
       key_code: o
       modifiers:
         mandatory:
-        - shift
         - left_command
     to:
     - key_code: down_arrow
@@ -809,13 +808,12 @@ rules:
       bundle_identifiers:
       - "com.workflowy.desktop"
 
-  # [Workflowy] Shift-LCommand-I -> Collapse
+  # [Workflowy] LCommand-I -> Collapse
   - type: basic
     from:
       key_code: i
       modifiers:
         mandatory:
-        - shift
         - left_command
     to:
     - key_code: up_arrow
@@ -829,12 +827,13 @@ rules:
 
   # Focus In/Out
 
-  # [Workflowy] LCommand-O -> Focus In
+  # [Workflowy] LShift-LCommand-O -> Focus In
   - type: basic
     from:
       key_code: o
       modifiers:
         mandatory:
+        - left_shift
         - left_command
     to:
     - key_code: period
@@ -846,12 +845,13 @@ rules:
       bundle_identifiers:
       - "com.workflowy.desktop"
 
-  # [Workflowy] LCommand-I -> Focus Out
+  # [Workflowy] LShift-LCommand-I -> Focus Out
   - type: basic
     from:
       key_code: i
       modifiers:
         mandatory:
+        - left_shift
         - left_command
     to:
     - key_code: comma
