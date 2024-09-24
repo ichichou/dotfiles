@@ -44,6 +44,7 @@ abbr -ag nd nextd
 abbr -ag pd prevd
 abbr -ag reload exec fish
 abbr -ag rmds rm .DS_Store
+abbr -ag ud cd ..
 
 # APPS
 abbr -ag a bat
