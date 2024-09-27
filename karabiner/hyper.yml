@@ -25,6 +25,7 @@ rules:
 
 # Hyper Key --------------------------------------
 
+  # Tab -> Tab/Hyper
   - type: basic
     from:
       key_code: tab
@@ -39,12 +40,25 @@ rules:
       - right_control
       - right_option
       lazy: true
-    conditions:
-    - type: device_unless
-      identifiers:
-      - description: "Cornelius Low-Profile"
-        vendor_id: 18003
-        product_id: 6
+
+  # F13 -> Delete/Hyper
+  # Simple Modifications で Delete を F13 に変更する（QMK で Hyper キー実装している場合以外）
+  # 物理的な Delete キー（F13 に変更済み）は Delete/Hyper になってリピート不可になるが、
+  # Cmd-N -> Delete などのマッピングはリピート可能なままになる
+  - type: basic
+    from:
+      key_code: f13
+      modifiers:
+        optional: any
+    to_if_alone:
+    - key_code: delete_or_backspace
+    to:
+    - key_code: right_shift
+      modifiers:
+      - right_command
+      - right_control
+      - right_option
+      lazy: true
 
 # Special Mappings -----------------------------------
 
