@@ -510,23 +510,23 @@ rules:
       bundle_identifiers:
       - "com.hogbaysoftware.Bike"
 
-  # # [Bike] LCommand-D -> Duplicate Rows (Shift-Command-D)
-  # - type: basic
-  #   from:
-  #     key_code: d
-  #     modifiers:
-  #       mandatory:
-  #       - left_command
-  #   to:
-  #   - key_code: d
-  #     modifiers:
-  #     - shift
-  #     - command
-  #     repeat: false
-  #   conditions:
-  #   - type: frontmost_application_if
-  #     bundle_identifiers:
-  #     - "com.hogbaysoftware.Bike"
+  # [Bike] LCommand-D -> Duplicate Rows (Shift-Command-D)
+  - type: basic
+    from:
+      key_code: d
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: d
+      modifiers:
+      - shift
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.hogbaysoftware.Bike"
 
   # [Bike] LCommand-Delete -> Delete Rows (Shift-Command-K)
   - type: basic
