@@ -14,9 +14,14 @@ aliases:
     input_sources:
     - language: ja
 
-- conditions: &edit
+- conditions: &edit_1
   - type: variable_if
-    name: edit
+    name: edit_1
+    value: 1
+
+- conditions: &edit_2
+  - type: variable_if
+    name: edit_2
     value: 1
 
 - parameters: &thresh_ms
@@ -30,49 +35,9 @@ rules:
 
 # Edit Mode Keys ---------------------------------
 
-  # Kana, Eisuu {{{
-
-  # # Left: S + D
-  # - type: basic
-  #   from:
-  #     simultaneous:
-  #     - key_code: s
-  #     - key_code: d
-  #     simultaneous_options:
-  #       to_after_key_up:
-  #       - set_variable:
-  #           name: edit
-  #           value: 0
-  #   to:
-  #   - set_variable:
-  #       name: edit
-  #       value: 1
-  #   to_if_alone:
-  #   - key_code: japanese_eisuu
-  #   parameters: *thresh_ms
-  #
-  # # Right: K + L
-  # - type: basic
-  #   from:
-  #     simultaneous:
-  #     - key_code: k
-  #     - key_code: l
-  #     simultaneous_options:
-  #       to_after_key_up:
-  #       - set_variable:
-  #           name: edit
-  #           value: 0
-  #   to:
-  #   - set_variable:
-  #       name: edit
-  #       value: 1
-  #   to_if_alone:
-  #   - key_code: japanese_kana
-  #   parameters: *thresh_ms
-
-  # }}}
-
   # IME Off (MTGAP) {{{
+
+  # Edit Mode 1 ----------------------------------
 
   # Left: S + D (S -> D)
   - type: basic
@@ -84,11 +49,11 @@ rules:
         key_down_order: strict
         to_after_key_up:
         - set_variable:
-            name: edit
+            name: edit_1
             value: 0
     to:
     - set_variable:
-        name: edit
+        name: edit_1
         value: 1
     to_if_alone:
     - key_code: "n"
@@ -111,11 +76,11 @@ rules:
       simultaneous_options:
         to_after_key_up:
         - set_variable:
-            name: edit
+            name: edit_1
             value: 0
     to:
     - set_variable:
-        name: edit
+        name: edit_1
         value: 1
     to_if_alone:
     - key_code: e
@@ -139,11 +104,11 @@ rules:
         key_down_order: strict
         to_after_key_up:
         - set_variable:
-            name: edit
+            name: edit_1
             value: 0
     to:
     - set_variable:
-        name: edit
+        name: edit_1
         value: 1
     to_if_alone:
     - key_code: t
@@ -166,15 +131,127 @@ rules:
       simultaneous_options:
         to_after_key_up:
         - set_variable:
-            name: edit
+            name: edit_1
             value: 0
     to:
     - set_variable:
-        name: edit
+        name: edit_1
         value: 1
     to_if_alone:
     - key_code: s
     - key_code: t
+    conditions:
+    - type: input_source_unless
+      input_sources:
+      - language: ja
+    - type: variable_if
+      name: alt_layout
+      value: 1
+    parameters: *thresh_ms
+
+  # Edit Mode 2 ----------------------------------
+
+  # Left: W + E (W -> E)
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: w
+      - key_code: e
+      simultaneous_options:
+        key_down_order: strict
+        to_after_key_up:
+        - set_variable:
+            name: edit_2
+            value: 0
+    to:
+    - set_variable:
+        name: edit_2
+        value: 1
+    to_if_alone:
+    - key_code: p
+    - key_code: o
+    conditions:
+    - type: input_source_unless
+      input_sources:
+      - language: ja
+    - type: variable_if
+      name: alt_layout
+      value: 1
+    parameters: *thresh_ms
+
+  # Left: W + E (E -> W)
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: w
+      - key_code: e
+      simultaneous_options:
+        to_after_key_up:
+        - set_variable:
+            name: edit_2
+            value: 0
+    to:
+    - set_variable:
+        name: edit_2
+        value: 1
+    to_if_alone:
+    - key_code: o
+    - key_code: p
+    conditions:
+    - type: input_source_unless
+      input_sources:
+      - language: ja
+    - type: variable_if
+      name: alt_layout
+      value: 1
+    parameters: *thresh_ms
+
+  # Right: I + O (I -> O)
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: i
+      - key_code: o
+      simultaneous_options:
+        key_down_order: strict
+        to_after_key_up:
+        - set_variable:
+            name: edit_2
+            value: 0
+    to:
+    - set_variable:
+        name: edit_2
+        value: 1
+    to_if_alone:
+    - key_code: l
+    - key_code: c
+    conditions:
+    - type: input_source_unless
+      input_sources:
+      - language: ja
+    - type: variable_if
+      name: alt_layout
+      value: 1
+    parameters: *thresh_ms
+
+  # Right: I + O (O -> I)
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: i
+      - key_code: o
+      simultaneous_options:
+        to_after_key_up:
+        - set_variable:
+            name: edit_2
+            value: 0
+    to:
+    - set_variable:
+        name: edit_2
+        value: 1
+    to_if_alone:
+    - key_code: c
+    - key_code: l
     conditions:
     - type: input_source_unless
       input_sources:
@@ -188,6 +265,8 @@ rules:
 
   # IME Off (Qwerty) {{{
 
+  # Edit Mode 1 ----------------------------------
+
   # Left: S + D (S -> D)
   - type: basic
     from:
@@ -198,11 +277,11 @@ rules:
         key_down_order: strict
         to_after_key_up:
         - set_variable:
-            name: edit
+            name: edit_1
             value: 0
     to:
     - set_variable:
-        name: edit
+        name: edit_1
         value: 1
     to_if_alone:
     - key_code: s
@@ -219,11 +298,11 @@ rules:
       simultaneous_options:
         to_after_key_up:
         - set_variable:
-            name: edit
+            name: edit_1
             value: 0
     to:
     - set_variable:
-        name: edit
+        name: edit_1
         value: 1
     to_if_alone:
     - key_code: d
@@ -241,11 +320,11 @@ rules:
         key_down_order: strict
         to_after_key_up:
         - set_variable:
-            name: edit
+            name: edit_1
             value: 0
     to:
     - set_variable:
-        name: edit
+        name: edit_1
         value: 1
     to_if_alone:
     - key_code: k
@@ -262,15 +341,103 @@ rules:
       simultaneous_options:
         to_after_key_up:
         - set_variable:
-            name: edit
+            name: edit_1
             value: 0
     to:
     - set_variable:
-        name: edit
+        name: edit_1
         value: 1
     to_if_alone:
     - key_code: l
     - key_code: k
+    conditions: *ime_off
+    parameters: *thresh_ms
+
+  # Edit Mode 2 ----------------------------------
+
+  # Left: W + E (W -> E)
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: w
+      - key_code: e
+      simultaneous_options:
+        key_down_order: strict
+        to_after_key_up:
+        - set_variable:
+            name: edit_2
+            value: 0
+    to:
+    - set_variable:
+        name: edit_2
+        value: 1
+    to_if_alone:
+    - key_code: w
+    - key_code: c
+    conditions: *ime_off
+    parameters: *thresh_ms
+
+  # Left: W + E (E -> W)
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: w
+      - key_code: e
+      simultaneous_options:
+        to_after_key_up:
+        - set_variable:
+            name: edit_2
+            value: 0
+    to:
+    - set_variable:
+        name: edit_2
+        value: 1
+    to_if_alone:
+    - key_code: e
+    - key_code: w
+    conditions: *ime_off
+    parameters: *thresh_ms
+
+  # Right: I + O (I -> O)
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: i
+      - key_code: o
+      simultaneous_options:
+        key_down_order: strict
+        to_after_key_up:
+        - set_variable:
+            name: edit_2
+            value: 0
+    to:
+    - set_variable:
+        name: edit_2
+        value: 1
+    to_if_alone:
+    - key_code: i
+    - key_code: o
+    conditions: *ime_off
+    parameters: *thresh_ms
+
+  # Right: I + O (O -> I)
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: i
+      - key_code: o
+      simultaneous_options:
+        to_after_key_up:
+        - set_variable:
+            name: edit_2
+            value: 0
+    to:
+    - set_variable:
+        name: edit_2
+        value: 1
+    to_if_alone:
+    - key_code: o
+    - key_code: i
     conditions: *ime_off
     parameters: *thresh_ms
 
@@ -278,6 +445,8 @@ rules:
 
   # IME On (Shingeta) {{{
 
+  # Edit Mode 1 ----------------------------------
+
   # Left: S + D (S -> D)
   - type: basic
     from:
@@ -288,11 +457,11 @@ rules:
         key_down_order: strict
         to_after_key_up:
         - set_variable:
-            name: edit
+            name: edit_1
             value: 0
     to:
     - set_variable:
-        name: edit
+        name: edit_1
         value: 1
     to_if_alone:
     - key_code: t
@@ -311,11 +480,11 @@ rules:
       simultaneous_options:
         to_after_key_up:
         - set_variable:
-            name: edit
+            name: edit_1
             value: 0
     to:
     - set_variable:
-        name: edit
+        name: edit_1
         value: 1
     to_if_alone:
     - key_code: k
@@ -335,11 +504,11 @@ rules:
         key_down_order: strict
         to_after_key_up:
         - set_variable:
-            name: edit
+            name: edit_1
             value: 0
     to:
     - set_variable:
-        name: edit
+        name: edit_1
         value: 1
     to_if_alone:
     - key_code: i
@@ -357,11 +526,11 @@ rules:
       simultaneous_options:
         to_after_key_up:
         - set_variable:
-            name: edit
+            name: edit_1
             value: 0
     to:
     - set_variable:
-        name: edit
+        name: edit_1
         value: 1
     to_if_alone:
     - key_code: s
@@ -370,9 +539,277 @@ rules:
     conditions: *ime_on
     parameters: *thresh_ms
 
+  # Edit Mode 2 ----------------------------------
+
+  # Left: W + E (W -> E)
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: w
+      - key_code: e
+      simultaneous_options:
+        key_down_order: strict
+        to_after_key_up:
+        - set_variable:
+            name: edit_2
+            value: 0
+    to:
+    - set_variable:
+        name: edit_2
+        value: 1
+    to_if_alone:
+    - key_code: "n"
+    - key_code: i
+    - key_code: h
+    - key_code: a
+    conditions: *ime_on
+    parameters: *thresh_ms
+
+  # Left: W + E (E -> W)
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: w
+      - key_code: e
+      simultaneous_options:
+        to_after_key_up:
+        - set_variable:
+            name: edit_2
+            value: 0
+    to:
+    - set_variable:
+        name: edit_2
+        value: 1
+    to_if_alone:
+    - key_code: h
+    - key_code: a
+    - key_code: "n"
+    - key_code: i
+    conditions: *ime_on
+    parameters: *thresh_ms
+
+  # Right: I + O (I -> O)
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: i
+      - key_code: o
+      simultaneous_options:
+        key_down_order: strict
+        to_after_key_up:
+        - set_variable:
+            name: edit_2
+            value: 0
+    to:
+    - set_variable:
+        name: edit_2
+        value: 1
+    to_if_alone:
+    - key_code: k
+    - key_code: o
+    - key_code: g
+    - key_code: a
+    conditions: *ime_on
+    parameters: *thresh_ms
+
+  # Right: I + O (O -> I)
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: i
+      - key_code: o
+      simultaneous_options:
+        to_after_key_up:
+        - set_variable:
+            name: edit_2
+            value: 0
+    to:
+    - set_variable:
+        name: edit_2
+        value: 1
+    to_if_alone:
+    - key_code: g
+    - key_code: a
+    - key_code: k
+    - key_code: o
+    conditions: *ime_on
+    parameters: *thresh_ms
+
   # }}}
 
-# Edit Mode Mapping -----------------------------
+# Edit Mode 1 ------------------------------------
+
+  # Left Side Keys {{{
+
+  # Q -> Shift-Command-S
+  - type: basic
+    from:
+      key_code: q
+    to:
+    - key_code: s
+      modifiers:
+      - shift
+      - command
+      repeat: false
+    conditions: *edit_1
+
+  # W -> (
+  - type: basic
+    from:
+      key_code: w
+    to:
+    - key_code: "9"
+      modifiers:
+      - shift
+    conditions: *edit_1
+
+  # E -> )
+  - type: basic
+    from:
+      key_code: e
+    to:
+    - key_code: "0"
+      modifiers:
+      - shift
+    conditions: *edit_1
+
+  # R -> Center Window (Shift-Control-Option-C)
+  - type: basic
+    from:
+      key_code: r
+    to:
+    - key_code: c
+      modifiers:
+      - shift
+      - control
+      - option
+      repeat: false
+    conditions: *edit_1
+
+  # T -> Shift-Command-T
+  - type: basic
+    from:
+      key_code: t
+    to:
+    - key_code: t
+      modifiers:
+      - shift
+      - command
+      repeat: false
+    conditions: *edit_1
+
+  # A -> Shift-Command-A
+  - type: basic
+    from:
+      key_code: a
+    to:
+    - key_code: a
+      modifiers:
+      - shift
+      - command
+      repeat: false
+    conditions: *edit_1
+
+  # S -> [
+  - type: basic
+    from:
+      key_code: s
+    to:
+    - key_code: open_bracket
+    conditions: *edit_1
+
+  # D -> ]
+  - type: basic
+    from:
+      key_code: d
+    to:
+    - key_code: close_bracket
+    conditions: *edit_1
+
+  # F -> Clipboard in Raycast (Command-Control-V)
+  - type: basic
+    from:
+      key_code: f
+    to:
+    - key_code: v
+      modifiers:
+      - command
+      - control
+      repeat: false
+    conditions: *edit_1
+
+  # G -> Snippet in Raycast (Command-Control-S)
+  - type: basic
+    from:
+      key_code: g
+    to:
+    - key_code: s
+      modifiers:
+      - command
+      - control
+      repeat: false
+    conditions: *edit_1
+
+  # Z -> Shift-Command-Z
+  - type: basic
+    from:
+      key_code: z
+    to:
+    - key_code: z
+      modifiers:
+      - shift
+      - command
+      repeat: false
+    conditions: *edit_1
+
+  # X -> Left Half Window (Control-Option-Left)
+  - type: basic
+    from:
+      key_code: x
+    to:
+    - key_code: left_arrow
+      modifiers:
+      - control
+      - option
+      repeat: false
+    conditions: *edit_1
+
+  # C -> Right Half Window (Control-Option-Right)
+  - type: basic
+    from:
+      key_code: c
+    to:
+    - key_code: right_arrow
+      modifiers:
+      - control
+      - option
+      repeat: false
+    conditions: *edit_1
+
+  # V -> Shift-Command-V
+  - type: basic
+    from:
+      key_code: v
+    to:
+    - key_code: v
+      modifiers:
+      - shift
+      - command
+      repeat: false
+    conditions: *edit_1
+
+  # B -> Command-V
+  - type: basic
+    from:
+      key_code: b
+    to:
+    - key_code: v
+      modifiers:
+      - command
+      repeat: false
+    conditions: *edit_1
+
+  # }}}
 
   # Right Side Keys {{{
 
@@ -385,7 +822,7 @@ rules:
       modifiers:
       - command
       repeat: false
-    conditions: *edit
+    conditions: *edit_1
 
   # U -> Control-Tab
   - type: basic
@@ -396,7 +833,7 @@ rules:
       modifiers:
       - control
       repeat: false
-    conditions: *edit
+    conditions: *edit_1
 
   # I -> {
   - type: basic
@@ -406,8 +843,7 @@ rules:
     - key_code: open_bracket
       modifiers:
       - shift
-      repeat: false
-    conditions: *edit
+    conditions: *edit_1
 
   # O -> }
   - type: basic
@@ -417,8 +853,7 @@ rules:
     - key_code: close_bracket
       modifiers:
       - shift
-      repeat: false
-    conditions: *edit
+    conditions: *edit_1
 
   # P -> Command-]
   - type: basic
@@ -429,9 +864,32 @@ rules:
       modifiers:
       - command
       repeat: false
-    conditions: *edit
+    conditions: *edit_1
 
-  # H -> Left * 7
+  # [ -> Command-Up
+  - type: basic
+    from:
+      key_code: open_bracket
+    to:
+    - key_code: up_arrow
+      modifiers:
+      - command
+      repeat: false
+    conditions: *edit_1
+
+  # ] -> Invalid
+  - type: basic
+    from:
+      key_code: close_bracket
+    conditions: *edit_1
+
+  # \ -> Invalid
+  - type: basic
+    from:
+      key_code: backslash
+    conditions: *edit_1
+
+  # H -> Left
   - type: basic
     from:
       key_code: h
@@ -440,15 +898,9 @@ rules:
         - any
     to:
     - key_code: left_arrow
-    - key_code: left_arrow
-    - key_code: left_arrow
-    - key_code: left_arrow
-    - key_code: left_arrow
-    - key_code: left_arrow
-    - key_code: left_arrow
-    conditions: *edit
+    conditions: *edit_1
 
-  # J -> Left * 1
+  # J -> Down
   - type: basic
     from:
       key_code: j
@@ -456,10 +908,10 @@ rules:
         optional:
         - any
     to:
-    - key_code: left_arrow
-    conditions: *edit
+    - key_code: down_arrow
+    conditions: *edit_1
 
-  # K -> Right * 1
+  # K -> Up
   - type: basic
     from:
       key_code: k
@@ -467,10 +919,10 @@ rules:
         optional:
         - any
     to:
-    - key_code: right_arrow
-    conditions: *edit
+    - key_code: up_arrow
+    conditions: *edit_1
 
-  # L -> Right * 7
+  # L -> Right
   - type: basic
     from:
       key_code: l
@@ -479,15 +931,9 @@ rules:
         - any
     to:
     - key_code: right_arrow
-    - key_code: right_arrow
-    - key_code: right_arrow
-    - key_code: right_arrow
-    - key_code: right_arrow
-    - key_code: right_arrow
-    - key_code: right_arrow
-    conditions: *edit
+    conditions: *edit_1
 
-  # Semicolon -> Command-[
+  # ; -> Command-[
   - type: basic
     from:
       key_code: semicolon
@@ -496,106 +942,92 @@ rules:
       modifiers:
       - command
       repeat: false
-    conditions: *edit
+    conditions: *edit_1
 
-  # Quote -> Center Window (Control-Option-C)
+  # ' -> Command-Down
   - type: basic
     from:
       key_code: quote
     to:
-    - key_code: c
+    - key_code: down_arrow
       modifiers:
-      - control
-      - option
+      - command
       repeat: false
-    conditions: *edit
+    conditions: *edit_1
 
-  # N -> Shift-Left * 7
+  # N -> Delete
   - type: basic
     from:
       key_code: "n"
     to:
-    - key_code: left_arrow
-      modifiers:
-      - shift
-    - key_code: left_arrow
-      modifiers:
-      - shift
-    - key_code: left_arrow
-      modifiers:
-      - shift
-    - key_code: left_arrow
-      modifiers:
-      - shift
-    - key_code: left_arrow
-      modifiers:
-      - shift
-    - key_code: left_arrow
-      modifiers:
-      - shift
-    - key_code: left_arrow
-      modifiers:
-      - shift
-    conditions: *edit
+    - key_code: delete_or_backspace
+    conditions: *edit_1
 
-  # M -> Shift-Left * 1
+  # M -> Delete Forward
   - type: basic
     from:
       key_code: m
     to:
-    - key_code: left_arrow
-      modifiers:
-      - shift
-    conditions: *edit
+    - key_code: delete_forward
+    conditions: *edit_1
 
-  # Comma -> Shift-Right * 1
+  # , -> Control-A
   - type: basic
     from:
       key_code: comma
     to:
-    - key_code: right_arrow
+    - key_code: a
       modifiers:
-      - shift
-    conditions: *edit
+      - control
+      repeat: false
+    conditions: *edit_1
 
-  # Period -> Shift-Right * 7
+  # . -> Control-E
   - type: basic
     from:
       key_code: period
     to:
-    - key_code: right_arrow
+    - key_code: e
       modifiers:
-      - shift
-    - key_code: right_arrow
-      modifiers:
-      - shift
-    - key_code: right_arrow
-      modifiers:
-      - shift
-    - key_code: right_arrow
-      modifiers:
-      - shift
-    - key_code: right_arrow
-      modifiers:
-      - shift
-    - key_code: right_arrow
-      modifiers:
-      - shift
-    - key_code: right_arrow
-      modifiers:
-      - shift
-    conditions: *edit
+      - control
+      repeat: false
+    conditions: *edit_1
 
-  # Slash -> Escape
+  # / -> Invalid
   - type: basic
     from:
       key_code: slash
-    to:
-    - key_code: escape
-      repeat: false
-    conditions: *edit
+    conditions: *edit_1
 
   # }}}
+
+  # Other Keys {{{
+
+  # 4 -> Fn-F4 (for Google Sheets)
+  - type: basic
+    from:
+      key_code: "4"
+    to:
+    - key_code: f4
+      modifiers:
+      - fn
+      repeat: false
+    conditions: *edit_1
+
+  # 2 -> Fn-F2 (for Excel)
+  - type: basic
+    from:
+      key_code: "2"
+    to:
+    - key_code: f2
+      modifiers:
+      - fn
+      repeat: false
+    conditions: *edit_1
+
+  # }}}
+
+# Edit Mode 2 ------------------------------------
 
   # Left Side Keys {{{
 
@@ -609,7 +1041,7 @@ rules:
       - control
       - option
       repeat: false
-    conditions: *edit
+    conditions: *edit_2
 
   # W -> Right Up Window (Control-Option-I)
   - type: basic
@@ -621,13 +1053,13 @@ rules:
       - control
       - option
       repeat: false
-    conditions: *edit
+    conditions: *edit_2
 
   # E -> Invalid
   - type: basic
     from:
       key_code: e
-    conditions: *edit
+    conditions: *edit_2
 
   # R -> Center Window (Shift-Control-Option-C)
   - type: basic
@@ -640,19 +1072,18 @@ rules:
       - control
       - option
       repeat: false
-    conditions: *edit
+    conditions: *edit_2
 
-  # T -> Shift-Command-T
+  # T -> Control-3
   - type: basic
     from:
       key_code: t
     to:
-    - key_code: t
+    - key_code: "3"
       modifiers:
-      - shift
-      - command
+      - control
       repeat: false
-    conditions: *edit
+    conditions: *edit_2
 
   # A -> Left Half Window (Control-Option-Left)
   - type: basic
@@ -664,31 +1095,19 @@ rules:
       - control
       - option
       repeat: false
-    conditions: *edit
+    conditions: *edit_2
 
-  # S -> Snippet in Raycast (Command-Control-S)
+  # S -> Invalid
   - type: basic
     from:
       key_code: s
-    to:
-    - key_code: s
-      modifiers:
-      - command
-      - control
-      repeat: false
-    conditions: *edit
+    conditions: *edit_2
 
-  # D -> Clipboard in Raycast (Command-Control-V)
+  # D -> Invalid
   - type: basic
     from:
       key_code: d
-    to:
-    - key_code: v
-      modifiers:
-      - command
-      - control
-      repeat: false
-    conditions: *edit
+    conditions: *edit_2
 
   # F -> Right Half Window (Control-Option-Right)
   - type: basic
@@ -700,17 +1119,18 @@ rules:
       - control
       - option
       repeat: false
-    conditions: *edit
+    conditions: *edit_2
 
-  # G -> Command-T
+  # G -> Control-2
   - type: basic
     from:
       key_code: g
     to:
-    - key_code: t
+    - key_code: "2"
       modifiers:
-      - command
-    conditions: *edit
+      - control
+      repeat: false
+    conditions: *edit_2
 
   # Z -> Left Quarter Window (Control-Option-Z)
   - type: basic
@@ -722,7 +1142,7 @@ rules:
       - control
       - option
       repeat: false
-    conditions: *edit
+    conditions: *edit_2
 
   # X -> Left 3/4 Window (Control-Option-X)
   - type: basic
@@ -734,7 +1154,7 @@ rules:
       - control
       - option
       repeat: false
-    conditions: *edit
+    conditions: *edit_2
 
   # C -> Right 3/4 Window (Control-Option-V)
   - type: basic
@@ -746,7 +1166,7 @@ rules:
       - control
       - option
       repeat: false
-    conditions: *edit
+    conditions: *edit_2
 
   # V -> Right Quarter Window (Control-Option-B)
   - type: basic
@@ -758,89 +1178,178 @@ rules:
       - control
       - option
       repeat: false
-    conditions: *edit
+    conditions: *edit_2
 
-  # B -> Shift-Command-V
+  # B -> Control-1
   - type: basic
     from:
       key_code: b
     to:
-    - key_code: v
+    - key_code: "1"
       modifiers:
-      - shift
-      - command
+      - control
       repeat: false
-    conditions: *edit
+    conditions: *edit_2
 
   # }}}
 
-  # Other Keys {{{
+  # Right Side Keys {{{
 
-  # Return -> Maximize Window (Control-Option-Return)
+  # Y -> Control-6
   - type: basic
     from:
-      key_code: return_or_enter
+      key_code: "y"
     to:
-    - key_code: return_or_enter
+    - key_code: "6"
       modifiers:
       - control
-      - option
       repeat: false
-    conditions: *edit
+    conditions: *edit_2
 
-  # Delete -> Restore Window (Control-Option-Delete)
+  # U -> Restore Window (Control-Option-Delete)
   - type: basic
     from:
-      key_code: delete_or_backspace
+      key_code: u
     to:
     - key_code: delete_or_backspace
       modifiers:
       - control
       - option
       repeat: false
-    conditions: *edit
+    conditions: *edit_2
 
-  # Backslash -> Center Window (Control-Option-C)
+  # I -> Invalid
+  - type: basic
+    from:
+      key_code: i
+    conditions: *edit_2
+
+  # O -> Invalid
+  - type: basic
+    from:
+      key_code: o
+    conditions: *edit_2
+
+  # P -> Invalid
+  - type: basic
+    from:
+      key_code: p
+    conditions: *edit_2
+
+  # [ -> Invalid
+  - type: basic
+    from:
+      key_code: open_bracket
+    conditions: *edit_2
+
+  # ] -> Invalid
+  - type: basic
+    from:
+      key_code: close_bracket
+    conditions: *edit_2
+
+  # \ -> Invalid
   - type: basic
     from:
       key_code: backslash
+    conditions: *edit_2
+
+  # H -> Control-5
+  - type: basic
+    from:
+      key_code: h
+    to:
+    - key_code: "5"
+      modifiers:
+      - control
+      repeat: false
+    conditions: *edit_2
+
+  # J -> Center Window (Control-Option-C)
+  - type: basic
+    from:
+      key_code: j
     to:
     - key_code: c
       modifiers:
       - control
       - option
       repeat: false
-    conditions: *edit
+    conditions: *edit_2
 
-  # Space -> Return
+  # K -> Option-Up
   - type: basic
     from:
-      key_code: spacebar
+      key_code: k
+    to:
+    - key_code: up_arrow
+      modifiers:
+      - option
+      repeat: false
+    conditions: *edit_2
+
+  # L -> Option-Down
+  - type: basic
+    from:
+      key_code: l
+    to:
+    - key_code: down_arrow
+      modifiers:
+      - option
+      repeat: false
+    conditions: *edit_2
+
+  # ; -> Invalid
+  - type: basic
+    from:
+      key_code: semicolon
+    conditions: *edit_2
+
+  # ' -> Invalid
+  - type: basic
+    from:
+      key_code: quote
+    conditions: *edit_2
+
+  # N -> Control-4
+  - type: basic
+    from:
+      key_code: "n"
+    to:
+    - key_code: "4"
+      modifiers:
+      - control
+      repeat: false
+    conditions: *edit_2
+
+  # M -> Maximize Window (Control-Option-Return)
+  - type: basic
+    from:
+      key_code: m
     to:
     - key_code: return_or_enter
+      modifiers:
+      - control
+      - option
       repeat: false
-    conditions: *edit
+    conditions: *edit_2
 
-  # 4 -> Fn-F4 (for Google Sheets)
+  # , -> Invalid
   - type: basic
     from:
-      key_code: "4"
-    to:
-    - key_code: f4
-      modifiers:
-      - fn
-      repeat: false
-    conditions: *edit
+      key_code: comma
+    conditions: *edit_2
 
-  # 2 -> Fn-F2 (for Excel)
+  # . -> Invalid
   - type: basic
     from:
-      key_code: "2"
-    to:
-    - key_code: f2
-      modifiers:
-      - fn
-      repeat: false
-    conditions: *edit
+      key_code: period
+    conditions: *edit_2
+
+  # / -> Invalid
+  - type: basic
+    from:
+      key_code: slash
+    conditions: *edit_2
 
   # }}}
