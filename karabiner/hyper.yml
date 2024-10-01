@@ -63,11 +63,22 @@ rules:
 # Special Mappings -----------------------------------
 
   # Q: Hyper-E
-  # Raycast では直接 Hyper-Q をホットキーとして設定できないため
+  # Raycast では Hyper-Q をホットキーとして直接設定できないため
   - type: basic
     from:
       key_code: q
       modifiers: *from_mods
+    to:
+    - key_code: e
+      modifiers: *to_mods
+
+  # Q + W -> Hyper-E
+  # 30％キーボード等のために同時押しで Hyper-Q (Hyper-E) を送信
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: q
+      - key_code: w
     to:
     - key_code: e
       modifiers: *to_mods
