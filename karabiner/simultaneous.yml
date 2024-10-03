@@ -79,37 +79,21 @@ rules:
       input_sources:
       - language: ja
 
-  # GH -> StickyKey in AquaSKK
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: g
-      - key_code: h
-    to:
-    - key_code: comma
-      modifiers:
-      - shift
-      repeat: false
-    conditions:
-    - type: input_source_if
-      input_sources:
-      - language: ja
-
-  # A; -> StickyKey in AquaSKK
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: a
-      - key_code: semicolon
-    to:
-    - key_code: comma
-      modifiers:
-      - shift
-      repeat: false
-    conditions:
-    - type: input_source_if
-      input_sources:
-      - language: ja
+  # # GH -> StickyKey in AquaSKK
+  # - type: basic
+  #   from:
+  #     simultaneous:
+  #     - key_code: g
+  #     - key_code: h
+  #   to:
+  #   - key_code: comma
+  #     modifiers:
+  #     - shift
+  #     repeat: false
+  #   conditions:
+  #   - type: input_source_if
+  #     input_sources:
+  #     - language: ja
 
 # }}}
 
