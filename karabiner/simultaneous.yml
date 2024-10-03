@@ -181,157 +181,157 @@ rules:
 
   # 英語入力 -------------------------------------
 
-  # VB -> {}
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: v
-      - key_code: b
-    to:
-    - key_code: open_bracket
-      modifiers:
-      - shift
-    - key_code: close_bracket
-      modifiers:
-      - shift
-    - key_code: left_arrow
-      repeat: false
-    conditions:
-    - type: input_source_if
-      input_sources:
-      - language: en
-
-  # NM -> ""
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: "n"
-      - key_code: m
-    to:
-    - key_code: quote
-      modifiers:
-      - shift
-    - key_code: quote
-      modifiers:
-      - shift
-    - key_code: left_arrow
-      repeat: false
-    conditions:
-    - type: input_source_if
-      input_sources:
-      - language: en
-
-  # RT -> ''
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: r
-      - key_code: t
-    to:
-    - key_code: quote
-    - key_code: quote
-    - key_code: left_arrow
-      repeat: false
-    conditions:
-    - type: input_source_if
-      input_sources:
-      - language: en
-
-  # YU -> ''
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: "y"
-      - key_code: u
-    to:
-    - key_code: quote
-    - key_code: quote
-    - key_code: left_arrow
-      repeat: false
-    conditions:
-    - type: input_source_if
-      input_sources:
-      - language: en
+  # # VB -> {}
+  # - type: basic
+  #   from:
+  #     simultaneous:
+  #     - key_code: v
+  #     - key_code: b
+  #   to:
+  #   - key_code: open_bracket
+  #     modifiers:
+  #     - shift
+  #   - key_code: close_bracket
+  #     modifiers:
+  #     - shift
+  #   - key_code: left_arrow
+  #     repeat: false
+  #   conditions:
+  #   - type: input_source_if
+  #     input_sources:
+  #     - language: en
+  # 
+  # # NM -> ""
+  # - type: basic
+  #   from:
+  #     simultaneous:
+  #     - key_code: "n"
+  #     - key_code: m
+  #   to:
+  #   - key_code: quote
+  #     modifiers:
+  #     - shift
+  #   - key_code: quote
+  #     modifiers:
+  #     - shift
+  #   - key_code: left_arrow
+  #     repeat: false
+  #   conditions:
+  #   - type: input_source_if
+  #     input_sources:
+  #     - language: en
+  # 
+  # # RT -> ''
+  # - type: basic
+  #   from:
+  #     simultaneous:
+  #     - key_code: r
+  #     - key_code: t
+  #   to:
+  #   - key_code: quote
+  #   - key_code: quote
+  #   - key_code: left_arrow
+  #     repeat: false
+  #   conditions:
+  #   - type: input_source_if
+  #     input_sources:
+  #     - language: en
+  # 
+  # # YU -> ''
+  # - type: basic
+  #   from:
+  #     simultaneous:
+  #     - key_code: "y"
+  #     - key_code: u
+  #   to:
+  #   - key_code: quote
+  #   - key_code: quote
+  #   - key_code: left_arrow
+  #     repeat: false
+  #   conditions:
+  #   - type: input_source_if
+  #     input_sources:
+  #     - language: en
 
   # 日本語入力 -----------------------------------
 
-  # VB -> 『』
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: v
-      - key_code: b
-    to:
-    - key_code: open_bracket
-      modifiers:
-      - shift
-    - key_code: close_bracket
-      modifiers:
-      - shift
-    - key_code: left_arrow
-      repeat: false
-    conditions:
-    - type: input_source_if
-      input_sources:
-      - language: ja
-
-  # NM -> 【】
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: "n"
-      - key_code: m
-    to:
-    - key_code: backslash
-    - key_code: open_bracket
-      modifiers:
-      - shift
-    - key_code: backslash
-    - key_code: close_bracket
-      modifiers:
-      - shift
-    - key_code: left_arrow
-      repeat: false
-    conditions:
-    - type: input_source_if
-      input_sources:
-      - language: ja
-
-  # RT -> 〈〉
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: r
-      - key_code: t
-    to:
-    - key_code: backslash
-    - key_code: open_bracket
-    - key_code: backslash
-    - key_code: close_bracket
-    - key_code: left_arrow
-      repeat: false
-    conditions:
-    - type: input_source_if
-      input_sources:
-      - language: ja
-
-  # YU -> 〈〉
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: "y"
-      - key_code: u
-    to:
-    - key_code: backslash
-    - key_code: open_bracket
-    - key_code: backslash
-    - key_code: close_bracket
-    - key_code: left_arrow
-      repeat: false
-    conditions:
-    - type: input_source_if
-      input_sources:
-      - language: ja
+  # # VB -> 『』
+  # - type: basic
+  #   from:
+  #     simultaneous:
+  #     - key_code: v
+  #     - key_code: b
+  #   to:
+  #   - key_code: open_bracket
+  #     modifiers:
+  #     - shift
+  #   - key_code: close_bracket
+  #     modifiers:
+  #     - shift
+  #   - key_code: left_arrow
+  #     repeat: false
+  #   conditions:
+  #   - type: input_source_if
+  #     input_sources:
+  #     - language: ja
+  # 
+  # # NM -> 【】
+  # - type: basic
+  #   from:
+  #     simultaneous:
+  #     - key_code: "n"
+  #     - key_code: m
+  #   to:
+  #   - key_code: backslash
+  #   - key_code: open_bracket
+  #     modifiers:
+  #     - shift
+  #   - key_code: backslash
+  #   - key_code: close_bracket
+  #     modifiers:
+  #     - shift
+  #   - key_code: left_arrow
+  #     repeat: false
+  #   conditions:
+  #   - type: input_source_if
+  #     input_sources:
+  #     - language: ja
+  # 
+  # # RT -> 〈〉
+  # - type: basic
+  #   from:
+  #     simultaneous:
+  #     - key_code: r
+  #     - key_code: t
+  #   to:
+  #   - key_code: backslash
+  #   - key_code: open_bracket
+  #   - key_code: backslash
+  #   - key_code: close_bracket
+  #   - key_code: left_arrow
+  #     repeat: false
+  #   conditions:
+  #   - type: input_source_if
+  #     input_sources:
+  #     - language: ja
+  # 
+  # # YU -> 〈〉
+  # - type: basic
+  #   from:
+  #     simultaneous:
+  #     - key_code: "y"
+  #     - key_code: u
+  #   to:
+  #   - key_code: backslash
+  #   - key_code: open_bracket
+  #   - key_code: backslash
+  #   - key_code: close_bracket
+  #   - key_code: left_arrow
+  #     repeat: false
+  #   conditions:
+  #   - type: input_source_if
+  #     input_sources:
+  #     - language: ja
 
 # }}}
 
@@ -609,25 +609,25 @@ rules:
       - control
       repeat: false
 
-  # SD + J/L -> Kana/Eisuu
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: s
-      - key_code: d
-      - key_code: j
-    to:
-    - key_code: japanese_kana
-      repeat: false
-
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: s
-      - key_code: d
-      - key_code: l
-    to:
-    - key_code: japanese_eisuu
-      repeat: false
+  # # SD + J/L -> Kana/Eisuu
+  # - type: basic
+  #   from:
+  #     simultaneous:
+  #     - key_code: s
+  #     - key_code: d
+  #     - key_code: j
+  #   to:
+  #   - key_code: japanese_kana
+  #     repeat: false
+  #
+  # - type: basic
+  #   from:
+  #     simultaneous:
+  #     - key_code: s
+  #     - key_code: d
+  #     - key_code: l
+  #   to:
+  #   - key_code: japanese_eisuu
+  #     repeat: false
 
 # }}}
