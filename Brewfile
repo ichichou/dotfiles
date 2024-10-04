@@ -35,7 +35,6 @@ brew "zk"
 
 # GUI Apps ---------------------------------------
 
-cask "alacritty"
 cask "appcleaner"
 cask "aquaskk"
 cask "arc"
@@ -69,11 +68,9 @@ cask "zoom"
 # Fonts -------------------------------------------
 
 cask "font-cantarell"
-cask "font-commit-mono"
 cask "font-fira-code"
 cask "font-hack"
 cask "font-jetbrains-mono"
-cask "font-juliamono"
 cask "font-lato"
 cask "font-noto-sans-jp"
 cask "font-noto-serif-jp"
