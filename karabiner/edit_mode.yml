@@ -1003,6 +1003,15 @@ rules:
 
   # Other Keys {{{
 
+  # Space -> Return
+  - type: basic
+    from:
+      key_code: spacebar
+    to:
+    - key_code: return_or_enter
+      repeat: false
+    conditions: *edit_1
+
   # 4 -> Fn-F4 (for Google Sheets)
   - type: basic
     from:
