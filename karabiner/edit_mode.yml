@@ -1227,13 +1227,14 @@ rules:
       repeat: false
     conditions: *edit_2
 
-  # U -> Restore Window (Control-Option-Delete)
+  # U -> Center Window (Shift-Control-Option-C)
   - type: basic
     from:
       key_code: u
     to:
-    - key_code: delete_or_backspace
+    - key_code: c
       modifiers:
+      - shift
       - control
       - option
       repeat: false
@@ -1371,6 +1372,22 @@ rules:
   - type: basic
     from:
       key_code: slash
+    conditions: *edit_2
+
+  # }}}
+
+  # Other Keys {{{
+
+  # Delete -> Restore Window (Control-Option-Delete)
+  - type: basic
+    from:
+      key_code: delete_or_backspace
+    to:
+    - key_code: delete_or_backspace
+      modifiers:
+      - control
+      - option
+      repeat: false
     conditions: *edit_2
 
   # }}}
