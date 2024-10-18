@@ -25,7 +25,7 @@ aliases:
     value: 1
 
 - parameters: &thresh_ms
-    basic.simultaneous_threshold_milliseconds: 50
+    basic.simultaneous_threshold_milliseconds: 20
 
 # RULES ==========================================
 
@@ -45,6 +45,9 @@ rules:
       simultaneous:
       - key_code: s
       - key_code: d
+      modifiers:
+        optional:
+        - any
       simultaneous_options:
         key_down_order: strict
         to_after_key_up:
@@ -73,6 +76,9 @@ rules:
       simultaneous:
       - key_code: s
       - key_code: d
+      modifiers:
+        optional:
+        - any
       simultaneous_options:
         to_after_key_up:
         - set_variable:
@@ -100,6 +106,9 @@ rules:
       simultaneous:
       - key_code: k
       - key_code: l
+      modifiers:
+        optional:
+        - any
       simultaneous_options:
         key_down_order: strict
         to_after_key_up:
@@ -128,6 +137,9 @@ rules:
       simultaneous:
       - key_code: k
       - key_code: l
+      modifiers:
+        optional:
+        - any
       simultaneous_options:
         to_after_key_up:
         - set_variable:
@@ -157,6 +169,9 @@ rules:
       simultaneous:
       - key_code: w
       - key_code: e
+      modifiers:
+        optional:
+        - any
       simultaneous_options:
         key_down_order: strict
         to_after_key_up:
@@ -185,6 +200,9 @@ rules:
       simultaneous:
       - key_code: w
       - key_code: e
+      modifiers:
+        optional:
+        - any
       simultaneous_options:
         to_after_key_up:
         - set_variable:
@@ -212,6 +230,9 @@ rules:
       simultaneous:
       - key_code: i
       - key_code: o
+      modifiers:
+        optional:
+        - any
       simultaneous_options:
         key_down_order: strict
         to_after_key_up:
@@ -240,6 +261,9 @@ rules:
       simultaneous:
       - key_code: i
       - key_code: o
+      modifiers:
+        optional:
+        - any
       simultaneous_options:
         to_after_key_up:
         - set_variable:
@@ -273,6 +297,9 @@ rules:
       simultaneous:
       - key_code: s
       - key_code: d
+      modifiers:
+        optional:
+        - any
       simultaneous_options:
         key_down_order: strict
         to_after_key_up:
@@ -295,6 +322,9 @@ rules:
       simultaneous:
       - key_code: s
       - key_code: d
+      modifiers:
+        optional:
+        - any
       simultaneous_options:
         to_after_key_up:
         - set_variable:
@@ -316,6 +346,9 @@ rules:
       simultaneous:
       - key_code: k
       - key_code: l
+      modifiers:
+        optional:
+        - any
       simultaneous_options:
         key_down_order: strict
         to_after_key_up:
@@ -338,6 +371,9 @@ rules:
       simultaneous:
       - key_code: k
       - key_code: l
+      modifiers:
+        optional:
+        - any
       simultaneous_options:
         to_after_key_up:
         - set_variable:
@@ -355,27 +391,30 @@ rules:
 
   # Edit Mode 2 ----------------------------------
 
-  # Left: W + E (W -> E)
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: w
-      - key_code: e
-      simultaneous_options:
-        key_down_order: strict
-        to_after_key_up:
-        - set_variable:
-            name: edit_2
-            value: 0
-    to:
-    - set_variable:
-        name: edit_2
-        value: 1
-    to_if_alone:
-    - key_code: w
-    - key_code: c
-    conditions: *ime_off
-    parameters: *thresh_ms
+  # # Left: W + E (W -> E)
+  # - type: basic
+  #   from:
+  #     simultaneous:
+  #     - key_code: w
+  #     - key_code: e
+  #     modifiers:
+  #       optional:
+  #       - any
+  #     simultaneous_options:
+  #       key_down_order: strict
+  #       to_after_key_up:
+  #       - set_variable:
+  #           name: edit_2
+  #           value: 0
+  #   to:
+  #   - set_variable:
+  #       name: edit_2
+  #       value: 1
+  #   to_if_alone:
+  #   - key_code: w
+  #   - key_code: c
+  #   conditions: *ime_off
+  #   parameters: *thresh_ms
 
   # Left: W + E (E -> W)
   - type: basic
@@ -383,6 +422,9 @@ rules:
       simultaneous:
       - key_code: w
       - key_code: e
+      modifiers:
+        optional:
+        - any
       simultaneous_options:
         to_after_key_up:
         - set_variable:
@@ -393,32 +435,36 @@ rules:
         name: edit_2
         value: 1
     to_if_alone:
-    - key_code: e
-    - key_code: w
+    # - key_code: e
+    # - key_code: w
+    - key_code: escape
     conditions: *ime_off
     parameters: *thresh_ms
 
-  # Right: I + O (I -> O)
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: i
-      - key_code: o
-      simultaneous_options:
-        key_down_order: strict
-        to_after_key_up:
-        - set_variable:
-            name: edit_2
-            value: 0
-    to:
-    - set_variable:
-        name: edit_2
-        value: 1
-    to_if_alone:
-    - key_code: i
-    - key_code: o
-    conditions: *ime_off
-    parameters: *thresh_ms
+  # # Right: I + O (I -> O)
+  # - type: basic
+  #   from:
+  #     simultaneous:
+  #     - key_code: i
+  #     - key_code: o
+  #     modifiers:
+  #       optional:
+  #       - any
+  #     simultaneous_options:
+  #       key_down_order: strict
+  #       to_after_key_up:
+  #       - set_variable:
+  #           name: edit_2
+  #           value: 0
+  #   to:
+  #   - set_variable:
+  #       name: edit_2
+  #       value: 1
+  #   to_if_alone:
+  #   - key_code: i
+  #   - key_code: o
+  #   conditions: *ime_off
+  #   parameters: *thresh_ms
 
   # Right: I + O (O -> I)
   - type: basic
@@ -426,6 +472,9 @@ rules:
       simultaneous:
       - key_code: i
       - key_code: o
+      modifiers:
+        optional:
+        - any
       simultaneous_options:
         to_after_key_up:
         - set_variable:
@@ -436,8 +485,9 @@ rules:
         name: edit_2
         value: 1
     to_if_alone:
-    - key_code: o
-    - key_code: i
+    # - key_code: o
+    # - key_code: i
+    - key_code: tab
     conditions: *ime_off
     parameters: *thresh_ms
 
@@ -453,6 +503,9 @@ rules:
       simultaneous:
       - key_code: s
       - key_code: d
+      modifiers:
+        optional:
+        - any
       simultaneous_options:
         key_down_order: strict
         to_after_key_up:
@@ -477,6 +530,9 @@ rules:
       simultaneous:
       - key_code: s
       - key_code: d
+      modifiers:
+        optional:
+        - any
       simultaneous_options:
         to_after_key_up:
         - set_variable:
@@ -500,6 +556,9 @@ rules:
       simultaneous:
       - key_code: k
       - key_code: l
+      modifiers:
+        optional:
+        - any
       simultaneous_options:
         key_down_order: strict
         to_after_key_up:
@@ -523,6 +582,9 @@ rules:
       simultaneous:
       - key_code: k
       - key_code: l
+      modifiers:
+        optional:
+        - any
       simultaneous_options:
         to_after_key_up:
         - set_variable:
@@ -541,29 +603,32 @@ rules:
 
   # Edit Mode 2 ----------------------------------
 
-  # Left: W + E (W -> E)
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: w
-      - key_code: e
-      simultaneous_options:
-        key_down_order: strict
-        to_after_key_up:
-        - set_variable:
-            name: edit_2
-            value: 0
-    to:
-    - set_variable:
-        name: edit_2
-        value: 1
-    to_if_alone:
-    - key_code: "n"
-    - key_code: i
-    - key_code: h
-    - key_code: a
-    conditions: *ime_on
-    parameters: *thresh_ms
+  # # Left: W + E (W -> E)
+  # - type: basic
+  #   from:
+  #     simultaneous:
+  #     - key_code: w
+  #     - key_code: e
+  #     modifiers:
+  #       optional:
+  #       - any
+  #     simultaneous_options:
+  #       key_down_order: strict
+  #       to_after_key_up:
+  #       - set_variable:
+  #           name: edit_2
+  #           value: 0
+  #   to:
+  #   - set_variable:
+  #       name: edit_2
+  #       value: 1
+  #   to_if_alone:
+  #   - key_code: "n"
+  #   - key_code: i
+  #   - key_code: h
+  #   - key_code: a
+  #   conditions: *ime_on
+  #   parameters: *thresh_ms
 
   # Left: W + E (E -> W)
   - type: basic
@@ -571,6 +636,9 @@ rules:
       simultaneous:
       - key_code: w
       - key_code: e
+      modifiers:
+        optional:
+        - any
       simultaneous_options:
         to_after_key_up:
         - set_variable:
@@ -581,36 +649,40 @@ rules:
         name: edit_2
         value: 1
     to_if_alone:
-    - key_code: h
-    - key_code: a
-    - key_code: "n"
-    - key_code: i
+    # - key_code: h
+    # - key_code: a
+    # - key_code: "n"
+    # - key_code: i
+    - key_code: escape
     conditions: *ime_on
     parameters: *thresh_ms
 
-  # Right: I + O (I -> O)
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: i
-      - key_code: o
-      simultaneous_options:
-        key_down_order: strict
-        to_after_key_up:
-        - set_variable:
-            name: edit_2
-            value: 0
-    to:
-    - set_variable:
-        name: edit_2
-        value: 1
-    to_if_alone:
-    - key_code: k
-    - key_code: o
-    - key_code: g
-    - key_code: a
-    conditions: *ime_on
-    parameters: *thresh_ms
+  # # Right: I + O (I -> O)
+  # - type: basic
+  #   from:
+  #     simultaneous:
+  #     - key_code: i
+  #     - key_code: o
+  #     modifiers:
+  #       optional:
+  #       - any
+  #     simultaneous_options:
+  #       key_down_order: strict
+  #       to_after_key_up:
+  #       - set_variable:
+  #           name: edit_2
+  #           value: 0
+  #   to:
+  #   - set_variable:
+  #       name: edit_2
+  #       value: 1
+  #   to_if_alone:
+  #   - key_code: k
+  #   - key_code: o
+  #   - key_code: g
+  #   - key_code: a
+  #   conditions: *ime_on
+  #   parameters: *thresh_ms
 
   # Right: I + O (O -> I)
   - type: basic
@@ -618,6 +690,9 @@ rules:
       simultaneous:
       - key_code: i
       - key_code: o
+      modifiers:
+        optional:
+        - any
       simultaneous_options:
         to_after_key_up:
         - set_variable:
@@ -628,10 +703,11 @@ rules:
         name: edit_2
         value: 1
     to_if_alone:
-    - key_code: g
-    - key_code: a
-    - key_code: k
-    - key_code: o
+    # - key_code: g
+    # - key_code: a
+    # - key_code: k
+    # - key_code: o
+      - key_code: tab
     conditions: *ime_on
     parameters: *thresh_ms
 
