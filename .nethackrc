@@ -1,0 +1,83 @@
+# -- Character
+
+OPTIONS=name:ichichou
+OPTIONS=disclose:+i +a +v +g +c +o
+
+# --  Messages & Status
+
+OPTIONS=!cmdassist
+OPTIONS=extmenu
+OPTIONS=menu_headings:inverse
+OPTIONS=menustyle:partial
+OPTIONS=msghistory:60
+OPTIONS=msg_window:combination
+OPTIONS=standout
+OPTIONS=time
+OPTIONS=hitpointbar
+OPTIONS=statuslines:3
+
+# -- Appearance
+
+OPTIONS=color
+OPTIONS=hilite_pet
+OPTIONS=hilite_pile
+OPTIONS=dark_room
+OPTIONS=lit_corridor
+OPTIONS=use_darkgray
+# OPTIONS=!sparkle
+# OPTIONS=runmode:walk
+
+# -- Inventories
+
+OPTIONS=force_invmenu
+OPTIONS=sortloot:full
+OPTIONS=pickup_types:$
+# OPTIONS=packorder:$)[!?/(%="+*`0_
+# OPTIONS=packorder:")[%?+!=/(*`0_
+
+# -- Symset
+
+OPTIONS=symset:curses
+OPTIONS=roguesymset:RogueEpyx
+SYMBOLS=S_boulder:0
+
+# -- Status Hilites
+
+OPTIONS=statushilites:10
+
+OPTIONS=hilite_status:gold/always/yellow
+OPTIONS=hilite_status:experience-level/changed/white/cyan
+OPTIONS=hilite_status:carrying-capacity/burdened/yellow/stressed/orange
+OPTIONS=hilite_status:hunger/satiated/yellow/hungry/orange
+OPTIONS=hilite_status:condition/hallu/yellow/conf/yellow/stun/yellow
+OPTIONS=hilite_status:condition/blind/yellow/lev/cyan
+
+OPTIONS=hilite_status:characteristics/<5/red
+OPTIONS=hilite_status:characteristics/>6/orange
+OPTIONS=hilite_status:characteristics/>8/brown
+OPTIONS=hilite_status:characteristics/>11/yellow
+OPTIONS=hilite_status:characteristics/>13/green
+OPTIONS=hilite_status:characteristics/>16/cyan
+OPTIONS=hilite_status:characteristics/>18/lightblue
+
+OPTIONS=hilite_status:hitpoints/100%/brightgreen
+OPTIONS=hilite_status:hitpoints/<100%/green
+OPTIONS=hilite_status:hitpoints/<60%/yellow
+OPTIONS=hilite_status:hitpoints/<40%/red
+
+# -- Menucolor
+
+OPTIONS=menucolors
+
+# MENUCOLOR="*祝福された*"=green
+# MENUCOLOR="*聖水*"=green
+# MENUCOLOR="*呪われた*"=red
+# MENUCOLOR="*不浄*"=red
+# MENUCOLOR="*(手にしている)*"=brown
+# MENUCOLOR="*(身につけている)*"=brown
+# MENUCOLOR="*祝福された**(手にしている)*"=cyan
+# MENUCOLOR="*祝福された**(身につけている)*"=cyan
+# MENUCOLOR="*呪われた**(手にしている)*"=orange
+# MENUCOLOR="*呪われた**(身につけている)*"=orange
+# MENUCOLOR="重し\|無力化の杖"=underline
+# MENUCOLOR="イェンダーの魔除け"=magenta
