@@ -108,50 +108,41 @@ abbr -ag kdn zk new draft
 abbr -ag kds zk save_draft
 
 # HOMEBREW
-abbr -ag b brew
-abbr -ag bc brew cleanup
-abbr -ag bd brew doctor
+abbr -ag b    brew
+abbr -ag bc   brew cleanup
+abbr -ag bd   brew doctor
 abbr -ag bdep brew deps
-abbr -ag bg brew upgrade
-abbr -ag bi brew info
-abbr -ag bin brew install
-abbr -ag bl brew list
-abbr -ag bo brew outdated
-abbr -ag brm brew autoremove
-abbr -ag bs brew search
-abbr -ag bu brew update
-abbr -ag bun brew uninstall
+abbr -ag bg   brew upgrade
+abbr -ag bi   brew info
+abbr -ag bin  brew install
+abbr -ag bl   brew list
+abbr -ag bo   brew outdated
+abbr -ag brm  brew autoremove
+abbr -ag bs   brew search
+abbr -ag bu   brew update
+abbr -ag bug  brew upgrade
+abbr -ag bun  brew uninstall
 abbr -ag buse brew uses
 
 # GIT
-abbr -ag g git
-abbr -ag ga git add
-abbr -ag gaa git add --all
-abbr -ag gb git branch
-abbr -ag gba git branch --all
-abbr -ag gbd git branch --delete
+abbr -ag g   git
+abbr -ag ga  git add
+abbr -ag gb  git branch
 abbr -ag gcl git clone
 abbr -ag gcm git commit
-abbr -ag gco git checkout
-abbr -ag gcob git checkout -b
-abbr -ag gd git difftool
-abbr -ag gf git fetch
-abbr -ag gfp git fetch --prune
-abbr -ag gl git log --graph --oneline -n 10
+abbr -ag gd  git difftool
+abbr -ag gf  git fetch
+abbr -ag gl  git log --graph --oneline -n 10
 abbr -ag glp git log --patch -n 10
-abbr -ag gmv git mv --verbose
 abbr -ag gpl git pull
 abbr -ag gps git push
-abbr -ag gpsd git push --delete
-abbr -ag gpsu git push --set-upstream
-abbr -ag gr git reset HEAD
-abbr -ag grh git reset --hard HEAD
-abbr -ag grl git reflog
-abbr -ag grm git rm
+abbr -ag grf git reflog
+abbr -ag grs git restore
 abbr -ag grv git revert
-abbr -ag gs git status --short --branch
+abbr -ag gs  git status --short --branch
 abbr -ag gsh git show
 abbr -ag gss git status
+abbr -ag gsw git switch
 
 # FUNCTIONS ------------------------------------------------
 
