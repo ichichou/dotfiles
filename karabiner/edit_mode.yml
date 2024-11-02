@@ -1099,10 +1099,16 @@ rules:
       key_code: close_bracket
     conditions: *edit_2
 
-  # \ -> Invalid
+  # \ -> Almost Maximize Window (Shift-Control-Option-Return)
   - type: basic
     from:
       key_code: backslash
+    to:
+    - key_code: return_or_enter
+      modifiers:
+      - shift
+      - control
+      - option
     conditions: *edit_2
 
   # H -> Control-5
