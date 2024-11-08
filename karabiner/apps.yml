@@ -230,6 +230,39 @@ rules:
       bundle_identifiers:
       - "com.linear"
 
+  # [Linear] LCommand-S -> [ (Toggle Left Sidebar)
+  - type: basic
+    from:
+      key_code: s
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: open_bracket
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.linear"
+
+  # [Linear] LCommand-D -> Shift-Control-I (Focus Issue Description Input)
+  - type: basic
+    from:
+      key_code: d
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: i
+      modifiers:
+      - shift
+      - control
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.linear"
+
 # }}}
 
 # Bike {{{
@@ -1152,6 +1185,41 @@ rules:
     - key_code: backslash
       modifiers:
       - command
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "notion.id"
+
+  # [Notion] LCommand-I -> Shift-Command-U
+  - type: basic
+    from:
+      key_code: i
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: u
+      modifiers:
+      - shift
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "notion.id"
+
+  # [Notion] LCommand-O -> Command-Return
+  - type: basic
+    from:
+      key_code: o
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: return_or_enter
+      modifiers:
+      - command
+      repeat: false
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
