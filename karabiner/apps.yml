@@ -5,6 +5,24 @@ rules:
 
 # Slack {{{
 
+  # [Slack] RCommand-K -> Command-K, Eisuu
+  - type: basic
+    from:
+      key_code: k
+      modifiers:
+        mandatory:
+        - right_command
+    to:
+    - key_code: k
+      modifiers:
+      - command
+    - key_code: japanese_eisuu
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.tinyspeck.slackmacgap"
+
   # [Slack] LCommand-; -> Command-K, Eisuu
   - type: basic
     from:
@@ -124,6 +142,24 @@ rules:
 
 # Superhuman {{{
 
+  # [Superhuman] RCommand-K -> Command-K, Eisuu
+  - type: basic
+    from:
+      key_code: k
+      modifiers:
+        mandatory:
+        - right_command
+    to:
+    - key_code: k
+      modifiers:
+      - command
+    - key_code: japanese_eisuu
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.superhuman.electron"
+
   # [Superhuman] LCommand-; -> Command-K, Eisuu
   - type: basic
     from:
@@ -178,6 +214,24 @@ rules:
 # }}}
 
 # Linear {{{
+
+  # [Linear] RCommand-K -> Command-K, Eisuu
+  - type: basic
+    from:
+      key_code: k
+      modifiers:
+        mandatory:
+        - right_command
+    to:
+    - key_code: k
+      modifiers:
+      - command
+    - key_code: japanese_eisuu
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.linear"
 
   # [Linear] LCommand-; -> Command-K, Eisuu
   - type: basic
