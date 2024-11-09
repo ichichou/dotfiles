@@ -284,21 +284,6 @@ rules:
       bundle_identifiers:
       - "com.linear"
 
-  # [Linear] LCommand-S -> [ (Toggle Left Sidebar)
-  - type: basic
-    from:
-      key_code: s
-      modifiers:
-        mandatory:
-        - left_command
-    to:
-    - key_code: open_bracket
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.linear"
-
   # [Linear] LCommand-D -> Shift-Control-I (Focus Issue Description Input)
   - type: basic
     from:
@@ -307,11 +292,298 @@ rules:
         mandatory:
         - left_command
     to:
+    - set_variable:
+        name: linear_hrm_shift
+        value: 1
+        key_up_value: 0
+    to_if_alone:
     - key_code: i
       modifiers:
       - shift
       - control
-      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.linear"
+
+  # [Linear] LCommand-D-HJKL -> Shift-Arrows
+  - type: basic
+    from:
+      key_code: h
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: left_arrow
+      modifiers:
+      - shift
+      repeat: true
+    conditions:
+    - type: variable_if
+      name: linear_hrm_shift
+      value: 1
+
+  - type: basic
+    from:
+      key_code: j
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: down_arrow
+      modifiers:
+      - shift
+      repeat: true
+    conditions:
+    - type: variable_if
+      name: linear_hrm_shift
+      value: 1
+
+  - type: basic
+    from:
+      key_code: k
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: up_arrow
+      modifiers:
+      - shift
+      repeat: true
+    conditions:
+    - type: variable_if
+      name: linear_hrm_shift
+      value: 1
+
+  - type: basic
+    from:
+      key_code: l
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: right_arrow
+      modifiers:
+      - shift
+      repeat: true
+    conditions:
+    - type: variable_if
+      name: linear_hrm_shift
+      value: 1
+
+  # [Linear] LCommand-S -> [ (Toggle Left Sidebar)
+  - type: basic
+    from:
+      key_code: s
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - set_variable:
+        name: linear_hrm_control
+        value: 1
+        key_up_value: 0
+    to_if_alone:
+    - key_code: open_bracket
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.linear"
+
+  # [Linear] LCommand-S-HJKL -> Option-Arrows (Move Contents)
+  - type: basic
+    from:
+      key_code: h
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: left_arrow
+      modifiers:
+      - option
+      repeat: true
+    conditions:
+    - type: variable_if
+      name: linear_hrm_control
+      value: 1
+
+  - type: basic
+    from:
+      key_code: j
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: down_arrow
+      modifiers:
+      - option
+      repeat: true
+    conditions:
+    - type: variable_if
+      name: linear_hrm_control
+      value: 1
+
+  - type: basic
+    from:
+      key_code: k
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: up_arrow
+      modifiers:
+      - option
+      repeat: true
+    conditions:
+    - type: variable_if
+      name: linear_hrm_control
+      value: 1
+
+  - type: basic
+    from:
+      key_code: l
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: right_arrow
+      modifiers:
+      - option
+      repeat: true
+    conditions:
+    - type: variable_if
+      name: linear_hrm_control
+      value: 1
+
+  # [Linear] LControl-LCommand-HJKL -> Option-Arrows (Move Contents)
+  - type: basic
+    from:
+      key_code: h
+      modifiers:
+        mandatory:
+        - left_command
+        - left_control
+    to:
+    - key_code: left_arrow
+      modifiers:
+      - option
+      repeat: true
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.linear"
+
+  - type: basic
+    from:
+      key_code: j
+      modifiers:
+        mandatory:
+        - left_command
+        - left_control
+    to:
+    - key_code: down_arrow
+      modifiers:
+      - option
+      repeat: true
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.linear"
+
+  - type: basic
+    from:
+      key_code: k
+      modifiers:
+        mandatory:
+        - left_command
+        - left_control
+    to:
+    - key_code: up_arrow
+      modifiers:
+      - option
+      repeat: true
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.linear"
+
+  - type: basic
+    from:
+      key_code: l
+      modifiers:
+        mandatory:
+        - left_command
+        - left_control
+    to:
+    - key_code: right_arrow
+      modifiers:
+      - option
+      repeat: true
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.linear"
+
+  # [Linear] LControl-Arrows -> Option-Arrows (Move Contents)
+  - type: basic
+    from:
+      key_code: left_arrow
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: left_arrow
+      modifiers:
+      - option
+      repeat: true
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.linear"
+
+  - type: basic
+    from:
+      key_code: down_arrow
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: down_arrow
+      modifiers:
+      - option
+      repeat: true
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.linear"
+
+  - type: basic
+    from:
+      key_code: up_arrow
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: up_arrow
+      modifiers:
+      - option
+      repeat: true
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.linear"
+
+  - type: basic
+    from:
+      key_code: right_arrow
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: right_arrow
+      modifiers:
+      - option
+      repeat: true
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
