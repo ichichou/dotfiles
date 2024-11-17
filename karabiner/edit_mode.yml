@@ -1099,16 +1099,10 @@ rules:
       key_code: close_bracket
     conditions: *edit_2
 
-  # \ -> Almost Maximize Window (Shift-Control-Option-Return)
+  # \ -> Invalid
   - type: basic
     from:
       key_code: backslash
-    to:
-    - key_code: return_or_enter
-      modifiers:
-      - shift
-      - control
-      - option
     conditions: *edit_2
 
   # H -> Control-5
@@ -1218,6 +1212,18 @@ rules:
       - control
       - option
       repeat: false
+    conditions: *edit_2
+
+  # Return -> Almost Maximize Window (Shift-Control-Option-Return)
+  - type: basic
+    from:
+      key_code: return_or_enter
+    to:
+    - key_code: return_or_enter
+      modifiers:
+      - shift
+      - control
+      - option
     conditions: *edit_2
 
   # }}}
