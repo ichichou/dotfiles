@@ -24,8 +24,8 @@ aliases:
     name: edit_2
     value: 1
 
-- parameters: &thresh_ms
-    basic.simultaneous_threshold_milliseconds: 20
+- parameters: &threshold_ms
+    basic.simultaneous_threshold_milliseconds: 50
 
 # RULES ==========================================
 
@@ -62,7 +62,7 @@ rules:
     - key_code: s
     - key_code: d
     conditions: *ime_off
-    parameters: *thresh_ms
+    parameters: *threshold_ms
 
   # Left: S + D (D -> S)
   - type: basic
@@ -86,7 +86,7 @@ rules:
     - key_code: d
     - key_code: s
     conditions: *ime_off
-    parameters: *thresh_ms
+    parameters: *threshold_ms
 
   # Right: K + L (K -> L)
   - type: basic
@@ -111,7 +111,7 @@ rules:
     - key_code: k
     - key_code: l
     conditions: *ime_off
-    parameters: *thresh_ms
+    parameters: *threshold_ms
 
   # Right: K + L (L -> K)
   - type: basic
@@ -135,7 +135,7 @@ rules:
     - key_code: l
     - key_code: k
     conditions: *ime_off
-    parameters: *thresh_ms
+    parameters: *threshold_ms
 
   # Edit Mode 2 ----------------------------------
 
@@ -162,7 +162,7 @@ rules:
   #   - key_code: w
   #   - key_code: c
   #   conditions: *ime_off
-  #   parameters: *thresh_ms
+  #   parameters: *threshold_ms
 
   # Left: W + E (E -> W)
   - type: basic
@@ -187,7 +187,7 @@ rules:
     # - key_code: w
     - key_code: escape
     conditions: *ime_off
-    parameters: *thresh_ms
+    parameters: *threshold_ms
 
   # # Right: I + O (I -> O)
   # - type: basic
@@ -212,7 +212,7 @@ rules:
   #   - key_code: i
   #   - key_code: o
   #   conditions: *ime_off
-  #   parameters: *thresh_ms
+  #   parameters: *threshold_ms
 
   # Right: I + O (O -> I)
   - type: basic
@@ -237,7 +237,7 @@ rules:
     # - key_code: i
     - key_code: tab
     conditions: *ime_off
-    parameters: *thresh_ms
+    parameters: *threshold_ms
 
   # }}}
 
@@ -270,7 +270,7 @@ rules:
     - key_code: k
     - key_code: a
     conditions: *ime_on
-    parameters: *thresh_ms
+    parameters: *threshold_ms
 
   # Left: S + D (D -> S)
   - type: basic
@@ -296,7 +296,7 @@ rules:
     - key_code: t
     - key_code: o
     conditions: *ime_on
-    parameters: *thresh_ms
+    parameters: *threshold_ms
 
   # Right: K + L (K -> L)
   - type: basic
@@ -322,7 +322,7 @@ rules:
     - key_code: s
     - key_code: i
     conditions: *ime_on
-    parameters: *thresh_ms
+    parameters: *threshold_ms
 
   # Right: K + L (L -> K)
   - type: basic
@@ -347,7 +347,7 @@ rules:
     - key_code: i
     - key_code: i
     conditions: *ime_on
-    parameters: *thresh_ms
+    parameters: *threshold_ms
 
   # Edit Mode 2 ----------------------------------
 
@@ -376,7 +376,7 @@ rules:
   #   - key_code: h
   #   - key_code: a
   #   conditions: *ime_on
-  #   parameters: *thresh_ms
+  #   parameters: *threshold_ms
 
   # Left: W + E (E -> W)
   - type: basic
@@ -403,7 +403,7 @@ rules:
     # - key_code: i
     - key_code: escape
     conditions: *ime_on
-    parameters: *thresh_ms
+    parameters: *threshold_ms
 
   # # Right: I + O (I -> O)
   # - type: basic
@@ -430,7 +430,7 @@ rules:
   #   - key_code: g
   #   - key_code: a
   #   conditions: *ime_on
-  #   parameters: *thresh_ms
+  #   parameters: *threshold_ms
 
   # Right: I + O (O -> I)
   - type: basic
@@ -457,7 +457,7 @@ rules:
     # - key_code: o
       - key_code: tab
     conditions: *ime_on
-    parameters: *thresh_ms
+    parameters: *threshold_ms
 
   # }}}
 
