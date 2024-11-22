@@ -128,21 +128,23 @@ abbr -ag buse brew uses
 abbr -ag g   git
 abbr -ag ga  git add
 abbr -ag gb  git branch
+abbr -ag gc  git commit
 abbr -ag gcl git clone
-abbr -ag gcm git commit
 abbr -ag gd  git difftool
 abbr -ag gf  git fetch
 abbr -ag gl  git log --graph --oneline -n 10
 abbr -ag glp git log --patch -n 10
+abbr -ag gm  git merge
 abbr -ag gpl git pull
 abbr -ag gps git push
+abbr -ag grb  git rebase
 abbr -ag grf git reflog
 abbr -ag grs git restore
 abbr -ag grv git revert
 abbr -ag gs  git status --short --branch
 abbr -ag gsh git show
 abbr -ag gss git status
-abbr -ag gsw git switch
+abbr -ag gw  git switch
 
 # FUNCTIONS ------------------------------------------------
 
