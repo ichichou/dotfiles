@@ -8,11 +8,27 @@ aliases:
   - type: input_source_unless
     input_sources:
     - language: ja
+  # - type: device_unless
+  #   identifiers:
+  #   # Equinox XL
+  #   - vendor_id: 41219
+  #     product_id: 32
+  #   # Cornelius Low-profile
+  #   - vendor_id: 18003
+  #   - roduct_id: 6
 
 - conditions: &ime_on
   - type: input_source_if
     input_sources:
     - language: ja
+  # - type: device_unless
+  #   identifiers:
+  #   # Equinox XL
+  #   - vendor_id: 41219
+  #     product_id: 32
+  #   # Cornelius Low-profile
+  #   - vendor_id: 18003
+  #   - roduct_id: 6
 
 - conditions: &edit_1
   - type: variable_if
@@ -25,7 +41,7 @@ aliases:
     value: 1
 
 - parameters: &threshold_ms
-    basic.simultaneous_threshold_milliseconds: 50
+    basic.simultaneous_threshold_milliseconds: 20
 
 # RULES ==========================================
 
