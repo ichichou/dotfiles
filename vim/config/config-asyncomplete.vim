@@ -1,9 +1,9 @@
 UsePlugin 'asyncomplete.vim'
 
 " -- Auto Completion
-" let g:asyncomplete_auto_popup = 1
-" let g:asyncomplete_popup_delay = 200
-" let g:asyncomplete_min_chars = 2
+let g:asyncomplete_auto_popup = 1
+let g:asyncomplete_popup_delay = 200
+let g:asyncomplete_min_chars = 2
 
 " -- Manual Completion
 let g:asyncomplete_auto_popup = 0
