@@ -4,65 +4,21 @@ title: "21. Mouse"
 
 aliases:
 
-- conditions: &kensington
-  - type: device_if
-    identifiers:
-
-    # SlimBlade Pro (Bluetooth)
-    - vendor_id: 1149
-      product_id: 32980
-
-    # SlimBlade Pro (2.4 GHz)
-    - vendor_id: 1149
-      product_id: 32982
+# - conditions: &kensington
+#   - type: device_if
+#     identifiers:
+#     # SlimBlade Pro (Bluetooth)
+#     - vendor_id: 1149
+#       product_id: 32980
+#     # SlimBlade Pro (2.4 GHz)
+#     - vendor_id: 1149
+#       product_id: 32982
 
 # RULES ==========================================
 
 rules:
 - description: "21. Mouse"
   manipulators:
-
-# Kensington's Trackball -------------------------
-
-  # LCommand-ボタン3 -> Shift-Control-Tab (前のタブ)
-  - type: basic
-    from:
-      pointing_button: button3
-      modifiers:
-        mandatory:
-        - left_command
-    to:
-    - key_code: tab
-      modifiers:
-      - shift
-      - control
-      repeat: false
-    conditions: *kensington
-
-  # LCommand-ボタン4 -> Control-Tab (次のタブ)
-  - type: basic
-    from:
-      pointing_button: button4
-      modifiers:
-        mandatory:
-        - left_command
-    to:
-    - key_code: tab
-      modifiers:
-      - control
-      repeat: false
-    conditions: *kensington
-
-  # ボタン3 -> Command-Left (戻る)
-  - type: basic
-    from:
-      pointing_button: button3
-    to:
-    - key_code: open_bracket
-      modifiers:
-      - command
-      repeat: false
-    conditions: *kensington
 
   # ボタン4 -> Mission Control
   - type: basic
@@ -71,4 +27,13 @@ rules:
     to:
     - key_code: mission_control
       repeat: false
-    conditions: *kensington
+
+  # ボタン5 -> Command-[
+  - type: basic
+    from:
+      pointing_button: button5
+    to:
+    - key_code: open_bracket
+      modifiers:
+      - command
+      repeat: false
