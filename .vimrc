@@ -733,6 +733,10 @@ Plug 'thinca/vim-quickrun'
 Plug 'tyru/caw.vim'
 Plug 'vimoutliner/vimoutliner'
 
+Plug 'prettier/vim-prettier', {
+      \ 'do': 'yarn install --frozen-lockfile --production',
+      \ 'for': ['html', 'css', 'less', 'scss'] }
+
 packadd! matchit
 
 if has('nvim')
