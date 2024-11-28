@@ -176,7 +176,7 @@ rules:
   #       value: 1
   #   to_if_alone:
   #   - key_code: w
-  #   - key_code: c
+  #   - key_code: e
   #   conditions: *ime_off
   #   parameters: *threshold_ms
 
@@ -566,7 +566,7 @@ rules:
     - key_code: close_bracket
     conditions: *edit_1
 
-  # F -> Clipboard in Raycast (Command-Control-V)
+  # F -> Command-Control-V (Clipboard in Raycast)
   - type: basic
     from:
       key_code: f
@@ -578,7 +578,7 @@ rules:
       repeat: false
     conditions: *edit_1
 
-  # G -> Snippet in Raycast (Command-Control-S)
+  # G -> Command-Control-S (Snippet in Raycast)
   - type: basic
     from:
       key_code: g
@@ -602,27 +602,25 @@ rules:
       repeat: false
     conditions: *edit_1
 
-  # X -> Left Half Window (Control-Option-Left)
+  # X -> Command-X
   - type: basic
     from:
       key_code: x
     to:
-    - key_code: left_arrow
+    - key_code: x
       modifiers:
-      - control
-      - option
+      - command
       repeat: false
     conditions: *edit_1
 
-  # C -> Right Half Window (Control-Option-Right)
+  # C -> Command-C
   - type: basic
     from:
       key_code: c
     to:
-    - key_code: right_arrow
+    - key_code: c
       modifiers:
-      - control
-      - option
+      - command
       repeat: false
     conditions: *edit_1
 
@@ -880,7 +878,7 @@ rules:
 
   # Left Side Keys {{{
 
-  # Q -> Left Up Window (Control-Option-U)
+  # Q -> Control-Option-U (Left Up Window)
   - type: basic
     from:
       key_code: q
@@ -892,7 +890,7 @@ rules:
       repeat: false
     conditions: *edit_2
 
-  # W -> Right Up Window (Control-Option-I)
+  # W -> Control-Option-I (Right Up Window)
   - type: basic
     from:
       key_code: w
@@ -910,7 +908,7 @@ rules:
       key_code: e
     conditions: *edit_2
 
-  # R -> Center Window (Shift-Control-Option-C)
+  # R -> Shift-Control-Option-C (Center Window)
   - type: basic
     from:
       key_code: r
@@ -923,18 +921,18 @@ rules:
       repeat: false
     conditions: *edit_2
 
-  # T -> Control-3
+  # T -> Control-1
   - type: basic
     from:
       key_code: t
     to:
-    - key_code: "3"
+    - key_code: "1"
       modifiers:
       - control
       repeat: false
     conditions: *edit_2
 
-  # A -> Left Half Window (Control-Option-Left)
+  # A -> Control-Option-Left (Left Half Window)
   - type: basic
     from:
       key_code: a
@@ -946,7 +944,7 @@ rules:
       repeat: false
     conditions: *edit_2
 
-  # S -> Left 1/3 Window (Control-Option-D)
+  # S -> Control-Option-D (Left 1/3 Window)
   - type: basic
     from:
       key_code: s
@@ -958,7 +956,7 @@ rules:
       repeat: false
     conditions: *edit_2
 
-  # D -> Right 1/3 Window (Control-Option-G)
+  # D -> Control-Option-G (Right 1/3 Window)
   - type: basic
     from:
       key_code: d
@@ -970,7 +968,7 @@ rules:
       repeat: false
     conditions: *edit_2
 
-  # F -> Right Half Window (Control-Option-Right)
+  # F -> Control-Option-Right (Right Half Window)
   - type: basic
     from:
       key_code: f
@@ -993,7 +991,7 @@ rules:
       repeat: false
     conditions: *edit_2
 
-  # Z -> Left Quarter Window (Control-Option-Z)
+  # Z -> Control-Option-Z (Left Quarter Window)
   - type: basic
     from:
       key_code: z
@@ -1005,7 +1003,7 @@ rules:
       repeat: false
     conditions: *edit_2
 
-  # X -> Left 3/4 Window (Control-Option-X)
+  # X -> Control-Option-X (Left 3/4 Window)
   - type: basic
     from:
       key_code: x
@@ -1017,7 +1015,7 @@ rules:
       repeat: false
     conditions: *edit_2
 
-  # C -> Right 3/4 Window (Control-Option-V)
+  # C -> Control-Option-V (Right 3/4 Window)
   - type: basic
     from:
       key_code: c
@@ -1029,7 +1027,7 @@ rules:
       repeat: false
     conditions: *edit_2
 
-  # V -> Right Quarter Window (Control-Option-B)
+  # V -> Control-Option-B (Right Quarter Window)
   - type: basic
     from:
       key_code: v
@@ -1041,12 +1039,12 @@ rules:
       repeat: false
     conditions: *edit_2
 
-  # B -> Control-1
+  # B -> Control-3
   - type: basic
     from:
       key_code: b
     to:
-    - key_code: "1"
+    - key_code: "3"
       modifiers:
       - control
       repeat: false
@@ -1056,18 +1054,18 @@ rules:
 
   # Right Side Keys {{{
 
-  # Y -> Control-6
+  # Y -> Control-4
   - type: basic
     from:
       key_code: "y"
     to:
-    - key_code: "6"
+    - key_code: "4"
       modifiers:
       - control
       repeat: false
     conditions: *edit_2
 
-  # U -> Center Window (Shift-Control-Option-C)
+  # U -> Shift-Control-Option-C (Center Window)
   - type: basic
     from:
       key_code: u
@@ -1132,7 +1130,7 @@ rules:
       repeat: false
     conditions: *edit_2
 
-  # J -> Center Window (Control-Option-C)
+  # J -> Control-Option-C (Center Window)
   - type: basic
     from:
       key_code: j
@@ -1173,18 +1171,18 @@ rules:
       key_code: quote
     conditions: *edit_2
 
-  # N -> Control-4
+  # N -> Control-6
   - type: basic
     from:
       key_code: "n"
     to:
-    - key_code: "4"
+    - key_code: "6"
       modifiers:
       - control
       repeat: false
     conditions: *edit_2
 
-  # M -> Maximize Window (Control-Option-Return)
+  # M -> Control-Option-Return (Maximize Window)
   - type: basic
     from:
       key_code: m
@@ -1218,7 +1216,7 @@ rules:
 
   # Other Keys {{{
 
-  # Delete -> Restore Window (Control-Option-Delete)
+  # Delete -> Control-Option-Delete (Restore Window)
   - type: basic
     from:
       key_code: delete_or_backspace
@@ -1230,7 +1228,7 @@ rules:
       repeat: false
     conditions: *edit_2
 
-  # Return -> Almost Maximize Window (Shift-Control-Option-Return)
+  # Return -> Shift-Control-Option-Return (Almost Maximize Window)
   - type: basic
     from:
       key_code: return_or_enter
