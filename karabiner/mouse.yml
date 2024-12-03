@@ -19,21 +19,3 @@ aliases:
 rules:
 - description: "21. Mouse"
   manipulators:
-
-  # ボタン4 -> Mission Control
-  - type: basic
-    from:
-      pointing_button: button4
-    to:
-    - key_code: mission_control
-      repeat: false
-
-  # ボタン5 -> Command-[
-  - type: basic
-    from:
-      pointing_button: button5
-    to:
-    - key_code: open_bracket
-      modifiers:
-      - command
-      repeat: false
