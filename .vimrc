@@ -645,11 +645,11 @@ endif
 " LSP --------------------------------------------
 
 if has('nvim')
+  " Plug 'neovim/nvim-lspconfig'
+  " Plug 'neoclide/coc.nvim', { 'branch': 'release' }
   Plug 'prabirshrestha/vim-lsp'
   Plug 'mattn/vim-lsp-settings'
   Plug 'mattn/vim-lsp-icons'
-  " Plug 'neovim/nvim-lspconfig'
-  " Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 else
   Plug 'prabirshrestha/vim-lsp'
   Plug 'mattn/vim-lsp-settings'
@@ -659,16 +659,16 @@ endif
 " Completion -------------------------------------
 
 if has('nvim')
-  Plug 'prabirshrestha/asyncomplete-buffer.vim'
-  Plug 'prabirshrestha/asyncomplete-file.vim'
-  Plug 'prabirshrestha/asyncomplete-lsp.vim'
-  Plug 'prabirshrestha/asyncomplete.vim'
   " Plug 'hrsh7th/cmp-buffer'
   " Plug 'hrsh7th/cmp-cmdline'
   " Plug 'hrsh7th/cmp-nvim-lsp'
   " Plug 'hrsh7th/cmp-path'
   " Plug 'hrsh7th/cmp-vsnip'
   " Plug 'hrsh7th/nvim-cmp'
+  Plug 'prabirshrestha/asyncomplete-buffer.vim'
+  Plug 'prabirshrestha/asyncomplete-file.vim'
+  Plug 'prabirshrestha/asyncomplete-lsp.vim'
+  Plug 'prabirshrestha/asyncomplete.vim'
 else
   Plug 'prabirshrestha/asyncomplete.vim'
   Plug 'prabirshrestha/asyncomplete-buffer.vim'
@@ -679,9 +679,9 @@ endif
 " Fuzzy Finder -----------------------------------
 
 if has('nvim')
+  " Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
   set runtimepath+=/opt/homebrew/opt/fzf
   Plug 'junegunn/fzf.vim'
-  " Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
 else
   set runtimepath+=/opt/homebrew/opt/fzf
   Plug 'junegunn/fzf.vim'
@@ -702,17 +702,20 @@ else
   Plug 'jalvesaq/Nvim-R', { 'for': 'r'}
 endif
 
-Plug 'alx741/vim-hindent',         { 'for': 'haskell' }
 Plug 'fladson/vim-kitty',          { 'for': 'kitty' }
-Plug 'guns/vim-sexp',              { 'for': ['scheme', 'clojure'] }
-" Plug 'itchyny/vim-haskell-indent', { 'for': 'haskell' }
-Plug 'kat0h/bufpreview.vim',       { 'for': 'markdown', 'do': 'deno task prepare' }
-Plug 'liquidz/dps-parinfer',       { 'for': ['scheme', 'clojure'] }
-Plug 'luochen1990/rainbow',        { 'for': ['scheme', 'clojure'] }
 Plug 'mechatroner/rainbow_csv',    { 'for': 'csv' }
 Plug 'rcmdnk/vim-markdown',        { 'for': 'markdown' }
-Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': ['scheme', 'clojure'] }
 Plug 'vim-jp/syntax-vim-ex',       { 'for': 'vim' }
+
+" -- Haskell
+Plug 'alx741/vim-hindent',         { 'for': 'haskell' }
+" Plug 'itchyny/vim-haskell-indent', { 'for': 'haskell' }
+
+" -- Lisp
+" Plug 'guns/vim-sexp',                              { 'for': ['scheme', 'clojure'] }
+" Plug 'liquidz/dps-parinfer',                       { 'for': ['scheme', 'clojure'] }
+" Plug 'luochen1990/rainbow',                        { 'for': ['scheme', 'clojure'] }
+" Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': ['scheme', 'clojure'] }
 
 " Editing ----------------------------------------
 
@@ -731,7 +734,7 @@ Plug 'mattn/vim-maketable'
 Plug 'rcmdnk/yankround.vim'
 Plug 'thinca/vim-quickrun'
 Plug 'tyru/caw.vim'
-Plug 'vimoutliner/vimoutliner'
+" Plug 'vimoutliner/vimoutliner'
 
 Plug 'prettier/vim-prettier', {
       \ 'do': 'yarn install --frozen-lockfile --production',
@@ -745,7 +748,6 @@ endif
 
 " Movement ---------------------------------------
 
-" Plug 'easymotion/vim-easymotion'
 " Plug 'haya14busa/is.vim'
 " Plug 'haya14busa/vim-asterisk'
 Plug 'haya14busa/vim-edgemotion'
@@ -764,7 +766,6 @@ Plug 'cocopon/vaffle.vim'
 
 " Appearance -------------------------------------
 
-" Plug 'gko/vim-coloresque'
 Plug 'itchyny/vim-highlighturl'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-peekaboo'
@@ -810,7 +811,6 @@ Plug 'vim-jp/vimdoc-ja'
 
 " Colorscheme ------------------------------------
 
-" Plug 'EdenEast/nightfox.nvim'
 " Plug 'cocopon/iceberg.vim'
 " Plug 'sainnhe/edge'
 Plug 'sainnhe/everforest'
