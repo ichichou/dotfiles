@@ -48,6 +48,7 @@ abbr -ag ud cd ..
 
 # APPS
 abbr -ag a bat
+abbr -ag n numbat
 abbr -ag nvi nvim
 abbr -ag r radian
 abbr -ag ra ranger
