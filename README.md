@@ -103,7 +103,7 @@ BetterTouchTool が使えるようになった後は以下の設定にする：
 （保留）
 
 1. [Fisher のインストールコマンド](https://github.com/jorgebucaran/fisher)を実行。
-1. `$ fisher jethrokuan/z jethrokuan/fzf pure-fish/pure`
+1. `$ fisher jorgebucaran/fisher pure-fish/pure fabioantunes/base16-fish-shell jethrokuan/z jethrokuan/fzf jorgebucaran/autopair.fish`
 
 ### 3. システム環境設定（CLI）
 
