@@ -1690,6 +1690,139 @@ rules:
 
 # }}}
 
+# Ghostty {{{
+
+  # [Ghostty] LControl-N/P -> Control-N/P
+  # グローバル設定の LControl-N/P -> Command-Down/Up の無効化のため
+  - type: basic
+    from:
+      key_code: "n"
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: "n"
+      modifiers:
+      - control
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.mitchellh.ghostty"
+
+  - type: basic
+    from:
+      key_code: p
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: p
+      modifiers:
+      - control
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.mitchellh.ghostty"
+
+  # [Ghostty] LControl-1 - 6 -> Command-1 - 6
+  - type: basic
+    from:
+      key_code: "1"
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: "1"
+      modifiers:
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.mitchellh.ghostty"
+
+  - type: basic
+    from:
+      key_code: "2"
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: "2"
+      modifiers:
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.mitchellh.ghostty"
+
+  - type: basic
+    from:
+      key_code: "3"
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: "3"
+      modifiers:
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.mitchellh.ghostty"
+
+  - type: basic
+    from:
+      key_code: "4"
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: "4"
+      modifiers:
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.mitchellh.ghostty"
+
+  - type: basic
+    from:
+      key_code: "5"
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: "5"
+      modifiers:
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.mitchellh.ghostty"
+
+  - type: basic
+    from:
+      key_code: "6"
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: "6"
+      modifiers:
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.mitchellh.ghostty"
+
+# }}}
+
 # Kitty {{{
 
   # [Kitty] LControl-N/P -> Control-N/P
