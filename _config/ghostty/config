@@ -1,0 +1,5 @@
+theme = catppuccin-macchiato
+cursor-style-blink = false
+mouse-hide-while-typing = true
+window-height = 40
+window-width = 120
