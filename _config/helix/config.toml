@@ -1,0 +1,16 @@
+theme = "onedark"
+
+[editor]
+true-color = true
+# color-modes = true
+
+[editor.cursor-shape]
+normal = "block"
+insert = "bar"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.soft-wrap]
+enable = true
