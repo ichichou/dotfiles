@@ -146,6 +146,7 @@ rules:
     conditions:
     - type: frontmost_application_unless
       bundle_identifiers:
+      - "com.mitchellh.ghostty"
       - "net.kovidgoyal.kitty"
 
   # LCommand-M -> Delete Forward
