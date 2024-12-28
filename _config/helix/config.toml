@@ -14,3 +14,11 @@ hidden = false
 
 [editor.soft-wrap]
 enable = true
+
+[keys.normal]
+";" = "command_mode"
+":" = "collapse_selection"
+
+[keys.select]
+";" = "command_mode"
+":" = "collapse_selection"
