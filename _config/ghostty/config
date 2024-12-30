@@ -1,6 +1,39 @@
+#
+# CONFIGURATION
+#
+
+# THEME ------------------------------------------
+
 theme = catppuccin-macchiato
+# theme = "Tomorrow Night Bright"
+
+# FONT -------------------------------------------
+
+# font-family = Firple
+#
+# Default: "JetBrains Mono"
+# Firple, SOROEMONO, Hack, "SF Mono", "Fira Code"
+
+# font-size = 13
+#
+# Default: 13
+
+# font-feature = -calt
+# font-feature = -liga
+# font-feature = -dlig
+
+# OTHERS -----------------------------------------
+
 cursor-style-blink = false
 mouse-hide-while-typing = true
+
 window-height = 40
 window-width = 120
+
 copy-on-select = true
+
+#
+# KEYBINDINGS
+#
+
+keybind = cmd+enter=text:\n
