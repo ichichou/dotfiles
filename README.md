@@ -1,5 +1,7 @@
 # How to Initialize macOS
 
+**最新の内容は Notion に移動された。**
+
 ## クリーンインストール前の作業
 
 * **Homebrew**……`Brewfile` を更新。
