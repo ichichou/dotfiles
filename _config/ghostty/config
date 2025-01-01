@@ -9,10 +9,11 @@ theme = catppuccin-macchiato
 
 # FONT -------------------------------------------
 
-# font-family = Firple
+# font-family = "JetBrains Mono"
 #
 # Default: "JetBrains Mono"
-# Firple, SOROEMONO, Hack, "SF Mono", "Fira Code"
+# Latin: Hack, "SF Mono", "Fira Code", "JetBrains Mono"
+# Japanese: Firple, SOROEMONO
 
 # font-size = 13
 #
@@ -20,7 +21,7 @@ theme = catppuccin-macchiato
 
 # font-feature = -calt
 # font-feature = -liga
-# font-feature = -dlig
+font-feature = -dlig
 
 # OTHERS -----------------------------------------
 
