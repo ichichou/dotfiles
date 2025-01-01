@@ -1,11 +1,19 @@
-# ENVIRONMENT VARIABLES ------------------------------------
+# -- Environment Variables {{{
 
 set -gx fish_greeting
 set -gx EDITOR vim
 set -gx ZK_NOTEBOOK_DIR ~/repos/zk
-set -gx pure_show_jobs true
 
-# FZF
+# LS_COLORS
+if test -e "/opt/homebrew/bin/vivid"
+  set -gx LS_COLORS (vivid generate catppuccin-macchiato)
+end
+
+# pure
+set -gx pure_show_jobs true
+set -gx pure_symbol_prompt ▶
+
+# fzf
 set -gx FZF_DEFAULT_COMMAND "fd --type file --strip-cwd-prefix --hidden --follow --exclude .git"
 # set -gx FZF_DEFAULT_COMMAND "rg --files --hidden --follow --glob '!.git/*'"
 set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
@@ -13,12 +21,9 @@ set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
 set -gx FZF_CTRL_T_OPTS "--preview 'bat --style=numbers --color=always --line-range :500 {}'"
 # set -gx FZF_CTRL_R_OPTS "--layout=reverse"
 
-# LS_COLORS
-if test -e "/opt/homebrew/bin/vivid"
-  set -gx LS_COLORS (vivid generate iceberg-dark)
-end
+# }}}
 
-# PATH -----------------------------------------------------
+# -- Path {{{
 
 fish_add_path /opt/homebrew/opt/icu4c/bin
 fish_add_path $HOME/command
@@ -28,14 +33,18 @@ fish_add_path $HOME/.cabal/bin
 fish_add_path $HOME/.cargo/bin
 fish_add_path $HOME/.juliaup/bin
 
-# KEYBIND --------------------------------------------------
+# }}}
+
+# -- Keybind {{{
 
 bind -e \cj
 bind -e \cl
 
-# ABBR -----------------------------------------------------
+# }}}
 
-# GENERAL
+# -- Abbr {{{
+
+# General
 abbr -ag cp cp -iv
 abbr -ag e exit
 abbr -ag lns ln -snfv
@@ -46,7 +55,7 @@ abbr -ag reload exec fish
 abbr -ag rmds rm .DS_Store
 abbr -ag ud cd ..
 
-# APPS
+# Apps
 abbr -ag a bat
 abbr -ag n numbat
 abbr -ag nvi nvim
@@ -58,10 +67,7 @@ abbr -ag vi vim
 abbr -ag yqj yq eval -o=json
 abbr -ag yqy yq eval -P
 
-# USER FUNCTIONS
-abbr -ag jo journal
-
-# EZA / LS
+# eza/ls
 if test -e "/opt/homebrew/bin/eza"
   abbr -ag la eza -al --git
   abbr -ag ll eza -1a
@@ -74,21 +80,21 @@ else
   abbr -ag lsa ls
 end
 
-# TRASH / RM
+# trash/rm
 if test -e "/opt/homebrew/bin/trash"
   abbr -ag rm trash
 else
   abbr -ag rm rm -iv
 end
 
-# Z
+# z
 abbr -ag j z
 abbr -ag jd z dotfiles
 abbr -ag jl z downloads
 abbr -ag jr z repos
 abbr -ag jk z zk
 
-# ZK
+# zk
 abbr -ag k zk
 abbr -ag kc zk config
 abbr -ag ke zk edit -i
@@ -108,7 +114,7 @@ abbr -ag kdl zk list -i draft
 abbr -ag kdn zk new draft
 abbr -ag kds zk save_draft
 
-# HOMEBREW
+# Homebrew
 abbr -ag b    brew
 abbr -ag bc   brew cleanup
 abbr -ag bd   brew doctor
@@ -121,11 +127,11 @@ abbr -ag bo   brew outdated
 abbr -ag brm  brew autoremove
 abbr -ag bs   brew search
 abbr -ag bu   brew update
-abbr -ag bug  brew upgrade
+abbr -ag bug  brew_update_and_upgrade
 abbr -ag bun  brew uninstall
 abbr -ag buse brew uses
 
-# GIT
+# Git
 abbr -ag g   git
 abbr -ag ga  git add
 abbr -ag gb  git branch
@@ -147,19 +153,52 @@ abbr -ag gsh git show
 abbr -ag gss git status
 abbr -ag gw  git switch
 
-# FUNCTIONS ------------------------------------------------
+# }}}
 
-# AUTO LS
+# -- Functions {{{
+
+# Auto ls ----------------------------------------
+
+# Standard cd
+# functions --erase standard_cd
 functions --copy cd standard_cd
+abbr -ag scd standard_cd
+
+# Standard ls
+# functions --erase standard_ls
+functions --copy ls standard_ls
+abbr -ag sls standard_ls
+
+# ls if files and dirs <= 50
 function cd
   if test -e "/opt/homebrew/bin/eza"
-    standard_cd $argv; and eza -a
+    standard_cd $argv
+    if test (ls -A | wc -w | tr -d ' ') -le 50
+      eza -a
+    end
   else
-    standard_cd $argv; and ls -AG
+    standard_cd $argv
+    if test (ls -A | wc -w | tr -d ' ') -le 50
+      ls -AG
+    end
   end
 end
 
-# JOURNAL
+# Always ls
+# function cd
+#   if test -e "/opt/homebrew/bin/eza"
+#     standard_cd $argv; and eza -a
+#   else
+#     standard_cd $argv; and ls -AG
+#   end
+# end
+
+# brew update && upgrade (for abbr) --------------
+function brew_update_and_upgrade
+  brew update; and brew upgrade
+end
+
+# Journal ----------------------------------------
 function journal
   set today (date +"%Y-%m-%d")
   set journal_file "$today.bike"
@@ -173,7 +212,9 @@ function journal
   end
 end
 
-# FIND & REMOVE .DS_STORE
+abbr -ag jo journal
+
+# Find & remove .DS_STORE ------------------------
 function dsstore
   if test -e "/opt/homebrew/bin/fd"
     fd -H '^\.DS_Store$' -tf -X rm
@@ -181,3 +222,17 @@ function dsstore
     find . -name '.DS_Store' -type f -delete
   end
 end
+
+# }}}
+
+# -- Others {{{
+
+# Vim mode's Cursor shape
+# set -gx fish_cursor_default     block
+# set -gx fish_cursor_insert      line
+# set -gx fish_cursor_visual      block
+# set -gx fish_cursor_replace_one underscore
+# set -gx fish_cursor_replace     underscore
+# set -gx fish_cursor_external    line
+
+# }}}
