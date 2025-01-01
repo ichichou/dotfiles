@@ -1,23 +1,32 @@
-## Basics
-autoload -Uz compinit && compinit
-autoload -Uz colors && colors
+# BASICS -----------------------------------------
 
 export LANG=ja_JP.UTF-8
-bindkey -e
+export KCODE=u
 
 setopt print_eight_bit
 setopt IGNOREEOF
+
+autoload -Uz colors && colors
+
+bindkey -e
+
+zstyle ":completion:*:commands" rehash 1
 
 PROMPT="
 %~
 %% "
 
-## cd
+# CD ---------------------------------------------
+
 setopt auto_cd
 setopt auto_pushd
 setopt pushd_ignore_dups
 
-## Completion
+# COMPLETION -------------------------------------
+
+autoload -Uz compinit && compinit
+zstyle ":completion:*" matcher-list "m:{a-z}={A-Z}"
+
 setopt auto_menu
 setopt complete_in_word
 setopt auto_param_slash
@@ -25,14 +34,13 @@ setopt auto_param_keys
 # setopt list_types
 # setopt correct
 
-zstyle ":completion:*" matcher-list "m:{a-z}={A-Z}"
-
 # export LS_COLORS=""
 # zstyle ":completion:*" list-colors ${LS_COLORS}
 
-## History
+# HISTORY ----------------------------------------
+
 HISTFILE=$HOME/.zsh_history
-HISTSIZE=10000
+HISTSIZE=100000
 SAVEHIST=100000
 
 setopt hist_verify
@@ -44,33 +52,42 @@ setopt hist_ignore_all_dups
 setopt hist_reduce_blanks
 setopt hist_no_store
 
-## Aliases
+# ALIASES ----------------------------------------
+
 alias cp="cp -iv"
 alias mv="mv -iv"
 
 if [ -e /opt/homebrew/bin/exa -o -e /usr/local/bin/exa ]; then
-    alias ls="exa -a"
-    alias ll="exa -1a"
-    alias la="exa -al --git"
+  alias ls="exa -a"
+  alias ll="exa -1a"
+  alias la="exa -al --git"
 else
-    alias ls="ls -AG"
-    alias ll="ls -1AG"
-    alias la="ls -AlG"
+  alias ls="ls -AG"
+  alias ll="ls -1AG"
+  alias la="ls -AlG"
 fi
 
 if [ -e /opt/homebrew/bin/trash -o -e /usr/local/bin/trash ]; then
-    alias rm="trash"
+  alias rm="trash"
 else
-    alias rm="rm -iv"
+  alias rm="rm -iv"
 fi
 
 alias b="brew"
 alias g="git"
 alias vi="vim"
 
-if [[ -o interactive ]]; then
-    exec fish
+# FISH SHELL -------------------------------------
+
+if [[ -o login ]]; then
+  exec fish
 fi
+
+# if [[ -o interactive ]]; then
+#   exec fish
+# fi
+
+# APPS -------------------------------------------
 
 [ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
