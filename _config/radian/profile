@@ -1,7 +1,9 @@
-options(
-    radian.ctrl_key_map = list(
-        list(key = "-", value = " <- "),
-        list(key = "=", value = " = "),
-        list(key = ".", value = " %>% ")
-    )
-)
+options(radian.color_scheme = "nord-darker")
+
+# options(
+#   radian.ctrl_key_map = list(
+#     list(key = "-", value = " <- "),
+#     list(key = "=", value = " = "),
+#     list(key = ".", value = " |> ")
+#   )
+# )
