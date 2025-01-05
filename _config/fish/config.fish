@@ -5,10 +5,15 @@ set -gx EDITOR vim
 set -gx XDG_CONFIG_HOME ~/.config
 set -gx ZK_NOTEBOOK_DIR ~/repos/zk
 
-# LS_COLORS
-if test -e "/opt/homebrew/bin/vivid"
-  set -gx LS_COLORS (vivid generate catppuccin-macchiato)
-end
+# # LS_COLORS
+#
+# # Exec below command:
+# >_ set -Ux LS_COLORS (vivid generatte catppuccin-macchiato)
+#
+# # Don't use below code:
+# if test -e "/opt/homebrew/bin/vivid"
+#   set -gx LS_COLORS (vivid generate catppuccin-macchiato)
+# end
 
 # pure
 set -gx pure_show_jobs true
