@@ -98,11 +98,6 @@ augroup END
 
 set diffopt=internal,filler,closeoff,vertical,indent-heuristic,algorithm:histogram
 
-if !has('nvim')
-  set mouse=a
-  set ttymouse=xterm2
-endif
-
 " Appearance -------------------------------------
 
 set title
@@ -803,9 +798,9 @@ Plug 'prettier/vim-prettier', {
 
 packadd! matchit
 
-if has('nvim')
-  " Plug 'mickael-menu/zk-nvim'
-endif
+" if has('nvim')
+"   Plug 'mickael-menu/zk-nvim'
+" endif
 
 " Movement ---------------------------------------
 
@@ -841,7 +836,6 @@ if has('nvim')
   Plug 'lewis6991/gitsigns.nvim'
 else
   Plug 'delphinus/vim-auto-cursorline'
-  " Plug 'itchyny/lightline.vim'
   " Plug 'machakann/vim-highlightedyank'
   Plug 'mhinz/vim-signify'
 endif
@@ -873,10 +867,10 @@ Plug 'vim-jp/vimdoc-ja'
 " Colorscheme ------------------------------------
 
 " Plug 'cocopon/iceberg.vim'
-" Plug 'sainnhe/edge'
+Plug 'sainnhe/edge'
 Plug 'sainnhe/everforest'
-" Plug 'sainnhe/gruvbox-material'
-" Plug 'sainnhe/sonokai'
+Plug 'sainnhe/gruvbox-material'
+Plug 'sainnhe/sonokai'
 
 if has('nvim')
   Plug 'shaunsingh/nord.nvim'
