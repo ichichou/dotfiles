@@ -30,6 +30,7 @@ set -gx FZF_CTRL_T_OPTS "--preview 'bat --style=numbers --color=always --line-ra
 fish_add_path /opt/homebrew/opt/icu4c/bin
 fish_add_path $HOME/command
 fish_add_path $HOME/go/bin
+fish_add_path $HOME/.local/bin
 fish_add_path $HOME/.ghcup/bin
 fish_add_path $HOME/.cabal/bin
 fish_add_path $HOME/.cargo/bin
@@ -48,9 +49,6 @@ function fish_user_key_bindings
     fish_default_key_bindings -M $mode
   end
   fish_vi_key_bindings --no-erase
-
-  # fish_default_key_bindings -M insert
-  # fish_vi_key_bindings --no-erase insert
 end
 
 fish_user_key_bindings
@@ -68,39 +66,38 @@ set -gx fish_cursor_external    line
 # -- Abbr {{{
 
 # General
-abbr -ag cp cp -iv
-abbr -ag e exit
-abbr -ag lns ln -snfv
-abbr -ag mv mv -iv
-abbr -ag nd nextd
-abbr -ag pd prevd
-abbr -ag reload exec fish
+abbr -ag e    exit
+abbr -ag lns  ln -snfv
+abbr -ag nd   nextd
+abbr -ag pd   prevd
 abbr -ag rmds rm .DS_Store
-abbr -ag ud cd ..
+abbr -ag ud   ..
+
+abbr -ag cp cp -iv
+abbr -ag mv mv -iv
 
 # Apps
-abbr -ag a bat
-abbr -ag n numbat
+abbr -ag a   bat
+abbr -ag n   numbat
 abbr -ag nvi nvim
-abbr -ag r radian
-abbr -ag ra ranger
-abbr -ag t tig
-abbr -ag ts tig status
-abbr -ag vi vim
+abbr -ag r   ranger
+abbr -ag ra  radian
+abbr -ag t   tig
+abbr -ag ts  tig status
 abbr -ag yqj yq eval -o=json
 abbr -ag yqy yq eval -P
 
+abbr -ag vi vim
+
 # eza/ls
 if test -e "/opt/homebrew/bin/eza"
+  abbr -ag ls eza -a
   abbr -ag la eza -al --git
   abbr -ag ll eza -1a
-  abbr -ag ls eza -a
-  abbr -ag lsa eza
 else
+  abbr -ag ls ls -AG
   abbr -ag la ls -AlG
   abbr -ag ll ls -1AG
-  abbr -ag ls ls -AG
-  abbr -ag lsa ls
 end
 
 # trash/rm
@@ -111,27 +108,27 @@ else
 end
 
 # z
-abbr -ag j z
+abbr -ag j  z
 abbr -ag jd z dotfiles
 abbr -ag jl z downloads
 abbr -ag jr z repos
 abbr -ag jk z zk
 
 # zk
-abbr -ag k zk
+abbr -ag k  zk
 abbr -ag kc zk config
 abbr -ag ke zk edit -i
 abbr -ag kg zk git_status
 abbr -ag kl zk list -i
 abbr -ag kn zk new
 
-abbr -ag kj zk journal
+abbr -ag kj  zk journal
 abbr -ag kje zk edit -i journal
 abbr -ag kjl zk list -i journal
 abbr -ag kjn zk new journal
 abbr -ag kjs zk save_journal
 
-abbr -ag kd zk edit -i draft
+abbr -ag kd  zk edit -i draft
 abbr -ag kde zk edit -i draft
 abbr -ag kdl zk list -i draft
 abbr -ag kdn zk new draft
@@ -167,7 +164,7 @@ abbr -ag glp git log --patch -n 10
 abbr -ag gm  git merge
 abbr -ag gpl git pull
 abbr -ag gps git push
-abbr -ag grb  git rebase
+abbr -ag grb git rebase
 abbr -ag grf git reflog
 abbr -ag grs git restore
 abbr -ag grv git revert
@@ -182,35 +179,32 @@ abbr -ag gw  git switch
 
 # Auto ls ----------------------------------------
 
-# Standard cd
-# functions --erase standard_cd
-functions --copy cd standard_cd
-abbr -ag scd standard_cd
-
-# Standard ls
-# functions --erase standard_ls
-functions --copy ls standard_ls
-abbr -ag sls standard_ls
-
-# ls if files and dirs <= 50
+# Use $status
 function cd
-  standard_cd $argv
-  if test (ls -A | count) -le 50
-    if test -e "/opt/homebrew/bin/eza"
-      eza -a
+  builtin cd $argv
+  if test $status -eq 0
+    if test (ls -A | count) -gt 50
+      echo "(>50 items exist in $(basename $PWD)/)"
     else
-      ls -AG
+      if test -e "/opt/homebrew/bin/eza"
+        eza -a
+      else
+        ls -AG
+      end
     end
   end
 end
 
-# ls always
-# function cd
-#   standard_cd $argv
-#   if test -e "/opt/homebrew/bin/eza"
-#     eza -a
+# # Use $PWD
+# function auto_ls --on-variable PWD
+#   if test (ls -A | count) -gt 50
+#     echo "(>50 items exist in $(basename $PWD)/)"
 #   else
-#     ls -AG
+#     if test -e "/opt/homebrew/bin/eza"
+#       eza -a
+#     else
+#       ls -AG
+#     end
 #   end
 # end
 
