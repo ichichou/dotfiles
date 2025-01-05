@@ -8,13 +8,19 @@
 // from the command palette or from `Zed` application menu.
 {
   // "theme": "",
-  // "ui_font_size": 14,
-  "soft_wrap": "editor_width",
 
-  // "vim_mode": true,
-  // "cursor_blink": false,
   "tab_size": 2,
+  "soft_wrap": "editor_width",
+  "cursor_blink": false,
 
   // "buffer_font_family": "JetBrains Mono",
-  "buffer_font_size": 13
+  "buffer_font_size": 13,
+
+  // "vim_mode": true,
+
+  "git": {
+    "inline_blame": {
+      "enabled": false
+    }
+  }
 }
