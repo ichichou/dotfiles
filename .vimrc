@@ -297,6 +297,20 @@ inoremap <D-7> <Nop>
 inoremap <D-8> <Nop>
 inoremap <D-9> <Nop>
 
+map <LeftMouse>   <Nop>
+map <RightMouse>  <Nop>
+map <MiddleMouse> <Nop>
+map <2-LeftMouse> <Nop>
+map <3-LeftMouse> <Nop>
+map <4-LeftMouse> <Nop>
+
+imap <LeftMouse>   <Nop>
+imap <RightMouse>  <Nop>
+imap <MiddleMouse> <Nop>
+imap <2-LeftMouse> <Nop>
+imap <3-LeftMouse> <Nop>
+imap <4-LeftMouse> <Nop>
+
 " AUTO COMMAND ===================================
 
 " Filetype ---------------------------------------
