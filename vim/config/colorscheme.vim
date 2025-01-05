@@ -14,25 +14,32 @@ let g:nord_borders = 1
 
 " Everforest -------------------------------------
 
-let g:everforest_background = 'hard'
+let g:everforest_background         = 'hard'
 let g:everforest_better_performance = 1
-let g:everforest_disable_italic_comment = 1
-
-" Sonokai ----------------------------------------
-
-let g:sonokai_style = 'default'
-let g:sonokai_better_performance = 1
+let g:everforest_enable_italic      = 1
+" let g:everforest_disable_italic_comment = 1
 
 " Edge -------------------------------------------
 
-let g:edge_style = 'default'
+let g:edge_style              = 'default'
 let g:edge_better_performance = 1
+let g:edge_enable_italic      = 1
+" let g:edge_disable_italic_comment = 1
+
+" Sonokai ----------------------------------------
+
+let g:sonokai_style              = 'maia'
+let g:sonokai_better_performance = 1
+let g:sonokai_enable_italic      = 1
+" let g:sonokai_disable_italic_comment = 1
 
 " Gruvbox-Material -------------------------------
 
-let g:gruvbox_material_background = 'medium'
-let g:gruvbox_material_foreground = 'material'
+let g:gruvbox_material_background         = 'medium'
+let g:gruvbox_material_foreground         = 'material'
 let g:gruvbox_material_better_performance = 1
+let g:gruvbox_material_enable_italic      = 1
+" let g:gruvbox_material_disable_italic_comment = 1
 
 " Define highlights ------------------------------
 
@@ -54,11 +61,7 @@ augroup END
 set background=dark
 
 if has('nvim')
-  let s:colorscheme = 'nord'
+  colorscheme nord
 else
-  let s:colorscheme = 'everforest'
+  colorscheme everforest
 endif
-
-execute 'colorscheme' s:colorscheme
-let g:lightline_colorscheme = s:colorscheme
-" let g:lightline_colorscheme = 'gruvbox_material'
