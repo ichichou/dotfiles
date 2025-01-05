@@ -26,12 +26,13 @@ font-feature = -dlig
 # OTHERS -----------------------------------------
 
 cursor-style-blink = false
+copy-on-select = true
 mouse-hide-while-typing = true
 
-window-height = 40
 window-width = 120
+window-height = 40
 
-copy-on-select = true
+window-inherit-working-directory = true
 
 #
 # KEYBINDINGS
