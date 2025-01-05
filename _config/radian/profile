@@ -1,7 +1,6 @@
 options(
     radian.color_scheme = "nord-darker",
     radian.tab_size = 2,
-    radian.highlight_matching_bracket = TRUE,
     radian.history_search_no_duplicates = TRUE,
     radian.history_search_ignore_case = TRUE,
     radian.ctrl_key_map = list(
