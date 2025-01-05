@@ -14,7 +14,28 @@ shell = "zsh"
 
 [plugins]
 
-# For example:
-#
-# [plugins.base16]
-# github = "chriskempson/base16-shell"
+[plugins.zsh-async]
+github = "mafredri/zsh-async"
+
+[plugins.pure]
+github = "sindresorhus/pure"
+use = ["async.zsh", "pure.zsh"]
+
+[plugins.zsh-syntax-highlighting]
+github = "zsh-users/zsh-syntax-highlighting"
+
+[plugins.zsh-abbr]
+github = "olets/zsh-abbr"
+
+[plugins.zsh-autosuggestions]
+github = "zsh-users/zsh-autosuggestions"
+use = ["{{ name }}.zsh"]
+
+[plugins.zsh-autosuggestions-abbreviations-strategy]
+github = "olets/zsh-autosuggestions-abbreviations-strategy"
+
+# [plugins.zsh-autocomplete]
+# github = "marlonrichert/zsh-autocomplete"
+
+[plugins.zsh-z]
+github = "agkozak/zsh-z"
