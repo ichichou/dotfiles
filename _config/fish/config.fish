@@ -2,6 +2,7 @@
 
 set -gx fish_greeting
 set -gx EDITOR vim
+set -gx XDG_CONFIG_HOME ~/.config
 set -gx ZK_NOTEBOOK_DIR ~/repos/zk
 
 # LS_COLORS
@@ -12,6 +13,7 @@ end
 # pure
 set -gx pure_show_jobs true
 set -gx pure_symbol_prompt ▶
+set -gx pure_symbol_reverse_prompt ◀
 
 # fzf
 set -gx FZF_DEFAULT_COMMAND "fd --type file --strip-cwd-prefix --hidden --follow --exclude .git"
@@ -39,6 +41,27 @@ fish_add_path $HOME/.juliaup/bin
 
 bind -e \cj
 bind -e \cl
+
+# Vim Keybindings
+function fish_user_key_bindings
+  for mode in default insert visual
+    fish_default_key_bindings -M $mode
+  end
+  fish_vi_key_bindings --no-erase
+
+  # fish_default_key_bindings -M insert
+  # fish_vi_key_bindings --no-erase insert
+end
+
+fish_user_key_bindings
+
+# Vim mode's Cursor shape
+set -gx fish_cursor_default     block
+set -gx fish_cursor_insert      line
+set -gx fish_cursor_visual      block
+set -gx fish_cursor_replace_one underscore
+set -gx fish_cursor_replace     underscore
+set -gx fish_cursor_external    line
 
 # }}}
 
@@ -127,7 +150,7 @@ abbr -ag bo   brew outdated
 abbr -ag brm  brew autoremove
 abbr -ag bs   brew search
 abbr -ag bu   brew update
-abbr -ag bug  brew_update_and_upgrade
+abbr -ag bug  "brew update; and brew upgrade"
 abbr -ag bun  brew uninstall
 abbr -ag buse brew uses
 
@@ -171,34 +194,28 @@ abbr -ag sls standard_ls
 
 # ls if files and dirs <= 50
 function cd
-  if test -e "/opt/homebrew/bin/eza"
-    standard_cd $argv
-    if test (ls -A | wc -w | tr -d ' ') -le 50
+  standard_cd $argv
+  if test (ls -A | count) -le 50
+    if test -e "/opt/homebrew/bin/eza"
       eza -a
-    end
-  else
-    standard_cd $argv
-    if test (ls -A | wc -w | tr -d ' ') -le 50
+    else
       ls -AG
     end
   end
 end
 
-# Always ls
+# ls always
 # function cd
+#   standard_cd $argv
 #   if test -e "/opt/homebrew/bin/eza"
-#     standard_cd $argv; and eza -a
+#     eza -a
 #   else
-#     standard_cd $argv; and ls -AG
+#     ls -AG
 #   end
 # end
 
-# brew update && upgrade (for abbr) --------------
-function brew_update_and_upgrade
-  brew update; and brew upgrade
-end
-
 # Journal ----------------------------------------
+
 function journal
   set today (date +"%Y-%m-%d")
   set journal_file "$today.bike"
@@ -215,6 +232,7 @@ end
 abbr -ag jo journal
 
 # Find & remove .DS_STORE ------------------------
+
 function dsstore
   if test -e "/opt/homebrew/bin/fd"
     fd -H '^\.DS_Store$' -tf -X rm
@@ -222,17 +240,5 @@ function dsstore
     find . -name '.DS_Store' -type f -delete
   end
 end
-
-# }}}
-
-# -- Others {{{
-
-# Vim mode's Cursor shape
-# set -gx fish_cursor_default     block
-# set -gx fish_cursor_insert      line
-# set -gx fish_cursor_visual      block
-# set -gx fish_cursor_replace_one underscore
-# set -gx fish_cursor_replace     underscore
-# set -gx fish_cursor_external    line
 
 # }}}
