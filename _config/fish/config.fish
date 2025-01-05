@@ -1,6 +1,7 @@
 # -- Environment Variables {{{
 
 set -gx fish_greeting
+set -gx LANG ja_JP.UTF-8
 set -gx EDITOR vim
 set -gx XDG_CONFIG_HOME ~/.config
 set -gx ZK_NOTEBOOK_DIR ~/repos/zk

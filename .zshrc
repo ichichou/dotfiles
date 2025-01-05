@@ -12,6 +12,7 @@ fi
 
 export LANG=ja_JP.UTF-8
 export KCODE=u
+export EDITOR="vim"
 export XDG_CONFIG_HOME="$HOME/.config"
 
 autoload -Uz colors && colors
