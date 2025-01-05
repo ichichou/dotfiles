@@ -39,3 +39,6 @@ github = "olets/zsh-autosuggestions-abbreviations-strategy"
 
 [plugins.zsh-z]
 github = "agkozak/zsh-z"
+
+[plugins.zsh-autopair]
+github = "hlissner/zsh-autopair"
