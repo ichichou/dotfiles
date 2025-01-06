@@ -50,6 +50,7 @@ bind -e \cj
 bind -e \cl
 
 # Vim Keybindings
+# Exec manually: >_ fish_user_key_bindings
 function fish_user_key_bindings
   for mode in default insert visual
     fish_default_key_bindings -M $mode
@@ -57,15 +58,13 @@ function fish_user_key_bindings
   fish_vi_key_bindings --no-erase
 end
 
-fish_user_key_bindings
-
-# Vim mode's Cursor shape
-set -gx fish_cursor_default     block
-set -gx fish_cursor_insert      line
-set -gx fish_cursor_visual      block
-set -gx fish_cursor_replace     underscore
-set -gx fish_cursor_replace_one underscore
-set -gx fish_cursor_external    line
+# # Vim mode's Cursor shape
+# set -gx fish_cursor_default     block
+# set -gx fish_cursor_insert      line
+# set -gx fish_cursor_visual      block
+# set -gx fish_cursor_replace     underscore
+# set -gx fish_cursor_replace_one underscore
+# set -gx fish_cursor_external    line
 
 # }}}
 
