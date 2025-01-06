@@ -2,12 +2,15 @@ pacman::p_load(
   pacman,
   conflicted,
   tidyverse,
-  lubridate
+  lubridate,
+  stats,
+  MASS
 )
 
-conflicts_prefer(
+conflicted::conflicts_prefer(
   dplyr::filter,
   dplyr::lag,
+  dplyr::select,
   .quiet = TRUE
 )
 
