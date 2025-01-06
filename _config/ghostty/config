@@ -39,3 +39,29 @@ window-inherit-working-directory = true
 #
 
 keybind = cmd+enter=text:\n
+
+keybind = cmd+f>up=goto_split:top
+keybind = cmd+f>down=goto_split:bottom
+keybind = cmd+f>left=goto_split:left
+keybind = cmd+f>right=goto_split:right
+keybind = cmd+f>equal=equalize_splits
+
+keybind = ctrl+physical:one=goto_tab:1
+keybind = ctrl+physical:two=goto_tab:2
+keybind = ctrl+physical:three=goto_tab:3
+keybind = ctrl+physical:four=goto_tab:4
+keybind = ctrl+physical:five=goto_tab:5
+keybind = ctrl+physical:six=goto_tab:6
+keybind = ctrl+physical:seven=goto_tab:7
+keybind = ctrl+physical:eight=goto_tab:8
+keybind = ctrl+physical:nine=goto_tab:9
+
+keybind = cmd+physical:one=goto_tab:1
+keybind = cmd+physical:two=goto_tab:2
+keybind = cmd+physical:three=goto_tab:3
+keybind = cmd+physical:four=goto_tab:4
+keybind = cmd+physical:five=goto_tab:5
+keybind = cmd+physical:six=goto_tab:6
+keybind = cmd+physical:seven=goto_tab:7
+keybind = cmd+physical:eight=goto_tab:8
+keybind = cmd+physical:nine=goto_tab:9
