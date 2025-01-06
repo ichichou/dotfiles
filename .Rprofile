@@ -10,6 +10,6 @@ conflicts_prefer(
   .quiet = TRUE
 )
 
-source("~/dotfiles/r/function.R")
+source("~/dotfiles/rlang/function.R")
 
 clear_globalenv()
