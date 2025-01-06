@@ -1,29 +1,28 @@
-#
-# CONFIGURATION
-#
+# vim:foldlevel=99:
 
-# THEME ------------------------------------------
+# Configuration {{{
+
+# Theme ------------------------------------------
 
 theme = catppuccin-macchiato
-# theme = "Tomorrow Night Bright"
 
-# FONT -------------------------------------------
+# Font -------------------------------------------
 
 # font-family = "JetBrains Mono"
 #
-# Default: "JetBrains Mono"
-# Latin: Hack, "SF Mono", "Fira Code", "JetBrains Mono"
-# Japanese: Firple, SOROEMONO
+#: Default: "JetBrains Mono"
+#: Latin: Hack, "SF Mono", "Fira Code", "JetBrains Mono"
+#: Japanese: Firple, SOROEMONO
 
 # font-size = 13
 #
-# Default: 13
+#: Default: 13
 
 # font-feature = -calt
 # font-feature = -liga
 font-feature = -dlig
 
-# OTHERS -----------------------------------------
+# Others -----------------------------------------
 
 cursor-style-blink = false
 copy-on-select = true
@@ -34,9 +33,9 @@ window-height = 40
 
 window-inherit-working-directory = true
 
-#
-# KEYBINDINGS
-#
+# }}}
+
+# Keybindings {{{
 
 keybind = cmd+enter=text:\n
 
@@ -44,6 +43,12 @@ keybind = cmd+f>up=goto_split:top
 keybind = cmd+f>down=goto_split:bottom
 keybind = cmd+f>left=goto_split:left
 keybind = cmd+f>right=goto_split:right
+
+keybind = cmd+f>k=goto_split:top
+keybind = cmd+f>j=goto_split:bottom
+keybind = cmd+f>h=goto_split:left
+keybind = cmd+f>l=goto_split:right
+
 keybind = cmd+f>equal=equalize_splits
 
 keybind = ctrl+physical:one=goto_tab:1
@@ -65,3 +70,5 @@ keybind = cmd+physical:six=goto_tab:6
 keybind = cmd+physical:seven=goto_tab:7
 keybind = cmd+physical:eight=goto_tab:8
 keybind = cmd+physical:nine=goto_tab:9
+
+# }}}
