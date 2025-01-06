@@ -1,7 +1,8 @@
 pacman::p_load(
   pacman,
+  conflicted,
   tidyverse,
-  conflicted
+  lubridate
 )
 
 conflicts_prefer(
