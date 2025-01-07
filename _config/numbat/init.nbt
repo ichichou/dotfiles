@@ -1,0 +1,47 @@
+use units::currencies
+
+# 数値単位: Scalar -----------------------------------
+
+@name("千")
+@aliases(sen)
+unit 千: Scalar = 1_000
+
+@name("万")
+@aliases(man)
+unit 万: Scalar = 10_000
+
+@name("億")
+@aliases(oku)
+unit 億: Scalar = 100_000_000
+
+# 通貨単位: Money ------------------------------------
+
+@name("千円")
+@aliases(sen_yen)
+unit 千円: Money = 1_000 yen
+
+@name("万円")
+@aliases(man_yen)
+unit 万円: Money = 10_000 yen
+
+@name("億円")
+@aliases(oku_yen)
+unit 億円: Money = 100_000_000 yen
+
+# 面積: Area -------------------------------------------
+
+@name("坪")
+@aliases(tsubo)
+unit 坪: Area = 3.3058 m^2
+
+@name("畳")
+@aliases(jo)
+unit 畳: Area = 0.5 tsubo
+
+@name("反")
+@aliases(tann)
+unit 反: Area = 300 tsubo
+
+@name("町")
+@aliases(cho)
+unit 町: Area = 3_000 tsubo
