@@ -4,6 +4,7 @@ set -gx fish_greeting
 set -gx LANG ja_JP.UTF-8
 set -gx EDITOR vim
 set -gx XDG_CONFIG_HOME ~/.config
+set -gx NUMBAT_MODULES_PATH ~/.config/numbat
 set -gx ZK_NOTEBOOK_DIR ~/repos/zk
 
 # # LS_COLORS
@@ -49,14 +50,15 @@ fish_add_path $HOME/.juliaup/bin
 bind -e \cj
 bind -e \cl
 
-# Vim Keybindings
-# Exec manually: >_ fish_user_key_bindings
-function fish_user_key_bindings
-  for mode in default insert visual
-    fish_default_key_bindings -M $mode
-  end
-  fish_vi_key_bindings --no-erase
-end
+# Vim mode ---------------------------------------
+
+# # Exec manually: >_ fish_user_key_bindings
+# # function fish_user_key_bindings
+#   for mode in default insert visual
+#     fish_default_key_bindings -M $mode
+#   end
+#   fish_vi_key_bindings --no-erase
+# end
 
 # # Vim mode's Cursor shape
 # set -gx fish_cursor_default     block
