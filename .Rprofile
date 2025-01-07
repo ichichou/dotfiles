@@ -1,5 +1,6 @@
+# vim: ft=r
+
 pacman::p_load(
-  pacman,
   conflicted,
   tidyverse,
   lubridate,
@@ -14,6 +15,6 @@ conflicted::conflicts_prefer(
   .quiet = TRUE
 )
 
-source("~/dotfiles/rlang/function.R")
+source("~/dotfiles/rlang/clear.R")
 
 clear_globalenv()
