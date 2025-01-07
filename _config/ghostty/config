@@ -38,6 +38,7 @@ window-inherit-working-directory = true
 # Keybindings {{{
 
 keybind = cmd+enter=text:\n
+keybind = ctrl+semicolon=ignore
 
 keybind = cmd+f>up=goto_split:top
 keybind = cmd+f>down=goto_split:bottom
