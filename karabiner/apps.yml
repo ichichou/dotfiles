@@ -1225,21 +1225,6 @@ rules:
 
   # Edit -----------------------------------------
 
-  # [Workflowy] LControl-H -> Delete
-  - type: basic
-    from:
-      key_code: h
-      modifiers:
-        mandatory:
-        - left_control
-    to:
-    - key_code: delete_or_backspace
-      repeat: true
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.workflowy.desktop"
-
   # # [Workflowy] LCommand-D -> Duplicate Rows (Shift-Command-D)
   # - type: basic
   #   from:
@@ -1351,20 +1336,6 @@ rules:
   #     bundle_identifiers:
   #     - "company.thebrowser.Browser"
 
-  # [Arc] LControl-H -> Delete
-  - type: basic
-    from:
-      key_code: h
-      modifiers:
-        mandatory:
-        - left_control
-    to:
-    - key_code: delete_or_backspace
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "company.thebrowser.Browser"
-
 # }}}
 
 # Notion {{{
@@ -1437,21 +1408,6 @@ rules:
       modifiers:
       - shift
       - command
-      repeat: true
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "notion.id"
-
-  # [Notion] Control-H -> Delete
-  - type: basic
-    from:
-      key_code: h
-      modifiers:
-        mandatory:
-        - left_control
-    to:
-    - key_code: delete_or_backspace
       repeat: true
     conditions:
     - type: frontmost_application_if
@@ -1693,7 +1649,7 @@ rules:
 # Ghostty {{{
 
   # [Ghostty] LControl-N/P -> Control-N/P
-  # グローバル設定の LControl-N/P -> Command-Down/Up の無効化のため
+  # control.yml の LControl-N/P -> Command-Down/Up の無効化のため
   - type: basic
     from:
       key_code: "n"
@@ -1826,7 +1782,7 @@ rules:
 # Kitty {{{
 
   # [Kitty] LControl-N/P -> Control-N/P
-  # グローバル設定の LControl-N/P -> Command-Down/Up の無効化のため
+  # control.yml の LControl-N/P -> Command-Down/Up の無効化のため
   - type: basic
     from:
       key_code: "n"
@@ -1860,51 +1816,6 @@ rules:
 # }}}
 
 # Microsoft Office {{{
-
-  # [Word] Control-H -> Delete
-  - type: basic
-    from:
-      key_code: h
-      modifiers:
-        mandatory:
-        - control
-    to:
-    - key_code: delete_or_backspace
-      repeat: true
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.microsoft.Word"
-
-  # [Excel] Control-H -> Delete
-  - type: basic
-    from:
-      key_code: h
-      modifiers:
-        mandatory:
-        - control
-    to:
-    - key_code: delete_or_backspace
-      repeat: true
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.microsoft.Excel"
-
-  # [Powerpoint] Control-H -> Delete
-  - type: basic
-    from:
-      key_code: h
-      modifiers:
-        mandatory:
-        - control
-    to:
-    - key_code: delete_or_backspace
-      repeat: true
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.microsoft.Powerpoint"
 
   # [Word] Control-D -> Fn-Delete
   - type: basic

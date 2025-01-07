@@ -210,6 +210,7 @@ noremap g+ g<C-a>
 noremap g- g<C-x>
 nnoremap U <C-r>
 nnoremap <C-h> <C-^>
+nnoremap <BS>  <C-^>
 
 nnoremap <Esc><Esc> <Cmd>nohlsearch\| redraw!<CR>
 nnoremap <C-;> <Cmd>nohlsearch \| redraw!<CR>
