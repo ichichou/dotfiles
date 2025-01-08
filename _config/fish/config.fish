@@ -73,6 +73,7 @@ bind -e \cl
 # -- Abbr {{{
 
 # General
+abbr -ag d    cd
 abbr -ag e    exit
 abbr -ag lns  ln -snfv
 abbr -ag nd   nextd

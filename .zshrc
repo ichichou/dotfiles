@@ -116,10 +116,12 @@ export PURE_PROMPT_VICMD_SYMBOL="zsh ◀"
 # zsh-abbr ---------------------------------------
 
 # General
+abbr -S --quieter d="cd"
 abbr -S --quieter e="exit"
 abbr -S --quieter lns="ln -snfv"
 abbr -S --quieter rmds="rm .DS_Store"
 abbr -S --quieter ud="cd .."
+
 abbr -S --quieter --force cp="cp -iv"
 abbr -S --quieter --force mv="mv -iv"
 
@@ -134,6 +136,7 @@ abbr -S --quieter r="ranger"
 abbr -S --quieter ra="radian"
 abbr -S --quieter t="tig"
 abbr -S --quieter ts="tig status"
+
 abbr -S --quieter --force vi="vim"
 
 # eza/ls
