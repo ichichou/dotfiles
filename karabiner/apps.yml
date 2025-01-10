@@ -1815,6 +1815,42 @@ rules:
 
 # }}}
 
+# Alacritty {{{
+
+#   # [Alacritty] Command-W -> Invalid
+#   - type: basic
+#     from:
+#       key_code: w
+#       modifiers:
+#         mandatory:
+#         - command
+#     conditions:
+#     - type: frontmost_application_if
+#       bundle_identifiers:
+#       - "org.alacritty"
+#
+#   # [Alacritty] LCommand-Q (held down) -> Quit Alacritty
+#   # LCommand-Q 長押しでのみ終了
+#   - type: basic
+#     from:
+#       key_code: q
+#       modifiers:
+#         mandatory:
+#         - left_command
+#     to_if_held_down:
+#     - key_code: q
+#       modifiers:
+#       - command
+#       repeat: false
+#     parameters:
+#       basic.to_if_held_down_threshold_milliseconds: 500
+#     conditions:
+#     - type: frontmost_application_if
+#       bundle_identifiers:
+#       - "org.alacritty"
+
+# }}}
+
 # Microsoft Office {{{
 
   # [Word] Control-D -> Fn-Delete
@@ -2011,78 +2047,6 @@ rules:
 
 # }}}
 
-# Alacritty {{{
-
-#   # [Alacritty] Command-W -> Invalid
-#   - type: basic
-#     from:
-#       key_code: w
-#       modifiers:
-#         mandatory:
-#         - command
-#     conditions:
-#     - type: frontmost_application_if
-#       bundle_identifiers:
-#       - "org.alacritty"
-#
-#   # [Alacritty] LCommand-Q (held down) -> Quit Alacritty
-#   # LCommand-Q 長押しでのみ終了
-#   - type: basic
-#     from:
-#       key_code: q
-#       modifiers:
-#         mandatory:
-#         - left_command
-#     to_if_held_down:
-#     - key_code: q
-#       modifiers:
-#       - command
-#       repeat: false
-#     parameters:
-#       basic.to_if_held_down_threshold_milliseconds: 500
-#     conditions:
-#     - type: frontmost_application_if
-#       bundle_identifiers:
-#       - "org.alacritty"
-
-# }}}
-
-# Macvim {{{
-
-#   # [MacVim] Command-W -> Invalid
-#   - type: basic
-#     from:
-#       key_code: w
-#       modifiers:
-#         mandatory:
-#         - command
-#     conditions:
-#     - type: frontmost_application_if
-#       bundle_identifiers:
-#       - "org.vim.MacVim"
-#
-#   # [MacVim] LCommand-Q (held down) -> Quit MacVim
-#   # LCommand-Q 長押しでのみ終了
-#   - type: basic
-#     from:
-#       key_code: q
-#       modifiers:
-#         mandatory:
-#         - left_command
-#     to_if_held_down:
-#     - key_code: q
-#       modifiers:
-#       - command
-#       repeat: false
-#     parameters:
-#       basic.to_if_held_down_threshold_milliseconds: 500
-#     conditions:
-#     - type: frontmost_application_if
-#       bundle_identifiers:
-#       - "org.vim.MacVim"
-
-# }}}
-
 # Safari {{{
 
 #   # [Safari] LCommand-S -> Shift-Command-L
@@ -2224,5 +2188,41 @@ rules:
 #     - type: frontmost_application_if
 #       bundle_identifiers:
 #       - "com.pushplaylabs.sidekick"
+
+# }}}
+
+# Macvim {{{
+
+#   # [MacVim] Command-W -> Invalid
+#   - type: basic
+#     from:
+#       key_code: w
+#       modifiers:
+#         mandatory:
+#         - command
+#     conditions:
+#     - type: frontmost_application_if
+#       bundle_identifiers:
+#       - "org.vim.MacVim"
+#
+#   # [MacVim] LCommand-Q (held down) -> Quit MacVim
+#   # LCommand-Q 長押しでのみ終了
+#   - type: basic
+#     from:
+#       key_code: q
+#       modifiers:
+#         mandatory:
+#         - left_command
+#     to_if_held_down:
+#     - key_code: q
+#       modifiers:
+#       - command
+#       repeat: false
+#     parameters:
+#       basic.to_if_held_down_threshold_milliseconds: 500
+#     conditions:
+#     - type: frontmost_application_if
+#       bundle_identifiers:
+#       - "org.vim.MacVim"
 
 # }}}
