@@ -100,7 +100,7 @@ abbr -ag vi vim
 # eza/ls
 if test -e "/opt/homebrew/bin/eza"
   abbr -ag ls eza -a
-  abbr -ag la eza -al --git
+  abbr -ag la eza -al --git --time-style iso
   abbr -ag ll eza -1a
 else
   abbr -ag ls ls -AG
