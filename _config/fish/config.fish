@@ -86,6 +86,7 @@ abbr -ag mv mv -iv
 
 # Apps
 abbr -ag a   bat
+abbr -ag hs  ghci
 abbr -ag n   numbat
 abbr -ag nvi nvim
 abbr -ag r   ranger
