@@ -819,6 +819,7 @@ packadd! matchit
 
 " Movement ---------------------------------------
 
+Plug 'MattesGroeger/vim-bookmarks'
 " Plug 'haya14busa/is.vim'
 " Plug 'haya14busa/vim-asterisk'
 Plug 'haya14busa/vim-edgemotion'
