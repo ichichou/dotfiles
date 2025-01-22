@@ -4,8 +4,6 @@ set -gx fish_greeting
 set -gx LANG ja_JP.UTF-8
 set -gx EDITOR vim
 set -gx XDG_CONFIG_HOME ~/.config
-set -gx NUMBAT_MODULES_PATH ~/.config/numbat
-set -gx ZK_NOTEBOOK_DIR ~/repos/zk
 
 # # LS_COLORS
 #
@@ -16,19 +14,6 @@ set -gx ZK_NOTEBOOK_DIR ~/repos/zk
 # if test -e "/opt/homebrew/bin/vivid"
 #   set -gx LS_COLORS (vivid generate catppuccin-macchiato)
 # end
-
-# pure
-set -gx pure_show_jobs true
-set -gx pure_symbol_prompt ▶
-set -gx pure_symbol_reverse_prompt ◀
-
-# fzf
-set -gx FZF_DEFAULT_COMMAND "fd --type file --strip-cwd-prefix --hidden --follow --exclude .git"
-# set -gx FZF_DEFAULT_COMMAND "rg --files --hidden --follow --glob '!.git/*'"
-set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
-# set -gx FZF_DEFAULT_OPTS "--height 40% --info=inline --border"
-set -gx FZF_CTRL_T_OPTS "--preview 'bat --style=numbers --color=always --line-range :500 {}'"
-# set -gx FZF_CTRL_R_OPTS "--layout=reverse"
 
 # }}}
 
@@ -243,5 +228,44 @@ function dsstore
     find . -name '.DS_Store' -type f -delete
   end
 end
+
+# }}}
+
+# -- Apps {{{
+
+# pure -------------------------------------------
+
+set -gx pure_show_jobs true
+set -gx pure_symbol_prompt ▶
+set -gx pure_symbol_reverse_prompt ◀
+
+# fzf --------------------------------------------
+
+fzf --fish | source
+
+# Preview file content using bat
+set -gx FZF_CTRL_T_OPTS "\
+  --walker-skip .git,node_modules,target \
+  --preview 'bat -n --color=always {}' \
+  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
+
+# CTRL-Y to copy the command into clipboard using pbcopy
+set -gx FZF_CTRL_R_OPTS "\
+  --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort' \
+  --color header:italic \
+  --header 'Press CTRL-Y to copy command into clipboard'"
+
+# Print tree structure in the preview window
+set -gx FZF_ALT_C_OPTS "\
+  --walker-skip .git,node_modules,target \
+  --preview 'eza -T {}'"
+
+# zk ---------------------------------------------
+
+set -gx ZK_NOTEBOOK_DIR ~/repos/zk
+
+# Numbat -----------------------------------------
+
+set -gx NUMBAT_MODULES_PATH ~/.config/numbat
 
 # }}}
