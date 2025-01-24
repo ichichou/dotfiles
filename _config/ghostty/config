@@ -8,11 +8,11 @@ theme = catppuccin-macchiato
 
 # Font -------------------------------------------
 
-# font-family = "JetBrains Mono"
+font-family = "Berkeley Mono"
 #
-#: Default: "JetBrains Mono"
-#: Latin: Hack, "SF Mono", "Fira Code", "JetBrains Mono"
-#: Japanese: Firple, SOROEMONO
+#: Default:  "JetBrains Mono"
+#: Latin:    "Berkeley Mono", "Fira Code", Hack, "SF Mono"
+#: Japanese: SOROEMONO, Firple
 
 # font-size = 13
 #
