@@ -3,6 +3,7 @@ tap "homebrew/cask"
 tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 tap "r-lib/rig"
+tap "laishulu/homebrew"
 
 # CLI Apps ---------------------------------------
 
@@ -16,6 +17,7 @@ brew "gh"
 brew "git"
 brew "icu4c"
 brew "itchyny/tap/mmv"
+brew "macism"
 brew "mas"
 brew "neovim"
 brew "numbat"

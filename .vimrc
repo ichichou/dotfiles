@@ -348,6 +348,13 @@ endif
 
 " Auto IME On/Off --------------------------------
 
+let s:ime_cmd     = 'macism'
+let s:default_ime = 'jp.sourceforge.inputmethod.aquaskk.Ascii'
+
+augroup vimrc
+  autocmd InsertLeave * call system(s:ime_cmd .. ' ' .. s:default_ime)
+augroup END
+
 " augroup vimrc
 "   autocmd VimEnter * let s:prev_ime = ''
 "   autocmd InsertEnter * call s:restore_ime()
