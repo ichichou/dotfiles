@@ -718,8 +718,8 @@ Plug 'rcmdnk/vim-markdown',        { 'for': 'markdown' }
 Plug 'vim-jp/syntax-vim-ex',       { 'for': 'vim' }
 
 " -- Haskell
-Plug 'alx741/vim-hindent',         { 'for': 'haskell' }
-" Plug 'itchyny/vim-haskell-indent', { 'for': 'haskell' }
+" Plug 'alx741/vim-hindent',         { 'for': 'haskell' }
+Plug 'itchyny/vim-haskell-indent', { 'for': 'haskell' }
 
 " -- Lisp
 " Plug 'guns/vim-sexp',                              { 'for': ['scheme', 'clojure'] }
@@ -820,6 +820,7 @@ packadd! matchit
 " Movement ---------------------------------------
 
 Plug 'MattesGroeger/vim-bookmarks'
+Plug 'cocopon/vaffle.vim'
 " Plug 'haya14busa/is.vim'
 " Plug 'haya14busa/vim-asterisk'
 Plug 'haya14busa/vim-edgemotion'
@@ -828,13 +829,6 @@ Plug 'junegunn/vim-slash'
 " Plug 'mattn/vim-findroot'
 Plug 'tyru/open-browser.vim'
 Plug 'yuki-yano/fuzzy-motion.vim'
-
-" Filer ------------------------------------------
-
-Plug 'cocopon/vaffle.vim'
-" Plug 'lambdalisue/fern-hijack.vim'
-" Plug 'lambdalisue/fern-renderer-nerdfont.vim'
-" Plug 'lambdalisue/fern.vim'
 
 " Appearance -------------------------------------
 
