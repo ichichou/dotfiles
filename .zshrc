@@ -78,7 +78,7 @@ function chpwd() {
     echo "(>50 items exist in $(basename $(pwd))/)"
   else
     if [[ -e /opt/homebrew/bin/eza ]]; then
-      eza -a
+      eza -a --group-directories-first
     else
       ls -AG
     fi
@@ -143,6 +143,7 @@ abbr -S --quieter d="cd"
 abbr -S --quieter e="exit"
 abbr -S --quieter lns="ln -snfv"
 abbr -S --quieter rmds="rm .DS_Store"
+abbr -S --quieter so="source"
 abbr -S --quieter ud="cd .."
 
 abbr -S --quieter --force cp="cp -iv"
@@ -164,9 +165,9 @@ abbr -S --quieter --force vi="vim"
 
 # eza/ls
 if [ -e /opt/homebrew/bin/eza ]; then
-  abbr -S --quieter la="eza -al --git"
-  abbr -S --quieter ll="eza -1a"
-  abbr -S --quieter --force ls="eza -a"
+  abbr -S --quieter la="eza -al --git --group-directories-first"
+  abbr -S --quieter ll="eza -1a --group-directories-first"
+  abbr -S --quieter --force ls="eza -a --group-directories-first"
 else
   abbr -S --quieter la="ls -AlG"
   abbr -S --quieter ll="ls -1AG"
