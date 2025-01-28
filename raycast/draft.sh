@@ -1,4 +1,5 @@
 #!/bin/bash
+set -eu
 
 # Required parameters:
 # @raycast.schemaVersion 1
@@ -10,7 +11,7 @@
 # @raycast.icon 🤖
 
 datetime=$(date +%Y%m%d%H%M%S)
-file="${datetime}.bike"
+file=${datetime}.bike
 
-touch $file
-open -a "bike" $file
+touch "$file"
+open -a "bike" "$file"

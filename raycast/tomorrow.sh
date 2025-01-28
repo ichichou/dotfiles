@@ -1,4 +1,5 @@
 #!/bin/bash
+set -eu
 
 # Required parameters:
 # @raycast.schemaVersion 1
@@ -10,9 +11,9 @@
 # @raycast.icon 🤖
 
 tomorrow=$(date -v +1d +%Y-%m-%d)
-file="${tomorrow}.bike"
+file=${tomorrow}.bike
 
-if [ ! -e $file ]; then
-  touch $file
+if [ ! -e "$file" ]; then
+  touch "$file"
 fi
-open -a "bike" $file
+open -a "bike" "$file"
