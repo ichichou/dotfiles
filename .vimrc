@@ -319,6 +319,7 @@ imap <4-LeftMouse> <Nop>
 augroup vimrc
   autocmd FileType gitcommit setlocal fileencoding=utf-8
   autocmd BufRead,BufNewFile *.{txt,text} setlocal filetype=markdown
+  autocmd BufRead,BufNewFile *.typ setlocal filetype=typst
 augroup END
 
 " Quit by Q --------------------------------------
@@ -720,6 +721,7 @@ else
 endif
 
 Plug 'fladson/vim-kitty',          { 'for': 'kitty' }
+Plug 'kaarmu/typst.vim',           { 'for': 'typst' }
 Plug 'mechatroner/rainbow_csv',    { 'for': 'csv' }
 Plug 'rcmdnk/vim-markdown',        { 'for': 'markdown' }
 Plug 'vim-jp/syntax-vim-ex',       { 'for': 'vim' }
