@@ -64,6 +64,7 @@ abbr -ag lns  ln -snfv
 abbr -ag nd   nextd
 abbr -ag pd   prevd
 abbr -ag rmds rm .DS_Store
+abbr -ag so   source
 abbr -ag ud   ..
 
 abbr -ag cp cp -iv
@@ -85,9 +86,9 @@ abbr -ag vi vim
 
 # eza/ls
 if test -e "/opt/homebrew/bin/eza"
-  abbr -ag ls eza -a
-  abbr -ag la eza -al --git --time-style iso
-  abbr -ag ll eza -1a
+  abbr -ag ls eza -a --group-directories-first
+  abbr -ag la eza -al --git --time-style iso --group-directories-first
+  abbr -ag ll eza -1a --group-directories-first
 else
   abbr -ag ls ls -AG
   abbr -ag la ls -AlG
@@ -181,7 +182,7 @@ function cd
       echo "(>50 items exist in $(basename $PWD)/)"
     else
       if test -e "/opt/homebrew/bin/eza"
-        eza -a
+        eza -a --group-directories-first
       else
         ls -AG
       end
@@ -195,7 +196,7 @@ end
 #     echo "(>50 items exist in $(basename $PWD)/)"
 #   else
 #     if test -e "/opt/homebrew/bin/eza"
-#       eza -a
+#       eza -a --group-directories-first
 #     else
 #       ls -AG
 #     end
