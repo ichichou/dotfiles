@@ -83,12 +83,12 @@ rules:
     - key_code: e
       modifiers: *to_mods
 
-  # Y: Arc
-  # Raycast では複数のホットキーを設定できないため
+  # C: Arc
+  # Raycast ではひとつのアプリに複数のホットキーを設定できないため
   - type: basic
     from:
-      key_code: "y"
+      key_code: c
       modifiers: *from_mods
     to:
-    - key_code: c
+    - key_code: "y"
       modifiers: *to_mods
