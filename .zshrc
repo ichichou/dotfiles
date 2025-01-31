@@ -44,6 +44,7 @@ setopt auto_menu
 setopt complete_in_word
 setopt auto_param_slash
 setopt auto_param_keys
+setopt globdots
 
 zstyle ":completion:*:commands" rehash 1
 zstyle ":completion:*" matcher-list "m:{a-z}={A-Z}"
