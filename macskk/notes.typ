@@ -74,16 +74,17 @@ cp -f PATH/TO/skk-jisyo.utf8 \
 
 = ローマ字変換ルール（kana-rule.conf）
 
-kana-rule.conf のシンボリックリンクを macSKK ディレクトリに配置：
+kana-rule.conf をコピーして macSKK ディレクトリに配置：
+（kana-rule.conf は実体ファイルでなければならず、シンボリックリンクだとうまく機能しない）
 
 ```
-ln -snfv ~/dotfiles/macskk/kana-rule.conf \
+cp -f ~/dotfiles/macskk/kana-rule.conf \
 ~/Library/Containers/net.mtgto.inputmethod.macSKK/Data/Documents/Settings/kana-rule.conf
 ```
 
-上のパスにファイルがない場合、下のパスが使用される。
+上のパスにファイルがない場合、下のパスにあるファイルが使用される。
 
 ```
-ln -snfv ~/dotfiles/macskk/kana-rule.conf \
+cp -f ~/dotfiles/macskk/kana-rule.conf \
 ~/Library/Input\ Methods/macSKK.app/Contents/Resources/kana-rule.conf
 ```
