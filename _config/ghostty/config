@@ -29,7 +29,10 @@ window-height = 40
 copy-on-select = true
 window-inherit-working-directory = true
 
+cursor-style = block
 cursor-style-blink = false
+shell-integration-features = no-cursor
+
 mouse-hide-while-typing = true
 resize-overlay = never
 
