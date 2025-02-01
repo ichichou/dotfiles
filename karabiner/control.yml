@@ -48,6 +48,8 @@ rules:
   # Control-*** Mapping --------------------------
 
   # LControl-J -> Kana
+  # Control-key の入力をアプリに取られて IME に渡らないことが多いため、
+  # これを設定しておいたほうが不便がない（Control-L も同様）
   - type: basic
     from:
       key_code: j
