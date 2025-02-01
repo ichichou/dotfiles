@@ -9,14 +9,13 @@ theme = catppuccin-macchiato
 # Font -------------------------------------------
 
 font-family = "Berkeley Mono"
-#
-#: Default:  "JetBrains Mono"
-#: Latin:    "Berkeley Mono", "Fira Code", Hack, "SF Mono"
-#: Japanese: SOROEMONO, Firple
+# -- Default: "JetBrains Mono"
+# -- Latin (ligature):    "Berkeley Mono", "JetBrains Mono", "Fira Code"
+# -- Latin (no ligature): "Hack", "SF Mono"
+# -- Japanese:            "SOROEMONO", "Firple"
 
 # font-size = 13
-#
-#: Default: 13
+# -- Default: 13
 
 # font-feature = -calt
 # font-feature = -liga
@@ -39,6 +38,7 @@ resize-overlay = never
 # Keybindings {{{
 
 keybind = cmd+enter=text:\n
+keybind = cmd+s=new_split:down
 keybind = ctrl+semicolon=ignore
 
 keybind = cmd+f>up=goto_split:top
@@ -52,6 +52,8 @@ keybind = cmd+f>h=goto_split:left
 keybind = cmd+f>l=goto_split:right
 
 keybind = cmd+f>equal=equalize_splits
+keybind = cmd+f>enter=toggle_split_zoom
+keybind = cmd+f>cmd+enter=toggle_split_zoom
 
 keybind = ctrl+physical:one=goto_tab:1
 keybind = ctrl+physical:two=goto_tab:2
