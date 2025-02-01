@@ -350,7 +350,7 @@ endif
 " Auto IME On/Off --------------------------------
 
 let s:ime_cmd     = 'macism'
-let s:default_ime = 'jp.sourceforge.inputmethod.aquaskk.Ascii'
+let s:default_ime = 'net.mtgto.inputmethod.macSKK.ascii'
 
 augroup vimrc
   autocmd InsertLeave * call system(s:ime_cmd .. ' ' .. s:default_ime)
