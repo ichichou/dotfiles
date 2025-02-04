@@ -89,11 +89,11 @@ set shiftwidth=0
 set softtabstop=-1
 
 augroup vimrc
-  autocmd FileType go setlocal noexpandtab tabstop=4
-  autocmd FileType haskell setlocal tabstop=4
-  autocmd FileType julia setlocal tabstop=4
-  autocmd FileType python setlocal tabstop=4
-  autocmd FileType rust setlocal tabstop=4
+  " autocmd FileType haskell setlocal tabstop=4
+  autocmd FileType julia   setlocal tabstop=4
+  autocmd FileType python  setlocal tabstop=4
+  autocmd FileType rust    setlocal tabstop=4
+  autocmd FileType go      setlocal tabstop=4 noexpandtab
 augroup END
 
 set diffopt=internal,filler,closeoff,vertical,indent-heuristic,algorithm:histogram
@@ -212,7 +212,7 @@ nnoremap U <C-r>
 nnoremap <C-h> <C-^>
 nnoremap <BS>  <C-^>
 
-nnoremap <Esc><Esc> <Cmd>nohlsearch\| redraw!<CR>
+nnoremap <Esc><Esc> <Cmd>nohlsearch \| redraw!<CR>
 nnoremap <C-;> <Cmd>nohlsearch \| redraw!<CR>
 inoremap <C-a> <Cmd>normal! ^<CR>
 inoremap <C-e> <Cmd>normal! $l<CR>
@@ -728,7 +728,8 @@ Plug 'vim-jp/syntax-vim-ex',       { 'for': 'vim' }
 
 " -- Haskell
 " Plug 'alx741/vim-hindent',         { 'for': 'haskell' }
-Plug 'itchyny/vim-haskell-indent', { 'for': 'haskell' }
+" Plug 'itchyny/vim-haskell-indent', { 'for': 'haskell' }
+Plug 'neovimhaskell/haskell-vim',  { 'for': 'haskell' }
 
 " -- Lisp
 " Plug 'guns/vim-sexp',                              { 'for': ['scheme', 'clojure'] }
