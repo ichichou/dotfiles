@@ -34,8 +34,8 @@ use = ["{{ name }}.zsh"]
 [plugins.zsh-autosuggestions-abbreviations-strategy]
 github = "olets/zsh-autosuggestions-abbreviations-strategy"
 
-# [plugins.zsh-autocomplete]
-# github = "marlonrichert/zsh-autocomplete"
+[plugins.zsh-autocomplete]
+github = "marlonrichert/zsh-autocomplete"
 
 [plugins.zsh-z]
 github = "agkozak/zsh-z"
