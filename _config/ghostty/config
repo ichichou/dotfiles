@@ -9,10 +9,9 @@ theme = catppuccin-macchiato
 # Font -------------------------------------------
 
 font-family = "Berkeley Mono"
-# -- Default: "JetBrains Mono"
-# -- Latin (ligature):    "Berkeley Mono", "JetBrains Mono", "Fira Code"
-# -- Latin (no ligature): "Hack", "SF Mono"
-# -- Japanese:            "SOROEMONO", "Firple"
+# -- Default:     "JetBrains Mono"
+# -- Ligature:    "Berkeley Mono", "JetBrains Mono", "Fira Code"
+# -- No Ligature: "Hack", "SF Mono"
 
 # font-size = 13
 # -- Default: 13
@@ -31,7 +30,9 @@ window-inherit-working-directory = true
 
 cursor-style = block
 cursor-style-blink = false
-shell-integration-features = no-cursor
+# cursor-opacity = 0.5
+# cursor-invert-fg-bg = true
+# shell-integration-features = no-cursor
 
 mouse-hide-while-typing = true
 resize-overlay = never
