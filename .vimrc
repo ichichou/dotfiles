@@ -895,7 +895,8 @@ Plug 'sainnhe/sonokai'
 if has('nvim')
   Plug 'shaunsingh/nord.nvim'
 else
-  Plug 'nordtheme/vim'
+  " Plug 'nordtheme/vim'
+  Plug 'rose-pine/vim'
 endif
 
 call plug#end()
