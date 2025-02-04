@@ -2,31 +2,32 @@
 
 GUI でキーマップを設定する：
 
-- ひらがなモード          Ctrl-J, Kana
-- かなカナ切り替え        Ctrl-;
-- 半角カナモード
-- 直接入力                Ctrl-L
-- 全角英数モード
-- Abbrev モード           Shift-.
-- 未確定入力開始          Shift-,
-- Sticky Shift
-- Enter                   Retern
-- Space                   Space
-- 前の変換候補を選択
-- Tab                     Tab
-- Backspace               Delete, Ctrl-H
-- Delete                  Delete Forward, Ctrl-D
-- キャンセル              Esc, Ctrl-G
-- 左                      Left, Ctrl-B
-- 右                      Right, Ctrl-F
-- 下                      Down, Ctrl-N
-- 上                      Up, Ctrl-P
-- 行頭へ移動              Ctrl-A
-- 行末へ移動              Ctrl-E
-- 登録モードでペースト    Ctrl-Y
-- 選択中の変換候補の削除  Ctrl-X
-- 英数キー                Eisuu
-- かなキー
+- ひらがなモード            Ctrl-J, Kana
+- かなカナモード切り替え    // not mapped
+- 入力中のかなカナ切り替え  Ctrl-;
+- 半角カナモード            // not mapped
+- 直接入力                  Ctrl-L
+- 全角英数モード            Shift-Ctrl-L
+- Abbrev モード             Shift-.
+- 未確定入力開始            Shift-,
+- Sticky Shift              // not mapped
+- Enter                     Retern
+- Space                     Space
+- 前の変換候補を選択        // not mapped
+- Tab                       Tab
+- Backspace                 Delete, Ctrl-H
+- Delete                    Delete Forward, Ctrl-D
+- キャンセル                Esc, Ctrl-G
+- 左                        Left, Ctrl-B
+- 右                        Right, Ctrl-F
+- 下                        Down, Ctrl-N
+- 上                        Up, Ctrl-P
+- 行頭へ移動                Ctrl-A
+- 行末へ移動                Ctrl-E
+- 登録モードでペースト      Ctrl-Y
+- 選択中の変換候補の削除    Ctrl-X
+- 英数キー                  Eisuu
+- かなキー                  // not mapped
 
 「ひらがなモード」に Kana を登録するのは、変換を Ctrl-J で確定するために必要。
 （Karabiner で Ctrl-J -> Kana とした上で）
