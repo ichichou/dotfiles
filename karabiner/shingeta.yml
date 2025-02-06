@@ -34,12 +34,15 @@ aliases:
   - type: input_source_if
     input_sources:
     - language: ja
+  - type: input_source_unless
+    input_sources:
+    - input_mode_id: "^net\\.mtgto\\.inputmethod\\.macSKK\\.eisu$"
   - type: variable_unless
     name: symbol
     value: 1
   - type: frontmost_application_unless
     bundle_identifiers:
-    - "com.apple.loginwindow"
+    - "^com\\.apple\\.loginwindow$"
 
 - conditions: &symbol
   - type: variable_if
@@ -47,7 +50,7 @@ aliases:
     value: 1
   - type: frontmost_application_unless
     bundle_identifiers:
-    - "com.apple.loginwindow"
+    - "^com\\.apple\\.loginwindow$"
 
 # RULES ==========================================
 
