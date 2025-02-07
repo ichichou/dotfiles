@@ -96,6 +96,13 @@ augroup vimrc
   autocmd FileType go      setlocal tabstop=4 noexpandtab
 augroup END
 
+augroup vimrc
+  autocmd FileType markdown setlocal comments=b:*,b:-,b:+,b:1.,nb:>,fb:•
+  autocmd FileType markdown setlocal formatoptions+=jro formatoptions-=c
+  autocmd FileType r setlocal comments=b:#
+  autocmd FileType r setlocal formatoptions+=jro formatoptions-=c
+augroup END
+
 set diffopt=internal,filler,closeoff,vertical,indent-heuristic,algorithm:histogram
 
 " Appearance -------------------------------------
@@ -267,8 +274,6 @@ augroup vimrc
   autocmd FileType markdown inoremap <buffer> <Tab>   <C-t>
   autocmd FileType markdown inoremap <buffer> <S-Tab> <C-d>
   autocmd FileType markdown inoremap <buffer> <C-d>   <Delete>
-  autocmd FileType markdown setlocal comments=b:*,b:-,b:+,b:1.,nb:>,fb:•
-  autocmd FileType markdown setlocal formatoptions+=jro formatoptions-=c
 augroup END
 
 " Nop --------------------------------------------
