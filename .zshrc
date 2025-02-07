@@ -162,6 +162,7 @@ abbr -S --quieter ra="radian"
 abbr -S --quieter t="tig"
 abbr -S --quieter ts="tig status"
 
+abbr -S --quieter --force R="R --quiet --no-save"
 abbr -S --quieter --force vi="vim"
 
 # eza/ls

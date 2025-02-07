@@ -71,6 +71,7 @@ abbr -ag cp cp -iv
 abbr -ag mv mv -iv
 
 # Apps
+abbr -ag R   R --quiet --no-save
 abbr -ag a   bat
 abbr -ag hs  ghci
 abbr -ag n   numbat
