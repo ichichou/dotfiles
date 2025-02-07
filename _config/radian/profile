@@ -1,12 +1,4 @@
-options(
-    radian.color_scheme = "nord-darker",
-    radian.tab_size = 2,
-    radian.history_search_no_duplicates = TRUE,
-    radian.history_search_ignore_case = TRUE,
-    radian.ctrl_key_map = list(
-        list(key = "left",  value = " <- "),
-        list(key = "down",  value = " <- "),
-        # list(key = "up",    value = " = "),
-        list(key = "right", value = " |> ")
-    )
-)
+options(radian.color_scheme = "nord")
+options(radian.tab_size = 2)
+options(radian.history_search_no_duplicates = TRUE)
+options(radian.history_search_ignore_case = TRUE)
