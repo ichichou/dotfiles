@@ -59,6 +59,8 @@ export HISTFILE=$HOME/.zsh_history
 export HISTSIZE=100000
 export SAVEHIST=100000
 
+disable r
+
 setopt append_history
 setopt hist_ignore_all_dups
 setopt hist_ignore_dups
@@ -157,12 +159,11 @@ abbr -S --quieter g="git"
 abbr -S --quieter j="z"
 abbr -S --quieter n="numbat"
 abbr -S --quieter nvi="nvim"
-abbr -S --quieter r="ranger"
-abbr -S --quieter ra="radian"
+abbr -S --quieter ra="ranger"
 abbr -S --quieter t="tig"
 abbr -S --quieter ts="tig status"
 
-abbr -S --quieter --force R="R --quiet --no-save"
+abbr -S --quieter --force r="r --quiet --no-save"
 abbr -S --quieter --force vi="vim"
 
 # eza/ls
