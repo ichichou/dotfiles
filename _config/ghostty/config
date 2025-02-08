@@ -36,6 +36,7 @@ cursor-style-blink = false
 
 mouse-hide-while-typing = true
 resize-overlay = never
+macos-non-native-fullscreen = true
 
 # }}}
 
@@ -44,6 +45,12 @@ resize-overlay = never
 keybind = cmd+enter=text:\n
 keybind = cmd+s=new_split:down
 keybind = ctrl+semicolon=ignore
+
+keybind = cmd+i=text:\x20<-\x20
+keybind = cmd+o=text:\x20->\x20
+keybind = cmd+m=text:\x20|>\x20
+keybind = shift+cmd+i=text:\x20=<<\x20
+keybind = shift+cmd+o=text:\x20>>=\x20
 
 keybind = cmd+f>up=goto_split:top
 keybind = cmd+f>down=goto_split:bottom
