@@ -89,7 +89,6 @@ set shiftwidth=0
 set softtabstop=-1
 
 augroup vimrc
-  " autocmd FileType haskell setlocal tabstop=4
   autocmd FileType julia   setlocal tabstop=4
   autocmd FileType python  setlocal tabstop=4
   autocmd FileType rust    setlocal tabstop=4
@@ -97,8 +96,10 @@ augroup vimrc
 augroup END
 
 augroup vimrc
-  autocmd FileType markdown setlocal comments=b:*,b:-,b:+,b:1.,nb:>,fb:•
+  autocmd FileType markdown setlocal comments=b:-,b:+,b:*,b:1.,nb:>
   autocmd FileType markdown setlocal formatoptions+=jro formatoptions-=c
+  autocmd FileType typst setlocal comments=b:-,b:+
+  autocmd FileType typst setlocal formatoptions+=jro formatoptions-=c
   autocmd FileType r setlocal comments=b:#
   autocmd FileType r setlocal formatoptions+=jro formatoptions-=c
 augroup END
