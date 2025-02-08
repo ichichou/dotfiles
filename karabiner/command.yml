@@ -151,6 +151,8 @@ rules:
       modifiers:
         mandatory:
         - left_command
+        optional:
+        - left_shift
     to:
     - key_code: a
       modifiers:
@@ -164,6 +166,8 @@ rules:
       modifiers:
         mandatory:
         - left_command
+        optional:
+        - left_shift
     to:
     - key_code: e
       modifiers:
@@ -174,7 +178,7 @@ rules:
 
   # Home Row Mods {{{
 
-  # Command-D/K -> Command-Shift (if Home Row Mods is on)
+  # LCommand-LControl-D-*** -> Command-Control-LShift-***
   - type: basic
     from:
       key_code: d
@@ -193,25 +197,7 @@ rules:
       - command
       - control
 
-  - type: basic
-    from:
-      key_code: k
-      modifiers:
-        mandatory:
-        - right_command
-        - left_control
-    to:
-    - key_code: left_shift
-      modifiers:
-      - command
-      - control
-    to_if_alone:
-    - key_code: k
-      modifiers:
-      - command
-      - control
-
-  # Command-S/L -> Command-Control (if Home Row Mods is on)
+  # LCommand-LShift-S-*** -> Command-Shift-LControl-***
   - type: basic
     from:
       key_code: s
@@ -230,25 +216,7 @@ rules:
       - command
       - shift
 
-  - type: basic
-    from:
-      key_code: l
-      modifiers:
-        mandatory:
-        - right_command
-        - left_shift
-    to:
-    - key_code: left_control
-      modifiers:
-      - command
-      - shift
-    to_if_alone:
-    - key_code: l
-      modifiers:
-      - command
-      - shift
-
-  # Command-D/K -> Command-Shift
+  # LCommand-D-*** -> Command-LShift-***
   - type: basic
     from:
       key_code: d
@@ -264,22 +232,7 @@ rules:
       modifiers:
       - command
 
-  - type: basic
-    from:
-      key_code: k
-      modifiers:
-        mandatory:
-        - right_command
-    to:
-    - key_code: left_shift
-      modifiers:
-      - command
-    to_if_alone:
-    - key_code: k
-      modifiers:
-      - command
-
-  # Command-S/L -> Command-Control
+  # LCommand-S-*** -> Command-LControl-***
   - type: basic
     from:
       key_code: s
@@ -292,21 +245,6 @@ rules:
       - command
     to_if_alone:
     - key_code: s
-      modifiers:
-      - command
-
-  - type: basic
-    from:
-      key_code: l
-      modifiers:
-        mandatory:
-        - right_command
-    to:
-    - key_code: left_control
-      modifiers:
-      - command
-    to_if_alone:
-    - key_code: l
       modifiers:
       - command
 
