@@ -12,9 +12,9 @@ augroup smartchr
 augroup END
 
 function! s:haskell_map() abort
-  inoremap <buffer> <expr> < smartchr#loop('<', '<lt>-', '=<lt><lt>', '<lt><lt>')
-  inoremap <buffer> <expr> > smartchr#loop('>', '->',    '>>=',       '>>')
-  inoremap <buffer> <expr> = smartchr#loop('=', '==',    '=>>')
+  inoremap <buffer> <expr> <lt> smartchr#loop('<lt>', '<lt>-', '=<lt><lt>', '<lt><lt>')
+  inoremap <buffer> <expr> > smartchr#loop('>', '->', '>>=', '>>')
+  inoremap <buffer> <expr> = smartchr#loop('=', '==', '=>>')
   inoremap <buffer> <expr> W smartchr#loop('W', 'where')
   inoremap <buffer> <expr> O smartchr#loop('O', 'otherwise = ')
 endfunction
@@ -27,7 +27,8 @@ function! s:markdown_map() abort
 endfunction
 
 function! s:r_map() abort
-  inoremap <buffer> <expr> < smartchr#loop('<', '<lt>-',  '<lt><lt>')
+  inoremap <buffer> <expr> _ smartchr#loop('_', '<lt>-', '->')
+  inoremap <buffer> <expr> <lt> smartchr#loop('<lt>', '<lt>-', '<lt><lt>')
   inoremap <buffer> <expr> > smartchr#loop('>', '<Bar>>', '>>')
   inoremap <buffer> <expr> I smartchr#loop('I', '<lt>-')
   inoremap <buffer> <expr> M smartchr#loop('M', '<Bar>>')
