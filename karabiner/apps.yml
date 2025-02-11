@@ -995,6 +995,18 @@ rules:
       bundle_identifiers:
       - "com.hogbaysoftware.Bike"
 
+  # [Bike] Control-O -> Ignore
+  - type: basic
+    from:
+      key_code: o
+      modifiers:
+        mandatory:
+        - control
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.hogbaysoftware.Bike"
+
 # }}}
 
 # Workflowy {{{
@@ -1265,7 +1277,7 @@ rules:
 
 # Finder {{{
 
-  # [Finder] Command-P -> Invalid
+  # [Finder] Command-P -> Ignore
   - type: basic
     from:
       key_code: p
@@ -1817,7 +1829,7 @@ rules:
 
 # Alacritty {{{
 
-#   # [Alacritty] Command-W -> Invalid
+#   # [Alacritty] Command-W -> Ignore
 #   - type: basic
 #     from:
 #       key_code: w
@@ -2193,7 +2205,7 @@ rules:
 
 # Macvim {{{
 
-#   # [MacVim] Command-W -> Invalid
+#   # [MacVim] Command-W -> Ignore
 #   - type: basic
 #     from:
 #       key_code: w
