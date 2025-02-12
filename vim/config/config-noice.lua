@@ -58,9 +58,9 @@ require("noice").setup({
 
     mini = {
       timeout = 5000,
-      position = {
-        row = 0,
-      },
+      -- position = {
+      --   row = 0,
+      -- },
     },
 
   },
