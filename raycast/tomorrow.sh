@@ -16,4 +16,5 @@ file=${tomorrow}.bike
 if [ ! -e "$file" ]; then
   touch "$file"
 fi
+
 open -a "bike" "$file"
