@@ -10,6 +10,14 @@ set -eu
 # Optional parameters:
 # @raycast.icon 🤖
 
+# source "$script_dir"/journal.sh
+# source "$script_dir"/yesterday.sh
+#
+# 上記のようにしないのは、今日と過去のファイルを一度に開きたいから。
+# スクリプトを順次実行すると、まず今日のファイルを作って開き、それから過去のファイルを探して開く、という処理になる。
+# ファイルを一つずつ開くと Bike の表示ががたついているような感覚を受ける。
+# これを回避するため、複数のファイルを一度に開くようにする。
+
 # Create Today's Journal
 today=$(date +%Y-%m-%d)
 today_file=${today}.bike

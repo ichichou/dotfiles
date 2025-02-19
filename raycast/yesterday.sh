@@ -12,15 +12,18 @@ set -eu
 
 num=-1
 past_day=$(date -v ${num}d +%Y-%m-%d)
-file=${past_day}.bike
+temp_file=${past_day}.bike
+file=""
 
 while true; do
-  if [ -e "$file" ]; then
-    open -a "bike" "$file"
+  if [ -e "$temp_file" ]; then
+    file=$temp_file
     break
   else
     num=$(( num - 1 ))
     past_day=$(date -v ${num}d +%Y-%m-%d)
-    file=${past_day}.bike
+    temp_file=${past_day}.bike
   fi
 done
+
+open -a "bike" "$file"
