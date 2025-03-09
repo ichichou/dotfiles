@@ -25,7 +25,7 @@ setopt print_eight_bit
 setopt IGNOREEOF
 
 if [ -e /opt/homebrew/bin/vivid ]; then
-  export LS_COLORS="$(vivid generate catppuccin-macchiato)"
+  export LS_COLORS="$(vivid generate rose-pine-moon)"
 fi
 
 # }}}

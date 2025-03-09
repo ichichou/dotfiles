@@ -4,7 +4,9 @@
 
 # Theme ------------------------------------------
 
-theme = catppuccin-macchiato
+# theme = catppuccin-macchiato
+theme = rose-pine-moon
+# theme = OneHalfDark
 
 # Font -------------------------------------------
 
