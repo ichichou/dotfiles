@@ -125,6 +125,10 @@ export FZF_ALT_C_OPTS="
   --walker-skip .git,node_modules,target
   --preview 'eza -T {}'"
 
+# trash ------------------------------------------
+
+export PATH="/opt/homebrew/opt/trash/bin:$PATH"
+
 # }}}
 
 # -- Plugins {{{
@@ -178,7 +182,7 @@ else
 fi
 
 # trash/rm
-if [ -e /opt/homebrew/bin/trash ]; then
+if [ -e /opt/homebrew/opt/trash/bin/trash ]; then
   abbr -S --quieter --force rm="trash"
 else
   abbr -S --quieter --force rm="rm -iv"

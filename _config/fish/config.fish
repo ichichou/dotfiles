@@ -20,6 +20,7 @@ set -gx XDG_CONFIG_HOME ~/.config
 # -- Path {{{
 
 fish_add_path /opt/homebrew/opt/icu4c/bin
+fish_add_path /opt/homebrew/opt/trash/bin
 fish_add_path $HOME/command
 fish_add_path $HOME/go/bin
 fish_add_path $HOME/.local/bin
@@ -96,7 +97,7 @@ else
 end
 
 # trash/rm
-if test -e "/opt/homebrew/bin/trash"
+if test -e "/opt/homebrew/opt/trash/bin/trash"
   abbr -ag rm trash
 else
   abbr -ag rm rm -iv
