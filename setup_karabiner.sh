@@ -5,10 +5,14 @@ if [[ ! -e "/opt/homebrew/bin/yq" ]]; then
   exit 0
 fi
 
-conf_kb="${HOME}/.config/karabier/assets/complex_modifications"
-dot_kb="${HOME}/dotfiles/karabiner"
+dir_complex_modifications="${HOME}/.config/karabiner/assets/complex_modifications"
 
-cd "$dot_kb"
-for file in *.yml; do
-  yq eval -o=json "$dot_kb"/"$file" > "$conf_kb"/"$file"
+if [[ ! -d "$dir_complex_modifications" ]]; then
+  mkdir -p "$dir_complex_modifications"
+fi
+
+cd "$HOME"/dotfiles/karabiner/
+for file_yaml in *.yml; do
+  file_json="${file_yaml/yml/json}"
+  yq eval -o=json "$file_yaml" > "$dir_complex_modifications"/"$file_json"
 done
