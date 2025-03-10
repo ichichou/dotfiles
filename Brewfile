@@ -45,10 +45,13 @@ cask "bike"
 cask "chatgpt"
 cask "cleanshot"
 cask "coteditor"
+cask "cursorsense"
+cask "discord"
 cask "ghostty"
 cask "google-drive"
 cask "iina"
 cask "keka"
+cask "kitty"
 cask "linear-linear"
 cask "mtgto/macskk/macskk"
 cask "notion"
@@ -60,6 +63,7 @@ cask "rstudio"
 cask "scroll-reverser"
 cask "slack"
 cask "superhuman"
+cask "superwhisper"
 cask "workflowy"
 cask "zed"
 
@@ -89,7 +93,5 @@ cask "font-source-code-pro"
 mas "AdGuard for Safari",    id: 1440147259
 mas "Amphetamine",           id: 937984704
 mas "Bitwarden",             id: 1352778147
-mas "Keepa - Price Tracker", id: 1533805339
 mas "LINE",                  id: 539883307
-mas "Save to Raindrop.io",   id: 1549370672
 mas "Yoink",                 id: 457622435
