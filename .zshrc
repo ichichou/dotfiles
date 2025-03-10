@@ -2,7 +2,8 @@
 
 # -- Fish Shell {{{
 
-if [[ -o login ]]; then
+if [[ -o interactive && -z "$zsh_started" ]]; then
+  export zsh_started=1
   exec fish
 fi
 
