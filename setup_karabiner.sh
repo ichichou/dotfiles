@@ -2,17 +2,17 @@
 set -eu
 
 if [[ ! -e "/opt/homebrew/bin/yq" ]]; then
-  exit 0
+  echo "ERROR: yq command does not exist."
+  exit 1
 fi
 
-dir_complex_modifications="${HOME}/.config/karabiner/assets/complex_modifications"
+source_dir="${HOME}/dotfiles/karabiner"
+target_dir="${HOME}/.config/karabiner/assets/complex_modifications"
 
-if [[ ! -d "$dir_complex_modifications" ]]; then
-  mkdir -p "$dir_complex_modifications"
-fi
+mkdir -p "$target_dir"
 
-cd "$HOME"/dotfiles/karabiner/
-for file_yaml in *.yml; do
-  file_json="${file_yaml/yml/json}"
-  yq eval -o=json "$file_yaml" > "$dir_complex_modifications"/"$file_json"
+find "$source_dir" -name "*.yml" | while read -r f; do
+  yaml=$(basename "$f")
+  json="${yaml/yml/json}"
+  yq eval -o=json "$f" > "$target_dir"/"$json"
 done
