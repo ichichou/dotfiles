@@ -1,12 +1,12 @@
 #!/bin/bash
 set -eu
 
-dict_dir=${HOME}/repos/dict
-macskk_dir=${HOME}/Library/Containers/net.mtgto.inputmethod.macSKK/Data/Documents/Dictionaries
+dict_dir="${HOME}/repos/dict"
+macskk_dir="${HOME}/Library/Containers/net.mtgto.inputmethod.macSKK/Data/Documents/Dictionaries"
 
-if [[ ! -e $dict_dir ]]; then
+if [[ ! -d $dict_dir ]]; then
   echo "${dict_dir} does not exist."
-  exit 0
+  exit 1
 fi
 
 cp -f "$dict_dir"/SKK-JISYO.jinmei                 "$macskk_dir"/.
