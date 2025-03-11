@@ -141,8 +141,8 @@ eval "$(sheldon source)"
 
 # Pure -------------------------------------------
 
-export PURE_PROMPT_SYMBOL="zsh ▶"
-export PURE_PROMPT_VICMD_SYMBOL="zsh ◀"
+export PURE_PROMPT_SYMBOL="ZSH ▶"
+export PURE_PROMPT_VICMD_SYMBOL="ZSH ◀"
 
 # zsh-abbr ---------------------------------------
 
