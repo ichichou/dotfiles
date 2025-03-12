@@ -240,6 +240,8 @@ end
 set -gx pure_show_jobs true
 set -gx pure_symbol_prompt ▶
 set -gx pure_symbol_reverse_prompt ◀
+# set -gx pure_symbol_prompt fsh ▶
+# set -gx pure_symbol_reverse_prompt fsh ◀
 
 # fzf --------------------------------------------
 
