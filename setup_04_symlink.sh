@@ -22,7 +22,7 @@ cd "$dotfiles"
 find "$dotfiles" -type f -name ".??*" -depth 1 | while read -r f; do
   [[ $(basename "$f") == ".DS_Store"  ]] && continue
   [[ $(basename "$f") == ".gitignore" ]] && continue
-  ln -snfv "$f" "${f/$dot_config/$home_config}"
+  ln -snfv "$f" "$HOME"/"$(basename "$f")"
 done
 
 # ~/.config 下にディレクトリを作成（上書きしない）
