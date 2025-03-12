@@ -21,6 +21,9 @@ github = "mafredri/zsh-async"
 github = "sindresorhus/pure"
 use = ["async.zsh", "pure.zsh"]
 
+# [plugins.base16]
+# github = "chriskempson/base16-shell"
+
 [plugins.zsh-syntax-highlighting]
 github = "zsh-users/zsh-syntax-highlighting"
 
