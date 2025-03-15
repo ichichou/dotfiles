@@ -12,6 +12,8 @@ rules:
       modifiers:
         mandatory:
         - left_command
+        optional:
+        - shift
     to:
     - key_code: return_or_enter
       repeat: false
