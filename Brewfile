@@ -49,7 +49,7 @@ cask "coteditor"
 cask "cursorsense"
 cask "discord"
 cask "ghostty"
-cask "google-drive"
+cask "google-chrome"
 cask "iina"
 cask "keka"
 cask "kekaexternalhelper"
@@ -71,14 +71,14 @@ cask "zed"
 
 # Password input required
 cask "box-drive"
-cask "google-chrome"
+cask "google-drive"
 cask "karabiner-elements"
 cask "logi-options+"
-cask "rig"
-cask "zoom"
 cask "microsoft-excel"
 cask "microsoft-powerpoint"
 cask "microsoft-word"
+cask "rig"
+cask "zoom"
 
 # Fonts -------------------------------------------
 
