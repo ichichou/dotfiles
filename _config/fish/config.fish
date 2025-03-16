@@ -73,11 +73,13 @@ abbr -ag mv mv -iv
 
 # Apps
 abbr -ag a   bat
+abbr -ag awk gawk
 abbr -ag hs  ghci
 abbr -ag n   numbat
 abbr -ag nvi nvim
 abbr -ag r   r --quiet --no-save
 abbr -ag ra  ranger
+abbr -ag sed gsed
 abbr -ag t   tig
 abbr -ag ts  tig status
 abbr -ag yqj yq eval -o=json

@@ -159,12 +159,14 @@ abbr -S --quieter --force mv="mv -iv"
 
 # Apps
 abbr -S --quieter a="bat"
+abbr -S --quieter awk="gawk"
 abbr -S --quieter b="brew"
 abbr -S --quieter g="git"
 abbr -S --quieter j="z"
 abbr -S --quieter n="numbat"
 abbr -S --quieter nvi="nvim"
 abbr -S --quieter ra="ranger"
+abbr -S --quieter sed="gsed"
 abbr -S --quieter t="tig"
 abbr -S --quieter ts="tig status"
 
