@@ -1,0 +1,200 @@
+title: "Minimum Mappings"
+rules:
+- description: "Minimum Mappings"
+  manipulators:
+
+# Command Key {{{
+
+  # LCommand-Space -> Return
+  - type: basic
+    from:
+      key_code: spacebar
+      modifiers:
+        mandatory:
+        - left_command
+        optional:
+        - shift
+    to:
+    - key_code: return_or_enter
+      repeat: false
+
+  # LCommand-RCommand -> ESC
+  - type: basic
+    from:
+      key_code: right_command
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: escape
+      repeat: false
+
+  # RCommand-LCommand -> ESC
+  - type: basic
+    from:
+      key_code: left_command
+      modifiers:
+        mandatory:
+        - right_command
+    to:
+    - key_code: escape
+      repeat: false
+
+  # LCommand-I -> Up
+  - type: basic
+    from:
+      key_code: i
+      modifiers:
+        mandatory:
+        - left_command
+        optional:
+        - any
+    to:
+    - key_code: up_arrow
+
+  # LCommand-J -> Left
+  - type: basic
+    from:
+      key_code: j
+      modifiers:
+        mandatory:
+        - left_command
+        optional:
+        - any
+    to:
+    - key_code: left_arrow
+
+  # LCommand-k -> Down
+  - type: basic
+    from:
+      key_code: k
+      modifiers:
+        mandatory:
+        - left_command
+        optional:
+        - any
+    to:
+    - key_code: down_arrow
+
+  # LCommand-L -> Right
+  - type: basic
+    from:
+      key_code: l
+      modifiers:
+        mandatory:
+        - left_command
+        optional:
+        - any
+    to:
+    - key_code: right_arrow
+
+  # LCommand -> Eisuu/LCommand
+  - type: basic
+    from:
+      key_code: left_command
+    to:
+    - key_code: left_command
+      lazy: true
+    to_if_alone:
+    - key_code: japanese_eisuu
+
+  # RCommand -> Kana/RCommand
+  - type: basic
+    from:
+      key_code: right_command
+    to:
+    - key_code: right_command
+      lazy: true
+    to_if_alone:
+    - key_code: japanese_kana
+
+# }}}
+
+# Control Key {{{
+
+  # Esc -> Esc/LControl
+  - type: basic
+    from:
+      key_code: escape
+      modifiers:
+        optional:
+        - any
+    to:
+    - key_code: left_control
+      lazy: true
+    to_if_alone:
+    - key_code: escape
+
+  # LControl -> Esc/LControl
+  - type: basic
+    from:
+      key_code: left_control
+      modifiers:
+        optional:
+        - any
+    to:
+    - key_code: left_control
+      lazy: true
+    to_if_alone:
+    - key_code: escape
+
+  # # LControl-H -> Delete
+  # - type: basic
+  #   from:
+  #     key_code: h
+  #     modifiers:
+  #       mandatory:
+  #       - left_control
+  #   to:
+  #   - key_code: delete_or_backspace
+  #     repeat: true
+  #
+  # # LControl-D -> Delete Forward
+  # - type: basic
+  #   from:
+  #     key_code: d
+  #     modifiers:
+  #       mandatory:
+  #       - left_control
+  #   to:
+  #   - key_code: delete_forward
+  #     repeat: true
+
+# }}}
+
+# Hyper Mode {{{
+
+  # Tab -> Tab/Hyper
+  - type: basic
+    from:
+      key_code: tab
+      modifiers:
+        optional: any
+    to_if_alone:
+    - key_code: tab
+    to:
+    - key_code: right_shift
+      modifiers:
+      - right_command
+      - right_control
+      - right_option
+      lazy: true
+
+# }}}
+
+# SandS {{{
+
+  # Space and Shift
+  - type: basic
+    from:
+      key_code: spacebar
+      modifiers:
+        optional:
+        - any
+    to:
+    - key_code: left_shift
+      lazy: true
+    to_if_alone:
+    - key_code: spacebar
+
+# }}}
