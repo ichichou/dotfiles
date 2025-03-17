@@ -88,6 +88,26 @@ rules:
     to:
     - key_code: right_arrow
 
+  # LCommand-N -> Delete
+  - type: basic
+    from:
+      key_code: "n"
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: delete_or_backspace
+
+  # LCommand-M -> Delete Forward
+  - type: basic
+    from:
+      key_code: m
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: delete_forward
+
   # LCommand -> Eisuu/LCommand
   - type: basic
     from:
@@ -137,28 +157,6 @@ rules:
       lazy: true
     to_if_alone:
     - key_code: escape
-
-  # # LControl-H -> Delete
-  # - type: basic
-  #   from:
-  #     key_code: h
-  #     modifiers:
-  #       mandatory:
-  #       - left_control
-  #   to:
-  #   - key_code: delete_or_backspace
-  #     repeat: true
-  #
-  # # LControl-D -> Delete Forward
-  # - type: basic
-  #   from:
-  #     key_code: d
-  #     modifiers:
-  #       mandatory:
-  #       - left_control
-  #   to:
-  #   - key_code: delete_forward
-  #     repeat: true
 
 # }}}
 
