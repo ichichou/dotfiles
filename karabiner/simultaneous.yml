@@ -17,18 +17,6 @@ rules:
 
   # 常時 -----------------------------------------
 
-  # # RU -> Raycast Hotkey
-  # - type: basic
-  #   from:
-  #     simultaneous:
-  #     - key_code: r
-  #     - key_code: u
-  #   to:
-  #   - key_code: spacebar
-  #     modifiers:
-  #     - control
-  #     repeat: false
-
   # VM -> Return
   - type: basic
     from:
@@ -59,9 +47,36 @@ rules:
     - key_code: return_or_enter
       repeat: false
 
+  # # RU ->
+  # - type: basic
+  #   from:
+  #     simultaneous:
+  #     - key_code: r
+  #     - key_code: u
+  #   to:
+  #   - key_code:
+  #     repeat: false
+
+  # 英語入力 -------------------------------------
+
+  # # FJ ->
+  # - type: basic
+  #   from:
+  #     simultaneous:
+  #     - key_code: f
+  #     - key_code: j
+  #   to:
+  #   - key_code:
+  #     repeat: false
+  #   conditions:
+  #   - type: input_source_if
+  #     input_source:
+  #     - language: en
+
   # 日本語入力 -----------------------------------
 
-  # FJ -> ToggleKana in AquaSKK
+  # FJ -> Ctrl-;
+  # macSKK: かなカナモード切り替え, 入力中のかなカナ切り替え
   - type: basic
     from:
       simultaneous:
