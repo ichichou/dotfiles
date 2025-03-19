@@ -5,7 +5,7 @@ rules:
 
 # Slack {{{
 
-  # [Slack] RCommand-K -> Command-K, Eisuu
+  # [Slack] RCmd-K -> Cmd-K, Eisuu
   - type: basic
     from:
       key_code: k
@@ -60,7 +60,7 @@ rules:
       bundle_identifiers:
       - "com.tinyspeck.slackmacgap"
 
-  # [Slack] LControl-1 - 6 -> Command-1 - 6
+  # [Slack] LCtrl-1 - 6 -> Cmd-1 - 6
   - type: basic
     from:
       key_code: "1"
@@ -161,7 +161,7 @@ rules:
 
 # Superhuman {{{
 
-  # [Superhuman] RCommand-K -> Command-K, Eisuu
+  # [Superhuman] RCmd-K -> Cmd-K, Eisuu
   - type: basic
     from:
       key_code: k
@@ -179,7 +179,7 @@ rules:
       bundle_identifiers:
       - "com.superhuman.electron"
 
-  # [Superhuman] LCommand-; -> Command-K, Eisuu
+  # [Superhuman] LCmd-; -> Cmd-K, Eisuu
   - type: basic
     from:
       key_code: semicolon
@@ -197,7 +197,7 @@ rules:
       bundle_identifiers:
       - "com.superhuman.electron"
 
-  # [Superhuman] LControl-N/P -> Command-Down/Up
+  # [Superhuman] LCtrl-N/P -> Cmd-Down/Up
   - type: basic
     from:
       key_code: "n"
@@ -234,7 +234,7 @@ rules:
 
 # Linear {{{
 
-  # [Linear] RCommand-K -> Command-K, Eisuu
+  # [Linear] RCmd-K -> Cmd-K, Eisuu
   - type: basic
     from:
       key_code: k
@@ -252,7 +252,7 @@ rules:
       bundle_identifiers:
       - "com.linear"
 
-  # [Linear] LCommand-; -> Command-K, Eisuu
+  # [Linear] LCmd-; -> Cmd-K, Eisuu
   - type: basic
     from:
       key_code: semicolon
@@ -270,7 +270,7 @@ rules:
       bundle_identifiers:
       - "com.linear"
 
-  # [Linear] LControl-N/P -> Command-Down/Up
+  # [Linear] LCtrl-N/P -> Cmd-Down/Up
   - type: basic
     from:
       key_code: "n"
@@ -303,7 +303,7 @@ rules:
       bundle_identifiers:
       - "com.linear"
 
-  # [Linear] LCommand-D -> Shift-Control-I (Focus Issue Description Input)
+  # [Linear] LCmd-D -> Shift-Ctrl-I (Focus Issue Description Input)
   - type: basic
     from:
       key_code: d
@@ -325,7 +325,7 @@ rules:
       bundle_identifiers:
       - "com.linear"
 
-  # [Linear] LCommand-D-HJKL -> Shift-Arrows
+  # [Linear] LCmd-D-HJKL -> Shift-Arrows
   - type: basic
     from:
       key_code: h
@@ -390,7 +390,7 @@ rules:
       name: linear_hrm_shift
       value: 1
 
-  # [Linear] LCommand-S -> [ (Toggle Left Sidebar)
+  # [Linear] LCmd-S -> [ (Toggle Left Sidebar)
   - type: basic
     from:
       key_code: s
@@ -409,7 +409,7 @@ rules:
       bundle_identifiers:
       - "com.linear"
 
-  # [Linear] LCommand-S-HJKL -> Option-Arrows (Move Contents)
+  # [Linear] LCmd-S-HJKL -> Opt-Arrows (Move Contents)
   - type: basic
     from:
       key_code: h
@@ -474,7 +474,7 @@ rules:
       name: linear_hrm_control
       value: 1
 
-  # [Linear] LControl-LCommand-HJKL -> Option-Arrows (Move Contents)
+  # [Linear] LCtrl-LCmd-HJKL -> Opt-Arrows (Move Contents)
   - type: basic
     from:
       key_code: h
@@ -543,7 +543,7 @@ rules:
       bundle_identifiers:
       - "com.linear"
 
-  # [Linear] LControl-Arrows -> Option-Arrows (Move Contents)
+  # [Linear] LCtrl-Arrows -> Opt-Arrows (Move Contents)
   - type: basic
     from:
       key_code: left_arrow
@@ -616,7 +616,7 @@ rules:
 
   # Indent Row
 
-  # [Bike] Control-Right -> Indent Row
+  # [Bike] Ctrl-Right -> Indent Row
   - type: basic
     from:
       key_code: right_arrow
@@ -634,7 +634,7 @@ rules:
       bundle_identifiers:
       - "com.hogbaysoftware.Bike"
 
-  # [Bike] Control-LCommand-L -> Indent Row
+  # [Bike] Ctrl-LCmd-L -> Indent Row
   - type: basic
     from:
       key_code: l
@@ -655,7 +655,7 @@ rules:
 
   # Outdent Row
 
-  # [Bike] Control-Left -> Outdent Row
+  # [Bike] Ctrl-Left -> Outdent Row
   - type: basic
     from:
       key_code: left_arrow
@@ -673,7 +673,7 @@ rules:
       bundle_identifiers:
       - "com.hogbaysoftware.Bike"
 
-  # [Bike] Control-LCommand-H -> Outdent Row
+  # [Bike] Ctrl-LCmd-H -> Outdent Row
   - type: basic
     from:
       key_code: h
@@ -694,7 +694,7 @@ rules:
 
   # Move Row Up
 
-  # [Bike] Control-Up -> Move Row Up
+  # [Bike] Ctrl-Up -> Move Row Up
   - type: basic
     from:
       key_code: up_arrow
@@ -712,7 +712,7 @@ rules:
       bundle_identifiers:
       - "com.hogbaysoftware.Bike"
 
-  # [Bike] Control-LCommand-K -> Move Row Up
+  # [Bike] Ctrl-LCmd-K -> Move Row Up
   - type: basic
     from:
       key_code: k
@@ -733,7 +733,7 @@ rules:
 
   # Move Row Down
 
-  # [Bike] Control-Down -> Move Row Down
+  # [Bike] Ctrl-Down -> Move Row Down
   - type: basic
     from:
       key_code: down_arrow
@@ -751,7 +751,7 @@ rules:
       bundle_identifiers:
       - "com.hogbaysoftware.Bike"
 
-  # [Bike] Control-LCommand-J -> Move Row Down
+  # [Bike] Ctrl-LCmd-J -> Move Row Down
   - type: basic
     from:
       key_code: j
@@ -772,7 +772,7 @@ rules:
 
   # Focus In/Out
 
-  # [Bike] LCommand-O -> Focus In
+  # [Bike] LCmd-O -> Focus In
   - type: basic
     from:
       key_code: o
@@ -790,7 +790,7 @@ rules:
       bundle_identifiers:
       - "com.hogbaysoftware.Bike"
 
-  # [Bike] LCommand-I -> Focus Out
+  # [Bike] LCmd-I -> Focus Out
   - type: basic
     from:
       key_code: i
@@ -810,7 +810,7 @@ rules:
 
   # Expand/Collapse All Rows
 
-  # [Bike] Shift-LCommand-O -> Expand All Rows
+  # [Bike] Shift-LCmd-O -> Expand All Rows
   - type: basic
     from:
       key_code: o
@@ -829,7 +829,7 @@ rules:
       bundle_identifiers:
       - "com.hogbaysoftware.Bike"
 
-  # [Bike] Shift-LCommand-I -> Collapse All Rows
+  # [Bike] Shift-LCmd-I -> Collapse All Rows
   - type: basic
     from:
       key_code: i
@@ -850,8 +850,8 @@ rules:
 
   # Others
 
-  # [Bike] LControl-M -> New Row (Command-Return)
-  # [Bike] Shift-LControl-M -> New Indented Row (Shift-Command-Return)
+  # [Bike] LCtrl-M -> New Row (Cmd-Return)
+  # [Bike] Shift-LCtrl-M -> New Indented Row (Shift-Cmd-Return)
   - type: basic
     from:
       key_code: m
@@ -870,7 +870,7 @@ rules:
       bundle_identifiers:
       - "com.hogbaysoftware.Bike"
 
-  # [Bike] LCommand-G -> Group Rows (Option-Command-G)
+  # [Bike] LCmd-G -> Group Rows (Opt-Cmd-G)
   - type: basic
     from:
       key_code: g
@@ -888,7 +888,7 @@ rules:
       bundle_identifiers:
       - "com.hogbaysoftware.Bike"
 
-  # # [Bike] LCommand-D -> Duplicate Rows (Shift-Command-D)
+  # # [Bike] LCmd-D -> Duplicate Rows (Shift-Cmd-D)
   # # Home Row Mods と干渉するため無効化
   # - type: basic
   #   from:
@@ -907,7 +907,7 @@ rules:
   #     bundle_identifiers:
   #     - "com.hogbaysoftware.Bike"
 
-  # [Bike] LCommand-Delete -> Delete Rows (Shift-Command-K)
+  # [Bike] LCmd-Delete -> Delete Rows (Shift-Cmd-K)
   - type: basic
     from:
       key_code: delete_or_backspace
@@ -925,7 +925,7 @@ rules:
       bundle_identifiers:
       - "com.hogbaysoftware.Bike"
 
-  # [Bike] LControl-N/P -> Command-Down/Up
+  # [Bike] LCtrl-N/P -> Cmd-Down/Up
   - type: basic
     from:
       key_code: "n"
@@ -958,7 +958,7 @@ rules:
       bundle_identifiers:
       - "com.hogbaysoftware.Bike"
 
-  # [Bike] Shift-Command-V -> Paste and Match Style (Shift-Option-Command-V)
+  # [Bike] Shift-Cmd-V -> Paste and Match Style (Shift-Opt-Cmd-V)
   - type: basic
     from:
       key_code: v
@@ -978,7 +978,7 @@ rules:
       bundle_identifiers:
       - "com.hogbaysoftware.Bike"
 
-  # [Bike] LCommand-E -> Command-E, Eisuu
+  # [Bike] LCmd-E -> Cmd-E, Eisuu
   - type: basic
     from:
       key_code: e
@@ -996,7 +996,7 @@ rules:
       bundle_identifiers:
       - "com.hogbaysoftware.Bike"
 
-  # [Bike] Shift-Command-S -> Command-S
+  # [Bike] Shift-Cmd-S -> Cmd-S
   - type: basic
     from:
       key_code: s
@@ -1014,7 +1014,7 @@ rules:
       bundle_identifiers:
       - "com.hogbaysoftware.Bike"
 
-  # [Bike] Control-O -> Ignore
+  # [Bike] Ctrl-O -> Ignore
   - type: basic
     from:
       key_code: o
@@ -1034,7 +1034,7 @@ rules:
 
   # Indent Row
 
-  # [Workflowy] Control-Right -> Indent
+  # [Workflowy] Ctrl-Right -> Indent
   - type: basic
     from:
       key_code: right_arrow
@@ -1049,7 +1049,7 @@ rules:
       bundle_identifiers:
       - "com.workflowy.desktop"
 
-  # [Workflowy] Control-LCommand-L -> Indent
+  # [Workflowy] Ctrl-LCmd-L -> Indent
   - type: basic
     from:
       key_code: l
@@ -1067,7 +1067,7 @@ rules:
 
   # Outdent Row
 
-  # [Workflowy] Control-Left -> Outdent
+  # [Workflowy] Ctrl-Left -> Outdent
   - type: basic
     from:
       key_code: left_arrow
@@ -1084,7 +1084,7 @@ rules:
       bundle_identifiers:
       - "com.workflowy.desktop"
 
-  # [Workflowy] Control-LCommand-H -> Outdent
+  # [Workflowy] Ctrl-LCmd-H -> Outdent
   - type: basic
     from:
       key_code: h
@@ -1104,7 +1104,7 @@ rules:
 
   # Move Row Up
 
-  # [Workflowy] Control-Up -> Move Up
+  # [Workflowy] Ctrl-Up -> Move Up
   - type: basic
     from:
       key_code: up_arrow
@@ -1122,7 +1122,7 @@ rules:
       bundle_identifiers:
       - "com.workflowy.desktop"
 
-  # [Workflowy] Control-LCommand-K -> Move Up
+  # [Workflowy] Ctrl-LCmd-K -> Move Up
   - type: basic
     from:
       key_code: k
@@ -1143,7 +1143,7 @@ rules:
 
   # Move Row Down
 
-  # [Workflowy] Control-Down -> Move Down
+  # [Workflowy] Ctrl-Down -> Move Down
   - type: basic
     from:
       key_code: down_arrow
@@ -1161,7 +1161,7 @@ rules:
       bundle_identifiers:
       - "com.workflowy.desktop"
 
-  # [Workflowy] Control-LCommand-J -> Move Down
+  # [Workflowy] Ctrl-LCmd-J -> Move Down
   - type: basic
     from:
       key_code: j
@@ -1182,7 +1182,7 @@ rules:
 
   # Expand/Collapse Row
 
-  # [Workflowy] LCommand-O -> Expand
+  # [Workflowy] LCmd-O -> Expand
   - type: basic
     from:
       key_code: o
@@ -1199,7 +1199,7 @@ rules:
       bundle_identifiers:
       - "com.workflowy.desktop"
 
-  # [Workflowy] LCommand-I -> Collapse
+  # [Workflowy] LCmd-I -> Collapse
   - type: basic
     from:
       key_code: i
@@ -1218,7 +1218,7 @@ rules:
 
   # Focus In/Out
 
-  # [Workflowy] LShift-LCommand-O -> Focus In
+  # [Workflowy] LShift-LCmd-O -> Focus In
   - type: basic
     from:
       key_code: o
@@ -1236,7 +1236,7 @@ rules:
       bundle_identifiers:
       - "com.workflowy.desktop"
 
-  # [Workflowy] LShift-LCommand-I -> Focus Out
+  # [Workflowy] LShift-LCmd-I -> Focus Out
   - type: basic
     from:
       key_code: i
@@ -1256,7 +1256,7 @@ rules:
 
   # Edit -----------------------------------------
 
-  # # [Workflowy] LCommand-D -> Duplicate Rows (Shift-Command-D)
+  # # [Workflowy] LCmd-D -> Duplicate Rows (Shift-Cmd-D)
   # - type: basic
   #   from:
   #     key_code: d
@@ -1274,7 +1274,7 @@ rules:
   #     bundle_identifiers:
   #     - "com.workflowy.desktop"
 
-  # [Workflowy] LCommand-Delete -> Delete Rows (Shift-Command-Delete)
+  # [Workflowy] LCmd-Delete -> Delete Rows (Shift-Cmd-Delete)
   - type: basic
     from:
       key_code: delete_or_backspace
@@ -1296,7 +1296,7 @@ rules:
 
 # Finder {{{
 
-  # [Finder] Command-P -> Ignore
+  # [Finder] Cmd-P -> Ignore
   - type: basic
     from:
       key_code: p
@@ -1312,7 +1312,7 @@ rules:
 
 # Arc {{{
 
-  # [Arc] LShift-LCommand-F -> Shift-Command-H
+  # [Arc] LShift-LCmd-F -> Shift-Cmd-H
   # スプレッドシートでの検索・置換
   - type: basic
     from:
@@ -1332,7 +1332,7 @@ rules:
       bundle_identifiers:
       - "company.thebrowser.Browser"
 
-  # [Arc] LCommand-W -> Repeat: False
+  # [Arc] LCmd-W -> Repeat: False
   - type: basic
     from:
       key_code: w
@@ -1349,7 +1349,7 @@ rules:
       bundle_identifiers:
       - "company.thebrowser.Browser"
 
-  # # [Arc] Command-T -> Command-T, Eisuu
+  # # [Arc] Cmd-T -> Cmd-T, Eisuu
   # - type: basic
   #   from:
   #     key_code: t
@@ -1371,7 +1371,7 @@ rules:
 
 # Notion {{{
 
-  # [Notion] Control-Up -> Move Block Up
+  # [Notion] Ctrl-Up -> Move Block Up
   - type: basic
     from:
       key_code: up_arrow
@@ -1389,7 +1389,7 @@ rules:
       bundle_identifiers:
       - "notion.id"
 
-  # [Notion] Control-Down -> Move Block Down
+  # [Notion] Ctrl-Down -> Move Block Down
   - type: basic
     from:
       key_code: down_arrow
@@ -1407,7 +1407,7 @@ rules:
       bundle_identifiers:
       - "notion.id"
 
-  # [Notion] Control-LCommand-K -> Move Block Up
+  # [Notion] Ctrl-LCmd-K -> Move Block Up
   - type: basic
     from:
       key_code: k
@@ -1426,7 +1426,7 @@ rules:
       bundle_identifiers:
       - "notion.id"
 
-  # [Notion] Control-LCommand-J -> Move Block Down
+  # [Notion] Ctrl-LCmd-J -> Move Block Down
   - type: basic
     from:
       key_code: j
@@ -1445,7 +1445,7 @@ rules:
       bundle_identifiers:
       - "notion.id"
 
-  # [Notion] Shift-Command-A -> Control-Command-H
+  # [Notion] Shift-Cmd-A -> Ctrl-Cmd-H
   - type: basic
     from:
       key_code: a
@@ -1464,7 +1464,7 @@ rules:
       bundle_identifiers:
       - "notion.id"
 
-  # [Notion] Shift-Command-C -> Command-L
+  # [Notion] Shift-Cmd-C -> Cmd-L
   - type: basic
     from:
       key_code: c
@@ -1482,7 +1482,7 @@ rules:
       bundle_identifiers:
       - "notion.id"
 
-  # [Notion] LCommand-I -> Shift-Command-U
+  # [Notion] LCmd-I -> Shift-Cmd-U
   - type: basic
     from:
       key_code: i
@@ -1500,7 +1500,7 @@ rules:
       bundle_identifiers:
       - "notion.id"
 
-  # [Notion] LCommand-O -> Command-Return
+  # [Notion] LCmd-O -> Cmd-Return
   - type: basic
     from:
       key_code: o
@@ -1517,7 +1517,7 @@ rules:
       bundle_identifiers:
       - "notion.id"
 
-  # [Notion] LCommand-S -> Home Row Mods / Command-\
+  # [Notion] LCmd-S -> Home Row Mods / Cmd-\
   - type: basic
     from:
       key_code: s
@@ -1556,7 +1556,7 @@ rules:
       name: notion_home_row_mods
       value: 1
 
-  # [Notion] LCommand-S-K -> Move Block Up
+  # [Notion] LCmd-S-K -> Move Block Up
   - type: basic
     from:
       key_code: k
@@ -1578,7 +1578,7 @@ rules:
 
 # Things {{{
 
-  # [Things] LCommand-E -> Command-K (To done)
+  # [Things] LCmd-E -> Cmd-K (To done)
   - type: basic
     from:
       key_code: e
@@ -1594,7 +1594,7 @@ rules:
       bundle_identifiers:
       - "com.culturedcode.ThingsMac"
 
-  # [Things] LControl-N -> Option-Up (Go to top)
+  # [Things] LCtrl-N -> Opt-Up (Go to top)
   - type: basic
     from:
       key_code: "n"
@@ -1610,7 +1610,7 @@ rules:
       bundle_identifiers:
       - "com.culturedcode.ThingsMac"
 
-  # [Things] LControl-P -> Option-Down (Go to bottom)
+  # [Things] LCtrl-P -> Opt-Down (Go to bottom)
   - type: basic
     from:
       key_code: p
@@ -1626,7 +1626,7 @@ rules:
       bundle_identifiers:
       - "com.culturedcode.ThingsMac"
 
-  # [Things] LControl-Up -> Command-Up (Move up task)
+  # [Things] LCtrl-Up -> Cmd-Up (Move up task)
   - type: basic
     from:
       key_code: up_arrow
@@ -1642,7 +1642,7 @@ rules:
       bundle_identifiers:
       - "com.culturedcode.ThingsMac"
 
-  # [Things] LControl-Down -> Command-Down (Move down task)
+  # [Things] LCtrl-Down -> Cmd-Down (Move down task)
   - type: basic
     from:
       key_code: down_arrow
@@ -1658,7 +1658,7 @@ rules:
       bundle_identifiers:
       - "com.culturedcode.ThingsMac"
 
-  # [Things] Command-M -> Shift-Command-M (Move to another list)
+  # [Things] Cmd-M -> Shift-Cmd-M (Move to another list)
   - type: basic
     from:
       key_code: m
@@ -1679,8 +1679,8 @@ rules:
 
 # Ghostty {{{
 
-  # [Ghostty] LControl-N/P -> Control-N/P
-  # control.yml の LControl-N/P -> Command-Down/Up の無効化のため
+  # [Ghostty] LCtrl-N/P -> Ctrl-N/P
+  # control.yml の LCtrl-N/P -> Cmd-Down/Up の無効化のため
   - type: basic
     from:
       key_code: "n"
@@ -1711,7 +1711,7 @@ rules:
       bundle_identifiers:
       - "com.mitchellh.ghostty"
 
-  # # [Ghostty] LControl-1 - 6 -> Command-1 - 6
+  # # [Ghostty] LCtrl-1 - 6 -> Cmd-1 - 6
   # - type: basic
   #   from:
   #     key_code: "1"
@@ -1812,8 +1812,8 @@ rules:
 
 # Kitty {{{
 
-  # [Kitty] LControl-N/P -> Control-N/P
-  # control.yml の LControl-N/P -> Command-Down/Up の無効化のため
+  # [Kitty] LCtrl-N/P -> Ctrl-N/P
+  # control.yml の LCtrl-N/P -> Cmd-Down/Up の無効化のため
   - type: basic
     from:
       key_code: "n"
@@ -1848,7 +1848,7 @@ rules:
 
 # Alacritty {{{
 
-#   # [Alacritty] Command-W -> Ignore
+#   # [Alacritty] Cmd-W -> Ignore
 #   - type: basic
 #     from:
 #       key_code: w
@@ -1860,8 +1860,8 @@ rules:
 #       bundle_identifiers:
 #       - "org.alacritty"
 #
-#   # [Alacritty] LCommand-Q (held down) -> Quit Alacritty
-#   # LCommand-Q 長押しでのみ終了
+#   # [Alacritty] LCmd-Q (held down) -> Quit Alacritty
+#   # LCmd-Q 長押しでのみ終了
 #   - type: basic
 #     from:
 #       key_code: q
@@ -1884,7 +1884,7 @@ rules:
 
 # Microsoft Office {{{
 
-  # [Word] Control-D -> Fn-Delete
+  # [Word] Ctrl-D -> Fn-Delete
   - type: basic
     from:
       key_code: d
@@ -1899,7 +1899,7 @@ rules:
       bundle_identifiers:
       - "com.microsoft.Word"
 
-  # [Excel] Control-D -> Fn-Delete
+  # [Excel] Ctrl-D -> Fn-Delete
   - type: basic
     from:
       key_code: d
@@ -1914,7 +1914,7 @@ rules:
       bundle_identifiers:
       - "com.microsoft.Excel"
 
-  # [Powerpoint] Control-D -> Fn-Delete
+  # [Powerpoint] Ctrl-D -> Fn-Delete
   - type: basic
     from:
       key_code: d
@@ -1929,7 +1929,7 @@ rules:
       bundle_identifiers:
       - "com.microsoft.Powerpoint"
 
-  # [Word] Control-A -> 行頭へ移動
+  # [Word] Ctrl-A -> 行頭へ移動
   - type: basic
     from:
       key_code: a
@@ -1944,7 +1944,7 @@ rules:
       bundle_identifiers:
       - "com.microsoft.Word"
 
-  # [Excel] Control-A -> 行頭へ移動
+  # [Excel] Ctrl-A -> 行頭へ移動
   - type: basic
     from:
       key_code: a
@@ -1959,7 +1959,7 @@ rules:
       bundle_identifiers:
       - "com.microsoft.Excel"
 
-  # [Powerpoint] Control-A -> 行頭へ移動
+  # [Powerpoint] Ctrl-A -> 行頭へ移動
   - type: basic
     from:
       key_code: a
@@ -1974,7 +1974,7 @@ rules:
       bundle_identifiers:
       - "com.microsoft.Powerpoint"
 
-  # [Word] Control-E -> 行末へ移動
+  # [Word] Ctrl-E -> 行末へ移動
   - type: basic
     from:
       key_code: e
@@ -1989,7 +1989,7 @@ rules:
       bundle_identifiers:
       - "com.microsoft.Word"
 
-  # [Excel] Control-E -> 行末へ移動
+  # [Excel] Ctrl-E -> 行末へ移動
   - type: basic
     from:
       key_code: e
@@ -2004,7 +2004,7 @@ rules:
       bundle_identifiers:
       - "com.microsoft.Excel"
 
-  # [Powerpoint] Control-E -> 行末へ移動
+  # [Powerpoint] Ctrl-E -> 行末へ移動
   - type: basic
     from:
       key_code: e
@@ -2019,7 +2019,7 @@ rules:
       bundle_identifiers:
       - "com.microsoft.Powerpoint"
 
-  # [Word] Control-K -> 行末まで削除
+  # [Word] Ctrl-K -> 行末まで削除
   - type: basic
     from:
       key_code: k
@@ -2038,7 +2038,7 @@ rules:
       bundle_identifiers:
       - "com.microsoft.Word"
 
-  # [Excel] Control-K -> 行末まで削除
+  # [Excel] Ctrl-K -> 行末まで削除
   - type: basic
     from:
       key_code: k
@@ -2057,7 +2057,7 @@ rules:
       bundle_identifiers:
       - "com.microsoft.Excel"
 
-  # [Powerpoint] Control-K -> 行末まで削除
+  # [Powerpoint] Ctrl-K -> 行末まで削除
   - type: basic
     from:
       key_code: k
@@ -2080,7 +2080,7 @@ rules:
 
 # Safari {{{
 
-#   # [Safari] LCommand-S -> Shift-Command-L
+#   # [Safari] LCmd-S -> Shift-Cmd-L
 #   # サイドバーを表示／非表示
 #   - type: basic
 #     from:
@@ -2103,7 +2103,7 @@ rules:
 
 # Google Chrome {{{
 
-#   # [Chrome] LShift-LCommand-F -> Shift-Command-H
+#   # [Chrome] LShift-LCmd-F -> Shift-Cmd-H
 #   # スプレッドシートでの検索・置換
 #   - type: basic
 #     from:
@@ -2123,7 +2123,7 @@ rules:
 #       bundle_identifiers:
 #       - "com.google.Chrome"
 #
-#   # [Chrome] LCommand-W -> Repeat: False
+#   # [Chrome] LCmd-W -> Repeat: False
 #   - type: basic
 #     from:
 #       key_code: w
@@ -2144,7 +2144,7 @@ rules:
 
 # Sidekick {{{
 
-#   # [Sidekick] LShift-LCommand-F -> Shift-Command-H
+#   # [Sidekick] LShift-LCmd-F -> Shift-Cmd-H
 #   # スプレッドシートでの検索・置換
 #   - type: basic
 #     from:
@@ -2164,7 +2164,7 @@ rules:
 #       bundle_identifiers:
 #       - "com.pushplaylabs.sidekick"
 #
-#   # [Sidekick] LCommand-W -> Repeat: False
+#   # [Sidekick] LCmd-W -> Repeat: False
 #   - type: basic
 #     from:
 #       key_code: w
@@ -2181,7 +2181,7 @@ rules:
 #       bundle_identifiers:
 #       - "com.pushplaylabs.sidekick"
 #
-#   # [Sidekick] LShift-LCommand-A -> Command-S
+#   # [Sidekick] LShift-LCmd-A -> Cmd-S
 #   # セッション一覧を開く (Sidekick でのショートカット変更が必要)
 #   - type: basic
 #     from:
@@ -2200,7 +2200,7 @@ rules:
 #       bundle_identifiers:
 #       - "com.pushplaylabs.sidekick"
 #
-#   # [Sidekick] LShift-LCommand-S -> Shift-Option-S
+#   # [Sidekick] LShift-LCmd-S -> Shift-Opt-S
 #   # サイドカーを表示／非表示
 #   - type: basic
 #     from:
@@ -2224,7 +2224,7 @@ rules:
 
 # Macvim {{{
 
-#   # [MacVim] Command-W -> Ignore
+#   # [MacVim] Cmd-W -> Ignore
 #   - type: basic
 #     from:
 #       key_code: w
@@ -2236,8 +2236,8 @@ rules:
 #       bundle_identifiers:
 #       - "org.vim.MacVim"
 #
-#   # [MacVim] LCommand-Q (held down) -> Quit MacVim
-#   # LCommand-Q 長押しでのみ終了
+#   # [MacVim] LCmd-Q (held down) -> Quit MacVim
+#   # LCmd-Q 長押しでのみ終了
 #   - type: basic
 #     from:
 #       key_code: q
