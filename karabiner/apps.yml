@@ -2238,3 +2238,26 @@ rules:
 #       - "org.vim.MacVim"
 
 # }}}
+
+# Notes {{{
+
+  # [Notes] LCmd-S -> Opt-Cmd-S
+  # フォルダを表示／非表示
+  - type: basic
+    from:
+      key_code: s
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: s
+      modifiers:
+      - option
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.apple.Notes"
+
+# }}}
