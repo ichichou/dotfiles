@@ -46,12 +46,11 @@ macos-non-native-fullscreen = true
 
 # Disabled
 keybind = cmd+enter=text:\n
-keybind = ctrl+semicolon=ignore
 
 # Input Letters
 keybind = cmd+i=text:\x20<-\x20
 keybind = cmd+o=text:\x20->\x20
-keybind = cmd+m=text:\x20|>\x20
+keybind = shift+cmd+m=text:\x20|>\x20
 keybind = shift+cmd+i=text:\x20=<<\x20
 keybind = shift+cmd+o=text:\x20>>=\x20
 
