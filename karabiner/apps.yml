@@ -23,7 +23,7 @@ rules:
       bundle_identifiers:
       - "com.tinyspeck.slackmacgap"
 
-  # [Slack] LCommand-; -> Command-K, Eisuu
+  # [Slack] LCmd-; -> Cmd-K, Eisuu
   - type: basic
     from:
       key_code: semicolon
@@ -35,6 +35,25 @@ rules:
       modifiers:
       - command
     - key_code: japanese_eisuu
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.tinyspeck.slackmacgap"
+
+  # [Slack] LCmd-S -> Shift-Cmd-D
+  # サイドバーを表示／非表示
+  - type: basic
+    from:
+      key_code: s
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: d
+      modifiers:
+      - shift
+      - command
       repeat: false
     conditions:
     - type: frontmost_application_if
