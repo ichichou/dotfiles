@@ -2,7 +2,7 @@
 set -eu
 
 source_file="${HOME}/dotfiles/macskk/kana-rule.conf"
-target_file="${HOME}/Library/Input Methods/macSKK.app/Contents/Resources/kana-rule.conf"
+target_file="${HOME}/Library/Containers/net.mtgto.inputmethod.macSKK/Data/Documents/Settings/kana-rule.conf"
 
 if [[ ! -e "$source_file" ]]; then
   echo "ERROR: kana-rule.conf does not exists."

@@ -1,7 +1,7 @@
 #!/bin/bash
 set -eu
 
-source_file="${HOME}/Library/CloudStorage/Box-Box/Config/macSKK/skk-jisyo.utf8"
+source_file="${HOME}/Library/CloudStorage/Box-Box/Backup/skk-jisyo.utf8"
 target_file="${HOME}/Library/Containers/net.mtgto.inputmethod.macSKK/Data/Documents/Dictionaries/skk-jisyo.utf8"
 
 if [[ ! -e "$source_file" ]]; then
