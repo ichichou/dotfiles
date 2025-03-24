@@ -5,7 +5,7 @@ dict_dir="${HOME}/repos/dict"
 macskk_dir="${HOME}/Library/Containers/net.mtgto.inputmethod.macSKK/Data/Documents/Dictionaries"
 
 if [[ ! -d $dict_dir ]]; then
-  echo "${dict_dir} does not exist."
+  echo "ERROR: ${dict_dir} does not exist."
   exit 1
 fi
 
