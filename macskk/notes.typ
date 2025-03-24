@@ -1,62 +1,25 @@
-// このファイルの内容は古いので Notion を参照のこと
-
 = キーマップ
 
-GUI でキーマップを設定する：
-
-- ひらがなモード            Ctrl-J, Kana
-- かなカナモード切り替え    // not mapped
-- 入力中のかなカナ切り替え  Ctrl-;
-- 半角カナモード            // not mapped
-- 直接入力                  Ctrl-L
-- 全角英数モード            Shift-Ctrl-L
-- Abbrev モード             Shift-.
-- 未確定入力開始            Shift-,
-- Sticky Shift              // not mapped
-- Enter                     Retern
-- Space                     Space
-- 前の変換候補を選択        // not mapped
-- Tab                       Tab
-- Backspace                 Delete, Ctrl-H
-- Delete                    Delete Forward, Ctrl-D
-- キャンセル                Esc, Ctrl-G
-- 左                        Left, Ctrl-B
-- 右                        Right, Ctrl-F
-- 下                        Down, Ctrl-N
-- 上                        Up, Ctrl-P
-- 行頭へ移動                Ctrl-A
-- 行末へ移動                Ctrl-E
-- 登録モードでペースト      Ctrl-Y
-- 選択中の変換候補の削除    Ctrl-X
+- ひらがなモード            ⌃J, Kana
+- 直接入力                  ⌃L
+- …
+- 前の変換候補を選択        Backspace
+- …
 - 英数キー                  Eisuu
-- かなキー                  // not mapped
+- かなキー                  (no map)
 
-「ひらがなモード」に Kana を登録するのは、変換を Ctrl-J で確定するために必要。
-（Karabiner で Ctrl-J -> Kana とした上で）
+「ひらがなモード」に Kana を登録するのは、変換を ⌃J（Karabiner で Kana に変換）で確定するために必要。
 「かなキー」にも Kana を登録すると、「ひらがなモード」のほうの Kana が利かなくなるので、こちらは未登録にする。
 
-「直接入力」で同じようにすると、Ctrl-L の入力時に DLE 制御文字が入力されてしまう。
-Mac 標準の IME には Control-Kana/Eisuu で制御文字が入力されるバグがあるそうなので、類似の現象かもしれない。
+「直接入力」で同じようにすると、⌃L の入力時に DLE 制御文字が入力されてしまう。
+Mac 標準の IME には ⌃ + Kana/Eisuu で制御文字が入力されるバグがあるそうなので、類似の現象かもしれない。
 Kana/Eisuu で登録の仕方が非対称なのが座りが悪いが、これで良しとする。
+
+「前の変換候補を選択」に Backspace を登録するのは、変換候補のページ戻りを Delete キーでやるため。
+文字削除のための Backspace が利かなくなることがあったため、再発したらこの割り当てを削除する。
 
 
 = 辞書
-
-辞書ファイルをクローン、macSKK ディレクトリにコピー：
-
-```
-# 辞書リポジトリをクローン：
-
-cd ~/repos
-gh repo clone skk-dev/dict
-
-# 辞書ファイルをコピーするスクリプトを実行：
-
-cd ~/dotfiles/macskk
-./cp_dicts.sh
-```
-
-辞書ファイルを GUI で優先度順に並べる：
 
 + L
 + jinmei
@@ -73,29 +36,12 @@ cd ~/dotfiles/macskk
 + edict
 
 
-= ユーザー辞書（skk-jisyo.utf8）
+= kana-rule.conf
 
-ユーザー辞書のバックアップを macSKK ディレクトリにコピー：
+kana-rule.conf は2か所のパスに存在し得る。
 
-```
-cp -f PATH/TO/skk-jisyo.utf8 \
-~/Library/Containers/net.mtgto.inputmethod.macSKK/Data/Documents/Dictionaries/skk-jisyo.utf8
-```
-
-
-= ローマ字変換ルール（kana-rule.conf）
-
-kana-rule.conf をコピーして macSKK ディレクトリに配置：
-（kana-rule.conf は実体ファイルでなければならず、シンボリックリンクだとうまく機能しない）
-
-```
-cp -f ~/dotfiles/macskk/kana-rule.conf \
-~/Library/Containers/net.mtgto.inputmethod.macSKK/Data/Documents/Settings/kana-rule.conf
-```
+- ~/Library/Containers/net.mtgto.inputmethod.macSKK/Data/Documents/Settings/kana-rule.conf
+- ~/Library/Input\ Methods/macSKK.app/Contents/Resources/kana-rule.conf
 
 上のパスにファイルがない場合、下のパスにあるファイルが使用される。
-
-```
-cp -f ~/dotfiles/macskk/kana-rule.conf \
-~/Library/Input\ Methods/macSKK.app/Contents/Resources/kana-rule.conf
-```
+上のパスにファイルがあるときに下のファイルを更新しても、当然反映されないため注意。
