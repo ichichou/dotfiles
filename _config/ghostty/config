@@ -11,6 +11,7 @@ theme = rose-pine-moon
 # Font -------------------------------------------
 
 font-family = "Berkeley Mono"
+font-family = "Hiragino Kaku Gothic ProN"
 # -- Default:     "JetBrains Mono"
 # -- Ligature:    "Berkeley Mono", "JetBrains Mono", "Fira Code"
 # -- No Ligature: "Hack", "SF Mono"
