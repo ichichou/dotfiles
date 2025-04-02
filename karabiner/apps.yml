@@ -1901,6 +1901,186 @@ rules:
 
 # }}}
 
+# RStudio {{{
+
+  # [RStudio] LShift-LCmd-I -> Opt-Hyphen
+  # InsertAssignment Operator
+  - type: basic
+    from:
+      key_code: i
+      modifiers:
+        mandatory:
+        - left_shift
+        - left_command
+    to:
+    - key_code: hyphen
+      modifiers:
+      - option
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.rstudio.desktop"
+
+  # [RStudio] LCmd-/ -> Shift-Cmd-C
+  # Comment / Uncomment Selection
+  - type: basic
+    from:
+      key_code: slash
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: c
+      modifiers:
+      - shift
+      - command
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.rstudio.desktop"
+
+  # [RStudio] LCtrl-Down/Up -> Opt-Down/Up
+  # Move Lines Down/Up
+  - type: basic
+    from:
+      key_code: down_arrow
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: down_arrow
+      modifiers:
+      - option
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.rstudio.desktop"
+
+  - type: basic
+    from:
+      key_code: up_arrow
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: up_arrow
+      modifiers:
+      - option
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.rstudio.desktop"
+
+  # [RStudio] LCtrl-LCmd-J/K -> Opt-Down/Up
+  # Move Lines Down/Up
+  - type: basic
+    from:
+      key_code: j
+      modifiers:
+        mandatory:
+        - left_control
+        - left_command
+    to:
+    - key_code: down_arrow
+      modifiers:
+      - option
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.rstudio.desktop"
+
+  - type: basic
+    from:
+      key_code: k
+      modifiers:
+        mandatory:
+        - left_control
+        - left_command
+    to:
+    - key_code: up_arrow
+      modifiers:
+      - option
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.rstudio.desktop"
+
+  # [RStudio] LShift-LCtrl-Down/Up -> Cmd-Opt-Down/Up
+  # Copy Lines Down/Up
+  - type: basic
+    from:
+      key_code: down_arrow
+      modifiers:
+        mandatory:
+        - left_shift
+        - left_control
+    to:
+    - key_code: down_arrow
+      modifiers:
+      - option
+      - command
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.rstudio.desktop"
+
+  - type: basic
+    from:
+      key_code: up_arrow
+      modifiers:
+        mandatory:
+        - left_shift
+        - left_control
+    to:
+    - key_code: up_arrow
+      modifiers:
+      - option
+      - command
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.rstudio.desktop"
+
+  # [RStudio] LShift-LCtrl-J/K -> Cmd-Opt-Down/Up
+  # Copy Lines Down/Up
+  - type: basic
+    from:
+      key_code: j
+      modifiers:
+        mandatory:
+        - left_shift
+        - left_control
+        - left_command
+    to:
+    - key_code: down_arrow
+      modifiers:
+      - option
+      - command
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.rstudio.desktop"
+
+  - type: basic
+    from:
+      key_code: k
+      modifiers:
+        mandatory:
+        - left_shift
+        - left_control
+        - left_command
+    to:
+    - key_code: up_arrow
+      modifiers:
+      - option
+      - command
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.rstudio.desktop"
+
+# }}}
+
 # Microsoft Office {{{
 
   # [Word] Ctrl-D -> Fn-Delete
