@@ -74,6 +74,7 @@ abbr -ag mv mv -iv
 # Apps
 abbr -ag a   bat
 abbr -ag awk gawk
+abbr -ag csv csvlens
 abbr -ag hs  ghci
 abbr -ag n   numbat
 abbr -ag nvi nvim
