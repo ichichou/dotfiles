@@ -4,7 +4,8 @@
 
 [core]
     editor = vim
-    pager = less -MS
+    # pager = less -MS
+    pager = delta
     quotepath = false
     ignorecase = false
 
@@ -25,6 +26,7 @@
 [merge]
     ff = false
     tool = vimdiff
+    conflictstyle = zdiff3
 
 [pull]
     ff = only
@@ -35,7 +37,8 @@
     diff = diff-highlight | less
 
 [interactive]
-    diffFilter = diff-highlight
+    # diffFilter = diff-highlight
+    diffFilter = delta --color-only
 
 [filter "lfs"]
     clean = git-lfs clean -- %f
@@ -45,3 +48,7 @@
 
 [credential]
     helper = osxkeychain
+
+[delta]
+    navigate = true
+    dark = true
