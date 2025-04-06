@@ -59,19 +59,23 @@ rules:
 
   # 英語入力 -------------------------------------
 
-  # # FJ ->
-  # - type: basic
-  #   from:
-  #     simultaneous:
-  #     - key_code: f
-  #     - key_code: j
-  #   to:
-  #   - key_code:
-  #     repeat: false
-  #   conditions:
-  #   - type: input_source_if
-  #     input_source:
-  #     - language: en
+  # FJ -> Kana, Ctrl-;
+  # macSKK: かなカナモード切り替え, 入力中のかなカナ切り替え
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: f
+      - key_code: j
+    to:
+    - key_code: japanese_kana
+    - key_code: semicolon
+      modifiers:
+      - control
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: en
 
   # 日本語入力 -----------------------------------
 
