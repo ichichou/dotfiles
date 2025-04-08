@@ -888,24 +888,26 @@ rules:
       bundle_identifiers:
       - "com.hogbaysoftware.Bike"
 
-  # # [Bike] LCmd-D -> Duplicate Rows (Shift-Cmd-D)
-  # # Home Row Mods と干渉するため無効化
-  # - type: basic
-  #   from:
-  #     key_code: d
-  #     modifiers:
-  #       mandatory:
-  #       - left_command
-  #   to:
-  #   - key_code: d
-  #     modifiers:
-  #     - shift
-  #     - command
-  #     repeat: false
-  #   conditions:
-  #   - type: frontmost_application_if
-  #     bundle_identifiers:
-  #     - "com.hogbaysoftware.Bike"
+  # [Bike] LCmd-D -> Shift-Cmd / Duplicate Rows (Shift-Cmd-D)
+  - type: basic
+    from:
+      key_code: d
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: shift
+      modifiers:
+      - command
+    to_if_alone:
+    - key_code: d
+      modifiers:
+      - shift
+      - command
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.hogbaysoftware.Bike"
 
   # [Bike] LCmd-Delete -> Delete Rows (Shift-Cmd-K)
   - type: basic
