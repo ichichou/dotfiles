@@ -32,6 +32,7 @@ function! s:r_map() abort
   inoremap <buffer> <expr> > smartchr#loop('>', '<Bar>>', '>>')
   inoremap <buffer> <expr> I smartchr#loop('I', '<lt>-')
   inoremap <buffer> <expr> M smartchr#loop('M', '<Bar>>')
+  inoremap <buffer> <expr> F smartchr#loop('F', 'function')
 endfunction
 
 function! s:vim_map() abort
