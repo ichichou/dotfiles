@@ -152,7 +152,7 @@ rules:
       repeat: false
     parameters: *short_threshold_ms
 
-    # RT -> [], Space (英語入力)
+  # RT -> [], Space (英語入力)
   - type: basic
     from:
       simultaneous:
