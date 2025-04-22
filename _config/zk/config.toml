@@ -1,130 +1,51 @@
 # zk configuration file
 
+# NOTEBOOK SETTINGS
+[notebook]
+dir = "~/Library/CloudStorage/Box-Box/Journal"
+
 # NOTE SETTINGS
 [note]
-
-# Language used when writing notes.
 language = "en"
-
-# The default title used for new note, if no `--title` flag is provided.
 default-title = "Untitled"
-
-# Template used to generate a note's filename, without extension.
-filename = "{{id}}"
-
-# The file extension used for the notes.
-extension = "md"
-
-# Template used to generate a note's content.
-template = "default.md"
-
-# Path globs ignored while indexing existing notes.
-# ignore = [
-#     "drafts/*",
-#     "log.md"
-# ]
+filename = "{{format-date now}}"
+extension = "bike"
+# template = "template.bike"
 
 # Configure random ID generation.
-
-# The charset used for random IDs. You can use:
 id-charset = "alphanum"
-
-# Length of the generated IDs.
 id-length = 4
-
-# Letter case for the random IDs, among lower, upper or mixed.
 id-case = "lower"
 
 # EXTRA VARIABLES
 [extra]
 # key = "value"
 
-# GROUP OVERRIDES
-[group.journal]
-paths = ["journal"]
-
-[group.journal.note]
-filename = "{{format-date now}}"
-extension = "md"
-template = "journal.md"
-
-[group.journal.extra]
-# key = "value"
-
-[group.draft]
-paths = ["draft"]
-
-[group.draft.note]
-filename = "{{format-date now '%Y%m%d%H%M%S'}}"
-template = "draft.md"
-
-[group.draft.extra]
-# key = "value"
-
-# MARKDOWN SETTINGS
-[format.markdown]
-
-# Format used to generate links between notes.
-link-format = "wiki"
-
-# Indicates whether a link's path will be percent-encoded.
-link-encode-path = false
-
-# Indicates whether a link's path file extension will be removed.
-link-drop-extension = true
-
-# Enable support for #hashtags.
-hashtags = true
-# Enable support for :colon:separated:tags:.
-colon-tags = false
-# Enable support for Bear's #multi-word tags#
-multiword-tags = false
-
 # EXTERNAL TOOLS
 [tool]
+editor = "bike"
+pager = "bat --language html --theme Nord"
+# pager = "cat | sd '^( )*‣?\\s*<[^>]+>\\s*\\n|(        )?<[^>]+>' '' | sd '    ' '  ' | bat"
+fzf-preview = "cat {-1} | sd '^\\s*<[^>]+>\\s*\\n|(        )?<[^>]+>' '' | sd '    ' '  '"
+fzf-line = "{{style 'title' filename-stem}} {{style 'understate' body}} {{style 'understate' (json metadata)}}"
 
-# Default editor used to open notes.
-editor = "vim"
-
-# Pager used to scroll through long output.
-pager = "bat --style 'grid'"
-
-# Command used to preview a note during interactive fzf mode.
-fzf-preview = "bat --plain --color always {-1}"
-
-# LSP
-[lsp]
-
-[lsp.diagnostics]
-
-# Report titles of wiki-links as hints.
-wiki-title = "hint"
-
-# Warn for dead links between notes.
-dead-link = "error"
-
-[lsp.completion]
-
-# Show the note title in the completion pop-up, or fallback on its path if empty.
-note-label = "{{title-or-path}}"
-
-# Filter out the completion pop-up using the note title or its path.
-note-filter-text = "{{title}} {{path}}"
-
-# Show the note filename without extension as detail.
-note-detail = "{{filename-stem}}"
+fzf-options = """
+--tiebreak begin
+--exact
+--tabstop 2
+--height 100%
+--layout reverse
+--no-hscroll
+--no-sort
+--preview-window 'right,75%'
+"""
 
 # NAMED FILTERS
 [filter]
 recents = "--sort created- --created-after 'last two weeks'"
-journal = "--sort created- journal"
-draft = "--sort created- draft"
+sort_by_date = "--sort path-"
 
 # COMMAND ALIASES
 [alias]
-config = "$EDITOR ~/dotfiles/.config/zk/config.toml"
-journal = 'zk new --no-input "$ZK_NOTEBOOK_DIR/journal"'
-draft = 'zk new --title "$*" "$ZK_NOTEBOOK_DIR/draft"'
-git_status = 'git -C "$ZK_NOTEBOOK_DIR" status --short --branch'
-save_journal = 'git -C "$ZK_NOTEBOOK_DIR" reset HEAD && git -C "$ZK_NOTEBOOK_DIR" add journal && git -C "$ZK_NOTEBOOK_DIR" commit -m "Update journal" && git -C "$ZK_NOTEBOOK_DIR" push'
-save_draft = 'git -C "$ZK_NOTEBOOK_DIR" reset HEAD && git -C "$ZK_NOTEBOOK_DIR" add draft && git -C "$ZK_NOTEBOOK_DIR" commit -m "Update draft" && git -C "$ZK_NOTEBOOK_DIR" push'
+config = "vim ~/dotfiles/_config/zk/config.toml"
+journal = "zk edit -i sort_by_date"

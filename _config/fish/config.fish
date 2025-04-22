@@ -72,20 +72,24 @@ abbr -ag cp cp -iv
 abbr -ag mv mv -iv
 
 # Apps
-abbr -ag R   R --quiet --no-save
-abbr -ag a   bat
-abbr -ag awk gawk
-abbr -ag csv csvlens
-abbr -ag hs  ghci
-abbr -ag n   numbat
-abbr -ag nvi nvim
-abbr -ag r   r --quiet --no-save
-abbr -ag ra  ranger
-abbr -ag sed gsed
-abbr -ag t   tig
-abbr -ag ts  tig status
-abbr -ag yqj yq eval -o=json
-abbr -ag yqy yq eval -P
+abbr -ag R    R --quiet --no-save
+abbr -ag a    bat
+abbr -ag awk  gawk
+abbr -ag csv  csvlens
+abbr -ag diff batdiff
+abbr -ag grep batgrep
+abbr -ag hs   ghci
+abbr -ag j    z
+abbr -ag man  batman
+abbr -ag n    numbat
+abbr -ag nvi  nvim
+abbr -ag r    r --quiet --no-save
+abbr -ag ra   ranger
+abbr -ag sed  gsed
+abbr -ag t    tig
+abbr -ag ts   tig status
+abbr -ag yqj  yq eval -o=json
+abbr -ag yqy  yq eval -P
 
 abbr -ag vi vim
 
@@ -107,32 +111,13 @@ else
   abbr -ag rm rm -iv
 end
 
-# z
-abbr -ag j  z
-abbr -ag jd z dotfiles
-abbr -ag jl z downloads
-abbr -ag jr z repos
-abbr -ag jk z zk
-
 # zk
 abbr -ag k  zk
+abbr -ag kj zk journal
 abbr -ag kc zk config
 abbr -ag ke zk edit -i
-abbr -ag kg zk git_status
 abbr -ag kl zk list -i
-abbr -ag kn zk new
-
-abbr -ag kj  zk journal
-abbr -ag kje zk edit -i journal
-abbr -ag kjl zk list -i journal
-abbr -ag kjn zk new journal
-abbr -ag kjs zk save_journal
-
-abbr -ag kd  zk edit -i draft
-abbr -ag kde zk edit -i draft
-abbr -ag kdl zk list -i draft
-abbr -ag kdn zk new draft
-abbr -ag kds zk save_draft
+abbr -ag kn zk new --no-input
 
 # Homebrew
 abbr -ag b    brew
@@ -254,8 +239,8 @@ fzf --fish | source
 # Preview file content using bat
 set -gx FZF_CTRL_T_OPTS "\
   --walker-skip .git,node_modules,target \
-  --preview 'bat -n --color=always {}' \
-  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
+  --preview 'bat --number --color always {}' \
+  --preview-window 'right,75%,wrap,<100(right,50%,wrap)'"
 
 # CTRL-Y to copy the command into clipboard using pbcopy
 set -gx FZF_CTRL_R_OPTS "\
@@ -267,10 +252,6 @@ set -gx FZF_CTRL_R_OPTS "\
 set -gx FZF_ALT_C_OPTS "\
   --walker-skip .git,node_modules,target \
   --preview 'eza -T {}'"
-
-# zk ---------------------------------------------
-
-set -gx ZK_NOTEBOOK_DIR ~/repos/zk
 
 # Numbat -----------------------------------------
 
