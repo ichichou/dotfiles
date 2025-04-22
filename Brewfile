@@ -8,6 +8,7 @@ tap "laishulu/homebrew"
 # CLI Apps ---------------------------------------
 
 brew "bat"
+brew "bat-extras"
 brew "coreutils"
 brew "csvlens"
 brew "eza"
