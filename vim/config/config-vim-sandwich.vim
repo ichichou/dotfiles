@@ -16,9 +16,9 @@ nmap sd  <Plug>(sandwich-delete)
 xmap sd  <Plug>(sandwich-delete)
 nmap sdb <Plug>(sandwich-delete-auto)
 
-nmap sr  <Plug>(sandwich-replace)
-xmap sr  <Plug>(sandwich-replace)
-nmap srb <Plug>(sandwich-replace-auto)
+nmap sc  <Plug>(sandwich-replace)
+xmap sc  <Plug>(sandwich-replace)
+nmap scb <Plug>(sandwich-replace-auto)
 
 xmap ib <Plug>(textobj-sandwich-auto-i)
 xmap ab <Plug>(textobj-sandwich-auto-a)
