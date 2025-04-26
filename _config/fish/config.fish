@@ -156,6 +156,7 @@ abbr -ag grv git revert
 abbr -ag gs  git status --short --branch
 abbr -ag gsh git show
 abbr -ag gss git status
+abbr -ag gt  git stash
 abbr -ag gw  git switch
 
 # }}}
