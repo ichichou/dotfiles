@@ -52,6 +52,11 @@ aliases:
     bundle_identifiers:
     - "^com\\.apple\\.loginwindow$"
 
+# Parameters -------------------------------------
+
+- parameters: &threshold_ms
+    basic.simultaneous_threshold_milliseconds: 70
+
 # RULES ==========================================
 
 rules:
@@ -72,6 +77,7 @@ rules:
     - key_code: u
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ほ
   - type: basic
@@ -85,6 +91,7 @@ rules:
     - key_code: o
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # む
   - type: basic
@@ -98,6 +105,7 @@ rules:
     - key_code: u
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # も
   - type: basic
@@ -111,6 +119,7 @@ rules:
     - key_code: o
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ゆ
   - type: basic
@@ -124,6 +133,7 @@ rules:
     - key_code: u
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # れ
   - type: basic
@@ -137,6 +147,7 @@ rules:
     - key_code: e
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ご
   - type: basic
@@ -150,6 +161,7 @@ rules:
     - key_code: o
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # じ
   - type: basic
@@ -163,6 +175,7 @@ rules:
     - key_code: i
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ぞ
   - type: basic
@@ -176,6 +189,7 @@ rules:
     - key_code: o
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # づ
   - type: basic
@@ -189,6 +203,7 @@ rules:
     - key_code: u
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ぼ
   - type: basic
@@ -202,6 +217,7 @@ rules:
     - key_code: o
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ふぁ
   - type: basic
@@ -215,6 +231,7 @@ rules:
     - key_code: a
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ふぃ
   - type: basic
@@ -228,6 +245,7 @@ rules:
     - key_code: i
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ふぇ
   - type: basic
@@ -241,6 +259,7 @@ rules:
     - key_code: e
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ふぉ
   - type: basic
@@ -254,6 +273,7 @@ rules:
     - key_code: o
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ぁ
   - type: basic
@@ -267,6 +287,7 @@ rules:
     - key_code: a
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ぃ
   - type: basic
@@ -280,6 +301,7 @@ rules:
     - key_code: i
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ぅ
   - type: basic
@@ -293,6 +315,7 @@ rules:
     - key_code: u
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ぇ
   - type: basic
@@ -306,6 +329,7 @@ rules:
     - key_code: e
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ぉ
   - type: basic
@@ -319,6 +343,7 @@ rules:
     - key_code: o
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
 # 中指シフト・左 ---------------------------------
 
@@ -333,6 +358,7 @@ rules:
     - key_code: a
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # え
   - type: basic
@@ -345,6 +371,7 @@ rules:
     - key_code: e
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # せ
   - type: basic
@@ -358,6 +385,7 @@ rules:
     - key_code: e
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ね
   - type: basic
@@ -371,6 +399,7 @@ rules:
     - key_code: e
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # へ
   - type: basic
@@ -384,6 +413,7 @@ rules:
     - key_code: e
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # み
   - type: basic
@@ -397,6 +427,7 @@ rules:
     - key_code: i
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # よ
   - type: basic
@@ -410,6 +441,7 @@ rules:
     - key_code: o
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # べ
   - type: basic
@@ -423,6 +455,7 @@ rules:
     - key_code: e
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ぱ
   - type: basic
@@ -436,6 +469,7 @@ rules:
     - key_code: a
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ぷ
   - type: basic
@@ -449,6 +483,7 @@ rules:
     - key_code: u
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ヴ
   - type: basic
@@ -462,6 +497,7 @@ rules:
     - key_code: u
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # うぃ
   - type: basic
@@ -475,6 +511,7 @@ rules:
     - key_code: i
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # うぇ
   - type: basic
@@ -488,6 +525,7 @@ rules:
     - key_code: e
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # うぉ
   - type: basic
@@ -502,6 +540,7 @@ rules:
     - key_code: o
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # コンマ
   - type: basic
@@ -514,6 +553,7 @@ rules:
     - key_code: comma
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # セミコロン
   - type: basic
@@ -526,6 +566,7 @@ rules:
     - key_code: semicolon
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # 開き鉤括弧
   - type: basic
@@ -538,6 +579,7 @@ rules:
     - key_code: open_bracket
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # 閉じ鉤括弧
   - type: basic
@@ -550,6 +592,7 @@ rules:
     - key_code: close_bracket
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
 # 薬指シフト・右 ---------------------------------
 
@@ -564,6 +607,7 @@ rules:
     - key_code: o
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # け
   - type: basic
@@ -577,6 +621,7 @@ rules:
     - key_code: e
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # さ
   - type: basic
@@ -590,6 +635,7 @@ rules:
     - key_code: a
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ぬ
   - type: basic
@@ -603,6 +649,7 @@ rules:
     - key_code: u
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # め
   - type: basic
@@ -616,6 +663,7 @@ rules:
     - key_code: e
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # り
   - type: basic
@@ -629,6 +677,7 @@ rules:
     - key_code: i
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ろ
   - type: basic
@@ -642,6 +691,7 @@ rules:
     - key_code: o
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # を
   - type: basic
@@ -655,6 +705,7 @@ rules:
     - key_code: o
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ぎ
   - type: basic
@@ -668,6 +719,7 @@ rules:
     - key_code: i
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ざ
   - type: basic
@@ -681,6 +733,7 @@ rules:
     - key_code: a
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ず
   - type: basic
@@ -694,6 +747,7 @@ rules:
     - key_code: u
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ぜ
   - type: basic
@@ -707,6 +761,7 @@ rules:
     - key_code: e
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ぢ
   - type: basic
@@ -720,6 +775,7 @@ rules:
     - key_code: i
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # てぃ
   - type: basic
@@ -734,6 +790,7 @@ rules:
     - key_code: i
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # でぃ
   - type: basic
@@ -748,6 +805,7 @@ rules:
     - key_code: i
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # みゃ
   - type: basic
@@ -762,6 +820,7 @@ rules:
     - key_code: a
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # みゅ
   - type: basic
@@ -776,6 +835,7 @@ rules:
     - key_code: u
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # みょ
   - type: basic
@@ -790,6 +850,7 @@ rules:
     - key_code: o
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ゃ
   - type: basic
@@ -804,6 +865,7 @@ rules:
     - key_code: a
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ゎ
   - type: basic
@@ -818,6 +880,7 @@ rules:
     - key_code: a
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
 # 薬指シフト・左 ---------------------------------
 
@@ -833,6 +896,7 @@ rules:
     - key_code: o
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # や
   - type: basic
@@ -846,6 +910,7 @@ rules:
     - key_code: a
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ら
   - type: basic
@@ -859,6 +924,7 @@ rules:
     - key_code: a
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # わ
   - type: basic
@@ -872,6 +938,7 @@ rules:
     - key_code: a
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # だ
   - type: basic
@@ -885,6 +952,7 @@ rules:
     - key_code: a
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ど
   - type: basic
@@ -898,6 +966,7 @@ rules:
     - key_code: o
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # び
   - type: basic
@@ -911,6 +980,7 @@ rules:
     - key_code: i
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ぴ
   - type: basic
@@ -924,6 +994,7 @@ rules:
     - key_code: i
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ぺ
   - type: basic
@@ -937,6 +1008,7 @@ rules:
     - key_code: e
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ぽ
   - type: basic
@@ -950,6 +1022,7 @@ rules:
     - key_code: o
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # しぇ
   - type: basic
@@ -964,6 +1037,7 @@ rules:
     - key_code: e
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ちぇ
   - type: basic
@@ -978,6 +1052,7 @@ rules:
     - key_code: e
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # じぇ
   - type: basic
@@ -992,6 +1067,7 @@ rules:
     - key_code: e
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ピリオド
   - type: basic
@@ -1005,6 +1081,7 @@ rules:
     - key_code: period
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # コロン
   - type: basic
@@ -1018,6 +1095,7 @@ rules:
       modifiers: *to_shift
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # 開き丸括弧
   - type: basic
@@ -1031,6 +1109,7 @@ rules:
       modifiers: *to_shift
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # 閉じ丸括弧
   - type: basic
@@ -1044,8 +1123,9 @@ rules:
       modifiers: *to_shift
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
-  # #  (未定義) (改変)
+  # # (未定義) (改変)
   # - type: basic
   #   from:
   #     simultaneous:
@@ -1056,6 +1136,7 @@ rules:
   #   - key_code:
   #     repeat: false
   #   conditions: *base
+  #   parameters: *threshold_ms
 
 # 中指上段シフト ---------------------------------
 
@@ -1072,6 +1153,7 @@ rules:
     - key_code: a
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # きゅ
   - type: basic
@@ -1086,6 +1168,7 @@ rules:
     - key_code: u
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # きょ
   - type: basic
@@ -1100,6 +1183,7 @@ rules:
     - key_code: o
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # しゃ
   - type: basic
@@ -1114,6 +1198,7 @@ rules:
     - key_code: a
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # しゅ
   - type: basic
@@ -1128,6 +1213,7 @@ rules:
     - key_code: u
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # しょ
   - type: basic
@@ -1142,6 +1228,7 @@ rules:
     - key_code: o
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ちゃ
   - type: basic
@@ -1156,6 +1243,7 @@ rules:
     - key_code: a
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ちゅ
   - type: basic
@@ -1170,6 +1258,7 @@ rules:
     - key_code: u
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ちょ
   - type: basic
@@ -1184,6 +1273,7 @@ rules:
     - key_code: o
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ひゃ
   - type: basic
@@ -1198,6 +1288,7 @@ rules:
     - key_code: a
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ひゅ
   - type: basic
@@ -1212,6 +1303,7 @@ rules:
     - key_code: u
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ひょ
   - type: basic
@@ -1226,6 +1318,7 @@ rules:
     - key_code: o
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # びゃ
   - type: basic
@@ -1240,6 +1333,7 @@ rules:
     - key_code: a
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # びゅ
   - type: basic
@@ -1254,6 +1348,7 @@ rules:
     - key_code: u
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # びょ
   - type: basic
@@ -1268,6 +1363,7 @@ rules:
     - key_code: o
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ゅ
   - type: basic
@@ -1282,6 +1378,7 @@ rules:
     - key_code: u
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # とぅ (改変)
   - type: basic
@@ -1296,6 +1393,7 @@ rules:
     - key_code: u
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
 # 薬指上段シフト ---------------------------------
 
@@ -1312,6 +1410,7 @@ rules:
     - key_code: a
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # にゅ
   - type: basic
@@ -1326,6 +1425,7 @@ rules:
     - key_code: u
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # にょ
   - type: basic
@@ -1340,6 +1440,7 @@ rules:
     - key_code: o
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # りゃ
   - type: basic
@@ -1354,6 +1455,7 @@ rules:
     - key_code: a
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # りゅ
   - type: basic
@@ -1368,6 +1470,7 @@ rules:
     - key_code: u
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # りょ
   - type: basic
@@ -1382,6 +1485,7 @@ rules:
     - key_code: o
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ぎゃ
   - type: basic
@@ -1396,6 +1500,7 @@ rules:
     - key_code: a
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ぎゅ
   - type: basic
@@ -1410,6 +1515,7 @@ rules:
     - key_code: u
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ぎょ
   - type: basic
@@ -1424,6 +1530,7 @@ rules:
     - key_code: o
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # じゃ
   - type: basic
@@ -1438,6 +1545,7 @@ rules:
     - key_code: a
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # じゅ
   - type: basic
@@ -1452,6 +1560,7 @@ rules:
     - key_code: u
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # じょ
   - type: basic
@@ -1466,6 +1575,7 @@ rules:
     - key_code: o
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ぴゃ
   - type: basic
@@ -1480,6 +1590,7 @@ rules:
     - key_code: a
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ぴゅ
   - type: basic
@@ -1494,6 +1605,7 @@ rules:
     - key_code: u
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ぴょ
   - type: basic
@@ -1508,6 +1620,7 @@ rules:
     - key_code: o
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ょ
   - type: basic
@@ -1522,6 +1635,7 @@ rules:
     - key_code: o
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # どぅ (改変)
   - type: basic
@@ -1536,6 +1650,7 @@ rules:
     - key_code: u
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
 # 小指上段シフト・右 (改変) -----------------------------
 
@@ -1552,6 +1667,7 @@ rules:
     - key_code: a
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # みゅ
   - type: basic
@@ -1566,6 +1682,7 @@ rules:
     - key_code: u
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # みょ
   - type: basic
@@ -1580,6 +1697,7 @@ rules:
     - key_code: o
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ぢゃ
   - type: basic
@@ -1594,6 +1712,7 @@ rules:
     - key_code: a
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ぢゅ
   - type: basic
@@ -1608,6 +1727,7 @@ rules:
     - key_code: u
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ぢょ
   - type: basic
@@ -1622,6 +1742,7 @@ rules:
     - key_code: o
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # びゃ
   - type: basic
@@ -1636,6 +1757,7 @@ rules:
     - key_code: a
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # びゅ
   - type: basic
@@ -1650,6 +1772,7 @@ rules:
     - key_code: u
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # びょ
   - type: basic
@@ -1664,6 +1787,7 @@ rules:
     - key_code: o
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ぴゃ
   - type: basic
@@ -1678,6 +1802,7 @@ rules:
     - key_code: a
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ぴゅ
   - type: basic
@@ -1692,6 +1817,7 @@ rules:
     - key_code: u
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ぴょ
   - type: basic
@@ -1706,8 +1832,9 @@ rules:
     - key_code: o
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
-  # #  (未定義)
+  # # (未定義)
   # - type: basic
   #   from:
   #     simultaneous:
@@ -1718,6 +1845,7 @@ rules:
   #   - key_code:
   #     repeat: false
   #   conditions: *base
+  #   parameters: *threshold_ms
 
 # 小指上段シフト・左 (改変) -----------------------------
 
@@ -1733,6 +1861,7 @@ rules:
     - key_code: a
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ぃ
   - type: basic
@@ -1746,6 +1875,7 @@ rules:
     - key_code: i
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ぅ
   - type: basic
@@ -1759,6 +1889,7 @@ rules:
     - key_code: u
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ぇ
   - type: basic
@@ -1772,6 +1903,7 @@ rules:
     - key_code: e
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ぉ
   - type: basic
@@ -1785,6 +1917,7 @@ rules:
     - key_code: o
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ゃ
   - type: basic
@@ -1799,6 +1932,7 @@ rules:
     - key_code: a
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ゅ
   - type: basic
@@ -1813,6 +1947,7 @@ rules:
     - key_code: u
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ょ
   - type: basic
@@ -1827,6 +1962,7 @@ rules:
     - key_code: o
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # げ
   # Quote が押せない場合への対応
@@ -1841,6 +1977,7 @@ rules:
     - key_code: e
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # うぉ
   # Quote が押せない場合への対応
@@ -1856,6 +1993,7 @@ rules:
     - key_code: o
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
   # ゎ
   - type: basic
@@ -1870,6 +2008,7 @@ rules:
     - key_code: a
       repeat: false
     conditions: *base
+    parameters: *threshold_ms
 
 # ベース -----------------------------------------
 
@@ -2233,7 +2372,7 @@ rules:
 
   # Symbol Mode Mapping --------------------------
 
-  # 入力される記号は仮名テーブルで定義する
+  # 入力される記号はIMEの仮名テーブルで定義する
 
   # Y
   - type: basic
