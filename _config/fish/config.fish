@@ -165,31 +165,36 @@ abbr -ag gw  git switch
 
 # Auto ls ----------------------------------------
 
-# Use $status
-function cd
-  builtin cd $argv
-  if test $status -eq 0
-    if test (ls -A | count) -gt 50
-      echo "(>50 items exist in $(basename $PWD)/)"
+# 'Use $PWD' を使い、'Use $status' は使わない。
+# cd コマンドを上書きする形の実装では dir history が更新されず、
+# prevd や nextd が使用不能になるため。
+# $PWD の更新に伴って ls を実行する形の実装なら問題ない。
+
+# Use $PWD
+function auto_ls --on-variable PWD
+  if test (ls -A | count) -gt 50
+    echo "(>50 items exist in $(basename $PWD)/)"
+  else
+    if test -e "/opt/homebrew/bin/eza"
+      eza -a --group-directories-first
     else
-      if test -e "/opt/homebrew/bin/eza"
-        eza -a --group-directories-first
-      else
-        ls -AG
-      end
+      ls -AG
     end
   end
 end
 
-# # Use $PWD
-# function auto_ls --on-variable PWD
-#   if test (ls -A | count) -gt 50
-#     echo "(>50 items exist in $(basename $PWD)/)"
-#   else
-#     if test -e "/opt/homebrew/bin/eza"
-#       eza -a --group-directories-first
+# # Use $status
+# function cd
+#   builtin cd $argv
+#   if test $status -eq 0
+#     if test (ls -A | count) -gt 50
+#       echo "(>50 items exist in $(basename $PWD)/)"
 #     else
-#       ls -AG
+#       if test -e "/opt/homebrew/bin/eza"
+#         eza -a --group-directories-first
+#       else
+#         ls -AG
+#       end
 #     end
 #   end
 # end
