@@ -55,7 +55,7 @@ aliases:
 # Parameters -------------------------------------
 
 - parameters: &threshold_ms
-    basic.simultaneous_threshold_milliseconds: 70
+    basic.simultaneous_threshold_milliseconds: 50
 
 # RULES ==========================================
 
