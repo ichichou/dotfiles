@@ -485,7 +485,7 @@ rules:
 
   # Left Side Keys {{{
 
-  # Q -> Shift-Command-S
+  # Q -> Shift-Cmd-C
   - type: basic
     from:
       key_code: q
@@ -517,7 +517,7 @@ rules:
       - shift
     conditions: *edit_1
 
-  # R -> Center Window (Shift-Control-Option-C)
+  # R -> Center Window (Shift-Ctrl-Opt-C)
   - type: basic
     from:
       key_code: r
@@ -530,7 +530,7 @@ rules:
       repeat: false
     conditions: *edit_1
 
-  # T -> Shift-Command-T
+  # T -> Shift-Cmd-T
   - type: basic
     from:
       key_code: t
@@ -542,7 +542,7 @@ rules:
       repeat: false
     conditions: *edit_1
 
-  # A -> Shift-Command-A
+  # A -> Shift-Cmd-A
   - type: basic
     from:
       key_code: a
@@ -570,7 +570,7 @@ rules:
     - key_code: close_bracket
     conditions: *edit_1
 
-  # F -> Command-Control-V (Clipboard in Raycast)
+  # F -> Cmd-Ctrl-V (Clipboard in Raycast)
   - type: basic
     from:
       key_code: f
@@ -582,7 +582,7 @@ rules:
       repeat: false
     conditions: *edit_1
 
-  # G -> Command-Control-S (Snippet in Raycast)
+  # G -> Cmd-Ctrl-S (Snippet in Raycast)
   - type: basic
     from:
       key_code: g
@@ -594,7 +594,7 @@ rules:
       repeat: false
     conditions: *edit_1
 
-  # Z -> Shift-Command-Z
+  # Z -> Shift-Cmd-Z
   - type: basic
     from:
       key_code: z
@@ -606,7 +606,7 @@ rules:
       repeat: false
     conditions: *edit_1
 
-  # X -> Command-X
+  # X -> Cmd-X
   - type: basic
     from:
       key_code: x
@@ -617,7 +617,7 @@ rules:
       repeat: false
     conditions: *edit_1
 
-  # C -> Command-C
+  # C -> Cmd-C
   - type: basic
     from:
       key_code: c
@@ -628,7 +628,7 @@ rules:
       repeat: false
     conditions: *edit_1
 
-  # V -> Shift-Command-V
+  # V -> Shift-Cmd-V
   - type: basic
     from:
       key_code: v
@@ -640,7 +640,7 @@ rules:
       repeat: false
     conditions: *edit_1
 
-  # B -> Command-V
+  # B -> Cmd-V
   - type: basic
     from:
       key_code: b
@@ -655,7 +655,7 @@ rules:
 
   # Right Side Keys {{{
 
-  # Y -> Command-Tab
+  # Y -> Cmd-Tab
   - type: basic
     from:
       key_code: "y"
@@ -666,7 +666,7 @@ rules:
       repeat: false
     conditions: *edit_1
 
-  # U -> Control-Tab
+  # U -> Ctrl-Tab
   - type: basic
     from:
       key_code: u
@@ -697,7 +697,7 @@ rules:
       - shift
     conditions: *edit_1
 
-  # P -> Command-]
+  # P -> Cmd-]
   - type: basic
     from:
       key_code: p
@@ -708,7 +708,7 @@ rules:
       repeat: false
     conditions: *edit_1
 
-  # [ -> Command-Up
+  # [ -> Cmd-Up
   - type: basic
     from:
       key_code: open_bracket
@@ -775,7 +775,7 @@ rules:
     - key_code: right_arrow
     conditions: *edit_1
 
-  # ; -> Command-[
+  # ; -> Cmd-[
   - type: basic
     from:
       key_code: semicolon
@@ -786,7 +786,7 @@ rules:
       repeat: false
     conditions: *edit_1
 
-  # ' -> Command-Down
+  # ' -> Cmd-Down
   - type: basic
     from:
       key_code: quote
@@ -813,7 +813,7 @@ rules:
     - key_code: delete_forward
     conditions: *edit_1
 
-  # , -> Control-A
+  # , -> Ctrl-A
   - type: basic
     from:
       key_code: comma
@@ -824,7 +824,7 @@ rules:
       repeat: false
     conditions: *edit_1
 
-  # . -> Control-E
+  # . -> Ctrl-E
   - type: basic
     from:
       key_code: period
@@ -882,7 +882,7 @@ rules:
 
   # Left Side Keys {{{
 
-  # Q -> Control-Option-U (Left Up Window)
+  # Q -> Ctrl-Opt-U (Left Up Window)
   - type: basic
     from:
       key_code: q
@@ -894,7 +894,7 @@ rules:
       repeat: false
     conditions: *edit_2
 
-  # W -> Control-Option-I (Right Up Window)
+  # W -> Ctrl-Opt-I (Right Up Window)
   - type: basic
     from:
       key_code: w
@@ -912,7 +912,7 @@ rules:
       key_code: e
     conditions: *edit_2
 
-  # R -> Shift-Control-Option-C (Center Window)
+  # R -> Shift-Ctrl-Opt-C (Center Window)
   - type: basic
     from:
       key_code: r
@@ -925,7 +925,7 @@ rules:
       repeat: false
     conditions: *edit_2
 
-  # T -> Control-1
+  # T -> Ctrl-1
   - type: basic
     from:
       key_code: t
@@ -936,7 +936,7 @@ rules:
       repeat: false
     conditions: *edit_2
 
-  # A -> Control-Option-Left (Left Half Window)
+  # A -> Ctrl-Opt-Left (Left Half Window)
   - type: basic
     from:
       key_code: a
@@ -948,7 +948,7 @@ rules:
       repeat: false
     conditions: *edit_2
 
-  # S -> Control-Option-D (Left 1/3 Window)
+  # S -> Ctrl-Opt-D (Left 1/3 Window)
   - type: basic
     from:
       key_code: s
@@ -960,7 +960,7 @@ rules:
       repeat: false
     conditions: *edit_2
 
-  # D -> Control-Option-G (Right 1/3 Window)
+  # D -> Ctrl-Opt-G (Right 1/3 Window)
   - type: basic
     from:
       key_code: d
@@ -972,7 +972,7 @@ rules:
       repeat: false
     conditions: *edit_2
 
-  # F -> Control-Option-Right (Right Half Window)
+  # F -> Ctrl-Opt-Right (Right Half Window)
   - type: basic
     from:
       key_code: f
@@ -984,7 +984,7 @@ rules:
       repeat: false
     conditions: *edit_2
 
-  # G -> Control-2
+  # G -> Ctrl-2
   - type: basic
     from:
       key_code: g
@@ -995,7 +995,7 @@ rules:
       repeat: false
     conditions: *edit_2
 
-  # Z -> Control-Option-Z (Left Quarter Window)
+  # Z -> Ctrl-Opt-Z (Left Quarter Window)
   - type: basic
     from:
       key_code: z
@@ -1007,7 +1007,7 @@ rules:
       repeat: false
     conditions: *edit_2
 
-  # X -> Control-Option-X (Left 3/4 Window)
+  # X -> Ctrl-Opt-X (Left 3/4 Window)
   - type: basic
     from:
       key_code: x
@@ -1019,7 +1019,7 @@ rules:
       repeat: false
     conditions: *edit_2
 
-  # C -> Control-Option-V (Right 3/4 Window)
+  # C -> Ctrl-Opt-V (Right 3/4 Window)
   - type: basic
     from:
       key_code: c
@@ -1031,7 +1031,7 @@ rules:
       repeat: false
     conditions: *edit_2
 
-  # V -> Control-Option-B (Right Quarter Window)
+  # V -> Ctrl-Opt-B (Right Quarter Window)
   - type: basic
     from:
       key_code: v
@@ -1043,7 +1043,7 @@ rules:
       repeat: false
     conditions: *edit_2
 
-  # B -> Control-3
+  # B -> Ctrl-3
   - type: basic
     from:
       key_code: b
@@ -1058,7 +1058,7 @@ rules:
 
   # Right Side Keys {{{
 
-  # Y -> Control-4
+  # Y -> Ctrl-4
   - type: basic
     from:
       key_code: "y"
@@ -1069,7 +1069,7 @@ rules:
       repeat: false
     conditions: *edit_2
 
-  # U -> Shift-Control-Option-C (Center Window)
+  # U -> Shift-Ctrl-Opt-C (Center Window)
   - type: basic
     from:
       key_code: u
@@ -1082,7 +1082,7 @@ rules:
       repeat: false
     conditions: *edit_2
 
-  # I -> Option-Up
+  # I -> Opt-Up
   - type: basic
     from:
       key_code: i
@@ -1117,7 +1117,7 @@ rules:
       key_code: close_bracket
     conditions: *edit_2
 
-  # \ -> Shift-Control-Option-Return (Almost Maximize Window)
+  # \ -> Shift-Ctrl-Opt-Return (Almost Maximize Window)
   - type: basic
     from:
       key_code: backslash
@@ -1129,7 +1129,7 @@ rules:
       - option
     conditions: *edit_2
 
-  # H -> Control-5
+  # H -> Ctrl-5
   - type: basic
     from:
       key_code: h
@@ -1140,7 +1140,7 @@ rules:
       repeat: false
     conditions: *edit_2
 
-  # J -> Control-Option-C (Center Window)
+  # J -> Ctrl-Opt-C (Center Window)
   - type: basic
     from:
       key_code: j
@@ -1152,7 +1152,7 @@ rules:
       repeat: false
     conditions: *edit_2
 
-  # K -> Option-Down
+  # K -> Opt-Down
   - type: basic
     from:
       key_code: k
@@ -1181,7 +1181,7 @@ rules:
       key_code: quote
     conditions: *edit_2
 
-  # N -> Control-6
+  # N -> Ctrl-6
   - type: basic
     from:
       key_code: "n"
@@ -1192,7 +1192,7 @@ rules:
       repeat: false
     conditions: *edit_2
 
-  # M -> Control-Option-Return (Maximize Window)
+  # M -> Ctrl-Opt-Return (Maximize Window)
   - type: basic
     from:
       key_code: m
@@ -1226,7 +1226,7 @@ rules:
 
   # Other Keys {{{
 
-  # Delete -> Control-Option-Delete (Restore Window)
+  # Delete -> Ctrl-Opt-Delete (Restore Window)
   - type: basic
     from:
       key_code: delete_or_backspace
@@ -1238,7 +1238,7 @@ rules:
       repeat: false
     conditions: *edit_2
 
-  # Return -> Shift-Control-Option-Return (Almost Maximize Window)
+  # Return -> Shift-Ctrl-Opt-Return (Almost Maximize Window)
   - type: basic
     from:
       key_code: return_or_enter
