@@ -49,7 +49,7 @@ rules:
 
   # 英語入力 -------------------------------------
 
-  # FJ -> Kana, Ctrl-;
+  # FJ -> Kana, Shift-Ctrl-;
   # macSKK: かなカナモード切り替え, 入力中のかなカナ切り替え
   - type: basic
     from:
@@ -60,6 +60,7 @@ rules:
     - key_code: japanese_kana
     - key_code: semicolon
       modifiers:
+      - shift
       - control
       repeat: false
     conditions:
@@ -69,7 +70,7 @@ rules:
 
   # 日本語入力 -----------------------------------
 
-  # FJ -> Ctrl-;
+  # FJ -> Shift-Ctrl-;
   # macSKK: かなカナモード切り替え, 入力中のかなカナ切り替え
   - type: basic
     from:
@@ -79,6 +80,7 @@ rules:
     to:
     - key_code: semicolon
       modifiers:
+      - shift
       - control
       repeat: false
     conditions:
