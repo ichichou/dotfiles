@@ -2464,7 +2464,7 @@ rules:
       repeat: false
     conditions: *symbol
 
-  # Semicolon
+  # ;
   - type: basic
     from:
       key_code: semicolon
@@ -2474,7 +2474,7 @@ rules:
       repeat: false
     conditions: *symbol
 
-  # Colon
+  # :
   - type: basic
     from:
       key_code: semicolon
@@ -2486,7 +2486,7 @@ rules:
       repeat: false
     conditions: *symbol
 
-  # Single Quote
+  # '
   - type: basic
     from:
       key_code: quote
@@ -2496,7 +2496,7 @@ rules:
       repeat: false
     conditions: *symbol
 
-  # Double Quote
+  # "
   - type: basic
     from:
       key_code: quote
@@ -2528,7 +2528,7 @@ rules:
       repeat: false
     conditions: *symbol
 
-  # Comma
+  # ,
   - type: basic
     from:
       key_code: comma
@@ -2538,7 +2538,7 @@ rules:
       repeat: false
     conditions: *symbol
 
-  # Period
+  # .
   - type: basic
     from:
       key_code: period
@@ -2548,7 +2548,7 @@ rules:
       repeat: false
     conditions: *symbol
 
-  # Less Than
+  # <
   - type: basic
     from:
       key_code: comma
@@ -2560,7 +2560,7 @@ rules:
       repeat: false
     conditions: *symbol
 
-  # Greater Than
+  # >
   - type: basic
     from:
       key_code: period
@@ -2572,7 +2572,7 @@ rules:
       repeat: false
     conditions: *symbol
 
-  # Slash
+  # /
   - type: basic
     from:
       key_code: slash
@@ -2582,7 +2582,7 @@ rules:
       repeat: false
     conditions: *symbol
 
-  # Question Mark
+  # ?
   - type: basic
     from:
       key_code: slash
@@ -2594,7 +2594,7 @@ rules:
       repeat: false
     conditions: *symbol
 
-  # Bracket
+  # [
   - type: basic
     from:
       key_code: open_bracket
@@ -2604,6 +2604,7 @@ rules:
       repeat: false
     conditions: *symbol
 
+  # ]
   - type: basic
     from:
       key_code: close_bracket
@@ -2613,7 +2614,7 @@ rules:
       repeat: false
     conditions: *symbol
 
-  # Brace
+  # {
   - type: basic
     from:
       key_code: open_bracket
@@ -2625,6 +2626,7 @@ rules:
       repeat: false
     conditions: *symbol
 
+  # }
   - type: basic
     from:
       key_code: close_bracket
@@ -2636,7 +2638,7 @@ rules:
       repeat: false
     conditions: *symbol
 
-  # Paren
+  # (
   - type: basic
     from:
       key_code: "9"
@@ -2648,6 +2650,7 @@ rules:
       repeat: false
     conditions: *symbol
 
+  # )
   - type: basic
     from:
       key_code: "0"
@@ -2655,6 +2658,28 @@ rules:
     to:
     - key_code: backslash
     - key_code: "0"
-      repeat: false
       modifiers: *to_shift
+      repeat: false
+    conditions: *symbol
+
+  # 9 (alternative for '(')
+  - type: basic
+    from:
+      key_code: "9"
+    to:
+    - key_code: backslash
+    - key_code: "9"
+      modifiers: *to_shift
+      repeat: false
+    conditions: *symbol
+
+  # 0 (alternative for ')')
+  - type: basic
+    from:
+      key_code: "0"
+    to:
+    - key_code: backslash
+    - key_code: "0"
+      modifiers: *to_shift
+      repeat: false
     conditions: *symbol
