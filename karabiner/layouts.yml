@@ -417,9 +417,9 @@ rules:
 
 # }}}
 
-# MTGAP (mod-1, for Monkeytype) {{{
+# MTGAP (Mod-Q, for Monkeytype) {{{
 
-# - description: "11-2. MTGAP (mod-1, for Monkeytype)"
+# - description: "11-2. MTGAP (Mod-Q, for Monkeytype)"
 #   manipulators:
 #
 #   # Upper Row ------------------------------------
@@ -502,9 +502,9 @@ rules:
 
 # }}}
 
-# MTGAP (mod-1) {{{
+# MTGAP (Mod-Q) {{{
 
-- description: "11-2. MTGAP (mod-1)"
+- description: "11-2. MTGAP (Mod-Q)"
   manipulators:
 
   # Upper Row ------------------------------------
@@ -825,9 +825,9 @@ rules:
 
 # }}}
 
-# MTGAP (mod-2) {{{
+# MTGAP (Mod-Y) {{{
 
-- description: "11-2. MTGAP (mod-2)"
+- description: "11-2. MTGAP (Mod-Y)"
   manipulators:
 
   # Upper Row ------------------------------------
