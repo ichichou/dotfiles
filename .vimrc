@@ -183,8 +183,8 @@ endif
 "        Norm   Ins   Cmd   Vis   Sel   Opr   Term   Lang
 "       ------ ----- ----- ----- ----- ----- ------ ------
 " map    yes     -     -    yes   yes   yes    -      -
-" nmap   yes     -     -     -     -     -     -      -
 " map!    -     yes   yes    -     -     -     -      -
+" nmap   yes     -     -     -     -     -     -      -
 " imap    -     yes    -     -     -     -     -      -
 " cmap    -      -    yes    -     -     -     -      -
 " vmap    -      -     -    yes   yes    -     -      -
@@ -254,6 +254,11 @@ nnoremap <script> <SID>ws- <C-w>-<SID>ws
 nnoremap <script> <SID>ws> <C-w>><SID>ws
 nnoremap <script> <SID>ws< <C-w><<SID>ws
 nmap <SID>ws <Nop>
+
+" z Command --------------------------------------
+
+nmap f z
+nnoremap zf zz
 
 " Vimrc ------------------------------------------
 
