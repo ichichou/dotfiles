@@ -502,9 +502,9 @@ rules:
 
 # }}}
 
-# MTGAP (Mod-Q) {{{
+# MTGAP (Mod-1) {{{
 
-- description: "11-2. MTGAP (Mod-Q)"
+- description: "11-2. MTGAP (Mod-1)"
   manipulators:
 
   # Upper Row ------------------------------------
@@ -825,9 +825,9 @@ rules:
 
 # }}}
 
-# MTGAP (Mod-Y) {{{
+# MTGAP (Mod-2) {{{
 
-- description: "11-2. MTGAP (Mod-Y)"
+- description: "11-2. MTGAP (Mod-2)"
   manipulators:
 
   # Upper Row ------------------------------------
