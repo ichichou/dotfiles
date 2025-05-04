@@ -481,7 +481,7 @@ rules:
 
   # }}}
 
-# Edit Mode 1 ------------------------------------
+# Edit Mode 1 (Navigation) -----------------------
 
   # Left Side Keys {{{
 
@@ -517,16 +517,14 @@ rules:
       - shift
     conditions: *edit_1
 
-  # R -> Center Window (Shift-Ctrl-Opt-C)
+  # R -> Ctrl-Tab
   - type: basic
     from:
       key_code: r
     to:
-    - key_code: c
+    - key_code: tab
       modifiers:
-      - shift
       - control
-      - option
       repeat: false
     conditions: *edit_1
 
@@ -878,7 +876,7 @@ rules:
 
   # }}}
 
-# Edit Mode 2 ------------------------------------
+# Edit Mode 2 (Window Control) -------------------
 
   # Left Side Keys {{{
 
