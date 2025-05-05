@@ -83,172 +83,7 @@ rules:
 
 # 中指シフト・左 --------------------------
 
-  # さ
-  - type: basic
-    from:
-      key_code: s
-      modifiers: *optional_shift
-    to:
-    - key_code: s
-    - key_code: a
-      repeat: false
-    conditions: *left_shift
-
-  # ぬ
-  - type: basic
-    from:
-      key_code: "y"
-      modifiers: *optional_shift
-    to:
-    - key_code: "n"
-    - key_code: u
-      repeat: false
-    conditions: *left_shift
-
-  # ひ
-  - type: basic
-    from:
-      key_code: h
-      modifiers: *optional_shift
-    to:
-    - key_code: h
-    - key_code: i
-      repeat: false
-    conditions: *left_shift
-
-  # む
-  - type: basic
-    from:
-      key_code: m
-      modifiers: *optional_shift
-    to:
-    - key_code: m
-    - key_code: u
-      repeat: false
-    conditions: *left_shift
-
-  # め
-  - type: basic
-    from:
-      key_code: k
-      modifiers: *optional_shift
-    to:
-    - key_code: m
-    - key_code: e
-      repeat: false
-    conditions: *left_shift
-
-  # ゆ
-  - type: basic
-    from:
-      key_code: v
-      modifiers: *optional_shift
-    to:
-    - key_code: "y"
-    - key_code: u
-      repeat: false
-    conditions: *left_shift
-
-  # を
-  - type: basic
-    from:
-      key_code: j
-      modifiers: *optional_shift
-    to:
-    - key_code: w
-    - key_code: o
-      repeat: false
-    conditions: *left_shift
-
-  # ぎ
-  - type: basic
-    from:
-      key_code: comma
-      modifiers: *optional_shift
-    to:
-    - key_code: g
-    - key_code: i
-      repeat: false
-    conditions: *left_shift
-
-  # ぐ
-  - type: basic
-    from:
-      key_code: period
-      modifiers: *optional_shift
-    to:
-    - key_code: g
-    - key_code: u
-      repeat: false
-    conditions: *left_shift
-
-  # げ
-  - type: basic
-    from:
-      key_code: i
-      modifiers: *optional_shift
-    to:
-    - key_code: g
-    - key_code: e
-      repeat: false
-    conditions: *left_shift
-
-  # じ
-  - type: basic
-    from:
-      key_code: o
-      modifiers: *optional_shift
-    to:
-    - key_code: z
-    - key_code: i
-      repeat: false
-    conditions: *left_shift
-
-  # ず
-  - type: basic
-    from:
-      key_code: "n"
-      modifiers: *optional_shift
-    to:
-    - key_code: z
-    - key_code: u
-      repeat: false
-    conditions: *left_shift
-
-  # ぜ
-  - type: basic
-    from:
-      key_code: g
-      modifiers: *optional_shift
-    to:
-    - key_code: z
-    - key_code: e
-      repeat: false
-    conditions: *left_shift
-
-  # ぞ
-  - type: basic
-    from:
-      key_code: x
-      modifiers: *optional_shift
-    to:
-    - key_code: z
-    - key_code: o
-      repeat: false
-    conditions: *left_shift
-
-  # ぢ
-  - type: basic
-    from:
-      key_code: e
-      modifiers: *optional_shift
-    to:
-    - key_code: d
-    - key_code: i
-      repeat: false
-    conditions: *left_shift
-
-  # づ
+  # q -> づ
   - type: basic
     from:
       key_code: q
@@ -259,51 +94,29 @@ rules:
       repeat: false
     conditions: *left_shift
 
-  # ば
+  # w -> 未定義
   - type: basic
     from:
-      key_code: a
+      key_code: w
       modifiers: *optional_shift
     to:
-    - key_code: b
-    - key_code: a
-      repeat: false
+    - set_variable:
+        name: left_shift
+        value: 0
     conditions: *left_shift
 
-  # ぶ
+  # e -> ぢ
   - type: basic
     from:
-      key_code: semicolon
+      key_code: e
       modifiers: *optional_shift
     to:
-    - key_code: b
-    - key_code: u
-      repeat: false
-    conditions: *left_shift
-
-  # ぱ
-  - type: basic
-    from:
-      key_code: u
-      modifiers: *optional_shift
-    to:
-    - key_code: p
-    - key_code: a
-      repeat: false
-    conditions: *left_shift
-
-  # ぴ
-  - type: basic
-    from:
-      key_code: z
-      modifiers: *optional_shift
-    to:
-    - key_code: p
+    - key_code: d
     - key_code: i
       repeat: false
     conditions: *left_shift
 
-  # # ぷ
+  # # r -> ぷ
   # # Symbol Mode で定義
   # - type: basic
   #   from:
@@ -315,29 +128,7 @@ rules:
   #     repeat: false
   #   conditions: *left_shift
 
-  # ぽ
-  - type: basic
-    from:
-      key_code: slash
-      modifiers: *optional_shift
-    to:
-    - key_code: p
-    - key_code: o
-      repeat: false
-    conditions: *left_shift
-
-  # ゔ
-  - type: basic
-    from:
-      key_code: b
-      modifiers: *optional_shift
-    to:
-    - key_code: v
-    - key_code: u
-      repeat: false
-    conditions: *left_shift
-
-  # ぅ
+  # t -> ぅ
   - type: basic
     from:
       key_code: t
@@ -348,7 +139,51 @@ rules:
       repeat: false
     conditions: *left_shift
 
-  # ゃ
+  # y -> ぬ
+  - type: basic
+    from:
+      key_code: "y"
+      modifiers: *optional_shift
+    to:
+    - key_code: "n"
+    - key_code: u
+      repeat: false
+    conditions: *left_shift
+
+  # u -> ぱ
+  - type: basic
+    from:
+      key_code: u
+      modifiers: *optional_shift
+    to:
+    - key_code: p
+    - key_code: a
+      repeat: false
+    conditions: *left_shift
+
+  # i -> げ
+  - type: basic
+    from:
+      key_code: i
+      modifiers: *optional_shift
+    to:
+    - key_code: g
+    - key_code: e
+      repeat: false
+    conditions: *left_shift
+
+  # o -> じ
+  - type: basic
+    from:
+      key_code: o
+      modifiers: *optional_shift
+    to:
+    - key_code: z
+    - key_code: i
+      repeat: false
+    conditions: *left_shift
+
+  # p -> ゃ
   - type: basic
     from:
       key_code: p
@@ -360,7 +195,39 @@ rules:
       repeat: false
     conditions: *left_shift
 
-  # ゅ
+  # a -> ば
+  - type: basic
+    from:
+      key_code: a
+      modifiers: *optional_shift
+    to:
+    - key_code: b
+    - key_code: a
+      repeat: false
+    conditions: *left_shift
+
+  # s -> さ
+  - type: basic
+    from:
+      key_code: s
+      modifiers: *optional_shift
+    to:
+    - key_code: s
+    - key_code: a
+      repeat: false
+    conditions: *left_shift
+
+  # d -> 。
+  - type: basic
+    from:
+      key_code: d
+      modifiers: *optional_shift
+    to:
+    - key_code: period
+      repeat: false
+    conditions: *left_shift
+
+  # f -> ゅ
   - type: basic
     from:
       key_code: f
@@ -372,17 +239,51 @@ rules:
       repeat: false
     conditions: *left_shift
 
-  # 。
+  # g -> ぜ
   - type: basic
     from:
-      key_code: d
+      key_code: g
       modifiers: *optional_shift
     to:
-    - key_code: period
+    - key_code: z
+    - key_code: e
       repeat: false
     conditions: *left_shift
 
-  # ー
+  # h -> ひ
+  - type: basic
+    from:
+      key_code: h
+      modifiers: *optional_shift
+    to:
+    - key_code: h
+    - key_code: i
+      repeat: false
+    conditions: *left_shift
+
+  # j -> を
+  - type: basic
+    from:
+      key_code: j
+      modifiers: *optional_shift
+    to:
+    - key_code: w
+    - key_code: o
+      repeat: false
+    conditions: *left_shift
+
+  # k -> め
+  - type: basic
+    from:
+      key_code: k
+      modifiers: *optional_shift
+    to:
+    - key_code: m
+    - key_code: e
+      repeat: false
+    conditions: *left_shift
+
+  # l -> ー
   - type: basic
     from:
       key_code: l
@@ -392,29 +293,18 @@ rules:
       repeat: false
     conditions: *left_shift
 
-  # (未定義)
+  # ; -> ぶ
   - type: basic
     from:
-      key_code: w
+      key_code: semicolon
       modifiers: *optional_shift
     to:
-    - set_variable:
-        name: left_shift
-        value: 0
+    - key_code: b
+    - key_code: u
+      repeat: false
     conditions: *left_shift
 
-  # (未定義)
-  - type: basic
-    from:
-      key_code: c
-      modifiers: *optional_shift
-    to:
-    - set_variable:
-        name: left_shift
-        value: 0
-    conditions: *left_shift
-
-  # (未定義)
+  # ' -> 未定義
   - type: basic
     from:
       key_code: quote
@@ -425,7 +315,117 @@ rules:
         value: 0
     conditions: *left_shift
 
-  # Esc
+  # z -> ぴ
+  - type: basic
+    from:
+      key_code: z
+      modifiers: *optional_shift
+    to:
+    - key_code: p
+    - key_code: i
+      repeat: false
+    conditions: *left_shift
+
+  # x -> ぞ
+  - type: basic
+    from:
+      key_code: x
+      modifiers: *optional_shift
+    to:
+    - key_code: z
+    - key_code: o
+      repeat: false
+    conditions: *left_shift
+
+  # c -> 未定義
+  - type: basic
+    from:
+      key_code: c
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: left_shift
+        value: 0
+    conditions: *left_shift
+
+  # v -> ゆ
+  - type: basic
+    from:
+      key_code: v
+      modifiers: *optional_shift
+    to:
+    - key_code: "y"
+    - key_code: u
+      repeat: false
+    conditions: *left_shift
+
+  # b -> ゔ
+  - type: basic
+    from:
+      key_code: b
+      modifiers: *optional_shift
+    to:
+    - key_code: v
+    - key_code: u
+      repeat: false
+    conditions: *left_shift
+
+  # n -> ず
+  - type: basic
+    from:
+      key_code: "n"
+      modifiers: *optional_shift
+    to:
+    - key_code: z
+    - key_code: u
+      repeat: false
+    conditions: *left_shift
+
+  # m -> む
+  - type: basic
+    from:
+      key_code: m
+      modifiers: *optional_shift
+    to:
+    - key_code: m
+    - key_code: u
+      repeat: false
+    conditions: *left_shift
+
+  # , -> ぎ
+  - type: basic
+    from:
+      key_code: comma
+      modifiers: *optional_shift
+    to:
+    - key_code: g
+    - key_code: i
+      repeat: false
+    conditions: *left_shift
+
+  # . -> ぐ
+  - type: basic
+    from:
+      key_code: period
+      modifiers: *optional_shift
+    to:
+    - key_code: g
+    - key_code: u
+      repeat: false
+    conditions: *left_shift
+
+  # / -> ぽ
+  - type: basic
+    from:
+      key_code: slash
+      modifiers: *optional_shift
+    to:
+    - key_code: p
+    - key_code: o
+      repeat: false
+    conditions: *left_shift
+
+  # Esc -> Unshift
   - type: basic
     from:
       key_code: escape
@@ -438,59 +438,40 @@ rules:
 
 # 中指シフト・右 --------------------------
 
-  # あ
+  # q -> べ
   - type: basic
     from:
-      key_code: g
+      key_code: q
       modifiers: *optional_shift
     to:
-    - key_code: a
-      repeat: false
-    conditions: *right_shift
-
-  # え
-  - type: basic
-    from:
-      key_code: o
-      modifiers: *optional_shift
-    to:
+    - key_code: b
     - key_code: e
       repeat: false
     conditions: *right_shift
 
-  # お
+  # w -> ぼ
   - type: basic
     from:
-      key_code: l
+      key_code: w
       modifiers: *optional_shift
     to:
+    - key_code: b
     - key_code: o
       repeat: false
     conditions: *right_shift
 
-  # け
+  # e -> ほ
   - type: basic
     from:
-      key_code: d
+      key_code: e
       modifiers: *optional_shift
     to:
-    - key_code: k
-    - key_code: e
+    - key_code: h
+    - key_code: o
       repeat: false
     conditions: *right_shift
 
-  # せ
-  - type: basic
-    from:
-      key_code: s
-      modifiers: *optional_shift
-    to:
-    - key_code: s
-    - key_code: e
-      repeat: false
-    conditions: *right_shift
-
-  # # そ
+  # # r -> そ
   # # Symbol mode keys で定義
   # - type: basic
   #   from:
@@ -502,51 +483,7 @@ rules:
   #     repeat: false
   #   conditions: *right_shift
 
-  # ち
-  - type: basic
-    from:
-      key_code: m
-      modifiers: *optional_shift
-    to:
-    - key_code: t
-    - key_code: i
-      repeat: false
-    conditions: *right_shift
-
-  # つ
-  - type: basic
-    from:
-      key_code: j
-      modifiers: *optional_shift
-    to:
-    - key_code: t
-    - key_code: u
-      repeat: false
-    conditions: *right_shift
-
-  # ね
-  - type: basic
-    from:
-      key_code: v
-      modifiers: *optional_shift
-    to:
-    - key_code: "n"
-    - key_code: e
-      repeat: false
-    conditions: *right_shift
-
-  # ふ
-  - type: basic
-    from:
-      key_code: z
-      modifiers: *optional_shift
-    to:
-    - key_code: h
-    - key_code: u
-      repeat: false
-    conditions: *right_shift
-
-  # へ
+  # t -> へ
   - type: basic
     from:
       key_code: t
@@ -557,204 +494,7 @@ rules:
       repeat: false
     conditions: *right_shift
 
-  # ほ
-  - type: basic
-    from:
-      key_code: e
-      modifiers: *optional_shift
-    to:
-    - key_code: h
-    - key_code: o
-      repeat: false
-    conditions: *right_shift
-
-  # み
-  - type: basic
-    from:
-      key_code: "n"
-      modifiers: *optional_shift
-    to:
-    - key_code: m
-    - key_code: i
-      repeat: false
-    conditions: *right_shift
-
-  # や
-  - type: basic
-    from:
-      key_code: p
-      modifiers: *optional_shift
-    to:
-    - key_code: "y"
-    - key_code: a
-      repeat: false
-    conditions: *right_shift
-
-  # よ
-  - type: basic
-    from:
-      key_code: b
-      modifiers: *optional_shift
-    to:
-    - key_code: "y"
-    - key_code: o
-      repeat: false
-    conditions: *right_shift
-
-  # ろ
-  - type: basic
-    from:
-      key_code: semicolon
-      modifiers: *optional_shift
-    to:
-    - key_code: r
-    - key_code: o
-      repeat: false
-    conditions: *right_shift
-
-  # わ
-  - type: basic
-    from:
-      key_code: a
-      modifiers: *optional_shift
-    to:
-    - key_code: w
-    - key_code: a
-      repeat: false
-    conditions: *right_shift
-
-  # ご
-  - type: basic
-    from:
-      key_code: c
-      modifiers: *optional_shift
-    to:
-    - key_code: g
-    - key_code: o
-      repeat: false
-    conditions: *right_shift
-
-  # ざ
-  - type: basic
-    from:
-      key_code: x
-      modifiers: *optional_shift
-    to:
-    - key_code: z
-    - key_code: a
-      repeat: false
-    conditions: *right_shift
-
-  # ど
-  - type: basic
-    from:
-      key_code: f
-      modifiers: *optional_shift
-    to:
-    - key_code: d
-    - key_code: o
-      repeat: false
-    conditions: *right_shift
-
-  # び
-  - type: basic
-    from:
-      key_code: h
-      modifiers: *optional_shift
-    to:
-    - key_code: b
-    - key_code: i
-      repeat: false
-    conditions: *right_shift
-
-  # べ
-  - type: basic
-    from:
-      key_code: q
-      modifiers: *optional_shift
-    to:
-    - key_code: b
-    - key_code: e
-      repeat: false
-    conditions: *right_shift
-
-  # ぼ
-  - type: basic
-    from:
-      key_code: w
-      modifiers: *optional_shift
-    to:
-    - key_code: b
-    - key_code: o
-      repeat: false
-    conditions: *right_shift
-
-  # ぺ
-  - type: basic
-    from:
-      key_code: u
-      modifiers: *optional_shift
-    to:
-    - key_code: p
-    - key_code: e
-      repeat: false
-    conditions: *right_shift
-
-  # ぁ
-  - type: basic
-    from:
-      key_code: slash
-      modifiers: *optional_shift
-    to:
-    - key_code: x
-    - key_code: a
-      repeat: false
-    conditions: *right_shift
-
-  # ぃ
-  - type: basic
-    from:
-      key_code: period
-      modifiers: *optional_shift
-    to:
-    - key_code: x
-    - key_code: i
-      repeat: false
-    conditions: *right_shift
-
-  # ぇ
-  - type: basic
-    from:
-      key_code: i
-      modifiers: *optional_shift
-    to:
-    - key_code: x
-    - key_code: e
-      repeat: false
-    conditions: *right_shift
-
-  # ぉ
-  - type: basic
-    from:
-      key_code: comma
-      modifiers: *optional_shift
-    to:
-    - key_code: x
-    - key_code: o
-      repeat: false
-    conditions: *right_shift
-
-  # 、
-  - type: basic
-    from:
-      key_code: k
-      modifiers: *optional_shift
-    to:
-    - key_code: comma
-      repeat: false
-    conditions: *right_shift
-
-  # (未定義)
+  # y -> 未定義
   - type: basic
     from:
       key_code: "y"
@@ -765,7 +505,158 @@ rules:
         value: 0
     conditions: *right_shift
 
-  # (未定義)
+  # u -> ぺ
+  - type: basic
+    from:
+      key_code: u
+      modifiers: *optional_shift
+    to:
+    - key_code: p
+    - key_code: e
+      repeat: false
+    conditions: *right_shift
+
+  # i -> ぇ
+  - type: basic
+    from:
+      key_code: i
+      modifiers: *optional_shift
+    to:
+    - key_code: x
+    - key_code: e
+      repeat: false
+    conditions: *right_shift
+
+  # o -> え
+  - type: basic
+    from:
+      key_code: o
+      modifiers: *optional_shift
+    to:
+    - key_code: e
+      repeat: false
+    conditions: *right_shift
+
+  # p -> や
+  - type: basic
+    from:
+      key_code: p
+      modifiers: *optional_shift
+    to:
+    - key_code: "y"
+    - key_code: a
+      repeat: false
+    conditions: *right_shift
+
+
+  # a -> わ
+  - type: basic
+    from:
+      key_code: a
+      modifiers: *optional_shift
+    to:
+    - key_code: w
+    - key_code: a
+      repeat: false
+    conditions: *right_shift
+
+  # s -> せ
+  - type: basic
+    from:
+      key_code: s
+      modifiers: *optional_shift
+    to:
+    - key_code: s
+    - key_code: e
+      repeat: false
+    conditions: *right_shift
+
+  # d -> け
+  - type: basic
+    from:
+      key_code: d
+      modifiers: *optional_shift
+    to:
+    - key_code: k
+    - key_code: e
+      repeat: false
+    conditions: *right_shift
+
+  # f -> ど
+  - type: basic
+    from:
+      key_code: f
+      modifiers: *optional_shift
+    to:
+    - key_code: d
+    - key_code: o
+      repeat: false
+    conditions: *right_shift
+
+  # g -> あ
+  - type: basic
+    from:
+      key_code: g
+      modifiers: *optional_shift
+    to:
+    - key_code: a
+      repeat: false
+    conditions: *right_shift
+
+  # h -> び
+  - type: basic
+    from:
+      key_code: h
+      modifiers: *optional_shift
+    to:
+    - key_code: b
+    - key_code: i
+      repeat: false
+    conditions: *right_shift
+
+  # j -> つ
+  - type: basic
+    from:
+      key_code: j
+      modifiers: *optional_shift
+    to:
+    - key_code: t
+    - key_code: u
+      repeat: false
+    conditions: *right_shift
+
+  # k -> 、
+  - type: basic
+    from:
+      key_code: k
+      modifiers: *optional_shift
+    to:
+    - key_code: comma
+      repeat: false
+    conditions: *right_shift
+
+  # l -> お
+  - type: basic
+    from:
+      key_code: l
+      modifiers: *optional_shift
+    to:
+    - key_code: o
+      repeat: false
+    conditions: *right_shift
+
+  # ; -> ろ
+  - type: basic
+    from:
+      key_code: semicolon
+      modifiers: *optional_shift
+    to:
+    - key_code: r
+    - key_code: o
+      repeat: false
+    conditions: *right_shift
+
+  # ' -> 未定義
   - type: basic
     from:
       key_code: quote
@@ -776,7 +667,118 @@ rules:
         value: 0
     conditions: *right_shift
 
-  # Esc
+
+  # z -> ふ
+  - type: basic
+    from:
+      key_code: z
+      modifiers: *optional_shift
+    to:
+    - key_code: h
+    - key_code: u
+      repeat: false
+    conditions: *right_shift
+
+  # x -> ざ
+  - type: basic
+    from:
+      key_code: x
+      modifiers: *optional_shift
+    to:
+    - key_code: z
+    - key_code: a
+      repeat: false
+    conditions: *right_shift
+
+  # c -> ご
+  - type: basic
+    from:
+      key_code: c
+      modifiers: *optional_shift
+    to:
+    - key_code: g
+    - key_code: o
+      repeat: false
+    conditions: *right_shift
+
+  # v -> ね
+  - type: basic
+    from:
+      key_code: v
+      modifiers: *optional_shift
+    to:
+    - key_code: "n"
+    - key_code: e
+      repeat: false
+    conditions: *right_shift
+
+  # b -> よ
+  - type: basic
+    from:
+      key_code: b
+      modifiers: *optional_shift
+    to:
+    - key_code: "y"
+    - key_code: o
+      repeat: false
+    conditions: *right_shift
+
+  # n -> み
+  - type: basic
+    from:
+      key_code: "n"
+      modifiers: *optional_shift
+    to:
+    - key_code: m
+    - key_code: i
+      repeat: false
+    conditions: *right_shift
+
+  # m -> ち
+  - type: basic
+    from:
+      key_code: m
+      modifiers: *optional_shift
+    to:
+    - key_code: t
+    - key_code: i
+      repeat: false
+    conditions: *right_shift
+
+  # , -> ぉ
+  - type: basic
+    from:
+      key_code: comma
+      modifiers: *optional_shift
+    to:
+    - key_code: x
+    - key_code: o
+      repeat: false
+    conditions: *right_shift
+
+  # . -> ぃ
+  - type: basic
+    from:
+      key_code: period
+      modifiers: *optional_shift
+    to:
+    - key_code: x
+    - key_code: i
+      repeat: false
+    conditions: *right_shift
+
+  # / -> ぁ
+  - type: basic
+    from:
+      key_code: slash
+      modifiers: *optional_shift
+    to:
+    - key_code: x
+    - key_code: a
+      repeat: false
+    conditions: *right_shift
+
+  # Esc -> Unshift
   - type: basic
     from:
       key_code: escape
@@ -789,60 +791,7 @@ rules:
 
 # ベース --------------------------------------
 
-  # い
-  - type: basic
-    from:
-      key_code: l
-      modifiers: *optional_shift
-    to:
-    - key_code: i
-      repeat: false
-    conditions: *base
-
-  # う
-  - type: basic
-    from:
-      key_code: m
-      modifiers: *optional_shift
-    to:
-    - key_code: u
-      repeat: false
-    conditions: *base
-
-  # か
-  - type: basic
-    from:
-      key_code: s
-      modifiers: *optional_shift
-    to:
-    - key_code: k
-    - key_code: a
-      repeat: false
-    conditions: *base
-
-  # き
-  - type: basic
-    from:
-      key_code: p
-      modifiers: *optional_shift
-    to:
-    - key_code: k
-    - key_code: i
-      repeat: false
-    conditions: *base
-
-  # く
-  - type: basic
-    from:
-      key_code: h
-      modifiers: *optional_shift
-    to:
-    - key_code: k
-    - key_code: u
-      repeat: false
-    conditions: *base
-
-  # こ
+  # q -> こ
   - type: basic
     from:
       key_code: q
@@ -853,40 +802,29 @@ rules:
       repeat: false
     conditions: *base
 
-  # し
+  # w -> に
   - type: basic
     from:
-      key_code: i
+      key_code: w
       modifiers: *optional_shift
     to:
-    - key_code: s
+    - key_code: "n"
     - key_code: i
       repeat: false
     conditions: *base
 
-  # す
+  # e -> は
   - type: basic
     from:
-      key_code: v
+      key_code: e
       modifiers: *optional_shift
     to:
-    - key_code: s
-    - key_code: u
-      repeat: false
-    conditions: *base
-
-  # た
-  - type: basic
-    from:
-      key_code: g
-      modifiers: *optional_shift
-    to:
-    - key_code: t
+    - key_code: h
     - key_code: a
       repeat: false
     conditions: *base
 
-  # # て
+  # # r -> て
   # # Symbol mode keys で定義
   # - type: basic
   #   from:
@@ -898,73 +836,7 @@ rules:
   #     repeat: false
   #   conditions: *base
 
-  # と
-  - type: basic
-    from:
-      key_code: semicolon
-      modifiers: *optional_shift
-    to:
-    - key_code: t
-    - key_code: o
-      repeat: false
-    conditions: *base
-
-  # な
-  - type: basic
-    from:
-      key_code: f
-      modifiers: *optional_shift
-    to:
-    - key_code: "n"
-    - key_code: a
-      repeat: false
-    conditions: *base
-
-  # に
-  - type: basic
-    from:
-      key_code: w
-      modifiers: *optional_shift
-    to:
-    - key_code: "n"
-    - key_code: i
-      repeat: false
-    conditions: *base
-
-  # の
-  - type: basic
-    from:
-      key_code: o
-      modifiers: *optional_shift
-    to:
-    - key_code: "n"
-    - key_code: o
-      repeat: false
-    conditions: *base
-
-  # は
-  - type: basic
-    from:
-      key_code: e
-      modifiers: *optional_shift
-    to:
-    - key_code: h
-    - key_code: a
-      repeat: false
-    conditions: *base
-
-  # ま
-  - type: basic
-    from:
-      key_code: c
-      modifiers: *optional_shift
-    to:
-    - key_code: m
-    - key_code: a
-      repeat: false
-    conditions: *base
-
-  # も
+  # t -> も
   - type: basic
     from:
       key_code: t
@@ -975,18 +847,7 @@ rules:
       repeat: false
     conditions: *base
 
-  # ら
-  - type: basic
-    from:
-      key_code: period
-      modifiers: *optional_shift
-    to:
-    - key_code: r
-    - key_code: a
-      repeat: false
-    conditions: *base
-
-  # り
+  # y -> り
   - type: basic
     from:
       key_code: "y"
@@ -997,73 +858,7 @@ rules:
       repeat: false
     conditions: *base
 
-  # る
-  - type: basic
-    from:
-      key_code: "n"
-      modifiers: *optional_shift
-    to:
-    - key_code: r
-    - key_code: u
-      repeat: false
-    conditions: *base
-
-  # れ
-  - type: basic
-    from:
-      key_code: comma
-      modifiers: *optional_shift
-    to:
-    - key_code: r
-    - key_code: e
-      repeat: false
-    conditions: *base
-
-  # ん
-  - type: basic
-    from:
-      key_code: j
-      modifiers: *optional_shift
-    to:
-    - key_code: "n"
-    - key_code: "n"
-      repeat: false
-    conditions: *base
-
-  # が
-  - type: basic
-    from:
-      key_code: x
-      modifiers: *optional_shift
-    to:
-    - key_code: g
-    - key_code: a
-      repeat: false
-    conditions: *base
-
-  # だ
-  - type: basic
-    from:
-      key_code: z
-      modifiers: *optional_shift
-    to:
-    - key_code: d
-    - key_code: a
-      repeat: false
-    conditions: *base
-
-  # で
-  - type: basic
-    from:
-      key_code: a
-      modifiers: *optional_shift
-    to:
-    - key_code: d
-    - key_code: e
-      repeat: false
-    conditions: *base
-
-  # っ
+  # u -> っ
   - type: basic
     from:
       key_code: u
@@ -1075,7 +870,185 @@ rules:
       repeat: false
     conditions: *base
 
-  # ょ
+  # i -> し
+  - type: basic
+    from:
+      key_code: i
+      modifiers: *optional_shift
+    to:
+    - key_code: s
+    - key_code: i
+      repeat: false
+    conditions: *base
+
+  # o -> の
+  - type: basic
+    from:
+      key_code: o
+      modifiers: *optional_shift
+    to:
+    - key_code: "n"
+    - key_code: o
+      repeat: false
+    conditions: *base
+
+  # p -> き
+  - type: basic
+    from:
+      key_code: p
+      modifiers: *optional_shift
+    to:
+    - key_code: k
+    - key_code: i
+      repeat: false
+    conditions: *base
+
+  # a -> で
+  - type: basic
+    from:
+      key_code: a
+      modifiers: *optional_shift
+    to:
+    - key_code: d
+    - key_code: e
+      repeat: false
+    conditions: *base
+
+  # s -> か
+  - type: basic
+    from:
+      key_code: s
+      modifiers: *optional_shift
+    to:
+    - key_code: k
+    - key_code: a
+      repeat: false
+    conditions: *base
+
+  # d -> 左中指シフトキー
+
+  # f -> な
+  - type: basic
+    from:
+      key_code: f
+      modifiers: *optional_shift
+    to:
+    - key_code: "n"
+    - key_code: a
+      repeat: false
+    conditions: *base
+
+  # g -> た
+  - type: basic
+    from:
+      key_code: g
+      modifiers: *optional_shift
+    to:
+    - key_code: t
+    - key_code: a
+      repeat: false
+    conditions: *base
+
+  # h -> く
+  - type: basic
+    from:
+      key_code: h
+      modifiers: *optional_shift
+    to:
+    - key_code: k
+    - key_code: u
+      repeat: false
+    conditions: *base
+
+  # j -> ん
+  - type: basic
+    from:
+      key_code: j
+      modifiers: *optional_shift
+    to:
+    - key_code: "n"
+    - key_code: "n"
+      repeat: false
+    conditions: *base
+
+  # k -> 右中指シフトキー
+
+  # l -> い
+  - type: basic
+    from:
+      key_code: l
+      modifiers: *optional_shift
+    to:
+    - key_code: i
+      repeat: false
+    conditions: *base
+
+  # ; -> と
+  - type: basic
+    from:
+      key_code: semicolon
+      modifiers: *optional_shift
+    to:
+    - key_code: t
+    - key_code: o
+      repeat: false
+    conditions: *base
+
+  # ' -> ー
+  - type: basic
+    from:
+      key_code: quote
+      modifiers: *optional_shift
+    to:
+    - key_code: quote
+      repeat: false
+    conditions: *base
+
+  # z -> だ
+  - type: basic
+    from:
+      key_code: z
+      modifiers: *optional_shift
+    to:
+    - key_code: d
+    - key_code: a
+      repeat: false
+    conditions: *base
+
+  # x -> が
+  - type: basic
+    from:
+      key_code: x
+      modifiers: *optional_shift
+    to:
+    - key_code: g
+    - key_code: a
+      repeat: false
+    conditions: *base
+
+  # c -> ま
+  - type: basic
+    from:
+      key_code: c
+      modifiers: *optional_shift
+    to:
+    - key_code: m
+    - key_code: a
+      repeat: false
+    conditions: *base
+
+  # v -> す
+  - type: basic
+    from:
+      key_code: v
+      modifiers: *optional_shift
+    to:
+    - key_code: s
+    - key_code: u
+      repeat: false
+    conditions: *base
+
+  # b -> ょ
   - type: basic
     from:
       key_code: b
@@ -1087,7 +1060,50 @@ rules:
       repeat: false
     conditions: *base
 
-  # 。
+  # n -> る
+  - type: basic
+    from:
+      key_code: "n"
+      modifiers: *optional_shift
+    to:
+    - key_code: r
+    - key_code: u
+      repeat: false
+    conditions: *base
+
+  # m -> う
+  - type: basic
+    from:
+      key_code: m
+      modifiers: *optional_shift
+    to:
+    - key_code: u
+      repeat: false
+    conditions: *base
+
+  # , -> れ
+  - type: basic
+    from:
+      key_code: comma
+      modifiers: *optional_shift
+    to:
+    - key_code: r
+    - key_code: e
+      repeat: false
+    conditions: *base
+
+  # . -> ら
+  - type: basic
+    from:
+      key_code: period
+      modifiers: *optional_shift
+    to:
+    - key_code: r
+    - key_code: a
+      repeat: false
+    conditions: *base
+
+  # / -> 。
   - type: basic
     from:
       key_code: slash
@@ -1097,21 +1113,11 @@ rules:
       repeat: false
     conditions: *base
 
-  # ー
-  - type: basic
-    from:
-      key_code: quote
-      modifiers: *optional_shift
-    to:
-    - key_code: quote
-      repeat: false
-    conditions: *base
-
 # Symbol Mode ------------------------------------
 
   # Symbol Mode Key ------------------------------
 
-  # ぷ (左シフト時)
+  # r -> ぷ (左シフト時)
   - type: basic
     from:
       key_code: r
@@ -1127,7 +1133,7 @@ rules:
         key_up_value: 0
     conditions: *left_shift
 
-  # そ (右シフト時)
+  # r -> そ (右シフト時)
   - type: basic
     from:
       key_code: r
@@ -1143,7 +1149,7 @@ rules:
         key_up_value: 0
     conditions: *right_shift
 
-  # て (ベース時)
+  # r -> て (ベース時)
   - type: basic
     from:
       key_code: r
@@ -1239,7 +1245,7 @@ rules:
 
   # Symbol Mode Mapping --------------------------
 
-  # 入力される記号は仮名テーブルで定義する
+  # 入力される記号はIMEの仮名テーブルで定義する
 
   # Y
   - type: basic
@@ -1331,7 +1337,7 @@ rules:
       repeat: false
     conditions: *symbol
 
-  # Semicolon
+  # ;
   - type: basic
     from:
       key_code: semicolon
@@ -1341,7 +1347,7 @@ rules:
       repeat: false
     conditions: *symbol
 
-  # Colon
+  # :
   - type: basic
     from:
       key_code: semicolon
@@ -1353,7 +1359,7 @@ rules:
       repeat: false
     conditions: *symbol
 
-  # Single Quote
+  # '
   - type: basic
     from:
       key_code: quote
@@ -1363,7 +1369,7 @@ rules:
       repeat: false
     conditions: *symbol
 
-  # Double Quote
+  # "
   - type: basic
     from:
       key_code: quote
@@ -1395,7 +1401,7 @@ rules:
       repeat: false
     conditions: *symbol
 
-  # Comma
+  # ,
   - type: basic
     from:
       key_code: comma
@@ -1405,7 +1411,7 @@ rules:
       repeat: false
     conditions: *symbol
 
-  # Period
+  # .
   - type: basic
     from:
       key_code: period
@@ -1415,7 +1421,7 @@ rules:
       repeat: false
     conditions: *symbol
 
-  # Less Than
+  # <
   - type: basic
     from:
       key_code: comma
@@ -1427,7 +1433,7 @@ rules:
       repeat: false
     conditions: *symbol
 
-  # Greater Than
+  # >
   - type: basic
     from:
       key_code: period
@@ -1439,7 +1445,7 @@ rules:
       repeat: false
     conditions: *symbol
 
-  # Slash
+  # /
   - type: basic
     from:
       key_code: slash
@@ -1449,7 +1455,7 @@ rules:
       repeat: false
     conditions: *symbol
 
-  # Question Mark
+  # ?
   - type: basic
     from:
       key_code: slash
@@ -1461,7 +1467,7 @@ rules:
       repeat: false
     conditions: *symbol
 
-  # Bracket
+  # [
   - type: basic
     from:
       key_code: open_bracket
@@ -1471,6 +1477,7 @@ rules:
       repeat: false
     conditions: *symbol
 
+  # ]
   - type: basic
     from:
       key_code: close_bracket
@@ -1480,7 +1487,7 @@ rules:
       repeat: false
     conditions: *symbol
 
-  # Brace
+  # {
   - type: basic
     from:
       key_code: open_bracket
@@ -1492,6 +1499,7 @@ rules:
       repeat: false
     conditions: *symbol
 
+  # }
   - type: basic
     from:
       key_code: close_bracket
@@ -1503,7 +1511,7 @@ rules:
       repeat: false
     conditions: *symbol
 
-  # Paren
+  # (
   - type: basic
     from:
       key_code: "9"
@@ -1515,6 +1523,7 @@ rules:
       repeat: false
     conditions: *symbol
 
+  # )
   - type: basic
     from:
       key_code: "0"
@@ -1522,6 +1531,28 @@ rules:
     to:
     - key_code: backslash
     - key_code: "0"
-      repeat: false
       modifiers: *to_shift
+      repeat: false
+    conditions: *symbol
+
+  # 9 (alternative for '(')
+  - type: basic
+    from:
+      key_code: "9"
+    to:
+    - key_code: backslash
+    - key_code: "9"
+      modifiers: *to_shift
+      repeat: false
+    conditions: *symbol
+
+  # 0 (alternative for ')')
+  - type: basic
+    from:
+      key_code: "0"
+    to:
+    - key_code: backslash
+    - key_code: "0"
+      modifiers: *to_shift
+      repeat: false
     conditions: *symbol
