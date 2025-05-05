@@ -149,17 +149,6 @@ rules:
       repeat: false
     conditions: *left_shift
 
-  # れ
-  - type: basic
-    from:
-      key_code: l
-      modifiers: *optional_shift
-    to:
-    - key_code: r
-    - key_code: e
-      repeat: false
-    conditions: *left_shift
-
   # を
   - type: basic
     from:
@@ -383,17 +372,27 @@ rules:
       repeat: false
     conditions: *left_shift
 
-  # 長音符
+  # 。
   - type: basic
     from:
-      key_code: quote
+      key_code: d
+      modifiers: *optional_shift
+    to:
+    - key_code: period
+      repeat: false
+    conditions: *left_shift
+
+  # ー
+  - type: basic
+    from:
+      key_code: l
       modifiers: *optional_shift
     to:
     - key_code: quote
       repeat: false
     conditions: *left_shift
 
-  # （未定義）
+  # (未定義)
   - type: basic
     from:
       key_code: w
@@ -404,7 +403,7 @@ rules:
         value: 0
     conditions: *left_shift
 
-  # （未定義）
+  # (未定義)
   - type: basic
     from:
       key_code: c
@@ -415,7 +414,7 @@ rules:
         value: 0
     conditions: *left_shift
 
-  # （未定義）
+  # (未定義)
   - type: basic
     from:
       key_code: quote
@@ -426,7 +425,7 @@ rules:
         value: 0
     conditions: *left_shift
 
-  # ESC
+  # Esc
   - type: basic
     from:
       key_code: escape
@@ -745,7 +744,17 @@ rules:
       repeat: false
     conditions: *right_shift
 
-  # （未定義）
+  # 、
+  - type: basic
+    from:
+      key_code: k
+      modifiers: *optional_shift
+    to:
+    - key_code: comma
+      repeat: false
+    conditions: *right_shift
+
+  # (未定義)
   - type: basic
     from:
       key_code: "y"
@@ -756,7 +765,7 @@ rules:
         value: 0
     conditions: *right_shift
 
-  # （未定義）
+  # (未定義)
   - type: basic
     from:
       key_code: quote
@@ -767,7 +776,7 @@ rules:
         value: 0
     conditions: *right_shift
 
-  # ESC
+  # Esc
   - type: basic
     from:
       key_code: escape
@@ -969,7 +978,7 @@ rules:
   # ら
   - type: basic
     from:
-      key_code: quote
+      key_code: period
       modifiers: *optional_shift
     to:
     - key_code: r
@@ -996,6 +1005,17 @@ rules:
     to:
     - key_code: r
     - key_code: u
+      repeat: false
+    conditions: *base
+
+  # れ
+  - type: basic
+    from:
+      key_code: comma
+      modifiers: *optional_shift
+    to:
+    - key_code: r
+    - key_code: e
       repeat: false
     conditions: *base
 
@@ -1067,30 +1087,20 @@ rules:
       repeat: false
     conditions: *base
 
-  # 読点
+  # 。
   - type: basic
     from:
-      key_code: comma
-      modifiers: *optional_shift
-    to:
-    - key_code: comma
-      repeat: false
-    conditions: *base
-
-  # 句点
-  - type: basic
-    from:
-      key_code: period
+      key_code: slash
       modifiers: *optional_shift
     to:
     - key_code: period
       repeat: false
     conditions: *base
 
-  # 長音符
+  # ー
   - type: basic
     from:
-      key_code: slash
+      key_code: quote
       modifiers: *optional_shift
     to:
     - key_code: quote
@@ -1162,11 +1172,6 @@ rules:
   # シフトがキャンセルされているためと思われる
 
   # 左中指シフトキー
-  #
-  # ベース時:       左シフトをオン
-  # 左シフト時:     左シフトをオン
-  # 右シフト時:     定義なし
-  # Symbol Mode 時: 定義なし
   - type: basic
     from:
       key_code: d
@@ -1200,11 +1205,6 @@ rules:
       - "com.apple.loginwindow"
 
   # 右中指シフトキー
-  #
-  # ベース時:       右シフトをオン
-  # 左シフト時:     定義なし
-  # 右シフト時:     右シフトをオン
-  # Symbol Mode 時: 定義なし
   - type: basic
     from:
       key_code: k
