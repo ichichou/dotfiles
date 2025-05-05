@@ -1125,7 +1125,7 @@ rules:
     conditions: *base
     parameters: *threshold_ms
 
-  # # (未定義) (改変)
+  # # (未定義)
   # - type: basic
   #   from:
   #     simultaneous:
@@ -1964,43 +1964,12 @@ rules:
     conditions: *base
     parameters: *threshold_ms
 
-  # げ
-  # Quote が押せない場合への対応
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: *left_upper_pinky
-      - key_code: semicolon
-      modifiers: *optional_shift
-    to:
-    - key_code: g
-    - key_code: e
-      repeat: false
-    conditions: *base
-    parameters: *threshold_ms
-
-  # うぉ
-  # Quote が押せない場合への対応
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: *left_upper_pinky
-      - key_code: slash
-      modifiers: *optional_shift
-    to:
-    - key_code: w
-    - key_code: h
-    - key_code: o
-      repeat: false
-    conditions: *base
-    parameters: *threshold_ms
-
   # ゎ
   - type: basic
     from:
       simultaneous:
       - key_code: *left_upper_pinky
-      - key_code: quote
+      - key_code: semicolon
       modifiers: *optional_shift
     to:
     - key_code: x
