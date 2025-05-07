@@ -94,7 +94,7 @@ rules:
       repeat: false
     conditions: *left_shift
 
-  # w -> 未定義
+  # w (未定義)
   - type: basic
     from:
       key_code: w
@@ -304,7 +304,7 @@ rules:
       repeat: false
     conditions: *left_shift
 
-  # ' -> 未定義
+  # ' (未定義)
   - type: basic
     from:
       key_code: quote
@@ -337,7 +337,7 @@ rules:
       repeat: false
     conditions: *left_shift
 
-  # c -> 未定義
+  # c (未定義)
   - type: basic
     from:
       key_code: c
@@ -359,7 +359,7 @@ rules:
       repeat: false
     conditions: *left_shift
 
-  # b -> ゔ
+  # b -> ヴ
   - type: basic
     from:
       key_code: b
@@ -425,7 +425,7 @@ rules:
       repeat: false
     conditions: *left_shift
 
-  # Esc -> Unshift
+  # Esc -> アンシフト
   - type: basic
     from:
       key_code: escape
@@ -494,7 +494,7 @@ rules:
       repeat: false
     conditions: *right_shift
 
-  # y -> 未定義
+  # y (未定義)
   - type: basic
     from:
       key_code: "y"
@@ -547,7 +547,6 @@ rules:
     - key_code: a
       repeat: false
     conditions: *right_shift
-
 
   # a -> わ
   - type: basic
@@ -656,7 +655,7 @@ rules:
       repeat: false
     conditions: *right_shift
 
-  # ' -> 未定義
+  # ' (未定義)
   - type: basic
     from:
       key_code: quote
@@ -778,7 +777,7 @@ rules:
       repeat: false
     conditions: *right_shift
 
-  # Esc -> Unshift
+  # Esc -> アンシフト
   - type: basic
     from:
       key_code: escape
@@ -925,7 +924,7 @@ rules:
       repeat: false
     conditions: *base
 
-  # d -> 左中指シフトキー
+  # d (中指シフトキーで定義)
 
   # f -> な
   - type: basic
@@ -971,7 +970,7 @@ rules:
       repeat: false
     conditions: *base
 
-  # k -> 右中指シフトキー
+  # k (中指シフトキーで定義)
 
   # l -> い
   - type: basic
@@ -1169,7 +1168,7 @@ rules:
 
   # 中指シフトキーは Symbol Mode Key の後で定義する
   #
-  # もし Symbol Mode Key の前で定義した場合、
+  # Symbol Mode Key の前で定義した場合、
   # Symbol Mode Key が担当する文字が正しく入力されなくなる
   # シフト時であってもベース時の文字が入力されてしまう
   #
@@ -1247,7 +1246,7 @@ rules:
 
   # 入力される記号はIMEの仮名テーブルで定義する
 
-  # Y
+  # y
   - type: basic
     from:
       key_code: "y"
@@ -1257,7 +1256,7 @@ rules:
       repeat: false
     conditions: *symbol
 
-  # U
+  # u
   - type: basic
     from:
       key_code: u
@@ -1267,7 +1266,7 @@ rules:
       repeat: false
     conditions: *symbol
 
-  # I
+  # i
   - type: basic
     from:
       key_code: i
@@ -1277,7 +1276,7 @@ rules:
       repeat: false
     conditions: *symbol
 
-  # O
+  # o
   - type: basic
     from:
       key_code: o
@@ -1287,7 +1286,7 @@ rules:
       repeat: false
     conditions: *symbol
 
-  # P
+  # p
   - type: basic
     from:
       key_code: p
@@ -1297,7 +1296,7 @@ rules:
       repeat: false
     conditions: *symbol
 
-  # H
+  # h
   - type: basic
     from:
       key_code: h
@@ -1307,7 +1306,7 @@ rules:
       repeat: false
     conditions: *symbol
 
-  # J
+  # j
   - type: basic
     from:
       key_code: j
@@ -1317,7 +1316,7 @@ rules:
       repeat: false
     conditions: *symbol
 
-  # K
+  # k
   - type: basic
     from:
       key_code: k
@@ -1327,7 +1326,7 @@ rules:
       repeat: false
     conditions: *symbol
 
-  # L
+  # l
   - type: basic
     from:
       key_code: l
@@ -1381,7 +1380,7 @@ rules:
       repeat: false
     conditions: *symbol
 
-  # N
+  # n
   - type: basic
     from:
       key_code: "n"
@@ -1391,7 +1390,7 @@ rules:
       repeat: false
     conditions: *symbol
 
-  # M
+  # m
   - type: basic
     from:
       key_code: m
