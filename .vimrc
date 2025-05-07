@@ -89,10 +89,11 @@ set shiftwidth=0
 set softtabstop=-1
 
 augroup vimrc
-  autocmd FileType julia   setlocal tabstop=4
-  autocmd FileType python  setlocal tabstop=4
-  autocmd FileType rust    setlocal tabstop=4
-  autocmd FileType go      setlocal tabstop=4 noexpandtab
+  autocmd FileType julia  setlocal tabstop=4
+  autocmd FileType python setlocal tabstop=4
+  autocmd FileType rust   setlocal tabstop=4
+  autocmd FileType go     setlocal tabstop=4 noexpandtab
+  autocmd BufRead,BufNewFile *.tsv setlocal tabstop=4 noexpandtab
 augroup END
 
 augroup vimrc
@@ -115,7 +116,7 @@ set cursorline
 set noshowmode
 set display=lastline
 set list
-set listchars=tab:▶\ ,trail:\ ,nbsp:~,extends:▷,precedes:◁
+set listchars=tab:≫\ ,trail:\ ,nbsp:~,extends:▶,precedes:◀
 
 set sidescroll=1
 set scrolloff=0
