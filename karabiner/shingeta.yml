@@ -65,160 +65,7 @@ rules:
 
 # 中指シフト・右 ---------------------------------
 
-  # ふ
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: *right_middle
-      - key_code: e
-      modifiers: *optional_shift
-    to:
-    - key_code: h
-    - key_code: u
-      repeat: false
-    conditions: *base
-    parameters: *threshold_ms
-
-  # ほ
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: *right_middle
-      - key_code: a
-      modifiers: *optional_shift
-    to:
-    - key_code: h
-    - key_code: o
-      repeat: false
-    conditions: *base
-    parameters: *threshold_ms
-
-  # む
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: *right_middle
-      - key_code: v
-      modifiers: *optional_shift
-    to:
-    - key_code: m
-    - key_code: u
-      repeat: false
-    conditions: *base
-    parameters: *threshold_ms
-
-  # も
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: *right_middle
-      - key_code: f
-      modifiers: *optional_shift
-    to:
-    - key_code: m
-    - key_code: o
-      repeat: false
-    conditions: *base
-    parameters: *threshold_ms
-
-  # ゆ
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: *right_middle
-      - key_code: g
-      modifiers: *optional_shift
-    to:
-    - key_code: "y"
-    - key_code: u
-      repeat: false
-    conditions: *base
-    parameters: *threshold_ms
-
-  # れ
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: *right_middle
-      - key_code: d
-      modifiers: *optional_shift
-    to:
-    - key_code: r
-    - key_code: e
-      repeat: false
-    conditions: *base
-    parameters: *threshold_ms
-
-  # ご
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: *right_middle
-      - key_code: w
-      modifiers: *optional_shift
-    to:
-    - key_code: g
-    - key_code: o
-      repeat: false
-    conditions: *base
-    parameters: *threshold_ms
-
-  # じ
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: *right_middle
-      - key_code: s
-      modifiers: *optional_shift
-    to:
-    - key_code: z
-    - key_code: i
-      repeat: false
-    conditions: *base
-    parameters: *threshold_ms
-
-  # ぞ
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: *right_middle
-      - key_code: x
-      modifiers: *optional_shift
-    to:
-    - key_code: z
-    - key_code: o
-      repeat: false
-    conditions: *base
-    parameters: *threshold_ms
-
-  # づ
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: *right_middle
-      - key_code: z
-      modifiers: *optional_shift
-    to:
-    - key_code: d
-    - key_code: u
-      repeat: false
-    conditions: *base
-    parameters: *threshold_ms
-
-  # ぼ
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: *right_middle
-      - key_code: c
-      modifiers: *optional_shift
-    to:
-    - key_code: b
-    - key_code: o
-      repeat: false
-    conditions: *base
-    parameters: *threshold_ms
-
+  # q
   # ふぁ
   - type: basic
     from:
@@ -233,6 +80,37 @@ rules:
     conditions: *base
     parameters: *threshold_ms
 
+  # w
+  # ご
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: *right_middle
+      - key_code: w
+      modifiers: *optional_shift
+    to:
+    - key_code: g
+    - key_code: o
+      repeat: false
+    conditions: *base
+    parameters: *threshold_ms
+
+  # e
+  # ふ
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: *right_middle
+      - key_code: e
+      modifiers: *optional_shift
+    to:
+    - key_code: h
+    - key_code: u
+      repeat: false
+    conditions: *base
+    parameters: *threshold_ms
+
+  # r
   # ふぃ
   - type: basic
     from:
@@ -247,6 +125,7 @@ rules:
     conditions: *base
     parameters: *threshold_ms
 
+  # t
   # ふぇ
   - type: basic
     from:
@@ -261,6 +140,142 @@ rules:
     conditions: *base
     parameters: *threshold_ms
 
+  # a
+  # ほ
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: *right_middle
+      - key_code: a
+      modifiers: *optional_shift
+    to:
+    - key_code: h
+    - key_code: o
+      repeat: false
+    conditions: *base
+    parameters: *threshold_ms
+
+  # s
+  # じ
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: *right_middle
+      - key_code: s
+      modifiers: *optional_shift
+    to:
+    - key_code: z
+    - key_code: i
+      repeat: false
+    conditions: *base
+    parameters: *threshold_ms
+
+  # d
+  # れ
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: *right_middle
+      - key_code: d
+      modifiers: *optional_shift
+    to:
+    - key_code: r
+    - key_code: e
+      repeat: false
+    conditions: *base
+    parameters: *threshold_ms
+
+  # f
+  # も
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: *right_middle
+      - key_code: f
+      modifiers: *optional_shift
+    to:
+    - key_code: m
+    - key_code: o
+      repeat: false
+    conditions: *base
+    parameters: *threshold_ms
+
+  # g
+  # ゆ
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: *right_middle
+      - key_code: g
+      modifiers: *optional_shift
+    to:
+    - key_code: "y"
+    - key_code: u
+      repeat: false
+    conditions: *base
+    parameters: *threshold_ms
+
+  # z
+  # づ
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: *right_middle
+      - key_code: z
+      modifiers: *optional_shift
+    to:
+    - key_code: d
+    - key_code: u
+      repeat: false
+    conditions: *base
+    parameters: *threshold_ms
+
+  # x
+  # ぞ
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: *right_middle
+      - key_code: x
+      modifiers: *optional_shift
+    to:
+    - key_code: z
+    - key_code: o
+      repeat: false
+    conditions: *base
+    parameters: *threshold_ms
+
+  # c
+  # ぼ
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: *right_middle
+      - key_code: c
+      modifiers: *optional_shift
+    to:
+    - key_code: b
+    - key_code: o
+      repeat: false
+    conditions: *base
+    parameters: *threshold_ms
+
+  # v
+  # む
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: *right_middle
+      - key_code: v
+      modifiers: *optional_shift
+    to:
+    - key_code: m
+    - key_code: u
+      repeat: false
+    conditions: *base
+    parameters: *threshold_ms
+
+  # b
   # ふぉ
   - type: basic
     from:
@@ -275,6 +290,7 @@ rules:
     conditions: *base
     parameters: *threshold_ms
 
+  # 1
   # ぁ
   - type: basic
     from:
@@ -289,6 +305,7 @@ rules:
     conditions: *base
     parameters: *threshold_ms
 
+  # 2
   # ぃ
   - type: basic
     from:
@@ -303,6 +320,7 @@ rules:
     conditions: *base
     parameters: *threshold_ms
 
+  # 3
   # ぅ
   - type: basic
     from:
@@ -317,6 +335,7 @@ rules:
     conditions: *base
     parameters: *threshold_ms
 
+  # 4
   # ぇ
   - type: basic
     from:
@@ -331,6 +350,7 @@ rules:
     conditions: *base
     parameters: *threshold_ms
 
+  # 5
   # ぉ
   - type: basic
     from:
@@ -347,158 +367,7 @@ rules:
 
 # 中指シフト・左 ---------------------------------
 
-  # あ
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: *left_middle
-      - key_code: j
-      modifiers: *optional_shift
-    to:
-    - key_code: a
-      repeat: false
-    conditions: *base
-    parameters: *threshold_ms
-
-  # え
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: *left_middle
-      - key_code: semicolon
-      modifiers: *optional_shift
-    to:
-    - key_code: e
-      repeat: false
-    conditions: *base
-    parameters: *threshold_ms
-
-  # せ
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: *left_middle
-      - key_code: "n"
-      modifiers: *optional_shift
-    to:
-    - key_code: s
-    - key_code: e
-      repeat: false
-    conditions: *base
-    parameters: *threshold_ms
-
-  # ね
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: *left_middle
-      - key_code: m
-      modifiers: *optional_shift
-    to:
-    - key_code: "n"
-    - key_code: e
-      repeat: false
-    conditions: *base
-    parameters: *threshold_ms
-
-  # へ
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: *left_middle
-      - key_code: h
-      modifiers: *optional_shift
-    to:
-    - key_code: h
-    - key_code: e
-      repeat: false
-    conditions: *base
-    parameters: *threshold_ms
-
-  # み
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: *left_middle
-      - key_code: o
-      modifiers: *optional_shift
-    to:
-    - key_code: m
-    - key_code: i
-      repeat: false
-    conditions: *base
-    parameters: *threshold_ms
-
-  # よ
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: *left_middle
-      - key_code: i
-      modifiers: *optional_shift
-    to:
-    - key_code: "y"
-    - key_code: o
-      repeat: false
-    conditions: *base
-    parameters: *threshold_ms
-
-  # べ
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: *left_middle
-      - key_code: comma
-      modifiers: *optional_shift
-    to:
-    - key_code: b
-    - key_code: e
-      repeat: false
-    conditions: *base
-    parameters: *threshold_ms
-
-  # ぱ
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: *left_middle
-      - key_code: u
-      modifiers: *optional_shift
-    to:
-    - key_code: p
-    - key_code: a
-      repeat: false
-    conditions: *base
-    parameters: *threshold_ms
-
-  # ぷ
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: *left_middle
-      - key_code: period
-      modifiers: *optional_shift
-    to:
-    - key_code: p
-    - key_code: u
-      repeat: false
-    conditions: *base
-    parameters: *threshold_ms
-
-  # ヴ
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: *left_middle
-      - key_code: slash
-      modifiers: *optional_shift
-    to:
-    - key_code: v
-    - key_code: u
-      repeat: false
-    conditions: *base
-    parameters: *threshold_ms
-
+  # y
   # うぃ
   - type: basic
     from:
@@ -513,6 +382,52 @@ rules:
     conditions: *base
     parameters: *threshold_ms
 
+  # u
+  # ぱ
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: *left_middle
+      - key_code: u
+      modifiers: *optional_shift
+    to:
+    - key_code: p
+    - key_code: a
+      repeat: false
+    conditions: *base
+    parameters: *threshold_ms
+
+  # i
+  # よ
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: *left_middle
+      - key_code: i
+      modifiers: *optional_shift
+    to:
+    - key_code: "y"
+    - key_code: o
+      repeat: false
+    conditions: *base
+    parameters: *threshold_ms
+
+  # o
+  # み
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: *left_middle
+      - key_code: o
+      modifiers: *optional_shift
+    to:
+    - key_code: m
+    - key_code: i
+      repeat: false
+    conditions: *base
+    parameters: *threshold_ms
+
+  # p
   # うぇ
   - type: basic
     from:
@@ -527,6 +442,52 @@ rules:
     conditions: *base
     parameters: *threshold_ms
 
+  # h
+  # へ
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: *left_middle
+      - key_code: h
+      modifiers: *optional_shift
+    to:
+    - key_code: h
+    - key_code: e
+      repeat: false
+    conditions: *base
+    parameters: *threshold_ms
+
+  # j
+  # あ
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: *left_middle
+      - key_code: j
+      modifiers: *optional_shift
+    to:
+    - key_code: a
+      repeat: false
+    conditions: *base
+    parameters: *threshold_ms
+
+  # k
+  # l
+  # ;
+  # え
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: *left_middle
+      - key_code: semicolon
+      modifiers: *optional_shift
+    to:
+    - key_code: e
+      repeat: false
+    conditions: *base
+    parameters: *threshold_ms
+
+  # '
   # うぉ
   - type: basic
     from:
@@ -542,6 +503,82 @@ rules:
     conditions: *base
     parameters: *threshold_ms
 
+  # n
+  # せ
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: *left_middle
+      - key_code: "n"
+      modifiers: *optional_shift
+    to:
+    - key_code: s
+    - key_code: e
+      repeat: false
+    conditions: *base
+    parameters: *threshold_ms
+
+  # m
+  # ね
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: *left_middle
+      - key_code: m
+      modifiers: *optional_shift
+    to:
+    - key_code: "n"
+    - key_code: e
+      repeat: false
+    conditions: *base
+    parameters: *threshold_ms
+
+  # ,
+  # べ
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: *left_middle
+      - key_code: comma
+      modifiers: *optional_shift
+    to:
+    - key_code: b
+    - key_code: e
+      repeat: false
+    conditions: *base
+    parameters: *threshold_ms
+
+  # .
+  # ぷ
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: *left_middle
+      - key_code: period
+      modifiers: *optional_shift
+    to:
+    - key_code: p
+    - key_code: u
+      repeat: false
+    conditions: *base
+    parameters: *threshold_ms
+
+  # /
+  # ヴ
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: *left_middle
+      - key_code: slash
+      modifiers: *optional_shift
+    to:
+    - key_code: v
+    - key_code: u
+      repeat: false
+    conditions: *base
+    parameters: *threshold_ms
+
+  # 7
   # コンマ
   - type: basic
     from:
@@ -555,6 +592,7 @@ rules:
     conditions: *base
     parameters: *threshold_ms
 
+  # 8
   # セミコロン
   - type: basic
     from:
@@ -568,6 +606,7 @@ rules:
     conditions: *base
     parameters: *threshold_ms
 
+  # 9
   # 開き鉤括弧
   - type: basic
     from:
@@ -581,6 +620,7 @@ rules:
     conditions: *base
     parameters: *threshold_ms
 
+  # 0
   # 閉じ鉤括弧
   - type: basic
     from:
@@ -596,173 +636,7 @@ rules:
 
 # 薬指シフト・右 ---------------------------------
 
-  # お
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: *right_ring
-      - key_code: d
-      modifiers: *optional_shift
-    to:
-    - key_code: o
-      repeat: false
-    conditions: *base
-    parameters: *threshold_ms
-
-  # け
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: *right_ring
-      - key_code: e
-      modifiers: *optional_shift
-    to:
-    - key_code: k
-    - key_code: e
-      repeat: false
-    conditions: *base
-    parameters: *threshold_ms
-
-  # さ
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: *right_ring
-      - key_code: s
-      modifiers: *optional_shift
-    to:
-    - key_code: s
-    - key_code: a
-      repeat: false
-    conditions: *base
-    parameters: *threshold_ms
-
-  # ぬ
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: *right_ring
-      - key_code: b
-      modifiers: *optional_shift
-    to:
-    - key_code: "n"
-    - key_code: u
-      repeat: false
-    conditions: *base
-    parameters: *threshold_ms
-
-  # め
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: *right_ring
-      - key_code: w
-      modifiers: *optional_shift
-    to:
-    - key_code: m
-    - key_code: e
-      repeat: false
-    conditions: *base
-    parameters: *threshold_ms
-
-  # り
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: *right_ring
-      - key_code: f
-      modifiers: *optional_shift
-    to:
-    - key_code: r
-    - key_code: i
-      repeat: false
-    conditions: *base
-    parameters: *threshold_ms
-
-  # ろ
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: *right_ring
-      - key_code: v
-      modifiers: *optional_shift
-    to:
-    - key_code: r
-    - key_code: o
-      repeat: false
-    conditions: *base
-    parameters: *threshold_ms
-
-  # を
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: *right_ring
-      - key_code: a
-      modifiers: *optional_shift
-    to:
-    - key_code: w
-    - key_code: o
-      repeat: false
-    conditions: *base
-    parameters: *threshold_ms
-
-  # ぎ
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: *right_ring
-      - key_code: c
-      modifiers: *optional_shift
-    to:
-    - key_code: g
-    - key_code: i
-      repeat: false
-    conditions: *base
-    parameters: *threshold_ms
-
-  # ざ
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: *right_ring
-      - key_code: x
-      modifiers: *optional_shift
-    to:
-    - key_code: z
-    - key_code: a
-      repeat: false
-    conditions: *base
-    parameters: *threshold_ms
-
-  # ず
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: *right_ring
-      - key_code: g
-      modifiers: *optional_shift
-    to:
-    - key_code: z
-    - key_code: u
-      repeat: false
-    conditions: *base
-    parameters: *threshold_ms
-
-  # ぜ
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: *right_ring
-      - key_code: z
-      modifiers: *optional_shift
-    to:
-    - key_code: z
-    - key_code: e
-      repeat: false
-    conditions: *base
-    parameters: *threshold_ms
-
+  # q
   # ぢ
   - type: basic
     from:
@@ -777,6 +651,37 @@ rules:
     conditions: *base
     parameters: *threshold_ms
 
+  # w
+  # め
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: *right_ring
+      - key_code: w
+      modifiers: *optional_shift
+    to:
+    - key_code: m
+    - key_code: e
+      repeat: false
+    conditions: *base
+    parameters: *threshold_ms
+
+  # e
+  # け
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: *right_ring
+      - key_code: e
+      modifiers: *optional_shift
+    to:
+    - key_code: k
+    - key_code: e
+      repeat: false
+    conditions: *base
+    parameters: *threshold_ms
+
+  # r
   # てぃ
   - type: basic
     from:
@@ -792,6 +697,7 @@ rules:
     conditions: *base
     parameters: *threshold_ms
 
+  # t
   # でぃ
   - type: basic
     from:
@@ -807,51 +713,156 @@ rules:
     conditions: *base
     parameters: *threshold_ms
 
-  # みゃ
+  # a
+  # を
   - type: basic
     from:
       simultaneous:
       - key_code: *right_ring
-      - key_code: "2"
+      - key_code: a
       modifiers: *optional_shift
     to:
-    - key_code: m
-    - key_code: "y"
-    - key_code: a
-      repeat: false
-    conditions: *base
-    parameters: *threshold_ms
-
-  # みゅ
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: *right_ring
-      - key_code: "3"
-      modifiers: *optional_shift
-    to:
-    - key_code: m
-    - key_code: "y"
-    - key_code: u
-      repeat: false
-    conditions: *base
-    parameters: *threshold_ms
-
-  # みょ
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: *right_ring
-      - key_code: "4"
-      modifiers: *optional_shift
-    to:
-    - key_code: m
-    - key_code: "y"
+    - key_code: w
     - key_code: o
       repeat: false
     conditions: *base
     parameters: *threshold_ms
 
+  # s
+  # さ
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: *right_ring
+      - key_code: s
+      modifiers: *optional_shift
+    to:
+    - key_code: s
+    - key_code: a
+      repeat: false
+    conditions: *base
+    parameters: *threshold_ms
+
+  # d
+  # お
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: *right_ring
+      - key_code: d
+      modifiers: *optional_shift
+    to:
+    - key_code: o
+      repeat: false
+    conditions: *base
+    parameters: *threshold_ms
+
+  # f
+  # り
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: *right_ring
+      - key_code: f
+      modifiers: *optional_shift
+    to:
+    - key_code: r
+    - key_code: i
+      repeat: false
+    conditions: *base
+    parameters: *threshold_ms
+
+  # g
+  # ず
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: *right_ring
+      - key_code: g
+      modifiers: *optional_shift
+    to:
+    - key_code: z
+    - key_code: u
+      repeat: false
+    conditions: *base
+    parameters: *threshold_ms
+
+  # z
+  # ぜ
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: *right_ring
+      - key_code: z
+      modifiers: *optional_shift
+    to:
+    - key_code: z
+    - key_code: e
+      repeat: false
+    conditions: *base
+    parameters: *threshold_ms
+
+  # x
+  # ざ
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: *right_ring
+      - key_code: x
+      modifiers: *optional_shift
+    to:
+    - key_code: z
+    - key_code: a
+      repeat: false
+    conditions: *base
+    parameters: *threshold_ms
+
+  # c
+  # ぎ
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: *right_ring
+      - key_code: c
+      modifiers: *optional_shift
+    to:
+    - key_code: g
+    - key_code: i
+      repeat: false
+    conditions: *base
+    parameters: *threshold_ms
+
+  # v
+  # ろ
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: *right_ring
+      - key_code: v
+      modifiers: *optional_shift
+    to:
+    - key_code: r
+    - key_code: o
+      repeat: false
+    conditions: *base
+    parameters: *threshold_ms
+
+  # b
+  # ぬ
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: *right_ring
+      - key_code: b
+      modifiers: *optional_shift
+    to:
+    - key_code: "n"
+    - key_code: u
+      repeat: false
+    conditions: *base
+    parameters: *threshold_ms
+
+  # 1
   # ゃ
   - type: basic
     from:
@@ -867,6 +878,55 @@ rules:
     conditions: *base
     parameters: *threshold_ms
 
+  # 2
+  # みゃ
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: *right_ring
+      - key_code: "2"
+      modifiers: *optional_shift
+    to:
+    - key_code: m
+    - key_code: "y"
+    - key_code: a
+      repeat: false
+    conditions: *base
+    parameters: *threshold_ms
+
+  # 3
+  # みゅ
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: *right_ring
+      - key_code: "3"
+      modifiers: *optional_shift
+    to:
+    - key_code: m
+    - key_code: "y"
+    - key_code: u
+      repeat: false
+    conditions: *base
+    parameters: *threshold_ms
+
+  # 4
+  # みょ
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: *right_ring
+      - key_code: "4"
+      modifiers: *optional_shift
+    to:
+    - key_code: m
+    - key_code: "y"
+    - key_code: o
+      repeat: false
+    conditions: *base
+    parameters: *threshold_ms
+
+  # 5
   # ゎ
   - type: basic
     from:
@@ -883,6 +943,25 @@ rules:
     parameters: *threshold_ms
 
 # 薬指シフト・左 ---------------------------------
+
+  # y
+  # u
+  # i
+  # o
+  # p
+  # h
+  # j
+  # k
+  # l
+  # ;
+  # '
+  # n
+  # m
+  # ,
+  # .
+  # /
+
+  # ----------------------------------------------
 
   # そ
   - type: basic
@@ -1139,6 +1218,24 @@ rules:
   #   parameters: *threshold_ms
 
 # 中指上段シフト ---------------------------------
+
+  # q
+  # w
+  # e
+  # r
+  # t
+  # a
+  # s
+  # d
+  # f
+  # g
+  # z
+  # x
+  # c
+  # v
+  # b
+
+  # ----------------------------------------------
 
   # きゃ
   - type: basic
@@ -1397,6 +1494,24 @@ rules:
 
 # 薬指上段シフト ---------------------------------
 
+  # q
+  # w
+  # e
+  # r
+  # t
+  # a
+  # s
+  # d
+  # f
+  # g
+  # z
+  # x
+  # c
+  # v
+  # b
+
+  # ----------------------------------------------
+
   # にゃ
   - type: basic
     from:
@@ -1654,6 +1769,24 @@ rules:
 
 # 小指上段シフト・右 (改変) -----------------------------
 
+  # q
+  # w
+  # e
+  # r
+  # t
+  # a
+  # s
+  # d
+  # f
+  # g
+  # z
+  # x
+  # c
+  # v
+  # b
+
+  # ----------------------------------------------
+
   # みゃ
   - type: basic
     from:
@@ -1849,6 +1982,25 @@ rules:
 
 # 小指上段シフト・左 (改変) -----------------------------
 
+  # y
+  # u
+  # i
+  # o
+  # p
+  # h
+  # j
+  # k
+  # l
+  # ;
+  # '
+  # n
+  # m
+  # ,
+  # .
+  # /
+
+  # ----------------------------------------------
+
   # ぁ
   - type: basic
     from:
@@ -1980,6 +2132,40 @@ rules:
     parameters: *threshold_ms
 
 # ベース -----------------------------------------
+
+  # q
+  # w
+  # e
+  # r
+  # t
+  # y
+  # u
+  # i
+  # o
+  # p
+  # a
+  # s
+  # d
+  # f
+  # g
+  # h
+  # j
+  # k
+  # l
+  # ;
+  # '
+  # z
+  # x
+  # c
+  # v
+  # b
+  # n
+  # m
+  # ,
+  # .
+  # /
+
+  # ----------------------------------------------
 
   # い
   - type: basic
@@ -2320,7 +2506,6 @@ rules:
     conditions: *base
 
 # Symbol Mode ------------------------------------
-
 
   # Symbol Mode Key ------------------------------
 
