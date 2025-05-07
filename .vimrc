@@ -96,13 +96,16 @@ augroup vimrc
   autocmd BufRead,BufNewFile *.tsv setlocal tabstop=4 noexpandtab
 augroup END
 
+set formatoptions+=jro
+set formatoptions-=c
+
 augroup vimrc
+  " autocmd FileType markdown setlocal formatoptions+=jro formatoptions-=c
+  " autocmd FileType typst    setlocal formatoptions+=jro formatoptions-=c
+  " autocmd FileType r        setlocal formatoptions+=jro formatoptions-=c
   autocmd FileType markdown setlocal comments=b:-,b:+,b:*,b:1.,nb:>
-  autocmd FileType markdown setlocal formatoptions+=jro formatoptions-=c
-  autocmd FileType typst setlocal comments=b:-,b:+
-  autocmd FileType typst setlocal formatoptions+=jro formatoptions-=c
-  autocmd FileType r setlocal comments=b:#
-  autocmd FileType r setlocal formatoptions+=jro formatoptions-=c
+  autocmd FileType typst    setlocal comments=b:-,b:+
+  autocmd FileType r        setlocal comments=b:#
 augroup END
 
 set diffopt=internal,filler,closeoff,vertical,indent-heuristic,algorithm:histogram
