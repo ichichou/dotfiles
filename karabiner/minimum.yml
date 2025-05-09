@@ -1,11 +1,12 @@
 title: "Minimum Mappings"
 rules:
-- description: "Minimum Mappings"
-  manipulators:
 
 # Command Key {{{
 
-  # LCommand-Space -> Return
+- description: "LCmd + Space → Return"
+  manipulators:
+
+  # LCmd-Space -> Return
   - type: basic
     from:
       key_code: spacebar
@@ -18,7 +19,10 @@ rules:
     - key_code: return_or_enter
       repeat: false
 
-  # LCommand-RCommand -> ESC
+- description: "LCmd + RCmd → Esc"
+  manipulators:
+
+  # LCmd-RCmd -> Esc
   - type: basic
     from:
       key_code: right_command
@@ -29,7 +33,7 @@ rules:
     - key_code: escape
       repeat: false
 
-  # RCommand-LCommand -> ESC
+  # RCmd-LCmd -> Esc
   - type: basic
     from:
       key_code: left_command
@@ -40,7 +44,10 @@ rules:
     - key_code: escape
       repeat: false
 
-  # LCommand-I -> Up
+- description: "LCmd + I/J/K/L → Cursor keys"
+  manipulators:
+
+  # LCmd-I -> Up
   - type: basic
     from:
       key_code: i
@@ -52,7 +59,7 @@ rules:
     to:
     - key_code: up_arrow
 
-  # LCommand-J -> Left
+  # LCmd-J -> Left
   - type: basic
     from:
       key_code: j
@@ -64,7 +71,7 @@ rules:
     to:
     - key_code: left_arrow
 
-  # LCommand-k -> Down
+  # LCmd-k -> Down
   - type: basic
     from:
       key_code: k
@@ -76,7 +83,7 @@ rules:
     to:
     - key_code: down_arrow
 
-  # LCommand-L -> Right
+  # LCmd-L -> Right
   - type: basic
     from:
       key_code: l
@@ -88,7 +95,10 @@ rules:
     to:
     - key_code: right_arrow
 
-  # LCommand-N -> Delete
+- description: "LCmd + N/M → Delete / Delete forward"
+  manipulators:
+
+  # LCmd-N -> Delete
   - type: basic
     from:
       key_code: "n"
@@ -98,7 +108,7 @@ rules:
     to:
     - key_code: delete_or_backspace
 
-  # LCommand-M -> Delete Forward
+  # LCmd-M -> Delete Forward
   - type: basic
     from:
       key_code: m
@@ -108,7 +118,10 @@ rules:
     to:
     - key_code: delete_forward
 
-  # LCommand -> Eisuu/LCommand
+- description: "LCmd/RCmd → Eisuu/Kana"
+  manipulators:
+
+  # LCmd -> Eisuu/LCmd
   - type: basic
     from:
       key_code: left_command
@@ -118,7 +131,7 @@ rules:
     to_if_alone:
     - key_code: japanese_eisuu
 
-  # RCommand -> Kana/RCommand
+  # RCmd -> Kana/RCmd
   - type: basic
     from:
       key_code: right_command
@@ -132,7 +145,10 @@ rules:
 
 # Control Key {{{
 
-  # Esc -> Esc/LControl
+- description: "Esc/LCtrl → Esc/LCtrl"
+  manipulators:
+
+  # Esc -> Esc/LCtrl
   - type: basic
     from:
       key_code: escape
@@ -145,7 +161,7 @@ rules:
     to_if_alone:
     - key_code: escape
 
-  # LControl -> Esc/LControl
+  # LCtrl -> Esc/LCtrl
   - type: basic
     from:
       key_code: left_control
@@ -160,7 +176,10 @@ rules:
 
 # }}}
 
-# Hyper Mode {{{
+# Hyper Key {{{
+
+- description: "Tab → Hyper key"
+  manipulators:
 
   # Tab -> Tab/Hyper
   - type: basic
@@ -181,6 +200,9 @@ rules:
 # }}}
 
 # SandS {{{
+
+- description: "Space → Space/Shift"
+  manipulators:
 
   # Space and Shift
   - type: basic
