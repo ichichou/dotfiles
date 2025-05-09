@@ -1,0 +1,1590 @@
+title: "新JIS配列"
+
+# 作成途中。まだ実用できない。
+#
+# 濁音化・半濁音化のための変数の管理がうまくいっていない。
+# それぞれの仮名を入力したときに、その仮名以外の *_pressed 変数を
+# すべて false にする処理を追加する必要がある。
+#
+# 半濁音化キーが機能しない。原因は不明。
+
+# ALIASES ========================================
+
+aliases:
+
+# -- Modifiers {{{
+
+- from/modifiers: &optional_shift
+    optional:
+    - shift
+
+- from/modifiers: &mandatory_shift
+    mandatory:
+    - shift
+
+# }}}
+
+# -- Conditions {{{
+
+- conditions: &base
+  - type: input_source_if
+    input_sources:
+    - language: ja
+  - type: variable_unless
+    name: shifted
+    value: true
+  - type: frontmost_application_unless
+    bundle_identifiers:
+    - "com.apple.loginwindow"
+
+- conditions: &shifted
+  - type: input_source_if
+    input_sources:
+    - language: ja
+  - type: variable_if
+    name: shifted
+    value: true
+  - type: frontmost_application_unless
+    bundle_identifiers:
+    - "com.apple.loginwindow"
+
+# }}}
+
+# RULES ==========================================
+
+rules:
+- description: "新JIS配列"
+  manipulators:
+
+# -- ベース面 {{{
+
+  # Q -> そ
+  - type: basic
+    from:
+      key_code: q
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: so_pressed
+        value: true
+    - key_code: s
+    - key_code: o
+      repeat: false
+    conditions: *base
+
+  # W -> け
+  - type: basic
+    from:
+      key_code: w
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: ke_pressed
+        value: true
+    - key_code: k
+    - key_code: e
+      repeat: false
+    conditions: *base
+
+  # E -> せ
+  - type: basic
+    from:
+      key_code: e
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: se_pressed
+        value: true
+    - key_code: s
+    - key_code: e
+      repeat: false
+    conditions: *base
+
+  # R -> て
+  - type: basic
+    from:
+      key_code: r
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: te_pressed
+        value: true
+    - key_code: t
+    - key_code: e
+      repeat: false
+    conditions: *base
+
+  # T -> ょ
+  - type: basic
+    from:
+      key_code: t
+      modifiers: *optional_shift
+    to:
+    - key_code: x
+    - key_code: "y"
+    - key_code: o
+      repeat: false
+    conditions: *base
+
+  # Y -> つ
+  - type: basic
+    from:
+      key_code: "y"
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: tu_pressed
+        value: true
+    - key_code: t
+    - key_code: u
+      repeat: false
+    conditions: *base
+
+  # U -> ん
+  - type: basic
+    from:
+      key_code: u
+      modifiers: *optional_shift
+    to:
+    - key_code: "n"
+    - key_code: "n"
+      repeat: false
+    conditions: *base
+
+  # I -> の
+  - type: basic
+    from:
+      key_code: i
+      modifiers: *optional_shift
+    to:
+    - key_code: "n"
+    - key_code: o
+      repeat: false
+    conditions: *base
+
+  # O -> を
+  - type: basic
+    from:
+      key_code: o
+      modifiers: *optional_shift
+    to:
+    - key_code: w
+    - key_code: o
+      repeat: false
+    conditions: *base
+
+  # P -> り
+  - type: basic
+    from:
+      key_code: p
+      modifiers: *optional_shift
+    to:
+    - key_code: r
+    - key_code: i
+      repeat: false
+    conditions: *base
+
+  # A -> は
+  - type: basic
+    from:
+      key_code: a
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: ha_pressed
+        value: true
+    - key_code: h
+    - key_code: a
+      repeat: false
+    conditions: *base
+
+  # S -> か
+  - type: basic
+    from:
+      key_code: s
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: ka_pressed
+        value: true
+    - key_code: k
+    - key_code: a
+      repeat: false
+    conditions: *base
+
+  # D -> し
+  - type: basic
+    from:
+      key_code: d
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: si_pressed
+        value: true
+    - key_code: s
+    - key_code: i
+      repeat: false
+    conditions: *base
+
+  # F -> と
+  - type: basic
+    from:
+      key_code: f
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: to_pressed
+        value: true
+    - key_code: t
+    - key_code: o
+      repeat: false
+    conditions: *base
+
+  # G -> た
+  - type: basic
+    from:
+      key_code: g
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: ta_pressed
+        value: true
+    - key_code: t
+    - key_code: a
+      repeat: false
+    conditions: *base
+
+  # H -> く
+  - type: basic
+    from:
+      key_code: h
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: ku_pressed
+        value: true
+    - key_code: k
+    - key_code: u
+      repeat: false
+    conditions: *base
+
+  # J -> う
+  - type: basic
+    from:
+      key_code: j
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: u_pressed
+        value: true
+    - key_code: u
+      repeat: false
+    conditions: *base
+
+  # K -> い
+  - type: basic
+    from:
+      key_code: k
+      modifiers: *optional_shift
+    to:
+    - key_code: i
+      repeat: false
+    conditions: *base
+
+  # # L (濁音化キーで定義)
+  # - type: basic
+  #   from:
+  #     key_code: l
+  #     modifiers: *optional_shift
+  #   to:
+  #   - key_code:
+  #     repeat: false
+  #   conditions: *base
+
+  # ; -> き
+  - type: basic
+    from:
+      key_code: semicolon
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: ki_pressed
+        value: true
+    - key_code: k
+    - key_code: i
+      repeat: false
+    conditions: *base
+
+  # ' -> な
+  - type: basic
+    from:
+      key_code: quote
+      modifiers: *optional_shift
+    to:
+    - key_code: "n"
+    - key_code: a
+      repeat: false
+    conditions: *base
+
+  # Z -> す
+  - type: basic
+    from:
+      key_code: z
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: su_pressed
+        value: true
+    - key_code: s
+    - key_code: u
+      repeat: false
+    conditions: *base
+
+  # X -> こ
+  - type: basic
+    from:
+      key_code: x
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: ko_pressed
+        value: true
+    - key_code: k
+    - key_code: o
+      repeat: false
+    conditions: *base
+
+  # C -> に
+  - type: basic
+    from:
+      key_code: c
+      modifiers: *optional_shift
+    to:
+    - key_code: "n"
+    - key_code: i
+      repeat: false
+    conditions: *base
+
+  # V -> さ
+  - type: basic
+    from:
+      key_code: v
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: sa_pressed
+        value: true
+    - key_code: s
+    - key_code: a
+      repeat: false
+    conditions: *base
+
+  # B -> あ
+  - type: basic
+    from:
+      key_code: b
+      modifiers: *optional_shift
+    to:
+    - key_code: a
+      repeat: false
+    conditions: *base
+
+  # N -> っ
+  - type: basic
+    from:
+      key_code: "n"
+      modifiers: *optional_shift
+    to:
+    - key_code: x
+    - key_code: t
+    - key_code: u
+      repeat: false
+    conditions: *base
+
+  # M -> る
+  - type: basic
+    from:
+      key_code: m
+      modifiers: *optional_shift
+    to:
+    - key_code: r
+    - key_code: u
+      repeat: false
+    conditions: *base
+
+  # , -> 、
+  - type: basic
+    from:
+      key_code: comma
+      modifiers: *optional_shift
+    to:
+    - key_code: comma
+      repeat: false
+    conditions: *base
+
+  # . -> 。
+  - type: basic
+    from:
+      key_code: period
+      modifiers: *optional_shift
+    to:
+    - key_code: period
+      repeat: false
+    conditions: *base
+
+  # / -> れ
+  - type: basic
+    from:
+      key_code: slash
+      modifiers: *optional_shift
+    to:
+    - key_code: r
+    - key_code: e
+      repeat: false
+    conditions: *base
+
+# }}}
+
+# -- シフト面 {{{
+
+  # Q -> ぁ
+  - type: basic
+    from:
+      key_code: q
+      modifiers: *optional_shift
+    to:
+    - key_code: x
+    - key_code: a
+      repeat: false
+    conditions: *shifted
+
+  # # W (半濁音化キーで定義)
+  # - type: basic
+  #   from:
+  #     key_code: w
+  #     modifiers: *optional_shift
+  #   to:
+  #   - key_code:
+  #     repeat: false
+  #   conditions: *shifted
+
+  # E -> ほ
+  - type: basic
+    from:
+      key_code: e
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: ho_pressed
+        value: true
+    - key_code: h
+    - key_code: o
+      repeat: false
+    conditions: *shifted
+
+  # R -> ふ
+  - type: basic
+    from:
+      key_code: r
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: hu_pressed
+        value: true
+    - key_code: h
+    - key_code: u
+      repeat: false
+    conditions: *shifted
+
+  # T -> め
+  - type: basic
+    from:
+      key_code: t
+      modifiers: *optional_shift
+    to:
+    - key_code: m
+    - key_code: e
+      repeat: false
+    conditions: *shifted
+
+  # Y -> ひ
+  - type: basic
+    from:
+      key_code: "y"
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: hi_pressed
+        value: true
+    - key_code: h
+    - key_code: i
+      repeat: false
+    conditions: *shifted
+
+  # U -> え
+  - type: basic
+    from:
+      key_code: u
+      modifiers: *optional_shift
+    to:
+    - key_code: e
+      repeat: false
+    conditions: *shifted
+
+  # I -> み
+  - type: basic
+    from:
+      key_code: i
+      modifiers: *optional_shift
+    to:
+    - key_code: m
+    - key_code: i
+      repeat: false
+    conditions: *shifted
+
+  # O -> や
+  - type: basic
+    from:
+      key_code: o
+      modifiers: *optional_shift
+    to:
+    - key_code: "y"
+    - key_code: a
+      repeat: false
+    conditions: *shifted
+
+  # P -> ぬ
+  - type: basic
+    from:
+      key_code: p
+      modifiers: *optional_shift
+    to:
+    - key_code: "n"
+    - key_code: u
+      repeat: false
+    conditions: *shifted
+
+  # A -> ぃ
+  - type: basic
+    from:
+      key_code: a
+      modifiers: *optional_shift
+    to:
+    - key_code: x
+    - key_code: i
+      repeat: false
+    conditions: *shifted
+
+  # S -> へ
+  - type: basic
+    from:
+      key_code: s
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: he_pressed
+        value: true
+    - key_code: h
+    - key_code: e
+      repeat: false
+    conditions: *shifted
+
+  # D -> ら
+  - type: basic
+    from:
+      key_code: d
+      modifiers: *optional_shift
+    to:
+    - key_code: r
+    - key_code: a
+      repeat: false
+    conditions: *shifted
+
+  # F -> ゅ
+  - type: basic
+    from:
+      key_code: f
+      modifiers: *optional_shift
+    to:
+    - key_code: x
+    - key_code: "y"
+    - key_code: u
+      repeat: false
+    conditions: *shifted
+
+  # G -> よ
+  - type: basic
+    from:
+      key_code: g
+      modifiers: *optional_shift
+    to:
+    - key_code: "y"
+    - key_code: o
+      repeat: false
+    conditions: *shifted
+
+  # H -> ま
+  - type: basic
+    from:
+      key_code: h
+      modifiers: *optional_shift
+    to:
+    - key_code: m
+    - key_code: a
+      repeat: false
+    conditions: *shifted
+
+  # J -> お
+  - type: basic
+    from:
+      key_code: j
+      modifiers: *optional_shift
+    to:
+    - key_code: o
+      repeat: false
+    conditions: *shifted
+
+  # K -> も
+  - type: basic
+    from:
+      key_code: k
+      modifiers: *optional_shift
+    to:
+    - key_code: m
+    - key_code: o
+      repeat: false
+    conditions: *shifted
+
+  # L -> わ
+  - type: basic
+    from:
+      key_code: l
+      modifiers: *optional_shift
+    to:
+    - key_code: w
+    - key_code: a
+      repeat: false
+    conditions: *shifted
+
+  # ; -> ゆ
+  - type: basic
+    from:
+      key_code: semicolon
+      modifiers: *optional_shift
+    to:
+    - key_code: "y"
+    - key_code: u
+      repeat: false
+    conditions: *shifted
+
+  # ' -> ち (改変)
+  - type: basic
+    from:
+      key_code: quote
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: ti_pressed
+        value: true
+    - key_code: t
+    - key_code: i
+      repeat: false
+    conditions: *shifted
+
+  # Z -> ぅ
+  - type: basic
+    from:
+      key_code: z
+      modifiers: *optional_shift
+    to:
+    - key_code: x
+    - key_code: u
+      repeat: false
+    conditions: *shifted
+
+  # X -> ぇ
+  - type: basic
+    from:
+      key_code: x
+      modifiers: *optional_shift
+    to:
+    - key_code: x
+    - key_code: e
+      repeat: false
+    conditions: *shifted
+
+  # C -> ぉ
+  - type: basic
+    from:
+      key_code: c
+      modifiers: *optional_shift
+    to:
+    - key_code: x
+    - key_code: o
+      repeat: false
+    conditions: *shifted
+
+  # V -> ね
+  - type: basic
+    from:
+      key_code: v
+      modifiers: *optional_shift
+    to:
+    - key_code: "n"
+    - key_code: e
+      repeat: false
+    conditions: *shifted
+
+  # B -> ゃ
+  - type: basic
+    from:
+      key_code: b
+      modifiers: *optional_shift
+    to:
+    - key_code: x
+    - key_code: "y"
+    - key_code: a
+      repeat: false
+    conditions: *shifted
+
+  # N -> む
+  - type: basic
+    from:
+      key_code: "n"
+      modifiers: *optional_shift
+    to:
+    - key_code: m
+    - key_code: u
+      repeat: false
+    conditions: *shifted
+
+  # M -> ろ
+  - type: basic
+    from:
+      key_code: m
+      modifiers: *optional_shift
+    to:
+    - key_code: r
+    - key_code: o
+      repeat: false
+    conditions: *shifted
+
+  # , -> ・
+  - type: basic
+    from:
+      key_code: comma
+      modifiers: *optional_shift
+    to:
+    - key_code: quote
+      modifiers:
+      - shift
+      repeat: false
+    conditions: *shifted
+
+  # . -> ー
+  - type: basic
+    from:
+      key_code: period
+      modifiers: *optional_shift
+    to:
+    - key_code: quote
+      repeat: false
+    conditions: *shifted
+
+  # / -> / (改変)
+  - type: basic
+    from:
+      key_code: slash
+      modifiers: *optional_shift
+    to:
+    - key_code: slash
+      repeat: false
+    conditions: *shifted
+
+# }}}
+
+# -- 濁音化キー {{{
+
+  # う -> ヴ
+  - type: basic
+    from:
+      key_code: l
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: u_pressed
+        value: false
+    - key_code: delete_or_backspace
+    - key_code: v
+    - key_code: u
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: ja
+    - type: variable_unless
+      name: shifted
+      value: true
+    - type: variable_if
+      name: u_pressed
+      value: true
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+  # か -> が
+  - type: basic
+    from:
+      key_code: l
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: ka_pressed
+        value: false
+    - key_code: delete_or_backspace
+    - key_code: g
+    - key_code: a
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: ja
+    - type: variable_unless
+      name: shifted
+      value: true
+    - type: variable_if
+      name: ka_pressed
+      value: true
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+  # き -> ぎ
+  - type: basic
+    from:
+      key_code: l
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: ki_pressed
+        value: false
+    - key_code: delete_or_backspace
+    - key_code: g
+    - key_code: i
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: ja
+    - type: variable_unless
+      name: shifted
+      value: true
+    - type: variable_if
+      name: ki_pressed
+      value: true
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+  # く -> ぐ
+  - type: basic
+    from:
+      key_code: l
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: ku_pressed
+        value: false
+    - key_code: delete_or_backspace
+    - key_code: g
+    - key_code: u
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: ja
+    - type: variable_unless
+      name: shifted
+      value: true
+    - type: variable_if
+      name: ku_pressed
+      value: true
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+  # け -> げ
+  - type: basic
+    from:
+      key_code: l
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: ke_pressed
+        value: false
+    - key_code: delete_or_backspace
+    - key_code: g
+    - key_code: e
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: ja
+    - type: variable_unless
+      name: shifted
+      value: true
+    - type: variable_if
+      name: ke_pressed
+      value: true
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+  # こ -> ご
+  - type: basic
+    from:
+      key_code: l
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: ko_pressed
+        value: false
+    - key_code: delete_or_backspace
+    - key_code: g
+    - key_code: o
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: ja
+    - type: variable_unless
+      name: shifted
+      value: true
+    - type: variable_if
+      name: ko_pressed
+      value: true
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+  # さ -> ざ
+  - type: basic
+    from:
+      key_code: l
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: sa_pressed
+        value: false
+    - key_code: delete_or_backspace
+    - key_code: z
+    - key_code: a
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: ja
+    - type: variable_unless
+      name: shifted
+      value: true
+    - type: variable_if
+      name: sa_pressed
+      value: true
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+  # し -> じ
+  - type: basic
+    from:
+      key_code: l
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: si_pressed
+        value: false
+    - key_code: delete_or_backspace
+    - key_code: z
+    - key_code: i
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: ja
+    - type: variable_unless
+      name: shifted
+      value: true
+    - type: variable_if
+      name: si_pressed
+      value: true
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+  # す -> ず
+  - type: basic
+    from:
+      key_code: l
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: su_pressed
+        value: false
+    - key_code: delete_or_backspace
+    - key_code: z
+    - key_code: u
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: ja
+    - type: variable_unless
+      name: shifted
+      value: true
+    - type: variable_if
+      name: su_pressed
+      value: true
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+  # せ -> ぜ
+  - type: basic
+    from:
+      key_code: l
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: se_pressed
+        value: false
+    - key_code: delete_or_backspace
+    - key_code: z
+    - key_code: e
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: ja
+    - type: variable_unless
+      name: shifted
+      value: true
+    - type: variable_if
+      name: se_pressed
+      value: true
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+  # そ -> ぞ
+  - type: basic
+    from:
+      key_code: l
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: so_pressed
+        value: false
+    - key_code: delete_or_backspace
+    - key_code: z
+    - key_code: o
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: ja
+    - type: variable_unless
+      name: shifted
+      value: true
+    - type: variable_if
+      name: so_pressed
+      value: true
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+  # た -> だ
+  - type: basic
+    from:
+      key_code: l
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: ta_pressed
+        value: false
+    - key_code: delete_or_backspace
+    - key_code: d
+    - key_code: a
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: ja
+    - type: variable_unless
+      name: shifted
+      value: true
+    - type: variable_if
+      name: ta_pressed
+      value: true
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+  # ち -> ぢ
+  - type: basic
+    from:
+      key_code: l
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: ti_pressed
+        value: false
+    - key_code: delete_or_backspace
+    - key_code: d
+    - key_code: i
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: ja
+    - type: variable_unless
+      name: shifted
+      value: true
+    - type: variable_if
+      name: ti_pressed
+      value: true
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+  # つ -> づ
+  - type: basic
+    from:
+      key_code: l
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: tu_pressed
+        value: false
+    - key_code: delete_or_backspace
+    - key_code: d
+    - key_code: u
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: ja
+    - type: variable_unless
+      name: shifted
+      value: true
+    - type: variable_if
+      name: tu_pressed
+      value: true
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+  # て -> で
+  - type: basic
+    from:
+      key_code: l
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: te_pressed
+        value: false
+    - key_code: delete_or_backspace
+    - key_code: d
+    - key_code: e
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: ja
+    - type: variable_unless
+      name: shifted
+      value: true
+    - type: variable_if
+      name: te_pressed
+      value: true
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+  # と -> ど
+  - type: basic
+    from:
+      key_code: l
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: to_pressed
+        value: false
+    - key_code: delete_or_backspace
+    - key_code: d
+    - key_code: o
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: ja
+    - type: variable_unless
+      name: shifted
+      value: true
+    - type: variable_if
+      name: to_pressed
+      value: true
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+  # は -> ば
+  - type: basic
+    from:
+      key_code: l
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: ha_pressed
+        value: false
+    - key_code: delete_or_backspace
+    - key_code: b
+    - key_code: a
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: ja
+    - type: variable_unless
+      name: shifted
+      value: true
+    - type: variable_if
+      name: ha_pressed
+      value: true
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+  # ひ -> び
+  - type: basic
+    from:
+      key_code: l
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: hi_pressed
+        value: false
+    - key_code: delete_or_backspace
+    - key_code: b
+    - key_code: i
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: ja
+    - type: variable_unless
+      name: shifted
+      value: true
+    - type: variable_if
+      name: hi_pressed
+      value: true
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+  # ふ -> ぶ
+  - type: basic
+    from:
+      key_code: l
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: hu_pressed
+        value: false
+    - key_code: delete_or_backspace
+    - key_code: b
+    - key_code: u
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: ja
+    - type: variable_unless
+      name: shifted
+      value: true
+    - type: variable_if
+      name: hu_pressed
+      value: true
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+  # へ -> べ
+  - type: basic
+    from:
+      key_code: l
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: he_pressed
+        value: false
+    - key_code: delete_or_backspace
+    - key_code: b
+    - key_code: e
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: ja
+    - type: variable_unless
+      name: shifted
+      value: true
+    - type: variable_if
+      name: he_pressed
+      value: true
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+  # ほ -> ぼ
+  - type: basic
+    from:
+      key_code: l
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: ho_pressed
+        value: false
+    - key_code: delete_or_backspace
+    - key_code: b
+    - key_code: o
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: ja
+    - type: variable_unless
+      name: shifted
+      value: true
+    - type: variable_if
+      name: ho_pressed
+      value: true
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+  # L (未定義)
+  - type: basic
+    from:
+      key_code: l
+      modifiers: *optional_shift
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: ja
+    - type: variable_unless
+      name: shifted
+      value: true
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+# }}}
+
+# -- 半濁音化キー {{{
+
+  # は -> ぱ
+  - type: basic
+    from:
+      key_code: w
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: ha_pressed
+        value: false
+    - key_code: delete_or_backspace
+    - key_code: p
+    - key_code: a
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: ja
+    - type: variable_if
+      name: shifted
+      value: true
+    - type: variable_if
+      name: ha_pressed
+      valud: true
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+  # ひ -> ぴ
+  - type: basic
+    from:
+      key_code: w
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: hi_pressed
+        value: false
+    - key_code: delete_or_backspace
+    - key_code: p
+    - key_code: i
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: ja
+    - type: variable_if
+      name: shifted
+      value: true
+    - type: variable_if
+      name: hi_pressed
+      valud: true
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+  # ふ -> ぷ
+  - type: basic
+    from:
+      key_code: w
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: hu_pressed
+        value: false
+    - key_code: delete_or_backspace
+    - key_code: p
+    - key_code: u
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: ja
+    - type: variable_if
+      name: shifted
+      value: true
+    - type: variable_if
+      name: hu_pressed
+      valud: true
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+  # へ -> ぺ
+  - type: basic
+    from:
+      key_code: w
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: he_pressed
+        value: false
+    - key_code: delete_or_backspace
+    - key_code: p
+    - key_code: e
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: ja
+    - type: variable_if
+      name: shifted
+      value: true
+    - type: variable_if
+      name: he_pressed
+      valud: true
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+  # ほ -> ぽ
+  - type: basic
+    from:
+      key_code: w
+      modifiers: *optional_shift
+    to:
+    - set_variable:
+        name: ho_pressed
+        value: false
+    - key_code: delete_or_backspace
+    - key_code: p
+    - key_code: o
+      repeat: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: ja
+    - type: variable_if
+      name: shifted
+      value: true
+    - type: variable_if
+      name: ho_pressed
+      valud: true
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+  # W (未定義)
+  - type: basic
+    from:
+      key_code: w
+      modifiers: *optional_shift
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: ja
+    - type: variable_if
+      name: shifted
+      value: true
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+# }}}
+
+# -- シフトキー {{{
+
+  # 日本語入力時
+  - type: basic
+    from:
+      key_code: spacebar
+      modifiers:
+        optional: any
+    to_if_alone:
+    - key_code: spacebar
+    to:
+    - set_variable:
+        name: shifted
+        value: true
+        key_up_value: false
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: ja
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+  # 英語入力時
+  - type: basic
+    from:
+      key_code: spacebar
+      modifiers:
+        optional: any
+    to_if_alone:
+    - key_code: spacebar
+    to:
+    - key_code: left_shift
+      lazy: true
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: en
+    - type: frontmost_application_unless
+      bundle_identifiers:
+      - "com.apple.loginwindow"
+
+# }}}
