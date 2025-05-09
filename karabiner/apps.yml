@@ -313,8 +313,8 @@ rules:
     to:
     - set_variable:
         name: linear_hrm_shift
-        value: 1
-        key_up_value: 0
+        value: true
+        key_up_value: false
     to_if_alone:
     - key_code: i
       modifiers:
@@ -340,7 +340,7 @@ rules:
     conditions:
     - type: variable_if
       name: linear_hrm_shift
-      value: 1
+      value: true
 
   - type: basic
     from:
@@ -356,7 +356,7 @@ rules:
     conditions:
     - type: variable_if
       name: linear_hrm_shift
-      value: 1
+      value: true
 
   - type: basic
     from:
@@ -372,7 +372,7 @@ rules:
     conditions:
     - type: variable_if
       name: linear_hrm_shift
-      value: 1
+      value: true
 
   - type: basic
     from:
@@ -388,7 +388,7 @@ rules:
     conditions:
     - type: variable_if
       name: linear_hrm_shift
-      value: 1
+      value: true
 
   # [Linear] LCmd-S -> [ (Toggle Left Sidebar)
   - type: basic
@@ -400,8 +400,8 @@ rules:
     to:
     - set_variable:
         name: linear_hrm_control
-        value: 1
-        key_up_value: 0
+        value: true
+        key_up_value: false
     to_if_alone:
     - key_code: open_bracket
     conditions:
@@ -424,7 +424,7 @@ rules:
     conditions:
     - type: variable_if
       name: linear_hrm_control
-      value: 1
+      value: true
 
   - type: basic
     from:
@@ -440,7 +440,7 @@ rules:
     conditions:
     - type: variable_if
       name: linear_hrm_control
-      value: 1
+      value: true
 
   - type: basic
     from:
@@ -456,7 +456,7 @@ rules:
     conditions:
     - type: variable_if
       name: linear_hrm_control
-      value: 1
+      value: true
 
   - type: basic
     from:
@@ -472,7 +472,7 @@ rules:
     conditions:
     - type: variable_if
       name: linear_hrm_control
-      value: 1
+      value: true
 
   # [Linear] LCtrl-LCmd-HJKL -> Opt-Arrows (Move Contents)
   - type: basic
@@ -1529,8 +1529,8 @@ rules:
     to:
     - set_variable:
         name: notion_home_row_mods
-        value: 1
-        key_up_value: 0
+        value: true
+        key_up_value: false
     to_if_alone:
     - key_code: backslash
       modifiers:
@@ -1556,7 +1556,7 @@ rules:
     conditions:
     - type: variable_if
       name: notion_home_row_mods
-      value: 1
+      value: true
 
   # [Notion] LCmd-S-K -> Move Block Up
   - type: basic
@@ -1574,7 +1574,7 @@ rules:
     conditions:
     - type: variable_if
       name: notion_home_row_mods
-      value: 1
+      value: true
 
 # }}}
 

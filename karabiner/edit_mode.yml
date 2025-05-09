@@ -33,12 +33,12 @@ aliases:
 - conditions: &edit_1
   - type: variable_if
     name: edit_1
-    value: 1
+    value: true
 
 - conditions: &edit_2
   - type: variable_if
     name: edit_2
-    value: 1
+    value: true
 
 - parameters: &threshold_ms
     basic.simultaneous_threshold_milliseconds: 20
@@ -69,11 +69,11 @@ rules:
         to_after_key_up:
         - set_variable:
             name: edit_1
-            value: 0
+            value: false
     to:
     - set_variable:
         name: edit_1
-        value: 1
+        value: true
     to_if_alone:
     - key_code: s
     - key_code: d
@@ -93,11 +93,11 @@ rules:
         to_after_key_up:
         - set_variable:
             name: edit_1
-            value: 0
+            value: false
     to:
     - set_variable:
         name: edit_1
-        value: 1
+        value: true
     to_if_alone:
     - key_code: d
     - key_code: s
@@ -118,11 +118,11 @@ rules:
         to_after_key_up:
         - set_variable:
             name: edit_1
-            value: 0
+            value: false
     to:
     - set_variable:
         name: edit_1
-        value: 1
+        value: true
     to_if_alone:
     - key_code: k
     - key_code: l
@@ -142,11 +142,11 @@ rules:
         to_after_key_up:
         - set_variable:
             name: edit_1
-            value: 0
+            value: false
     to:
     - set_variable:
         name: edit_1
-        value: 1
+        value: true
     to_if_alone:
     - key_code: l
     - key_code: k
@@ -169,11 +169,11 @@ rules:
         to_after_key_up:
         - set_variable:
             name: edit_2
-            value: 0
+            value: false
     to:
     - set_variable:
         name: edit_2
-        value: 1
+        value: true
     to_if_alone:
     - key_code: w
     - key_code: e
@@ -194,11 +194,11 @@ rules:
         to_after_key_up:
         - set_variable:
             name: edit_2
-            value: 0
+            value: false
     to:
     - set_variable:
         name: edit_2
-        value: 1
+        value: true
     to_if_alone:
     - key_code: e
     - key_code: w
@@ -220,11 +220,11 @@ rules:
         to_after_key_up:
         - set_variable:
             name: edit_2
-            value: 0
+            value: false
     to:
     - set_variable:
         name: edit_2
-        value: 1
+        value: true
     to_if_alone:
     - key_code: i
     - key_code: o
@@ -245,11 +245,11 @@ rules:
         to_after_key_up:
         - set_variable:
             name: edit_2
-            value: 0
+            value: false
     to:
     - set_variable:
         name: edit_2
-        value: 1
+        value: true
     to_if_alone:
     - key_code: o
     - key_code: i
@@ -277,11 +277,11 @@ rules:
         to_after_key_up:
         - set_variable:
             name: edit_1
-            value: 0
+            value: false
     to:
     - set_variable:
         name: edit_1
-        value: 1
+        value: true
     to_if_alone:
     - key_code: t
     - key_code: o
@@ -303,11 +303,11 @@ rules:
         to_after_key_up:
         - set_variable:
             name: edit_1
-            value: 0
+            value: false
     to:
     - set_variable:
         name: edit_1
-        value: 1
+        value: true
     to_if_alone:
     - key_code: k
     - key_code: a
@@ -330,11 +330,11 @@ rules:
         to_after_key_up:
         - set_variable:
             name: edit_1
-            value: 0
+            value: false
     to:
     - set_variable:
         name: edit_1
-        value: 1
+        value: true
     to_if_alone:
     - key_code: i
     - key_code: s
@@ -355,11 +355,11 @@ rules:
         to_after_key_up:
         - set_variable:
             name: edit_1
-            value: 0
+            value: false
     to:
     - set_variable:
         name: edit_1
-        value: 1
+        value: true
     to_if_alone:
     - key_code: s
     - key_code: i
@@ -383,11 +383,11 @@ rules:
         to_after_key_up:
         - set_variable:
             name: edit_2
-            value: 0
+            value: false
     to:
     - set_variable:
         name: edit_2
-        value: 1
+        value: true
     to_if_alone:
     - key_code: "n"
     - key_code: i
@@ -410,11 +410,11 @@ rules:
         to_after_key_up:
         - set_variable:
             name: edit_2
-            value: 0
+            value: false
     to:
     - set_variable:
         name: edit_2
-        value: 1
+        value: true
     to_if_alone:
     - key_code: h
     - key_code: a
@@ -438,11 +438,11 @@ rules:
         to_after_key_up:
         - set_variable:
             name: edit_2
-            value: 0
+            value: false
     to:
     - set_variable:
         name: edit_2
-        value: 1
+        value: true
     to_if_alone:
     - key_code: k
     - key_code: o
@@ -465,11 +465,11 @@ rules:
         to_after_key_up:
         - set_variable:
             name: edit_2
-            value: 0
+            value: false
     to:
     - set_variable:
         name: edit_2
-        value: 1
+        value: true
     to_if_alone:
     - key_code: g
     - key_code: a

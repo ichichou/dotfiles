@@ -39,7 +39,7 @@ aliases:
     - input_mode_id: "^net\\.mtgto\\.inputmethod\\.macSKK\\.eisu$"
   - type: variable_unless
     name: symbol
-    value: 1
+    value: true
   - type: frontmost_application_unless
     bundle_identifiers:
     - "^com\\.apple\\.loginwindow$"
@@ -47,7 +47,7 @@ aliases:
 - conditions: &symbol
   - type: variable_if
     name: symbol
-    value: 1
+    value: true
   - type: frontmost_application_unless
     bundle_identifiers:
     - "^com\\.apple\\.loginwindow$"
@@ -2368,8 +2368,8 @@ rules:
     to:
     - set_variable:
         name: symbol
-        value: 1
-        key_up_value: 0
+        value: true
+        key_up_value: false
     conditions: *base
 
   # Symbol Mode Mapping --------------------------

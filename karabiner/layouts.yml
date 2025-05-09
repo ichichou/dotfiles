@@ -32,7 +32,7 @@ aliases:
 - conditions: &alt_layout_off
   - type: variable_unless
     name: alt_layout
-    value: 1
+    value: true
   # - type: input_source_if
   #   input_sources:
   #   - language: en
@@ -43,7 +43,7 @@ aliases:
 - conditions: &alt_layout_on
   - type: variable_if
     name: alt_layout
-    value: 1
+    value: true
   # - type: input_source_if
   #   input_sources:
   #   - language: en
@@ -393,7 +393,7 @@ rules:
     to:
     - set_variable:
         name: alt_layout
-        value: 1
+        value: true
     - set_notification_message: *notif_on
     to_delayed_action: *remove_notif
     parameters: *delay_ms
@@ -409,7 +409,7 @@ rules:
     to:
     - set_variable:
         name: alt_layout
-        value: 0
+        value: false
     - set_notification_message: *notif_off
     to_delayed_action: *remove_notif
     parameters: *delay_ms
