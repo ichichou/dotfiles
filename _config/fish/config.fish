@@ -66,7 +66,7 @@ abbr -ag nd   nextd
 abbr -ag pd   prevd
 abbr -ag rmds rm .DS_Store
 abbr -ag so   source
-abbr -ag ud   ..
+abbr -ag ud   cd ..
 
 abbr -ag cp cp -iv
 abbr -ag mv mv -iv
