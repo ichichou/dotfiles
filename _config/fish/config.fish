@@ -142,7 +142,7 @@ abbr -ag ga  git add
 abbr -ag gb  git branch
 abbr -ag gc  git commit
 abbr -ag gcl git clone
-abbr -ag gd  git difftool
+abbr -ag gd  git diff
 abbr -ag gf  git fetch
 abbr -ag gl  git log --graph --oneline -n 10
 abbr -ag glp git log --patch -n 10
@@ -262,5 +262,9 @@ set -gx FZF_ALT_C_OPTS "\
 # Numbat -----------------------------------------
 
 set -gx NUMBAT_MODULES_PATH ~/.config/numbat
+
+# bat --------------------------------------------
+
+set -gx BATDIFF_USE_DELTA true
 
 # }}}

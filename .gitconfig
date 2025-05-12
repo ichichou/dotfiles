@@ -32,9 +32,9 @@
     ff = only
 
 [pager]
-    log = /opt/homebrew/share/git-core/contrib/diff-highlight/diff-highlight | less
-    show = /opt/homebrew/share/git-core/contrib/diff-highlight/diff-highlight | less
-    diff = /opt/homebrew/share/git-core/contrib/diff-highlight/diff-highlight | less
+    # log = /opt/homebrew/share/git-core/contrib/diff-highlight/diff-highlight | less
+    # show = /opt/homebrew/share/git-core/contrib/diff-highlight/diff-highlight | less
+    # diff = /opt/homebrew/share/git-core/contrib/diff-highlight/diff-highlight | less
 
 [interactive]
     # diffFilter = diff-highlight
@@ -52,3 +52,5 @@
 [delta]
     navigate = true
     dark = true
+    side-by-side = true
+    syntax-theme = Monokai Extended
