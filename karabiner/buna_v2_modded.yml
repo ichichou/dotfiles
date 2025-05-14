@@ -296,15 +296,14 @@ rules:
       repeat: false
     conditions: *left_shift
 
-  # ' (未定義)
+  # ' -> ／ (改変)
   - type: basic
     from:
       key_code: quote
       modifiers: *optional_shift
     to:
-    - set_variable:
-        name: left_shift
-        value: false
+    - key_code: slash
+      repeat: false
     conditions: *left_shift
 
   # z -> ぴ
