@@ -217,15 +217,7 @@ rules:
       repeat: false
     conditions: *left_shift
 
-  # d -> 。
-  - type: basic
-    from:
-      key_code: d
-      modifiers: *optional_shift
-    to:
-    - key_code: period
-      repeat: false
-    conditions: *left_shift
+  # d -> (中指シフトキーで定義)
 
   # f -> ゅ
   - type: basic
@@ -624,15 +616,7 @@ rules:
       repeat: false
     conditions: *right_shift
 
-  # k -> 、
-  - type: basic
-    from:
-      key_code: k
-      modifiers: *optional_shift
-    to:
-    - key_code: comma
-      repeat: false
-    conditions: *right_shift
+  # k (中指シフトキーで定義)
 
   # l -> お
   - type: basic
@@ -665,7 +649,6 @@ rules:
         name: right_shift
         value: false
     conditions: *right_shift
-
 
   # z -> ふ
   - type: basic
@@ -993,13 +976,13 @@ rules:
       repeat: false
     conditions: *base
 
-  # ' -> ー
+  # ' -> 。 (改変)
   - type: basic
     from:
       key_code: quote
       modifiers: *optional_shift
     to:
-    - key_code: quote
+    - key_code: period
       repeat: false
     conditions: *base
 
@@ -1080,10 +1063,20 @@ rules:
       repeat: false
     conditions: *base
 
-  # , -> れ
+  # , -> 、
   - type: basic
     from:
       key_code: comma
+      modifiers: *optional_shift
+    to:
+    - key_code: comma
+      repeat: false
+    conditions: *base
+
+  # . -> れ (改変)
+  - type: basic
+    from:
+      key_code: period
       modifiers: *optional_shift
     to:
     - key_code: r
@@ -1091,24 +1084,14 @@ rules:
       repeat: false
     conditions: *base
 
-  # . -> ら
-  - type: basic
-    from:
-      key_code: period
-      modifiers: *optional_shift
-    to:
-    - key_code: r
-    - key_code: a
-      repeat: false
-    conditions: *base
-
-  # / -> 。
+  # / -> ら (改変)
   - type: basic
     from:
       key_code: slash
       modifiers: *optional_shift
     to:
-    - key_code: period
+    - key_code: r
+    - key_code: a
       repeat: false
     conditions: *base
 
