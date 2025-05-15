@@ -1,9 +1,17 @@
-title: "09. Inverted num row"
+title: "09. Inverted number row"
+
+aliases:
+- conditions: &apple_internal_keyboard
+  - type: device_if
+    identifiers:
+    - vendor_id: 1452
+      product_id: 834
+
 rules:
-- description: "9. Inverted num row"
+- description: "9. Inverted number row"
   manipulators:
 
-  # Just Num -> Symbol ---------------------------
+  # Just Number -> Symbol ------------------------
 
   # Just 1 -> !
   - type: basic
@@ -13,6 +21,7 @@ rules:
     - key_code: "1"
       modifiers:
       - shift
+    conditions: *apple_internal_keyboard
 
   # Just 2 -> @
   - type: basic
@@ -22,6 +31,7 @@ rules:
     - key_code: "2"
       modifiers:
       - shift
+    conditions: *apple_internal_keyboard
 
   # Just 3 -> #
   - type: basic
@@ -31,6 +41,7 @@ rules:
     - key_code: "3"
       modifiers:
       - shift
+    conditions: *apple_internal_keyboard
 
   # Just 4 -> $
   - type: basic
@@ -40,6 +51,7 @@ rules:
     - key_code: "4"
       modifiers:
       - shift
+    conditions: *apple_internal_keyboard
 
   # Just 5 -> %
   - type: basic
@@ -49,6 +61,7 @@ rules:
     - key_code: "5"
       modifiers:
       - shift
+    conditions: *apple_internal_keyboard
 
   # Just 6 -> ^
   - type: basic
@@ -58,6 +71,7 @@ rules:
     - key_code: "6"
       modifiers:
       - shift
+    conditions: *apple_internal_keyboard
 
   # Just 7 -> &
   - type: basic
@@ -67,6 +81,7 @@ rules:
     - key_code: "7"
       modifiers:
       - shift
+    conditions: *apple_internal_keyboard
 
   # Just 8 -> *
   - type: basic
@@ -76,6 +91,7 @@ rules:
     - key_code: "8"
       modifiers:
       - shift
+    conditions: *apple_internal_keyboard
 
   # Just 9 -> (
   - type: basic
@@ -85,6 +101,7 @@ rules:
     - key_code: "9"
       modifiers:
       - shift
+    conditions: *apple_internal_keyboard
 
   # Just 0 -> )
   - type: basic
@@ -94,8 +111,9 @@ rules:
     - key_code: "0"
       modifiers:
       - shift
+    conditions: *apple_internal_keyboard
 
-  # Shift + Num -> Num ---------------------------
+  # Shift + Number -> Number ---------------------
 
   # Shift + 1 -> 1
   - type: basic
@@ -106,6 +124,7 @@ rules:
         - shift
     to:
     - key_code: "1"
+    conditions: *apple_internal_keyboard
 
   # Shift + 2 -> 2
   - type: basic
@@ -116,6 +135,7 @@ rules:
         - shift
     to:
     - key_code: "2"
+    conditions: *apple_internal_keyboard
 
   # Shift + 3 -> 3
   - type: basic
@@ -126,6 +146,7 @@ rules:
         - shift
     to:
     - key_code: "3"
+    conditions: *apple_internal_keyboard
 
   # Shift + 4 -> 4
   - type: basic
@@ -136,6 +157,7 @@ rules:
         - shift
     to:
     - key_code: "4"
+    conditions: *apple_internal_keyboard
 
   # Shift + 5 -> 5
   - type: basic
@@ -146,6 +168,7 @@ rules:
         - shift
     to:
     - key_code: "5"
+    conditions: *apple_internal_keyboard
 
   # Shift + 6 -> 6
   - type: basic
@@ -156,6 +179,7 @@ rules:
         - shift
     to:
     - key_code: "6"
+    conditions: *apple_internal_keyboard
 
   # Shift + 7 -> 7
   - type: basic
@@ -166,6 +190,7 @@ rules:
         - shift
     to:
     - key_code: "7"
+    conditions: *apple_internal_keyboard
 
   # Shift + 8 -> 8
   - type: basic
@@ -176,6 +201,7 @@ rules:
         - shift
     to:
     - key_code: "8"
+    conditions: *apple_internal_keyboard
 
   # Shift + 9 -> 9
   - type: basic
@@ -186,6 +212,7 @@ rules:
         - shift
     to:
     - key_code: "9"
+    conditions: *apple_internal_keyboard
 
   # Shift + 0 -> 0
   - type: basic
@@ -196,3 +223,4 @@ rules:
         - shift
     to:
     - key_code: "0"
+    conditions: *apple_internal_keyboard
