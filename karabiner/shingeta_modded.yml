@@ -1,6 +1,6 @@
 title: "10-1. 新下駄配列"
 
-# ALIASES ========================================
+# == ALIASES {{{
 
 aliases:
 
@@ -55,15 +55,17 @@ aliases:
 # Parameters -------------------------------------
 
 - parameters: &threshold_ms
-    basic.simultaneous_threshold_milliseconds: 50
+    basic.simultaneous_threshold_milliseconds: 60
 
-# RULES ==========================================
+# }}}
+
+# == RULES {{{
 
 rules:
 - description: "10-1. 新下駄配列"
   manipulators:
 
-# 中指シフト・右 ---------------------------------
+# -- 中指シフト・右 {{{
 
   # q -> ふぁ
   - type: basic
@@ -345,7 +347,9 @@ rules:
     conditions: *base
     parameters: *threshold_ms
 
-# 中指シフト・左 ---------------------------------
+# }}}
+
+# -- 中指シフト・左 {{{
 
   # y -> うぃ
   - type: basic
@@ -598,7 +602,9 @@ rules:
     conditions: *base
     parameters: *threshold_ms
 
-# 薬指シフト・右 ---------------------------------
+# }}}
+
+# -- 薬指シフト・右 {{{
 
   # q -> ぢ
   - type: basic
@@ -886,7 +892,9 @@ rules:
     conditions: *base
     parameters: *threshold_ms
 
-# 薬指シフト・左 ---------------------------------
+# }}}
+
+# -- 薬指シフト・左 {{{
 
   # y -> しぇ
   - type: basic
@@ -1146,7 +1154,9 @@ rules:
     conditions: *base
     parameters: *threshold_ms
 
-# 中指上段シフト ---------------------------------
+# }}}
+
+# -- 中指上段シフト {{{
 
   # q -> ひゅ
   - type: basic
@@ -1407,7 +1417,9 @@ rules:
     conditions: *base
     parameters: *threshold_ms
 
-# 薬指上段シフト ---------------------------------
+# }}}
+
+# -- 薬指上段シフト {{{
 
   # q -> りゅ
   - type: basic
@@ -1668,7 +1680,9 @@ rules:
     conditions: *base
     parameters: *threshold_ms
 
-# 小指上段シフト・右 (改変) -----------------------------
+# }}}
+
+# -- 小指上段シフト・右 (改変) {{{
 
   # q -> ぴゅ
   - type: basic
@@ -1867,7 +1881,9 @@ rules:
     conditions: *base
     parameters: *threshold_ms
 
-# 小指上段シフト・左 (改変) -----------------------------
+# }}}
+
+# -- 小指上段シフト・左 (改変) {{{
 
   # y -> ゃ
   - type: basic
@@ -1937,22 +1953,31 @@ rules:
 
   # l (他で定義済み)
 
-  # ; -> ゎ
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: *left_upper_pinky
-      - key_code: semicolon
-      modifiers: *optional_shift
-    to:
-    - key_code: x
-    - key_code: w
-    - key_code: a
-      repeat: false
-    conditions: *base
-    parameters: *threshold_ms
+  # # ; (未定義)
+  # - type: basic
+  #   from:
+  #     simultaneous:
+  #     - key_code: *left_upper_pinky
+  #     - key_code: semicolon
+  #     modifiers: *optional_shift
+  #   to:
+  #   - key_code:
+  #     repeat: false
+  #   conditions: *base
+  #   parameters: *threshold_ms
 
-  # '
+  # # ' (未定義)
+  # - type: basic
+  #   from:
+  #     simultaneous:
+  #     - key_code: *left_upper_pinky
+  #     - key_code: quote
+  #     modifiers: *optional_shift
+  #   to:
+  #   - key_code:
+  #     repeat: false
+  #   conditions: *base
+  #   parameters: *threshold_ms
 
   # n -> ょ
   - type: basic
@@ -2011,9 +2036,24 @@ rules:
     conditions: *base
     parameters: *threshold_ms
 
-  # /
+  # / -> ゎ
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: *left_upper_pinky
+      - key_code: slash
+      modifiers: *optional_shift
+    to:
+    - key_code: x
+    - key_code: w
+    - key_code: a
+      repeat: false
+    conditions: *base
+    parameters: *threshold_ms
 
-# ベース -----------------------------------------
+# }}}
+
+# -- ベース {{{
 
   # q -> ー
   - type: basic
@@ -2353,7 +2393,9 @@ rules:
       repeat: false
     conditions: *base
 
-# Symbol Mode ------------------------------------
+# }}}
+
+# -- Symbol Mode {{{
 
   # Symbol Mode Key ------------------------------
 
@@ -2685,3 +2727,7 @@ rules:
       modifiers: *to_shift
       repeat: false
     conditions: *symbol
+
+# }}}
+
+# }}}
