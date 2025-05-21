@@ -122,27 +122,43 @@ rules:
     - key_code: left_arrow
       repeat: false
 
-  # # DF -> Eisuu
-  # - type: basic
-  #   from:
-  #     simultaneous:
-  #     - key_code: d
-  #     - key_code: f
-  #   to:
-  #   - key_code: japanese_eisuu
-  #     repeat: false
-  #   parameters: *short_threshold_ms
+  # NM -> {}, Left Arrow
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: "n"
+      - key_code: m
+    to:
+    - key_code: open_bracket
+      modifiers:
+      - shift
+    - key_code: close_bracket
+      modifiers:
+      - shift
+    - key_code: left_arrow
+      repeat: false
 
-  # # JK -> Kana
-  # - type: basic
-  #   from:
-  #     simultaneous:
-  #     - key_code: j
-  #     - key_code: k
-  #   to:
-  #   - key_code: japanese_kana
-  #     repeat: false
-  #   parameters: *short_threshold_ms
+  # DF -> Eisuu
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: d
+      - key_code: f
+    to:
+    - key_code: japanese_eisuu
+      repeat: false
+    parameters: *short_threshold_ms
+
+  # JK -> Kana
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: j
+      - key_code: k
+    to:
+    - key_code: japanese_kana
+      repeat: false
+    parameters: *short_threshold_ms
 
   # 英語入力 -------------------------------------
 
