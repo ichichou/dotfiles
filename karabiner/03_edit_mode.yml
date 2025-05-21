@@ -1,6 +1,6 @@
 title: "03. Edit mode"
 
-# ALIASES ========================================
+# ALIASES {{{
 
 aliases:
 
@@ -42,6 +42,8 @@ aliases:
 
 - parameters: &threshold_ms
     basic.simultaneous_threshold_milliseconds: 20
+
+# }}}
 
 # RULES ==========================================
 
@@ -880,10 +882,16 @@ rules:
 
   # Left Side Keys {{{
 
-  # Q -> Ctrl-Opt-U (Left Up Window)
+  # Q -> Invalid
   - type: basic
     from:
       key_code: q
+    conditions: *edit_2
+
+  # W -> Ctrl-Opt-U (Left Up Window)
+  - type: basic
+    from:
+      key_code: w
     to:
     - key_code: u
       modifiers:
@@ -892,22 +900,16 @@ rules:
       repeat: false
     conditions: *edit_2
 
-  # W -> Ctrl-Opt-I (Right Up Window)
+  # E -> Ctrl-Opt-I (Right Up Window)
   - type: basic
     from:
-      key_code: w
+      key_code: e
     to:
     - key_code: i
       modifiers:
       - control
       - option
       repeat: false
-    conditions: *edit_2
-
-  # E -> Invalid
-  - type: basic
-    from:
-      key_code: e
     conditions: *edit_2
 
   # R -> Shift-Ctrl-Opt-C (Center Window)
@@ -946,16 +948,28 @@ rules:
       repeat: false
     conditions: *edit_2
 
-  # S -> Invalid
+  # S -> Ctrl-Opt-J (Left Down Window)
   - type: basic
     from:
       key_code: s
+    to:
+    - key_code: j
+      modifiers:
+      - control
+      - option
+      repeat: false
     conditions: *edit_2
 
-  # D -> Invalid
+  # D -> Ctrl-Opt-J (Right Down Window)
   - type: basic
     from:
       key_code: d
+    to:
+    - key_code: k
+      modifiers:
+      - control
+      - option
+      repeat: false
     conditions: *edit_2
 
   # F -> Ctrl-Opt-Right (Right Half Window)
