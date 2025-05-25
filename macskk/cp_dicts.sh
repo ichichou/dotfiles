@@ -9,6 +9,7 @@ if [[ ! -d $dict_dir ]]; then
   exit 1
 fi
 
+cp -f "$dict_dir"/SKK-JISYO.L                      "$macskk_dir"/.
 cp -f "$dict_dir"/SKK-JISYO.jinmei                 "$macskk_dir"/.
 cp -f "$dict_dir"/SKK-JISYO.fullname               "$macskk_dir"/.
 cp -f "$dict_dir"/SKK-JISYO.geo                    "$macskk_dir"/.
