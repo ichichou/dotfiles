@@ -324,4 +324,19 @@ rules:
       - control
       repeat: false
 
+  # Q + W -> Hyper-E
+  # 同時押しで Hyper-E を送信（30％キーボードなど用）
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: q
+      - key_code: w
+    to:
+    - key_code: e
+      modifiers:
+      - right_shift
+      - right_command
+      - right_control
+      - right_option
+
 # }}}

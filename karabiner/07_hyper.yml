@@ -7,15 +7,15 @@ aliases:
 - from/modifiers: &from_mods
     mandatory:
     - shift
-    - command
     - control
     - option
+    - command
 
 - to/modifiers: &to_mods
   - right_shift
-  - right_command
   - right_control
   - right_option
+  - right_command
 
 # RULES ==========================================
 
@@ -36,9 +36,9 @@ rules:
     to:
     - key_code: right_shift
       modifiers:
-      - right_command
       - right_control
       - right_option
+      - right_command
       lazy: true
 
   # F13 -> Delete/Hyper
@@ -55,14 +55,14 @@ rules:
     to:
     - key_code: right_shift
       modifiers:
-      - right_command
       - right_control
       - right_option
+      - right_command
       lazy: true
 
 # Special Mappings -----------------------------------
 
-  # Q: Hyper-E
+  # Hyper-Q -> Hyper-E
   # Raycast では Hyper-Q をホットキーとして直接設定できないため
   - type: basic
     from:
@@ -72,18 +72,7 @@ rules:
     - key_code: e
       modifiers: *to_mods
 
-  # Q + W -> Hyper-E
-  # 30％キーボード等のために同時押しで Hyper-Q (Hyper-E) を送信
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: q
-      - key_code: w
-    to:
-    - key_code: e
-      modifiers: *to_mods
-
-  # C: Arc
+  # Hyper-C -> Arc
   # Raycast ではひとつのアプリに複数のホットキーを設定できないため
   - type: basic
     from:
