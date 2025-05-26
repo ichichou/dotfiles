@@ -261,8 +261,12 @@ nmap <SID>ws <Nop>
 
 " z Command --------------------------------------
 
-nmap f z
-nnoremap zf zz
+map f z
+noremap zf zz
+
+noremap zF zf
+noremap zD zd
+noremap zd <Nop>
 
 " Vimrc ------------------------------------------
 
