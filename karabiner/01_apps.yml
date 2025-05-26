@@ -1732,6 +1732,23 @@ rules:
       bundle_identifiers:
       - "com.mitchellh.ghostty"
 
+  # [Ghostty] LCtrl-U -> Ctrl-U
+  # control.yml の LCtrl-U -> Cmd-Delete の無効化のため
+  - type: basic
+    from:
+      key_code: u
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: u
+      modifiers:
+      - control
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.mitchellh.ghostty"
+
   # # [Ghostty] LCtrl-1 - 6 -> Cmd-1 - 6
   # - type: basic
   #   from:

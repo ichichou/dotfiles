@@ -3,7 +3,7 @@ rules:
 - description: "6. Control key"
   manipulators:
 
-  # Control Key ----------------------------------
+  # Control Key {{{
 
   # # Caps Lock -> Esc/LControl
   # # Simple Modifications で設定するため不要
@@ -45,7 +45,9 @@ rules:
     to_if_alone:
     - key_code: escape
 
-  # Control-*** Mapping --------------------------
+  # }}}
+
+  # Control-*** Mapping {{{
 
   # LControl-J -> Kana
   # Control-key の入力をアプリに取られて IME に渡らないことが多いため、
@@ -118,3 +120,18 @@ rules:
     to:
     - key_code: delete_or_backspace
       repeat: true
+
+  # LControl-U -> Command-Delete
+  - type: basic
+    from:
+      key_code: u
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: delete_or_backspace
+      modifiers:
+      - command
+      repeat: true
+
+  # }}}
