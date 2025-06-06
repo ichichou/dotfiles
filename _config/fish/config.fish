@@ -68,8 +68,9 @@ abbr -ag rmds rm .DS_Store
 abbr -ag so   source
 abbr -ag ud   cd ..
 
-abbr -ag cp cp -iv
-abbr -ag mv mv -iv
+abbr -ag cp  cp -iv
+abbr -ag cpr cp -ivr
+abbr -ag mv  mv -iv
 
 # Apps
 abbr -ag R    R --quiet --no-save
