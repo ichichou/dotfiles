@@ -261,9 +261,10 @@ nmap <SID>ws <Nop>
 
 " z Command --------------------------------------
 
-map f z
-noremap zf zz
+nmap f z
+xmap f z
 
+noremap zf zz
 noremap zF zf
 noremap zD zd
 noremap zd <Nop>
@@ -688,9 +689,9 @@ if has('nvim')
   Plug 'mattn/vim-lsp-settings'
   Plug 'mattn/vim-lsp-icons'
 else
-  Plug 'prabirshrestha/vim-lsp'
-  Plug 'mattn/vim-lsp-settings'
-  Plug 'mattn/vim-lsp-icons'
+  " Plug 'prabirshrestha/vim-lsp'
+  " Plug 'mattn/vim-lsp-settings'
+  " Plug 'mattn/vim-lsp-icons'
 endif
 
 " Completion -------------------------------------
