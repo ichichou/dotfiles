@@ -58,7 +58,7 @@ rules:
   #   conditions:
   #   - type: input_source_if
   #     input_sources:
-  #     - language: en
+  #     - language: "^en$"
 
   # 日本語入力 -----------------------------------
 
@@ -78,7 +78,7 @@ rules:
     conditions:
     - type: input_source_if
       input_sources:
-      - language: ja
+      - language: "^ja$"
 
 # }}}
 
@@ -168,7 +168,7 @@ rules:
     conditions:
     - type: input_source_if
       input_sources:
-      - language: en
+      - language: "^en$"
 
   # VB -> [], Space
   - type: basic
@@ -184,7 +184,7 @@ rules:
     conditions:
     - type: input_source_if
       input_sources:
-      - language: en
+      - language: "^en$"
 
   # 日本語入力 -----------------------------------
 
@@ -204,7 +204,7 @@ rules:
     conditions:
     - type: input_source_if
       input_sources:
-      - language: ja
+      - language: "^ja$"
 
   # VB -> Eisuu, [], Space, Kana
   - type: basic
@@ -222,7 +222,7 @@ rules:
     conditions:
     - type: input_source_if
       input_sources:
-      - language: ja
+      - language: "^ja$"
 
 # }}}
 

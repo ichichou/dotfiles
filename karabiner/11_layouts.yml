@@ -35,7 +35,7 @@ aliases:
     value: true
   # - type: input_source_if
   #   input_sources:
-  #   - language: en
+  #   - language: "^en$"
   - type: frontmost_application_unless
     bundle_identifiers:
     - "com.apple.loginwindow"
@@ -46,7 +46,7 @@ aliases:
     value: true
   # - type: input_source_if
   #   input_sources:
-  #   - language: en
+  #   - language: "^en$"
   - type: frontmost_application_unless
     bundle_identifiers:
     - "com.apple.loginwindow"

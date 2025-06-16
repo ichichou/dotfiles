@@ -33,7 +33,7 @@ aliases:
 - conditions: &base
   - type: input_source_if
     input_sources:
-    - language: ja
+    - language: "^ja$"
   - type: input_source_unless
     input_sources:
     - input_mode_id: "^net\\.mtgto\\.inputmethod\\.macSKK\\.eisu$"

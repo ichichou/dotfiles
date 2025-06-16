@@ -7,7 +7,7 @@ aliases:
 - conditions: &ime_off
   - type: input_source_unless
     input_sources:
-    - language: ja
+    - language: "^ja$"
   # - type: device_unless
   #   identifiers:
   #   # Equinox XL
@@ -20,7 +20,7 @@ aliases:
 - conditions: &ime_on
   - type: input_source_if
     input_sources:
-    - language: ja
+    - language: "^ja$"
   # - type: device_unless
   #   identifiers:
   #   # Equinox XL

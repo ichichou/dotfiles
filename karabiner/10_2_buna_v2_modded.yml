@@ -25,7 +25,7 @@ aliases:
 - conditions: &base
   - type: input_source_if
     input_sources:
-    - language: ja
+    - language: "^ja$"
   - type: variable_unless
     name: symbol
     value: true
@@ -42,7 +42,7 @@ aliases:
 - conditions: &left_shift
   - type: input_source_if
     input_sources:
-    - language: ja
+    - language: "^ja$"
   - type: variable_unless
     name: symbol
     value: true
@@ -56,7 +56,7 @@ aliases:
 - conditions: &right_shift
   - type: input_source_if
     input_sources:
-    - language: ja
+    - language: "^ja$"
   - type: variable_unless
     name: symbol
     value: true
@@ -1180,7 +1180,7 @@ rules:
     conditions:
     - type: input_source_if
       input_sources:
-      - language: ja
+      - language: "^ja$"
     - type: variable_unless
       name: symbol
       value: true
@@ -1213,7 +1213,7 @@ rules:
     conditions:
     - type: input_source_if
       input_sources:
-      - language: ja
+      - language: "^ja$"
     - type: variable_unless
       name: symbol
       value: true

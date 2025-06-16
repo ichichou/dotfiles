@@ -95,7 +95,7 @@ rules:
   #   conditions:
   #   - type: input_source_unless
   #     input_sources:
-  #     - language: ja
+  #     - language: "^ja$"
   #
   # # IME On (Shingeta)
   # - type: basic
@@ -113,7 +113,7 @@ rules:
   #   conditions:
   #   - type: input_source_if
   #     input_sources:
-  #     - language: ja
+  #     - language: "^ja$"
 
 # }}}
 

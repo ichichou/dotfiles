@@ -29,7 +29,7 @@ aliases:
 - conditions: &base
   - type: input_source_if
     input_sources:
-    - language: ja
+    - language: "^ja$"
   - type: variable_unless
     name: shifted
     value: true
@@ -40,7 +40,7 @@ aliases:
 - conditions: &shifted
   - type: input_source_if
     input_sources:
-    - language: ja
+    - language: "^ja$"
   - type: variable_if
     name: shifted
     value: true
@@ -821,7 +821,7 @@ rules:
     conditions:
     - type: input_source_if
       input_sources:
-      - language: ja
+      - language: "^ja$"
     - type: variable_unless
       name: shifted
       value: true
@@ -848,7 +848,7 @@ rules:
     conditions:
     - type: input_source_if
       input_sources:
-      - language: ja
+      - language: "^ja$"
     - type: variable_unless
       name: shifted
       value: true
@@ -875,7 +875,7 @@ rules:
     conditions:
     - type: input_source_if
       input_sources:
-      - language: ja
+      - language: "^ja$"
     - type: variable_unless
       name: shifted
       value: true
@@ -902,7 +902,7 @@ rules:
     conditions:
     - type: input_source_if
       input_sources:
-      - language: ja
+      - language: "^ja$"
     - type: variable_unless
       name: shifted
       value: true
@@ -929,7 +929,7 @@ rules:
     conditions:
     - type: input_source_if
       input_sources:
-      - language: ja
+      - language: "^ja$"
     - type: variable_unless
       name: shifted
       value: true
@@ -956,7 +956,7 @@ rules:
     conditions:
     - type: input_source_if
       input_sources:
-      - language: ja
+      - language: "^ja$"
     - type: variable_unless
       name: shifted
       value: true
@@ -983,7 +983,7 @@ rules:
     conditions:
     - type: input_source_if
       input_sources:
-      - language: ja
+      - language: "^ja$"
     - type: variable_unless
       name: shifted
       value: true
@@ -1010,7 +1010,7 @@ rules:
     conditions:
     - type: input_source_if
       input_sources:
-      - language: ja
+      - language: "^ja$"
     - type: variable_unless
       name: shifted
       value: true
@@ -1037,7 +1037,7 @@ rules:
     conditions:
     - type: input_source_if
       input_sources:
-      - language: ja
+      - language: "^ja$"
     - type: variable_unless
       name: shifted
       value: true
@@ -1064,7 +1064,7 @@ rules:
     conditions:
     - type: input_source_if
       input_sources:
-      - language: ja
+      - language: "^ja$"
     - type: variable_unless
       name: shifted
       value: true
@@ -1091,7 +1091,7 @@ rules:
     conditions:
     - type: input_source_if
       input_sources:
-      - language: ja
+      - language: "^ja$"
     - type: variable_unless
       name: shifted
       value: true
@@ -1118,7 +1118,7 @@ rules:
     conditions:
     - type: input_source_if
       input_sources:
-      - language: ja
+      - language: "^ja$"
     - type: variable_unless
       name: shifted
       value: true
@@ -1145,7 +1145,7 @@ rules:
     conditions:
     - type: input_source_if
       input_sources:
-      - language: ja
+      - language: "^ja$"
     - type: variable_unless
       name: shifted
       value: true
@@ -1172,7 +1172,7 @@ rules:
     conditions:
     - type: input_source_if
       input_sources:
-      - language: ja
+      - language: "^ja$"
     - type: variable_unless
       name: shifted
       value: true
@@ -1199,7 +1199,7 @@ rules:
     conditions:
     - type: input_source_if
       input_sources:
-      - language: ja
+      - language: "^ja$"
     - type: variable_unless
       name: shifted
       value: true
@@ -1226,7 +1226,7 @@ rules:
     conditions:
     - type: input_source_if
       input_sources:
-      - language: ja
+      - language: "^ja$"
     - type: variable_unless
       name: shifted
       value: true
@@ -1253,7 +1253,7 @@ rules:
     conditions:
     - type: input_source_if
       input_sources:
-      - language: ja
+      - language: "^ja$"
     - type: variable_unless
       name: shifted
       value: true
@@ -1280,7 +1280,7 @@ rules:
     conditions:
     - type: input_source_if
       input_sources:
-      - language: ja
+      - language: "^ja$"
     - type: variable_unless
       name: shifted
       value: true
@@ -1307,7 +1307,7 @@ rules:
     conditions:
     - type: input_source_if
       input_sources:
-      - language: ja
+      - language: "^ja$"
     - type: variable_unless
       name: shifted
       value: true
@@ -1334,7 +1334,7 @@ rules:
     conditions:
     - type: input_source_if
       input_sources:
-      - language: ja
+      - language: "^ja$"
     - type: variable_unless
       name: shifted
       value: true
@@ -1361,7 +1361,7 @@ rules:
     conditions:
     - type: input_source_if
       input_sources:
-      - language: ja
+      - language: "^ja$"
     - type: variable_unless
       name: shifted
       value: true
@@ -1380,7 +1380,7 @@ rules:
     conditions:
     - type: input_source_if
       input_sources:
-      - language: ja
+      - language: "^ja$"
     - type: variable_unless
       name: shifted
       value: true
@@ -1408,7 +1408,7 @@ rules:
     conditions:
     - type: input_source_if
       input_sources:
-      - language: ja
+      - language: "^ja$"
     - type: variable_if
       name: shifted
       value: true
@@ -1435,7 +1435,7 @@ rules:
     conditions:
     - type: input_source_if
       input_sources:
-      - language: ja
+      - language: "^ja$"
     - type: variable_if
       name: shifted
       value: true
@@ -1462,7 +1462,7 @@ rules:
     conditions:
     - type: input_source_if
       input_sources:
-      - language: ja
+      - language: "^ja$"
     - type: variable_if
       name: shifted
       value: true
@@ -1489,7 +1489,7 @@ rules:
     conditions:
     - type: input_source_if
       input_sources:
-      - language: ja
+      - language: "^ja$"
     - type: variable_if
       name: shifted
       value: true
@@ -1516,7 +1516,7 @@ rules:
     conditions:
     - type: input_source_if
       input_sources:
-      - language: ja
+      - language: "^ja$"
     - type: variable_if
       name: shifted
       value: true
@@ -1535,7 +1535,7 @@ rules:
     conditions:
     - type: input_source_if
       input_sources:
-      - language: ja
+      - language: "^ja$"
     - type: variable_if
       name: shifted
       value: true
@@ -1563,7 +1563,7 @@ rules:
     conditions:
     - type: input_source_if
       input_sources:
-      - language: ja
+      - language: "^ja$"
     - type: frontmost_application_unless
       bundle_identifiers:
       - "com.apple.loginwindow"
@@ -1582,7 +1582,7 @@ rules:
     conditions:
     - type: input_source_if
       input_sources:
-      - language: en
+      - language: "^en$"
     - type: frontmost_application_unless
       bundle_identifiers:
       - "com.apple.loginwindow"
