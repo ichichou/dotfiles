@@ -36,7 +36,8 @@ aliases:
     - language: "^ja$"
   - type: input_source_unless
     input_sources:
-    - input_mode_id: "^net\\.mtgto\\.inputmethod\\.macSKK\\.eisu$"
+    - input_source_id: "^net\\.mtgto\\.inputmethod\\.macSKK\\.eisu$"
+    - input_source_id: "^com\\.google\\.inputmethod\\.Japanese\\.base$"
   - type: variable_unless
     name: symbol
     value: true
