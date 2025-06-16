@@ -40,18 +40,18 @@ rules:
     - key_code: escape
       repeat: false
 
-  # LCommand-; -> Command-K
-  - type: basic
-    from:
-      key_code: semicolon
-      modifiers:
-        mandatory:
-        - left_command
-    to:
-    - key_code: k
-      modifiers:
-      - command
-      repeat: false
+  # # LCommand-; -> Command-K
+  # - type: basic
+  #   from:
+  #     key_code: semicolon
+  #     modifiers:
+  #       mandatory:
+  #       - left_command
+  #   to:
+  #   - key_code: k
+  #     modifiers:
+  #     - command
+  #     repeat: false
 
   # LCommand-U -> Command-H
   - type: basic
