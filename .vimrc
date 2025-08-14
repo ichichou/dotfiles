@@ -377,13 +377,13 @@ augroup vimrc
 augroup END
 
 " augroup vimrc
-"   autocmd VimEnter * let s:prev_ime = ''
+"   autocmd VimEnter    * let s:prev_ime = ''
 "   autocmd InsertEnter * call s:restore_ime()
 "   autocmd InsertLeave * call s:save_ime_and_set_default_ime()
 " augroup END
 "
-" let s:ime_cmd = 'macism'
-" let s:default_ime = 'jp.sourceforge.inputmethod.aquaskk.Ascii'
+" let s:ime_cmd     = 'macism'
+" let s:default_ime = 'net.mtgto.inputmethod.macSKK.ascii'
 "
 " function! s:restore_ime() abort
 "   if s:prev_ime != '' && s:prev_ime != s:default_ime
