@@ -520,18 +520,40 @@ rules:
 
 # ChatGPT {{{
 
-  # [ChatGPT] Shif-Cmd-V -> Cmd-V
+  # [ChatGPT] LShif-LCmd-V -> Cmd-V
   - type: basic
     from:
       key_code: v
       modifiers:
         mandatory:
-        - shift
-        - command
+        - left_shift
+        - left_command
     to:
-      - key_code: v
-        modifiers:
-        - command
+    - key_code: v
+      modifiers:
+      - command
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.openai.chat"
+
+  # [ChatGPT] LCmd-S -> Home Row Mods / Shift-Cmd-S
+  # システム設定から Shift-Cmd-S でサイドバーを切り替えられるようにする
+  - type: basic
+    from:
+      key_code: s
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: left_control
+      modifiers:
+      - command
+    to_if_alone:
+    - key_code: s
+      modifiers:
+      - shift
+      - command
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
