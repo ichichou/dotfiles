@@ -3,610 +3,98 @@ rules:
 - description: "1. Application-specific"
   manipulators:
 
-# Slack {{{
+# Alacritty {{{
 
-  # [Slack] RCmd-K -> Cmd-K, Eisuu
-  - type: basic
-    from:
-      key_code: k
-      modifiers:
-        mandatory:
-        - right_command
-    to:
-    - key_code: k
-      modifiers:
-      - command
-    - key_code: japanese_eisuu
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.tinyspeck.slackmacgap"
-
-  # [Slack] LCmd-; -> Cmd-K, Eisuu
-  - type: basic
-    from:
-      key_code: semicolon
-      modifiers:
-        mandatory:
-        - left_command
-    to:
-    - key_code: k
-      modifiers:
-      - command
-    - key_code: japanese_eisuu
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.tinyspeck.slackmacgap"
-
-  # [Slack] LCmd-S -> Shift-Cmd-D
-  # サイドバーを表示／非表示
-  - type: basic
-    from:
-      key_code: s
-      modifiers:
-        mandatory:
-        - left_command
-    to:
-    - key_code: d
-      modifiers:
-      - shift
-      - command
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.tinyspeck.slackmacgap"
-
-  # [Slack] LCtrl-1 - 6 -> Cmd-1 - 6
-  - type: basic
-    from:
-      key_code: "1"
-      modifiers:
-        mandatory:
-        - left_control
-    to:
-    - key_code: "1"
-      modifiers:
-      - command
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.tinyspeck.slackmacgap"
-
-  - type: basic
-    from:
-      key_code: "2"
-      modifiers:
-        mandatory:
-        - left_control
-    to:
-    - key_code: "2"
-      modifiers:
-      - command
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.tinyspeck.slackmacgap"
-
-  - type: basic
-    from:
-      key_code: "3"
-      modifiers:
-        mandatory:
-        - left_control
-    to:
-    - key_code: "3"
-      modifiers:
-      - command
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.tinyspeck.slackmacgap"
-
-  - type: basic
-    from:
-      key_code: "4"
-      modifiers:
-        mandatory:
-        - left_control
-    to:
-    - key_code: "4"
-      modifiers:
-      - command
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.tinyspeck.slackmacgap"
-
-  - type: basic
-    from:
-      key_code: "5"
-      modifiers:
-        mandatory:
-        - left_control
-    to:
-    - key_code: "5"
-      modifiers:
-      - command
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.tinyspeck.slackmacgap"
-
-  - type: basic
-    from:
-      key_code: "6"
-      modifiers:
-        mandatory:
-        - left_control
-    to:
-    - key_code: "6"
-      modifiers:
-      - command
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.tinyspeck.slackmacgap"
+#   # [Alacritty] Cmd-W -> Ignore
+#   - type: basic
+#     from:
+#       key_code: w
+#       modifiers:
+#         mandatory:
+#         - command
+#     conditions:
+#     - type: frontmost_application_if
+#       bundle_identifiers:
+#       - "org.alacritty"
+#
+#   # [Alacritty] LCmd-Q (held down) -> Quit Alacritty
+#   # LCmd-Q 長押しでのみ終了
+#   - type: basic
+#     from:
+#       key_code: q
+#       modifiers:
+#         mandatory:
+#         - left_command
+#     to_if_held_down:
+#     - key_code: q
+#       modifiers:
+#       - command
+#       repeat: false
+#     parameters:
+#       basic.to_if_held_down_threshold_milliseconds: 500
+#     conditions:
+#     - type: frontmost_application_if
+#       bundle_identifiers:
+#       - "org.alacritty"
 
 # }}}
 
-# Superhuman {{{
+# Arc {{{
 
-  # [Superhuman] RCmd-K -> Cmd-K, Eisuu
+  # [Arc] LShift-LCmd-F -> Shift-Cmd-H
+  # スプレッドシートでの検索・置換
   - type: basic
     from:
-      key_code: k
+      key_code: f
       modifiers:
         mandatory:
-        - right_command
-    to:
-    - key_code: k
-      modifiers:
-      - command
-    - key_code: japanese_eisuu
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.superhuman.electron"
-
-  # [Superhuman] LCmd-; -> Cmd-K, Eisuu
-  - type: basic
-    from:
-      key_code: semicolon
-      modifiers:
-        mandatory:
+        - left_shift
         - left_command
     to:
-    - key_code: k
-      modifiers:
-      - command
-    - key_code: japanese_eisuu
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.superhuman.electron"
-
-  # [Superhuman] LCtrl-N/P -> Cmd-Down/Up
-  - type: basic
-    from:
-      key_code: "n"
-      modifiers:
-        mandatory:
-        - left_control
-    to:
-    - key_code: down_arrow
-      modifiers:
-      - command
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.superhuman.electron"
-
-  - type: basic
-    from:
-      key_code: p
-      modifiers:
-        mandatory:
-        - left_control
-    to:
-    - key_code: up_arrow
-      modifiers:
-      - command
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.superhuman.electron"
-
-# }}}
-
-# Linear {{{
-
-  # [Linear] RCmd-K -> Cmd-K, Eisuu
-  - type: basic
-    from:
-      key_code: k
-      modifiers:
-        mandatory:
-        - right_command
-    to:
-    - key_code: k
-      modifiers:
-      - command
-    - key_code: japanese_eisuu
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.linear"
-
-  # [Linear] LCmd-; -> Cmd-K, Eisuu
-  - type: basic
-    from:
-      key_code: semicolon
-      modifiers:
-        mandatory:
-        - left_command
-    to:
-    - key_code: k
-      modifiers:
-      - command
-    - key_code: japanese_eisuu
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.linear"
-
-  # [Linear] LCtrl-N/P -> Cmd-Down/Up
-  - type: basic
-    from:
-      key_code: "n"
-      modifiers:
-        mandatory:
-        - left_control
-    to:
-    - key_code: down_arrow
-      modifiers:
-      - command
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.linear"
-
-  - type: basic
-    from:
-      key_code: p
-      modifiers:
-        mandatory:
-        - left_control
-    to:
-    - key_code: up_arrow
-      modifiers:
-      - command
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.linear"
-
-  # [Linear] LCmd-D -> Shift-Ctrl-I (Focus Issue Description Input)
-  - type: basic
-    from:
-      key_code: d
-      modifiers:
-        mandatory:
-        - left_command
-    to:
-    - set_variable:
-        name: linear_hrm_shift
-        value: true
-        key_up_value: false
-    to_if_alone:
-    - key_code: i
+    - key_code: h
       modifiers:
       - shift
-      - control
+      - command
+      repeat: false
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "com.linear"
+      - "company.thebrowser.Browser"
 
-  # [Linear] LCmd-D-HJKL -> Shift-Arrows
+  # [Arc] LCmd-W -> Repeat: False
   - type: basic
     from:
-      key_code: h
+      key_code: w
       modifiers:
         mandatory:
         - left_command
     to:
-    - key_code: left_arrow
+    - key_code: w
       modifiers:
-      - shift
-      repeat: true
-    conditions:
-    - type: variable_if
-      name: linear_hrm_shift
-      value: true
-
-  - type: basic
-    from:
-      key_code: j
-      modifiers:
-        mandatory:
-        - left_command
-    to:
-    - key_code: down_arrow
-      modifiers:
-      - shift
-      repeat: true
-    conditions:
-    - type: variable_if
-      name: linear_hrm_shift
-      value: true
-
-  - type: basic
-    from:
-      key_code: k
-      modifiers:
-        mandatory:
-        - left_command
-    to:
-    - key_code: up_arrow
-      modifiers:
-      - shift
-      repeat: true
-    conditions:
-    - type: variable_if
-      name: linear_hrm_shift
-      value: true
-
-  - type: basic
-    from:
-      key_code: l
-      modifiers:
-        mandatory:
-        - left_command
-    to:
-    - key_code: right_arrow
-      modifiers:
-      - shift
-      repeat: true
-    conditions:
-    - type: variable_if
-      name: linear_hrm_shift
-      value: true
-
-  # [Linear] LCmd-S -> [ (Toggle Left Sidebar)
-  - type: basic
-    from:
-      key_code: s
-      modifiers:
-        mandatory:
-        - left_command
-    to:
-    - set_variable:
-        name: linear_hrm_control
-        value: true
-        key_up_value: false
-    to_if_alone:
-    - key_code: open_bracket
+      - command
+      repeat: false
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
-      - "com.linear"
+      - "company.thebrowser.Browser"
 
-  # [Linear] LCmd-S-HJKL -> Opt-Arrows (Move Contents)
-  - type: basic
-    from:
-      key_code: h
-      modifiers:
-        mandatory:
-        - left_command
-    to:
-    - key_code: left_arrow
-      modifiers:
-      - option
-      repeat: true
-    conditions:
-    - type: variable_if
-      name: linear_hrm_control
-      value: true
-
-  - type: basic
-    from:
-      key_code: j
-      modifiers:
-        mandatory:
-        - left_command
-    to:
-    - key_code: down_arrow
-      modifiers:
-      - option
-      repeat: true
-    conditions:
-    - type: variable_if
-      name: linear_hrm_control
-      value: true
-
-  - type: basic
-    from:
-      key_code: k
-      modifiers:
-        mandatory:
-        - left_command
-    to:
-    - key_code: up_arrow
-      modifiers:
-      - option
-      repeat: true
-    conditions:
-    - type: variable_if
-      name: linear_hrm_control
-      value: true
-
-  - type: basic
-    from:
-      key_code: l
-      modifiers:
-        mandatory:
-        - left_command
-    to:
-    - key_code: right_arrow
-      modifiers:
-      - option
-      repeat: true
-    conditions:
-    - type: variable_if
-      name: linear_hrm_control
-      value: true
-
-  # [Linear] LCtrl-LCmd-HJKL -> Opt-Arrows (Move Contents)
-  - type: basic
-    from:
-      key_code: h
-      modifiers:
-        mandatory:
-        - left_command
-        - left_control
-    to:
-    - key_code: left_arrow
-      modifiers:
-      - option
-      repeat: true
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.linear"
-
-  - type: basic
-    from:
-      key_code: j
-      modifiers:
-        mandatory:
-        - left_command
-        - left_control
-    to:
-    - key_code: down_arrow
-      modifiers:
-      - option
-      repeat: true
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.linear"
-
-  - type: basic
-    from:
-      key_code: k
-      modifiers:
-        mandatory:
-        - left_command
-        - left_control
-    to:
-    - key_code: up_arrow
-      modifiers:
-      - option
-      repeat: true
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.linear"
-
-  - type: basic
-    from:
-      key_code: l
-      modifiers:
-        mandatory:
-        - left_command
-        - left_control
-    to:
-    - key_code: right_arrow
-      modifiers:
-      - option
-      repeat: true
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.linear"
-
-  # [Linear] LCtrl-Arrows -> Opt-Arrows (Move Contents)
-  - type: basic
-    from:
-      key_code: left_arrow
-      modifiers:
-        mandatory:
-        - left_control
-    to:
-    - key_code: left_arrow
-      modifiers:
-      - option
-      repeat: true
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.linear"
-
-  - type: basic
-    from:
-      key_code: down_arrow
-      modifiers:
-        mandatory:
-        - left_control
-    to:
-    - key_code: down_arrow
-      modifiers:
-      - option
-      repeat: true
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.linear"
-
-  - type: basic
-    from:
-      key_code: up_arrow
-      modifiers:
-        mandatory:
-        - left_control
-    to:
-    - key_code: up_arrow
-      modifiers:
-      - option
-      repeat: true
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.linear"
-
-  - type: basic
-    from:
-      key_code: right_arrow
-      modifiers:
-        mandatory:
-        - left_control
-    to:
-    - key_code: right_arrow
-      modifiers:
-      - option
-      repeat: true
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.linear"
+  # # [Arc] Cmd-T -> Cmd-T, Eisuu
+  # - type: basic
+  #   from:
+  #     key_code: t
+  #     modifiers:
+  #       mandatory:
+  #       - command
+  #   to:
+  #   - key_code: t
+  #     modifiers:
+  #     - command
+  #   - key_code: japanese_eisuu
+  #     repeat: false
+  #   conditions:
+  #   - type: frontmost_application_if
+  #     bundle_identifiers:
+  #     - "company.thebrowser.Browser"
 
 # }}}
 
@@ -1030,6 +518,1698 @@ rules:
 
 # }}}
 
+# Finder {{{
+
+  # [Finder] Cmd-P -> Ignore
+  - type: basic
+    from:
+      key_code: p
+      modifiers:
+        mandatory:
+        - command
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.apple.finder"
+
+# }}}
+
+# Ghostty {{{
+
+  # [Ghostty] LCtrl-N/P -> Ctrl-N/P
+  # control.yml の LCtrl-N/P -> Cmd-Down/Up の無効化のため
+  - type: basic
+    from:
+      key_code: "n"
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: "n"
+      modifiers:
+      - control
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.mitchellh.ghostty"
+
+  - type: basic
+    from:
+      key_code: p
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: p
+      modifiers:
+      - control
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.mitchellh.ghostty"
+
+  # [Ghostty] LCtrl-U -> Ctrl-U
+  # control.yml の LCtrl-U -> Cmd-Delete の無効化のため
+  - type: basic
+    from:
+      key_code: u
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: u
+      modifiers:
+      - control
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.mitchellh.ghostty"
+
+  # # [Ghostty] LCtrl-1 - 6 -> Cmd-1 - 6
+  # - type: basic
+  #   from:
+  #     key_code: "1"
+  #     modifiers:
+  #       mandatory:
+  #       - left_control
+  #   to:
+  #   - key_code: "1"
+  #     modifiers:
+  #     - command
+  #     repeat: false
+  #   conditions:
+  #   - type: frontmost_application_if
+  #     bundle_identifiers:
+  #     - "com.mitchellh.ghostty"
+  #
+  # - type: basic
+  #   from:
+  #     key_code: "2"
+  #     modifiers:
+  #       mandatory:
+  #       - left_control
+  #   to:
+  #   - key_code: "2"
+  #     modifiers:
+  #     - command
+  #     repeat: false
+  #   conditions:
+  #   - type: frontmost_application_if
+  #     bundle_identifiers:
+  #     - "com.mitchellh.ghostty"
+  #
+  # - type: basic
+  #   from:
+  #     key_code: "3"
+  #     modifiers:
+  #       mandatory:
+  #       - left_control
+  #   to:
+  #   - key_code: "3"
+  #     modifiers:
+  #     - command
+  #     repeat: false
+  #   conditions:
+  #   - type: frontmost_application_if
+  #     bundle_identifiers:
+  #     - "com.mitchellh.ghostty"
+  #
+  # - type: basic
+  #   from:
+  #     key_code: "4"
+  #     modifiers:
+  #       mandatory:
+  #       - left_control
+  #   to:
+  #   - key_code: "4"
+  #     modifiers:
+  #     - command
+  #     repeat: false
+  #   conditions:
+  #   - type: frontmost_application_if
+  #     bundle_identifiers:
+  #     - "com.mitchellh.ghostty"
+  #
+  # - type: basic
+  #   from:
+  #     key_code: "5"
+  #     modifiers:
+  #       mandatory:
+  #       - left_control
+  #   to:
+  #   - key_code: "5"
+  #     modifiers:
+  #     - command
+  #     repeat: false
+  #   conditions:
+  #   - type: frontmost_application_if
+  #     bundle_identifiers:
+  #     - "com.mitchellh.ghostty"
+  #
+  # - type: basic
+  #   from:
+  #     key_code: "6"
+  #     modifiers:
+  #       mandatory:
+  #       - left_control
+  #   to:
+  #   - key_code: "6"
+  #     modifiers:
+  #     - command
+  #     repeat: false
+  #   conditions:
+  #   - type: frontmost_application_if
+  #     bundle_identifiers:
+  #     - "com.mitchellh.ghostty"
+
+# }}}
+
+# Google Chrome {{{
+
+#   # [Chrome] LShift-LCmd-F -> Shift-Cmd-H
+#   # スプレッドシートでの検索・置換
+#   - type: basic
+#     from:
+#       key_code: f
+#       modifiers:
+#         mandatory:
+#         - left_shift
+#         - left_command
+#     to:
+#     - key_code: h
+#       modifiers:
+#       - shift
+#       - command
+#       repeat: false
+#     conditions:
+#     - type: frontmost_application_if
+#       bundle_identifiers:
+#       - "com.google.Chrome"
+#
+#   # [Chrome] LCmd-W -> Repeat: False
+#   - type: basic
+#     from:
+#       key_code: w
+#       modifiers:
+#         mandatory:
+#         - left_command
+#     to:
+#     - key_code: w
+#       modifiers:
+#       - command
+#       repeat: false
+#     conditions:
+#     - type: frontmost_application_if
+#       bundle_identifiers:
+#       - "com.google.Chrome"
+
+# }}}
+
+# Kitty {{{
+
+  # [Kitty] LCtrl-N/P -> Ctrl-N/P
+  # control.yml の LCtrl-N/P -> Cmd-Down/Up の無効化のため
+  - type: basic
+    from:
+      key_code: "n"
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: "n"
+      modifiers:
+      - control
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "net.kovidgoyal.kitty"
+
+  - type: basic
+    from:
+      key_code: p
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: p
+      modifiers:
+      - control
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "net.kovidgoyal.kitty"
+
+# }}}
+
+# Linear {{{
+
+  # [Linear] RCmd-K -> Cmd-K, Eisuu
+  - type: basic
+    from:
+      key_code: k
+      modifiers:
+        mandatory:
+        - right_command
+    to:
+    - key_code: k
+      modifiers:
+      - command
+    - key_code: japanese_eisuu
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.linear"
+
+  # [Linear] LCmd-; -> Cmd-K, Eisuu
+  - type: basic
+    from:
+      key_code: semicolon
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: k
+      modifiers:
+      - command
+    - key_code: japanese_eisuu
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.linear"
+
+  # [Linear] LCtrl-N/P -> Cmd-Down/Up
+  - type: basic
+    from:
+      key_code: "n"
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: down_arrow
+      modifiers:
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.linear"
+
+  - type: basic
+    from:
+      key_code: p
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: up_arrow
+      modifiers:
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.linear"
+
+  # [Linear] LCmd-D -> Shift-Ctrl-I (Focus Issue Description Input)
+  - type: basic
+    from:
+      key_code: d
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - set_variable:
+        name: linear_hrm_shift
+        value: true
+        key_up_value: false
+    to_if_alone:
+    - key_code: i
+      modifiers:
+      - shift
+      - control
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.linear"
+
+  # [Linear] LCmd-D-HJKL -> Shift-Arrows
+  - type: basic
+    from:
+      key_code: h
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: left_arrow
+      modifiers:
+      - shift
+      repeat: true
+    conditions:
+    - type: variable_if
+      name: linear_hrm_shift
+      value: true
+
+  - type: basic
+    from:
+      key_code: j
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: down_arrow
+      modifiers:
+      - shift
+      repeat: true
+    conditions:
+    - type: variable_if
+      name: linear_hrm_shift
+      value: true
+
+  - type: basic
+    from:
+      key_code: k
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: up_arrow
+      modifiers:
+      - shift
+      repeat: true
+    conditions:
+    - type: variable_if
+      name: linear_hrm_shift
+      value: true
+
+  - type: basic
+    from:
+      key_code: l
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: right_arrow
+      modifiers:
+      - shift
+      repeat: true
+    conditions:
+    - type: variable_if
+      name: linear_hrm_shift
+      value: true
+
+  # [Linear] LCmd-S -> [ (Toggle Left Sidebar)
+  - type: basic
+    from:
+      key_code: s
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - set_variable:
+        name: linear_hrm_control
+        value: true
+        key_up_value: false
+    to_if_alone:
+    - key_code: open_bracket
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.linear"
+
+  # [Linear] LCmd-S-HJKL -> Opt-Arrows (Move Contents)
+  - type: basic
+    from:
+      key_code: h
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: left_arrow
+      modifiers:
+      - option
+      repeat: true
+    conditions:
+    - type: variable_if
+      name: linear_hrm_control
+      value: true
+
+  - type: basic
+    from:
+      key_code: j
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: down_arrow
+      modifiers:
+      - option
+      repeat: true
+    conditions:
+    - type: variable_if
+      name: linear_hrm_control
+      value: true
+
+  - type: basic
+    from:
+      key_code: k
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: up_arrow
+      modifiers:
+      - option
+      repeat: true
+    conditions:
+    - type: variable_if
+      name: linear_hrm_control
+      value: true
+
+  - type: basic
+    from:
+      key_code: l
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: right_arrow
+      modifiers:
+      - option
+      repeat: true
+    conditions:
+    - type: variable_if
+      name: linear_hrm_control
+      value: true
+
+  # [Linear] LCtrl-LCmd-HJKL -> Opt-Arrows (Move Contents)
+  - type: basic
+    from:
+      key_code: h
+      modifiers:
+        mandatory:
+        - left_command
+        - left_control
+    to:
+    - key_code: left_arrow
+      modifiers:
+      - option
+      repeat: true
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.linear"
+
+  - type: basic
+    from:
+      key_code: j
+      modifiers:
+        mandatory:
+        - left_command
+        - left_control
+    to:
+    - key_code: down_arrow
+      modifiers:
+      - option
+      repeat: true
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.linear"
+
+  - type: basic
+    from:
+      key_code: k
+      modifiers:
+        mandatory:
+        - left_command
+        - left_control
+    to:
+    - key_code: up_arrow
+      modifiers:
+      - option
+      repeat: true
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.linear"
+
+  - type: basic
+    from:
+      key_code: l
+      modifiers:
+        mandatory:
+        - left_command
+        - left_control
+    to:
+    - key_code: right_arrow
+      modifiers:
+      - option
+      repeat: true
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.linear"
+
+  # [Linear] LCtrl-Arrows -> Opt-Arrows (Move Contents)
+  - type: basic
+    from:
+      key_code: left_arrow
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: left_arrow
+      modifiers:
+      - option
+      repeat: true
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.linear"
+
+  - type: basic
+    from:
+      key_code: down_arrow
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: down_arrow
+      modifiers:
+      - option
+      repeat: true
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.linear"
+
+  - type: basic
+    from:
+      key_code: up_arrow
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: up_arrow
+      modifiers:
+      - option
+      repeat: true
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.linear"
+
+  - type: basic
+    from:
+      key_code: right_arrow
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: right_arrow
+      modifiers:
+      - option
+      repeat: true
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.linear"
+
+# }}}
+
+# Macvim {{{
+
+#   # [MacVim] Cmd-W -> Ignore
+#   - type: basic
+#     from:
+#       key_code: w
+#       modifiers:
+#         mandatory:
+#         - command
+#     conditions:
+#     - type: frontmost_application_if
+#       bundle_identifiers:
+#       - "org.vim.MacVim"
+#
+#   # [MacVim] LCmd-Q (held down) -> Quit MacVim
+#   # LCmd-Q 長押しでのみ終了
+#   - type: basic
+#     from:
+#       key_code: q
+#       modifiers:
+#         mandatory:
+#         - left_command
+#     to_if_held_down:
+#     - key_code: q
+#       modifiers:
+#       - command
+#       repeat: false
+#     parameters:
+#       basic.to_if_held_down_threshold_milliseconds: 500
+#     conditions:
+#     - type: frontmost_application_if
+#       bundle_identifiers:
+#       - "org.vim.MacVim"
+
+# }}}
+
+# Microsoft Office {{{
+
+  # [Word] Ctrl-D -> Fn-Delete
+  - type: basic
+    from:
+      key_code: d
+      modifiers:
+        mandatory:
+        - control
+    to:
+    - key_code: delete_forward
+      repeat: true
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.microsoft.Word"
+
+  # [Excel] Ctrl-D -> Fn-Delete
+  - type: basic
+    from:
+      key_code: d
+      modifiers:
+        mandatory:
+        - control
+    to:
+    - key_code: delete_forward
+      repeat: true
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.microsoft.Excel"
+
+  # [Powerpoint] Ctrl-D -> Fn-Delete
+  - type: basic
+    from:
+      key_code: d
+      modifiers:
+        mandatory:
+        - control
+    to:
+    - key_code: delete_forward
+      repeat: true
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.microsoft.Powerpoint"
+
+  # [Word] Ctrl-A -> 行頭へ移動
+  - type: basic
+    from:
+      key_code: a
+      modifiers:
+        mandatory:
+        - control
+    to:
+    - key_code: home
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.microsoft.Word"
+
+  # [Excel] Ctrl-A -> 行頭へ移動
+  - type: basic
+    from:
+      key_code: a
+      modifiers:
+        mandatory:
+        - control
+    to:
+    - key_code: home
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.microsoft.Excel"
+
+  # [Powerpoint] Ctrl-A -> 行頭へ移動
+  - type: basic
+    from:
+      key_code: a
+      modifiers:
+        mandatory:
+        - control
+    to:
+    - key_code: home
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.microsoft.Powerpoint"
+
+  # [Word] Ctrl-E -> 行末へ移動
+  - type: basic
+    from:
+      key_code: e
+      modifiers:
+        mandatory:
+        - control
+    to:
+    - key_code: end
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.microsoft.Word"
+
+  # [Excel] Ctrl-E -> 行末へ移動
+  - type: basic
+    from:
+      key_code: e
+      modifiers:
+        mandatory:
+        - control
+    to:
+    - key_code: end
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.microsoft.Excel"
+
+  # [Powerpoint] Ctrl-E -> 行末へ移動
+  - type: basic
+    from:
+      key_code: e
+      modifiers:
+        mandatory:
+        - control
+    to:
+    - key_code: end
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.microsoft.Powerpoint"
+
+  # [Word] Ctrl-K -> 行末まで削除
+  - type: basic
+    from:
+      key_code: k
+      modifiers:
+        mandatory:
+        - control
+    to:
+    - key_code: end
+      modifiers:
+      - shift
+      repeat: false
+    - key_code: delete_or_backspace
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.microsoft.Word"
+
+  # [Excel] Ctrl-K -> 行末まで削除
+  - type: basic
+    from:
+      key_code: k
+      modifiers:
+        mandatory:
+        - control
+    to:
+    - key_code: end
+      modifiers:
+      - shift
+      repeat: false
+    - key_code: delete_or_backspace
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.microsoft.Excel"
+
+  # [Powerpoint] Ctrl-K -> 行末まで削除
+  - type: basic
+    from:
+      key_code: k
+      modifiers:
+        mandatory:
+        - control
+    to:
+    - key_code: end
+      modifiers:
+      - shift
+      repeat: false
+    - key_code: delete_or_backspace
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.microsoft.Powerpoint"
+
+# }}}
+
+# Notion {{{
+
+  # [Notion] Ctrl-Up -> Move Block Up
+  - type: basic
+    from:
+      key_code: up_arrow
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: up_arrow
+      modifiers:
+      - shift
+      - command
+      repeat: true
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "notion.id"
+
+  # [Notion] Ctrl-Down -> Move Block Down
+  - type: basic
+    from:
+      key_code: down_arrow
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: down_arrow
+      modifiers:
+      - shift
+      - command
+      repeat: true
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "notion.id"
+
+  # [Notion] Ctrl-LCmd-K -> Move Block Up
+  - type: basic
+    from:
+      key_code: k
+      modifiers:
+        mandatory:
+        - left_control
+        - left_command
+    to:
+    - key_code: up_arrow
+      modifiers:
+      - shift
+      - command
+      repeat: true
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "notion.id"
+
+  # [Notion] Ctrl-LCmd-J -> Move Block Down
+  - type: basic
+    from:
+      key_code: j
+      modifiers:
+        mandatory:
+        - left_control
+        - left_command
+    to:
+    - key_code: down_arrow
+      modifiers:
+      - shift
+      - command
+      repeat: true
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "notion.id"
+
+  # [Notion] Shift-Cmd-A -> Ctrl-Cmd-H
+  - type: basic
+    from:
+      key_code: a
+      modifiers:
+        mandatory:
+        - left_shift
+        - left_command
+    to:
+    - key_code: h
+      modifiers:
+      - control
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "notion.id"
+
+  # [Notion] Shift-Cmd-C -> Cmd-L
+  - type: basic
+    from:
+      key_code: c
+      modifiers:
+        mandatory:
+        - left_shift
+        - left_command
+    to:
+    - key_code: l
+      modifiers:
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "notion.id"
+
+  # [Notion] LCmd-I -> Shift-Cmd-U
+  - type: basic
+    from:
+      key_code: i
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: u
+      modifiers:
+      - shift
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "notion.id"
+
+  # [Notion] LCmd-O -> Cmd-Return
+  - type: basic
+    from:
+      key_code: o
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: return_or_enter
+      modifiers:
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "notion.id"
+
+  # [Notion] LCmd-S -> Home Row Mods / Cmd-\
+  - type: basic
+    from:
+      key_code: s
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - set_variable:
+        name: notion_home_row_mods
+        value: true
+        key_up_value: false
+    to_if_alone:
+    - key_code: backslash
+      modifiers:
+      - command
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "notion.id"
+
+  # [Notion] LCommad-S-J -> Move Block Down
+  - type: basic
+    from:
+      key_code: j
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: down_arrow
+      modifiers:
+      - shift
+      - command
+      repeat: true
+    conditions:
+    - type: variable_if
+      name: notion_home_row_mods
+      value: true
+
+  # [Notion] LCmd-S-K -> Move Block Up
+  - type: basic
+    from:
+      key_code: k
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: up_arrow
+      modifiers:
+      - shift
+      - command
+      repeat: true
+    conditions:
+    - type: variable_if
+      name: notion_home_row_mods
+      value: true
+
+# }}}
+
+# Notion Calendar {{{
+
+  # [Notion Calendar] Cmd-S -> `
+  - type: basic
+    from:
+      key_code: s
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: grave_accent_and_tilde
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.cron.electron"
+
+# }}}
+
+# RStudio {{{
+
+  # [RStudio] LShift-LCmd-I -> Opt-Hyphen
+  # InsertAssignment Operator
+  - type: basic
+    from:
+      key_code: i
+      modifiers:
+        mandatory:
+        - left_shift
+        - left_command
+    to:
+    - key_code: hyphen
+      modifiers:
+      - option
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.rstudio.desktop"
+
+  # [RStudio] LCmd-/ -> Shift-Cmd-C
+  # Comment / Uncomment Selection
+  - type: basic
+    from:
+      key_code: slash
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: c
+      modifiers:
+      - shift
+      - command
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.rstudio.desktop"
+
+  # [RStudio] LCtrl-Down/Up -> Opt-Down/Up
+  # Move Lines Down/Up
+  - type: basic
+    from:
+      key_code: down_arrow
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: down_arrow
+      modifiers:
+      - option
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.rstudio.desktop"
+
+  - type: basic
+    from:
+      key_code: up_arrow
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: up_arrow
+      modifiers:
+      - option
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.rstudio.desktop"
+
+  # [RStudio] LCtrl-LCmd-J/K -> Opt-Down/Up
+  # Move Lines Down/Up
+  - type: basic
+    from:
+      key_code: j
+      modifiers:
+        mandatory:
+        - left_control
+        - left_command
+    to:
+    - key_code: down_arrow
+      modifiers:
+      - option
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.rstudio.desktop"
+
+  - type: basic
+    from:
+      key_code: k
+      modifiers:
+        mandatory:
+        - left_control
+        - left_command
+    to:
+    - key_code: up_arrow
+      modifiers:
+      - option
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.rstudio.desktop"
+
+  # [RStudio] LShift-LCtrl-Down/Up -> Cmd-Opt-Down/Up
+  # Copy Lines Down/Up
+  - type: basic
+    from:
+      key_code: down_arrow
+      modifiers:
+        mandatory:
+        - left_shift
+        - left_control
+    to:
+    - key_code: down_arrow
+      modifiers:
+      - option
+      - command
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.rstudio.desktop"
+
+  - type: basic
+    from:
+      key_code: up_arrow
+      modifiers:
+        mandatory:
+        - left_shift
+        - left_control
+    to:
+    - key_code: up_arrow
+      modifiers:
+      - option
+      - command
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.rstudio.desktop"
+
+  # [RStudio] LShift-LCtrl-J/K -> Cmd-Opt-Down/Up
+  # Copy Lines Down/Up
+  - type: basic
+    from:
+      key_code: j
+      modifiers:
+        mandatory:
+        - left_shift
+        - left_control
+        - left_command
+    to:
+    - key_code: down_arrow
+      modifiers:
+      - option
+      - command
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.rstudio.desktop"
+
+  - type: basic
+    from:
+      key_code: k
+      modifiers:
+        mandatory:
+        - left_shift
+        - left_control
+        - left_command
+    to:
+    - key_code: up_arrow
+      modifiers:
+      - option
+      - command
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.rstudio.desktop"
+
+# }}}
+
+# Safari {{{
+
+#   # [Safari] LCmd-S -> Shift-Cmd-L
+#   # サイドバーを表示／非表示
+#   - type: basic
+#     from:
+#       key_code: s
+#       modifiers:
+#         mandatory:
+#         - left_command
+#     to:
+#     - key_code: l
+#       modifiers:
+#       - shift
+#       - command
+#       repeat: false
+#     conditions:
+#     - type: frontmost_application_if
+#       bundle_identifiers:
+#       - "com.apple.Safari"
+
+# }}}
+
+# Sidekick {{{
+
+#   # [Sidekick] LShift-LCmd-F -> Shift-Cmd-H
+#   # スプレッドシートでの検索・置換
+#   - type: basic
+#     from:
+#       key_code: f
+#       modifiers:
+#         mandatory:
+#         - left_shift
+#         - left_command
+#     to:
+#     - key_code: h
+#       modifiers:
+#       - shift
+#       - command
+#       repeat: false
+#     conditions:
+#     - type: frontmost_application_if
+#       bundle_identifiers:
+#       - "com.pushplaylabs.sidekick"
+#
+#   # [Sidekick] LCmd-W -> Repeat: False
+#   - type: basic
+#     from:
+#       key_code: w
+#       modifiers:
+#         mandatory:
+#         - left_command
+#     to:
+#     - key_code: w
+#       modifiers:
+#       - command
+#       repeat: false
+#     conditions:
+#     - type: frontmost_application_if
+#       bundle_identifiers:
+#       - "com.pushplaylabs.sidekick"
+#
+#   # [Sidekick] LShift-LCmd-A -> Cmd-S
+#   # セッション一覧を開く (Sidekick でのショートカット変更が必要)
+#   - type: basic
+#     from:
+#       key_code: a
+#       modifiers:
+#         mandatory:
+#         - left_shift
+#         - left_command
+#     to:
+#     - key_code: s
+#       modifiers:
+#       - command
+#       repeat: false
+#     conditions:
+#     - type: frontmost_application_if
+#       bundle_identifiers:
+#       - "com.pushplaylabs.sidekick"
+#
+#   # [Sidekick] LShift-LCmd-S -> Shift-Opt-S
+#   # サイドカーを表示／非表示
+#   - type: basic
+#     from:
+#       key_code: s
+#       modifiers:
+#         mandatory:
+#         - left_shift
+#         - left_command
+#     to:
+#     - key_code: s
+#       modifiers:
+#       - shift
+#       - option
+#       repeat: false
+#     conditions:
+#     - type: frontmost_application_if
+#       bundle_identifiers:
+#       - "com.pushplaylabs.sidekick"
+
+# }}}
+
+# Slack {{{
+
+  # [Slack] RCmd-K -> Cmd-K, Eisuu
+  - type: basic
+    from:
+      key_code: k
+      modifiers:
+        mandatory:
+        - right_command
+    to:
+    - key_code: k
+      modifiers:
+      - command
+    - key_code: japanese_eisuu
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.tinyspeck.slackmacgap"
+
+  # [Slack] LCmd-; -> Cmd-K, Eisuu
+  - type: basic
+    from:
+      key_code: semicolon
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: k
+      modifiers:
+      - command
+    - key_code: japanese_eisuu
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.tinyspeck.slackmacgap"
+
+  # [Slack] LCmd-S -> Shift-Cmd-D
+  # サイドバーを表示／非表示
+  - type: basic
+    from:
+      key_code: s
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: d
+      modifiers:
+      - shift
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.tinyspeck.slackmacgap"
+
+  # [Slack] LCtrl-1 - 6 -> Cmd-1 - 6
+  - type: basic
+    from:
+      key_code: "1"
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: "1"
+      modifiers:
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.tinyspeck.slackmacgap"
+
+  - type: basic
+    from:
+      key_code: "2"
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: "2"
+      modifiers:
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.tinyspeck.slackmacgap"
+
+  - type: basic
+    from:
+      key_code: "3"
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: "3"
+      modifiers:
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.tinyspeck.slackmacgap"
+
+  - type: basic
+    from:
+      key_code: "4"
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: "4"
+      modifiers:
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.tinyspeck.slackmacgap"
+
+  - type: basic
+    from:
+      key_code: "5"
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: "5"
+      modifiers:
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.tinyspeck.slackmacgap"
+
+  - type: basic
+    from:
+      key_code: "6"
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: "6"
+      modifiers:
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.tinyspeck.slackmacgap"
+
+# }}}
+
+# Superhuman {{{
+
+  # [Superhuman] RCmd-K -> Cmd-K, Eisuu
+  - type: basic
+    from:
+      key_code: k
+      modifiers:
+        mandatory:
+        - right_command
+    to:
+    - key_code: k
+      modifiers:
+      - command
+    - key_code: japanese_eisuu
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.superhuman.electron"
+
+  # [Superhuman] LCmd-; -> Cmd-K, Eisuu
+  - type: basic
+    from:
+      key_code: semicolon
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: k
+      modifiers:
+      - command
+    - key_code: japanese_eisuu
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.superhuman.electron"
+
+  # [Superhuman] LCtrl-N/P -> Cmd-Down/Up
+  - type: basic
+    from:
+      key_code: "n"
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: down_arrow
+      modifiers:
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.superhuman.electron"
+
+  - type: basic
+    from:
+      key_code: p
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: up_arrow
+      modifiers:
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.superhuman.electron"
+
+# }}}
+
+# Things {{{
+
+  # [Things] LCmd-E -> Cmd-K (To done)
+  - type: basic
+    from:
+      key_code: e
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: k
+      modifiers:
+      - command
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.culturedcode.ThingsMac"
+
+  # [Things] LCtrl-N -> Opt-Up (Go to top)
+  - type: basic
+    from:
+      key_code: "n"
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: up_arrow
+      modifiers:
+      - option
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.culturedcode.ThingsMac"
+
+  # [Things] LCtrl-P -> Opt-Down (Go to bottom)
+  - type: basic
+    from:
+      key_code: p
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: down_arrow
+      modifiers:
+      - option
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.culturedcode.ThingsMac"
+
+  # [Things] LCtrl-Up -> Cmd-Up (Move up task)
+  - type: basic
+    from:
+      key_code: up_arrow
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: up_arrow
+      modifiers:
+      - command
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.culturedcode.ThingsMac"
+
+  # [Things] LCtrl-Down -> Cmd-Down (Move down task)
+  - type: basic
+    from:
+      key_code: down_arrow
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: down_arrow
+      modifiers:
+      - command
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.culturedcode.ThingsMac"
+
+  # [Things] Cmd-M -> Shift-Cmd-M (Move to another list)
+  - type: basic
+    from:
+      key_code: m
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: r
+      modifiers:
+      - shift
+      - command
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.culturedcode.ThingsMac"
+
+# }}}
+
 # Workflowy {{{
 
   # Movement -------------------------------------
@@ -1293,1208 +2473,5 @@ rules:
     - type: frontmost_application_if
       bundle_identifiers:
       - "com.workflowy.desktop"
-
-# }}}
-
-# Finder {{{
-
-  # [Finder] Cmd-P -> Ignore
-  - type: basic
-    from:
-      key_code: p
-      modifiers:
-        mandatory:
-        - command
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.apple.finder"
-
-# }}}
-
-# Arc {{{
-
-  # [Arc] LShift-LCmd-F -> Shift-Cmd-H
-  # スプレッドシートでの検索・置換
-  - type: basic
-    from:
-      key_code: f
-      modifiers:
-        mandatory:
-        - left_shift
-        - left_command
-    to:
-    - key_code: h
-      modifiers:
-      - shift
-      - command
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "company.thebrowser.Browser"
-
-  # [Arc] LCmd-W -> Repeat: False
-  - type: basic
-    from:
-      key_code: w
-      modifiers:
-        mandatory:
-        - left_command
-    to:
-    - key_code: w
-      modifiers:
-      - command
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "company.thebrowser.Browser"
-
-  # # [Arc] Cmd-T -> Cmd-T, Eisuu
-  # - type: basic
-  #   from:
-  #     key_code: t
-  #     modifiers:
-  #       mandatory:
-  #       - command
-  #   to:
-  #   - key_code: t
-  #     modifiers:
-  #     - command
-  #   - key_code: japanese_eisuu
-  #     repeat: false
-  #   conditions:
-  #   - type: frontmost_application_if
-  #     bundle_identifiers:
-  #     - "company.thebrowser.Browser"
-
-# }}}
-
-# Notion {{{
-
-  # [Notion] Ctrl-Up -> Move Block Up
-  - type: basic
-    from:
-      key_code: up_arrow
-      modifiers:
-        mandatory:
-        - left_control
-    to:
-    - key_code: up_arrow
-      modifiers:
-      - shift
-      - command
-      repeat: true
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "notion.id"
-
-  # [Notion] Ctrl-Down -> Move Block Down
-  - type: basic
-    from:
-      key_code: down_arrow
-      modifiers:
-        mandatory:
-        - left_control
-    to:
-    - key_code: down_arrow
-      modifiers:
-      - shift
-      - command
-      repeat: true
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "notion.id"
-
-  # [Notion] Ctrl-LCmd-K -> Move Block Up
-  - type: basic
-    from:
-      key_code: k
-      modifiers:
-        mandatory:
-        - left_control
-        - left_command
-    to:
-    - key_code: up_arrow
-      modifiers:
-      - shift
-      - command
-      repeat: true
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "notion.id"
-
-  # [Notion] Ctrl-LCmd-J -> Move Block Down
-  - type: basic
-    from:
-      key_code: j
-      modifiers:
-        mandatory:
-        - left_control
-        - left_command
-    to:
-    - key_code: down_arrow
-      modifiers:
-      - shift
-      - command
-      repeat: true
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "notion.id"
-
-  # [Notion] Shift-Cmd-A -> Ctrl-Cmd-H
-  - type: basic
-    from:
-      key_code: a
-      modifiers:
-        mandatory:
-        - left_shift
-        - left_command
-    to:
-    - key_code: h
-      modifiers:
-      - control
-      - command
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "notion.id"
-
-  # [Notion] Shift-Cmd-C -> Cmd-L
-  - type: basic
-    from:
-      key_code: c
-      modifiers:
-        mandatory:
-        - left_shift
-        - left_command
-    to:
-    - key_code: l
-      modifiers:
-      - command
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "notion.id"
-
-  # [Notion] LCmd-I -> Shift-Cmd-U
-  - type: basic
-    from:
-      key_code: i
-      modifiers:
-        mandatory:
-        - left_command
-    to:
-    - key_code: u
-      modifiers:
-      - shift
-      - command
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "notion.id"
-
-  # [Notion] LCmd-O -> Cmd-Return
-  - type: basic
-    from:
-      key_code: o
-      modifiers:
-        mandatory:
-        - left_command
-    to:
-    - key_code: return_or_enter
-      modifiers:
-      - command
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "notion.id"
-
-  # [Notion] LCmd-S -> Home Row Mods / Cmd-\
-  - type: basic
-    from:
-      key_code: s
-      modifiers:
-        mandatory:
-        - left_command
-    to:
-    - set_variable:
-        name: notion_home_row_mods
-        value: true
-        key_up_value: false
-    to_if_alone:
-    - key_code: backslash
-      modifiers:
-      - command
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "notion.id"
-
-  # [Notion] LCommad-S-J -> Move Block Down
-  - type: basic
-    from:
-      key_code: j
-      modifiers:
-        mandatory:
-        - left_command
-    to:
-    - key_code: down_arrow
-      modifiers:
-      - shift
-      - command
-      repeat: true
-    conditions:
-    - type: variable_if
-      name: notion_home_row_mods
-      value: true
-
-  # [Notion] LCmd-S-K -> Move Block Up
-  - type: basic
-    from:
-      key_code: k
-      modifiers:
-        mandatory:
-        - left_command
-    to:
-    - key_code: up_arrow
-      modifiers:
-      - shift
-      - command
-      repeat: true
-    conditions:
-    - type: variable_if
-      name: notion_home_row_mods
-      value: true
-
-# }}}
-
-# Notion Calendar {{{
-
-  # [Notion Calendar] Cmd-S -> `
-  - type: basic
-    from:
-      key_code: s
-      modifiers:
-        mandatory:
-        - left_command
-    to:
-    - key_code: grave_accent_and_tilde
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.cron.electron"
-
-# }}}
-
-# Things {{{
-
-  # [Things] LCmd-E -> Cmd-K (To done)
-  - type: basic
-    from:
-      key_code: e
-      modifiers:
-        mandatory:
-        - left_command
-    to:
-    - key_code: k
-      modifiers:
-      - command
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.culturedcode.ThingsMac"
-
-  # [Things] LCtrl-N -> Opt-Up (Go to top)
-  - type: basic
-    from:
-      key_code: "n"
-      modifiers:
-        mandatory:
-        - left_control
-    to:
-    - key_code: up_arrow
-      modifiers:
-      - option
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.culturedcode.ThingsMac"
-
-  # [Things] LCtrl-P -> Opt-Down (Go to bottom)
-  - type: basic
-    from:
-      key_code: p
-      modifiers:
-        mandatory:
-        - left_control
-    to:
-    - key_code: down_arrow
-      modifiers:
-      - option
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.culturedcode.ThingsMac"
-
-  # [Things] LCtrl-Up -> Cmd-Up (Move up task)
-  - type: basic
-    from:
-      key_code: up_arrow
-      modifiers:
-        mandatory:
-        - left_control
-    to:
-    - key_code: up_arrow
-      modifiers:
-      - command
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.culturedcode.ThingsMac"
-
-  # [Things] LCtrl-Down -> Cmd-Down (Move down task)
-  - type: basic
-    from:
-      key_code: down_arrow
-      modifiers:
-        mandatory:
-        - left_control
-    to:
-    - key_code: down_arrow
-      modifiers:
-      - command
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.culturedcode.ThingsMac"
-
-  # [Things] Cmd-M -> Shift-Cmd-M (Move to another list)
-  - type: basic
-    from:
-      key_code: m
-      modifiers:
-        mandatory:
-        - left_command
-    to:
-    - key_code: r
-      modifiers:
-      - shift
-      - command
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.culturedcode.ThingsMac"
-
-# }}}
-
-# Ghostty {{{
-
-  # [Ghostty] LCtrl-N/P -> Ctrl-N/P
-  # control.yml の LCtrl-N/P -> Cmd-Down/Up の無効化のため
-  - type: basic
-    from:
-      key_code: "n"
-      modifiers:
-        mandatory:
-        - left_control
-    to:
-    - key_code: "n"
-      modifiers:
-      - control
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.mitchellh.ghostty"
-
-  - type: basic
-    from:
-      key_code: p
-      modifiers:
-        mandatory:
-        - left_control
-    to:
-    - key_code: p
-      modifiers:
-      - control
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.mitchellh.ghostty"
-
-  # [Ghostty] LCtrl-U -> Ctrl-U
-  # control.yml の LCtrl-U -> Cmd-Delete の無効化のため
-  - type: basic
-    from:
-      key_code: u
-      modifiers:
-        mandatory:
-        - left_control
-    to:
-    - key_code: u
-      modifiers:
-      - control
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.mitchellh.ghostty"
-
-  # # [Ghostty] LCtrl-1 - 6 -> Cmd-1 - 6
-  # - type: basic
-  #   from:
-  #     key_code: "1"
-  #     modifiers:
-  #       mandatory:
-  #       - left_control
-  #   to:
-  #   - key_code: "1"
-  #     modifiers:
-  #     - command
-  #     repeat: false
-  #   conditions:
-  #   - type: frontmost_application_if
-  #     bundle_identifiers:
-  #     - "com.mitchellh.ghostty"
-  #
-  # - type: basic
-  #   from:
-  #     key_code: "2"
-  #     modifiers:
-  #       mandatory:
-  #       - left_control
-  #   to:
-  #   - key_code: "2"
-  #     modifiers:
-  #     - command
-  #     repeat: false
-  #   conditions:
-  #   - type: frontmost_application_if
-  #     bundle_identifiers:
-  #     - "com.mitchellh.ghostty"
-  #
-  # - type: basic
-  #   from:
-  #     key_code: "3"
-  #     modifiers:
-  #       mandatory:
-  #       - left_control
-  #   to:
-  #   - key_code: "3"
-  #     modifiers:
-  #     - command
-  #     repeat: false
-  #   conditions:
-  #   - type: frontmost_application_if
-  #     bundle_identifiers:
-  #     - "com.mitchellh.ghostty"
-  #
-  # - type: basic
-  #   from:
-  #     key_code: "4"
-  #     modifiers:
-  #       mandatory:
-  #       - left_control
-  #   to:
-  #   - key_code: "4"
-  #     modifiers:
-  #     - command
-  #     repeat: false
-  #   conditions:
-  #   - type: frontmost_application_if
-  #     bundle_identifiers:
-  #     - "com.mitchellh.ghostty"
-  #
-  # - type: basic
-  #   from:
-  #     key_code: "5"
-  #     modifiers:
-  #       mandatory:
-  #       - left_control
-  #   to:
-  #   - key_code: "5"
-  #     modifiers:
-  #     - command
-  #     repeat: false
-  #   conditions:
-  #   - type: frontmost_application_if
-  #     bundle_identifiers:
-  #     - "com.mitchellh.ghostty"
-  #
-  # - type: basic
-  #   from:
-  #     key_code: "6"
-  #     modifiers:
-  #       mandatory:
-  #       - left_control
-  #   to:
-  #   - key_code: "6"
-  #     modifiers:
-  #     - command
-  #     repeat: false
-  #   conditions:
-  #   - type: frontmost_application_if
-  #     bundle_identifiers:
-  #     - "com.mitchellh.ghostty"
-
-# }}}
-
-# Kitty {{{
-
-  # [Kitty] LCtrl-N/P -> Ctrl-N/P
-  # control.yml の LCtrl-N/P -> Cmd-Down/Up の無効化のため
-  - type: basic
-    from:
-      key_code: "n"
-      modifiers:
-        mandatory:
-        - left_control
-    to:
-    - key_code: "n"
-      modifiers:
-      - control
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "net.kovidgoyal.kitty"
-
-  - type: basic
-    from:
-      key_code: p
-      modifiers:
-        mandatory:
-        - left_control
-    to:
-    - key_code: p
-      modifiers:
-      - control
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "net.kovidgoyal.kitty"
-
-# }}}
-
-# Alacritty {{{
-
-#   # [Alacritty] Cmd-W -> Ignore
-#   - type: basic
-#     from:
-#       key_code: w
-#       modifiers:
-#         mandatory:
-#         - command
-#     conditions:
-#     - type: frontmost_application_if
-#       bundle_identifiers:
-#       - "org.alacritty"
-#
-#   # [Alacritty] LCmd-Q (held down) -> Quit Alacritty
-#   # LCmd-Q 長押しでのみ終了
-#   - type: basic
-#     from:
-#       key_code: q
-#       modifiers:
-#         mandatory:
-#         - left_command
-#     to_if_held_down:
-#     - key_code: q
-#       modifiers:
-#       - command
-#       repeat: false
-#     parameters:
-#       basic.to_if_held_down_threshold_milliseconds: 500
-#     conditions:
-#     - type: frontmost_application_if
-#       bundle_identifiers:
-#       - "org.alacritty"
-
-# }}}
-
-# RStudio {{{
-
-  # [RStudio] LShift-LCmd-I -> Opt-Hyphen
-  # InsertAssignment Operator
-  - type: basic
-    from:
-      key_code: i
-      modifiers:
-        mandatory:
-        - left_shift
-        - left_command
-    to:
-    - key_code: hyphen
-      modifiers:
-      - option
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.rstudio.desktop"
-
-  # [RStudio] LCmd-/ -> Shift-Cmd-C
-  # Comment / Uncomment Selection
-  - type: basic
-    from:
-      key_code: slash
-      modifiers:
-        mandatory:
-        - left_command
-    to:
-    - key_code: c
-      modifiers:
-      - shift
-      - command
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.rstudio.desktop"
-
-  # [RStudio] LCtrl-Down/Up -> Opt-Down/Up
-  # Move Lines Down/Up
-  - type: basic
-    from:
-      key_code: down_arrow
-      modifiers:
-        mandatory:
-        - left_control
-    to:
-    - key_code: down_arrow
-      modifiers:
-      - option
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.rstudio.desktop"
-
-  - type: basic
-    from:
-      key_code: up_arrow
-      modifiers:
-        mandatory:
-        - left_control
-    to:
-    - key_code: up_arrow
-      modifiers:
-      - option
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.rstudio.desktop"
-
-  # [RStudio] LCtrl-LCmd-J/K -> Opt-Down/Up
-  # Move Lines Down/Up
-  - type: basic
-    from:
-      key_code: j
-      modifiers:
-        mandatory:
-        - left_control
-        - left_command
-    to:
-    - key_code: down_arrow
-      modifiers:
-      - option
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.rstudio.desktop"
-
-  - type: basic
-    from:
-      key_code: k
-      modifiers:
-        mandatory:
-        - left_control
-        - left_command
-    to:
-    - key_code: up_arrow
-      modifiers:
-      - option
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.rstudio.desktop"
-
-  # [RStudio] LShift-LCtrl-Down/Up -> Cmd-Opt-Down/Up
-  # Copy Lines Down/Up
-  - type: basic
-    from:
-      key_code: down_arrow
-      modifiers:
-        mandatory:
-        - left_shift
-        - left_control
-    to:
-    - key_code: down_arrow
-      modifiers:
-      - option
-      - command
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.rstudio.desktop"
-
-  - type: basic
-    from:
-      key_code: up_arrow
-      modifiers:
-        mandatory:
-        - left_shift
-        - left_control
-    to:
-    - key_code: up_arrow
-      modifiers:
-      - option
-      - command
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.rstudio.desktop"
-
-  # [RStudio] LShift-LCtrl-J/K -> Cmd-Opt-Down/Up
-  # Copy Lines Down/Up
-  - type: basic
-    from:
-      key_code: j
-      modifiers:
-        mandatory:
-        - left_shift
-        - left_control
-        - left_command
-    to:
-    - key_code: down_arrow
-      modifiers:
-      - option
-      - command
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.rstudio.desktop"
-
-  - type: basic
-    from:
-      key_code: k
-      modifiers:
-        mandatory:
-        - left_shift
-        - left_control
-        - left_command
-    to:
-    - key_code: up_arrow
-      modifiers:
-      - option
-      - command
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.rstudio.desktop"
-
-# }}}
-
-# Microsoft Office {{{
-
-  # [Word] Ctrl-D -> Fn-Delete
-  - type: basic
-    from:
-      key_code: d
-      modifiers:
-        mandatory:
-        - control
-    to:
-    - key_code: delete_forward
-      repeat: true
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.microsoft.Word"
-
-  # [Excel] Ctrl-D -> Fn-Delete
-  - type: basic
-    from:
-      key_code: d
-      modifiers:
-        mandatory:
-        - control
-    to:
-    - key_code: delete_forward
-      repeat: true
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.microsoft.Excel"
-
-  # [Powerpoint] Ctrl-D -> Fn-Delete
-  - type: basic
-    from:
-      key_code: d
-      modifiers:
-        mandatory:
-        - control
-    to:
-    - key_code: delete_forward
-      repeat: true
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.microsoft.Powerpoint"
-
-  # [Word] Ctrl-A -> 行頭へ移動
-  - type: basic
-    from:
-      key_code: a
-      modifiers:
-        mandatory:
-        - control
-    to:
-    - key_code: home
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.microsoft.Word"
-
-  # [Excel] Ctrl-A -> 行頭へ移動
-  - type: basic
-    from:
-      key_code: a
-      modifiers:
-        mandatory:
-        - control
-    to:
-    - key_code: home
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.microsoft.Excel"
-
-  # [Powerpoint] Ctrl-A -> 行頭へ移動
-  - type: basic
-    from:
-      key_code: a
-      modifiers:
-        mandatory:
-        - control
-    to:
-    - key_code: home
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.microsoft.Powerpoint"
-
-  # [Word] Ctrl-E -> 行末へ移動
-  - type: basic
-    from:
-      key_code: e
-      modifiers:
-        mandatory:
-        - control
-    to:
-    - key_code: end
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.microsoft.Word"
-
-  # [Excel] Ctrl-E -> 行末へ移動
-  - type: basic
-    from:
-      key_code: e
-      modifiers:
-        mandatory:
-        - control
-    to:
-    - key_code: end
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.microsoft.Excel"
-
-  # [Powerpoint] Ctrl-E -> 行末へ移動
-  - type: basic
-    from:
-      key_code: e
-      modifiers:
-        mandatory:
-        - control
-    to:
-    - key_code: end
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.microsoft.Powerpoint"
-
-  # [Word] Ctrl-K -> 行末まで削除
-  - type: basic
-    from:
-      key_code: k
-      modifiers:
-        mandatory:
-        - control
-    to:
-    - key_code: end
-      modifiers:
-      - shift
-      repeat: false
-    - key_code: delete_or_backspace
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.microsoft.Word"
-
-  # [Excel] Ctrl-K -> 行末まで削除
-  - type: basic
-    from:
-      key_code: k
-      modifiers:
-        mandatory:
-        - control
-    to:
-    - key_code: end
-      modifiers:
-      - shift
-      repeat: false
-    - key_code: delete_or_backspace
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.microsoft.Excel"
-
-  # [Powerpoint] Ctrl-K -> 行末まで削除
-  - type: basic
-    from:
-      key_code: k
-      modifiers:
-        mandatory:
-        - control
-    to:
-    - key_code: end
-      modifiers:
-      - shift
-      repeat: false
-    - key_code: delete_or_backspace
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.microsoft.Powerpoint"
-
-# }}}
-
-# Safari {{{
-
-#   # [Safari] LCmd-S -> Shift-Cmd-L
-#   # サイドバーを表示／非表示
-#   - type: basic
-#     from:
-#       key_code: s
-#       modifiers:
-#         mandatory:
-#         - left_command
-#     to:
-#     - key_code: l
-#       modifiers:
-#       - shift
-#       - command
-#       repeat: false
-#     conditions:
-#     - type: frontmost_application_if
-#       bundle_identifiers:
-#       - "com.apple.Safari"
-
-# }}}
-
-# Google Chrome {{{
-
-#   # [Chrome] LShift-LCmd-F -> Shift-Cmd-H
-#   # スプレッドシートでの検索・置換
-#   - type: basic
-#     from:
-#       key_code: f
-#       modifiers:
-#         mandatory:
-#         - left_shift
-#         - left_command
-#     to:
-#     - key_code: h
-#       modifiers:
-#       - shift
-#       - command
-#       repeat: false
-#     conditions:
-#     - type: frontmost_application_if
-#       bundle_identifiers:
-#       - "com.google.Chrome"
-#
-#   # [Chrome] LCmd-W -> Repeat: False
-#   - type: basic
-#     from:
-#       key_code: w
-#       modifiers:
-#         mandatory:
-#         - left_command
-#     to:
-#     - key_code: w
-#       modifiers:
-#       - command
-#       repeat: false
-#     conditions:
-#     - type: frontmost_application_if
-#       bundle_identifiers:
-#       - "com.google.Chrome"
-
-# }}}
-
-# Sidekick {{{
-
-#   # [Sidekick] LShift-LCmd-F -> Shift-Cmd-H
-#   # スプレッドシートでの検索・置換
-#   - type: basic
-#     from:
-#       key_code: f
-#       modifiers:
-#         mandatory:
-#         - left_shift
-#         - left_command
-#     to:
-#     - key_code: h
-#       modifiers:
-#       - shift
-#       - command
-#       repeat: false
-#     conditions:
-#     - type: frontmost_application_if
-#       bundle_identifiers:
-#       - "com.pushplaylabs.sidekick"
-#
-#   # [Sidekick] LCmd-W -> Repeat: False
-#   - type: basic
-#     from:
-#       key_code: w
-#       modifiers:
-#         mandatory:
-#         - left_command
-#     to:
-#     - key_code: w
-#       modifiers:
-#       - command
-#       repeat: false
-#     conditions:
-#     - type: frontmost_application_if
-#       bundle_identifiers:
-#       - "com.pushplaylabs.sidekick"
-#
-#   # [Sidekick] LShift-LCmd-A -> Cmd-S
-#   # セッション一覧を開く (Sidekick でのショートカット変更が必要)
-#   - type: basic
-#     from:
-#       key_code: a
-#       modifiers:
-#         mandatory:
-#         - left_shift
-#         - left_command
-#     to:
-#     - key_code: s
-#       modifiers:
-#       - command
-#       repeat: false
-#     conditions:
-#     - type: frontmost_application_if
-#       bundle_identifiers:
-#       - "com.pushplaylabs.sidekick"
-#
-#   # [Sidekick] LShift-LCmd-S -> Shift-Opt-S
-#   # サイドカーを表示／非表示
-#   - type: basic
-#     from:
-#       key_code: s
-#       modifiers:
-#         mandatory:
-#         - left_shift
-#         - left_command
-#     to:
-#     - key_code: s
-#       modifiers:
-#       - shift
-#       - option
-#       repeat: false
-#     conditions:
-#     - type: frontmost_application_if
-#       bundle_identifiers:
-#       - "com.pushplaylabs.sidekick"
-
-# }}}
-
-# Macvim {{{
-
-#   # [MacVim] Cmd-W -> Ignore
-#   - type: basic
-#     from:
-#       key_code: w
-#       modifiers:
-#         mandatory:
-#         - command
-#     conditions:
-#     - type: frontmost_application_if
-#       bundle_identifiers:
-#       - "org.vim.MacVim"
-#
-#   # [MacVim] LCmd-Q (held down) -> Quit MacVim
-#   # LCmd-Q 長押しでのみ終了
-#   - type: basic
-#     from:
-#       key_code: q
-#       modifiers:
-#         mandatory:
-#         - left_command
-#     to_if_held_down:
-#     - key_code: q
-#       modifiers:
-#       - command
-#       repeat: false
-#     parameters:
-#       basic.to_if_held_down_threshold_milliseconds: 500
-#     conditions:
-#     - type: frontmost_application_if
-#       bundle_identifiers:
-#       - "org.vim.MacVim"
-
-# }}}
-
-# Notes {{{
-
-  # [Notes] LCmd-S -> Opt-Cmd-S
-  # フォルダを表示／非表示
-  - type: basic
-    from:
-      key_code: s
-      modifiers:
-        mandatory:
-        - left_command
-    to:
-    - key_code: s
-      modifiers:
-      - option
-      - command
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.apple.Notes"
 
 # }}}
