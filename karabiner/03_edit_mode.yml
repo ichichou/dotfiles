@@ -8,27 +8,11 @@ aliases:
   - type: input_source_unless
     input_sources:
     - language: "^ja$"
-  # - type: device_unless
-  #   identifiers:
-  #   # Equinox XL
-  #   - vendor_id: 41219
-  #     product_id: 32
-  #   # Cornelius Low-profile
-  #   - vendor_id: 18003
-  #   - roduct_id: 6
 
 - conditions: &ime_on
   - type: input_source_if
     input_sources:
     - language: "^ja$"
-  # - type: device_unless
-  #   identifiers:
-  #   # Equinox XL
-  #   - vendor_id: 41219
-  #     product_id: 32
-  #   # Cornelius Low-profile
-  #   - vendor_id: 18003
-  #   - roduct_id: 6
 
 - conditions: &edit_1
   - type: variable_if
@@ -41,7 +25,7 @@ aliases:
     value: true
 
 - parameters: &threshold_ms
-    basic.simultaneous_threshold_milliseconds: 20
+    basic.simultaneous_threshold_milliseconds: 40
 
 # }}}
 
@@ -53,7 +37,7 @@ rules:
 
 # Edit Mode Keys ---------------------------------
 
-  # IME Off (Qwerty) {{{
+  # When IME is Off (Qwerty Layout) {{{
 
   # Edit Mode 1 ----------------------------------
 
@@ -261,7 +245,7 @@ rules:
 
   # }}}
 
-  # IME On (Shingeta) {{{
+  # When IME is On (Shingeta Layout) {{{
 
   # Edit Mode 1 ----------------------------------
 
@@ -1093,10 +1077,16 @@ rules:
       repeat: false
     conditions: *edit_2
 
-  # O -> Invalid
+  # O -> Ctrl-Opt-Up (Up Half Window)
   - type: basic
     from:
       key_code: o
+    to:
+    - key_code: up_arrow
+      modifiers:
+      - control
+      - option
+      repeat: false
     conditions: *edit_2
 
   # P -> Invalid
@@ -1157,10 +1147,16 @@ rules:
       repeat: false
     conditions: *edit_2
 
-  # L -> Invalid
+  # L -> Ctrl-Opt-Down (Down Half Window)
   - type: basic
     from:
       key_code: l
+    to:
+    - key_code: down_arrow
+      modifiers:
+      - control
+      - option
+      repeat: false
     conditions: *edit_2
 
   # ; -> Invalid
