@@ -304,6 +304,16 @@ rules:
 
 # 特殊 {{{
 
+  # LCmd + Space -> Return
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: left_command
+      - key_code: spacebar
+    to:
+    - key_code: return_or_enter
+      repeat: false
+
   # Space + Return -> Control-Return
   - type: basic
     from:
@@ -317,7 +327,7 @@ rules:
       repeat: false
 
   # Q + W -> Hyper-E
-  # 同時押しで Hyper-E を送信（30％キーボードなど用）
+  # 同時押しで Hyper-E を送信
   - type: basic
     from:
       simultaneous:

@@ -561,6 +561,27 @@ rules:
 
 # }}}
 
+# Claude {{{
+
+  # [Claude] LShif-LCmd-V -> Cmd-V
+  - type: basic
+    from:
+      key_code: v
+      modifiers:
+        mandatory:
+        - left_shift
+        - left_command
+    to:
+    - key_code: v
+      modifiers:
+      - command
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.anthropic.claudefordesktop"
+
+# }}}
+
 # CotEditor {{{
 
   # [CotEditor] Shif-Cmd-V -> Cmd-V
