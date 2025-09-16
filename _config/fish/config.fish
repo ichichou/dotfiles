@@ -79,6 +79,7 @@ abbr -ag a    bat
 abbr -ag awk  gawk
 abbr -ag csv  csvlens
 abbr -ag diff batdiff
+abbr -ag duck duckdb
 abbr -ag grep batgrep
 abbr -ag hs   ghci
 abbr -ag j    z
