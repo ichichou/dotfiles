@@ -1165,10 +1165,16 @@ rules:
       key_code: semicolon
     conditions: *edit_2
 
-  # ' -> Invalid
+  # ' -> Shift-Ctrl-Opt-Return (Almost Maximize Window)
   - type: basic
     from:
       key_code: quote
+    to:
+    - key_code: return_or_enter
+      modifiers:
+      - shift
+      - control
+      - option
     conditions: *edit_2
 
   # N -> Ctrl-6
