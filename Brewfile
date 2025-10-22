@@ -59,7 +59,6 @@ cask "jordanbaird-ice"
 cask "keka"
 cask "kekaexternalhelper"
 cask "kitty"
-cask "linear-linear"
 cask "macskk"
 cask "notion"
 cask "notion-calendar"
@@ -71,6 +70,7 @@ cask "scroll-reverser"
 cask "slack"
 cask "superhuman"
 cask "superwhisper"
+cask "vlc"
 cask "workflowy"
 cask "zed"
 
@@ -101,4 +101,3 @@ mas "AdGuard for Safari",    id: 1440147259
 mas "Amphetamine",           id: 937984704
 mas "Bitwarden",             id: 1352778147
 mas "LINE",                  id: 539883307
-mas "Yoink",                 id: 457622435
