@@ -5,7 +5,7 @@ set -eu
 # @raycast.schemaVersion 1
 # @raycast.title Todo
 # @raycast.mode silent
-# @raycast.currentDirectoryPath ~/Library/CloudStorage/Box-Box/Task
+# @raycast.currentDirectoryPath ~/Library/CloudStorage/Box-Box/Notes
 
 # Optional parameters:
 # @raycast.icon 🤖
