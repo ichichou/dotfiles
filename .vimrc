@@ -122,7 +122,7 @@ set list
 set listchars=tab:≫\ ,trail:\ ,nbsp:~,extends:▶,precedes:◀
 
 set sidescroll=1
-set scrolloff=0
+set scrolloff=1
 set sidescrolloff=1
 set updatetime=100
 set belloff=all
