@@ -10,15 +10,32 @@ set -eu
 # Optional parameters:
 # @raycast.icon 🤖
 
-# Todo File
-todo_file=$(realpath ../Task/todo.bike)
+# # Todo File
+# todo_file=$(realpath ../Notes/todo.bike)
 
 # Create Today's Journal
 today=$(date +%Y-%m-%d)
 today_file=${today}.bike
 
+initial_content=$(cat << 'EOT'
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+  </head>
+  <body>
+    <ul>
+      <li>
+        <p/>
+      </li>
+    </ul>
+  </body>
+</html>
+EOT
+)
+
 if [ ! -e "$today_file" ]; then
-  touch "$today_file"
+  echo "$initial_content" > "$today_file"
 fi
 
 # Find Yesterday's Journal
@@ -39,4 +56,5 @@ while true; do
 done
 
 # Open Files
-open -a "bike" "$todo_file" "$today_file" "$past_file"
+# open -a "bike" "$todo_file" "$today_file" "$past_file"
+open -a "bike" "$today_file" "$past_file"

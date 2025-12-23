@@ -14,8 +14,25 @@ set -eu
 today=$(date +%Y-%m-%d)
 today_file=${today}.bike
 
+initial_content=$(cat << 'EOT'
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+  </head>
+  <body>
+    <ul>
+      <li>
+        <p/>
+      </li>
+    </ul>
+  </body>
+</html>
+EOT
+)
+
 if [ ! -e "$today_file" ]; then
-  touch "$today_file"
+  echo "$initial_content" > "$today_file"
 fi
 
 # Todo File
