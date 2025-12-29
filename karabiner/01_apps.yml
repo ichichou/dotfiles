@@ -2022,97 +2022,19 @@ rules:
       bundle_identifiers:
       - "com.tinyspeck.slackmacgap"
 
-  # [Slack] LCtrl-1 - 6 -> Cmd-1 - 6
+  # [Slack] LShift-LCmd-C -> Ctrl-5
+  # 「後で」に移動
   - type: basic
     from:
-      key_code: "1"
+      key_code: c
       modifiers:
         mandatory:
-        - left_control
-    to:
-    - key_code: "1"
-      modifiers:
-      - command
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.tinyspeck.slackmacgap"
-
-  - type: basic
-    from:
-      key_code: "2"
-      modifiers:
-        mandatory:
-        - left_control
-    to:
-    - key_code: "2"
-      modifiers:
-      - command
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.tinyspeck.slackmacgap"
-
-  - type: basic
-    from:
-      key_code: "3"
-      modifiers:
-        mandatory:
-        - left_control
-    to:
-    - key_code: "3"
-      modifiers:
-      - command
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.tinyspeck.slackmacgap"
-
-  - type: basic
-    from:
-      key_code: "4"
-      modifiers:
-        mandatory:
-        - left_control
-    to:
-    - key_code: "4"
-      modifiers:
-      - command
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.tinyspeck.slackmacgap"
-
-  - type: basic
-    from:
-      key_code: "5"
-      modifiers:
-        mandatory:
-        - left_control
+        - left_shift
+        - left_command
     to:
     - key_code: "5"
       modifiers:
-      - command
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "com.tinyspeck.slackmacgap"
-
-  - type: basic
-    from:
-      key_code: "6"
-      modifiers:
-        mandatory:
-        - left_control
-    to:
-    - key_code: "6"
-      modifiers:
-      - command
+      - control
       repeat: false
     conditions:
     - type: frontmost_application_if
