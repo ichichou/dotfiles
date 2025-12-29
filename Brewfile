@@ -7,6 +7,7 @@ tap "laishulu/homebrew"
 
 # CLI Apps ---------------------------------------
 
+brew "bash"
 brew "bat"
 brew "bat-extras"
 brew "coreutils"
