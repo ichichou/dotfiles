@@ -617,6 +617,23 @@ rules:
       bundle_identifiers:
       - "com.apple.finder"
 
+  # [Finder] Shift-Cmd-V -> Cmd-V
+  - type: basic
+    from:
+      key_code: v
+      modifiers:
+        mandatory:
+        - shift
+        - command
+    to:
+    - key_code: v
+      modifiers:
+      - command
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.apple.finder"
+
 # }}}
 
 # Ghostty {{{
