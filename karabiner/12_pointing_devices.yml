@@ -1,0 +1,58 @@
+title: "12. Pointing Devices"
+
+# ALIASES =======================================
+
+aliases:
+
+# - conditions: &kensington
+#   - type: device_if
+#     identifiers:
+#     # SlimBlade Pro (Bluetooth)
+#     - vendor_id: 1149
+#       product_id: 32980
+#     # SlimBlade Pro (2.4 GHz)
+#     - vendor_id: 1149
+#       product_id: 32982
+
+- conditions: &g_pro
+  - type: device_if
+    identifiers:
+    # G Pro
+    - vendor_id: 1133
+      product_id: 50503
+
+# RULES ==========================================
+
+rules:
+- description: "12. Pointing Devices"
+  manipulators:
+
+# G Pro {{{
+
+  # Button 4 -> Mission Control
+  - type: basic
+    from:
+      pointing_button: button4
+    to:
+    - key_code: up_arrow
+      modifiers:
+      - shift
+      - control
+      - option
+      - command
+    conditions: *g_pro
+
+  # Button 5 -> Mission Control
+  - type: basic
+    from:
+      pointing_button: button5
+    to:
+    - key_code: up_arrow
+      modifiers:
+      - shift
+      - control
+      - option
+      - command
+    conditions: *g_pro
+
+# }}}
