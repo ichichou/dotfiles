@@ -1,0 +1,92 @@
+title: "09. Others"
+rules:
+- description: "9-1. Alone Kana/Eisuu"
+  manipulators:
+
+  # Shift-Kana -> Kana
+  - type: basic
+    from:
+      key_code: japanese_kana
+      modifiers:
+        mandatory:
+        - shift
+    to:
+    - key_code: japanese_kana
+      repeat: false
+
+  # Ctrl-Kana -> Kana
+  - type: basic
+    from:
+      key_code: japanese_kana
+      modifiers:
+        mandatory:
+        - control
+    to:
+    - key_code: japanese_kana
+      repeat: false
+
+  # Opt-Kana -> Kana
+  - type: basic
+    from:
+      key_code: japanese_kana
+      modifiers:
+        mandatory:
+        - option
+    to:
+    - key_code: japanese_kana
+      repeat: false
+
+  # Cmd-Kana -> Kana
+  - type: basic
+    from:
+      key_code: japanese_kana
+      modifiers:
+        mandatory:
+        - command
+    to:
+    - key_code: japanese_kana
+      repeat: false
+
+  # Shift-Eisuu -> Eisuu
+  - type: basic
+    from:
+      key_code: japanese_eisuu
+      modifiers:
+        mandatory:
+        - shift
+    to:
+    - key_code: japanese_eisuu
+      repeat: false
+
+  # Ctrl-Eisuu -> Eisuu
+  - type: basic
+    from:
+      key_code: japanese_eisuu
+      modifiers:
+        mandatory:
+        - control
+    to:
+    - key_code: japanese_eisuu
+      repeat: false
+
+  # Opt-Eisuu -> Eisuu
+  - type: basic
+    from:
+      key_code: japanese_eisuu
+      modifiers:
+        mandatory:
+        - option
+    to:
+    - key_code: japanese_eisuu
+      repeat: false
+
+  # Cmd-Eisuu -> Eisuu
+  - type: basic
+    from:
+      key_code: japanese_eisuu
+      modifiers:
+        mandatory:
+        - command
+    to:
+    - key_code: japanese_eisuu
+      repeat: false
