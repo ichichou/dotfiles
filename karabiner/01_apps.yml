@@ -1678,6 +1678,25 @@ rules:
       name: notion_home_row_mods
       value: true
 
+  # [Notion] LShift-LCmd-A -> Opt-Cmd-H
+  - type: basic
+    from:
+      key_code: a
+      modifiers:
+        mandatory:
+        - left_shift
+        - left_command
+    to:
+    - key_code: h
+      modifiers:
+      - option
+      - command
+      repeat: true
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "notion.id"
+
 # }}}
 
 # Notion Calendar {{{
