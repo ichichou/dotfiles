@@ -72,16 +72,16 @@ rules:
     - key_code: e
       modifiers: *to_mods
 
-  # Hyper-Y -> Arc
-  # Raycast ではひとつのアプリに複数のホットキーを設定できないため
-  # Raycast では Hyper-U -> Arc と設定している
-  - type: basic
-    from:
-      key_code: "y"
-      modifiers: *from_mods
-    to:
-    - key_code: u
-      modifiers: *to_mods
+  # # Hyper-Y -> Arc
+  # # Raycast ではひとつのアプリに複数のホットキーを設定できないため
+  # # Raycast では Hyper-U -> Arc と設定している
+  # - type: basic
+  #   from:
+  #     key_code: "y"
+  #     modifiers: *from_mods
+  #   to:
+  #   - key_code: u
+  #     modifiers: *to_mods
 
   # Hyper-L -> Eisuu, Ghostty
   - type: basic
