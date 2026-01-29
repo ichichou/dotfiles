@@ -60,107 +60,140 @@ bind -e \cl
 # -- Abbr {{{
 
 # General
-abbr -ag d    cd
-abbr -ag e    exit
-abbr -ag lns  ln -snfv
-abbr -ag nd   nextd
-abbr -ag pd   prevd
-abbr -ag rmds rm .DS_Store
-abbr -ag so   source
-abbr -ag ud   cd ..
+abbr -a d    cd
+abbr -a e    exit
+abbr -a lns  ln -snfv
+abbr -a nd   nextd
+abbr -a pd   prevd
+abbr -a rmds rm .DS_Store
+abbr -a so   source
+abbr -a ud   cd ..
 
-abbr -ag cp  cp -iv
-abbr -ag cpr cp -ivr
-abbr -ag mv  mv -iv
+abbr -a cp  cp -iv
+abbr -a cpr cp -ivr
+abbr -a mv  mv -iv
+abbr -a mvr mv -ivr
 
 # Apps
-abbr -ag R    R --quiet --no-save
-abbr -ag a    bat
-abbr -ag awk  gawk
-abbr -ag csv  csvlens
-abbr -ag diff batdiff
-abbr -ag duck duckdb
-abbr -ag grep batgrep
-abbr -ag hs   ghci
-abbr -ag j    z
-abbr -ag man  batman
-abbr -ag n    numbat
-abbr -ag nvi  nvim
-abbr -ag r    r --quiet --no-save
-abbr -ag ra   ranger
-abbr -ag sed  gsed
-abbr -ag t    tig
-abbr -ag ts   tig status
-abbr -ag yqj  yq eval -o=json
-abbr -ag yqy  yq eval -P
+abbr -a R    R --quiet --no-save
+abbr -a a    bat
+abbr -a awk  gawk
+abbr -a csv  csvlens
+abbr -a diff batdiff
+abbr -a duck duckdb
+abbr -a grep batgrep
+abbr -a hs   ghci
+abbr -a j    z
+abbr -a man  batman
+abbr -a n    numbat
+abbr -a nvi  nvim
+abbr -a r    r --quiet --no-save
+abbr -a ra   ranger
+abbr -a sed  gsed
+abbr -a t    tig
+abbr -a ts   tig status
+abbr -a yqj  yq eval -o=json
+abbr -a yqy  yq eval -P
 
-abbr -ag vi vim
+abbr -a vi vim
 
 # eza/ls
 if test -e "/opt/homebrew/bin/eza"
-  abbr -ag ls eza -a --group-directories-first
-  abbr -ag la eza -al --git --time-style iso --group-directories-first
-  abbr -ag ll eza -1a --group-directories-first
+  abbr -a ls eza -a --group-directories-first
+  abbr -a la eza -al --git --time-style iso --group-directories-first
+  abbr -a ll eza -1a --group-directories-first
 else
-  abbr -ag ls ls -AG
-  abbr -ag la ls -AlG
-  abbr -ag ll ls -1AG
+  abbr -a ls ls -AG
+  abbr -a la ls -AlG
+  abbr -a ll ls -1AG
 end
 
 # trash/rm
 if test -e "/opt/homebrew/opt/trash/bin/trash"
-  abbr -ag rm trash
+  abbr -a rm trash
 else
-  abbr -ag rm rm -iv
+  abbr -a rm rm -iv
 end
 
 # zk
-abbr -ag k  zk
-abbr -ag kj zk journal
-abbr -ag kc zk config
-abbr -ag ke zk edit -i
-abbr -ag kl zk list -i
-abbr -ag kn zk new --no-input
+abbr -a k  zk
+abbr -a kj zk journal
+abbr -a kc zk config
+abbr -a ke zk edit -i
+abbr -a kl zk list -i
+abbr -a kn zk new --no-input
 
 # Homebrew
-abbr -ag b    brew
-abbr -ag bc   brew cleanup
-abbr -ag bd   brew doctor
-abbr -ag bdep brew deps
-abbr -ag bg   brew upgrade
-abbr -ag bi   brew info
-abbr -ag bin  brew install
-abbr -ag bl   brew list
-abbr -ag bo   brew outdated
-abbr -ag brm  brew autoremove
-abbr -ag bs   brew search
-abbr -ag bu   brew update
-abbr -ag bug  "brew update; and brew upgrade"
-abbr -ag bun  brew uninstall
-abbr -ag buse brew uses
+abbr -a b    brew
+
+abbr -a bc   brew cleanup
+abbr -a bd   brew doctor
+abbr -a bg   brew upgrade
+abbr -a bi   brew info
+abbr -a bin  brew install
+abbr -a bl   brew list
+abbr -a bo   brew outdated
+abbr -a brm  brew autoremove
+abbr -a bs   brew search
+abbr -a bu   brew update
+abbr -a bun  brew uninstall
+
+abbr -a --command brew c  cleanup
+abbr -a --command brew d  doctor
+abbr -a --command brew g  upgrade
+abbr -a --command brew i  info
+abbr -a --command brew in install
+abbr -a --command brew l  list
+abbr -a --command brew o  outdated
+abbr -a --command brew rm autoremove
+abbr -a --command brew s  search
+abbr -a --command brew u  update
+abbr -a --command brew un uninstall
 
 # Git
-abbr -ag g   git
-abbr -ag ga  git add
-abbr -ag gb  git branch
-abbr -ag gc  git commit
-abbr -ag gcl git clone
-abbr -ag gd  git diff
-abbr -ag gf  git fetch
-abbr -ag gl  git log --graph --oneline -n 10
-abbr -ag glp git log --patch -n 10
-abbr -ag gm  git merge
-abbr -ag gpl git pull
-abbr -ag gps git push
-abbr -ag grb git rebase
-abbr -ag grf git reflog
-abbr -ag grs git restore
-abbr -ag grv git revert
-abbr -ag gs  git status --short --branch
-abbr -ag gsh git show
-abbr -ag gss git status
-abbr -ag gt  git stash
-abbr -ag gw  git switch
+abbr -a g   git
+
+abbr -a ga  git add
+abbr -a gb  git branch
+abbr -a gc  git commit
+abbr -a gcl git clone
+abbr -a gd  git diff
+abbr -a gf  git fetch
+abbr -a gl  git log --graph --oneline -n 10
+abbr -a glp git log --patch -n 10
+abbr -a gm  git merge
+abbr -a gpl git pull
+abbr -a gps git push
+abbr -a grb git rebase
+abbr -a grf git reflog
+abbr -a grs git restore
+abbr -a grv git revert
+abbr -a gs  git status --short --branch
+abbr -a gsh git show
+abbr -a gss git status
+abbr -a gst  git stash
+abbr -a gsw  git switch
+
+abbr -a --command git a  add
+abbr -a --command git b  branch
+abbr -a --command git c  commit
+abbr -a --command git cl clone
+abbr -a --command git d  diff
+abbr -a --command git f  fetch
+abbr -a --command git l  log --graph --oneline -n 10
+abbr -a --command git lp log --patch -n 10
+abbr -a --command git m  merge
+abbr -a --command git pl pull
+abbr -a --command git ps push
+abbr -a --command git rb rebase
+abbr -a --command git rf reflog
+abbr -a --command git rs restore
+abbr -a --command git rv revert
+abbr -a --command git s  status --short --branch
+abbr -a --command git sh show
+abbr -a --command git ss status
+abbr -a --command git st stash
+abbr -a --command git sw switch
 
 # }}}
 
@@ -217,7 +250,7 @@ function journal
   end
 end
 
-abbr -ag jo journal
+abbr -a jo journal
 
 # Find & remove .DS_STORE ------------------------
 
