@@ -1,5 +1,8 @@
 title: "09. Others"
 rules:
+
+# 9-1. Alone Kana/Eisuu {{{
+
 - description: "9-1. Alone Kana/Eisuu"
   manipulators:
 
@@ -90,3 +93,5 @@ rules:
     to:
     - key_code: japanese_eisuu
       repeat: false
+
+# }}}
