@@ -23,8 +23,8 @@ rules:
       modifiers:
         optional:
         - any
-    to_if_alone:
-    - key_code: return_or_enter
     to:
     - key_code: right_control
       lazy: true
+    to_if_alone:
+    - key_code: return_or_enter
