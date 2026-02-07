@@ -420,8 +420,8 @@ rules:
 # MTGAP (Mod-1) {{{
 
 # ypou; kdlcw
-# inea, mhtsr x
-# qz'./ bfgvj
+# inea, mhtsr q
+# jz'./ bfgvx
 
 - description: "11-2. MTGAP (Mod-1)"
   manipulators:
@@ -636,7 +636,7 @@ rules:
       key_code: quote
       modifiers: *optional_shift
     to:
-    - key_code: x
+    - key_code: q
       repeat: true
     conditions: *alt_layout_on
 
@@ -648,7 +648,7 @@ rules:
       key_code: z
       modifiers: *optional_shift
     to:
-    - key_code: q
+    - key_code: j
       repeat: true
     conditions: *alt_layout_on
 
@@ -738,13 +738,17 @@ rules:
       key_code: slash
       modifiers: *optional_shift
     to:
-    - key_code: j
+    - key_code: x
       repeat: true
     conditions: *alt_layout_on
 
 # }}}
 
 # MTGAP 2.0 {{{
+
+# ,fhdk jcul.
+# oantg mseri /
+# qxbpz yw'v;
 
 # - description: "11-2. MTGAP 2.0"
 #   manipulators:
