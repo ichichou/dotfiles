@@ -419,9 +419,17 @@ rules:
 
 # MTGAP (Mod-1) {{{
 
+# Mod-1
+#
+# ypou; [kdlcw
+# inea, ]mhtsr q
+# j/'.z _bfgvx
+
+# Mod-2
+#
 # ypou; kdlcw
 # inea, mhtsr q
-# jz'./ bfgvx
+# j/'.\ bfgvx z
 
 - description: "11-2. MTGAP (Mod-1)"
   manipulators:
@@ -658,7 +666,7 @@ rules:
       key_code: x
       modifiers: *optional_shift
     to:
-    - key_code: z
+    - key_code: slash
       repeat: true
     conditions: *alt_layout_on
 
@@ -688,7 +696,7 @@ rules:
       key_code: b
       modifiers: *optional_shift
     to:
-    - key_code: slash
+    - key_code: z
       repeat: true
     conditions: *alt_layout_on
 
@@ -739,6 +747,18 @@ rules:
       modifiers: *optional_shift
     to:
     - key_code: x
+      repeat: true
+    conditions: *alt_layout_on
+
+  # Other Keys -----------------------------------
+
+  # RShift
+  - type: basic
+    from:
+      key_code: right_shift
+      modifiers: *optional_shift
+    to:
+    - key_code: z
       repeat: true
     conditions: *alt_layout_on
 
