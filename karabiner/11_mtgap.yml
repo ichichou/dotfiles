@@ -1,0 +1,352 @@
+title: "11. MTGAP (Mod-1)"
+
+# Aliases {{{
+
+aliases:
+
+- from/modifiers: &optional_shift
+    optional:
+    - shift
+
+- conditions: &en
+  - type: input_source_if
+    input_sources:
+    - language: "^en$"
+  - type: frontmost_application_unless
+    bundle_identifiers:
+    - "^com\\.apple\\.loginwindow$"
+
+# }}}
+
+rules:
+
+- description: "11. MTGAP (Mod-1)"
+  manipulators:
+
+# Mod-1
+#
+# ypou/ kdlcw
+# inea, mhtsr q
+# jz'.; bfgvx
+
+  # Upper Row {{{
+
+  # Q
+  - type: basic
+    from:
+      key_code: q
+      modifiers: *optional_shift
+    to:
+    - key_code: "y"
+      repeat: true
+    conditions: *en
+
+  # W
+  - type: basic
+    from:
+      key_code: w
+      modifiers: *optional_shift
+    to:
+    - key_code: p
+      repeat: true
+    conditions: *en
+
+  # E
+  - type: basic
+    from:
+      key_code: e
+      modifiers: *optional_shift
+    to:
+    - key_code: o
+      repeat: true
+    conditions: *en
+
+  # R
+  - type: basic
+    from:
+      key_code: r
+      modifiers: *optional_shift
+    to:
+    - key_code: u
+      repeat: true
+    conditions: *en
+
+  # T
+  - type: basic
+    from:
+      key_code: t
+      modifiers: *optional_shift
+    to:
+    - key_code: slash
+      repeat: true
+    conditions: *en
+
+  # Y
+  - type: basic
+    from:
+      key_code: "y"
+      modifiers: *optional_shift
+    to:
+    - key_code: k
+      repeat: true
+    conditions: *en
+
+  # U
+  - type: basic
+    from:
+      key_code: u
+      modifiers: *optional_shift
+    to:
+    - key_code: d
+      repeat: true
+    conditions: *en
+
+  # I
+  - type: basic
+    from:
+      key_code: i
+      modifiers: *optional_shift
+    to:
+    - key_code: l
+      repeat: true
+    conditions: *en
+
+  # O
+  - type: basic
+    from:
+      key_code: o
+      modifiers: *optional_shift
+    to:
+    - key_code: c
+      repeat: true
+    conditions: *en
+
+  # P
+  - type: basic
+    from:
+      key_code: p
+      modifiers: *optional_shift
+    to:
+    - key_code: w
+      repeat: true
+    conditions: *en
+
+  # }}}
+
+  # Home Row {{{
+
+  # A
+  - type: basic
+    from:
+      key_code: a
+      modifiers: *optional_shift
+    to:
+    - key_code: i
+      repeat: true
+    conditions: *en
+
+  # S
+  - type: basic
+    from:
+      key_code: s
+      modifiers: *optional_shift
+    to:
+    - key_code: "n"
+      repeat: true
+    conditions: *en
+
+  # D
+  - type: basic
+    from:
+      key_code: d
+      modifiers: *optional_shift
+    to:
+    - key_code: e
+      repeat: true
+    conditions: *en
+
+  # F
+  - type: basic
+    from:
+      key_code: f
+      modifiers: *optional_shift
+    to:
+    - key_code: a
+      repeat: true
+    conditions: *en
+
+  # G
+  - type: basic
+    from:
+      key_code: g
+      modifiers: *optional_shift
+    to:
+    - key_code: comma
+      repeat: true
+    conditions: *en
+
+  # H
+  - type: basic
+    from:
+      key_code: h
+      modifiers: *optional_shift
+    to:
+    - key_code: m
+      repeat: true
+    conditions: *en
+
+  # J
+  - type: basic
+    from:
+      key_code: j
+      modifiers: *optional_shift
+    to:
+    - key_code: h
+      repeat: true
+    conditions: *en
+
+  # K
+  - type: basic
+    from:
+      key_code: k
+      modifiers: *optional_shift
+    to:
+    - key_code: t
+      repeat: true
+    conditions: *en
+
+  # L
+  - type: basic
+    from:
+      key_code: l
+      modifiers: *optional_shift
+    to:
+    - key_code: s
+      repeat: true
+    conditions: *en
+
+  # Semicolon
+  - type: basic
+    from:
+      key_code: semicolon
+      modifiers: *optional_shift
+    to:
+    - key_code: r
+      repeat: true
+    conditions: *en
+
+  # Quote
+  - type: basic
+    from:
+      key_code: quote
+      modifiers: *optional_shift
+    to:
+    - key_code: q
+      repeat: true
+    conditions: *en
+
+  # }}}
+
+  # Lower Row {{{
+
+  # Z
+  - type: basic
+    from:
+      key_code: z
+      modifiers: *optional_shift
+    to:
+    - key_code: j
+      repeat: true
+    conditions: *en
+
+  # X
+  - type: basic
+    from:
+      key_code: x
+      modifiers: *optional_shift
+    to:
+    - key_code: z
+      repeat: true
+    conditions: *en
+
+  # C
+  - type: basic
+    from:
+      key_code: c
+      modifiers: *optional_shift
+    to:
+    - key_code: quote
+      repeat: true
+    conditions: *en
+
+  # V
+  - type: basic
+    from:
+      key_code: v
+      modifiers: *optional_shift
+    to:
+    - key_code: period
+      repeat: true
+    conditions: *en
+
+  # B
+  - type: basic
+    from:
+      key_code: b
+      modifiers: *optional_shift
+    to:
+    - key_code: semicolon
+      repeat: true
+    conditions: *en
+
+  # N
+  - type: basic
+    from:
+      key_code: "n"
+      modifiers: *optional_shift
+    to:
+    - key_code: b
+      repeat: true
+    conditions: *en
+
+  # M
+  - type: basic
+    from:
+      key_code: m
+      modifiers: *optional_shift
+    to:
+    - key_code: f
+      repeat: true
+    conditions: *en
+
+  # Comma
+  - type: basic
+    from:
+      key_code: comma
+      modifiers: *optional_shift
+    to:
+    - key_code: g
+      repeat: true
+    conditions: *en
+
+  # Period
+  - type: basic
+    from:
+      key_code: period
+      modifiers: *optional_shift
+    to:
+    - key_code: v
+      repeat: true
+    conditions: *en
+
+  # Slash
+  - type: basic
+    from:
+      key_code: slash
+      modifiers: *optional_shift
+    to:
+    - key_code: x
+      repeat: true
+    conditions: *en
+
+  # }}}

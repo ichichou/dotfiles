@@ -1,4 +1,4 @@
-title: "11. Altanative keyboard layouts"
+title: "12. Altanative keyboard layouts"
 
 # Aliases {{{
 
@@ -55,7 +55,7 @@ aliases:
 
 # Template {{{
 
-# - description: "11-2. "
+# - description: "12-2. "
 #   manipulators:
 #
 #   # Upper Row ------------------------------------
@@ -421,17 +421,11 @@ rules:
 
 # Mod-1
 #
-# ypou; [kdlcw
-# inea, ]mhtsr q
-# j/'.z _bfgvx
-
-# Mod-2
-#
-# ypou; kdlcw
+# ypou/ kdlcw
 # inea, mhtsr q
-# j/'.\ bfgvx z
+# jz'.; bfgvx
 
-- description: "11-2. MTGAP (Mod-1)"
+- description: "12-2. MTGAP (Mod-1)"
   manipulators:
 
   # Upper Row ------------------------------------
@@ -482,7 +476,7 @@ rules:
       key_code: t
       modifiers: *optional_shift
     to:
-    - key_code: semicolon
+    - key_code: slash
       repeat: true
     conditions: *alt_layout_on
 
@@ -666,7 +660,7 @@ rules:
       key_code: x
       modifiers: *optional_shift
     to:
-    - key_code: slash
+    - key_code: z
       repeat: true
     conditions: *alt_layout_on
 
@@ -696,7 +690,7 @@ rules:
       key_code: b
       modifiers: *optional_shift
     to:
-    - key_code: z
+    - key_code: semicolon
       repeat: true
     conditions: *alt_layout_on
 
@@ -750,18 +744,6 @@ rules:
       repeat: true
     conditions: *alt_layout_on
 
-  # Other Keys -----------------------------------
-
-  # RShift
-  - type: basic
-    from:
-      key_code: right_shift
-      modifiers: *optional_shift
-    to:
-    - key_code: z
-      repeat: true
-    conditions: *alt_layout_on
-
 # }}}
 
 # MTGAP 2.0 {{{
@@ -770,7 +752,7 @@ rules:
 # oantg mseri /
 # qxbpz yw'v;
 
-# - description: "11-2. MTGAP 2.0"
+# - description: "12-2. MTGAP 2.0"
 #   manipulators:
 #
 #   # Upper Row ------------------------------------
@@ -1093,7 +1075,7 @@ rules:
 
 # Canary (ortho) {{{
 
-# - description: "11-2. Canary (ortho)"
+# - description: "12-2. Canary (ortho)"
 #   manipulators:
 #
 #   # Upper Row ------------------------------------
@@ -1416,7 +1398,7 @@ rules:
 
 # Canary (angle mod) {{{
 
-# - description: "11-2. Canary (angle mod)"
+# - description: "12-2. Canary (angle mod)"
 #   manipulators:
 #
 #   # Upper Row ------------------------------------
@@ -1739,7 +1721,7 @@ rules:
 
 # Sturdy {{{
 
-# - description: "11-2. Sturdy"
+# - description: "12-2. Sturdy"
 #   manipulators:
 #
 #   # Upper Row ------------------------------------
@@ -2062,7 +2044,7 @@ rules:
 
 # Meteorite {{{
 
-# - description: "11-2. Meteorite"
+# - description: "12-2. Meteorite"
 #   manipulators:
 #
 #   # Upper Row ------------------------------------
@@ -2385,7 +2367,7 @@ rules:
 
 # Graphite {{{
 
-# - description: "11-2. Graphite"
+# - description: "12-2. Graphite"
 #   manipulators:
 #
 #   # Upper Row ------------------------------------
@@ -2708,7 +2690,7 @@ rules:
 
 # Gallium v2 {{{
 
-# - description: "11-2. Gallium v2"
+# - description: "12-2. Gallium v2"
 #   manipulators:
 #
 #   # Upper Row ------------------------------------
@@ -3031,7 +3013,7 @@ rules:
 
 # Gallium v1 {{{
 
-# - description: "11-2. Gallium v1"
+# - description: "12-2. Gallium v1"
 #   manipulators:
 #
 #   # Upper Row ------------------------------------
@@ -3354,7 +3336,7 @@ rules:
 
 # Nerps {{{
 
-# - description: "11-2. Nerps"
+# - description: "12-2. Nerps"
 #   manipulators:
 #
 #   # Upper Row ------------------------------------
@@ -3677,7 +3659,7 @@ rules:
 
 # Colemak-DH {{{
 
-# - description: "11-2. Colemak-DH"
+# - description: "12-2. Colemak-DH"
 #   manipulators:
 #
 #   # Upper Row ------------------------------------
@@ -4000,7 +3982,7 @@ rules:
 
 # Colemak {{{
 
-# - description: "11-2. Colemak"
+# - description: "12-2. Colemak"
 #   manipulators:
 #
 #   # Upper Row ------------------------------------
@@ -4323,7 +4305,7 @@ rules:
 
 # Workman {{{
 
-# - description: "11-2. Workman"
+# - description: "12-2. Workman"
 #   manipulators:
 #
 #   # Upper Row ------------------------------------
@@ -4646,7 +4628,7 @@ rules:
 
 # Capewell 0.9.3 {{{
 
-# - description: "11-2. Capewell 0.9.3"
+# - description: "12-2. Capewell 0.9.3"
 #   manipulators:
 #
 #   # Upper Row ------------------------------------
@@ -4969,7 +4951,7 @@ rules:
 
 # Arensito {{{
 
-# - description: "11-2. Arensito"
+# - description: "12-2. Arensito"
 #   manipulators:
 #
 #   # Upper Row ------------------------------------
