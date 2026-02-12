@@ -3,9 +3,9 @@ rules:
 - description: "5. Command key"
   manipulators:
 
-  # LCommand-Any {{{
+  # LCmd-Any {{{
 
-  # LCommand-Space -> Return
+  # LCmd-Space -> Return
   - type: basic
     from:
       key_code: spacebar
@@ -18,7 +18,7 @@ rules:
     - key_code: return_or_enter
       repeat: false
 
-  # LCommand-RCommand -> ESC
+  # LCmd-RCmd -> ESC
   - type: basic
     from:
       key_code: right_command
@@ -29,7 +29,7 @@ rules:
     - key_code: escape
       repeat: false
 
-  # RCommand-LCommand -> ESC
+  # RCmd-LCmd -> ESC
   - type: basic
     from:
       key_code: left_command
@@ -40,7 +40,7 @@ rules:
     - key_code: escape
       repeat: false
 
-  # # LCommand-; -> Command-K
+  # # LCmd-; -> Cmd-K
   # - type: basic
   #   from:
   #     key_code: semicolon
@@ -53,7 +53,7 @@ rules:
   #     - command
   #     repeat: false
 
-  # LCommand-U -> Command-H
+  # LCmd-U -> Cmd-H
   - type: basic
     from:
       key_code: u
@@ -68,9 +68,9 @@ rules:
 
   # }}}
 
-  # LCommand-HJKL -> Arrow Keys {{{
+  # LCmd-HJKL -> Arrow Keys {{{
 
-  # LCommand-H -> Left
+  # LCmd-H -> Left
   - type: basic
     from:
       key_code: h
@@ -82,7 +82,7 @@ rules:
     to:
     - key_code: left_arrow
 
-  # LCommand-J -> Down
+  # LCmd-J -> Down
   - type: basic
     from:
       key_code: j
@@ -94,7 +94,7 @@ rules:
     to:
     - key_code: down_arrow
 
-  # LCommand-K -> Up
+  # LCmd-K -> Up
   - type: basic
     from:
       key_code: k
@@ -106,7 +106,7 @@ rules:
     to:
     - key_code: up_arrow
 
-  # LCommand-L -> Right
+  # LCmd-L -> Right
   - type: basic
     from:
       key_code: l
@@ -120,9 +120,9 @@ rules:
 
   # }}}
 
-  # LCommand-NM -> Delete, Delete Forward {{{
+  # LCmd-NM -> Delete, Delete Forward {{{
 
-  # LCommand-N -> Delete
+  # LCmd-N -> Delete
   - type: basic
     from:
       key_code: "n"
@@ -132,7 +132,7 @@ rules:
     to:
     - key_code: delete_or_backspace
 
-  # LCommand-M -> Delete Forward
+  # LCmd-M -> Delete Forward
   - type: basic
     from:
       key_code: m
@@ -144,9 +144,9 @@ rules:
 
   # }}}
 
-  # LCommand-,. -> Control-AE {{{
+  # LCmd-,. -> Ctrl-AE {{{
 
-  # LCommand-, -> Control-A
+  # LCmd-, -> Ctrl-A
   - type: basic
     from:
       key_code: comma
@@ -161,7 +161,7 @@ rules:
       - control
       repeat: false
 
-  # LCommand-. -> Control-E
+  # LCmd-. -> Ctrl-E
   - type: basic
     from:
       key_code: period
@@ -180,7 +180,7 @@ rules:
 
   # Home Row Mods {{{
 
-  # LCommand-LControl-D-*** -> Command-Control-LShift-***
+  # LCmd-LCtrl-D-*** -> Cmd-Ctrl-LShift-***
   - type: basic
     from:
       key_code: d
@@ -199,7 +199,7 @@ rules:
       - command
       - control
 
-  # LCommand-LShift-S-*** -> Command-Shift-LControl-***
+  # LCmd-LShift-S-*** -> Cmd-Shift-LCtrl-***
   - type: basic
     from:
       key_code: s
@@ -218,7 +218,7 @@ rules:
       - command
       - shift
 
-  # LCommand-D-*** -> Command-LShift-***
+  # LCmd-D-*** -> Cmd-LShift-***
   - type: basic
     from:
       key_code: d
@@ -234,7 +234,7 @@ rules:
       modifiers:
       - command
 
-  # LCommand-S-*** -> Command-LControl-***
+  # LCmd-S-*** -> Cmd-LCtrl-***
   - type: basic
     from:
       key_code: s
@@ -252,9 +252,9 @@ rules:
 
   # }}}
 
-  # Command Keys {{{
+  # Cmd Keys {{{
 
-  # LCommand -> Eisuu/LCommand
+  # LCmd -> Eisuu/LCmd
   - type: basic
     from:
       key_code: left_command
@@ -264,7 +264,7 @@ rules:
     to_if_alone:
     - key_code: japanese_eisuu
 
-  # RCommand -> Kana/RCommand
+  # RCmd -> Kana/RCmd
   - type: basic
     from:
       key_code: right_command

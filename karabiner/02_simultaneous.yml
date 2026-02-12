@@ -348,7 +348,7 @@ rules:
     - key_code: return_or_enter
       repeat: false
 
-  # Space + Return -> Control-Return
+  # Space + Return -> Ctrl-Return
   - type: basic
     from:
       simultaneous:

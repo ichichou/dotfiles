@@ -5,8 +5,9 @@ rules:
 
   # Control Key {{{
 
-  # # Caps Lock -> Esc/LControl
+  # # Caps Lock -> Esc/LCtrl
   # # Simple Modifications で設定するため不要
+  #
   # - type: basic
   #   from:
   #     key_code: caps_lock
@@ -19,7 +20,7 @@ rules:
   #   to_if_alone:
   #   - key_code: escape
 
-  # Esc -> Esc/LControl
+  # Esc -> Esc/LCtrl
   - type: basic
     from:
       key_code: escape
@@ -32,7 +33,7 @@ rules:
     to_if_alone:
     - key_code: escape
 
-  # LControl -> Esc/LControl
+  # LCtrl -> Esc/LCtrl
   - type: basic
     from:
       key_code: left_control
@@ -47,11 +48,11 @@ rules:
 
   # }}}
 
-  # Control-*** Mapping {{{
+  # Ctrl-*** Mapping {{{
 
-  # LControl-J -> Kana
-  # Control-key の入力をアプリに取られて IME に渡らないことが多いため、
-  # これを設定しておいたほうが不便がない（Control-L も同様）
+  # LCtrl-J -> Kana
+  # Ctrl-key の入力をアプリに取られて IME に渡らないことが多いため、
+  # これを設定しておいたほうが不便がない（Ctrl-L も同様）
   - type: basic
     from:
       key_code: j
@@ -62,7 +63,7 @@ rules:
     - key_code: japanese_kana
       repeat: false
 
-  # LControl-L -> Eisuu
+  # LCtrl-L -> Eisuu
   - type: basic
     from:
       key_code: l
@@ -73,7 +74,7 @@ rules:
     - key_code: japanese_eisuu
       repeat: false
 
-  # LControl-M -> Return
+  # LCtrl-M -> Return
   - type: basic
     from:
       key_code: m
@@ -84,7 +85,7 @@ rules:
     - key_code: return_or_enter
       repeat: false
 
-  # LControl-N -> Command-Down
+  # LCtrl-N -> Cmd-Down
   - type: basic
     from:
       key_code: "n"
@@ -97,7 +98,7 @@ rules:
       - command
       repeat: false
 
-  # LControl-P -> Command-Up
+  # LCtrl-P -> Cmd-Up
   - type: basic
     from:
       key_code: p
@@ -110,7 +111,7 @@ rules:
       - command
       repeat: false
 
-  # LControl-H -> Delete
+  # LCtrl-H -> Delete
   - type: basic
     from:
       key_code: h
@@ -121,7 +122,7 @@ rules:
     - key_code: delete_or_backspace
       repeat: true
 
-  # LControl-U -> Command-Delete
+  # LCtrl-U -> Cmd-Delete
   - type: basic
     from:
       key_code: u
