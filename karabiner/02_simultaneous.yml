@@ -7,6 +7,16 @@ aliases:
 - parameters: &short_threshold_ms
     basic.simultaneous_threshold_milliseconds: 20
 
+- conditions: &en
+  - type: input_source_if
+    input_sources:
+    - language: "^en$"
+
+- conditions: &ja
+  - type: input_source_if
+    input_sources:
+    - language: "^ja$"
+
 # RULES ==========================================
 
 rules:
@@ -55,10 +65,7 @@ rules:
   #     simultaneous:
   #     - key_code: f
   #     - key_code: j
-  #   conditions:
-  #   - type: input_source_if
-  #     input_sources:
-  #     - language: "^en$"
+  #   conditions: *en
 
   # 日本語入力 -----------------------------------
 
@@ -75,10 +82,7 @@ rules:
       - shift
       - control
       repeat: false
-    conditions:
-    - type: input_source_if
-      input_sources:
-      - language: "^ja$"
+    conditions: *ja
 
 # }}}
 
@@ -165,12 +169,9 @@ rules:
     - key_code: close_bracket
     - key_code: spacebar
       repeat: false
-    conditions:
-    - type: input_source_if
-      input_sources:
-      - language: "^en$"
+    conditions: *en
 
-  # # VB -> (none)
+  # # VB -> (未定義)
   # - type: basic
   #   from:
   #     simultaneous:
@@ -179,24 +180,24 @@ rules:
   #   to:
   #   - key_code:
   #     repeat: false
-  #   conditions:
-  #   - type: input_source_if
-  #     input_sources:
-  #     - language: "^en$"
+  #   conditions: *en
 
-  # # YU -> (none)
-  # - type: basic
-  #   from:
-  #     simultaneous:
-  #     - key_code: "y"
-  #     - key_code: u
-  #   to:
-  #   - key_code:
-  #     repeat: false
-  #   conditions:
-  #   - type: input_source_if
-  #     input_sources:
-  #     - language: "^en$"
+  # YU -> {}, Left Arrow
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: "y"
+      - key_code: u
+    to:
+    - key_code: open_bracket
+      modifiers:
+      - shift
+    - key_code: close_bracket
+      modifiers:
+      - shift
+    - key_code: left_arrow
+      repeat: false
+    conditions: *en
 
   # 日本語入力 -----------------------------------
 
@@ -213,10 +214,7 @@ rules:
     - key_code: spacebar
     - key_code: japanese_kana
       repeat: false
-    conditions:
-    - type: input_source_if
-      input_sources:
-      - language: "^ja$"
+    conditions: *ja
 
   # VB -> \[\], Left Arrow
   - type: basic
@@ -231,10 +229,7 @@ rules:
     - key_code: close_bracket
     - key_code: left_arrow
       repeat: false
-    conditions:
-    - type: input_source_if
-      input_sources:
-      - language: "^ja$"
+    conditions: *ja
 
   # YU -> \{\}, Left Arrow
   - type: basic
@@ -253,40 +248,13 @@ rules:
       - shift
     - key_code: left_arrow
       repeat: false
-    conditions:
-    - type: input_source_if
-      input_sources:
-      - language: "^ja$"
+    conditions: *ja
 
 # }}}
 
 # 片手・斜め {{{
 
   # 常時 -----------------------------------------
-
-  # RG -> "
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: r
-      - key_code: g
-    to:
-    - key_code: quote
-      modifiers:
-      - shift
-      repeat: false
-
-  # RF -> " (代替)
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: r
-      - key_code: f
-    to:
-    - key_code: quote
-      modifiers:
-      - shift
-      repeat: false
 
   # UH -> /
   - type: basic
@@ -333,6 +301,62 @@ rules:
       modifiers:
       - shift
       repeat: false
+
+  # 英語入力 -------------------------------------
+
+  # # RG -> (未定義)
+  # - type: basic
+  #   from:
+  #     simultaneous:
+  #     - key_code: r
+  #     - key_code: g
+  #   to:
+  #   - key_code:
+  #     modifiers:
+  #     - shift
+  #     repeat: false
+  #   conditions: *en
+
+  # # RF -> (未定義) (代替)
+  # - type: basic
+  #   from:
+  #     simultaneous:
+  #     - key_code: r
+  #     - key_code: f
+  #   to:
+  #   - key_code:
+  #     modifiers:
+  #     - shift
+  #     repeat: false
+  #   conditions: *en
+
+  # 日本語入力 -----------------------------------
+
+  # RG -> "
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: r
+      - key_code: g
+    to:
+    - key_code: quote
+      modifiers:
+      - shift
+      repeat: false
+    conditions: *ja
+
+  # RF -> " (代替)
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: r
+      - key_code: f
+    to:
+    - key_code: quote
+      modifiers:
+      - shift
+      repeat: false
+    conditions: *ja
 
 # }}}
 
