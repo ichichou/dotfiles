@@ -95,3 +95,92 @@ rules:
       repeat: false
 
 # }}}
+
+# 9-2. QAZ {{{
+
+# 英語入力のときにのみ有効になるように限定している。
+# 単に日本語入力のときにも有効化すると、
+# 新下駄配列のルールよりも優先されてしまうため。
+#
+# 新下駄配列と共存させたければ、新下駄配列の定義ファイルの中で
+# シンボルモードキーのように書かなければならない
+#
+# それでうまく動くかは試してみないと判らない
+
+- description: "9-2. QAZ"
+  manipulators:
+
+  # Q -> Q/Hyper
+  - type: basic
+    from:
+      key_code: q
+      modifiers:
+        optional:
+        - any
+    to_if_alone:
+    - key_code: q
+      halt: true
+    to_if_held_down:
+    - key_code: right_shift
+      modifiers:
+      - right_control
+      - right_option
+      - right_command
+    to_delayed_action:
+      to_if_canceled:
+      - key_code: q
+    parameters:
+      basic.to_delayed_action_delay_milliseconds: 150
+      basic.to_if_held_down_threshold_milliseconds: 150
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: "^en$"
+
+  # A -> A/LCtrl
+  - type: basic
+    from:
+      key_code: a
+      modifiers:
+        optional:
+        - any
+    to_if_alone:
+    - key_code: a
+      halt: true
+    to_if_held_down:
+    - key_code: left_control
+    to_delayed_action:
+      to_if_canceled:
+      - key_code: a
+    parameters:
+      basic.to_delayed_action_delay_milliseconds: 150
+      basic.to_if_held_down_threshold_milliseconds: 150
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: "^en$"
+
+  # Z -> Z/LShift
+  - type: basic
+    from:
+      key_code: z
+      modifiers:
+        optional:
+        - any
+    to_if_alone:
+    - key_code: z
+      halt: true
+    to_if_held_down:
+    - key_code: left_shift
+    to_delayed_action:
+      to_if_canceled:
+      - key_code: z
+    parameters:
+      basic.to_delayed_action_delay_milliseconds: 150
+      basic.to_if_held_down_threshold_milliseconds: 150
+    conditions:
+    - type: input_source_if
+      input_sources:
+      - language: "^en$"
+
+# }}}
