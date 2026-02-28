@@ -1,9 +1,13 @@
+# 記号 -------------------------------------------
+
 {	『
 }	』
 /	/
 '	ー
 "	・
 q	ー
+
+# 記号拡張 ---------------------------------------
 
 \y	─
 \u	—
@@ -33,6 +37,8 @@ q	ー
 \(	〈
 \)	〉
 \\	\
+
+# 清音 -------------------------------------------
 
 a	あ
 i	い
@@ -94,8 +100,7 @@ wu	う
 we	うぇ
 wo	を
 
-nn	ん
-xn	ん
+# 濁音・半濁音 -----------------------------------
 
 ga	が
 gi	ぎ
@@ -126,6 +131,94 @@ pi	ぴ
 pu	ぷ
 pe	ぺ
 po	ぽ
+
+# 捨て仮名 ---------------------------------------
+
+xa	ぁ
+xi	ぃ
+xu	ぅ
+xe	ぇ
+xo	ぉ
+
+la	ぁ
+li	ぃ
+lu	ぅ
+le	ぇ
+lo	ぉ
+
+xya	ゃ
+xyu	ゅ
+xyo	ょ
+
+lya	ゃ
+lyu	ゅ
+lyo	ょ
+
+xwa	ゎ
+xka	ヵ
+xke	ヶ
+
+lwa	ゎ
+lka	ヵ
+lke	ヶ
+
+# 促音 -------------------------------------------
+
+xtu	っ
+xtsu	っ
+ltu	っ
+ltsu	っ
+;	っ
+
+kk	っ	k
+ss	っ	s
+tt	っ	t
+# nn	っ	n
+hh	っ	h
+mm	っ	m
+yy	っ	y
+rr	っ	r
+ww	っ	w
+gg	っ	g
+zz	っ	z
+dd	っ	d
+bb	っ	b
+pp	っ	p
+cc	っ	c
+ff	っ	f
+vv	っ	v
+jj	っ	j
+xx	っ	x
+ll	っ	l
+
+# 撥音 -------------------------------------------
+
+n'	ん
+nn	ん
+xn	ん
+
+nk	ん	k
+ns	ん	s
+nt	ん	t
+# nn	ん	n
+nh	ん	h
+nm	ん	m
+# ny	ん	y
+nr	ん	r
+nw	ん	w
+ng	ん	g
+nz	ん	z
+nd	ん	d
+nb	ん	b
+np	ん	p
+nc	ん	c
+nf	ん	f
+nv	ん	v
+nj	ん	j
+nx	ん	x
+nl	ん	l
+
+# 拗音 -------------------------------------------
 
 kya	きゃ
 kyi	きぃ
@@ -217,31 +310,13 @@ pyu	ぴゅ
 pye	ぴぇ
 pyo	ぴょ
 
+# 外来音 -----------------------------------------
+
+wha	うぁ
+whi	うぃ
+whu	うぅ
+whe	うぇ
 who	うぉ
-
-va	ゔぁ
-vi	ゔぃ
-vu	ゔ
-ve	ゔぇ
-vo	ゔぉ
-
-vya	ゔゃ
-vyi	ゔぃ
-vyu	ゔゅ
-vye	ゔぇ
-vyo	ゔょ
-
-fa	ふぁ
-fi	ふぃ
-fu	ふ
-fe	ふぇ
-fo	ふぉ
-
-fya	ふゃ
-fyi	ふぃ
-fyu	ふゅ
-fye	ふぇ
-fyo	ふょ
 
 kwa	くぁ
 kwi	くぃ
@@ -273,6 +348,30 @@ twu	とぅ
 twe	とぇ
 two	とぉ
 
+fa	ふぁ
+fi	ふぃ
+fu	ふ
+fe	ふぇ
+fo	ふぉ
+
+fya	ふゃ
+fyi	ふぃ
+fyu	ふゅ
+fye	ふぇ
+fyo	ふょ
+
+va	ゔぁ
+vi	ゔぃ
+vu	ゔ
+ve	ゔぇ
+vo	ゔぉ
+
+vya	ゔゃ
+vyi	ゔぃ
+vyu	ゔゅ
+vye	ゔぇ
+vyo	ゔょ
+
 gwa	ぐぁ
 gwi	ぐぃ
 gwu	ぐぅ
@@ -302,57 +401,3 @@ dwi	どぃ
 dwu	どぅ
 dwe	どぇ
 dwo	どぉ
-
-xya	ゃ
-xyu	ゅ
-xyo	ょ
-
-lya	ゃ
-lyu	ゅ
-lyo	ょ
-
-xa	ぁ
-xi	ぃ
-xu	ぅ
-xe	ぇ
-xo	ぉ
-
-la	ぁ
-li	ぃ
-lu	ぅ
-le	ぇ
-lo	ぉ
-
-xwa	ゎ
-xka	ヵ
-xke	ヶ
-
-lwa	ゎ
-lka	ヵ
-lke	ヶ
-
-xtu	っ
-xtsu	っ
-ltu	っ
-ltsu	っ
-;	っ
-
-kk	っ	k
-ss	っ	s
-tt	っ	t
-hh	っ	h
-mm	っ	m
-yy	っ	y
-rr	っ	r
-ww	っ	w
-gg	っ	g
-zz	っ	z
-dd	っ	d
-bb	っ	b
-pp	っ	p
-cc	っ	c
-jj	っ	j
-vv	っ	v
-ff	っ	f
-xx	っ	x
-ll	っ	l
