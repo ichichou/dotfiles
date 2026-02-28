@@ -93,7 +93,7 @@ augroup vimrc
   autocmd FileType python setlocal tabstop=4
   autocmd FileType rust   setlocal tabstop=4
   autocmd FileType go     setlocal tabstop=4 noexpandtab
-  autocmd BufRead,BufNewFile *.tsv setlocal tabstop=4 noexpandtab
+  autocmd BufRead,BufNewFile *.tsv setlocal tabstop=8 noexpandtab
 augroup END
 
 set formatoptions+=jro
