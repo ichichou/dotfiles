@@ -180,51 +180,17 @@ rules:
 
   # Home Row Mods {{{
 
-  # LCmd-LCtrl-D-*** -> Cmd-Ctrl-LShift-***
+  # -- Left Hand Side {{{
+
+  # LCmd-(any)-D-*** -> Cmd-LShift-(any)-***
   - type: basic
     from:
       key_code: d
       modifiers:
         mandatory:
         - left_command
-        - left_control
-    to:
-    - key_code: left_shift
-      modifiers:
-      - command
-      - control
-    to_if_alone:
-    - key_code: d
-      modifiers:
-      - command
-      - control
-
-  # LCmd-LShift-S-*** -> Cmd-Shift-LCtrl-***
-  - type: basic
-    from:
-      key_code: s
-      modifiers:
-        mandatory:
-        - left_command
-        - left_shift
-    to:
-    - key_code: left_control
-      modifiers:
-      - command
-      - shift
-    to_if_alone:
-    - key_code: s
-      modifiers:
-      - command
-      - shift
-
-  # LCmd-D-*** -> Cmd-LShift-***
-  - type: basic
-    from:
-      key_code: d
-      modifiers:
-        mandatory:
-        - left_command
+        optional:
+        - any
     to:
     - key_code: left_shift
       modifiers:
@@ -234,13 +200,15 @@ rules:
       modifiers:
       - command
 
-  # LCmd-S-*** -> Cmd-LCtrl-***
+  # LCmd-(any)-S-*** -> Cmd-LCtrl-(any)-***
   - type: basic
     from:
       key_code: s
       modifiers:
         mandatory:
         - left_command
+        optional:
+        - any
     to:
     - key_code: left_control
       modifiers:
@@ -249,6 +217,84 @@ rules:
     - key_code: s
       modifiers:
       - command
+
+  # LCmd-(any)-A-*** -> Cmd-LOpt-(any)-***
+  - type: basic
+    from:
+      key_code: a
+      modifiers:
+        mandatory:
+        - left_command
+        optional:
+        - any
+    to:
+    - key_code: left_option
+      modifiers:
+      - command
+    to_if_alone:
+    - key_code: a
+      modifiers:
+      - command
+
+  # }}}
+
+  # -- Right Hand Side {{{
+
+  # RCmd-(any)-K-*** -> Cmd-RShift-(any)-***
+  - type: basic
+    from:
+      key_code: k
+      modifiers:
+        mandatory:
+        - right_command
+        optional:
+        - any
+    to:
+    - key_code: right_shift
+      modifiers:
+      - command
+    to_if_alone:
+    - key_code: k
+      modifiers:
+      - command
+
+  # RCmd-(any)-L-*** -> Cmd-RCtrl-(any)-***
+  - type: basic
+    from:
+      key_code: l
+      modifiers:
+        mandatory:
+        - right_command
+        optional:
+        - any
+    to:
+    - key_code: right_control
+      modifiers:
+      - command
+    to_if_alone:
+    - key_code: l
+      modifiers:
+      - command
+
+  # RCmd-(any)-;-*** -> Cmd-ROpt-(any)-***
+  - type: basic
+    from:
+      key_code: semicolon
+      modifiers:
+        mandatory:
+        - right_command
+        optional:
+        - any
+    to:
+    - key_code: right_option
+      modifiers:
+      - command
+    to_if_alone:
+    - key_code: semicolon
+      modifiers:
+      - command
+
+  # }}}
 
   # }}}
 
