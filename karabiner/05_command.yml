@@ -18,27 +18,27 @@ rules:
     - key_code: return_or_enter
       repeat: false
 
-  # LCmd-RCmd -> ESC
-  - type: basic
-    from:
-      key_code: right_command
-      modifiers:
-        mandatory:
-        - left_command
-    to:
-    - key_code: escape
-      repeat: false
-
-  # RCmd-LCmd -> ESC
-  - type: basic
-    from:
-      key_code: left_command
-      modifiers:
-        mandatory:
-        - right_command
-    to:
-    - key_code: escape
-      repeat: false
+  # # LCmd-RCmd -> Esc
+  # - type: basic
+  #   from:
+  #     key_code: right_command
+  #     modifiers:
+  #       mandatory:
+  #       - left_command
+  #   to:
+  #   - key_code: escape
+  #     repeat: false
+  #
+  # # RCmd-LCmd -> Esc
+  # - type: basic
+  #   from:
+  #     key_code: left_command
+  #     modifiers:
+  #       mandatory:
+  #       - right_command
+  #   to:
+  #   - key_code: escape
+  #     repeat: false
 
   # # LCmd-; -> Cmd-K
   # - type: basic
@@ -252,9 +252,9 @@ rules:
 
   # }}}
 
-  # Cmd Keys {{{
+  # Command Keys {{{
 
-  # LCmd -> Eisuu/LCmd
+  # LCmd -> Esc/LCmd (on Apple internal keyboard)
   - type: basic
     from:
       key_code: left_command
@@ -262,9 +262,14 @@ rules:
     - key_code: left_command
       lazy: true
     to_if_alone:
-    - key_code: japanese_eisuu
+    - key_code: escape
+    conditions:
+    - type: device_if
+      identifiers:
+      # Apple Internal Keyboard
+      - is_built_in_keyboard: true
 
-  # RCmd -> Kana/RCmd
+  # RCmd -> Delete/RCmd (on Apple internal keyboard)
   - type: basic
     from:
       key_code: right_command
@@ -272,6 +277,33 @@ rules:
     - key_code: right_command
       lazy: true
     to_if_alone:
-    - key_code: japanese_kana
+    - key_code: delete_or_backspace
+    conditions:
+    - type: device_if
+      identifiers:
+      # Apple Internal Keyboard
+      - is_built_in_keyboard: true
+
+  # # LCmd -> Eisuu/LCmd (on other than Apple internal keyboard)
+  # # QMK 側で設定するから不要かもしれない
+  # - type: basic
+  #   from:
+  #     key_code: left_command
+  #   to:
+  #   - key_code: left_command
+  #     lazy: true
+  #   to_if_alone:
+  #   - key_code: japanese_eisuu
+  #
+  # # rcmd -> Kana/rcmd (on other than Apple internal keyboard)
+  # # QMK 側で設定するから不要かもしれない
+  # - type: basic
+  #   from:
+  #     key_code: right_command
+  #   to:
+  #   - key_code: right_command
+  #     lazy: true
+  #   to_if_alone:
+  #   - key_code: japanese_kana
 
   # }}}
