@@ -1,6 +1,6 @@
-title: "01. Application-specific"
+title: "01. Application-Specific"
 rules:
-- description: "1. Application-specific"
+- description: "1. Application-Specific"
   manipulators:
 
 # Alacritty {{{

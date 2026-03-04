@@ -1,4 +1,4 @@
-title: "07. Hyper key"
+title: "07. Hyper Key"
 
 # ALIASES ========================================
 
@@ -20,7 +20,7 @@ aliases:
 # RULES ==========================================
 
 rules:
-- description: "7. Hyper key"
+- description: "7. Hyper Key"
   manipulators:
 
 # Hyper Key --------------------------------------

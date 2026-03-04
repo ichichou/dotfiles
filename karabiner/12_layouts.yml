@@ -1,4 +1,4 @@
-title: "12. Altanative keyboard layouts"
+title: "12. Altanative Keyboard Layouts"
 
 # Aliases {{{
 
@@ -380,7 +380,7 @@ rules:
 
 # Toggle Altanative Layout {{{
 
-- description: "11-1. Toggle altanative layout"
+- description: "11-1. Toggle Altanative Layout"
   manipulators:
 
   # On
