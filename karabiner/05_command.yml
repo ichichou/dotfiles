@@ -13,7 +13,7 @@ rules:
         mandatory:
         - left_command
         optional:
-        - shift
+        - any
     to:
     - key_code: return_or_enter
       repeat: false
@@ -40,20 +40,7 @@ rules:
   #   - key_code: escape
   #     repeat: false
 
-  # # LCmd-; -> Cmd-K
-  # - type: basic
-  #   from:
-  #     key_code: semicolon
-  #     modifiers:
-  #       mandatory:
-  #       - left_command
-  #   to:
-  #   - key_code: k
-  #     modifiers:
-  #     - command
-  #     repeat: false
-
-  # LCmd-U -> Cmd-H
+  # LCmd-U -> LCmd-H
   - type: basic
     from:
       key_code: u
@@ -63,7 +50,7 @@ rules:
     to:
     - key_code: h
       modifiers:
-      - command
+      - left_command
       repeat: false
 
   # }}}
@@ -129,6 +116,8 @@ rules:
       modifiers:
         mandatory:
         - left_command
+        optional:
+        - any
     to:
     - key_code: delete_or_backspace
 
@@ -139,14 +128,16 @@ rules:
       modifiers:
         mandatory:
         - left_command
+        optional:
+        - any
     to:
     - key_code: delete_forward
 
   # }}}
 
-  # LCmd-,. -> Ctrl-AE {{{
+  # LCmd-,. -> LCtrl-AE {{{
 
-  # LCmd-, -> Ctrl-A
+  # LCmd-, -> LCtrl-A
   - type: basic
     from:
       key_code: comma
@@ -154,14 +145,13 @@ rules:
         mandatory:
         - left_command
         optional:
-        - left_shift
+        - any
     to:
     - key_code: a
       modifiers:
-      - control
-      repeat: false
+      - left_control
 
-  # LCmd-. -> Ctrl-E
+  # LCmd-. -> LCtrl-E
   - type: basic
     from:
       key_code: period
@@ -169,12 +159,11 @@ rules:
         mandatory:
         - left_command
         optional:
-        - left_shift
+        - any
     to:
     - key_code: e
       modifiers:
-      - control
-      repeat: false
+      - left_control
 
   # }}}
 
@@ -182,7 +171,7 @@ rules:
 
   # -- Left Hand Side {{{
 
-  # LCmd-(any)-D-*** -> Cmd-LShift-(any)-***
+  # LCmd-(any)-D-*** -> LCmd-LShift-(any)-***
   - type: basic
     from:
       key_code: d
@@ -194,13 +183,13 @@ rules:
     to:
     - key_code: left_shift
       modifiers:
-      - command
+      - left_command
     to_if_alone:
     - key_code: d
       modifiers:
-      - command
+      - left_command
 
-  # LCmd-(any)-S-*** -> Cmd-LCtrl-(any)-***
+  # LCmd-(any)-S-*** -> LCmd-LCtrl-(any)-***
   - type: basic
     from:
       key_code: s
@@ -212,13 +201,13 @@ rules:
     to:
     - key_code: left_control
       modifiers:
-      - command
+      - left_command
     to_if_alone:
     - key_code: s
       modifiers:
-      - command
+      - left_command
 
-  # LCmd-(any)-A-*** -> Cmd-LOpt-(any)-***
+  # LCmd-(any)-A-*** -> LCmd-LOpt-(any)-***
   - type: basic
     from:
       key_code: a
@@ -230,17 +219,17 @@ rules:
     to:
     - key_code: left_option
       modifiers:
-      - command
+      - left_command
     to_if_alone:
     - key_code: a
       modifiers:
-      - command
+      - left_command
 
   # }}}
 
   # -- Right Hand Side {{{
 
-  # RCmd-(any)-K-*** -> Cmd-RShift-(any)-***
+  # RCmd-(any)-K-*** -> RCmd-RShift-(any)-***
   - type: basic
     from:
       key_code: k
@@ -252,13 +241,13 @@ rules:
     to:
     - key_code: right_shift
       modifiers:
-      - command
+      - right_command
     to_if_alone:
     - key_code: k
       modifiers:
-      - command
+      - right_command
 
-  # RCmd-(any)-L-*** -> Cmd-RCtrl-(any)-***
+  # RCmd-(any)-L-*** -> RCmd-RCtrl-(any)-***
   - type: basic
     from:
       key_code: l
@@ -270,13 +259,13 @@ rules:
     to:
     - key_code: right_control
       modifiers:
-      - command
+      - right_command
     to_if_alone:
     - key_code: l
       modifiers:
-      - command
+      - right_command
 
-  # RCmd-(any)-;-*** -> Cmd-ROpt-(any)-***
+  # RCmd-(any)-;-*** -> RCmd-ROpt-(any)-***
   - type: basic
     from:
       key_code: semicolon
@@ -288,19 +277,19 @@ rules:
     to:
     - key_code: right_option
       modifiers:
-      - command
+      - right_command
     to_if_alone:
     - key_code: semicolon
       modifiers:
-      - command
+      - right_command
 
   # }}}
 
   # }}}
 
-  # Command Keys {{{
+  # Left Command Key {{{
 
-  # LCmd -> Esc/LCmd (on Apple internal keyboard)
+  # LCmd -> Eisuu/LCmd (on Apple Internal Keyboard)
   - type: basic
     from:
       key_code: left_command
@@ -308,17 +297,57 @@ rules:
     - key_code: left_command
       lazy: true
     to_if_alone:
-    - key_code: escape
+    - key_code: japanese_eisuu
     conditions:
     - type: device_if
       identifiers:
       # Apple Internal Keyboard
       - is_built_in_keyboard: true
 
-  # RCmd -> Delete/RCmd (on Apple internal keyboard)
+  # # LCmd -> Esc/LCmd (on Apple Internal Keyboard)
+  # - type: basic
+  #   from:
+  #     key_code: left_command
+  #     modifiers:
+  #       optional:
+  #       - any
+  #   to:
+  #   - key_code: left_command
+  #     lazy: true
+  #   to_if_alone:
+  #   - key_code: escape
+  #   conditions:
+  #   - type: device_if
+  #     identifiers:
+  #     # Apple Internal Keyboard
+  #     - is_built_in_keyboard: true
+
+  # }}}
+
+  # Right Command Key {{{
+
+  # # RCmd -> Kana/RCmd (on Apple Internal Keyboard)
+  # - type: basic
+  #   from:
+  #     key_code: right_command
+  #   to:
+  #   - key_code: right_command
+  #     lazy: true
+  #   to_if_alone:
+  #   - key_code: japanese_kana
+  #   conditions:
+  #   - type: device_if
+  #     identifiers:
+  #     # Apple Internal Keyboard
+  #     - is_built_in_keyboard: true
+
+  # RCmd -> Delete/RCmd (on Apple Internal Keyboard)
   - type: basic
     from:
       key_code: right_command
+      modifiers:
+        optional:
+        - any
     to:
     - key_code: right_command
       lazy: true
@@ -329,27 +358,5 @@ rules:
       identifiers:
       # Apple Internal Keyboard
       - is_built_in_keyboard: true
-
-  # # LCmd -> Eisuu/LCmd (on other than Apple internal keyboard)
-  # # QMK 側で設定するから不要かもしれない
-  # - type: basic
-  #   from:
-  #     key_code: left_command
-  #   to:
-  #   - key_code: left_command
-  #     lazy: true
-  #   to_if_alone:
-  #   - key_code: japanese_eisuu
-  #
-  # # rcmd -> Kana/rcmd (on other than Apple internal keyboard)
-  # # QMK 側で設定するから不要かもしれない
-  # - type: basic
-  #   from:
-  #     key_code: right_command
-  #   to:
-  #   - key_code: right_command
-  #     lazy: true
-  #   to_if_alone:
-  #   - key_code: japanese_kana
 
   # }}}
