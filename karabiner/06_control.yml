@@ -3,24 +3,10 @@ rules:
 - description: "6. Control Key"
   manipulators:
 
-  # Control Key {{{
-
-  # # Caps Lock -> Esc/LCtrl
-  # # Simple Modifications で設定するため不要
-  #
-  # - type: basic
-  #   from:
-  #     key_code: caps_lock
-  #     modifiers:
-  #       optional:
-  #       - any
-  #   to:
-  #   - key_code: left_control
-  #     lazy: true
-  #   to_if_alone:
-  #   - key_code: escape
+  # Escape -> Left Control {{{
 
   # Esc -> Esc/LCtrl
+  # Mac 標準のリマップ機能で Caps Lock -> Esc とすることが前提
   - type: basic
     from:
       key_code: escape
@@ -33,26 +19,13 @@ rules:
     to_if_alone:
     - key_code: escape
 
-  # LCtrl -> Esc/LCtrl
-  - type: basic
-    from:
-      key_code: left_control
-      modifiers:
-        optional:
-        - any
-    to:
-    - key_code: left_control
-      lazy: true
-    to_if_alone:
-    - key_code: escape
-
   # }}}
 
-  # Ctrl-*** Mapping {{{
+  # Left Control Key Mapping {{{
 
   # LCtrl-J -> Kana
-  # Ctrl-key の入力をアプリに取られて IME に渡らないことが多いため、
-  # これを設定しておいたほうが不便がない（Ctrl-L も同様）
+  # Ctrl-J の入力をアプリに取られて IME に渡らないことが多いため、
+  # これを設定しておいたほうが不便がない
   - type: basic
     from:
       key_code: j
@@ -64,6 +37,7 @@ rules:
       repeat: false
 
   # LCtrl-L -> Eisuu
+  # Ctrl-J と同様の事情
   - type: basic
     from:
       key_code: l
@@ -81,34 +55,40 @@ rules:
       modifiers:
         mandatory:
         - left_control
+        optional:
+        - any
     to:
     - key_code: return_or_enter
       repeat: false
 
-  # LCtrl-N -> Cmd-Down
+  # LCtrl-N -> LCmd-Down
   - type: basic
     from:
       key_code: "n"
       modifiers:
         mandatory:
         - left_control
+        optional:
+        - any
     to:
     - key_code: down_arrow
       modifiers:
-      - command
+      - left_command
       repeat: false
 
-  # LCtrl-P -> Cmd-Up
+  # LCtrl-P -> LCmd-Up
   - type: basic
     from:
       key_code: p
       modifiers:
         mandatory:
         - left_control
+        optional:
+        - any
     to:
     - key_code: up_arrow
       modifiers:
-      - command
+      - left_command
       repeat: false
 
   # LCtrl-H -> Delete
@@ -118,11 +98,13 @@ rules:
       modifiers:
         mandatory:
         - left_control
+        optional:
+        - any
     to:
     - key_code: delete_or_backspace
       repeat: true
 
-  # LCtrl-U -> Cmd-Delete
+  # LCtrl-U -> LCmd-Delete
   - type: basic
     from:
       key_code: u
@@ -132,7 +114,7 @@ rules:
     to:
     - key_code: delete_or_backspace
       modifiers:
-      - command
+      - left_command
       repeat: true
 
   # }}}
