@@ -14,7 +14,7 @@ rules:
         mandatory:
         - left_command
         optional:
-        - shift
+        - any
     to:
     - key_code: return_or_enter
       repeat: false
@@ -44,9 +44,9 @@ rules:
     - key_code: escape
       repeat: false
 
-# LCmd + I/J/K/L -> Cursor keys {{{
+# LCmd + I/J/K/L -> Cursor Keys {{{
 
-- description: "LCmd + I/J/K/L → Cursor keys"
+- description: "LCmd + I/J/K/L → Cursor Keys"
   manipulators:
 
   # LCmd-I -> Up
@@ -99,9 +99,9 @@ rules:
 
 # }}}
 
-# LCmd + H/J/K/L -> Cursor keys {{{
+# LCmd + H/J/K/L -> Cursor Keys {{{
 
-- description: "LCmd + H/J/K/L → Cursor keys"
+- description: "LCmd + H/J/K/L → Cursor Keys"
   manipulators:
 
   # LCmd-H -> Left
@@ -154,7 +154,7 @@ rules:
 
 # }}}
 
-- description: "LCmd + N/M → Delete / Delete forward"
+- description: "LCmd + N/M → Delete / Delete Forward"
   manipulators:
 
   # LCmd-N -> Delete
@@ -164,6 +164,8 @@ rules:
       modifiers:
         mandatory:
         - left_command
+        optional:
+        - any
     to:
     - key_code: delete_or_backspace
 
@@ -174,6 +176,8 @@ rules:
       modifiers:
         mandatory:
         - left_command
+        optional:
+        - any
     to:
     - key_code: delete_forward
 
@@ -202,10 +206,23 @@ rules:
 
 # }}}
 
-# Control Key {{{
+# Esc/Ctrl {{{
 
-- description: "Esc/LCtrl → Esc/LCtrl"
+- description: "Caps Lock → Esc/LCtrl"
   manipulators:
+
+  # Caps Lock -> Esc/LCtrl
+  - type: basic
+    from:
+      key_code: caps_lock
+      modifiers:
+        optional:
+        - any
+    to:
+    - key_code: left_control
+      lazy: true
+    to_if_alone:
+    - key_code: escape
 
   # Esc -> Esc/LCtrl
   - type: basic
@@ -220,24 +237,280 @@ rules:
     to_if_alone:
     - key_code: escape
 
-  # LCtrl -> Esc/LCtrl
+# }}}
+
+# Num Layer {{{
+
+- description: "Num Layer"
+  manipulators:
+
+  # Layer Key {{{
+
+  # Caps Lock -> Layer Key
   - type: basic
     from:
-      key_code: left_control
+      key_code: caps_lock
       modifiers:
         optional:
         - any
     to:
-    - key_code: left_control
-      lazy: true
+    - set_variable:
+        name: num_layer
+        value: 1
+    to_after_key_up:
+    - set_variable:
+        name: num_layer
+        value: 0
     to_if_alone:
     - key_code: escape
+
+  # Esc -> Layer Key
+  - type: basic
+    from:
+      key_code: escape
+      modifiers:
+        optional:
+        - any
+    to:
+    - set_variable:
+        name: num_layer
+        value: 1
+    to_after_key_up:
+    - set_variable:
+        name: num_layer
+        value: 0
+    to_if_alone:
+    - key_code: escape
+
+  # }}}
+
+  # YUIOP {{{
+
+  # Y -> (no map)
+  - type: basic
+    from:
+      key_code: "y"
+      modifiers:
+        optional:
+        - any
+    # to:
+    # - key_code:
+    conditions:
+    - type: variable_if
+      name: num_layer
+      value: 1
+
+  # U -> 7
+  - type: basic
+    from:
+      key_code: u
+      modifiers:
+        optional:
+        - any
+    to:
+    - key_code: "7"
+    conditions:
+    - type: variable_if
+      name: num_layer
+      value: 1
+
+  # I -> 8
+  - type: basic
+    from:
+      key_code: i
+      modifiers:
+        optional:
+        - any
+    to:
+    - key_code: "8"
+    conditions:
+    - type: variable_if
+      name: num_layer
+      value: 1
+
+  # O -> 9
+  - type: basic
+    from:
+      key_code: o
+      modifiers:
+        optional:
+        - any
+    to:
+    - key_code: "9"
+    conditions:
+    - type: variable_if
+      name: num_layer
+      value: 1
+
+  # P -> (no map)
+  - type: basic
+    from:
+      key_code: p
+      modifiers:
+        optional:
+        - any
+    # to:
+    # - key_code:
+    conditions:
+    - type: variable_if
+      name: num_layer
+      value: 1
+
+  # }}}
+
+  # HJKL; {{{
+
+  # H -> Delete
+  - type: basic
+    from:
+      key_code: h
+      modifiers:
+        optional:
+        - any
+    to:
+    - key_code: delete_or_backspace
+    conditions:
+    - type: variable_if
+      name: num_layer
+      value: 1
+
+  # J -> 4
+  - type: basic
+    from:
+      key_code: j
+      modifiers:
+        optional:
+        - any
+    to:
+    - key_code: "4"
+    conditions:
+    - type: variable_if
+      name: num_layer
+      value: 1
+
+  # K -> 5
+  - type: basic
+    from:
+      key_code: k
+      modifiers:
+        optional:
+        - any
+    to:
+    - key_code: "5"
+    conditions:
+    - type: variable_if
+      name: num_layer
+      value: 1
+
+  # L -> 6
+  - type: basic
+    from:
+      key_code: l
+      modifiers:
+        optional:
+        - any
+    to:
+    - key_code: "6"
+    conditions:
+    - type: variable_if
+      name: num_layer
+      value: 1
+
+  # ; -> (no map)
+  - type: basic
+    from:
+      key_code: semicolon
+      modifiers:
+        optional:
+        - any
+    # to:
+    # - key_code:
+    conditions:
+    - type: variable_if
+      name: num_layer
+      value: 1
+
+  # }}}
+
+  # NM,./ {{{
+
+  # N -> 0
+  - type: basic
+    from:
+      key_code: "n"
+      modifiers:
+        optional:
+        - any
+    to:
+    - key_code: "0"
+    conditions:
+    - type: variable_if
+      name: num_layer
+      value: 1
+
+  # M -> 1
+  - type: basic
+    from:
+      key_code: m
+      modifiers:
+        optional:
+        - any
+    to:
+    - key_code: "1"
+    conditions:
+    - type: variable_if
+      name: num_layer
+      value: 1
+
+  # , -> 2
+  - type: basic
+    from:
+      key_code: comma
+      modifiers:
+        optional:
+        - any
+    to:
+    - key_code: "2"
+    conditions:
+    - type: variable_if
+      name: num_layer
+      value: 1
+
+  # . -> 3
+  - type: basic
+    from:
+      key_code: period
+      modifiers:
+        optional:
+        - any
+    to:
+    - key_code: "3"
+    conditions:
+    - type: variable_if
+      name: num_layer
+      value: 1
+
+  # / -> (no map)
+  - type: basic
+    from:
+      key_code: slash
+      modifiers:
+        optional:
+        - any
+    # to:
+    # - key_code:
+    conditions:
+    - type: variable_if
+      name: num_layer
+      value: 1
+
+  # }}}
 
 # }}}
 
 # Hyper Key {{{
 
-- description: "Tab → Hyper key"
+- description: "Tab → Hyper Key"
   manipulators:
 
   # Tab -> Tab/Hyper
