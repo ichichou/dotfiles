@@ -1,6 +1,115 @@
 title: "99. Minimum Mappings"
 rules:
 
+# Combo -> Symbol {{{
+
+- description: "Combo -> Symbol"
+  manipulators:
+
+  # RG -> ・
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: r
+      - key_code: g
+    to:
+    - key_code: slash
+      repeat: false
+
+  # RF -> ・ (代替)
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: r
+      - key_code: f
+    to:
+    - key_code: slash
+      repeat: false
+
+  # UH -> ／
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: u
+      - key_code: h
+    to:
+    - key_code: backslash
+    - key_code: slash
+      repeat: false
+
+  # FB -> ！
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: f
+      - key_code: b
+    to:
+    - key_code: "1"
+      modifiers:
+      - left_shift
+      repeat: false
+
+  # FV -> ！ (代替)
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: f
+      - key_code: v
+    to:
+    - key_code: "1"
+      modifiers:
+      - left_shift
+      repeat: false
+
+  # JN -> ？
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: j
+      - key_code: "n"
+    to:
+    - key_code: slash
+      modifiers:
+      - left_shift
+      repeat: false
+
+# }}}
+
+# FG/HJ -> []/() {{{
+
+- description: "FG/HJ → 「」/（）"
+  manipulators:
+
+  # FG -> [], Left Arrow
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: f
+      - key_code: g
+    to:
+    - key_code: open_bracket
+    - key_code: close_bracket
+    - key_code: left_arrow
+      repeat: false
+
+  # HJ -> (), Left Arrow
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: h
+      - key_code: j
+    to:
+    - key_code: "9"
+      modifiers:
+      - left_shift
+    - key_code: "0"
+      modifiers:
+      - left_shift
+    - key_code: left_arrow
+      repeat: false
+
+# }}}
+
 # Command Key {{{
 
 - description: "LCmd + Space → Return"
