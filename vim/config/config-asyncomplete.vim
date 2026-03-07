@@ -16,8 +16,8 @@ let g:asyncomplete_auto_completeopt = 0
 
 " -- If exists Lexima, <CR> is mapped in config-lexima.vim
 if !FindPlugin('lexima.vim')
-  inoremap <silent> <expr> <CR> pumvisible()
-        \ ? asyncomplete#close_popup()
+  inoremap <silent> <expr> <CR>
+        \ pumvisible() ? asyncomplete#close_popup()
         \ : '<CR>'
 endif
 
@@ -25,16 +25,16 @@ inoremap <silent> <expr> <TAB>
       \ pumvisible()       ? '<C-n>'
       \ : CheckBackSpace() ? '<C-t>'
       \ : asyncomplete#force_refresh()
-inoremap <silent> <expr> <S-TAB> pumvisible()
-      \ ? '<C-p>'
+inoremap <silent> <expr> <S-TAB>
+      \ pumvisible() ? '<C-p>'
       \ : '<C-d>'
 
-inoremap <silent> <expr> <C-n> pumvisible()
-      \ ? '<C-n>'
+inoremap <silent> <expr> <C-n>
+      \ pumvisible() ? '<C-n>'
       \ : asyncomplete#force_refresh()
 
-inoremap <silent> <expr> <C-p> pumvisible()
-      \ ? '<C-p>'
+inoremap <silent> <expr> <C-p>
+      \ pumvisible() ? '<C-p>'
       \ : asyncomplete#force_refresh()
 
 " SOURCES ----------------------------------------

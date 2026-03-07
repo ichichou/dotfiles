@@ -29,11 +29,11 @@ call lexima#add_rule({ 'char': '」', 'at': '\%#」', 'leave': 1 })
 call lexima#add_rule({ 'char': '』', 'at': '\%#』', 'leave': 1 })
 
 if FindPlugin('asyncomplete.vim')
-  inoremap <silent> <expr> <CR> pumvisible()
-        \ ? asyncomplete#close_popup()
+  inoremap <silent> <expr> <CR>
+        \ pumvisible() ? asyncomplete#close_popup()
         \ : lexima#expand('<LT>CR>', 'i')
 else
-  inoremap <silent> <expr> <CR> pumvisible()
-        \ ? '<C-y>'
+  inoremap <silent> <expr> <CR>
+        \ pumvisible() ? '<C-y>'
         \ : lexima#expand('<LT>CR>', 'i')
 endif
