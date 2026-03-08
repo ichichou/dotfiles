@@ -1,4 +1,4 @@
-title: "10-1. 新下駄配列"
+title: "10-1. 新下駄配列（改）"
 
 # == ALIASES {{{
 
@@ -63,7 +63,7 @@ aliases:
 # == RULES {{{
 
 rules:
-- description: "10-1. 新下駄配列"
+- description: "10-1. 新下駄配列（改）"
   manipulators:
 
 # -- 中指シフト・右 {{{
