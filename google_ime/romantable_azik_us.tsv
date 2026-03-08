@@ -1,0 +1,855 @@
+# AZIK (US)
+
+# 仮名範囲外 {{{
+
+{	『
+}	』
+-	-
+
+# }}}
+
+# 基本の仮名 {{{
+
+# -- 清音 {{{
+
+a	あ
+i	い
+u	う
+e	え
+o	お
+
+ka	か
+ki	き
+ku	く
+ke	け
+ko	こ
+
+sa	さ
+si	し
+su	す
+se	せ
+so	そ
+
+ta	た
+ti	ち
+tu	つ
+te	て
+to	と
+
+na	な
+ni	に
+nu	ぬ
+ne	ね
+no	の
+
+ha	は
+hi	ひ
+hu	ふ
+he	へ
+ho	ほ
+
+ma	ま
+mi	み
+mu	む
+me	め
+mo	も
+
+ya	や
+yi	い
+yu	ゆ
+ye	いぇ
+yo	よ
+
+ra	ら
+ri	り
+ru	る
+re	れ
+ro	ろ
+
+wa	わ
+wi	うぃ
+wu	う
+we	うぇ
+wo	を
+
+# }}}
+
+# -- 濁音・半濁音 {{{
+
+ga	が
+gi	ぎ
+gu	ぐ
+ge	げ
+go	ご
+
+za	ざ
+zi	じ
+zu	ず
+ze	ぜ
+zo	ぞ
+
+da	だ
+di	ぢ
+du	づ
+de	で
+do	ど
+
+ba	ば
+bi	び
+bu	ぶ
+be	べ
+bo	ぼ
+
+pa	ぱ
+pi	ぴ
+pu	ぷ
+pe	ぺ
+po	ぽ
+
+# }}}
+
+# -- 拗音 {{{
+
+kya	きゃ
+kyu	きゅ
+kye	きぇ
+kyo	きょ
+
+sya	しゃ
+syu	しゅ
+sye	しぇ
+syo	しょ
+
+xa	しゃ
+xu	しゅ
+xe	しぇ
+xo	しょ
+
+tya	ちゃ
+tyu	ちゅ
+tye	ちぇ
+tyo	ちょ
+
+ca	ちゃ
+cu	ちゅ
+ce	ちぇ
+co	ちょ
+
+nya	にゃ
+nyu	にゅ
+nye	にぇ
+nyo	にょ
+
+hya	ひゃ
+hyu	ひゅ
+hye	ひぇ
+hyo	ひょ
+
+mya	みゃ
+myu	みゅ
+mye	みぇ
+myo	みょ
+
+rya	りゃ
+ryu	りゅ
+rye	りぇ
+ryo	りょ
+
+gya	ぎゃ
+gyu	ぎゅ
+gye	ぎぇ
+gyo	ぎょ
+
+zya	じゃ
+zyu	じゅ
+zye	じぇ
+zyo	じょ
+
+ja	じゃ
+ji	じ
+ju	じゅ
+je	じぇ
+jo	じょ
+
+dya	ぢゃ
+dyu	ぢゅ
+dye	ぢぇ
+dyo	ぢょ
+
+bya	びゃ
+byu	びゅ
+bye	びぇ
+byo	びょ
+
+pya	ぴゃ
+pyu	ぴゅ
+pye	ぴぇ
+pyo	ぴょ
+
+# }}}
+
+# -- 拗音互換 {{{
+
+kga	きゃ
+kgu	きゅ
+kge	きぇ
+kgo	きょ
+
+nga	にゃ
+ngu	にゅ
+nge	にぇ
+ngo	にょ
+
+hga	ひゃ
+hgu	ひゅ
+hge	ひぇ
+hgo	ひょ
+
+mga	みゃ
+mgu	みゅ
+mge	みぇ
+mgo	みょ
+
+dga	ぢゃ
+dgu	ぢゅ
+dge	ぢぇ
+dgo	ぢょ
+
+pga	ぴゃ
+pgu	ぴゅ
+pge	ぴぇ
+pgo	ぴょ
+
+# }}}
+
+# -- 外来音 {{{
+
+fa	ふぁ
+fi	ふぃ
+fu	ふ
+fe	ふぇ
+fo	ふぉ
+
+va	ゔぁ
+vi	ゔぃ
+vu	ゔ
+ve	ゔぇ
+vo	ゔぉ
+
+# }}}
+
+# -- 捨て仮名 {{{
+
+la	ぁ
+li	ぃ
+lu	ぅ
+le	ぇ
+lo	ぉ
+
+lya	ゃ
+lyu	ゅ
+lyo	ょ
+
+lwa	ゎ
+
+lka	ヵ
+lke	ヶ
+
+# }}}
+
+# -- 促音・撥音・長音符 {{{
+
+;	っ
+q	ん
+nn	ん
+'	ー
+
+# }}}
+
+# }}}
+
+# 撥音拡張 {{{
+
+# -- 清音 {{{
+
+kz	かん
+kk	きん
+kj	くん
+kd	けん
+kl	こん
+
+sz	さん
+sk	しん
+sj	すん
+sd	せん
+sl	そん
+
+tz	たん
+tk	ちん
+tj	つん
+td	てん
+tl	とん
+
+nz	なん
+nk	にん
+nj	ぬん
+nd	ねん
+nl	のん
+
+hz	はん
+hk	ひん
+hj	ふん
+hd	へん
+hl	ほん
+
+mz	まん
+mk	みん
+mj	むん
+md	めん
+ml	もん
+
+yz	やん
+yk	いん
+yj	ゆん
+yd	いぇん
+yl	よん
+
+rz	らん
+rk	りん
+rj	るん
+rd	れん
+rl	ろん
+
+wz	わん
+wk	うぃん
+wj	うん
+wd	うぇん
+wl	うぉん
+
+# }}}
+
+# -- 濁音・半濁音 {{{
+
+gz	がん
+gk	ぎん
+gj	ぐん
+gd	げん
+gl	ごん
+
+zz	ざん
+zk	じん
+zj	ずん
+zd	ぜん
+zl	ぞん
+
+dz	だん
+dk	ぢん
+dj	づん
+dd	でん
+dl	どん
+
+bz	ばん
+bk	びん
+bj	ぶん
+bd	べん
+bl	ぼん
+
+pz	ぱん
+pk	ぴん
+pj	ぷん
+pd	ぺん
+pl	ぽん
+
+# }}}
+
+# -- 拗音 {{{
+
+kyz	きゃん
+kyj	きゅん
+kyd	きぇん
+kyl	きょん
+
+syz	しゃん
+syj	しゅん
+syd	しぇん
+syl	しょん
+
+xz	しゃん
+xj	しゅん
+xd	しぇん
+xl	しょん
+
+tyz	ちゃん
+tyj	ちゅん
+tyd	ちぇん
+tyl	ちょん
+
+cz	ちゃん
+cj	ちゅん
+cd	ちぇん
+cl	ちょん
+
+nyz	にゃん
+nyj	にゅん
+nyd	にぇん
+nyl	にょん
+
+hyz	ひゃん
+hyj	ひゅん
+hyd	ひぇん
+hyl	ひょん
+
+myz	みゃん
+myj	みゅん
+myd	みぇん
+myl	みょん
+
+ryz	りゃん
+ryj	りゅん
+ryd	りぇん
+ryl	りょん
+
+gyz	ぎゃん
+gyj	ぎゅん
+gyd	ぎぇん
+gyl	ぎょん
+
+zyz	じゃん
+zyj	じゅん
+zyd	じぇん
+zyl	じょん
+
+jz	じゃん
+jk	じん
+jj	じゅん
+jd	じぇん
+jl	じょん
+
+dyz	ぢゃん
+dyj	ぢゅん
+dyd	ぢぇん
+dyl	ぢょん
+
+byz	びゃん
+byj	びゅん
+byd	びぇん
+byl	びょん
+
+pyz	ぴゃん
+pyj	ぴゅん
+pyd	ぴぇん
+pyl	ぴょん
+
+# }}}
+
+# -- 拗音互換 {{{
+
+kgz	きゃん
+kgj	きゅん
+kgd	きぇん
+kgl	きょん
+
+xz	しゃん
+xj	しゅん
+xd	しぇん
+xl	しょん
+
+cz	ちゃん
+cj	ちゅん
+cd	ちぇん
+cl	ちょん
+
+ngz	にゃん
+ngj	にゅん
+ngd	にぇん
+ngl	にょん
+
+hgz	ひゃん
+hgj	ひゅん
+hgd	ひぇん
+hgl	ひょん
+
+mgz	みゃん
+mgj	みゅん
+mgd	みぇん
+mgl	みょん
+
+dgz	ぢゃん
+dgj	ぢゅん
+dgd	ぢぇん
+dgl	ぢょん
+
+pgz	ぴゃん
+pgj	ぴゅん
+pgd	ぴぇん
+pgl	ぴょん
+
+# }}}
+
+# -- 外来音 {{{
+
+fz	ふぁん
+fk	ふぃん
+fj	ふん
+fd	ふぇん
+fl	ふぉん
+
+vz	ゔぁん
+vk	ゔぃん
+vj	ゔん
+vd	ゔぇん
+vl	ゔぉん
+
+# }}}
+
+# }}}
+
+# 撥音拡張互換 {{{
+
+# -- 清音 {{{
+
+kn	かん
+sn	さん
+tn	たん
+# nn	なん
+hn	はん
+# mn	まん
+yn	やん
+rn	らん
+wn	わん
+
+# }}}
+
+# -- 濁音・半濁音 {{{
+
+gn	がん
+zn	ざん
+dn	だん
+bn	ばん
+pn	ぱん
+
+# }}}
+
+# -- 拗音 {{{
+
+kyn	きゃん
+syn	しゃん
+xn	しゃん
+tyn	ちゃん
+cn	ちゃん
+nyn	にゃん
+hyn	ひゃん
+myn	みゃん
+ryn	りゃん
+gyn	ぎゃん
+zyn	じゃん
+jn	じゃん
+dyn	ぢゃん
+byn	びゃん
+pyn	ぴゃん
+
+# }}}
+
+# -- 拗音互換 {{{
+
+kgn	きゃん
+ngn	にゃん
+hgn	ひゃん
+mgn	みゃん
+dgn	ぢゃん
+pgn	ぴゃん
+
+# }}}
+
+# -- 外来音 {{{
+
+fn	ふぁん
+vn	ゔぁん
+
+# }}}
+
+# }}}
+
+# 二重母音拡張 {{{
+
+# -- 清音 {{{
+
+kq	かい
+kh	くう
+kw	けい
+kp	こう
+
+sq	さい
+sh	すう
+sw	せい
+sp	そう
+
+tq	たい
+th	つう
+tw	てい
+tp	とう
+
+nq	ない
+nh	ぬう
+nw	ねい
+np	のう
+
+hq	はい
+hh	ふう
+hw	へい
+hp	ほう
+
+mq	まい
+mh	むう
+mw	めい
+mp	もう
+
+yq	やい
+yh	ゆう
+yw	いぇい
+yp	よう
+
+rq	らい
+rh	るう
+rw	れい
+rp	ろう
+
+wq	わい
+wh	うー
+ww	うぇい
+wp	うぉー
+
+# }}}
+
+# -- 濁音・半濁音 {{{
+
+gq	がい
+gh	ぐう
+gw	げい
+gp	ごう
+
+zq	ざい
+zh	ずう
+zw	ぜい
+zp	ぞう
+
+dq	だい
+dh	づう
+dw	でい
+dp	どう
+
+bq	ばい
+bh	ぶう
+bw	べい
+bp	ぼう
+
+pq	ぱい
+ph	ぷう
+pw	ぺい
+pp	ぽう
+
+# }}}
+
+# -- 拗音 {{{
+
+kyq	きゃい
+kyh	きゅう
+kyw	きぇい
+kyp	きょう
+
+syq	しゃい
+syh	しゅう
+syw	しぇい
+syp	しょう
+
+xq	しゃい
+xh	しゅう
+xw	しぇい
+xp	しょう
+
+tyq	ちゃい
+tyh	ちゅう
+tyw	ちぇい
+typ	ちょう
+
+cq	ちゃい
+ch	ちゅう
+cw	ちぇい
+cp	ちょう
+
+nyq	にゃい
+nyh	にゅう
+nyw	にぇい
+nyp	にょう
+
+hyq	ひゃい
+hyh	ひゅう
+hyw	ひぇい
+hyp	ひょう
+
+myq	みゃい
+myh	みゅう
+myw	みぇい
+myp	みょう
+
+ryq	りゃい
+ryh	りゅう
+ryw	りぇい
+ryp	りょう
+
+gyq	ぎゃい
+gyh	ぎゅう
+gyw	ぎぇい
+gyp	ぎょう
+
+zyq	じゃい
+zyh	じゅう
+zyw	じぇい
+zyp	じょう
+
+jq	じゃい
+jh	じゅう
+jw	じぇい
+jp	じょう
+
+dyq	ぢゃい
+dyh	ぢゅう
+dyw	ぢぇい
+dyp	ぢょう
+
+byq	びゃい
+byh	びゅう
+byw	びぇい
+byp	びょう
+
+pyq	ぴゃい
+pyh	ぴゅう
+pyw	ぴぇい
+pyp	ぴょう
+
+# }}}
+
+# -- 拗音互換 {{{
+
+kgq	きゃい
+kgh	きゅう
+kgw	きぇい
+kgp	きょう
+
+ngq	にゃい
+ngh	にゅう
+ngw	にぇい
+ngp	にょう
+
+hgq	ひゃい
+hgh	ひゅう
+hgw	ひぇい
+hgp	ひょう
+
+mgq	みゃい
+mgh	みゅう
+mgw	みぇい
+mgp	みょう
+
+dgq	ぢゃい
+dgh	ぢゅう
+dgw	ぢぇい
+dgp	ぢょう
+
+pgq	ぴゃい
+pgh	ぴゅう
+pgw	ぴぇい
+pgp	ぴょう
+
+# }}}
+
+# -- 外来音 {{{
+
+fq	ふぁい
+fh	ふう
+fw	ふぇい
+fp	ふぉー
+
+vq	ゔぁい
+vh	ゔー
+vw	ゔぇい
+vp	ゔぉー
+
+# }}}
+
+# }}}
+
+# 外来音拡張 {{{
+
+tgi	てぃ
+tgu	とぅ
+dci	でぃ
+dcu	どぅ
+wso	うぉ
+
+tgk	てぃん
+tgj	とぅん
+dck	でぃん
+dcj	どぅん
+wsl	うぉん
+
+tgh	とぅー
+dch	どぅー
+wsp	うぉー
+
+# }}}
+
+# 同指打鍵互換 {{{
+
+kf	き
+nf	ぬ
+hf	ふ
+mf	む
+yf	ゆ
+df	で
+cf	ちぇ
+jf	じゅ
+pf	ぽん
+
+# }}}
+
+# ざ行互換 {{{
+
+zc	ざ
+zf	ぜ
+zv	ざい
+zx	ぜい
+
+# }}}
+
+# 特殊拡張 {{{
+
+kt	こと
+st	した
+tt	たち
+ht	ひと
+wt	わた
+mn	もの
+ms	ます
+ds	です
+km	かも
+tm	ため
+dm	でも
+kr	から
+sr	する
+tr	たら
+nr	なる
+yr	よる
+rr	られ
+zr	ざる
+mt	また
+tb	たび
+nb	ねば
+bt	びと
+gr	がら
+gt	ごと
+nt	にち
+dt	だち
+wr	われ
+
+# }}}
