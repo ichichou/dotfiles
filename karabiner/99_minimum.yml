@@ -409,7 +409,7 @@ rules:
       name: num_layer
       value: 1
 
-  # U -> 7
+  # U -> Keypad 7
   - type: basic
     from:
       key_code: u
@@ -417,13 +417,13 @@ rules:
         optional:
         - any
     to:
-    - key_code: "7"
+    - key_code: keypad_7
     conditions:
     - type: variable_if
       name: num_layer
       value: 1
 
-  # I -> 8
+  # I -> Keypad 8
   - type: basic
     from:
       key_code: i
@@ -431,13 +431,13 @@ rules:
         optional:
         - any
     to:
-    - key_code: "8"
+    - key_code: keypad_8
     conditions:
     - type: variable_if
       name: num_layer
       value: 1
 
-  # O -> 9
+  # O -> Keypad 9
   - type: basic
     from:
       key_code: o
@@ -445,7 +445,7 @@ rules:
         optional:
         - any
     to:
-    - key_code: "9"
+    - key_code: keypad_9
     conditions:
     - type: variable_if
       name: num_layer
@@ -483,7 +483,7 @@ rules:
       name: num_layer
       value: 1
 
-  # J -> 4
+  # J -> Keypad 4
   - type: basic
     from:
       key_code: j
@@ -491,13 +491,13 @@ rules:
         optional:
         - any
     to:
-    - key_code: "4"
+    - key_code: keypad_4
     conditions:
     - type: variable_if
       name: num_layer
       value: 1
 
-  # K -> 5
+  # K -> Keypad 5
   - type: basic
     from:
       key_code: k
@@ -505,13 +505,13 @@ rules:
         optional:
         - any
     to:
-    - key_code: "5"
+    - key_code: keypad_5
     conditions:
     - type: variable_if
       name: num_layer
       value: 1
 
-  # L -> 6
+  # L -> Keypad 6
   - type: basic
     from:
       key_code: l
@@ -519,21 +519,21 @@ rules:
         optional:
         - any
     to:
-    - key_code: "6"
+    - key_code: keypad_6
     conditions:
     - type: variable_if
       name: num_layer
       value: 1
 
-  # ; -> (no map)
+  # ; -> Keypad Comma
   - type: basic
     from:
       key_code: semicolon
       modifiers:
         optional:
         - any
-    # to:
-    # - key_code:
+    to:
+    - key_code: keypad_comma
     conditions:
     - type: variable_if
       name: num_layer
@@ -543,7 +543,7 @@ rules:
 
   # NM,./ {{{
 
-  # N -> 0
+  # N -> Keypad 0
   - type: basic
     from:
       key_code: "n"
@@ -551,13 +551,13 @@ rules:
         optional:
         - any
     to:
-    - key_code: "0"
+    - key_code: keypad_0
     conditions:
     - type: variable_if
       name: num_layer
       value: 1
 
-  # M -> 1
+  # M -> Keypad 1
   - type: basic
     from:
       key_code: m
@@ -565,13 +565,13 @@ rules:
         optional:
         - any
     to:
-    - key_code: "1"
+    - key_code: keypad_1
     conditions:
     - type: variable_if
       name: num_layer
       value: 1
 
-  # , -> 2
+  # , -> Keypad 2
   - type: basic
     from:
       key_code: comma
@@ -579,13 +579,13 @@ rules:
         optional:
         - any
     to:
-    - key_code: "2"
+    - key_code: keypad_2
     conditions:
     - type: variable_if
       name: num_layer
       value: 1
 
-  # . -> 3
+  # . -> Keypad 3
   - type: basic
     from:
       key_code: period
@@ -593,21 +593,21 @@ rules:
         optional:
         - any
     to:
-    - key_code: "3"
+    - key_code: keypad_3
     conditions:
     - type: variable_if
       name: num_layer
       value: 1
 
-  # / -> (no map)
+  # / -> Keypad Period
   - type: basic
     from:
       key_code: slash
       modifiers:
         optional:
         - any
-    # to:
-    # - key_code:
+    to:
+    - key_code: keypad_period
     conditions:
     - type: variable_if
       name: num_layer
