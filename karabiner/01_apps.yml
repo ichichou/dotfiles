@@ -78,24 +78,6 @@ rules:
       bundle_identifiers:
       - "company.thebrowser.Browser"
 
-  # # [Arc] Cmd-T -> Cmd-T, Eisuu
-  # - type: basic
-  #   from:
-  #     key_code: t
-  #     modifiers:
-  #       mandatory:
-  #       - command
-  #   to:
-  #   - key_code: t
-  #     modifiers:
-  #     - command
-  #   - key_code: japanese_eisuu
-  #     repeat: false
-  #   conditions:
-  #   - type: frontmost_application_if
-  #     bundle_identifiers:
-  #     - "company.thebrowser.Browser"
-
 # }}}
 
 # Bike {{{
@@ -600,6 +582,47 @@ rules:
     - type: frontmost_application_if
       bundle_identifiers:
       - "com.coteditor.CotEditor"
+
+# }}}
+
+# Dia {{{
+
+  # [Dia] LShift-LCmd-F -> Shift-Cmd-H
+  # スプレッドシートでの検索・置換
+  - type: basic
+    from:
+      key_code: f
+      modifiers:
+        mandatory:
+        - left_shift
+        - left_command
+    to:
+    - key_code: h
+      modifiers:
+      - shift
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "company.thebrowser.dia"
+
+  # [Dia] LCmd-W -> Repeat: False
+  - type: basic
+    from:
+      key_code: w
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: w
+      modifiers:
+      - command
+      repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "company.thebrowser.dia"
 
 # }}}
 
