@@ -1,9 +1,44 @@
 title: "99. Minimum Mappings"
 rules:
 
+# FG/HJ -> []/() {{{
+
+- description: "FG/HJ → 「」/（）"
+  manipulators:
+
+  # FG -> [], Left Arrow
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: f
+      - key_code: g
+    to:
+    - key_code: open_bracket
+    - key_code: close_bracket
+    - key_code: left_arrow
+      repeat: false
+
+  # HJ -> (), Left Arrow
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: h
+      - key_code: j
+    to:
+    - key_code: "9"
+      modifiers:
+      - left_shift
+    - key_code: "0"
+      modifiers:
+      - left_shift
+    - key_code: left_arrow
+      repeat: false
+
+# }}}
+
 # Combo -> Symbol {{{
 
-- description: "Combo -> Symbol"
+- description: "Combo → Symbol"
   manipulators:
 
   # RG -> ・
@@ -71,41 +106,6 @@ rules:
     - key_code: slash
       modifiers:
       - left_shift
-      repeat: false
-
-# }}}
-
-# FG/HJ -> []/() {{{
-
-- description: "FG/HJ → 「」/（）"
-  manipulators:
-
-  # FG -> [], Left Arrow
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: f
-      - key_code: g
-    to:
-    - key_code: open_bracket
-    - key_code: close_bracket
-    - key_code: left_arrow
-      repeat: false
-
-  # HJ -> (), Left Arrow
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: h
-      - key_code: j
-    to:
-    - key_code: "9"
-      modifiers:
-      - left_shift
-    - key_code: "0"
-      modifiers:
-      - left_shift
-    - key_code: left_arrow
       repeat: false
 
 # }}}
@@ -350,268 +350,198 @@ rules:
 
 # Num Layer {{{
 
-- description: "Num Layer"
+- description: "LCtrl + Right Hand Side → Num Layer"
   manipulators:
-
-  # Layer Key {{{
-
-  # Caps Lock -> Layer Key
-  - type: basic
-    from:
-      key_code: caps_lock
-      modifiers:
-        optional:
-        - any
-    to:
-    - set_variable:
-        name: num_layer
-        value: 1
-    to_after_key_up:
-    - set_variable:
-        name: num_layer
-        value: 0
-    to_if_alone:
-    - key_code: escape
-
-  # Esc -> Layer Key
-  - type: basic
-    from:
-      key_code: escape
-      modifiers:
-        optional:
-        - any
-    to:
-    - set_variable:
-        name: num_layer
-        value: 1
-    to_after_key_up:
-    - set_variable:
-        name: num_layer
-        value: 0
-    to_if_alone:
-    - key_code: escape
-
-  # }}}
 
   # YUIOP {{{
 
-  # Y -> (no map)
-  - type: basic
-    from:
-      key_code: "y"
-      modifiers:
-        optional:
-        - any
-    # to:
-    # - key_code:
-    conditions:
-    - type: variable_if
-      name: num_layer
-      value: 1
+  # # LCtrl-Y -> (no map)
+  # - type: basic
+  #   from:
+  #     key_code: "y"
+  #     modifiers:
+  #       mandatory:
+  #       - left_control
+  #       optional:
+  #       - any
+  #   to:
+  #   - key_code:
 
-  # U -> Keypad 7
+  # LCtrl-U -> Keypad 7
   - type: basic
     from:
       key_code: u
       modifiers:
+        mandatory:
+        - left_control
         optional:
         - any
     to:
     - key_code: keypad_7
-    conditions:
-    - type: variable_if
-      name: num_layer
-      value: 1
 
-  # I -> Keypad 8
+  # LCtrl-I -> Keypad 8
   - type: basic
     from:
       key_code: i
       modifiers:
+        mandatory:
+        - left_control
         optional:
         - any
     to:
     - key_code: keypad_8
-    conditions:
-    - type: variable_if
-      name: num_layer
-      value: 1
 
-  # O -> Keypad 9
+  # LCtrl-O -> Keypad 9
   - type: basic
     from:
       key_code: o
       modifiers:
+        mandatory:
+        - left_control
         optional:
         - any
     to:
     - key_code: keypad_9
-    conditions:
-    - type: variable_if
-      name: num_layer
-      value: 1
 
-  # P -> (no map)
+  # LCtrl-P -> Keypad Period
   - type: basic
     from:
       key_code: p
       modifiers:
+        mandatory:
+        - left_control
         optional:
         - any
-    # to:
-    # - key_code:
-    conditions:
-    - type: variable_if
-      name: num_layer
-      value: 1
+    to:
+    - key_code: keypad_period
 
   # }}}
 
   # HJKL; {{{
 
-  # H -> Delete
+  # LCtrl-H -> Delete
   - type: basic
     from:
       key_code: h
       modifiers:
+        mandatory:
+        - left_control
         optional:
         - any
     to:
     - key_code: delete_or_backspace
-    conditions:
-    - type: variable_if
-      name: num_layer
-      value: 1
 
-  # J -> Keypad 4
+  # LCtrl-J -> Keypad 4
   - type: basic
     from:
       key_code: j
       modifiers:
+        mandatory:
+        - left_control
         optional:
         - any
     to:
     - key_code: keypad_4
-    conditions:
-    - type: variable_if
-      name: num_layer
-      value: 1
 
-  # K -> Keypad 5
+  # LCtrl-K -> Keypad 5
   - type: basic
     from:
       key_code: k
       modifiers:
+        mandatory:
+        - left_control
         optional:
         - any
     to:
     - key_code: keypad_5
-    conditions:
-    - type: variable_if
-      name: num_layer
-      value: 1
 
-  # L -> Keypad 6
+  # LCtrl-L -> Keypad 6
   - type: basic
     from:
       key_code: l
       modifiers:
+        mandatory:
+        - left_control
         optional:
         - any
     to:
     - key_code: keypad_6
-    conditions:
-    - type: variable_if
-      name: num_layer
-      value: 1
 
-  # ; -> Keypad Comma
+  # LCtrl-; -> Keypad Comma
   - type: basic
     from:
       key_code: semicolon
       modifiers:
+        mandatory:
+        - left_control
         optional:
         - any
     to:
     - key_code: keypad_comma
-    conditions:
-    - type: variable_if
-      name: num_layer
-      value: 1
 
   # }}}
 
   # NM,./ {{{
 
-  # N -> Keypad 0
+  # LCtrl-N -> Keypad 0
   - type: basic
     from:
       key_code: "n"
       modifiers:
+        mandatory:
+        - left_control
         optional:
         - any
     to:
     - key_code: keypad_0
-    conditions:
-    - type: variable_if
-      name: num_layer
-      value: 1
 
-  # M -> Keypad 1
+  # LCtrl-M -> Keypad 1
   - type: basic
     from:
       key_code: m
       modifiers:
+        mandatory:
+        - left_control
         optional:
         - any
     to:
     - key_code: keypad_1
-    conditions:
-    - type: variable_if
-      name: num_layer
-      value: 1
 
-  # , -> Keypad 2
+  # LCtrl-, -> Keypad 2
   - type: basic
     from:
       key_code: comma
       modifiers:
+        mandatory:
+        - left_control
         optional:
         - any
     to:
     - key_code: keypad_2
-    conditions:
-    - type: variable_if
-      name: num_layer
-      value: 1
 
-  # . -> Keypad 3
+  # LCtrl-. -> Keypad 3
   - type: basic
     from:
       key_code: period
       modifiers:
+        mandatory:
+        - left_control
         optional:
         - any
     to:
     - key_code: keypad_3
-    conditions:
-    - type: variable_if
-      name: num_layer
-      value: 1
 
-  # / -> Keypad Period
-  - type: basic
-    from:
-      key_code: slash
-      modifiers:
-        optional:
-        - any
-    to:
-    - key_code: keypad_period
-    conditions:
-    - type: variable_if
-      name: num_layer
-      value: 1
+  # # LCtrl-/ -> (no map)
+  # - type: basic
+  #   from:
+  #     key_code: slash
+  #     modifiers:
+  #       mandatory:
+  #       - left_control
+  #       optional:
+  #       - any
+  #   to:
+  #   - key_code:
 
   # }}}
 
