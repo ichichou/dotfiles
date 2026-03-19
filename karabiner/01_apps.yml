@@ -562,6 +562,22 @@ rules:
       bundle_identifiers:
       - "com.anthropic.claudefordesktop"
 
+  # [Claude] LCmd-S -> LCmd-.
+  - type: basic
+    from:
+      key_code: s
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: period
+      modifiers:
+      - left_command
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.anthropic.claudefordesktop"
+
 # }}}
 
 # CotEditor {{{
