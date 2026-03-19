@@ -18,17 +18,17 @@ rules:
     - key_code: return_or_enter
       repeat: false
 
-  # # LCmd-RCmd -> Esc
-  # - type: basic
-  #   from:
-  #     key_code: right_command
-  #     modifiers:
-  #       mandatory:
-  #       - left_command
-  #   to:
-  #   - key_code: escape
-  #     repeat: false
-  #
+  # LCmd-RCmd -> Esc
+  - type: basic
+    from:
+      key_code: right_command
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: escape
+      repeat: false
+
   # # RCmd-LCmd -> Esc
   # - type: basic
   #   from:
