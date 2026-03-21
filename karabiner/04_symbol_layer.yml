@@ -24,7 +24,7 @@ rules:
 
 # Symbol Layer Key {{{
 
-  # Enter -> Enter / Symbol Layer Key
+  # Return -> Return / Symbol Layer Key
   - type: basic
     from:
       key_code: return_or_enter
