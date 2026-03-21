@@ -5,7 +5,7 @@ title: "02. Simultaneous"
 aliases:
 
 - parameters: &short_threshold_ms
-    basic.simultaneous_threshold_milliseconds: 20
+    basic.simultaneous_threshold_milliseconds: 40
 
 - conditions: &en
   - type: input_source_if
