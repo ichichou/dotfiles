@@ -10,11 +10,11 @@ theme = Rose Pine Moon
 
 # Font -------------------------------------------
 
-font-family = "Berkeley Mono"
-font-family = "Hiragino Kaku Gothic ProN"
-# -- Default:     "JetBrains Mono"
-# -- Ligature:    "Berkeley Mono", "JetBrains Mono", "Fira Code"
-# -- No Ligature: "Hack", "SF Mono"
+font-family = Berkeley Mono
+font-family = Hiragino Kaku Gothic ProN
+# -- Default:          JetBrains Mono
+# -- Ligature Font:    Berkeley Mono, JetBrains Mono, Fira Code
+# -- No Ligature Font: Hack, SF Mono
 
 # font-size = 13
 # -- Default: 13
@@ -28,8 +28,10 @@ font-feature = -dlig
 window-width = 120
 window-height = 40
 
+# working-directory = home
+# window-inherit-working-directory = true
+
 copy-on-select = clipboard
-window-inherit-working-directory = true
 
 cursor-style = block
 cursor-style-blink = false
