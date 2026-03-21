@@ -6,10 +6,10 @@ aliases:
 
 - from/modifiers: &from_mods
     mandatory:
-    - shift
-    - control
-    - option
-    - command
+    - right_shift
+    - right_control
+    - right_option
+    - right_command
 
 - to/modifiers: &to_mods
   - right_shift
@@ -29,29 +29,8 @@ rules:
   - type: basic
     from:
       key_code: tab
-      modifiers:
-        optional: any
     to_if_alone:
     - key_code: tab
-    to:
-    - key_code: right_shift
-      modifiers:
-      - right_control
-      - right_option
-      - right_command
-      lazy: true
-
-  # F13 -> Delete/Hyper
-  # Simple Modifications で Delete を F13 に変更する（QMK で Hyper キー実装している場合以外）
-  # 物理的な Delete キー（F13 に変更済み）は Delete/Hyper になってリピート不可になるが、
-  # Cmd-N -> Delete などのマッピングはリピート可能なままになる
-  - type: basic
-    from:
-      key_code: f13
-      modifiers:
-        optional: any
-    to_if_alone:
-    - key_code: delete_or_backspace
     to:
     - key_code: right_shift
       modifiers:
@@ -71,17 +50,6 @@ rules:
     to:
     - key_code: e
       modifiers: *to_mods
-
-  # # Hyper-Y -> Arc
-  # # Raycast ではひとつのアプリに複数のホットキーを設定できないため
-  # # Raycast では Hyper-U -> Arc と設定している
-  # - type: basic
-  #   from:
-  #     key_code: "y"
-  #     modifiers: *from_mods
-  #   to:
-  #   - key_code: u
-  #     modifiers: *to_mods
 
   # Hyper-L -> Eisuu, Ghostty
   - type: basic
