@@ -366,7 +366,7 @@ rules:
         mandatory:
         - left_command
     to:
-    - key_code: shift
+    - key_code: left_shift
       modifiers:
       - command
     to_if_alone:
