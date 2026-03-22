@@ -1,4 +1,4 @@
-title: "10-1. 新下駄配列（QAZ）"
+title: "10-1. 新下駄配列（改）"
 
 # == ALIASES {{{
 
@@ -28,15 +28,6 @@ aliases:
 - to/modifiers: &to_shift
   - shift
 
-# Parameters -------------------------------------
-
-- parameters: &threshold_ms
-    basic.simultaneous_threshold_milliseconds: 60
-
-- parameters: &qaz
-    basic.to_delayed_action_delay_milliseconds: 150
-    basic.to_if_held_down_threshold_milliseconds: 150
-
 # Conditions -------------------------------------
 
 - conditions: &base
@@ -46,7 +37,7 @@ aliases:
   - type: input_source_unless
     input_sources:
     - input_source_id: "^net\\.mtgto\\.inputmethod\\.macSKK\\.eisu$"
-    - input_source_id: "^com\\.google\\.inputmethod\\.Japanese\\.base$"
+    - input_source_id: "^com\\.google\\.inputmethod\\.Japanese\\.FullWidthRoman$"
   - type: variable_unless
     name: symbol
     value: true
@@ -62,12 +53,17 @@ aliases:
     bundle_identifiers:
     - "^com\\.apple\\.loginwindow$"
 
+# Parameters -------------------------------------
+
+- parameters: &threshold_ms
+    basic.simultaneous_threshold_milliseconds: 60
+
 # }}}
 
 # == RULES {{{
 
 rules:
-- description: "10-1. 新下駄配列（QAZ）"
+- description: "10-1. 新下駄配列（改）"
   manipulators:
 
 # -- 中指シフト・右 {{{
@@ -2060,17 +2056,15 @@ rules:
 
 # -- ベース {{{
 
-  # # QAZ で定義
-  #
-  # # q -> ー
-  # - type: basic
-  #   from:
-  #     key_code: q
-  #     modifiers: *optional_shift
-  #   to:
-  #   - key_code: quote
-  #     repeat: false
-  #   conditions: *base
+  # q -> ー
+  - type: basic
+    from:
+      key_code: q
+      modifiers: *optional_shift
+    to:
+    - key_code: quote
+      repeat: false
+    conditions: *base
 
   # w -> に
   - type: basic
@@ -2094,9 +2088,8 @@ rules:
       repeat: false
     conditions: *base
 
-  # # Symbol Mode で定義
-  #
   # # r -> 、
+  # # Symbol Mode で定義
   # - type: basic
   #   from:
   #     key_code: r
@@ -2172,18 +2165,16 @@ rules:
       repeat: false
     conditions: *base
 
-  # # QAZ で定義
-  #
-  # # a -> の
-  # - type: basic
-  #   from:
-  #     key_code: a
-  #     modifiers: *optional_shift
-  #   to:
-  #   - key_code: "n"
-  #   - key_code: o
-  #     repeat: false
-  #   conditions: *base
+  # a -> の
+  - type: basic
+    from:
+      key_code: a
+      modifiers: *optional_shift
+    to:
+    - key_code: "n"
+    - key_code: o
+      repeat: false
+    conditions: *base
 
   # s -> と
   - type: basic
@@ -2294,18 +2285,16 @@ rules:
       repeat: false
     conditions: *base
 
-  # # QAZ で定義
-  #
-  # # z -> す
-  # - type: basic
-  #   from:
-  #     key_code: z
-  #     modifiers: *optional_shift
-  #   to:
-  #   - key_code: s
-  #   - key_code: u
-  #     repeat: false
-  #   conditions: *base
+  # z -> す
+  - type: basic
+    from:
+      key_code: z
+      modifiers: *optional_shift
+    to:
+    - key_code: s
+    - key_code: u
+      repeat: false
+    conditions: *base
 
   # x -> ま
   - type: basic
@@ -2739,66 +2728,6 @@ rules:
       modifiers: *to_shift
       repeat: false
     conditions: *symbol
-
-# }}}
-
-# -- QAZ {{{
-
-  # q -> ー / Hyper Key
-  - type: basic
-    from:
-      key_code: q
-      modifiers: *optional_shift
-    to_if_alone:
-    - key_code: quote
-      halt: true
-    to_if_held_down:
-    - key_code: right_shift
-      modifiers:
-      - right_control
-      - right_option
-      - right_command
-    to_delayed_action:
-      to_if_canceled:
-      - key_code: quote
-    parameters: *qaz
-    conditions: *base
-
-  # a -> の / LControl
-  - type: basic
-    from:
-      key_code: a
-      modifiers: *optional_shift
-    to_if_alone:
-    - key_code: "n"
-    - key_code: o
-      halt: true
-    to_if_held_down:
-    - key_code: left_control
-    to_delayed_action:
-      to_if_canceled:
-      - key_code: "n"
-      - key_code: o
-    parameters: *qaz
-    conditions: *base
-
-  # z -> す / LShift
-  - type: basic
-    from:
-      key_code: z
-      modifiers: *optional_shift
-    to_if_alone:
-    - key_code: s
-    - key_code: u
-      halt: true
-    to_if_held_down:
-    - key_code: left_shift
-    to_delayed_action:
-      to_if_canceled:
-      - key_code: s
-      - key_code: u
-    parameters: *qaz
-    conditions: *base
 
 # }}}
 
