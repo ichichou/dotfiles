@@ -1,4 +1,36 @@
 title: "09. Others"
+
+aliases:
+
+# ALIASES {{{
+
+- conditions: &en
+  - type: input_source_if
+    input_sources:
+    # 英数
+    - input_source_id: "^net\\.mtgto\\.inputmethod\\.macSKK\\.ascii$"
+    - input_source_id: "^com\\.google\\.inputmethod\\.Japanese\\.Roman$"
+    # 全角英数
+    - input_source_id: "^net\\.mtgto\\.inputmethod\\.macSKK\\.eisu$"
+    - input_source_id: "^com\\.google\\.inputmethod\\.Japanese\\.FullWidthRoman$"
+
+- conditions: &ja
+  - type: input_source_if
+    input_sources:
+    - language: "^ja$"
+  - type: input_source_unless
+    input_sources:
+    # 全角英数
+    - input_source_id: "^net\\.mtgto\\.inputmethod\\.macSKK\\.eisu$"
+    - input_source_id: "^com\\.google\\.inputmethod\\.Japanese\\.FullWidthRoman$"
+
+- parameters: &mod_tap_threshold_ms
+    basic.to_if_alone_threshocld_millisecocnds: 150
+    basic.to_if_held_down_threshold_milliseconds: 150
+    basic.to_delayed_action_delay_milliseconds: 150
+
+# }}}
+
 rules:
 
 # 9-1. Alone Kana/Eisuu {{{
@@ -129,13 +161,8 @@ rules:
     to_delayed_action:
       to_if_canceled:
       - key_code: q
-    parameters:
-      basic.to_delayed_action_delay_milliseconds: 150
-      basic.to_if_held_down_threshold_milliseconds: 150
-    conditions:
-    - type: input_source_if
-      input_sources:
-      - language: "^en$"
+    conditions: *en
+    parameters: *mod_tap_threshold_ms
 
   # A -> A/LCtrl
   - type: basic
@@ -152,13 +179,8 @@ rules:
     to_delayed_action:
       to_if_canceled:
       - key_code: a
-    parameters:
-      basic.to_delayed_action_delay_milliseconds: 150
-      basic.to_if_held_down_threshold_milliseconds: 150
-    conditions:
-    - type: input_source_if
-      input_sources:
-      - language: "^en$"
+    conditions: *en
+    parameters: *mod_tap_threshold_ms
 
   # Z -> Z/LShift
   - type: basic
@@ -175,13 +197,8 @@ rules:
     to_delayed_action:
       to_if_canceled:
       - key_code: z
-    parameters:
-      basic.to_delayed_action_delay_milliseconds: 150
-      basic.to_if_held_down_threshold_milliseconds: 150
-    conditions:
-    - type: input_source_if
-      input_sources:
-      - language: "^en$"
+    conditions: *en
+    parameters: *mod_tap_threshold_ms
 
 # }}}
 
@@ -231,5 +248,7 @@ rules:
     - type: variable_unless
       name: multitouch_extension_finger_count_total
       value: 0
+
+# }}}
 
 # }}}
