@@ -264,6 +264,9 @@ nmap <SID>ws <Nop>
 nmap f z
 xmap f z
 
+nnoremap F f
+xnoremap F f
+
 noremap zf zz
 noremap zF zf
 noremap zD zd
