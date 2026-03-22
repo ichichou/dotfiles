@@ -38,7 +38,6 @@ aliases:
     input_sources:
     - input_source_id: "^net\\.mtgto\\.inputmethod\\.macSKK\\.eisu$"
     - input_source_id: "^com\\.google\\.inputmethod\\.Japanese\\.FullWidthRoman$"
-    - input_source_id: "^com\\.apple\\.inputmethod\\.Kotoeri\\.RomajiTyping\\.Japanese\\.FullWidthRoman$"
   - type: variable_unless
     name: symbol
     value: true
