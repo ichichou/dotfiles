@@ -25,8 +25,6 @@ rules:
 
 # 両手 {{{
 
-  # 常時 -----------------------------------------
-
   # VM -> Return
   - type: basic
     from:
@@ -47,29 +45,7 @@ rules:
     - key_code: return_or_enter
       repeat: false
 
-  # # RU (未定義)
-  # - type: basic
-  #   from:
-  #     simultaneous:
-  #     - key_code: r
-  #     - key_code: u
-  #   to:
-  #   - key_code:
-  #     repeat: false
-
-  # 英語入力 -------------------------------------
-
-  # # FJ (未定義)
-  # - type: basic
-  #   from:
-  #     simultaneous:
-  #     - key_code: f
-  #     - key_code: j
-  #   conditions: *en
-
-  # 日本語入力 -----------------------------------
-
-  # FJ -> Shift-Ctrl-k
+  # FJ -> Shift-Ctrl-k (日本語入力時のみ)
   # macSKK: 入力中のかなカナ切り替え
   - type: basic
     from:
@@ -84,13 +60,23 @@ rules:
       repeat: false
     conditions: *ja
 
+  # # RU -> (no map)
+  # - type: basic
+  #   from:
+  #     simultaneous:
+  #     - key_code: r
+  #     - key_code: u
+  #   to:
+  #   - key_code:
+  #     repeat: false
+
 # }}}
 
 # 片手・横 {{{
 
-  # 常時 -----------------------------------------
+  # Regular Threshold Milliseconds {{{
 
-  # FG -> [], Left Arrow
+  # FG -> [#]
   - type: basic
     from:
       simultaneous:
@@ -102,7 +88,7 @@ rules:
     - key_code: left_arrow
       repeat: false
 
-  # HJ -> (), Left Arrow
+  # HJ -> (#)
   - type: basic
     from:
       simultaneous:
@@ -118,7 +104,71 @@ rules:
     - key_code: left_arrow
       repeat: false
 
-  # NM -> {}, Left Arrow
+  # RT -> []_
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: r
+      - key_code: t
+    to:
+    - key_code: japanese_eisuu
+      conditions: *ja
+    - key_code: open_bracket
+    - key_code: close_bracket
+    - key_code: spacebar
+    - key_code: japanese_kana
+      conditions: *ja
+      repeat: false
+
+  # YU -> {#} (英語)
+  # YU -> 【#】 (日本語)
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: "y"
+      - key_code: u
+    to:
+    - key_code: backslash
+      conditions: *ja
+    - key_code: open_bracket
+      modifiers:
+      - shift
+    - key_code: backslash
+      conditions: *ja
+    - key_code: close_bracket
+      modifiers:
+      - shift
+    - key_code: left_arrow
+      repeat: false
+
+  # VB -> "#" (英語)
+  # VB -> ［#］ (日本語)
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: v
+      - key_code: b
+    to:
+    - key_code: quote
+      modifiers:
+      - shift
+      conditions: *en
+    - key_code: quote
+      modifiers:
+      - shift
+      conditions: *en
+    - key_code: backslash
+      conditions: *ja
+    - key_code: open_bracket
+      conditions: *ja
+    - key_code: backslash
+      conditions: *ja
+    - key_code: close_bracket
+      conditions: *ja
+    - key_code: left_arrow
+      repeat: false
+
+  # NM -> {#}
   - type: basic
     from:
       simultaneous:
@@ -134,101 +184,9 @@ rules:
     - key_code: left_arrow
       repeat: false
 
-  # 英語入力 -------------------------------------
+  # }}}
 
-  # RT -> [], Space
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: r
-      - key_code: t
-    to:
-    - key_code: open_bracket
-    - key_code: close_bracket
-    - key_code: spacebar
-      repeat: false
-    conditions: *en
-
-  # # VB -> (未定義)
-  # - type: basic
-  #   from:
-  #     simultaneous:
-  #     - key_code: v
-  #     - key_code: b
-  #   to:
-  #   - key_code:
-  #     repeat: false
-  #   conditions: *en
-
-  # YU -> {}, Left Arrow
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: "y"
-      - key_code: u
-    to:
-    - key_code: open_bracket
-      modifiers:
-      - shift
-    - key_code: close_bracket
-      modifiers:
-      - shift
-    - key_code: left_arrow
-      repeat: false
-    conditions: *en
-
-  # 日本語入力 -----------------------------------
-
-  # RT -> Eisuu, [], Space, Kana
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: r
-      - key_code: t
-    to:
-    - key_code: japanese_eisuu
-    - key_code: open_bracket
-    - key_code: close_bracket
-    - key_code: spacebar
-    - key_code: japanese_kana
-      repeat: false
-    conditions: *ja
-
-  # VB -> \[\], Left Arrow
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: v
-      - key_code: b
-    to:
-    - key_code: backslash
-    - key_code: open_bracket
-    - key_code: backslash
-    - key_code: close_bracket
-    - key_code: left_arrow
-      repeat: false
-    conditions: *ja
-
-  # YU -> \{\}, Left Arrow
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: "y"
-      - key_code: u
-    to:
-    - key_code: backslash
-    - key_code: open_bracket
-      modifiers:
-      - shift
-    - key_code: backslash
-    - key_code: close_bracket
-      modifiers:
-      - shift
-    - key_code: left_arrow
-      repeat: false
-    conditions: *ja
-
-  # Short Threshold Milliseconds -----------------
+  # Short Threshold Milliseconds {{{
 
   # DF -> Eisuu
   - type: basic
@@ -252,11 +210,39 @@ rules:
       repeat: false
     parameters: *short_threshold_ms
 
+  # }}}
+
 # }}}
 
 # 片手・斜め {{{
 
-  # 常時 -----------------------------------------
+  # Regular Threshold Milliseconds {{{
+
+  # RG -> ・ (日本語入力時のみ)
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: r
+      - key_code: g
+    to:
+    - key_code: quote
+      modifiers:
+      - shift
+      repeat: false
+    conditions: *ja
+
+  # RF -> ・ (日本語入力時のみ・代替)
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: r
+      - key_code: f
+    to:
+    - key_code: quote
+      modifiers:
+      - shift
+      repeat: false
+    conditions: *ja
 
   # UH -> /
   - type: basic
@@ -304,63 +290,9 @@ rules:
       - shift
       repeat: false
 
-  # 英語入力 -------------------------------------
+  # }}}
 
-  # # RG -> (未定義)
-  # - type: basic
-  #   from:
-  #     simultaneous:
-  #     - key_code: r
-  #     - key_code: g
-  #   to:
-  #   - key_code:
-  #     modifiers:
-  #     - shift
-  #     repeat: false
-  #   conditions: *en
-
-  # # RF -> (未定義) (代替)
-  # - type: basic
-  #   from:
-  #     simultaneous:
-  #     - key_code: r
-  #     - key_code: f
-  #   to:
-  #   - key_code:
-  #     modifiers:
-  #     - shift
-  #     repeat: false
-  #   conditions: *en
-
-  # 日本語入力 -----------------------------------
-
-  # RG -> "
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: r
-      - key_code: g
-    to:
-    - key_code: quote
-      modifiers:
-      - shift
-      repeat: false
-    conditions: *ja
-
-  # RF -> " (代替)
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: r
-      - key_code: f
-    to:
-    - key_code: quote
-      modifiers:
-      - shift
-      repeat: false
-    conditions: *ja
-
-  # Short Threshold Milliseconds -----------------
+  # Short Threshold Milliseconds {{{
 
   # EF -> Eisuu
   - type: basic
@@ -383,6 +315,8 @@ rules:
     - key_code: japanese_kana
       repeat: false
     parameters: *short_threshold_ms
+
+  # }}}
 
 # }}}
 

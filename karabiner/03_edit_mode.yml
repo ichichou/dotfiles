@@ -37,9 +37,7 @@ rules:
 
 # Edit Mode Keys ---------------------------------
 
-  # When IME is Off (Qwerty Layout) {{{
-
-  # Edit Mode 1 ----------------------------------
+  # Edit Mode 1 {{{
 
   # Left: S + D (S -> D)
   - type: basic
@@ -61,9 +59,20 @@ rules:
         name: edit_1
         value: true
     to_if_alone:
+    # 英語入力時
     - key_code: s
+      conditions: *ime_off
     - key_code: d
-    conditions: *ime_off
+      conditions: *ime_off
+    # 日本語入力時
+    - key_code: t
+      conditions: *ime_on
+    - key_code: o
+      conditions: *ime_on
+    - key_code: k
+      conditions: *ime_on
+    - key_code: a
+      conditions: *ime_on
     parameters: *threshold_ms
 
   # Left: S + D (D -> S)
@@ -85,9 +94,20 @@ rules:
         name: edit_1
         value: true
     to_if_alone:
+    # 英語入力時
     - key_code: d
+      conditions: *ime_off
     - key_code: s
-    conditions: *ime_off
+      conditions: *ime_off
+    # 日本語入力時
+    - key_code: k
+      conditions: *ime_on
+    - key_code: a
+      conditions: *ime_on
+    - key_code: t
+      conditions: *ime_on
+    - key_code: o
+      conditions: *ime_on
     parameters: *threshold_ms
 
   # Right: K + L (K -> L)
@@ -110,9 +130,18 @@ rules:
         name: edit_1
         value: true
     to_if_alone:
+    # 英語入力時
     - key_code: k
+      conditions: *ime_off
     - key_code: l
-    conditions: *ime_off
+      conditions: *ime_off
+    # 日本語入力時
+    - key_code: i
+      conditions: *ime_on
+    - key_code: s
+      conditions: *ime_on
+    - key_code: i
+      conditions: *ime_on
     parameters: *threshold_ms
 
   # Right: K + L (L -> K)
@@ -134,226 +163,24 @@ rules:
         name: edit_1
         value: true
     to_if_alone:
+    # 英語入力時
     - key_code: l
+      conditions: *ime_off
     - key_code: k
-    conditions: *ime_off
-    parameters: *threshold_ms
-
-  # Edit Mode 2 ----------------------------------
-
-  # Left: W + E (W -> E)
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: w
-      - key_code: e
-      modifiers:
-        optional:
-        - any
-      simultaneous_options:
-        key_down_order: strict
-        to_after_key_up:
-        - set_variable:
-            name: edit_2
-            value: false
-    to:
-    - set_variable:
-        name: edit_2
-        value: true
-    to_if_alone:
-    - key_code: w
-    - key_code: e
-    # - key_code: escape
-    conditions: *ime_off
-    parameters: *threshold_ms
-
-  # Left: W + E (E -> W)
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: w
-      - key_code: e
-      modifiers:
-        optional:
-        - any
-      simultaneous_options:
-        to_after_key_up:
-        - set_variable:
-            name: edit_2
-            value: false
-    to:
-    - set_variable:
-        name: edit_2
-        value: true
-    to_if_alone:
-    - key_code: e
-    - key_code: w
-    # - key_code: escape
-    conditions: *ime_off
-    parameters: *threshold_ms
-
-  # Right: I + O (I -> O)
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: i
-      - key_code: o
-      modifiers:
-        optional:
-        - any
-      simultaneous_options:
-        key_down_order: strict
-        to_after_key_up:
-        - set_variable:
-            name: edit_2
-            value: false
-    to:
-    - set_variable:
-        name: edit_2
-        value: true
-    to_if_alone:
+      conditions: *ime_off
+    # 日本語入力時
+    - key_code: s
+      conditions: *ime_on
     - key_code: i
-    - key_code: o
-    # - key_code: tab
-    conditions: *ime_off
+      conditions: *ime_on
+    - key_code: i
+      conditions: *ime_on
     parameters: *threshold_ms
 
-  # Right: I + O (O -> I)
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: i
-      - key_code: o
-      modifiers:
-        optional:
-        - any
-      simultaneous_options:
-        to_after_key_up:
-        - set_variable:
-            name: edit_2
-            value: false
-    to:
-    - set_variable:
-        name: edit_2
-        value: true
-    to_if_alone:
-    - key_code: o
-    - key_code: i
-    # - key_code: tab
-    conditions: *ime_off
-    parameters: *threshold_ms
 
   # }}}
 
-  # When IME is On (Shingeta Layout) {{{
-
-  # Edit Mode 1 ----------------------------------
-
-  # Left: S + D (S -> D)
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: s
-      - key_code: d
-      modifiers:
-        optional:
-        - any
-      simultaneous_options:
-        key_down_order: strict
-        to_after_key_up:
-        - set_variable:
-            name: edit_1
-            value: false
-    to:
-    - set_variable:
-        name: edit_1
-        value: true
-    to_if_alone:
-    - key_code: t
-    - key_code: o
-    - key_code: k
-    - key_code: a
-    conditions: *ime_on
-    parameters: *threshold_ms
-
-  # Left: S + D (D -> S)
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: s
-      - key_code: d
-      modifiers:
-        optional:
-        - any
-      simultaneous_options:
-        to_after_key_up:
-        - set_variable:
-            name: edit_1
-            value: false
-    to:
-    - set_variable:
-        name: edit_1
-        value: true
-    to_if_alone:
-    - key_code: k
-    - key_code: a
-    - key_code: t
-    - key_code: o
-    conditions: *ime_on
-    parameters: *threshold_ms
-
-  # Right: K + L (K -> L)
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: k
-      - key_code: l
-      modifiers:
-        optional:
-        - any
-      simultaneous_options:
-        key_down_order: strict
-        to_after_key_up:
-        - set_variable:
-            name: edit_1
-            value: false
-    to:
-    - set_variable:
-        name: edit_1
-        value: true
-    to_if_alone:
-    - key_code: i
-    - key_code: s
-    - key_code: i
-    conditions: *ime_on
-    parameters: *threshold_ms
-
-  # Right: K + L (L -> K)
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: k
-      - key_code: l
-      modifiers:
-        optional:
-        - any
-      simultaneous_options:
-        to_after_key_up:
-        - set_variable:
-            name: edit_1
-            value: false
-    to:
-    - set_variable:
-        name: edit_1
-        value: true
-    to_if_alone:
-    - key_code: s
-    - key_code: i
-    - key_code: i
-    conditions: *ime_on
-    parameters: *threshold_ms
-
-  # Edit Mode 2 ----------------------------------
+  # Edit Mode 2 {{{
 
   # Left: W + E (W -> E)
   - type: basic
@@ -375,12 +202,20 @@ rules:
         name: edit_2
         value: true
     to_if_alone:
+    # 英語入力時
+    - key_code: w
+      conditions: *ime_off
+    - key_code: e
+      conditions: *ime_off
+    # 日本語入力時
     - key_code: "n"
+      conditions: *ime_on
     - key_code: i
+      conditions: *ime_on
     - key_code: h
+      conditions: *ime_on
     - key_code: a
-    # - key_code: escape
-    conditions: *ime_on
+      conditions: *ime_on
     parameters: *threshold_ms
 
   # Left: W + E (E -> W)
@@ -402,12 +237,20 @@ rules:
         name: edit_2
         value: true
     to_if_alone:
+    # 英語入力時
+    - key_code: e
+      conditions: *ime_off
+    - key_code: w
+      conditions: *ime_off
+    # 日本語入力時
     - key_code: h
+      conditions: *ime_on
     - key_code: a
+      conditions: *ime_on
     - key_code: "n"
+      conditions: *ime_on
     - key_code: i
-    # - key_code: escape
-    conditions: *ime_on
+      conditions: *ime_on
     parameters: *threshold_ms
 
   # Right: I + O (I -> O)
@@ -430,12 +273,20 @@ rules:
         name: edit_2
         value: true
     to_if_alone:
-    - key_code: k
+    # 英語入力時
+    - key_code: i
+      conditions: *ime_off
     - key_code: o
+      conditions: *ime_off
+    # 日本語入力時
+    - key_code: k
+      conditions: *ime_on
+    - key_code: o
+      conditions: *ime_on
     - key_code: g
+      conditions: *ime_on
     - key_code: a
-    # - key_code: tab
-    conditions: *ime_on
+      conditions: *ime_on
     parameters: *threshold_ms
 
   # Right: I + O (O -> I)
@@ -457,12 +308,20 @@ rules:
         name: edit_2
         value: true
     to_if_alone:
-    - key_code: g
-    - key_code: a
-    - key_code: k
+    # 英語入力時
     - key_code: o
-    # - key_code: tab
-    conditions: *ime_on
+      conditions: *ime_off
+    - key_code: i
+      conditions: *ime_off
+    # 日本語入力時
+    - key_code: g
+      conditions: *ime_on
+    - key_code: a
+      conditions: *ime_on
+    - key_code: k
+      conditions: *ime_on
+    - key_code: o
+      conditions: *ime_on
     parameters: *threshold_ms
 
   # }}}
