@@ -40,7 +40,7 @@ rules:
   #   - key_code: escape
   #     repeat: false
 
-  # LCmd-U -> LCmd-H
+  # LCmd-U -> Cmd-H
   - type: basic
     from:
       key_code: u
@@ -50,7 +50,7 @@ rules:
     to:
     - key_code: h
       modifiers:
-      - left_command
+      - command
       repeat: false
 
   # }}}

@@ -5,13 +5,13 @@ rules:
 
 # Alacritty {{{
 
-#   # [Alacritty] Cmd-W -> Ignore
+#   # [Alacritty] LCmd-W -> Ignore
 #   - type: basic
 #     from:
 #       key_code: w
 #       modifiers:
 #         mandatory:
-#         - command
+#         - left_command
 #     conditions:
 #     - type: frontmost_application_if
 #       bundle_identifiers:
@@ -86,13 +86,13 @@ rules:
 
   # Indent Row
 
-  # [Bike] Ctrl-Right -> Indent Row
+  # [Bike] LCtrl-Right -> Indent Row
   - type: basic
     from:
       key_code: right_arrow
       modifiers:
         mandatory:
-        - control
+        - left_control
     to:
     - key_code: right_arrow
       modifiers:
@@ -104,13 +104,13 @@ rules:
       bundle_identifiers:
       - "com.hogbaysoftware.Bike"
 
-  # [Bike] Ctrl-LCmd-L -> Indent Row
+  # [Bike] LCtrl-LCmd-L -> Indent Row
   - type: basic
     from:
       key_code: l
       modifiers:
         mandatory:
-        - control
+        - left_control
         - left_command
     to:
     - key_code: right_arrow
@@ -125,13 +125,13 @@ rules:
 
   # Outdent Row
 
-  # [Bike] Ctrl-Left -> Outdent Row
+  # [Bike] LCtrl-Left -> Outdent Row
   - type: basic
     from:
       key_code: left_arrow
       modifiers:
         mandatory:
-        - control
+        - left_control
     to:
     - key_code: left_arrow
       modifiers:
@@ -143,13 +143,13 @@ rules:
       bundle_identifiers:
       - "com.hogbaysoftware.Bike"
 
-  # [Bike] Ctrl-LCmd-H -> Outdent Row
+  # [Bike] LCtrl-LCmd-H -> Outdent Row
   - type: basic
     from:
       key_code: h
       modifiers:
         mandatory:
-        - control
+        - left_control
         - left_command
     to:
     - key_code: left_arrow
@@ -164,13 +164,13 @@ rules:
 
   # Move Row Up
 
-  # [Bike] Ctrl-Up -> Move Row Up
+  # [Bike] LCtrl-Up -> Move Row Up
   - type: basic
     from:
       key_code: up_arrow
       modifiers:
         mandatory:
-        - control
+        - left_control
     to:
     - key_code: up_arrow
       modifiers:
@@ -182,13 +182,13 @@ rules:
       bundle_identifiers:
       - "com.hogbaysoftware.Bike"
 
-  # [Bike] Ctrl-LCmd-K -> Move Row Up
+  # [Bike] LCtrl-LCmd-K -> Move Row Up
   - type: basic
     from:
       key_code: k
       modifiers:
         mandatory:
-        - control
+        - left_control
         - left_command
     to:
     - key_code: up_arrow
@@ -203,13 +203,13 @@ rules:
 
   # Move Row Down
 
-  # [Bike] Ctrl-Down -> Move Row Down
+  # [Bike] LCtrl-Down -> Move Row Down
   - type: basic
     from:
       key_code: down_arrow
       modifiers:
         mandatory:
-        - control
+        - left_control
     to:
     - key_code: down_arrow
       modifiers:
@@ -221,14 +221,14 @@ rules:
       bundle_identifiers:
       - "com.hogbaysoftware.Bike"
 
-  # [Bike] Ctrl-LCmd-J -> Move Row Down
+  # [Bike] LCtrl-LCmd-J -> Move Row Down
   - type: basic
     from:
       key_code: j
       modifiers:
         mandatory:
-        - control
-        - command
+        - left_control
+        - left_command
     to:
     - key_code: down_arrow
       modifiers:
@@ -280,13 +280,13 @@ rules:
 
   # Expand/Collapse All Rows
 
-  # [Bike] Shift-LCmd-O -> Expand All Rows
+  # [Bike] LShift-LCmd-O -> Expand All Rows
   - type: basic
     from:
       key_code: o
       modifiers:
         mandatory:
-        - shift
+        - left_shift
         - left_command
     to:
     - key_code: "0"
@@ -299,13 +299,13 @@ rules:
       bundle_identifiers:
       - "com.hogbaysoftware.Bike"
 
-  # [Bike] Shift-LCmd-I -> Collapse All Rows
+  # [Bike] LShift-LCmd-I -> Collapse All Rows
   - type: basic
     from:
       key_code: i
       modifiers:
         mandatory:
-        - shift
+        - left_shift
         - left_command
     to:
     - key_code: "9"
@@ -320,8 +320,8 @@ rules:
 
   # Others
 
-  # [Bike] LCtrl-M -> New Row (Cmd-Return)
-  # [Bike] Shift-LCtrl-M -> New Indented Row (Shift-Cmd-Return)
+  # [Bike] LCtrl-M        -> New Row (Cmd-Return)
+  # [Bike] LShift-LCtrl-M -> New Indented Row (Shift-Cmd-Return)
   - type: basic
     from:
       key_code: m
@@ -329,7 +329,7 @@ rules:
         mandatory:
         - left_control
         optional:
-        - shift
+        - left_shift
     to:
     - key_code: return_or_enter
       modifiers:
@@ -430,14 +430,14 @@ rules:
       bundle_identifiers:
       - "com.hogbaysoftware.Bike"
 
-  # [Bike] Shift-Cmd-V -> Paste and Match Style (Shift-Opt-Cmd-V)
+  # [Bike] LShift-LCmd-V -> Paste and Match Style (Shift-Opt-Cmd-V)
   - type: basic
     from:
       key_code: v
       modifiers:
         mandatory:
-        - shift
-        - command
+        - left_shift
+        - left_command
     to:
     - key_code: v
       modifiers:
@@ -468,14 +468,14 @@ rules:
       bundle_identifiers:
       - "com.hogbaysoftware.Bike"
 
-  # [Bike] Shift-Cmd-S -> Cmd-S
+  # [Bike] LShift-LCmd-S -> Cmd-S
   - type: basic
     from:
       key_code: s
       modifiers:
         mandatory:
-        - shift
-        - command
+        - left_shift
+        - left_command
     to:
     - key_code: s
       modifiers:
@@ -486,13 +486,13 @@ rules:
       bundle_identifiers:
       - "com.hogbaysoftware.Bike"
 
-  # [Bike] Ctrl-O -> Ignore
+  # [Bike] LCtrl-O -> Ignore
   - type: basic
     from:
       key_code: o
       modifiers:
         mandatory:
-        - control
+        - left_control
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
@@ -582,14 +582,14 @@ rules:
 
 # CotEditor {{{
 
-  # [CotEditor] Shif-Cmd-V -> Cmd-V
+  # [CotEditor] LShift-LCmd-V -> Cmd-V
   - type: basic
     from:
       key_code: v
       modifiers:
         mandatory:
-        - shift
-        - command
+        - left_shift
+        - left_command
     to:
       - key_code: v
         modifiers:
@@ -644,26 +644,26 @@ rules:
 
 # Finder {{{
 
-  # [Finder] Cmd-P -> Ignore
+  # [Finder] LCmd-P -> Ignore
   - type: basic
     from:
       key_code: p
       modifiers:
         mandatory:
-        - command
+        - left_command
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
       - "com.apple.finder"
 
-  # [Finder] Shift-Cmd-V -> Cmd-V
+  # [Finder] LShift-LCmd-V -> Cmd-V
   - type: basic
     from:
       key_code: v
       modifiers:
         mandatory:
-        - shift
-        - command
+        - left_shift
+        - left_command
     to:
     - key_code: v
       modifiers:
@@ -1282,13 +1282,13 @@ rules:
 
 # Macvim {{{
 
-#   # [MacVim] Cmd-W -> Ignore
+#   # [MacVim] LCmd-W -> Ignore
 #   - type: basic
 #     from:
 #       key_code: w
 #       modifiers:
 #         mandatory:
-#         - command
+#         - left_command
 #     conditions:
 #     - type: frontmost_application_if
 #       bundle_identifiers:
@@ -1318,13 +1318,13 @@ rules:
 
 # Microsoft Office {{{
 
-  # [Word] Ctrl-D -> Fn-Delete
+  # [Word] LCtrl-D -> Fn-Delete
   - type: basic
     from:
       key_code: d
       modifiers:
         mandatory:
-        - control
+        - left_control
     to:
     - key_code: delete_forward
       repeat: true
@@ -1333,13 +1333,13 @@ rules:
       bundle_identifiers:
       - "com.microsoft.Word"
 
-  # [Excel] Ctrl-D -> Fn-Delete
+  # [Excel] LCtrl-D -> Fn-Delete
   - type: basic
     from:
       key_code: d
       modifiers:
         mandatory:
-        - control
+        - left_control
     to:
     - key_code: delete_forward
       repeat: true
@@ -1348,13 +1348,13 @@ rules:
       bundle_identifiers:
       - "com.microsoft.Excel"
 
-  # [Powerpoint] Ctrl-D -> Fn-Delete
+  # [Powerpoint] LCtrl-D -> Fn-Delete
   - type: basic
     from:
       key_code: d
       modifiers:
         mandatory:
-        - control
+        - left_control
     to:
     - key_code: delete_forward
       repeat: true
@@ -1363,13 +1363,13 @@ rules:
       bundle_identifiers:
       - "com.microsoft.Powerpoint"
 
-  # [Word] Ctrl-A -> 行頭へ移動
+  # [Word] LCtrl-A -> 行頭へ移動
   - type: basic
     from:
       key_code: a
       modifiers:
         mandatory:
-        - control
+        - left_control
     to:
     - key_code: home
       repeat: false
@@ -1378,13 +1378,13 @@ rules:
       bundle_identifiers:
       - "com.microsoft.Word"
 
-  # [Excel] Ctrl-A -> 行頭へ移動
+  # [Excel] LCtrl-A -> 行頭へ移動
   - type: basic
     from:
       key_code: a
       modifiers:
         mandatory:
-        - control
+        - left_control
     to:
     - key_code: home
       repeat: false
@@ -1393,13 +1393,13 @@ rules:
       bundle_identifiers:
       - "com.microsoft.Excel"
 
-  # [Powerpoint] Ctrl-A -> 行頭へ移動
+  # [Powerpoint] LCtrl-A -> 行頭へ移動
   - type: basic
     from:
       key_code: a
       modifiers:
         mandatory:
-        - control
+        - left_control
     to:
     - key_code: home
       repeat: false
@@ -1408,13 +1408,13 @@ rules:
       bundle_identifiers:
       - "com.microsoft.Powerpoint"
 
-  # [Word] Ctrl-E -> 行末へ移動
+  # [Word] LCtrl-E -> 行末へ移動
   - type: basic
     from:
       key_code: e
       modifiers:
         mandatory:
-        - control
+        - left_control
     to:
     - key_code: end
       repeat: false
@@ -1423,13 +1423,13 @@ rules:
       bundle_identifiers:
       - "com.microsoft.Word"
 
-  # [Excel] Ctrl-E -> 行末へ移動
+  # [Excel] LCtrl-E -> 行末へ移動
   - type: basic
     from:
       key_code: e
       modifiers:
         mandatory:
-        - control
+        - left_control
     to:
     - key_code: end
       repeat: false
@@ -1438,13 +1438,13 @@ rules:
       bundle_identifiers:
       - "com.microsoft.Excel"
 
-  # [Powerpoint] Ctrl-E -> 行末へ移動
+  # [Powerpoint] LCtrl-E -> 行末へ移動
   - type: basic
     from:
       key_code: e
       modifiers:
         mandatory:
-        - control
+        - left_control
     to:
     - key_code: end
       repeat: false
@@ -1453,13 +1453,13 @@ rules:
       bundle_identifiers:
       - "com.microsoft.Powerpoint"
 
-  # [Word] Ctrl-K -> 行末まで削除
+  # [Word] LCtrl-K -> 行末まで削除
   - type: basic
     from:
       key_code: k
       modifiers:
         mandatory:
-        - control
+        - left_control
     to:
     - key_code: end
       modifiers:
@@ -1472,13 +1472,13 @@ rules:
       bundle_identifiers:
       - "com.microsoft.Word"
 
-  # [Excel] Ctrl-K -> 行末まで削除
+  # [Excel] LCtrl-K -> 行末まで削除
   - type: basic
     from:
       key_code: k
       modifiers:
         mandatory:
-        - control
+        - left_control
     to:
     - key_code: end
       modifiers:
@@ -1491,13 +1491,13 @@ rules:
       bundle_identifiers:
       - "com.microsoft.Excel"
 
-  # [Powerpoint] Ctrl-K -> 行末まで削除
+  # [Powerpoint] LCtrl-K -> 行末まで削除
   - type: basic
     from:
       key_code: k
       modifiers:
         mandatory:
-        - control
+        - left_control
     to:
     - key_code: end
       modifiers:
@@ -1514,7 +1514,7 @@ rules:
 
 # Notion {{{
 
-  # [Notion] Ctrl-Up -> Move Block Up
+  # [Notion] LCtrl-Up -> Move Block Up
   - type: basic
     from:
       key_code: up_arrow
@@ -1532,7 +1532,7 @@ rules:
       bundle_identifiers:
       - "notion.id"
 
-  # [Notion] Ctrl-Down -> Move Block Down
+  # [Notion] LCtrl-Down -> Move Block Down
   - type: basic
     from:
       key_code: down_arrow
@@ -1550,7 +1550,7 @@ rules:
       bundle_identifiers:
       - "notion.id"
 
-  # [Notion] Ctrl-LCmd-K -> Move Block Up
+  # [Notion] LCtrl-LCmd-K -> Move Block Up
   - type: basic
     from:
       key_code: k
@@ -1569,7 +1569,7 @@ rules:
       bundle_identifiers:
       - "notion.id"
 
-  # [Notion] Ctrl-LCmd-J -> Move Block Down
+  # [Notion] LCtrl-LCmd-J -> Move Block Down
   - type: basic
     from:
       key_code: j
@@ -1588,7 +1588,7 @@ rules:
       bundle_identifiers:
       - "notion.id"
 
-  # [Notion] Shift-Cmd-A -> Ctrl-Cmd-H
+  # [Notion] LShift-LCmd-A -> Ctrl-Cmd-H
   - type: basic
     from:
       key_code: a
@@ -1607,7 +1607,7 @@ rules:
       bundle_identifiers:
       - "notion.id"
 
-  # [Notion] Shift-Cmd-C -> Cmd-L
+  # [Notion] LShift-LCmd-C -> Cmd-L
   - type: basic
     from:
       key_code: c
@@ -1740,7 +1740,7 @@ rules:
 
 # Notion Calendar {{{
 
-  # [Notion Calendar] Cmd-S -> `
+  # [Notion Calendar] LCmd-S -> `
   - type: basic
     from:
       key_code: s
@@ -2273,7 +2273,7 @@ rules:
       bundle_identifiers:
       - "com.culturedcode.ThingsMac"
 
-  # [Things] Cmd-M -> Shift-Cmd-M (Move to another list)
+  # [Things] LCmd-M -> Shift-Cmd-M (Move to another list)
   - type: basic
     from:
       key_code: m
@@ -2298,13 +2298,13 @@ rules:
 
   # Indent Row
 
-  # [Workflowy] Ctrl-Right -> Indent
+  # [Workflowy] LCtrl-Right -> Indent
   - type: basic
     from:
       key_code: right_arrow
       modifiers:
         mandatory:
-        - control
+        - left_control
     to:
     - key_code: tab
       repeat: false
@@ -2313,13 +2313,13 @@ rules:
       bundle_identifiers:
       - "com.workflowy.desktop"
 
-  # [Workflowy] Ctrl-LCmd-L -> Indent
+  # [Workflowy] LCtrl-LCmd-L -> Indent
   - type: basic
     from:
       key_code: l
       modifiers:
         mandatory:
-        - control
+        - left_control
         - left_command
     to:
     - key_code: tab
@@ -2331,13 +2331,13 @@ rules:
 
   # Outdent Row
 
-  # [Workflowy] Ctrl-Left -> Outdent
+  # [Workflowy] LCtrl-Left -> Outdent
   - type: basic
     from:
       key_code: left_arrow
       modifiers:
         mandatory:
-        - control
+        - left_control
     to:
     - key_code: tab
       modifiers:
@@ -2348,13 +2348,13 @@ rules:
       bundle_identifiers:
       - "com.workflowy.desktop"
 
-  # [Workflowy] Ctrl-LCmd-H -> Outdent
+  # [Workflowy] LCtrl-LCmd-H -> Outdent
   - type: basic
     from:
       key_code: h
       modifiers:
         mandatory:
-        - control
+        - left_control
         - left_command
     to:
     - key_code: tab
@@ -2368,13 +2368,13 @@ rules:
 
   # Move Row Up
 
-  # [Workflowy] Ctrl-Up -> Move Up
+  # [Workflowy] LCtrl-Up -> Move Up
   - type: basic
     from:
       key_code: up_arrow
       modifiers:
         mandatory:
-        - control
+        - left_control
     to:
     - key_code: up_arrow
       modifiers:
@@ -2386,13 +2386,13 @@ rules:
       bundle_identifiers:
       - "com.workflowy.desktop"
 
-  # [Workflowy] Ctrl-LCmd-K -> Move Up
+  # [Workflowy] LCtrl-LCmd-K -> Move Up
   - type: basic
     from:
       key_code: k
       modifiers:
         mandatory:
-        - control
+        - left_control
         - left_command
     to:
     - key_code: up_arrow
@@ -2407,13 +2407,13 @@ rules:
 
   # Move Row Down
 
-  # [Workflowy] Ctrl-Down -> Move Down
+  # [Workflowy] LCtrl-Down -> Move Down
   - type: basic
     from:
       key_code: down_arrow
       modifiers:
         mandatory:
-        - control
+        - left_control
     to:
     - key_code: down_arrow
       modifiers:
@@ -2425,13 +2425,13 @@ rules:
       bundle_identifiers:
       - "com.workflowy.desktop"
 
-  # [Workflowy] Ctrl-LCmd-J -> Move Down
+  # [Workflowy] LCtrl-LCmd-J -> Move Down
   - type: basic
     from:
       key_code: j
       modifiers:
         mandatory:
-        - control
+        - left_control
         - left_command
     to:
     - key_code: down_arrow
