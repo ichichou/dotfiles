@@ -587,3 +587,52 @@ rules:
       lazy: true
 
 # }}}
+
+# Click Key {{{
+
+- description: "Click Key"
+  manipulators:
+
+  # W -> Right Click
+  - type: basic
+    from:
+      key_code: w
+      modifiers:
+        optional:
+        - any
+    to:
+    - pointing_button: button2
+    conditions:
+    - type: variable_unless
+      name: multitouch_extension_finger_count_total
+      value: 0
+
+  # E -> Left Click
+  - type: basic
+    from:
+      key_code: e
+      modifiers:
+        optional:
+        - any
+    to:
+    - pointing_button: button1
+    conditions:
+    - type: variable_unless
+      name: multitouch_extension_finger_count_total
+      value: 0
+
+  # R -> Middle Click
+  - type: basic
+    from:
+      key_code: r
+      modifiers:
+        optional:
+        - any
+    to:
+    - pointing_button: button3
+    conditions:
+    - type: variable_unless
+      name: multitouch_extension_finger_count_total
+      value: 0
+
+# }}}
