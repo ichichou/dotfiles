@@ -185,10 +185,24 @@ rules:
 
 # }}}
 
-# 9-3. MultitouchExtension {{{
+# 9-3. Click Key {{{
 
-- description: "9-3. MultitouchExtension"
+- description: "9-3. Click Key"
   manipulators:
+
+  # W -> Right Click
+  - type: basic
+    from:
+      key_code: w
+      modifiers:
+        optional:
+        - any
+    to:
+    - pointing_button: button2
+    conditions:
+    - type: variable_unless
+      name: multitouch_extension_finger_count_total
+      value: 0
 
   # E -> Left Click
   - type: basic
@@ -204,15 +218,15 @@ rules:
       name: multitouch_extension_finger_count_total
       value: 0
 
-  # W -> Right Click
+  # R -> Middle Click
   - type: basic
     from:
-      key_code: w
+      key_code: r
       modifiers:
         optional:
         - any
     to:
-    - pointing_button: button2
+    - pointing_button: button3
     conditions:
     - type: variable_unless
       name: multitouch_extension_finger_count_total
