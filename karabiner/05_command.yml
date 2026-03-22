@@ -303,11 +303,11 @@ rules:
   - type: basic
     from:
       key_code: left_command
+    to_if_alone:
+    - key_code: japanese_eisuu
     to:
     - key_code: left_command
       lazy: true
-    to_if_alone:
-    - key_code: japanese_eisuu
     # conditions:
     # - type: device_if
     #   identifiers:
@@ -322,11 +322,11 @@ rules:
   # - type: basic
   #   from:
   #     key_code: right_command
+  #   to_if_alone:
+  #   - key_code: japanese_kana
   #   to:
   #   - key_code: right_command
   #     lazy: true
-  #   to_if_alone:
-  #   - key_code: japanese_kana
   #   conditions:
   #   - type: device_if
   #     identifiers:
@@ -334,7 +334,6 @@ rules:
   #     - is_built_in_keyboard: true
 
   # RCmd -> Delete/RCmd
-  # # RCmd -> Delete/RCmd (on Apple Internal Keyboard)
   - type: basic
     from:
       key_code: right_command
@@ -342,19 +341,14 @@ rules:
         optional:
         - any
     to:
-    - key_code: delete_or_backspace
-    to_after_key_up:
     - set_variable:
         name: command_delete
         value: 0
+    - key_code: delete_or_backspace
     conditions:
     - type: variable_if
       name: command_delete
       value: 1
-    # - type: device_if
-    #   identifiers:
-    #   # Apple Internal Keyboard
-    #   - is_built_in_keyboard: true
 
   - type: basic
     from:
@@ -362,14 +356,14 @@ rules:
       modifiers:
         optional:
         - any
-    to:
-    - key_code: right_command
-      lazy: true
     to_if_alone:
-    - key_code: delete_or_backspace
     - set_variable:
         name: command_delete
         value: 1
+    - key_code: delete_or_backspace
+    to:
+    - key_code: right_command
+      lazy: true
     to_delayed_action:
       to_if_invoked:
       - set_variable:
@@ -379,12 +373,7 @@ rules:
       - set_variable:
           name: command_delete
           value: 0
-    # conditions:
-    # - type: device_if
-    #   identifiers:
-    #   # Apple Internal Keyboard
-    #   - is_built_in_keyboard: true
     parameters:
-      basic.to_delayed_action_delay_milliseconds: 150
+      basic.to_delayed_action_delay_milliseconds: 200
 
   # }}}
