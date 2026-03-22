@@ -4,15 +4,28 @@ title: "03. Edit Mode"
 
 aliases:
 
-- conditions: &ime_off
-  - type: input_source_unless
+- conditions: &en
+  - type: input_source_if
     input_sources:
-    - language: "^ja$"
+    # 英数
+    - input_source_id: "^net\\.mtgto\\.inputmethod\\.macSKK\\.ascii$"
+    - input_source_id: "^com\\.google\\.inputmethod\\.Japanese\\.Roman$"
+    - input_source_id: "^com\\.apple\\.inputmethod\\.Kotoeri\\.RomajiTyping\\.Roman$"
+    # 全角英数
+    - input_source_id: "^net\\.mtgto\\.inputmethod\\.macSKK\\.eisu$"
+    - input_source_id: "^com\\.google\\.inputmethod\\.Japanese\\.FullWidthRoman$"
+    - input_source_id: "^com\\.apple\\.inputmethod\\.Kotoeri\\.RomajiTyping\\.Japanese\\.FullWidthRoman$"
 
-- conditions: &ime_on
+- conditions: &ja
   - type: input_source_if
     input_sources:
     - language: "^ja$"
+  - type: input_source_unless
+    input_sources:
+    # 全角英数
+    - input_source_id: "^net\\.mtgto\\.inputmethod\\.macSKK\\.eisu$"
+    - input_source_id: "^com\\.google\\.inputmethod\\.Japanese\\.FullWidthRoman$"
+    - input_source_id: "^com\\.apple\\.inputmethod\\.Kotoeri\\.RomajiTyping\\.Japanese\\.FullWidthRoman$"
 
 - conditions: &edit_1
   - type: variable_if
@@ -61,18 +74,18 @@ rules:
     to_if_alone:
     # 英語入力時
     - key_code: s
-      conditions: *ime_off
+      conditions: *en
     - key_code: d
-      conditions: *ime_off
+      conditions: *en
     # 日本語入力時
     - key_code: t
-      conditions: *ime_on
+      conditions: *ja
     - key_code: o
-      conditions: *ime_on
+      conditions: *ja
     - key_code: k
-      conditions: *ime_on
+      conditions: *ja
     - key_code: a
-      conditions: *ime_on
+      conditions: *ja
     parameters: *threshold_ms
 
   # Left: S + D (D -> S)
@@ -96,18 +109,18 @@ rules:
     to_if_alone:
     # 英語入力時
     - key_code: d
-      conditions: *ime_off
+      conditions: *en
     - key_code: s
-      conditions: *ime_off
+      conditions: *en
     # 日本語入力時
     - key_code: k
-      conditions: *ime_on
+      conditions: *ja
     - key_code: a
-      conditions: *ime_on
+      conditions: *ja
     - key_code: t
-      conditions: *ime_on
+      conditions: *ja
     - key_code: o
-      conditions: *ime_on
+      conditions: *ja
     parameters: *threshold_ms
 
   # Right: K + L (K -> L)
@@ -132,16 +145,16 @@ rules:
     to_if_alone:
     # 英語入力時
     - key_code: k
-      conditions: *ime_off
+      conditions: *en
     - key_code: l
-      conditions: *ime_off
+      conditions: *en
     # 日本語入力時
     - key_code: i
-      conditions: *ime_on
+      conditions: *ja
     - key_code: s
-      conditions: *ime_on
+      conditions: *ja
     - key_code: i
-      conditions: *ime_on
+      conditions: *ja
     parameters: *threshold_ms
 
   # Right: K + L (L -> K)
@@ -165,16 +178,16 @@ rules:
     to_if_alone:
     # 英語入力時
     - key_code: l
-      conditions: *ime_off
+      conditions: *en
     - key_code: k
-      conditions: *ime_off
+      conditions: *en
     # 日本語入力時
     - key_code: s
-      conditions: *ime_on
+      conditions: *ja
     - key_code: i
-      conditions: *ime_on
+      conditions: *ja
     - key_code: i
-      conditions: *ime_on
+      conditions: *ja
     parameters: *threshold_ms
 
 
@@ -204,18 +217,18 @@ rules:
     to_if_alone:
     # 英語入力時
     - key_code: w
-      conditions: *ime_off
+      conditions: *en
     - key_code: e
-      conditions: *ime_off
+      conditions: *en
     # 日本語入力時
     - key_code: "n"
-      conditions: *ime_on
+      conditions: *ja
     - key_code: i
-      conditions: *ime_on
+      conditions: *ja
     - key_code: h
-      conditions: *ime_on
+      conditions: *ja
     - key_code: a
-      conditions: *ime_on
+      conditions: *ja
     parameters: *threshold_ms
 
   # Left: W + E (E -> W)
@@ -239,18 +252,18 @@ rules:
     to_if_alone:
     # 英語入力時
     - key_code: e
-      conditions: *ime_off
+      conditions: *en
     - key_code: w
-      conditions: *ime_off
+      conditions: *en
     # 日本語入力時
     - key_code: h
-      conditions: *ime_on
+      conditions: *ja
     - key_code: a
-      conditions: *ime_on
+      conditions: *ja
     - key_code: "n"
-      conditions: *ime_on
+      conditions: *ja
     - key_code: i
-      conditions: *ime_on
+      conditions: *ja
     parameters: *threshold_ms
 
   # Right: I + O (I -> O)
@@ -275,18 +288,18 @@ rules:
     to_if_alone:
     # 英語入力時
     - key_code: i
-      conditions: *ime_off
+      conditions: *en
     - key_code: o
-      conditions: *ime_off
+      conditions: *en
     # 日本語入力時
     - key_code: k
-      conditions: *ime_on
+      conditions: *ja
     - key_code: o
-      conditions: *ime_on
+      conditions: *ja
     - key_code: g
-      conditions: *ime_on
+      conditions: *ja
     - key_code: a
-      conditions: *ime_on
+      conditions: *ja
     parameters: *threshold_ms
 
   # Right: I + O (O -> I)
@@ -310,18 +323,18 @@ rules:
     to_if_alone:
     # 英語入力時
     - key_code: o
-      conditions: *ime_off
+      conditions: *en
     - key_code: i
-      conditions: *ime_off
+      conditions: *en
     # 日本語入力時
     - key_code: g
-      conditions: *ime_on
+      conditions: *ja
     - key_code: a
-      conditions: *ime_on
+      conditions: *ja
     - key_code: k
-      conditions: *ime_on
+      conditions: *ja
     - key_code: o
-      conditions: *ime_on
+      conditions: *ja
     parameters: *threshold_ms
 
   # }}}
