@@ -298,7 +298,8 @@ rules:
 
   # Left Command Key {{{
 
-  # LCmd -> Eisuu/LCmd (on Apple Internal Keyboard)
+  # LCmd -> Eisuu/LCmd
+  # # LCmd -> Eisuu/LCmd (on Apple Internal Keyboard)
   - type: basic
     from:
       key_code: left_command
@@ -307,29 +308,11 @@ rules:
       lazy: true
     to_if_alone:
     - key_code: japanese_eisuu
-    conditions:
-    - type: device_if
-      identifiers:
-      # Apple Internal Keyboard
-      - is_built_in_keyboard: true
-
-  # # LCmd -> Esc/LCmd (on Apple Internal Keyboard)
-  # - type: basic
-  #   from:
-  #     key_code: left_command
-  #     modifiers:
-  #       optional:
-  #       - any
-  #   to:
-  #   - key_code: left_command
-  #     lazy: true
-  #   to_if_alone:
-  #   - key_code: escape
-  #   conditions:
-  #   - type: device_if
-  #     identifiers:
-  #     # Apple Internal Keyboard
-  #     - is_built_in_keyboard: true
+    # conditions:
+    # - type: device_if
+    #   identifiers:
+    #   # Apple Internal Keyboard
+    #   - is_built_in_keyboard: true
 
   # }}}
 
@@ -350,7 +333,8 @@ rules:
   #     # Apple Internal Keyboard
   #     - is_built_in_keyboard: true
 
-  # RCmd -> Delete/RCmd (on Apple Internal Keyboard)
+  # RCmd -> Delete/RCmd
+  # # RCmd -> Delete/RCmd (on Apple Internal Keyboard)
   - type: basic
     from:
       key_code: right_command
@@ -367,10 +351,10 @@ rules:
     - type: variable_if
       name: command_delete
       value: 1
-    - type: device_if
-      identifiers:
-      # Apple Internal Keyboard
-      - is_built_in_keyboard: true
+    # - type: device_if
+    #   identifiers:
+    #   # Apple Internal Keyboard
+    #   - is_built_in_keyboard: true
 
   - type: basic
     from:
@@ -395,11 +379,11 @@ rules:
       - set_variable:
           name: command_delete
           value: 0
-    conditions:
-    - type: device_if
-      identifiers:
-      # Apple Internal Keyboard
-      - is_built_in_keyboard: true
+    # conditions:
+    # - type: device_if
+    #   identifiers:
+    #   # Apple Internal Keyboard
+    #   - is_built_in_keyboard: true
     parameters:
       basic.to_delayed_action_delay_milliseconds: 150
 

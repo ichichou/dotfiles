@@ -819,10 +819,14 @@ rules:
       repeat: false
     conditions: *edit_1
 
-  # / -> Invalid
+  # / -> LCmd-`
   - type: basic
     from:
       key_code: slash
+    to:
+    - key_code: grave_accent_and_tilde
+      modifiers:
+      - command
     conditions: *edit_1
 
   # }}}
