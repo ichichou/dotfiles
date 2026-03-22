@@ -134,28 +134,6 @@ rules:
     - key_code: left_arrow
       repeat: false
 
-  # DF -> Eisuu
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: d
-      - key_code: f
-    to:
-    - key_code: japanese_eisuu
-      repeat: false
-    parameters: *short_threshold_ms
-
-  # JK -> Kana
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: j
-      - key_code: k
-    to:
-    - key_code: japanese_kana
-      repeat: false
-    parameters: *short_threshold_ms
-
   # 英語入力 -------------------------------------
 
   # RT -> [], Space
@@ -249,6 +227,30 @@ rules:
     - key_code: left_arrow
       repeat: false
     conditions: *ja
+
+  # Short Threshold Milliseconds -----------------
+
+  # DF -> Eisuu
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: d
+      - key_code: f
+    to:
+    - key_code: japanese_eisuu
+      repeat: false
+    parameters: *short_threshold_ms
+
+  # JK -> Kana
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: j
+      - key_code: k
+    to:
+    - key_code: japanese_kana
+      repeat: false
+    parameters: *short_threshold_ms
 
 # }}}
 
@@ -357,6 +359,30 @@ rules:
       - shift
       repeat: false
     conditions: *ja
+
+  # Short Threshold Milliseconds -----------------
+
+  # EF -> Eisuu
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: e
+      - key_code: f
+    to:
+    - key_code: japanese_eisuu
+      repeat: false
+    parameters: *short_threshold_ms
+
+  # JI -> Kana
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: j
+      - key_code: i
+    to:
+    - key_code: japanese_kana
+      repeat: false
+    parameters: *short_threshold_ms
 
 # }}}
 
