@@ -27,10 +27,10 @@ rules:
     to:
     - key_code: "9"
       modifiers:
-      - left_shift
+      - shift
     - key_code: "0"
       modifiers:
-      - left_shift
+      - shift
     - key_code: left_arrow
       repeat: false
 
@@ -81,7 +81,7 @@ rules:
     to:
     - key_code: "1"
       modifiers:
-      - left_shift
+      - shift
       repeat: false
 
   # FV -> ！ (代替)
@@ -93,7 +93,7 @@ rules:
     to:
     - key_code: "1"
       modifiers:
-      - left_shift
+      - shift
       repeat: false
 
   # JN -> ？
@@ -105,7 +105,7 @@ rules:
     to:
     - key_code: slash
       modifiers:
-      - left_shift
+      - shift
       repeat: false
 
 # }}}
@@ -315,9 +315,9 @@ rules:
 
 # }}}
 
-# Esc/Ctrl {{{
+# Control Key {{{
 
-- description: "Caps Lock → Esc/LCtrl"
+- description: "Caps Lock → Esc & Ctrl"
   manipulators:
 
   # Caps Lock -> Esc/LCtrl
@@ -348,9 +348,9 @@ rules:
 
 # }}}
 
-# Num Layer {{{
+# Numpad Layer {{{
 
-- description: "LCtrl + Right Hand Side → Num Layer"
+- description: "LCtrl + Right Hand Side → Numpad Layer"
   manipulators:
 
   # YUIOP {{{
@@ -531,7 +531,7 @@ rules:
     to:
     - key_code: keypad_3
 
-  # # LCtrl-/ -> (no map)
+  # # LCtrl-/ -> Return
   # - type: basic
   #   from:
   #     key_code: slash
@@ -541,7 +541,7 @@ rules:
   #       optional:
   #       - any
   #   to:
-  #   - key_code:
+  #   - key_code: return_or_enter
 
   # }}}
 
@@ -549,43 +549,41 @@ rules:
 
 # Hyper Key {{{
 
-- description: "Tab → Hyper Key"
+- description: "Tab → Tab & Hyper Key"
   manipulators:
 
   # Tab -> Tab/Hyper
   - type: basic
     from:
       key_code: tab
-      modifiers:
-        optional: any
     to_if_alone:
     - key_code: tab
     to:
     - key_code: right_shift
       modifiers:
-      - right_command
       - right_control
       - right_option
+      - right_command
       lazy: true
 
 # }}}
 
 # SandS {{{
 
-- description: "Space → Space/Shift"
+- description: "Space → Space & Shift"
   manipulators:
 
-  # Space and Shift
+  # SandS
   - type: basic
     from:
       key_code: spacebar
       modifiers:
         optional:
         - any
+    to_if_alone:
+    - key_code: spacebar
     to:
     - key_code: left_shift
       lazy: true
-    to_if_alone:
-    - key_code: spacebar
 
 # }}}
