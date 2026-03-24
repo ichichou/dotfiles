@@ -2,7 +2,7 @@ title: "09. Others"
 
 aliases:
 
-# ALIASES {{{
+# Aliases {{{
 
 - conditions: &en
   - type: input_source_if
@@ -27,7 +27,7 @@ aliases:
 - parameters: &mod_tap_threshold_ms
     basic.to_if_alone_threshocld_millisecocnds: 150
     basic.to_if_held_down_threshold_milliseconds: 150
-    basic.to_delayed_action_delay_milliseconds: 150
+    basic.to_delayed_action_delay_milliseconds: 200
 
 # }}}
 
