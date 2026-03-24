@@ -54,6 +54,11 @@ aliases:
     bundle_identifiers:
     - "^com\\.apple\\.loginwindow$"
 
+- parameters: &mod_tap_threshold_ms
+    basic.to_if_alone_threshocld_millisecocnds: 150
+    basic.to_if_held_down_threshold_milliseconds: 150
+    basic.to_delayed_action_delay_milliseconds: 200
+
 # Parameters -------------------------------------
 
 - parameters: &threshold_ms
@@ -2055,15 +2060,25 @@ rules:
 
 # ベース {{{
 
-  # q -> ー
+  # q -> ー/Hyper
   - type: basic
     from:
       key_code: q
       modifiers: *optional_shift
-    to:
+    to_if_alone:
     - key_code: quote
-      repeat: false
+      halt: true
+    to_if_held_down:
+    - key_code: right_shift
+      modifiers:
+      - right_control
+      - right_option
+      - right_command
+    to_delayed_action:
+      to_if_canceled:
+      - key_code: quote
     conditions: *base
+    parameters: *mod_tap_threshold_ms
 
   # w -> に
   - type: basic
@@ -2164,16 +2179,23 @@ rules:
       repeat: false
     conditions: *base
 
-  # a -> の
+  # a -> の/LCtrl
   - type: basic
     from:
       key_code: a
       modifiers: *optional_shift
-    to:
+    to_if_alone:
     - key_code: "n"
     - key_code: o
-      repeat: false
+      halt: true
+    to_if_held_down:
+    - key_code: left_control
+    to_delayed_action:
+      to_if_canceled:
+      - key_code: "n"
+      - key_code: o
     conditions: *base
+    parameters: *mod_tap_threshold_ms
 
   # s -> と
   - type: basic
@@ -2284,16 +2306,23 @@ rules:
       repeat: false
     conditions: *base
 
-  # z -> す
+  # z -> す/LShift
   - type: basic
     from:
       key_code: z
       modifiers: *optional_shift
-    to:
+    to_if_alone:
     - key_code: s
     - key_code: u
-      repeat: false
+      halt: true
+    to_if_held_down:
+    - key_code: left_shift
+    to_delayed_action:
+      to_if_canceled:
+      - key_code: s
+      - key_code: u
     conditions: *base
+    parameters: *mod_tap_threshold_ms
 
   # x -> ま
   - type: basic
