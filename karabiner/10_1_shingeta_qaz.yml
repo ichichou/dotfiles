@@ -2058,7 +2058,7 @@ rules:
 
 # }}}
 
-# ベース {{{
+# QAZ {{{
 
   # q -> ー/Hyper
   - type: basic
@@ -2079,6 +2079,57 @@ rules:
       - key_code: quote
     conditions: *base
     parameters: *mod_tap_threshold_ms
+
+  # a -> の/LCtrl
+  - type: basic
+    from:
+      key_code: a
+      modifiers: *optional_shift
+    to_if_alone:
+    - key_code: "n"
+    - key_code: o
+      halt: true
+    to_if_held_down:
+    - key_code: left_control
+    to_delayed_action:
+      to_if_canceled:
+      - key_code: "n"
+      - key_code: o
+    conditions: *base
+    parameters: *mod_tap_threshold_ms
+
+  # z -> す/LShift
+  - type: basic
+    from:
+      key_code: z
+      modifiers: *optional_shift
+    to_if_alone:
+    - key_code: s
+    - key_code: u
+      halt: true
+    to_if_held_down:
+    - key_code: left_shift
+    to_delayed_action:
+      to_if_canceled:
+      - key_code: s
+      - key_code: u
+    conditions: *base
+    parameters: *mod_tap_threshold_ms
+
+# }}}
+
+# ベース {{{
+
+  # # q -> ー
+  # # QAZ で定義
+  # - type: basic
+  #   from:
+  #     key_code: q
+  #     modifiers: *optional_shift
+  #   to:
+  #   - key_code: quote
+  #     repeat: false
+  #   conditions: *base
 
   # w -> に
   - type: basic
@@ -2179,23 +2230,17 @@ rules:
       repeat: false
     conditions: *base
 
-  # a -> の/LCtrl
-  - type: basic
-    from:
-      key_code: a
-      modifiers: *optional_shift
-    to_if_alone:
-    - key_code: "n"
-    - key_code: o
-      halt: true
-    to_if_held_down:
-    - key_code: left_control
-    to_delayed_action:
-      to_if_canceled:
-      - key_code: "n"
-      - key_code: o
-    conditions: *base
-    parameters: *mod_tap_threshold_ms
+  # # a -> の
+  # # QAZ で定義
+  # - type: basic
+  #   from:
+  #     key_code: a
+  #     modifiers: *optional_shift
+  #   to:
+  #   - key_code: "n"
+  #   - key_code: o
+  #     repeat: false
+  #   conditions: *base
 
   # s -> と
   - type: basic
@@ -2306,23 +2351,17 @@ rules:
       repeat: false
     conditions: *base
 
-  # z -> す/LShift
-  - type: basic
-    from:
-      key_code: z
-      modifiers: *optional_shift
-    to_if_alone:
-    - key_code: s
-    - key_code: u
-      halt: true
-    to_if_held_down:
-    - key_code: left_shift
-    to_delayed_action:
-      to_if_canceled:
-      - key_code: s
-      - key_code: u
-    conditions: *base
-    parameters: *mod_tap_threshold_ms
+  # # z -> す
+  # # QAZ で定義
+  # - type: basic
+  #   from:
+  #     key_code: z
+  #     modifiers: *optional_shift
+  #   to:
+  #   - key_code: s
+  #   - key_code: u
+  #     repeat: false
+  #   conditions: *base
 
   # x -> ま
   - type: basic
