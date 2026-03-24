@@ -36,6 +36,7 @@ aliases:
     - language: "^ja$"
   - type: input_source_unless
     input_sources:
+    # 全角英数
     - input_source_id: "^net\\.mtgto\\.inputmethod\\.macSKK\\.eisu$"
     - input_source_id: "^com\\.google\\.inputmethod\\.Japanese\\.FullWidthRoman$"
   - type: variable_unless
