@@ -130,15 +130,6 @@ rules:
 
 # 9-2. QAZ {{{
 
-# 英語入力のときにのみ有効になるように限定している。
-# 単に日本語入力のときにも有効化すると、
-# 新下駄配列のルールよりも優先されてしまうため。
-#
-# 新下駄配列と共存させたければ、新下駄配列の定義ファイルの中で
-# シンボルモードキーのように書かなければならない
-#
-# それでうまく動くかは試してみないと判らない
-
 - description: "9-2. QAZ"
   manipulators:
 
@@ -248,7 +239,5 @@ rules:
     - type: variable_unless
       name: multitouch_extension_finger_count_total
       value: 0
-
-# }}}
 
 # }}}
