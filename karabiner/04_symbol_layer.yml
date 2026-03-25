@@ -31,13 +31,13 @@ rules:
       modifiers:
         optional:
         - any
+    to_if_alone:
+    - key_code: return_or_enter
     to:
     - set_variable:
         name: symbol_layer
         value: true
         key_up_value: false
-    to_if_alone:
-    - key_code: return_or_enter
 
 # }}}
 
