@@ -640,6 +640,23 @@ rules:
       bundle_identifiers:
       - "company.thebrowser.dia"
 
+  # [Dia] LCmd-I -> Shift-Cmd-I
+  - type: basic
+    from:
+      key_code: i
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: i
+      modifiers:
+      - shift
+      - command
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "company.thebrowser.dia"
+
 # }}}
 
 # Finder {{{

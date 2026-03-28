@@ -1,4 +1,31 @@
 title: "99. Minimum Mappings"
+
+# Aliases {{{
+
+aliases:
+
+- conditions: &en
+  - type: input_source_if
+    input_sources:
+    # 英数
+    - input_source_id: "^net\\.mtgto\\.inputmethod\\.macSKK\\.ascii$"
+    - input_source_id: "^com\\.google\\.inputmethod\\.Japanese\\.Roman$"
+    # 全角英数
+    - input_source_id: "^net\\.mtgto\\.inputmethod\\.macSKK\\.eisu$"
+    - input_source_id: "^com\\.google\\.inputmethod\\.Japanese\\.FullWidthRoman$"
+
+- conditions: &ja
+  - type: input_source_if
+    input_sources:
+    - language: "^ja$"
+  - type: input_source_unless
+    input_sources:
+    # 全角英数
+    - input_source_id: "^net\\.mtgto\\.inputmethod\\.macSKK\\.eisu$"
+    - input_source_id: "^com\\.google\\.inputmethod\\.Japanese\\.FullWidthRoman$"
+
+# }}}
+
 rules:
 
 # FG/HJ -> []/() {{{
@@ -69,6 +96,7 @@ rules:
       - key_code: h
     to:
     - key_code: backslash
+      conditions: *ja
     - key_code: slash
       repeat: false
 
