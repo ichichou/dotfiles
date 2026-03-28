@@ -5,6 +5,7 @@ set -gx LANG ja_JP.UTF-8
 set -gx EDITOR vim
 set -gx XDG_CONFIG_HOME ~/.config
 set -gx GOOGLE_CLOUD_PROJECT my-gemini-project-465104
+set -gx RIPGREP_CONFIG_PATH ~/.ripgreprc
 
 # # LS_COLORS
 #
