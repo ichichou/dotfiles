@@ -381,7 +381,7 @@ rules:
 - description: "LCtrl + Right Hand Side → Numpad Layer"
   manipulators:
 
-  # YUIOP {{{
+  # YUIOP -> _789. {{{
 
   # # LCtrl-Y -> (no map)
   # - type: basic
@@ -445,7 +445,7 @@ rules:
 
   # }}}
 
-  # HJKL; {{{
+  # HJKL; -> _456, {{{
 
   # LCtrl-H -> Delete
   - type: basic
@@ -495,7 +495,8 @@ rules:
     to:
     - key_code: keypad_6
 
-  # LCtrl-; -> Keypad Comma
+  # LCtrl-; -> Comma
+  # macOS では keypad_comma が利かないための回避策
   - type: basic
     from:
       key_code: semicolon
@@ -505,11 +506,13 @@ rules:
         optional:
         - any
     to:
-    - key_code: keypad_comma
+    - key_code: backslash
+      conditions: *ja
+    - key_code: comma
 
   # }}}
 
-  # NM,./ {{{
+  # NM,./ -> 0123_ {{{
 
   # LCtrl-N -> Keypad 0
   - type: basic
