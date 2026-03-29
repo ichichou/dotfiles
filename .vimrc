@@ -343,6 +343,7 @@ augroup vimrc
   autocmd FileType gitcommit setlocal fileencoding=utf-8
   autocmd BufRead,BufNewFile *.{txt,text} setlocal filetype=markdown
   autocmd BufRead,BufNewFile *.typ setlocal filetype=typst
+  autocmd BufRead,BufNewFile *.keymap setlocal filetype=dts tabstop=4
 augroup END
 
 " Quit by Q --------------------------------------
