@@ -7,6 +7,10 @@ title: "04. Symbol Layer"
 
 aliases:
 
+- from/modifiers: &any
+    optional:
+    - any
+
 - conditions: &symbol
   - type: variable_if
     name: symbol_layer
@@ -47,6 +51,7 @@ rules:
   - type: basic
     from:
       key_code: q
+      modifiers: *any
     to:
     - key_code: period
     conditions: *symbol
@@ -55,6 +60,7 @@ rules:
   - type: basic
     from:
       key_code: w
+      modifiers: *any
     to:
     - key_code: equal_sign
       modifiers:
@@ -65,6 +71,7 @@ rules:
   - type: basic
     from:
       key_code: e
+      modifiers: *any
     to:
     - key_code: hyphen
       modifiers:
@@ -75,6 +82,7 @@ rules:
   - type: basic
     from:
       key_code: r
+      modifiers: *any
     to:
     - key_code: "1"
       modifiers:
@@ -85,6 +93,7 @@ rules:
   - type: basic
     from:
       key_code: t
+      modifiers: *any
     to:
     - key_code: backslash
       modifiers:
@@ -95,6 +104,7 @@ rules:
   - type: basic
     from:
       key_code: "y"
+      modifiers: *any
     to:
     - key_code: slash
     conditions: *symbol
@@ -103,6 +113,7 @@ rules:
   - type: basic
     from:
       key_code: u
+      modifiers: *any
     to:
     - key_code: "7"
       modifiers:
@@ -113,6 +124,7 @@ rules:
   - type: basic
     from:
       key_code: i
+      modifiers: *any
     to:
     - key_code: "6"
       modifiers:
@@ -123,6 +135,7 @@ rules:
   - type: basic
     from:
       key_code: o
+      modifiers: *any
     to:
     - key_code: "4"
       modifiers:
@@ -133,6 +146,7 @@ rules:
   - type: basic
     from:
       key_code: p
+      modifiers: *any
     to:
     - key_code: comma
     conditions: *symbol
@@ -145,6 +159,7 @@ rules:
   - type: basic
     from:
       key_code: a
+      modifiers: *any
     to:
     - key_code: "8"
       modifiers:
@@ -155,6 +170,7 @@ rules:
   - type: basic
     from:
       key_code: s
+      modifiers: *any
     to:
     - key_code: equal_sign
     conditions: *symbol
@@ -163,6 +179,7 @@ rules:
   - type: basic
     from:
       key_code: d
+      modifiers: *any
     to:
     - key_code: hyphen
     conditions: *symbol
@@ -171,6 +188,7 @@ rules:
   - type: basic
     from:
       key_code: f
+      modifiers: *any
     to:
     - key_code: "0"
     conditions: *symbol
@@ -179,6 +197,7 @@ rules:
   - type: basic
     from:
       key_code: g
+      modifiers: *any
     to:
     - key_code: "2"
       modifiers:
@@ -189,6 +208,7 @@ rules:
   - type: basic
     from:
       key_code: h
+      modifiers: *any
     to:
     - key_code: grave_accent_and_tilde
       modifiers:
@@ -199,6 +219,7 @@ rules:
   - type: basic
     from:
       key_code: j
+      modifiers: *any
     to:
     - key_code: "1"
     conditions: *symbol
@@ -207,6 +228,7 @@ rules:
   - type: basic
     from:
       key_code: k
+      modifiers: *any
     to:
     - key_code: "5"
       modifiers:
@@ -217,6 +239,7 @@ rules:
   - type: basic
     from:
       key_code: l
+      modifiers: *any
     to:
     - key_code: "3"
       modifiers:
@@ -227,6 +250,7 @@ rules:
   - type: basic
     from:
       key_code: semicolon
+      modifiers: *any
     to:
     - key_code: semicolon
       modifiers:
@@ -241,6 +265,7 @@ rules:
   - type: basic
     from:
       key_code: z
+      modifiers: *any
     to:
     - key_code: "8"
     conditions: *symbol
@@ -249,6 +274,7 @@ rules:
   - type: basic
     from:
       key_code: x
+      modifiers: *any
     to:
     - key_code: "6"
     conditions: *symbol
@@ -257,6 +283,7 @@ rules:
   - type: basic
     from:
       key_code: c
+      modifiers: *any
     to:
     - key_code: "4"
     conditions: *symbol
@@ -265,6 +292,7 @@ rules:
   - type: basic
     from:
       key_code: v
+      modifiers: *any
     to:
     - key_code: "2"
     conditions: *symbol
@@ -273,6 +301,7 @@ rules:
   - type: basic
     from:
       key_code: b
+      modifiers: *any
     to:
     - key_code: backslash
     conditions: *symbol
@@ -281,6 +310,7 @@ rules:
   - type: basic
     from:
       key_code: "n"
+      modifiers: *any
     to:
     - key_code: grave_accent_and_tilde
     conditions: *symbol
@@ -289,6 +319,7 @@ rules:
   - type: basic
     from:
       key_code: m
+      modifiers: *any
     to:
     - key_code: "3"
     conditions: *symbol
@@ -297,6 +328,7 @@ rules:
   - type: basic
     from:
       key_code: comma
+      modifiers: *any
     to:
     - key_code: "5"
     conditions: *symbol
@@ -305,6 +337,7 @@ rules:
   - type: basic
     from:
       key_code: period
+      modifiers: *any
     to:
     - key_code: "7"
     conditions: *symbol
@@ -313,6 +346,7 @@ rules:
   - type: basic
     from:
       key_code: slash
+      modifiers: *any
     to:
     - key_code: "9"
     conditions: *symbol
@@ -325,6 +359,7 @@ rules:
   # - type: basic
   #   from:
   #     key_code: quote
+  #     modifiers: *any
   #   to:
   #   - key_code:
   #   conditions: *symbol
@@ -333,6 +368,7 @@ rules:
   # - type: basic
   #   from:
   #     key_code: open_bracket
+  #     modifiers: *any
   #   to:
   #   - key_code:
   #   conditions: *symbol
@@ -341,6 +377,7 @@ rules:
   # - type: basic
   #   from:
   #     key_code: close_bracket
+  #     modifiers: *any
   #   to:
   #   - key_code:
   #   conditions: *symbol
@@ -349,6 +386,7 @@ rules:
   # - type: basic
   #   from:
   #     key_code: backslash
+  #     modifiers: *any
   #   to:
   #   - key_code:
   #   conditions: *symbol
@@ -357,6 +395,7 @@ rules:
   # - type: basic
   #   from:
   #     key_code: grave_accent_and_tilde
+  #     modifiers: *any
   #   to:
   #   - key_code:
   #   conditions: *symbol
@@ -365,6 +404,7 @@ rules:
   # - type: basic
   #   from:
   #     key_code: spacebar
+  #     modifiers: *any
   #   to:
   #   - key_code:
   #   conditions: *symbol
