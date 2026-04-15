@@ -117,21 +117,4 @@ rules:
       - command
       repeat: true
 
-  # LCtrl-Space -> Ctrl-Space, Eisuu
-  # Raycast をメインのショートカットで起動した場合は英語入力にするが、
-  # それ以外のホットキー等で起動した場合は IME の状態を維持する
-  # Raycast 設定の Auto-switch Input Source はオフにする
-  - type: basic
-    from:
-      key_code: spacebar
-      modifiers:
-        mandatory:
-        - left_control
-    to:
-    - key_code: spacebar
-      modifiers:
-      - control
-    - key_code: japanese_eisuu
-      repeat: false
-
   # }}}
