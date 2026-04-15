@@ -1,4 +1,4 @@
-title: "10-1. 新下駄配列（QAZ）"
+title: "10-1. 新下駄配列（Mod-Tap）"
 
 aliases:
 
@@ -67,7 +67,7 @@ aliases:
 # }}}
 
 rules:
-- description: "10-1. 新下駄配列（QAZ）"
+- description: "10-1. 新下駄配列（Mod-Tap）"
   manipulators:
 
 # 中指シフト・右 {{{
@@ -2058,7 +2058,7 @@ rules:
 
 # }}}
 
-# QAZ {{{
+# QAZ, Quate and RCtrl {{{
 
   # q -> ー/Hyper
   - type: basic
@@ -2074,6 +2074,7 @@ rules:
       - right_control
       - right_option
       - right_command
+      halt: true
     to_delayed_action:
       to_if_canceled:
       - key_code: quote
@@ -2091,6 +2092,7 @@ rules:
       halt: true
     to_if_held_down:
     - key_code: left_control
+      halt: true
     to_delayed_action:
       to_if_canceled:
       - key_code: "n"
@@ -2109,10 +2111,30 @@ rules:
       halt: true
     to_if_held_down:
     - key_code: left_shift
+      halt: true
     to_delayed_action:
       to_if_canceled:
       - key_code: s
       - key_code: u
+    conditions: *base
+    parameters: *mod_tap_threshold_ms
+
+  # ' -> げ/RCtrl
+  - type: basic
+    from:
+      key_code: quote
+      modifiers: *optional_shift
+    to_if_alone:
+    - key_code: g
+    - key_code: e
+      halt: true
+    to_if_held_down:
+    - key_code: right_control
+      halt: true
+    to_delayed_action:
+      to_if_canceled:
+      - key_code: g
+      - key_code: e
     conditions: *base
     parameters: *mod_tap_threshold_ms
 
@@ -2340,16 +2362,17 @@ rules:
       repeat: false
     conditions: *base
 
-  # ' -> げ
-  - type: basic
-    from:
-      key_code: quote
-      modifiers: *optional_shift
-    to:
-    - key_code: g
-    - key_code: e
-      repeat: false
-    conditions: *base
+  # # ' -> げ
+  # # Quate and RCtrl で定義
+  # - type: basic
+  #   from:
+  #     key_code: quote
+  #     modifiers: *optional_shift
+  #   to:
+  #   - key_code: g
+  #   - key_code: e
+  #     repeat: false
+  #   conditions: *base
 
   # # z -> す
   # # QAZ で定義
