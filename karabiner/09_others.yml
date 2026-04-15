@@ -193,9 +193,34 @@ rules:
 
 # }}}
 
-# 9-3. Click Key {{{
+# 9-3. Quote and RCtrl {{{
 
-- description: "9-3. Click Key"
+- description: "9-3. Quote and RCtrl"
+  manipulators:
+
+  # Quote and RCtrl
+  - type: basic
+    from:
+      key_code: quote
+      modifiers:
+        optional:
+        - any
+    to_if_alone:
+    - key_code: quote
+      halt: true
+    to_if_held_down:
+    - key_code: right_control
+    to_delayed_action:
+      to_if_canceled:
+      - key_code: quote
+    conditions: *en
+    parameters: *mod_tap_threshold_ms
+
+# }}}
+
+# 9-4. Click Key {{{
+
+- description: "9-4. Click Key"
   manipulators:
 
   # W -> Right Click
@@ -204,7 +229,7 @@ rules:
       key_code: w
       modifiers:
         optional:
-        - any
+        - left_shift
     to:
     - pointing_button: button2
     conditions:
@@ -218,7 +243,7 @@ rules:
       key_code: e
       modifiers:
         optional:
-        - any
+        - left_shift
     to:
     - pointing_button: button1
     conditions:
@@ -232,12 +257,57 @@ rules:
       key_code: r
       modifiers:
         optional:
-        - any
+        - left_shift
     to:
     - pointing_button: button3
     conditions:
     - type: variable_unless
       name: multitouch_extension_finger_count_total
       value: 0
+
+# }}}
+
+# 9-5. LCtrl-Space -> LCtrl-Space, Eisuu {{{
+
+# Raycast をメインのショートカットで起動した場合は英語入力にするが、
+# それ以外のホットキー等で起動した場合は IME の状態を維持する
+# Raycast 設定の Auto-switch Input Source はオフにする
+
+# LCtrl-Space が暴発するようになった
+# この組み合わせの押下直後にイベントが発行されるから？
+# オン／オフ時の挙動の変化と、
+# to_after_key_up で実装したときにどうなるか確認
+
+# - description: "9-5. LCtrl-Space → Ctrl-Space, Eisuu"
+#   manipulators:
+#
+#   - type: basic
+#     from:
+#       key_code: spacebar
+#       modifiers:
+#         mandatory:
+#         - left_control
+#     to:
+#     - key_code: spacebar
+#       modifiers:
+#       - control
+#     - key_code: japanese_eisuu
+#       repeat: false
+#
+# - description: "9-5'. LCtrl-Space → Ctrl-Space, Eisuu (to_after_key_up)"
+#   manipulators:
+#
+#   - type: basic
+#     from:
+#       key_code: spacebar
+#       modifiers:
+#         mandatory:
+#         - left_control
+#     to_after_key_up:
+#     - key_code: spacebar
+#       modifiers:
+#       - control
+#     - key_code: japanese_eisuu
+#       repeat: false
 
 # }}}
