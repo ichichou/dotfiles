@@ -1,9 +1,9 @@
-title: "10. Others"
+title: "19. Others"
 rules:
 
-# 10-1. Alone Kana/Eisuu {{{
+# 19-1. Alone Kana/Eisuu {{{
 
-- description: "10-1. Alone Kana/Eisuu"
+- description: "19-1. Others: Alone Kana/Eisuu"
   manipulators:
 
   # Shift-Kana -> Kana
@@ -96,7 +96,7 @@ rules:
 
 # }}}
 
-# 10-2. LCtrl-Space -> LCtrl-Space, Eisuu {{{
+# 19-2. LCtrl-Space -> LCtrl-Space, Eisuu {{{
 
 # Raycast をメインのショートカットで起動した場合は英語入力にするが、
 # それ以外のホットキー等で起動した場合は IME の状態を維持する
@@ -107,7 +107,7 @@ rules:
 # オン／オフ時の挙動の変化と、
 # to_after_key_up で実装したときにどうなるか確認
 
-# - description: "10-2. LCtrl-Space → Ctrl-Space, Eisuu"
+# - description: "19-2. Others: LCtrl-Space → Ctrl-Space, Eisuu"
 #   manipulators:
 #
 #   - type: basic
@@ -123,7 +123,7 @@ rules:
 #     - key_code: japanese_eisuu
 #       repeat: false
 #
-# - description: "10-2'. LCtrl-Space → Ctrl-Space, Eisuu (to_after_key_up)"
+# - description: "19-2'. Others: LCtrl-Space → Ctrl-Space, Eisuu (to_after_key_up)"
 #   manipulators:
 #
 #   - type: basic

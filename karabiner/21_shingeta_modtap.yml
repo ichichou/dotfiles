@@ -1,4 +1,4 @@
-title: "101. 新下駄配列（Mod-Tap）"
+title: "21. 新下駄配列（Mod-Tap）"
 
 aliases:
 
@@ -67,7 +67,7 @@ aliases:
 # }}}
 
 rules:
-- description: "101. 新下駄配列（Mod-Tap）"
+- description: "21. 新下駄配列（Mod-Tap）"
   manipulators:
 
 # 中指シフト・右 {{{

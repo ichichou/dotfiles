@@ -1,4 +1,4 @@
-title: "100. 新下駄配列（改）"
+title: "20. 新下駄配列（改）"
 
 aliases:
 
@@ -67,7 +67,7 @@ aliases:
 # }}}
 
 rules:
-- description: "100. 新下駄配列（改）"
+- description: "20. 新下駄配列（改）"
   manipulators:
 
 # 中指シフト・右 {{{

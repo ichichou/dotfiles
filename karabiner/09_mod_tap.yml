@@ -43,7 +43,7 @@ rules:
 
 # 9-1. SandS, Return and Ctrl {{{
 
-- description: "9-1. SandS, Return and Ctrl"
+- description: "9-1. Mod-Tap: SandS, Return and Ctrl"
   manipulators:
 
   # Space and LShift
@@ -78,7 +78,7 @@ rules:
 
 # 日本語入力時は新下駄配列で定義
 
-- description: "9-2. Quote and Ctrl (en)"
+- description: "9-2. Mod-Tap: Quote and Ctrl (en)"
   manipulators:
   - type: basic
     from:
@@ -104,7 +104,7 @@ rules:
 
 # 日本語入力時は新下駄配列で定義
 
-- description: "9-3. Symbol Mode (en)"
+- description: "9-3. Mod-Tap: Symbol Mode (en)"
   manipulators:
 
   # Symbol Mode Key {{{
@@ -485,7 +485,7 @@ rules:
 
 # 日本語入力時は新下駄配列で定義
 
-- description: "9-4. QAZ (en)"
+- description: "9-4. Mod-Tap: QAZ (en)"
   manipulators:
 
   # Q -> Q/Hyper

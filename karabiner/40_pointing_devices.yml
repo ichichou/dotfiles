@@ -1,4 +1,4 @@
-title: "300. Pointing Devices"
+title: "40. Pointing Devices"
 
 # ALIASES =======================================
 
@@ -24,7 +24,7 @@ aliases:
 # RULES ==========================================
 
 rules:
-- description: "300. Pointing Devices"
+- description: "40. Pointing Devices"
   manipulators:
 
 # G Pro {{{
