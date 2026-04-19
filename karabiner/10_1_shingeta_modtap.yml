@@ -54,15 +54,15 @@ aliases:
     bundle_identifiers:
     - "^com\\.apple\\.loginwindow$"
 
-- parameters: &mod_tap_threshold_ms
-    basic.to_if_alone_threshocld_millisecocnds: 150
-    basic.to_if_held_down_threshold_milliseconds: 150
-    basic.to_delayed_action_delay_milliseconds: 200
-
 # Parameters -------------------------------------
 
 - parameters: &threshold_ms
     basic.simultaneous_threshold_milliseconds: 60
+
+- parameters: &mod_tap_threshold_ms
+    basic.to_if_alone_threshocld_millisecocnds: 120
+    basic.to_if_held_down_threshold_milliseconds: 120
+    basic.to_delayed_action_delay_milliseconds: 120
 
 # }}}
 
@@ -2058,7 +2058,7 @@ rules:
 
 # }}}
 
-# QAZ, Quate and RCtrl {{{
+# Mod-Tap {{{
 
   # q -> ー/Hyper
   - type: basic
@@ -2488,7 +2488,11 @@ rules:
 
 # Symbol Mode {{{
 
-  # Symbol Mode Key ------------------------------
+  # Symbol Mode Key {{{
+
+  # Symbol mode key をロールオーバーに対応させると
+  # symbol mode がオンになるまでに待ち時間が生じる
+  # ロールオーバーと素早い記号入力はトレードオフである
 
   # r -> 、
   - type: basic
@@ -2497,7 +2501,6 @@ rules:
       modifiers: *optional_shift
     to_if_alone:
     - key_code: comma
-      repeat: false
     to:
     - set_variable:
         name: symbol
@@ -2505,7 +2508,29 @@ rules:
         key_up_value: false
     conditions: *base
 
-  # Symbol Mode Mapping --------------------------
+  # # r -> 、 (ロールオーバー対応)
+  # - type: basic
+  #   from:
+  #     key_code: r
+  #     modifiers: *optional_shift
+  #   to_if_alone:
+  #   - key_code: comma
+  #     halt: true
+  #   to_if_held_down:
+  #   - set_variable:
+  #       name: symbol
+  #       value: true
+  #       key_up_value: false
+  #     halt: true
+  #   to_delayed_action:
+  #     to_if_canceled:
+  #     - key_code: comma
+  #   conditions: *base
+  #   parameters: *mod_tap_threshold_ms
+
+  # }}}
+
+  # Mappings {{{
 
   # 入力される記号はIMEの仮名テーブルで定義する
 
@@ -2818,5 +2843,7 @@ rules:
       modifiers: *to_shift
       repeat: false
     conditions: *symbol
+
+  # }}}
 
 # }}}
