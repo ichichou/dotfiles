@@ -192,43 +192,7 @@ rules:
 
   # Edit Mode 2 {{{
 
-  # Left: W + E (W -> E)
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: w
-      - key_code: e
-      modifiers:
-        optional:
-        - any
-      simultaneous_options:
-        key_down_order: strict
-        to_after_key_up:
-        - set_variable:
-            name: edit_2
-            value: false
-    to:
-    - set_variable:
-        name: edit_2
-        value: true
-    to_if_alone:
-    # 英語入力時
-    - key_code: w
-      conditions: *en
-    - key_code: e
-      conditions: *en
-    # 日本語入力時
-    - key_code: "n"
-      conditions: *ja
-    - key_code: i
-      conditions: *ja
-    - key_code: h
-      conditions: *ja
-    - key_code: a
-      conditions: *ja
-    parameters: *threshold_ms
-
-  # Left: W + E (E -> W)
+  # Left: W + E
   - type: basic
     from:
       simultaneous:
@@ -247,20 +211,7 @@ rules:
         name: edit_2
         value: true
     to_if_alone:
-    # 英語入力時
-    - key_code: e
-      conditions: *en
-    - key_code: w
-      conditions: *en
-    # 日本語入力時
-    - key_code: h
-      conditions: *ja
-    - key_code: a
-      conditions: *ja
-    - key_code: "n"
-      conditions: *ja
-    - key_code: i
-      conditions: *ja
+    - key_code: escape
     parameters: *threshold_ms
 
   # Right: I + O
@@ -284,6 +235,77 @@ rules:
     to_if_alone:
     - key_code: tab
     parameters: *threshold_ms
+
+  # # Left: W + E (W -> E)
+  # - type: basic
+  #   from:
+  #     simultaneous:
+  #     - key_code: w
+  #     - key_code: e
+  #     modifiers:
+  #       optional:
+  #       - any
+  #     simultaneous_options:
+  #       key_down_order: strict
+  #       to_after_key_up:
+  #       - set_variable:
+  #           name: edit_2
+  #           value: false
+  #   to:
+  #   - set_variable:
+  #       name: edit_2
+  #       value: true
+  #   to_if_alone:
+  #   # 英語入力時
+  #   - key_code: w
+  #     conditions: *en
+  #   - key_code: e
+  #     conditions: *en
+  #   # 日本語入力時
+  #   - key_code: "n"
+  #     conditions: *ja
+  #   - key_code: i
+  #     conditions: *ja
+  #   - key_code: h
+  #     conditions: *ja
+  #   - key_code: a
+  #     conditions: *ja
+  #   parameters: *threshold_ms
+  # 
+  # # Left: W + E (E -> W)
+  # - type: basic
+  #   from:
+  #     simultaneous:
+  #     - key_code: w
+  #     - key_code: e
+  #     modifiers:
+  #       optional:
+  #       - any
+  #     simultaneous_options:
+  #       to_after_key_up:
+  #       - set_variable:
+  #           name: edit_2
+  #           value: false
+  #   to:
+  #   - set_variable:
+  #       name: edit_2
+  #       value: true
+  #   to_if_alone:
+  #   # 英語入力時
+  #   - key_code: e
+  #     conditions: *en
+  #   - key_code: w
+  #     conditions: *en
+  #   # 日本語入力時
+  #   - key_code: h
+  #     conditions: *ja
+  #   - key_code: a
+  #     conditions: *ja
+  #   - key_code: "n"
+  #     conditions: *ja
+  #   - key_code: i
+  #     conditions: *ja
+  #   parameters: *threshold_ms
 
   # # Right: I + O (I -> O)
   # - type: basic
