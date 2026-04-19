@@ -1,0 +1,191 @@
+title: "09. Others"
+rules:
+
+# 9-1. Alone Kana/Eisuu {{{
+
+- description: "9-1. Alone Kana/Eisuu"
+  manipulators:
+
+  # Shift-Kana -> Kana
+  - type: basic
+    from:
+      key_code: japanese_kana
+      modifiers:
+        mandatory:
+        - shift
+    to:
+    - key_code: japanese_kana
+      repeat: false
+
+  # Ctrl-Kana -> Kana
+  - type: basic
+    from:
+      key_code: japanese_kana
+      modifiers:
+        mandatory:
+        - control
+    to:
+    - key_code: japanese_kana
+      repeat: false
+
+  # Opt-Kana -> Kana
+  - type: basic
+    from:
+      key_code: japanese_kana
+      modifiers:
+        mandatory:
+        - option
+    to:
+    - key_code: japanese_kana
+      repeat: false
+
+  # Cmd-Kana -> Kana
+  - type: basic
+    from:
+      key_code: japanese_kana
+      modifiers:
+        mandatory:
+        - command
+    to:
+    - key_code: japanese_kana
+      repeat: false
+
+  # Shift-Eisuu -> Eisuu
+  - type: basic
+    from:
+      key_code: japanese_eisuu
+      modifiers:
+        mandatory:
+        - shift
+    to:
+    - key_code: japanese_eisuu
+      repeat: false
+
+  # Ctrl-Eisuu -> Eisuu
+  - type: basic
+    from:
+      key_code: japanese_eisuu
+      modifiers:
+        mandatory:
+        - control
+    to:
+    - key_code: japanese_eisuu
+      repeat: false
+
+  # Opt-Eisuu -> Eisuu
+  - type: basic
+    from:
+      key_code: japanese_eisuu
+      modifiers:
+        mandatory:
+        - option
+    to:
+    - key_code: japanese_eisuu
+      repeat: false
+
+  # Cmd-Eisuu -> Eisuu
+  - type: basic
+    from:
+      key_code: japanese_eisuu
+      modifiers:
+        mandatory:
+        - command
+    to:
+    - key_code: japanese_eisuu
+      repeat: false
+
+# }}}
+
+# 9-2. Click Key {{{
+
+- description: "9-2. Click Key"
+  manipulators:
+
+  # W -> Right Click
+  - type: basic
+    from:
+      key_code: w
+      modifiers:
+        optional:
+        - left_shift
+    to:
+    - pointing_button: button2
+    conditions:
+    - type: variable_unless
+      name: multitouch_extension_finger_count_total
+      value: 0
+
+  # E -> Left Click
+  - type: basic
+    from:
+      key_code: e
+      modifiers:
+        optional:
+        - left_shift
+    to:
+    - pointing_button: button1
+    conditions:
+    - type: variable_unless
+      name: multitouch_extension_finger_count_total
+      value: 0
+
+  # R -> Middle Click
+  - type: basic
+    from:
+      key_code: r
+      modifiers:
+        optional:
+        - left_shift
+    to:
+    - pointing_button: button3
+    conditions:
+    - type: variable_unless
+      name: multitouch_extension_finger_count_total
+      value: 0
+
+# }}}
+
+# 9-3. LCtrl-Space -> LCtrl-Space, Eisuu {{{
+
+# Raycast をメインのショートカットで起動した場合は英語入力にするが、
+# それ以外のホットキー等で起動した場合は IME の状態を維持する
+# Raycast 設定の Auto-switch Input Source はオフにする
+
+# LCtrl-Space が暴発するようになった
+# この組み合わせの押下直後にイベントが発行されるから？
+# オン／オフ時の挙動の変化と、
+# to_after_key_up で実装したときにどうなるか確認
+
+# - description: "9-3. LCtrl-Space → Ctrl-Space, Eisuu"
+#   manipulators:
+#
+#   - type: basic
+#     from:
+#       key_code: spacebar
+#       modifiers:
+#         mandatory:
+#         - left_control
+#     to:
+#     - key_code: spacebar
+#       modifiers:
+#       - control
+#     - key_code: japanese_eisuu
+#       repeat: false
+#
+# - description: "9-3'. LCtrl-Space → Ctrl-Space, Eisuu (to_after_key_up)"
+#   manipulators:
+#
+#   - type: basic
+#     from:
+#       key_code: spacebar
+#       modifiers:
+#         mandatory:
+#         - left_control
+#     to_after_key_up:
+#     - key_code: spacebar
+#       modifiers:
+#       - control
+#     - key_code: japanese_eisuu
+#       repeat: false
+
+# }}}
