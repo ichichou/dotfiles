@@ -1,9 +1,9 @@
-title: "09. Others"
+title: "10. Others"
 rules:
 
-# 9-1. Alone Kana/Eisuu {{{
+# 10-1. Alone Kana/Eisuu {{{
 
-- description: "9-1. Alone Kana/Eisuu"
+- description: "10-1. Alone Kana/Eisuu"
   manipulators:
 
   # Shift-Kana -> Kana
@@ -96,56 +96,7 @@ rules:
 
 # }}}
 
-# 9-2. Click Key {{{
-
-- description: "9-2. Click Key"
-  manipulators:
-
-  # W -> Right Click
-  - type: basic
-    from:
-      key_code: w
-      modifiers:
-        optional:
-        - left_shift
-    to:
-    - pointing_button: button2
-    conditions:
-    - type: variable_unless
-      name: multitouch_extension_finger_count_total
-      value: 0
-
-  # E -> Left Click
-  - type: basic
-    from:
-      key_code: e
-      modifiers:
-        optional:
-        - left_shift
-    to:
-    - pointing_button: button1
-    conditions:
-    - type: variable_unless
-      name: multitouch_extension_finger_count_total
-      value: 0
-
-  # R -> Middle Click
-  - type: basic
-    from:
-      key_code: r
-      modifiers:
-        optional:
-        - left_shift
-    to:
-    - pointing_button: button3
-    conditions:
-    - type: variable_unless
-      name: multitouch_extension_finger_count_total
-      value: 0
-
-# }}}
-
-# 9-3. LCtrl-Space -> LCtrl-Space, Eisuu {{{
+# 10-2. LCtrl-Space -> LCtrl-Space, Eisuu {{{
 
 # Raycast をメインのショートカットで起動した場合は英語入力にするが、
 # それ以外のホットキー等で起動した場合は IME の状態を維持する
@@ -156,7 +107,7 @@ rules:
 # オン／オフ時の挙動の変化と、
 # to_after_key_up で実装したときにどうなるか確認
 
-# - description: "9-3. LCtrl-Space → Ctrl-Space, Eisuu"
+# - description: "10-2. LCtrl-Space → Ctrl-Space, Eisuu"
 #   manipulators:
 #
 #   - type: basic
@@ -172,7 +123,7 @@ rules:
 #     - key_code: japanese_eisuu
 #       repeat: false
 #
-# - description: "9-3'. LCtrl-Space → Ctrl-Space, Eisuu (to_after_key_up)"
+# - description: "10-2'. LCtrl-Space → Ctrl-Space, Eisuu (to_after_key_up)"
 #   manipulators:
 #
 #   - type: basic

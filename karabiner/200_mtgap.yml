@@ -1,4 +1,4 @@
-title: "11. MTGAP"
+title: "200. MTGAP"
 
 # Aliases {{{
 
@@ -20,7 +20,7 @@ aliases:
 
 rules:
 
-- description: "11-1. MTGAP (original)"
+- description: "201. MTGAP (original)"
   manipulators:
 
 # ypouj kdlcw
@@ -349,7 +349,7 @@ rules:
 
   # }}}
 
-- description: "11-2. MTGAP Mod-1"
+- description: "202. MTGAP Mod-1"
   manipulators:
 
 # ypou/ kdlcw

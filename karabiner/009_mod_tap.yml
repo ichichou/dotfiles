@@ -1,4 +1,4 @@
-title: "08. Mod-Tap"
+title: "09. Mod-Tap"
 
 aliases:
 
@@ -41,9 +41,9 @@ aliases:
 
 rules:
 
-# 8-1. SandS, Return and Ctrl {{{
+# 9-1. SandS, Return and Ctrl {{{
 
-- description: "8-1. SandS, Return and Ctrl"
+- description: "9-1. SandS, Return and Ctrl"
   manipulators:
 
   # Space and LShift
@@ -74,11 +74,11 @@ rules:
 
 # }}}
 
-# 8-2. Quote and Ctrl (en) {{{
+# 9-2. Quote and Ctrl (en) {{{
 
 # 日本語入力時は新下駄配列で定義
 
-- description: "8-2. Quote and Ctrl (en)"
+- description: "9-2. Quote and Ctrl (en)"
   manipulators:
   - type: basic
     from:
@@ -100,81 +100,11 @@ rules:
 
 # }}}
 
-# 8-3. QAZ (en) {{{
+# 9-3. Symbol Mode (en) {{{
 
 # 日本語入力時は新下駄配列で定義
 
-- description: "8-3. QAZ (en)"
-  manipulators:
-
-  # Q -> Q/Hyper
-  - type: basic
-    from:
-      key_code: q
-      modifiers:
-        optional:
-        - any
-    to_if_alone:
-    - key_code: q
-      halt: true
-    to_if_held_down:
-    - key_code: right_shift
-      modifiers:
-      - right_control
-      - right_option
-      - right_command
-      halt: true
-    to_delayed_action:
-      to_if_canceled:
-      - key_code: q
-    conditions: *en
-    parameters: *mod_tap_threshold_ms
-
-  # A -> A/LCtrl
-  - type: basic
-    from:
-      key_code: a
-      modifiers:
-        optional:
-        - any
-    to_if_alone:
-    - key_code: a
-      halt: true
-    to_if_held_down:
-    - key_code: left_control
-      halt: true
-    to_delayed_action:
-      to_if_canceled:
-      - key_code: a
-    conditions: *en
-    parameters: *mod_tap_threshold_ms
-
-  # Z -> Z/LShift
-  - type: basic
-    from:
-      key_code: z
-      modifiers:
-        optional:
-        - any
-    to_if_alone:
-    - key_code: z
-      halt: true
-    to_if_held_down:
-    - key_code: left_shift
-      halt: true
-    to_delayed_action:
-      to_if_canceled:
-      - key_code: z
-    conditions: *en
-    parameters: *mod_tap_threshold_ms
-
-# }}}
-
-# 8-4. Symbol Mode (en) {{{
-
-# 日本語入力時は新下駄配列で定義
-
-- description: "8-4. Symbol Mode (en)"
+- description: "9-3. Symbol Mode (en)"
   manipulators:
 
   # Symbol Mode Key {{{
@@ -548,5 +478,75 @@ rules:
     conditions: *symbol
 
   # }}}
+
+# }}}
+
+# 9-4. QAZ (en) {{{
+
+# 日本語入力時は新下駄配列で定義
+
+- description: "9-4. QAZ (en)"
+  manipulators:
+
+  # Q -> Q/Hyper
+  - type: basic
+    from:
+      key_code: q
+      modifiers:
+        optional:
+        - any
+    to_if_alone:
+    - key_code: q
+      halt: true
+    to_if_held_down:
+    - key_code: right_shift
+      modifiers:
+      - right_control
+      - right_option
+      - right_command
+      halt: true
+    to_delayed_action:
+      to_if_canceled:
+      - key_code: q
+    conditions: *en
+    parameters: *mod_tap_threshold_ms
+
+  # A -> A/LCtrl
+  - type: basic
+    from:
+      key_code: a
+      modifiers:
+        optional:
+        - any
+    to_if_alone:
+    - key_code: a
+      halt: true
+    to_if_held_down:
+    - key_code: left_control
+      halt: true
+    to_delayed_action:
+      to_if_canceled:
+      - key_code: a
+    conditions: *en
+    parameters: *mod_tap_threshold_ms
+
+  # Z -> Z/LShift
+  - type: basic
+    from:
+      key_code: z
+      modifiers:
+        optional:
+        - any
+    to_if_alone:
+    - key_code: z
+      halt: true
+    to_if_held_down:
+    - key_code: left_shift
+      halt: true
+    to_delayed_action:
+      to_if_canceled:
+      - key_code: z
+    conditions: *en
+    parameters: *mod_tap_threshold_ms
 
 # }}}
