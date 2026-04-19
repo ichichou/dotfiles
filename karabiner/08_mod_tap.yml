@@ -1,0 +1,552 @@
+title: "08. Mod-Tap"
+
+aliases:
+
+# Aliases {{{
+
+- conditions: &en
+  - type: input_source_if
+    input_sources:
+    # 英数
+    - input_source_id: "^net\\.mtgto\\.inputmethod\\.macSKK\\.ascii$"
+    - input_source_id: "^com\\.google\\.inputmethod\\.Japanese\\.Roman$"
+    # 全角英数
+    - input_source_id: "^net\\.mtgto\\.inputmethod\\.macSKK\\.eisu$"
+    - input_source_id: "^com\\.google\\.inputmethod\\.Japanese\\.FullWidthRoman$"
+
+- conditions: &ja
+  - type: input_source_if
+    input_sources:
+    - language: "^ja$"
+  - type: input_source_unless
+    input_sources:
+    # 全角英数
+    - input_source_id: "^net\\.mtgto\\.inputmethod\\.macSKK\\.eisu$"
+    - input_source_id: "^com\\.google\\.inputmethod\\.Japanese\\.FullWidthRoman$"
+
+- conditions: &symbol
+  - type: variable_if
+    name: symbol
+    value: true
+  - type: frontmost_application_unless
+    bundle_identifiers:
+    - "^com\\.apple\\.loginwindow$"
+
+- parameters: &mod_tap_threshold_ms
+    basic.to_if_alone_threshocld_millisecocnds: 120
+    basic.to_if_held_down_threshold_milliseconds: 120
+    basic.to_delayed_action_delay_milliseconds: 120
+
+# }}}
+
+rules:
+
+# 8-1. SandS, Return and Ctrl {{{
+
+- description: "8-1. SandS, Return and Ctrl"
+  manipulators:
+
+  # Space and LShift
+  - type: basic
+    from:
+      key_code: spacebar
+      modifiers:
+        optional:
+        - any
+    to_if_alone:
+    - key_code: spacebar
+    to:
+    - key_code: left_shift
+      lazy: true
+
+  # Return and RCtrl
+  - type: basic
+    from:
+      key_code: return_or_enter
+      modifiers:
+        optional:
+        - any
+    to_if_alone:
+    - key_code: return_or_enter
+    to:
+    - key_code: right_control
+      lazy: true
+
+# }}}
+
+# 8-2. Quote and Ctrl (en) {{{
+
+# 日本語入力時は新下駄配列で定義
+
+- description: "8-2. Quote and Ctrl (en)"
+  manipulators:
+  - type: basic
+    from:
+      key_code: quote
+      modifiers:
+        optional:
+        - any
+    to_if_alone:
+    - key_code: quote
+      halt: true
+    to_if_held_down:
+    - key_code: right_control
+      halt: true
+    to_delayed_action:
+      to_if_canceled:
+      - key_code: quote
+    conditions: *en
+    parameters: *mod_tap_threshold_ms
+
+# }}}
+
+# 8-3. QAZ (en) {{{
+
+# 日本語入力時は新下駄配列で定義
+
+- description: "8-3. QAZ (en)"
+  manipulators:
+
+  # Q -> Q/Hyper
+  - type: basic
+    from:
+      key_code: q
+      modifiers:
+        optional:
+        - any
+    to_if_alone:
+    - key_code: q
+      halt: true
+    to_if_held_down:
+    - key_code: right_shift
+      modifiers:
+      - right_control
+      - right_option
+      - right_command
+      halt: true
+    to_delayed_action:
+      to_if_canceled:
+      - key_code: q
+    conditions: *en
+    parameters: *mod_tap_threshold_ms
+
+  # A -> A/LCtrl
+  - type: basic
+    from:
+      key_code: a
+      modifiers:
+        optional:
+        - any
+    to_if_alone:
+    - key_code: a
+      halt: true
+    to_if_held_down:
+    - key_code: left_control
+      halt: true
+    to_delayed_action:
+      to_if_canceled:
+      - key_code: a
+    conditions: *en
+    parameters: *mod_tap_threshold_ms
+
+  # Z -> Z/LShift
+  - type: basic
+    from:
+      key_code: z
+      modifiers:
+        optional:
+        - any
+    to_if_alone:
+    - key_code: z
+      halt: true
+    to_if_held_down:
+    - key_code: left_shift
+      halt: true
+    to_delayed_action:
+      to_if_canceled:
+      - key_code: z
+    conditions: *en
+    parameters: *mod_tap_threshold_ms
+
+# }}}
+
+# 8-4. Symbol Mode (en) {{{
+
+# 日本語入力時は新下駄配列で定義
+
+- description: "8-4. Symbol Mode (en)"
+  manipulators:
+
+  # Symbol Mode Key {{{
+
+  - type: basic
+    from:
+      key_code: r
+      modifiers:
+        optional:
+        - shift
+    to_if_alone:
+    - key_code: r
+      halt: true
+    to_if_held_down:
+    - key_code: japanese_kana
+    - set_variable:
+        name: symbol
+        value: true
+        key_up_value: false
+    to_after_key_up:
+    - key_code: japanese_eisuu
+    to_delayed_action:
+      to_if_canceled:
+      - key_code: r
+    conditions: *en
+    parameters: *mod_tap_threshold_ms
+
+  # }}}
+
+  # Mappings {{{
+
+  # 入力される記号はIMEの仮名テーブルで定義する
+
+  # y
+  - type: basic
+    from:
+      key_code: "y"
+    to:
+    - key_code: backslash
+    - key_code: "y"
+      repeat: false
+    conditions: *symbol
+
+  # u
+  - type: basic
+    from:
+      key_code: u
+    to:
+    - key_code: backslash
+    - key_code: u
+      repeat: false
+    conditions: *symbol
+
+  # i
+  - type: basic
+    from:
+      key_code: i
+    to:
+    - key_code: backslash
+    - key_code: i
+      repeat: false
+    conditions: *symbol
+
+  # o
+  - type: basic
+    from:
+      key_code: o
+    to:
+    - key_code: backslash
+    - key_code: o
+      repeat: false
+    conditions: *symbol
+
+  # p
+  - type: basic
+    from:
+      key_code: p
+    to:
+    - key_code: backslash
+    - key_code: p
+      repeat: false
+    conditions: *symbol
+
+  # h
+  - type: basic
+    from:
+      key_code: h
+    to:
+    - key_code: backslash
+    - key_code: h
+      repeat: false
+    conditions: *symbol
+
+  # j
+  - type: basic
+    from:
+      key_code: j
+    to:
+    - key_code: backslash
+    - key_code: j
+      repeat: false
+    conditions: *symbol
+
+  # k
+  - type: basic
+    from:
+      key_code: k
+    to:
+    - key_code: backslash
+    - key_code: k
+      repeat: false
+    conditions: *symbol
+
+  # l
+  - type: basic
+    from:
+      key_code: l
+    to:
+    - key_code: backslash
+    - key_code: l
+      repeat: false
+    conditions: *symbol
+
+  # ;
+  - type: basic
+    from:
+      key_code: semicolon
+    to:
+    - key_code: backslash
+    - key_code: semicolon
+      repeat: false
+    conditions: *symbol
+
+  # :
+  - type: basic
+    from:
+      key_code: semicolon
+      modifiers:
+        mandatory:
+        - shift
+    to:
+    - key_code: backslash
+    - key_code: semicolon
+      modifiers:
+      - shift
+      repeat: false
+    conditions: *symbol
+
+  # '
+  - type: basic
+    from:
+      key_code: quote
+    to:
+    - key_code: backslash
+    - key_code: quote
+      repeat: false
+    conditions: *symbol
+
+  # "
+  - type: basic
+    from:
+      key_code: quote
+      modifiers:
+        mandatory:
+        - shift
+    to:
+    - key_code: backslash
+    - key_code: quote
+      modifiers:
+      - shift
+      repeat: false
+    conditions: *symbol
+
+  # n
+  - type: basic
+    from:
+      key_code: "n"
+    to:
+    - key_code: backslash
+    - key_code: "n"
+      repeat: false
+    conditions: *symbol
+
+  # m
+  - type: basic
+    from:
+      key_code: m
+    to:
+    - key_code: backslash
+    - key_code: m
+      repeat: false
+    conditions: *symbol
+
+  # ,
+  - type: basic
+    from:
+      key_code: comma
+    to:
+    - key_code: backslash
+    - key_code: comma
+      repeat: false
+    conditions: *symbol
+
+  # .
+  - type: basic
+    from:
+      key_code: period
+    to:
+    - key_code: backslash
+    - key_code: period
+      repeat: false
+    conditions: *symbol
+
+  # <
+  - type: basic
+    from:
+      key_code: comma
+      modifiers:
+        mandatory:
+        - shift
+    to:
+    - key_code: backslash
+    - key_code: comma
+      modifiers:
+      - shift
+      repeat: false
+    conditions: *symbol
+
+  # >
+  - type: basic
+    from:
+      key_code: period
+      modifiers:
+        mandatory:
+        - shift
+    to:
+    - key_code: backslash
+    - key_code: period
+      modifiers:
+      - shift
+      repeat: false
+    conditions: *symbol
+
+  # /
+  - type: basic
+    from:
+      key_code: slash
+    to:
+    - key_code: backslash
+    - key_code: slash
+      repeat: false
+    conditions: *symbol
+
+  # ?
+  - type: basic
+    from:
+      key_code: slash
+      modifiers:
+        mandatory:
+        - shift
+    to:
+    - key_code: backslash
+    - key_code: slash
+      modifiers:
+      - shift
+      repeat: false
+    conditions: *symbol
+
+  # [
+  - type: basic
+    from:
+      key_code: open_bracket
+    to:
+    - key_code: backslash
+    - key_code: open_bracket
+      repeat: false
+    conditions: *symbol
+
+  # ]
+  - type: basic
+    from:
+      key_code: close_bracket
+    to:
+    - key_code: backslash
+    - key_code: close_bracket
+      repeat: false
+    conditions: *symbol
+
+  # {
+  - type: basic
+    from:
+      key_code: open_bracket
+      modifiers:
+        mandatory:
+        - shift
+    to:
+    - key_code: backslash
+    - key_code: open_bracket
+      modifiers:
+      - shift
+      repeat: false
+    conditions: *symbol
+
+  # }
+  - type: basic
+    from:
+      key_code: close_bracket
+      modifiers:
+        mandatory:
+        - shift
+    to:
+    - key_code: backslash
+    - key_code: close_bracket
+      modifiers:
+      - shift
+      repeat: false
+    conditions: *symbol
+
+  # (
+  - type: basic
+    from:
+      key_code: "9"
+      modifiers:
+        mandatory:
+        - shift
+    to:
+    - key_code: backslash
+    - key_code: "9"
+      modifiers:
+      - shift
+      repeat: false
+    conditions: *symbol
+
+  # )
+  - type: basic
+    from:
+      key_code: "0"
+      modifiers:
+        mandatory:
+        - shift
+    to:
+    - key_code: backslash
+    - key_code: "0"
+      modifiers:
+      - shift
+      repeat: false
+    conditions: *symbol
+
+  # 9 (alternative for '(')
+  - type: basic
+    from:
+      key_code: "9"
+    to:
+    - key_code: backslash
+    - key_code: "9"
+      modifiers:
+      - shift
+      repeat: false
+    conditions: *symbol
+
+  # 0 (alternative for ')')
+  - type: basic
+    from:
+      key_code: "0"
+    to:
+    - key_code: backslash
+    - key_code: "0"
+      modifiers:
+      - shift
+      repeat: false
+    conditions: *symbol
+
+  # }}}
+
+# }}}
