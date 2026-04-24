@@ -235,11 +235,15 @@ rules:
       - key_code: r
       - key_code: g
     to:
+    - key_code: japanese_kana
+      conditions: *en
     - key_code: quote
       modifiers:
       - shift
       repeat: false
-    conditions: *ja
+    - key_code: japanese_eisuu
+      repeat: false
+      conditions: *en
 
   # RF -> ・ (日本語入力時のみ・代替)
   - type: basic
@@ -248,11 +252,15 @@ rules:
       - key_code: r
       - key_code: f
     to:
+    - key_code: japanese_kana
+      conditions: *en
     - key_code: quote
       modifiers:
       - shift
       repeat: false
-    conditions: *ja
+    - key_code: japanese_eisuu
+      repeat: false
+      conditions: *en
 
   # UH -> /
   - type: basic
