@@ -271,7 +271,7 @@ rules:
   #   - key_code: a
   #     conditions: *ja
   #   parameters: *threshold_ms
-  # 
+  #
   # # Left: W + E (E -> W)
   # - type: basic
   #   from:
@@ -342,7 +342,7 @@ rules:
   #   - key_code: a
   #     conditions: *ja
   #   parameters: *threshold_ms
-  # 
+  #
   # # Right: I + O (O -> I)
   # - type: basic
   #   from:
