@@ -2,7 +2,7 @@
 " .vimrc
 "
 
-" SETUP ==========================================
+" == SETUP {{{
 
 set encoding=utf-8
 scriptencoding utf-8
@@ -52,9 +52,11 @@ let g:loaded_zip                = 1
 let g:loaded_zipPlugin          = 1
 let g:skip_loading_mswin        = 1
 
-" OPTIONS ========================================
+" }}}
 
-" Editing ----------------------------------------
+" == OPTIONS {{{
+
+" -- Editing {{{
 
 set hidden
 set autoread
@@ -110,7 +112,9 @@ augroup END
 
 set diffopt=internal,filler,closeoff,vertical,indent-heuristic,algorithm:histogram
 
-" Appearance -------------------------------------
+" }}}
+
+" -- Appearance {{{
 
 set title
 set number
@@ -122,7 +126,7 @@ set list
 set listchars=tab:≫\ ,trail:\ ,nbsp:~,extends:▶,precedes:◀
 
 set sidescroll=1
-set scrolloff=1
+set scrolloff=0
 set sidescrolloff=1
 set updatetime=100
 set belloff=all
@@ -163,7 +167,9 @@ if !has('nvim')
   endif
 endif
 
-" Search & Completion ----------------------------
+" }}}
+
+" -- Search & Completion {{{
 
 set hlsearch
 set ignorecase
@@ -182,7 +188,11 @@ if executable('rg')
   set grepformat=%f:%l:%c:%m
 endif
 
-" KEYMAP =========================================
+" }}}
+
+" }}}
+
+" == KEYMAP {{{
 
 "        Norm   Ins   Cmd   Vis   Sel   Opr   Term   Lang
 "       ------ ----- ----- ----- ----- ----- ------ ------
@@ -198,7 +208,7 @@ endif
 " tmap    -      -     -     -     -     -    yes     -
 " lmap    -     yes   yes    -     -     -     -     yes
 
-" General ----------------------------------------
+" -- General {{{
 
 let g:mapleader = ','
 let g:maplocalleader = '\'
@@ -231,7 +241,9 @@ inoremap <C-e> <Cmd>normal! $l<CR>
 cnoremap <C-a> <C-b>
 cnoremap <C-x> <C-r>=expand('%:p')<CR>
 
-" Search & Completion ----------------------------
+" }}}
+
+" -- Search & Completion {{{
 
 inoremap <expr> <CR>    pumvisible() ? '<C-y>' : '<CR>'
 inoremap <expr> <Tab>   pumvisible() ? '<C-n>' : '<Tab>'
@@ -242,7 +254,9 @@ if has('nvim')
   cnoremap <expr> <Down> pumvisible() ? '<C-n>' : '<Down>'
 endif
 
-" Window -----------------------------------------
+" }}}
+
+" -- Window {{{
 
 nmap t <C-w>
 nnoremap <C-w>t <C-w>w
@@ -259,7 +273,9 @@ nnoremap <script> <SID>ws> <C-w>><SID>ws
 nnoremap <script> <SID>ws< <C-w><<SID>ws
 nmap <SID>ws <Nop>
 
-" z Command --------------------------------------
+" }}}
+
+" -- z Command {{{
 
 nmap f z
 xmap f z
@@ -272,7 +288,9 @@ noremap zF zf
 noremap zD zd
 noremap zd <Nop>
 
-" Vimrc ------------------------------------------
+" }}}
+
+" -- Vimrc {{{
 
 nnoremap <Leader>, <Cmd>edit $MYVIMRC<CR>
 nnoremap <Leader>/ <Cmd>edit $HOME/dotfiles/vim/config<CR>
@@ -286,7 +304,9 @@ else
         \ <Cmd>source $MYVIMRC \| nohlsearch \| redraw!<CR>
 endif
 
-" Markdown ---------------------------------------
+" }}}
+
+" -- Markdown {{{
 
 augroup vimrc
   autocmd FileType markdown inoremap <buffer> <Tab>   <C-t>
@@ -294,7 +314,9 @@ augroup vimrc
   autocmd FileType markdown inoremap <buffer> <C-d>   <Delete>
 augroup END
 
-" Nop --------------------------------------------
+" }}}
+
+" -- Nop {{{
 
 noremap ZZ    <Nop>
 noremap ZQ    <Nop>
@@ -335,9 +357,13 @@ imap <2-LeftMouse> <Nop>
 imap <3-LeftMouse> <Nop>
 imap <4-LeftMouse> <Nop>
 
-" AUTO COMMAND ===================================
+" }}}
 
-" Filetype ---------------------------------------
+" }}}
+
+" == AUTO COMMAND {{{
+
+" -- Filetype {{{
 
 augroup vimrc
   autocmd FileType gitcommit setlocal fileencoding=utf-8
@@ -346,14 +372,18 @@ augroup vimrc
   autocmd BufRead,BufNewFile *.keymap setlocal filetype=dts tabstop=4
 augroup END
 
-" Quit by Q --------------------------------------
+" }}}
+
+" -- Quit by Q {{{
 
 augroup vimrc
   autocmd FileType help,qf,man,ref,diff,quickrun nnoremap <buffer> q <Cmd>quit!<CR>
   autocmd QuickFixCmdPost *grep*,make if len(getqflist()) != 0 | cwindow | endif
 augroup END
 
-" Diff Mode --------------------------------------
+" }}}
+
+" -- Diff Mode {{{
 
 autocmd vimrc VimEnter,DiffUpdated * call s:set_diff_mode()
 
@@ -364,14 +394,18 @@ function! s:set_diff_mode() abort
   endif
 endfunction
 
-" Highlight on Yank ------------------------------
+" }}}
+
+" -- Highlight on Yank {{{
 
 if has('nvim')
   autocmd vimrc TextYankPost * silent! lua
         \ vim.highlight.on_yank { higroup='Visual', timeout=200, on_visual=false }
 endif
 
-" Auto IME On/Off --------------------------------
+" }}}
+
+" -- Auto IME On/Off {{{
 
 let s:ime_cmd     = 'macism'
 let s:default_ime = 'net.mtgto.inputmethod.macSKK.ascii'
@@ -402,16 +436,22 @@ augroup END
 "   endif
 " endfunction
 
-" COMMAND & FUNCTION =============================
+" }}}
 
-" Check Back Space (global) ----------------------
+" }}}
+
+" == COMMAND & FUNCTION {{{
+
+" -- Check Back Space (global) {{{
 
 function! g:CheckBackSpace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 
-" Set Status Line (global) -----------------------
+" }}}
+
+" -- Set Status Line (global) {{{
 
 let s:mode_map = {
       \ 'n': '  NORMAL ', 'i': '  INSERT ', 'R':      ' REPLACE ',
@@ -463,12 +503,16 @@ function! g:SetStatusLine() abort
         \ .. percentage .. lines .. cols
 endfunction
 
-" DiffOrig (tweaked) -----------------------------
+" }}}
+
+" -- DiffOrig (tweaked) {{{
 
 command! DiffOrig vertical new | set buftype=nofile filetype=diff
       \ | read ++edit # | 0delete_ | diffthis | wincmd p | diffthis
 
-" Insert Blank Lines -----------------------------
+" }}}
+
+" -- Insert Blank Lines {{{
 
 nnoremap <expr> go <SID>blank_below()
 nnoremap <expr> gO <SID>blank_above()
@@ -495,7 +539,9 @@ function! s:blank_above(type = '') abort
   endfor
 endfunction
 
-" Vertical Help ----------------------------------
+" }}}
+
+" -- Vertical Help {{{
 
 nnoremap gK <Cmd>call <SID>help_vertical_cword()<CR>
 vnoremap gK <Cmd>call <SID>help_vertical_selected()<CR>
@@ -513,7 +559,9 @@ function! s:help_vertical_selected() abort
   execute 'vertical help' word
 endfunction
 
-" Syntax Info ------------------------------------
+" }}}
+
+" -- Syntax Info {{{
 
 command! SyntaxInfo call s:get_syn_info()
 
@@ -559,7 +607,9 @@ function! s:get_syn_info()
         \ ' guibg: '   .. linkedSyn.guibg
 endfunction
 
-" Timestamp --------------------------------------
+" }}}
+
+" -- Timestamp {{{
 
 augroup vimrc
   autocmd FileType markdown nnoremap <buffer> <Leader>d <Cmd>call <SID>timestamp_below()<CR>
@@ -596,7 +646,9 @@ function! s:timestamp_above() abort
   endif
 endfunction
 
-" Zk Journal -------------------------------------
+" }}}
+
+" -- Zk Journal {{{
 
 nnoremap <Leader>m <Nop>
 nnoremap [zk] <Nop>
@@ -623,11 +675,15 @@ function! s:open_journal_dir() abort
   execute 'edit' s:journal_dir
 endfunction
 
-" Cd Current File --------------------------------
+" }}}
+
+" -- Cd Current File {{{
 
 command! CdCurrentFile lcd %:h
 
-" Print tabstop, shiftwidth, softtabstop ---------
+" }}}
+
+" -- Print tabstop, shiftwidth, softtabstop {{{
 
 nnoremap <expr> <Leader>a <SID>print_indents()
 command! PrintIndents call s:print_indents()
@@ -639,7 +695,9 @@ function! s:print_indents() abort
   echo 'tabstop: ' .. ts .. ', shiftwidth: ' .. sw .. ', softtabstop: ' .. sts
 endfunction
 
-" Put Trailing Separater -------------------------
+" }}}
+
+" -- Put Trailing Separater {{{
 
 command! PutTrailingSeparater call s:put_trailing_separater()
 
@@ -650,7 +708,13 @@ function! s:put_trailing_separater() abort
   call setline('.', str .. ' ' .. sep)
 endfunction
 
-" PLUGIN =========================================
+" }}}
+
+" }}}
+
+" == PLUGIN {{{
+
+" -- Vim-Plug {{{
 
 let g:data_dir = has('nvim') ? stdpath('data') .. '/site' : '~/.vim'
 if empty(glob(data_dir .. '/autoload/plug.vim'))
@@ -675,7 +739,9 @@ nnoremap [plug]c <Cmd>PlugClean<CR>
 nnoremap [plug]u <Cmd>PlugUpdate<CR>
 nnoremap [plug]g <Cmd>PlugUpgrade<CR>
 
-" Library ----------------------------------------
+" }}}
+
+" -- Library {{{
 
 Plug 'vim-denops/denops.vim'
 
@@ -684,7 +750,9 @@ if has('nvim')
   Plug 'nvim-lua/plenary.nvim'
 endif
 
-" LSP --------------------------------------------
+" }}}
+
+" -- LSP {{{
 
 if has('nvim')
   " Plug 'neovim/nvim-lspconfig'
@@ -698,7 +766,9 @@ else
   " Plug 'mattn/vim-lsp-icons'
 endif
 
-" Completion -------------------------------------
+" }}}
+
+" -- Completion {{{
 
 if has('nvim')
   " Plug 'hrsh7th/cmp-buffer'
@@ -718,7 +788,9 @@ else
   Plug 'prabirshrestha/asyncomplete-lsp.vim'
 endif
 
-" Fuzzy Finder -----------------------------------
+" }}}
+
+" -- Fuzzy Finder {{{
 
 if has('nvim')
   " Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
@@ -731,7 +803,9 @@ else
   " Plug 'mattn/ctrlp-matchfuzzy'
 endif
 
-" Language Support -------------------------------
+" }}}
+
+" -- Language Support {{{
 
 if has('nvim')
   " Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
@@ -750,18 +824,24 @@ Plug 'mechatroner/rainbow_csv',    { 'for': 'csv' }
 Plug 'rcmdnk/vim-markdown',        { 'for': 'markdown' }
 Plug 'vim-jp/syntax-vim-ex',       { 'for': 'vim' }
 
-" -- Haskell
+" Haskell {{{
+
 " Plug 'alx741/vim-hindent',         { 'for': 'haskell' }
 " Plug 'itchyny/vim-haskell-indent', { 'for': 'haskell' }
 Plug 'neovimhaskell/haskell-vim',  { 'for': 'haskell' }
 
-" -- Lisp
+" }}}
+
+" Lisp {{{
+
 " Plug 'guns/vim-sexp',                              { 'for': ['scheme', 'clojure'] }
 " Plug 'liquidz/dps-parinfer',                       { 'for': ['scheme', 'clojure'] }
 " Plug 'luochen1990/rainbow',                        { 'for': ['scheme', 'clojure'] }
 " Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': ['scheme', 'clojure'] }
 
-" -- Numbat {{{
+" }}}
+
+" Numbat {{{
 
 " https://github.com/sharkdp/numbat/blob/master/assets/numbat.vim
 " Numbat.vim - Vim syntax file for Numbat language
@@ -822,7 +902,9 @@ let b:current_syntax = "numbat"
 
 " }}}
 
-" Editing ----------------------------------------
+" }}}
+
+" -- Editing {{{
 
 Plug 'AndrewRadev/linediff.vim'
 Plug 'alvan/vim-closetag'
@@ -851,7 +933,9 @@ packadd! matchit
 "   Plug 'mickael-menu/zk-nvim'
 " endif
 
-" Movement ---------------------------------------
+" }}}
+
+" -- Movement {{{
 
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'cocopon/vaffle.vim'
@@ -864,7 +948,9 @@ Plug 'junegunn/vim-slash'
 Plug 'tyru/open-browser.vim'
 Plug 'yuki-yano/fuzzy-motion.vim'
 
-" Appearance -------------------------------------
+" }}}
+
+" -- Appearance {{{
 
 Plug 'itchyny/vim-highlighturl'
 Plug 'junegunn/goyo.vim'
@@ -884,7 +970,9 @@ else
   Plug 'mhinz/vim-signify'
 endif
 
-" Operator & Text Object -------------------------
+" }}}
+
+" -- Operator & Text Object {{{
 
 Plug 'kana/vim-operator-user'
 Plug 'kana/vim-textobj-user'
@@ -899,7 +987,9 @@ else
   Plug 'kana/vim-textobj-entire'
 endif
 
-" Japanese Support -------------------------------
+" }}}
+
+" -- Japanese Support {{{
 
 Plug 'deton/jasegment.vim'
 Plug 'deton/jasentence.vim'
@@ -908,7 +998,9 @@ Plug 'lambdalisue/kensaku.vim'
 Plug 'mattn/learn-vimscript'
 Plug 'vim-jp/vimdoc-ja'
 
-" Colorscheme ------------------------------------
+" }}}
+
+" -- Colorscheme {{{
 
 " Plug 'cocopon/iceberg.vim'
 Plug 'sainnhe/edge'
@@ -925,12 +1017,14 @@ endif
 
 call plug#end()
 
-" Colorscheme Config -----------------------------
+" }}}
 
+" -- Config {{{
+
+" Colorscheme Config
 runtime! config/colorscheme.vim
 
-" Plugin Config ----------------------------------
-
+" Plugin Config
 let s:plugs = get(s:, 'plugs', get(g:, 'plugs', {}))
 function! FindPlugin(name) abort
   return has_key(s:plugs, a:name) ? isdirectory(s:plugs[a:name].dir) : 0
@@ -941,3 +1035,7 @@ runtime! config/config-*.vim
 if has('nvim')
   runtime! config/config-*.lua
 endif
+
+" }}}
+
+" }}}
