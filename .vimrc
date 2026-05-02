@@ -710,6 +710,41 @@ endfunction
 
 " }}}
 
+" Langmap for MTGAP {{{
+
+" Vim に入力される文字がすでに MTGAP になっていることが前提
+" Vim が Normal Mode 等で MTGAP の文字を Qwerty として解釈するためのマッピング
+
+" マッピングのオンオフのための変数
+" let g:loaded_mtgap_langmap = 1
+
+" MTGAP のマッピング定義
+" execute を通すと \ が消費されるので、\ を二重にする必要がある
+let s:mtgap_langmap =
+      \ 'yq,pw,oe,ur,jt,ky,du,li,co,wp,'
+      \ . 'ia,ns,ed,af,\\,g,mh,hj,tk,sl,r\\;,'
+      \ . 'qz,zx,/c,.v,\\;b,bn,fm,g\\,,v.,x/'
+
+if get(g:, 'loaded_mtgap_langmap', 0) == 1
+
+  command! MtgapOn  execute 'set langmap=' . s:mtgap_langmap
+  command! MtgapOff set langmap=
+
+  " 起動時に lamgmap をオン
+  execute 'set langmap=' . s:mtgap_langmap
+
+  " Commadline mode 時に langmap オフ、抜けたときにオン
+  " langmap によるマッピングは commandline mode でも利くため
+  " (標準では commandline mode 時に Qwerty 配列になってしまう)
+  augroup vimrc
+    autocmd CmdlineEnter * set langmap=
+    autocmd CmdlineLeave * execute 'set langmap=' . s:mtgap_langmap
+  augroup END
+
+endif
+
+" }}}
+
 " }}}
 
 " == PLUGIN {{{
