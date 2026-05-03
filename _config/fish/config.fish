@@ -83,6 +83,7 @@ abbr -a csv  csvlens
 abbr -a diff batdiff
 abbr -a duck duckdb
 abbr -a grep batgrep
+abbr -a h    z
 abbr -a hs   ghci
 abbr -a j    z
 abbr -a man  batman
