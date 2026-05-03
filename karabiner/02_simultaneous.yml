@@ -228,7 +228,7 @@ rules:
 
   # Regular Threshold Milliseconds {{{
 
-  # RG -> ・ (日本語入力時のみ)
+  # RG -> ・
   - type: basic
     from:
       simultaneous:
@@ -245,7 +245,7 @@ rules:
       repeat: false
       conditions: *en
 
-  # RF -> ・ (日本語入力時のみ・代替)
+  # RF -> ・ (代替)
   - type: basic
     from:
       simultaneous:
@@ -296,17 +296,22 @@ rules:
       - shift
       repeat: false
 
-  # JN -> ?
+  # JN -> ; (英語)
+  # JN -> ? (日本語)
   - type: basic
     from:
       simultaneous:
       - key_code: j
       - key_code: "n"
     to:
+    - key_code: semicolon
+      repeat: false
+      conditions: *en
     - key_code: slash
       modifiers:
       - shift
       repeat: false
+      conditions: *ja
 
   # }}}
 
