@@ -710,37 +710,43 @@ endfunction
 
 " }}}
 
-" Langmap for MTGAP {{{
+" -- Langmap for MTGAP {{{
 
 " Vim に入力される文字がすでに MTGAP になっていることが前提
 " Vim が Normal Mode で MTGAP の文字を Qwerty として解釈するためのマッピング
 
-" 現状 langmap はうまく動かない
-" ユーザー定義のキーマップ対象のキーに対して langmap が利かないため
-" （あるいはプラグインで定義されたキーマップに対して？）
-" 例えば s を vim-sandwitch のキーマップに設定していると、langmap をオンにした上で
-" L位置のキーを押すと s を押したことになり、vim-sandwitch が発火してしまう
-" 本来は langmap 適用の結果 l を押したことにしてほしいにも拘わらず
+" langmap には (1) 安定性の問題と、(2) ユーザー定義のキーマップに対して利かない問題がある
+" あるいはプラグインで定義されたキーマップに対して利かない問題
+"
+" (1) 安定性の問題
+" 起動直後は langmap が利かなかったり、
+" 初めて打ったキーに利かなかったりする（発生条件は不明）
+"
+" (2)ユーザー定義のキーマップに対する問題
+" 例えば s を何かの機能にマッピングしている場合、langmap をオンにして
+" MTGAP の S 位置のキーを押したとき、本来なら l を押したと解釈されてほしいが、
+" そうはならず s が押され、s にマッピングした機能が発火してしまう
 " これを回避するにはキーマップをすべて MTGAP のキー位置で書き換える必要がある
-" とりあえず今は放置することにする（起動時に langmap を定義する部分だけコメントアウト）
+"
+" 上記の理由で、今のところ以下の langmap 関連設定はうまく動作しない
 
-function! s:MtgapLangmapOn() abort
-  execute 'set langmap='
-      \ . 'yq,pw,oe,ur,jt,ky,du,li,co,wp,'
-      \ . 'ia,ns,ed,af,\\,g,mh,hj,tk,sl,r\\;,'
-      \ . 'qz,zx,/c,.v,\\;b,bn,fm,g\\,,v.,x/,'
-      \ . 'YQ,PW,OE,UR,JT,KY,DU,LI,CO,WP,'
-      \ . 'IA,NS,ED,AF,<G,MH,HJ,TK,SL,R:,'
-      \ . 'QZ,ZX,?C,>V,:B,BN,FM,G<,V>,X?'
-endfunction
-
-function! s:MtgapLangmapOff() abort
-  set langmap=
-endfunction
-
-command! MtgapOn  call s:MtgapLangmapOn()
-command! MtgapOff call s:MtgapLangmapOff()
-
+" function! s:MtgapLangmapOn() abort
+"   execute 'set langmap='
+"      \ . 'yq,pw,oe,ur,jt,ky,du,li,co,wp,'
+"      \ . 'ia,ns,ed,af,\\,g,mh,hj,tk,sl,r\\;,'
+"      \ . 'qz,zx,/c,.v,\\;b,bn,fm,g\\,,v.,x/,'
+"      \ . 'YQ,PW,OE,UR,JT,KY,DU,LI,CO,WP,'
+"      \ . 'IA,NS,ED,AF,<G,MH,HJ,TK,SL,R:,'
+"      \ . 'QZ,ZX,?C,>V,:B,BN,FM,G<,V>,X?'
+" endfunction
+"
+" function! s:MtgapLangmapOff() abort
+"   set langmap=
+" endfunction
+"
+" command! MtgapOn  call s:MtgapLangmapOn()
+" command! MtgapOff call s:MtgapLangmapOff()
+"
 " call s:MtgapLangmapOn()
 
 " }}}
