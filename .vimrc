@@ -713,35 +713,35 @@ endfunction
 " Langmap for MTGAP {{{
 
 " Vim に入力される文字がすでに MTGAP になっていることが前提
-" Vim が Normal Mode 等で MTGAP の文字を Qwerty として解釈するためのマッピング
+" Vim が Normal Mode で MTGAP の文字を Qwerty として解釈するためのマッピング
 
-" マッピングのオンオフのための変数
-" let g:loaded_mtgap_langmap = 1
+" 現状 langmap はうまく動かない
+" ユーザー定義のキーマップ対象のキーに対して langmap が利かないため
+" （あるいはプラグインで定義されたキーマップに対して？）
+" 例えば s を vim-sandwitch のキーマップに設定していると、langmap をオンにした上で
+" L位置のキーを押すと s を押したことになり、vim-sandwitch が発火してしまう
+" 本来は langmap 適用の結果 l を押したことにしてほしいにも拘わらず
+" これを回避するにはキーマップをすべて MTGAP のキー位置で書き換える必要がある
+" とりあえず今は放置することにする（起動時に langmap を定義する部分だけコメントアウト）
 
-" MTGAP のマッピング定義
-" execute を通すと \ が消費されるので、\ を二重にする必要がある
-let s:mtgap_langmap =
-      \ 'yq,pw,oe,ur,jt,ky,du,li,co,wp,'
+function! s:MtgapLangmapOn() abort
+  execute 'set langmap='
+      \ . 'yq,pw,oe,ur,jt,ky,du,li,co,wp,'
       \ . 'ia,ns,ed,af,\\,g,mh,hj,tk,sl,r\\;,'
-      \ . 'qz,zx,/c,.v,\\;b,bn,fm,g\\,,v.,x/'
+      \ . 'qz,zx,/c,.v,\\;b,bn,fm,g\\,,v.,x/,'
+      \ . 'YQ,PW,OE,UR,JT,KY,DU,LI,CO,WP,'
+      \ . 'IA,NS,ED,AF,<G,MH,HJ,TK,SL,R:,'
+      \ . 'QZ,ZX,?C,>V,:B,BN,FM,G<,V>,X?'
+endfunction
 
-if get(g:, 'loaded_mtgap_langmap', 0) == 1
+function! s:MtgapLangmapOff() abort
+  set langmap=
+endfunction
 
-  command! MtgapOn  execute 'set langmap=' . s:mtgap_langmap
-  command! MtgapOff set langmap=
+command! MtgapOn  call s:MtgapLangmapOn()
+command! MtgapOff call s:MtgapLangmapOff()
 
-  " 起動時に lamgmap をオン
-  execute 'set langmap=' . s:mtgap_langmap
-
-  " Commadline mode 時に langmap オフ、抜けたときにオン
-  " langmap によるマッピングは commandline mode でも利くため
-  " (標準では commandline mode 時に Qwerty 配列になってしまう)
-  augroup vimrc
-    autocmd CmdlineEnter * set langmap=
-    autocmd CmdlineLeave * execute 'set langmap=' . s:mtgap_langmap
-  augroup END
-
-endif
+" call s:MtgapLangmapOn()
 
 " }}}
 
