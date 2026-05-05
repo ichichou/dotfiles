@@ -110,6 +110,7 @@ rules:
   # LCmd-NM -> Delete, Delete Forward {{{
 
   # LCmd-N -> Delete
+  # Shift-Cmd-N は変換しない
   - type: basic
     from:
       key_code: "n"
@@ -117,11 +118,14 @@ rules:
         mandatory:
         - left_command
         optional:
-        - any
+        - control
+        - option
+        - command
     to:
     - key_code: delete_or_backspace
 
   # LCmd-M -> Delete Forward
+  # Shift-Cmd-M は変換しない
   - type: basic
     from:
       key_code: m
@@ -129,7 +133,9 @@ rules:
         mandatory:
         - left_command
         optional:
-        - any
+        - control
+        - option
+        - command
     to:
     - key_code: delete_forward
 
