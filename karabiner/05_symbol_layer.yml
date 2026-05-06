@@ -1,4 +1,4 @@
-title: "04. Symbol Layer"
+title: "05. Symbol Layer"
 
 # ALIASES {{{
 
@@ -42,7 +42,7 @@ aliases:
 # RULES ==========================================
 
 rules:
-- description: "4. Symbol Layer"
+- description: "5. Symbol Layer"
   manipulators:
 
 # Symbol Layer Key {{{
@@ -72,9 +72,11 @@ rules:
       key_code: q
       modifiers: *any
     to:
-    - key_code: backslash
+    - key_code: japanese_eisuu
       conditions: *ja
     - key_code: period
+    - key_code: japanese_kana
+      conditions: *ja
     conditions: *symbol
 
   # W -> +
@@ -127,9 +129,11 @@ rules:
       key_code: "y"
       modifiers: *any
     to:
-    - key_code: backslash
+    - key_code: japanese_eisuu
       conditions: *ja
     - key_code: slash
+    - key_code: japanese_kana
+      conditions: *ja
     conditions: *symbol
 
   # U -> &
@@ -171,9 +175,11 @@ rules:
       key_code: p
       modifiers: *any
     to:
-    - key_code: backslash
+    - key_code: japanese_eisuu
       conditions: *ja
     - key_code: comma
+    - key_code: japanese_kana
+      conditions: *ja
     conditions: *symbol
 
 # }}}
@@ -277,14 +283,13 @@ rules:
       key_code: semicolon
       modifiers: *any
     to:
-    - key_code: backslash
-      conditions: *ja
-    - key_code: semicolon
+    - key_code: japanese_eisuu
       conditions: *ja
     - key_code: semicolon
       modifiers:
       - shift
-      conditions: *en
+    - key_code: japanese_kana
+      conditions: *ja
     conditions: *symbol
 
 # }}}
