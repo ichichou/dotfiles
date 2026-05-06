@@ -315,6 +315,17 @@ augroup END
 
 " }}}
 
+" -- <Space> Leader {{{
+
+nnoremap <Space>l <Cmd>nohlsearch <Bar> redraw!<CR>
+noremap <Space>s :s///<Left>
+
+"  }}}
+
+" -- MTGAP {{{
+
+"  }}}
+
 " -- Nop {{{
 
 noremap ZZ    <Nop>
