@@ -234,8 +234,7 @@ nnoremap U <C-r>
 nnoremap <C-h> <C-^>
 nnoremap <BS>  <C-^>
 
-nnoremap <Esc><Esc> <Cmd>nohlsearch \| redraw!<CR>
-nnoremap <C-;> <Cmd>nohlsearch \| redraw!<CR>
+nnoremap <C-;> <Cmd>nohlsearch <Bar> redraw!<CR>
 inoremap <C-a> <Cmd>normal! ^<CR>
 inoremap <C-e> <Cmd>normal! $l<CR>
 cnoremap <C-a> <C-b>
@@ -298,10 +297,10 @@ nnoremap <Leader>/ <Cmd>edit $HOME/dotfiles/vim/config<CR>
 if has('gui_running')
   nnoremap <Leader><lt> <Cmd>edit $MYGVIMRC<CR>
   nnoremap <Leader>.
-        \ <Cmd>source $MYVIMRC \| source $MYGVIMRC \| nohlsearch \| redraw!<CR>
+        \ <Cmd>source $MYVIMRC <Bar> source $MYGVIMRC <Bar> nohlsearch <Bar> redraw!<CR>
 else
   nnoremap <Leader>.
-        \ <Cmd>source $MYVIMRC \| nohlsearch \| redraw!<CR>
+        \ <Cmd>source $MYVIMRC <Bar> nohlsearch <Bar> redraw!<CR>
 endif
 
 " }}}
