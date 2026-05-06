@@ -421,7 +421,7 @@ let s:ime_cmd     = 'macism'
 let s:default_ime = 'net.mtgto.inputmethod.macSKK.ascii'
 
 augroup vimrc
-  autocmd InsertLeave * call system(s:ime_cmd .. ' ' .. s:default_ime)
+  autocmd FocusGained,InsertLeave,CmdlineLeave * call system(s:ime_cmd .. ' ' .. s:default_ime)
 augroup END
 
 " augroup vimrc
@@ -747,12 +747,12 @@ endfunction
 
 " function! s:MtgapLangmapOn() abort
 "   execute 'set langmap='
-"      \ . 'yq,pw,oe,ur,jt,ky,du,li,co,wp,'
-"      \ . 'ia,ns,ed,af,\\,g,mh,hj,tk,sl,r\\;,'
-"      \ . 'qz,zx,/c,.v,\\;b,bn,fm,g\\,,v.,x/,'
-"      \ . 'YQ,PW,OE,UR,JT,KY,DU,LI,CO,WP,'
-"      \ . 'IA,NS,ED,AF,<G,MH,HJ,TK,SL,R:,'
-"      \ . 'QZ,ZX,?C,>V,:B,BN,FM,G<,V>,X?'
+"      \ .. 'yq,pw,oe,ur,jt,ky,du,li,co,wp,'
+"      \ .. 'ia,ns,ed,af,\\,g,mh,hj,tk,sl,r\\;,'
+"      \ .. 'qz,zx,/c,.v,\\;b,bn,fm,g\\,,v.,x/,'
+"      \ .. 'YQ,PW,OE,UR,JT,KY,DU,LI,CO,WP,'
+"      \ .. 'IA,NS,ED,AF,<G,MH,HJ,TK,SL,R:,'
+"      \ .. 'QZ,ZX,?C,>V,:B,BN,FM,G<,V>,X?'
 " endfunction
 "
 " function! s:MtgapLangmapOff() abort
