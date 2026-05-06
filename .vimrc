@@ -697,14 +697,19 @@ endfunction
 
 " }}}
 
-" -- Put Trailing Separater {{{
+" -- Fill Line {{{
 
-command! PutTrailingSeparater call s:put_trailing_separater()
+command! FillLine call s:fill_line()
 
-function! s:put_trailing_separater() abort
+function! s:fill_line() abort
   let width = 50
-  let str = getline('.')
-  let sep = repeat('-', width - col('$'))
+  let str = substitute(getline('.'), ' \+$', '', '')
+  let display_width = strdisplaywidth(str)
+  let sep_len = width - display_width - 1
+  if sep_len < 1
+    let sep_len = 1
+  endif
+  let sep = repeat('-', sep_len)
   call setline('.', str .. ' ' .. sep)
 endfunction
 
