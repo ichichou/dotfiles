@@ -55,18 +55,18 @@ rules:
     - key_code: return_or_enter
       repeat: false
 
-  # FJ -> Shift-Ctrl-k (日本語入力時のみ)
+  # FJ -> F7 (日本語入力時のみ)
   # macSKK: 入力中のかなカナ切り替え
+  # 変換先が Shift-Ctrl-K でないのは Ghostty のバグ回避のため
   - type: basic
     from:
       simultaneous:
       - key_code: f
       - key_code: j
     to:
-    - key_code: k
+    - key_code: f7
       modifiers:
-      - shift
-      - control
+      - fn
       repeat: false
     conditions: *ja
 
