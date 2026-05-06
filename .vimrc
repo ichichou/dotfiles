@@ -317,8 +317,8 @@ augroup END
 
 " -- <Space> Leader {{{
 
-nnoremap <Space>l <Cmd>nohlsearch <Bar> redraw!<CR>
-noremap <Space>s :s///<Left>
+noremap <Space>l <Cmd>nohlsearch <Bar> redraw!<CR>
+noremap <expr> <Space>s <SID>substitute_last_search()
 
 "  }}}
 
@@ -763,6 +763,15 @@ endfunction
 " command! MtgapOff call s:MtgapLangmapOff()
 "
 " call s:MtgapLangmapOn()
+
+" }}}
+
+" -- Substitute with Last Search {{{
+
+function! s:substitute_last_search() abort
+  let cmd = mode() =~# "[vV\<C-v>]" ? ':s/' : ':%s/'
+  call feedkeys(cmd .. @/ .. "//\<Left>", 'n')
+endfunction
 
 " }}}
 
