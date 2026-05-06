@@ -421,7 +421,7 @@ let s:ime_cmd     = 'macism'
 let s:default_ime = 'net.mtgto.inputmethod.macSKK.ascii'
 
 augroup vimrc
-  autocmd FocusGained,InsertLeave,CmdlineLeave * call system(s:ime_cmd .. ' ' .. s:default_ime)
+  autocmd FocusGained,InsertLeave * call system(s:ime_cmd .. ' ' .. s:default_ime)
 augroup END
 
 " augroup vimrc
