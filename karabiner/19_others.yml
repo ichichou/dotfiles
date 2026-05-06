@@ -1,4 +1,33 @@
 title: "19. Others"
+
+# ALIASES {{{
+
+aliases:
+
+- conditions: &en
+  - type: input_source_if
+    input_sources:
+    # 英数
+    - input_source_id: "^net\\.mtgto\\.inputmethod\\.macSKK\\.ascii$"
+    - input_source_id: "^com\\.google\\.inputmethod\\.Japanese\\.Roman$"
+    # 全角英数
+    - input_source_id: "^net\\.mtgto\\.inputmethod\\.macSKK\\.eisu$"
+    - input_source_id: "^com\\.google\\.inputmethod\\.Japanese\\.FullWidthRoman$"
+
+- conditions: &ja
+  - type: input_source_if
+    input_sources:
+    - language: "^ja$"
+  - type: input_source_unless
+    input_sources:
+    # 全角英数
+    - input_source_id: "^net\\.mtgto\\.inputmethod\\.macSKK\\.eisu$"
+    - input_source_id: "^com\\.google\\.inputmethod\\.Japanese\\.FullWidthRoman$"
+
+# }}}
+
+# RULES ==========================================
+
 rules:
 
 # 19-1. Alone Kana/Eisuu {{{
@@ -96,47 +125,55 @@ rules:
 
 # }}}
 
-# 19-2. LCtrl-Space -> LCtrl-Space, Eisuu {{{
+# 19-2. Others: F15-F18 -> , . / : {{{
 
-# Raycast をメインのショートカットで起動した場合は英語入力にするが、
-# それ以外のホットキー等で起動した場合は IME の状態を維持する
-# Raycast 設定の Auto-switch Input Source はオフにする
+- description: "19-2. F15–F18 → , . / :"
+  manipulators:
 
-# LCtrl-Space が暴発するようになった
-# この組み合わせの押下直後にイベントが発行されるから？
-# オン／オフ時の挙動の変化と、
-# to_after_key_up で実装したときにどうなるか確認
+  # F15 -> ,
+  - type: basic
+    from:
+      key_code: f15
+    to:
+    - key_code: japanese_eisuu
+      conditions: *ja
+    - key_code: comma
+    - key_code: japanese_kana
+      conditions: *ja
 
-# - description: "19-2. Others: LCtrl-Space → Ctrl-Space, Eisuu"
-#   manipulators:
-#
-#   - type: basic
-#     from:
-#       key_code: spacebar
-#       modifiers:
-#         mandatory:
-#         - left_control
-#     to:
-#     - key_code: spacebar
-#       modifiers:
-#       - control
-#     - key_code: japanese_eisuu
-#       repeat: false
-#
-# - description: "19-2'. Others: LCtrl-Space → Ctrl-Space, Eisuu (to_after_key_up)"
-#   manipulators:
-#
-#   - type: basic
-#     from:
-#       key_code: spacebar
-#       modifiers:
-#         mandatory:
-#         - left_control
-#     to_after_key_up:
-#     - key_code: spacebar
-#       modifiers:
-#       - control
-#     - key_code: japanese_eisuu
-#       repeat: false
+  # F16 -> .
+  - type: basic
+    from:
+      key_code: f16
+    to:
+    - key_code: japanese_eisuu
+      conditions: *ja
+    - key_code: period
+    - key_code: japanese_kana
+      conditions: *ja
+
+  # F17 -> /
+  - type: basic
+    from:
+      key_code: f17
+    to:
+    - key_code: japanese_eisuu
+      conditions: *ja
+    - key_code: slash
+    - key_code: japanese_kana
+      conditions: *ja
+
+  # F18 -> :
+  - type: basic
+    from:
+      key_code: f18
+    to:
+    - key_code: japanese_eisuu
+      conditions: *ja
+    - key_code: semicolon
+      modifiers:
+      - shift
+    - key_code: japanese_kana
+      conditions: *ja
 
 # }}}
