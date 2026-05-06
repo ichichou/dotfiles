@@ -1049,8 +1049,8 @@ endif
 
 Plug 'deton/jasegment.vim'
 Plug 'deton/jasentence.vim'
-Plug 'lambdalisue/kensaku-search.vim'
-Plug 'lambdalisue/kensaku.vim'
+" Plug 'lambdalisue/kensaku-search.vim'
+" Plug 'lambdalisue/kensaku.vim'
 Plug 'mattn/learn-vimscript'
 Plug 'vim-jp/vimdoc-ja'
 
