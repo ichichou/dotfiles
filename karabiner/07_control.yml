@@ -1,6 +1,6 @@
-title: "06. Control Key"
+title: "07. Control Key"
 rules:
-- description: "6. Control Key"
+- description: "7. Control Key"
   manipulators:
 
   # Escape -> Left Control {{{

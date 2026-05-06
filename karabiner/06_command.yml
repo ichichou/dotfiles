@@ -1,6 +1,6 @@
-title: "05. Command Key"
+title: "06. Command Key"
 rules:
-- description: "5. Command Key"
+- description: "6. Command Key"
   manipulators:
 
   # LCmd-Any {{{

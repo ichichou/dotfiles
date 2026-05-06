@@ -1,7 +1,7 @@
-title: "08. Mouse Key"
+title: "09. Mouse Key"
 rules:
 
-- description: "8. Mouse Key"
+- description: "9. Mouse Key"
   manipulators:
 
   # W -> Right Click
