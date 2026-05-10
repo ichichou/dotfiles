@@ -822,9 +822,9 @@ endif
 if has('nvim')
   " Plug 'neovim/nvim-lspconfig'
   " Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-  Plug 'prabirshrestha/vim-lsp'
-  Plug 'mattn/vim-lsp-settings'
-  Plug 'mattn/vim-lsp-icons'
+  " Plug 'prabirshrestha/vim-lsp'
+  " Plug 'mattn/vim-lsp-settings'
+  " Plug 'mattn/vim-lsp-icons'
 else
   " Plug 'prabirshrestha/vim-lsp'
   " Plug 'mattn/vim-lsp-settings'
@@ -842,15 +842,15 @@ if has('nvim')
   " Plug 'hrsh7th/cmp-path'
   " Plug 'hrsh7th/cmp-vsnip'
   " Plug 'hrsh7th/nvim-cmp'
-  Plug 'prabirshrestha/asyncomplete-buffer.vim'
-  Plug 'prabirshrestha/asyncomplete-file.vim'
-  Plug 'prabirshrestha/asyncomplete-lsp.vim'
-  Plug 'prabirshrestha/asyncomplete.vim'
+  " Plug 'prabirshrestha/asyncomplete-buffer.vim'
+  " Plug 'prabirshrestha/asyncomplete-file.vim'
+  " Plug 'prabirshrestha/asyncomplete-lsp.vim'
+  " Plug 'prabirshrestha/asyncomplete.vim'
 else
-  Plug 'prabirshrestha/asyncomplete.vim'
-  Plug 'prabirshrestha/asyncomplete-buffer.vim'
-  Plug 'prabirshrestha/asyncomplete-file.vim'
-  Plug 'prabirshrestha/asyncomplete-lsp.vim'
+  " Plug 'prabirshrestha/asyncomplete.vim'
+  " Plug 'prabirshrestha/asyncomplete-buffer.vim'
+  " Plug 'prabirshrestha/asyncomplete-file.vim'
+  " Plug 'prabirshrestha/asyncomplete-lsp.vim'
 endif
 
 " }}}
@@ -985,18 +985,35 @@ Plug 'machakann/vim-sandwich'
 Plug 'mattn/vim-maketable'
 Plug 'rcmdnk/yankround.vim'
 Plug 'thinca/vim-quickrun'
-Plug 'tyru/caw.vim'
 " Plug 'vimoutliner/vimoutliner'
 
 Plug 'prettier/vim-prettier', {
       \ 'do': 'yarn install --frozen-lockfile --production',
       \ 'for': ['html', 'css', 'less', 'scss'] }
 
-packadd! matchit
-
 " if has('nvim')
 "   Plug 'mickael-menu/zk-nvim'
 " endif
+
+" Must be set before 'packadd comment'
+let g:comment_mappings = v:false
+
+packadd! comment
+packadd! matchit
+
+" Comment.vim Config {{{
+
+nmap <Leader>c <Plug>(comment-toggle)
+xmap <Leader>c <Plug>(comment-toggle)
+nmap <Leader>cc <Plug>(comment-toggle-line)
+nmap <Leader>C <Plug>(comment-toggle-end)
+
+omap ic <Plug>(comment-text-object-inner)
+omap ac <Plug>(comment-text-object-outer)
+xmap ic <Plug>(comment-text-object-inner)
+xmap ac <Plug>(comment-text-object-outer)
+
+" }}}
 
 " }}}
 
@@ -1031,9 +1048,18 @@ if has('nvim')
   Plug 'lewis6991/gitsigns.nvim'
 else
   Plug 'delphinus/vim-auto-cursorline'
-  " Plug 'machakann/vim-highlightedyank'
   Plug 'mhinz/vim-signify'
 endif
+
+packadd! hlyank
+
+" Highlight-Yank Config {{{
+
+let g:hlyank_hlgroup = 'Visual'
+let g:hlyank_duration = 300
+let g:hlyank_invisual = v:false
+
+" }}}
 
 " }}}
 
@@ -1048,7 +1074,6 @@ Plug 'kana/vim-textobj-line'
 if has('nvim')
   Plug 'chrisgrieser/nvim-various-textobjs'
 else
-  Plug 'haya14busa/vim-operator-flashy'
   Plug 'kana/vim-textobj-entire'
 endif
 
@@ -1079,6 +1104,10 @@ else
   " Plug 'nordtheme/vim'
   Plug 'rose-pine/vim'
 endif
+
+" }}}
+
+" -- Vim-Plug plug#end {{{
 
 call plug#end()
 
