@@ -274,18 +274,24 @@ nmap <SID>ws <Nop>
 
 " }}}
 
-" -- z Command {{{
+" -- zz... {{{
+
+nmap zz zz<sid>(z1)
+nnoremap <script> <sid>(z1)z zt<sid>(z2)
+nnoremap <script> <sid>(z2)z zb<sid>(z3)
+nnoremap <script> <sid>(z3)z zz<sid>(z1)
+
+"  }}}
+
+" -- f -> z {{{
 
 nmap f z
 xmap f z
 
-nnoremap F f
-xnoremap F f
-
-noremap zf zz
-noremap zF zf
-noremap zD zd
-noremap zd <Nop>
+nmap zf zz
+nnoremap <script> <sid>(z1)f zt<sid>(z2)
+nnoremap <script> <sid>(z2)f zb<sid>(z3)
+nnoremap <script> <sid>(z3)f zz<sid>(z1)
 
 " }}}
 
@@ -319,6 +325,9 @@ augroup END
 
 noremap <Space>l <Cmd>nohlsearch <Bar> redraw!<CR>
 noremap <expr> <Space>s <SID>substitute_last_search()
+
+nnoremap <Space>w <Cmd>update<CR>
+nnoremap <Space>q <Cmd>quit<CR>
 
 "  }}}
 
