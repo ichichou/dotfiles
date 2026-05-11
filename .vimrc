@@ -775,6 +775,36 @@ endfunction
 
 " }}}
 
+" -- No/Restore Status Line {{{
+
+command! NoStatusLine call s:no_statusline()
+command! RestoreStatusLine call s:restore_statusline()
+
+let s:saved_hl_statusline = {}
+
+function! s:no_statusline() abort
+  let s:saved_hl_statusline = hlget('StatusLine')
+
+  highlight! link StatusLine VertSplit
+  highlight! link StatusLineNC VertSplit
+
+  set statusline=─
+  set laststatus=0
+  set fillchars=stl:─,stlnc:─,vert:│,fold:·,foldsep:│,eob:·
+  set noruler
+endfunction
+
+function! s:restore_statusline() abort
+  call hlset(s:saved_hl_statusline)
+
+  set statusline=%!SetStatusLine()
+  set laststatus=2
+  set fillchars=vert:│,fold:·,foldsep:│,eob:·
+  set ruler
+endfunction
+
+" }}}
+
 " }}}
 
 " == PLUGIN {{{

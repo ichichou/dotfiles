@@ -49,6 +49,9 @@ function! s:define_highlights() abort
   highlight! link htmlBoldItalic ErrorMsg
   highlight! link HighlightedyankRegion Visual
   highlight! link ExtraWhitespace Visual
+
+  " highlight! link StatusLine VertSplit
+  " highlight! link StatusLineNC VertSplit
 endfunction
 
 augroup def-highlights
