@@ -206,6 +206,8 @@ set wildoptions=pum,fuzzy
 
 " KEYMAPS {{{
 
+" :map Commands {{{
+
 "        Norm   Ins   Cmd   Vis   Sel   Opr   Term   Lang
 "       ------ ----- ----- ----- ----- ----- ------ ------
 " map    yes     -     -    yes   yes   yes    -      -
@@ -220,6 +222,8 @@ set wildoptions=pum,fuzzy
 " tmap    -      -     -     -     -     -    yes     -
 " lmap    -     yes   yes    -     -     -     -     yes
 
+" }}}
+
 " General {{{
 
 let g:mapleader = ','
@@ -233,8 +237,10 @@ noremap gj j
 noremap gk k
 noremap x "_x
 noremap X "_X
+
 nnoremap Y y$
 nnoremap & :&&<CR>
+
 inoremap <C-u> <C-g>u<C-u>
 inoremap <C-w> <C-g>u<C-w>
 
@@ -242,13 +248,16 @@ noremap + <C-a>
 noremap - <C-x>
 noremap g+ g<C-a>
 noremap g- g<C-x>
+
 nnoremap U <C-r>
 nnoremap <C-h> <C-^>
 nnoremap <BS>  <C-^>
 
 nnoremap <C-;> <Cmd>nohlsearch <Bar> redraw!<CR>
+
 inoremap <C-a> <Cmd>normal! ^<CR>
 inoremap <C-e> <Cmd>normal! $l<CR>
+
 cnoremap <C-a> <C-b>
 cnoremap <C-x> <C-r>=expand('%:p')<CR>
 
@@ -299,10 +308,12 @@ nnoremap <Leader>/ <Cmd>edit $HOME/dotfiles/vim/config<CR>
 if has('gui_running')
   nnoremap <Leader><lt> <Cmd>edit $MYGVIMRC<CR>
   nnoremap <Leader>.
-        \ <Cmd>source $MYVIMRC <Bar> source $MYGVIMRC <Bar> nohlsearch <Bar> redraw!<CR>
+        \ <Cmd>source $MYVIMRC <Bar> source $MYGVIMRC <Bar>
+        \ nohlsearch <Bar> redraw!<CR>
 else
   nnoremap <Leader>.
-        \ <Cmd>source $MYVIMRC <Bar> nohlsearch <Bar> redraw!<CR>
+        \ <Cmd>source $MYVIMRC <Bar>
+        \ nohlsearch <Bar> redraw!<CR>
 endif
 
 " }}}
