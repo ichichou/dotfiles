@@ -110,6 +110,9 @@ augroup vimrc
   autocmd FileType r        setlocal comments=b:#
 augroup END
 
+set foldmethod=marker
+" set nofoldenable
+
 set diffopt=internal,filler,closeoff,vertical,indent-heuristic,algorithm:histogram
 
 " }}}
@@ -119,24 +122,25 @@ set diffopt=internal,filler,closeoff,vertical,indent-heuristic,algorithm:histogr
 set title
 set number
 set signcolumn=yes
-set cursorline
-set noshowmode
-set display=lastline
 set list
 set listchars=tab:≫\ ,trail:\ ,nbsp:~,extends:▶,precedes:◀
 
+set display=lastline
 set sidescroll=1
 set scrolloff=0
 set sidescrolloff=1
+
 set updatetime=100
 set belloff=all
+set cursorline
 
 set noshowmatch
 set matchtime=0
 set matchpairs+=（:）,「:」,『:』,〈:〉,《:》,【:】,〔:〕,［:］,｛:｝,‘:’,“:”
 
-set foldmethod=marker
-" set nofoldenable
+set noshowmode
+set shortmess+=cmrF
+set shortmess-=S
 
 set statusline=%!SetStatusLine()
 
@@ -176,17 +180,25 @@ set ignorecase
 set smartcase
 set gdefault
 
-set completeopt=menuone,noinsert,noselect
-set wildoptions=pum,tagfile
-set pumheight=20
-
-set shortmess+=cmrF
-set shortmess-=S
-
 if executable('rg')
   let &grepprg = 'rg --vimgrep --smart-case'
   set grepformat=%f:%l:%c:%m
 endif
+
+" }}}
+
+" Completion {{{
+
+" -- Insert Mode
+set complete+=o
+set completeopt=menuone,noinsert
+" set autocomplete
+set autocompletedelay=300
+set pumopt=height:20
+
+" -- Cmdline Mode
+" set wildmode=noselect
+set wildoptions=pum,fuzzy
 
 " }}}
 
@@ -248,6 +260,11 @@ inoremap <expr> <CR>    pumvisible() ? '<C-y>' : '<CR>'
 inoremap <expr> <Tab>   pumvisible() ? '<C-n>' : '<Tab>'
 inoremap <expr> <S-Tab> pumvisible() ? '<C-p>' : '<S-Tab>'
 
+" cnoremap <Up> <C-U><Up>
+" cnoremap <Down> <C-U><Down>
+" cnoremap <C-p> <C-U><C-p>
+" cnoremap <C-n> <C-U><C-n>
+
 if has('nvim')
   cnoremap <expr> <Up>   pumvisible() ? '<C-p>' : '<Up>'
   cnoremap <expr> <Down> pumvisible() ? '<C-n>' : '<Down>'
@@ -271,27 +288,6 @@ nnoremap <script> <SID>ws- <C-w>-<SID>ws
 nnoremap <script> <SID>ws> <C-w>><SID>ws
 nnoremap <script> <SID>ws< <C-w><<SID>ws
 nmap <SID>ws <Nop>
-
-" }}}
-
-" -- zz... {{{
-
-nmap zz zz<sid>(z1)
-nnoremap <script> <sid>(z1)z zt<sid>(z2)
-nnoremap <script> <sid>(z2)z zb<sid>(z3)
-nnoremap <script> <sid>(z3)z zz<sid>(z1)
-
-"  }}}
-
-" -- f -> z {{{
-
-nmap f z
-xmap f z
-
-nmap zf zz
-nnoremap <script> <sid>(z1)f zt<sid>(z2)
-nnoremap <script> <sid>(z2)f zb<sid>(z3)
-nnoremap <script> <sid>(z3)f zz<sid>(z1)
 
 " }}}
 
@@ -323,11 +319,22 @@ augroup END
 
 " zz -> zz, zt, zb... {{{
 
+nmap zz zz<sid>(z1)
+nnoremap <script> <sid>(z1)z zt<sid>(z2)
+nnoremap <script> <sid>(z2)z zb<sid>(z3)
+nnoremap <script> <sid>(z3)z zz<sid>(z1)
 
 " }}}
 
 " f -> z {{{
 
+nmap f z
+xmap f z
+
+nmap zf zz
+nnoremap <script> <sid>(z1)f zt<sid>(z2)
+nnoremap <script> <sid>(z2)f zb<sid>(z3)
+nnoremap <script> <sid>(z3)f zz<sid>(z1)
 
 " }}}
 
