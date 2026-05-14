@@ -1025,7 +1025,7 @@ let b:current_syntax = "numbat"
 
 " }}}
 
-" Editing {{{
+" Edit {{{
 
 Plug 'AndrewRadev/linediff.vim'
 Plug 'alvan/vim-closetag'
@@ -1073,22 +1073,7 @@ xmap ac <Plug>(comment-text-object-outer)
 
 " }}}
 
-" Movement {{{
-
-Plug 'MattesGroeger/vim-bookmarks'
-Plug 'cocopon/vaffle.vim'
-" Plug 'haya14busa/is.vim'
-" Plug 'haya14busa/vim-asterisk'
-Plug 'haya14busa/vim-edgemotion'
-Plug 'junegunn/vim-slash'
-" Plug 'kana/vim-smartword'
-" Plug 'mattn/vim-findroot'
-Plug 'tyru/open-browser.vim'
-Plug 'yuki-yano/fuzzy-motion.vim'
-
-" }}}
-
-" Appearance {{{
+" View {{{
 
 Plug 'itchyny/vim-highlighturl'
 Plug 'junegunn/goyo.vim'
@@ -1116,6 +1101,21 @@ let g:hlyank_duration = 300
 let g:hlyank_invisual = v:false
 
 " }}}
+
+" }}}
+
+" Move {{{
+
+Plug 'MattesGroeger/vim-bookmarks'
+Plug 'cocopon/vaffle.vim'
+" Plug 'haya14busa/is.vim'
+" Plug 'haya14busa/vim-asterisk'
+Plug 'haya14busa/vim-edgemotion'
+Plug 'junegunn/vim-slash'
+" Plug 'kana/vim-smartword'
+" Plug 'mattn/vim-findroot'
+Plug 'tyru/open-browser.vim'
+Plug 'yuki-yano/fuzzy-motion.vim'
 
 " }}}
 
