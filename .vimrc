@@ -455,10 +455,37 @@ endif
 
 let s:ime_cmd     = 'macism'
 let s:default_ime = 'net.mtgto.inputmethod.macSKK.ascii'
+let s:prev_ime    = ''
 
 augroup vimrc
   autocmd FocusGained,InsertLeave * call system(s:ime_cmd .. ' ' .. s:default_ime)
 augroup END
+
+" -- By Claude
+"
+" function! s:ime_set_async(ime_id) abort
+"   call job_start([s:ime_cmd, a:ime_id])
+" endfunction
+"
+" function! s:restore_ime() abort
+"   if s:prev_ime !=# '' && s:prev_ime !=# s:default_ime
+"     call s:ime_set_async(s:prev_ime)
+"   endif
+" endfunction
+"
+" function! s:save_ime_and_set_default_ime() abort
+"   let s:prev_ime = trim(system(s:ime_cmd))
+"   if s:prev_ime !=# s:default_ime
+"     call s:ime_set_async(s:default_ime)
+"   endif
+" endfunction
+"
+" augroup vimrc_ime
+"   autocmd!
+"   autocmd VimEnter    * let s:prev_ime = ''
+"   autocmd InsertEnter * call s:restore_ime()
+"   autocmd InsertLeave * call s:save_ime_and_set_default_ime()
+" augroup END
 
 " augroup vimrc
 "   autocmd VimEnter    * let s:prev_ime = ''
