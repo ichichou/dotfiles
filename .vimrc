@@ -197,7 +197,8 @@ set autocompletedelay=300
 set pumopt=height:20
 
 " -- Cmdline Mode
-" set wildmode=noselect
+" set wildmode=noselect,full
+set wildmode=noselect:lastused,full
 set wildoptions=pum,fuzzy
 
 " }}}
@@ -266,13 +267,11 @@ cnoremap <C-x> <C-r>=expand('%:p')<CR>
 " Completion {{{
 
 inoremap <expr> <CR>    pumvisible() ? '<C-y>' : '<CR>'
-inoremap <expr> <Tab>   pumvisible() ? '<C-n>' : '<Tab>'
-inoremap <expr> <S-Tab> pumvisible() ? '<C-p>' : '<S-Tab>'
+inoremap <expr> <TAB>   pumvisible() ? '<C-n>' : '<C-t>'
+inoremap <expr> <S-TAB> pumvisible() ? '<C-p>' : '<C-d>'
 
-" cnoremap <Up> <C-U><Up>
-" cnoremap <Down> <C-U><Down>
-" cnoremap <C-p> <C-U><C-p>
-" cnoremap <C-n> <C-U><C-n>
+cnoremap <expr> <Up>   wildmenumode() ? '<C-e><Up>'   : '<Up>'
+cnoremap <expr> <Down> wildmenumode() ? '<C-e><Down>' : '<Down>'
 
 if has('nvim')
   cnoremap <expr> <Up>   pumvisible() ? '<C-p>' : '<Up>'
@@ -482,6 +481,16 @@ augroup END
 "     call system(s:ime_cmd .. ' ' .. s:default_ime)
 "   endif
 " endfunction
+
+" }}}
+
+" Auto Completion in Cmdline {{{
+
+augroup vimrc
+  autocmd CmdlineChanged [:] call wildtrigger()
+  autocmd CmdlineEnter [:] set pumopt=height:10
+  autocmd CmdlineLeave [:] set pumopt=height:20
+augroup END
 
 " }}}
 
