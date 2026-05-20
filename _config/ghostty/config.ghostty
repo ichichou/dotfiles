@@ -1,14 +1,14 @@
 # vim: foldlevel=99
 
-# Configuration {{{
-
-# Theme ------------------------------------------
+# Theme {{{
 
 # theme = catppuccin-macchiato
 theme = Rose Pine Moon
 # theme = OneHalfDark
 
-# Font -------------------------------------------
+# }}}
+
+# Font {{{
 
 font-family = Berkeley Mono
 font-family = Hiragino Kaku Gothic ProN
@@ -23,7 +23,9 @@ font-family = Hiragino Kaku Gothic ProN
 # font-feature = -liga
 font-feature = -dlig
 
-# Others -----------------------------------------
+# }}}
+
+# Others {{{
 
 window-width = 120
 window-height = 40
@@ -44,7 +46,7 @@ macos-non-native-fullscreen = true
 
 # }}}
 
-# Keybindings {{{
+# Keybind {{{
 
 # Disabled
 keybind = cmd+enter=text:\n
