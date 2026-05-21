@@ -12,6 +12,9 @@ aliases:
   - type: variable_if
     name: navi_layer
     value: true
+  # - type: variable_unless
+  #   name: multitouch_extension_finger_count_left_half_area
+  #   value: 0
   - type: device_if
     identifiers:
     # Apple Internal Keyboard

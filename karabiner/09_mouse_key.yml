@@ -1,47 +1,48 @@
 title: "09. Mouse Key"
+
+# ALIASES ========================================
+
+aliases:
+
+- from/modifiers: &left_shift
+    optional:
+    - left_shift
+
+- conditions: &multitouch
+  - type: variable_unless
+    name: multitouch_extension_finger_count_total
+    value: 0
+
+# RULES ==========================================
+
 rules:
 
 - description: "9. Mouse Key"
   manipulators:
 
-  # W -> Right Click
-  - type: basic
-    from:
-      key_code: w
-      modifiers:
-        optional:
-        - left_shift
-    to:
-    - pointing_button: button2
-    conditions:
-    - type: variable_unless
-      name: multitouch_extension_finger_count_total
-      value: 0
-
   # E -> Left Click
   - type: basic
     from:
       key_code: e
-      modifiers:
-        optional:
-        - left_shift
+      modifiers: *left_shift
     to:
     - pointing_button: button1
-    conditions:
-    - type: variable_unless
-      name: multitouch_extension_finger_count_total
-      value: 0
+    conditions: *multitouch
+
+  # W -> Right Click
+  - type: basic
+    from:
+      key_code: w
+      modifiers: *left_shift
+    to:
+    - pointing_button: button2
+    conditions: *multitouch
 
   # R -> Middle Click
   - type: basic
     from:
       key_code: r
-      modifiers:
-        optional:
-        - left_shift
+      modifiers: *left_shift
     to:
     - pointing_button: button3
-    conditions:
-    - type: variable_unless
-      name: multitouch_extension_finger_count_total
-      value: 0
+    conditions: *multitouch
