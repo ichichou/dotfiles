@@ -453,13 +453,28 @@ endif
 
 " Auto IME Off {{{
 
-let s:ime_cmd     = 'macism'
-let s:default_ime = 'net.mtgto.inputmethod.macSKK.ascii'
+" let s:ime_cmd     = 'macism'
+" let s:default_ime = 'net.mtgto.inputmethod.macSKK.ascii'
+"
+" augroup vimrc
+"   autocmd VimEnter,VimResume,FocusGained,InsertLeave * call job_start([s:ime_cmd, s:default_ime])
+" augroup END
 
 augroup vimrc
-  autocmd VimEnter,VimResume,FocusGained,InsertLeave *
-        \ call job_start([s:ime_cmd, s:default_ime])
+  autocmd VimEnter,VimResume,FocusGained,InsertLeave * call ImeOff()
 augroup END
+
+function! ImeOff() abort
+  call job_start(
+        \ ['osascript', '-e', 'tell application "System Events" to key code 102'],
+        \ {'stoponexit': ''})
+endfunction
+
+function! ImeOn() abort
+  call job_start(
+        \ ['osascript', '-e', 'tell application "System Events" to key code 104'],
+        \ {'stoponexit': ''})
+endfunction
 
 " }}}
 
