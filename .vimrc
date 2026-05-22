@@ -453,32 +453,36 @@ endif
 
 " Auto IME On/Off {{{
 
+" IME の切り替えには macism を使う
+" osascript 経由で AppleScript/JavaScript を使うと macism より遅くなる
+
 let s:ime_cmd  = 'macism'
 let s:en_ime   = 'net.mtgto.inputmethod.macSKK.ascii'
 let s:ja_ime   = 'net.mtgto.inputmethod.macSKK.hiragana'
 let s:prev_ime = s:en_ime
 
-" -- Only Auto IME Off
-" augroup vimrc
-"   autocmd VimEnter,VimResume,FocusGained,InsertLeave * call s:ime_off()
-" augroup END
-
+" -- Auto IME Off
 augroup vimrc
   autocmd VimEnter,VimResume,FocusGained * call s:ime_off()
-  autocmd InsertEnter * call s:restore_ime()
-  autocmd InsertLeave * call s:save_ime_and_ime_off()
+  autocmd InsertLeave * call s:ime_off()
 augroup END
 
+" -- Auto IME On/Off
+" Insert mode を抜けた後、macism の実行を待つ間、
+" 少しの時間キー入力を受け付けなくなる問題がある
+" これは system() の代わりに job_start() を使っても同じである
+" augroup vimrc
+"   autocmd VimEnter,VimResume,FocusGained * call s:ime_off()
+"   autocmd InsertLeave * call s:save_ime_and_ime_off()
+"   autocmd InsertEnter * call s:restore_ime()
+" augroup END
+
 function! s:ime_off() abort
-  call job_start(
-        \ ['osascript', '-e', 'tell application "System Events" to key code 102'],
-        \ {'stoponexit': ''})
+  call job_start([s:ime_cmd, s:en_ime], {'stoponexit': ''})
 endfunction
 
 function! s:ime_on() abort
-  call job_start(
-        \ ['osascript', '-e', 'tell application "System Events" to key code 104'],
-        \ {'stoponexit': ''})
+  call job_start([s:ime_cmd, s:ja_ime], {'stoponexit': ''})
 endfunction
 
 function! s:restore_ime() abort
