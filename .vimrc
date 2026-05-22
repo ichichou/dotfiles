@@ -451,29 +451,45 @@ endif
 
 " }}}
 
-" Auto IME Off {{{
+" Auto IME On/Off {{{
 
-" let s:ime_cmd     = 'macism'
-" let s:default_ime = 'net.mtgto.inputmethod.macSKK.ascii'
-"
+let s:ime_cmd  = 'macism'
+let s:en_ime   = 'net.mtgto.inputmethod.macSKK.ascii'
+let s:ja_ime   = 'net.mtgto.inputmethod.macSKK.hiragana'
+let s:prev_ime = s:en_ime
+
+" -- Only Auto IME Off
 " augroup vimrc
-"   autocmd VimEnter,VimResume,FocusGained,InsertLeave * call job_start([s:ime_cmd, s:default_ime])
+"   autocmd VimEnter,VimResume,FocusGained,InsertLeave * call s:ime_off()
 " augroup END
 
 augroup vimrc
-  autocmd VimEnter,VimResume,FocusGained,InsertLeave * call ImeOff()
+  autocmd VimEnter,VimResume,FocusGained * call s:ime_off()
+  autocmd InsertEnter * call s:restore_ime()
+  autocmd InsertLeave * call s:save_ime_and_ime_off()
 augroup END
 
-function! ImeOff() abort
+function! s:ime_off() abort
   call job_start(
         \ ['osascript', '-e', 'tell application "System Events" to key code 102'],
         \ {'stoponexit': ''})
 endfunction
 
-function! ImeOn() abort
+function! s:ime_on() abort
   call job_start(
         \ ['osascript', '-e', 'tell application "System Events" to key code 104'],
         \ {'stoponexit': ''})
+endfunction
+
+function! s:restore_ime() abort
+  if s:prev_ime == s:ja_ime
+    call s:ime_on()
+  endif
+endfunction
+
+function! s:save_ime_and_ime_off() abort
+  let s:prev_ime = trim(system(s:ime_cmd))
+  call s:ime_off()
 endfunction
 
 " }}}
