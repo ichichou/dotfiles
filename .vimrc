@@ -350,11 +350,11 @@ nnoremap <script> <sid>(z3)f zz<sid>(z1)
 
 " <Space> Leader {{{
 
-noremap <Space>l <Cmd>nohlsearch <Bar> redraw!<CR>
-noremap <expr> <Space>s <SID>substitute_last_search()
+" noremap <Space>l <Cmd>nohlsearch <Bar> redraw!<CR>
+" noremap <expr> <Space>s <SID>substitute_last_search()
 
-nnoremap <Space>w <Cmd>update<CR>
-nnoremap <Space>q <Cmd>quit<CR>
+" nnoremap <Space>w <Cmd>update<CR>
+" nnoremap <Space>q <Cmd>quit<CR>
 
 " }}}
 
