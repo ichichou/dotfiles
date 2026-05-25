@@ -1140,7 +1140,7 @@ let g:hlyank_invisual = v:false
 
 " Move {{{
 
-Plug 'MattesGroeger/vim-bookmarks'
+" Plug 'MattesGroeger/vim-bookmarks'
 Plug 'cocopon/vaffle.vim'
 " Plug 'haya14busa/is.vim'
 " Plug 'haya14busa/vim-asterisk'
