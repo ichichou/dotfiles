@@ -518,13 +518,9 @@ command! MtgapOff call s:mtgap_off()
 function! s:mtgap_on() abort
   let s:saved_mappings = maplist()
 
-  " Normal Mode Mappings {{{
-  nmap y   <Plug>(sandwich-add)
-  nmap Y   <Plug>(sandwich-add)$
-  nmap yd  <Plug>(sandwich-delete)
-  nmap ydb <Plug>(sandwich-delete-auto)
-  nmap yc  <Plug>(sandwich-replace)
-  nmap ycb <Plug>(sandwich-replace-auto)
+  " Normal Mode {{{
+  nmap y gR
+  nmap Y J
 
   nmap j <C-w>
   nnoremap <C-w>j <C-w>w
@@ -538,6 +534,13 @@ function! s:mtgap_on() abort
   nnoremap <C-w>S <C-w>L
   nnoremap J T
 
+  nmap k   <Plug>(sandwich-add)
+  nmap K   <Plug>(sandwich-add)$
+  nmap kd  <Plug>(sandwich-delete)
+  nmap kdb <Plug>(sandwich-delete-auto)
+  nmap kc  <Plug>(sandwich-replace)
+  nmap kcb <Plug>(sandwich-replace-auto)
+
   nnoremap d y
   nnoremap D y$
   nnoremap l d
@@ -545,22 +548,26 @@ function! s:mtgap_on() abort
 
   nnoremap m h
   nnoremap h j
+  nnoremap H L
   nnoremap t k
-  nnoremap T J
+  nnoremap T H
   nnoremap s l
-  nnoremap S L
+  nnoremap S K
 
   silent! nunmap f
   silent! nunmap zf
   " }}}
-  " Visual Mode Mappings {{{
-  xmap y  <Plug>(sandwich-add)
-  xmap Y  <Plug>(sandwich-add)$
-  xmap yd <Plug>(sandwich-delete)
-  xmap yc <Plug>(sandwich-replace)
+  " Visual Mode {{{
+  xmap y  gr
+  xmap Y  J
 
   xmap j t
   xmap J T
+
+  xmap k  <Plug>(sandwich-add)
+  xmap K  <Plug>(sandwich-add)$
+  xmap kd <Plug>(sandwich-delete)
+  xmap kc <Plug>(sandwich-replace)
 
   xnoremap d y
   xnoremap D y$
@@ -569,19 +576,23 @@ function! s:mtgap_on() abort
 
   xnoremap m h
   xnoremap h j
+  xnoremap H L
   xnoremap t k
-  xnoremap T J
+  xnoremap T H
   xnoremap s l
-  xnoremap S L
+  xnoremap S K
 
   silent! xunmap f
   " }}}
-  " Operator-pending Mode Mappings {{{
-  omap y <Plug>(sandwich-add)
-  omap Y <Plug>(sandwich-add)$
+  " Operator-pending Mode {{{
+  omap y <Nop>
+  omap Y <Nop>
 
   omap j t
   omap J T
+
+  omap k <Plug>(sandwich-add)
+  omap K <Plug>(sandwich-add)$
 
   onoremap d y
   onoremap D y$
@@ -590,14 +601,14 @@ function! s:mtgap_on() abort
 
   onoremap m h
   onoremap h j
+  onoremap H L
   onoremap t k
-  onoremap T J
+  onoremap T H
   onoremap s l
-  onoremap S L
+  onoremap S K
 
   silent! ounmap f
   " }}}
-
 endfunction
 
 function! s:mtgap_off() abort
