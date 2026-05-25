@@ -358,10 +358,6 @@ nnoremap <script> <sid>(z3)f zz<sid>(z1)
 
 " }}}
 
-" MTGAP {{{
-
-" }}}
-
 " Nop {{{
 
 noremap ZZ    <Nop>
@@ -505,6 +501,119 @@ augroup vimrc
   autocmd CmdlineEnter [:] set pumopt=height:10
   autocmd CmdlineLeave [:] set pumopt=height:20
 augroup END
+
+" }}}
+
+" MTGAP Mappings {{{
+
+let s:saved_mappings = []
+
+" augroup vimrc
+"   autocmd VimEnter * call s:mtgap_on()
+" augroup END
+
+command! MtgapOn  call s:mtgap_on()
+command! MtgapOff call s:mtgap_off()
+
+function! s:mtgap_on() abort
+  let s:saved_mappings = maplist()
+
+  " Normal Mode Mappings {{{
+  nmap y   <Plug>(sandwich-add)
+  nmap Y   <Plug>(sandwich-add)$
+  nmap yd  <Plug>(sandwich-delete)
+  nmap ydb <Plug>(sandwich-delete-auto)
+  nmap yc  <Plug>(sandwich-replace)
+  nmap ycb <Plug>(sandwich-replace-auto)
+
+  nmap j <C-w>
+  nnoremap <C-w>j <C-w>w
+  nnoremap <C-w>m <C-w>h
+  nnoremap <C-w>h <C-w>j
+  nnoremap <C-w>t <C-w>k
+  nnoremap <C-w>s <C-w>l
+  nnoremap <C-w>M <C-w>H
+  nnoremap <C-w>H <C-w>J
+  nnoremap <C-w>T <C-w>K
+  nnoremap <C-w>S <C-w>L
+  nnoremap J T
+
+  nnoremap d y
+  nnoremap D y$
+  nnoremap l d
+  nnoremap L D
+
+  nnoremap m h
+  nnoremap h j
+  nnoremap t k
+  nnoremap T J
+  nnoremap s l
+  nnoremap S L
+
+  silent! nunmap f
+  silent! nunmap zf
+  " }}}
+  " Visual Mode Mappings {{{
+  xmap y  <Plug>(sandwich-add)
+  xmap Y  <Plug>(sandwich-add)$
+  xmap yd <Plug>(sandwich-delete)
+  xmap yc <Plug>(sandwich-replace)
+
+  xmap j t
+  xmap J T
+
+  xnoremap d y
+  xnoremap D y$
+  xnoremap l d
+  xnoremap L D
+
+  xnoremap m h
+  xnoremap h j
+  xnoremap t k
+  xnoremap T J
+  xnoremap s l
+  xnoremap S L
+
+  silent! xunmap f
+  " }}}
+  " Operator-pending Mode Mappings {{{
+  omap y <Plug>(sandwich-add)
+  omap Y <Plug>(sandwich-add)$
+
+  omap j t
+  omap J T
+
+  onoremap d y
+  onoremap D y$
+  onoremap l d
+  onoremap L D
+
+  onoremap m h
+  onoremap h j
+  onoremap t k
+  onoremap T J
+  onoremap s l
+  onoremap S L
+
+  silent! ounmap f
+  " }}}
+
+endfunction
+
+function! s:mtgap_off() abort
+  if empty(s:saved_mappings)
+    echohl ErrorMsg
+    echomsg 'mtgap_off: 保存されたマッピングがありません'
+    echohl None
+    return
+  endif
+
+  mapclear
+
+  for l:m in s:saved_mappings
+    call mapset(l:m)
+  endfor
+endfunction
 
 " }}}
 
