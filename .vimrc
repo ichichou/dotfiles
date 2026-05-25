@@ -192,12 +192,11 @@ endif
 " -- Insert Mode
 set complete+=o
 set completeopt=menuone,noinsert
-" set autocomplete
+set autocomplete
 set autocompletedelay=300
 set pumopt=height:20
 
 " -- Cmdline Mode
-" set wildmode=noselect,full
 set wildmode=noselect:lastused,full
 set wildoptions=pum,fuzzy
 
@@ -467,6 +466,7 @@ augroup END
 " Insert mode を抜けた後、macism の実行を待つ間、
 " 少しの時間キー入力を受け付けなくなる問題がある
 " これは system() の代わりに job_start() を使っても同じである
+"
 " augroup vimrc
 "   autocmd VimEnter,VimResume,FocusGained * call s:ime_off()
 "   autocmd InsertLeave * call s:save_ime_and_ime_off()
@@ -910,14 +910,15 @@ endfunction
 " Vim に入力される文字がすでに MTGAP になっていることが前提
 " Vim が Normal Mode で MTGAP の文字を Qwerty として解釈するためのマッピング
 
-" langmap には (1) 安定性の問題と、(2) ユーザー定義のキーマップに対して利かない問題がある
+" langmap には (1) 安定性の問題と、
+" (2) ユーザー定義のキーマップに対して利かない問題がある
 " あるいはプラグインで定義されたキーマップに対して利かない問題
 "
 " (1) 安定性の問題
 " 起動直後は langmap が利かなかったり、
 " 初めて打ったキーに利かなかったりする（発生条件は不明）
 "
-" (2)ユーザー定義のキーマップに対する問題
+" (2) ユーザー定義のキーマップに対する問題
 " 例えば s を何かの機能にマッピングしている場合、langmap をオンにして
 " MTGAP の S 位置のキーを押したとき、本来なら l を押したと解釈されてほしいが、
 " そうはならず s が押され、s にマッピングした機能が発火してしまう
@@ -1205,14 +1206,13 @@ Plug 'prettier/vim-prettier', {
 "   Plug 'mickael-menu/zk-nvim'
 " endif
 
-" Must be set before 'packadd comment'
+" -- Must be set before 'packadd comment'
 let g:comment_mappings = v:false
 
 packadd! comment
 packadd! matchit
 
 " Comment.vim Config {{{
-
 nmap <Leader>c <Plug>(comment-toggle)
 xmap <Leader>c <Plug>(comment-toggle)
 nmap <Leader>cc <Plug>(comment-toggle-line)
@@ -1222,7 +1222,6 @@ omap ic <Plug>(comment-text-object-inner)
 omap ac <Plug>(comment-text-object-outer)
 xmap ic <Plug>(comment-text-object-inner)
 xmap ac <Plug>(comment-text-object-outer)
-
 " }}}
 
 " }}}
@@ -1249,11 +1248,9 @@ endif
 packadd! hlyank
 
 " Highlight-Yank Config {{{
-
 let g:hlyank_hlgroup = 'Visual'
 let g:hlyank_duration = 300
 let g:hlyank_invisual = v:false
-
 " }}}
 
 " }}}
