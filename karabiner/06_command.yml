@@ -3,31 +3,31 @@ rules:
 - description: "6. Command Key"
   manipulators:
 
-  # LCmd-Any {{{
+  # LCmd + Thumb Keys {{{
 
-  # LCmd-Space -> Return
-  - type: basic
-    from:
-      key_code: spacebar
-      modifiers:
-        mandatory:
-        - left_command
-        optional:
-        - any
-    to:
-    - key_code: return_or_enter
-      repeat: false
+  # # LCmd-Space -> Return
+  # - type: basic
+  #   from:
+  #     key_code: spacebar
+  #     modifiers:
+  #       mandatory:
+  #       - left_command
+  #       optional:
+  #       - any
+  #   to:
+  #   - key_code: return_or_enter
+  #     repeat: false
 
-  # LCmd-RCmd -> Esc
-  - type: basic
-    from:
-      key_code: right_command
-      modifiers:
-        mandatory:
-        - left_command
-    to:
-    - key_code: escape
-      repeat: false
+  # # LCmd-RCmd -> Esc
+  # - type: basic
+  #   from:
+  #     key_code: right_command
+  #     modifiers:
+  #       mandatory:
+  #       - left_command
+  #   to:
+  #   - key_code: escape
+  #     repeat: false
 
   # # RCmd-LCmd -> Esc
   # - type: basic
@@ -39,19 +39,6 @@ rules:
   #   to:
   #   - key_code: escape
   #     repeat: false
-
-  # LCmd-U -> Cmd-H
-  - type: basic
-    from:
-      key_code: u
-      modifiers:
-        mandatory:
-        - left_command
-    to:
-    - key_code: h
-      modifiers:
-      - command
-      repeat: false
 
   # }}}
 
@@ -302,10 +289,26 @@ rules:
 
   # }}}
 
+  # Others {{{
+
+  # LCmd-U -> Cmd-H
+  - type: basic
+    from:
+      key_code: u
+      modifiers:
+        mandatory:
+        - left_command
+    to:
+    - key_code: h
+      modifiers:
+      - command
+      repeat: false
+
+  # }}}
+
   # Left Command Key {{{
 
   # LCmd -> Eisuu/LCmd
-  # # LCmd -> Eisuu/LCmd (on Apple Internal Keyboard)
   - type: basic
     from:
       key_code: left_command
@@ -314,17 +317,12 @@ rules:
     to:
     - key_code: left_command
       lazy: true
-    # conditions:
-    # - type: device_if
-    #   identifiers:
-    #   # Apple Internal Keyboard
-    #   - is_built_in_keyboard: true
 
   # }}}
 
   # Right Command Key {{{
 
-  # # RCmd -> Kana/RCmd (on Apple Internal Keyboard)
+  # # RCmd -> Kana/RCmd
   # - type: basic
   #   from:
   #     key_code: right_command
@@ -333,11 +331,6 @@ rules:
   #   to:
   #   - key_code: right_command
   #     lazy: true
-  #   conditions:
-  #   - type: device_if
-  #     identifiers:
-  #     # Apple Internal Keyboard
-  #     - is_built_in_keyboard: true
 
   # RCmd -> Delete/RCmd
   - type: basic
