@@ -127,7 +127,7 @@ rules:
 
 # 19-2. Others: F15-F18 -> , . / : {{{
 
-- description: "19-2. F15–F18 → , . / :"
+- description: "19-2. Others: F15–F18 → , . / :"
   manipulators:
 
   # F15 -> ,
