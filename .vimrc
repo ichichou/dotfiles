@@ -502,6 +502,17 @@ augroup vimrc
   autocmd CmdlineLeave [:] set pumopt=height:20
 augroup END
 
+" -- Cmdline の補完候補が選択されているかを判定する関数
+function! CmdcompleteSelected() abort
+  let info = cmdcomplete_info()
+  let unselected = info == {} || info['selected'] == -1
+  return !unselected
+endfunction
+
+" -- Cmdline の補完候補が選択されているときには確定、
+"    選択されていないときには一番上の候補を選択して確定する
+cnoremap <expr> <Tab> CmdcompleteSelected() ? '<CR>' : '<C-n><CR>'
+
 " }}}
 
 " MTGAP Mappings {{{
