@@ -502,6 +502,17 @@ augroup vimrc
   autocmd CmdlineLeave [:] set pumopt=height:20
 augroup END
 
+" -- Cmdline の補完候補が選択されているかを判定する関数
+function! CmdcompleteSelected() abort
+  let info = cmdcomplete_info()
+  let unselected = info == {} || info['selected'] == -1
+  return !unselected
+endfunction
+
+" -- Cmdline の補完候補が選択されているときには確定、
+"    選択されていないときには一番上の候補を選択して確定する
+cnoremap <expr> <Tab> CmdcompleteSelected() ? '<CR>' : '<C-n><CR>'
+
 " }}}
 
 " MTGAP Mappings {{{
@@ -1033,9 +1044,6 @@ endif
 if has('nvim')
   " Plug 'neovim/nvim-lspconfig'
   " Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-  " Plug 'prabirshrestha/vim-lsp'
-  " Plug 'mattn/vim-lsp-settings'
-  " Plug 'mattn/vim-lsp-icons'
 else
   " Plug 'prabirshrestha/vim-lsp'
   " Plug 'mattn/vim-lsp-settings'
@@ -1053,10 +1061,6 @@ if has('nvim')
   " Plug 'hrsh7th/cmp-path'
   " Plug 'hrsh7th/cmp-vsnip'
   " Plug 'hrsh7th/nvim-cmp'
-  " Plug 'prabirshrestha/asyncomplete-buffer.vim'
-  " Plug 'prabirshrestha/asyncomplete-file.vim'
-  " Plug 'prabirshrestha/asyncomplete-lsp.vim'
-  " Plug 'prabirshrestha/asyncomplete.vim'
 else
   " Plug 'prabirshrestha/asyncomplete.vim'
   " Plug 'prabirshrestha/asyncomplete-buffer.vim'
@@ -1259,8 +1263,6 @@ let g:hlyank_invisual = v:false
 
 " Plug 'MattesGroeger/vim-bookmarks'
 Plug 'cocopon/vaffle.vim'
-" Plug 'haya14busa/is.vim'
-" Plug 'haya14busa/vim-asterisk'
 Plug 'haya14busa/vim-edgemotion'
 Plug 'junegunn/vim-slash'
 " Plug 'kana/vim-smartword'
