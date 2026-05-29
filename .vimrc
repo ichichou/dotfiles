@@ -503,7 +503,7 @@ augroup vimrc
 augroup END
 
 " -- Cmdline の補完候補が選択されているかを判定する関数
-function! CmdcompleteSelected() abort
+function! s:cmdcomplete_selected() abort
   let info = cmdcomplete_info()
   let unselected = info == {} || info['selected'] == -1
   return !unselected
@@ -511,7 +511,7 @@ endfunction
 
 " -- Cmdline の補完候補が選択されているときには確定、
 "    選択されていないときには一番上の候補を選択して確定する
-cnoremap <expr> <Tab> CmdcompleteSelected() ? '<CR>' : '<C-n><CR>'
+cnoremap <expr> <Tab> <SID>cmdcomplete_selected() ? '<CR>' : '<C-n><CR>'
 
 " }}}
 
@@ -530,8 +530,8 @@ function! s:mtgap_on() abort
   let s:saved_mappings = maplist()
 
   " Normal Mode {{{
-  nmap y gR
-  nmap Y J
+  nmap y gr
+  nmap Y gR
 
   nmap j <C-w>
   nnoremap <C-w>j <C-w>w
@@ -543,7 +543,6 @@ function! s:mtgap_on() abort
   nnoremap <C-w>H <C-w>J
   nnoremap <C-w>T <C-w>K
   nnoremap <C-w>S <C-w>L
-  nnoremap J T
 
   nmap k   <Plug>(sandwich-add)
   nmap K   <Plug>(sandwich-add)$
@@ -570,7 +569,7 @@ function! s:mtgap_on() abort
   " }}}
   " Visual Mode {{{
   xmap y  gr
-  xmap Y  J
+  xmap Y  gR
 
   xmap j t
   xmap J T
@@ -937,7 +936,14 @@ endfunction
 "
 " 上記の理由で、今のところ以下の langmap 関連設定はうまく動作しない
 
-" function! s:MtgapLangmapOn() abort
+" augroup vimrc
+"   autocmd VimEnter * call s:mtgap_langmap_on()
+" augroup END
+"
+" command! MtgapOn  call s:mtgap_langmap_on()
+" command! MtgapOff call s:mtgap_langmap_off()
+"
+" function! s:mtgap_langmap_on() abort
 "   execute 'set langmap='
 "      \ .. 'yq,pw,oe,ur,jt,ky,du,li,co,wp,'
 "      \ .. 'ia,ns,ed,af,\\,g,mh,hj,tk,sl,r\\;,'
@@ -947,14 +953,9 @@ endfunction
 "      \ .. 'QZ,ZX,?C,>V,:B,BN,FM,G<,V>,X?'
 " endfunction
 "
-" function! s:MtgapLangmapOff() abort
+" function! s:mtgap_langmap_off() abort
 "   set langmap=
 " endfunction
-"
-" command! MtgapOn  call s:MtgapLangmapOn()
-" command! MtgapOff call s:MtgapLangmapOff()
-"
-" call s:MtgapLangmapOn()
 
 " }}}
 
