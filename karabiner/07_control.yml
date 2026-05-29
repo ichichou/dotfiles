@@ -104,7 +104,7 @@ rules:
     - key_code: delete_or_backspace
       repeat: true
 
-  # LCtrl-U -> Cmd-Delete
+  # LCtrl-U -> Cmd-Tab
   - type: basic
     from:
       key_code: u
@@ -112,9 +112,9 @@ rules:
         mandatory:
         - left_control
     to:
-    - key_code: delete_or_backspace
+    - key_code: tab
       modifiers:
-      - command
+      - control
       repeat: true
 
   # }}}
