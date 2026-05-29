@@ -113,7 +113,15 @@ augroup END
 set foldmethod=marker
 " set nofoldenable
 
-set diffopt=internal,filler,closeoff,vertical,indent-heuristic,algorithm:histogram
+set diffopt=
+      \algorithm:histogram,
+      \closeoff,
+      \filler,
+      \indent-heuristic,
+      \inline:char,
+      \internal,
+      \linematch:60,
+      \vertical
 
 " }}}
 
@@ -328,22 +336,21 @@ augroup END
 
 " zz -> zz, zt, zb... {{{
 
-nmap zz zz<sid>(z1)
-nnoremap <script> <sid>(z1)z zt<sid>(z2)
-nnoremap <script> <sid>(z2)z zb<sid>(z3)
-nnoremap <script> <sid>(z3)z zz<sid>(z1)
+nmap zz zz<SID>(z1)
+nnoremap <script> <SID>(z1)z zt<SID>(z2)
+nnoremap <script> <SID>(z2)z zb<SID>(z3)
+nnoremap <script> <SID>(z3)z zz<SID>(z1)
 
 " }}}
 
 " f -> z {{{
 
-nmap f z
-xmap f z
+nnoremap f z
 
-nmap zf zz
-nnoremap <script> <sid>(z1)f zt<sid>(z2)
-nnoremap <script> <sid>(z2)f zb<sid>(z3)
-nnoremap <script> <sid>(z3)f zz<sid>(z1)
+nmap zf zz<SID>(z1)
+nnoremap <script> <SID>(z1)f zt<SID>(z2)
+nnoremap <script> <SID>(z2)f zb<SID>(z3)
+nnoremap <script> <SID>(z3)f zz<SID>(z1)
 
 " }}}
 
@@ -591,8 +598,6 @@ function! s:mtgap_on() abort
   xnoremap T H
   xnoremap s l
   xnoremap S K
-
-  silent! xunmap f
   " }}}
   " Operator-pending Mode {{{
   omap y <Nop>
@@ -616,8 +621,6 @@ function! s:mtgap_on() abort
   onoremap T H
   onoremap s l
   onoremap S K
-
-  silent! ounmap f
   " }}}
 endfunction
 
