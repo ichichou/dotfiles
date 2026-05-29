@@ -115,7 +115,15 @@ augroup END
 set foldmethod=marker
 # set nofoldenable
 
-set diffopt=internal,filler,closeoff,vertical,indent-heuristic,algorithm:histogram
+set diffopt=
+      \algorithm:histogram,
+      \closeoff,
+      \filler,
+      \indent-heuristic,
+      \inline:char,
+      \internal,
+      \linematch:60,
+      \vertical
 
 # }}}
 
@@ -303,14 +311,14 @@ nmap <SID>ws <Nop>
 # .vimrc {{{
 
 nnoremap <Leader>, <Cmd>edit $MYVIMRC<CR>
-nnoremap <Leader>. <SID>reload_vimrc_gvimrc()
+nnoremap <Leader>. <Cmd><SID>reload_vimrc_gvimrc()<CR>
 nnoremap <Leader>/ <Cmd>edit $HOME/dotfiles/vim/config<CR>
 
 if has('gui_running')
   nnoremap <Leader><lt> <Cmd>edit $MYGVIMRC<CR>
 endif
 
-def reload_vimrc_gvimrc()
+def reload_vimrc_gvimrc(): void
   source $MYVIMRC
   if has('gui_running')
     source $MYGVIMRC
@@ -342,10 +350,9 @@ nnoremap <script> <SID>(z3)z zz<SID>(z1)
 
 # f -> z {{{
 
-nmap f z
-xmap f z
+nnoremap f z
 
-nmap zf zz
+nmap zf zz<SID>(z1)
 nnoremap <script> <SID>(z1)f zt<SID>(z2)
 nnoremap <script> <SID>(z2)f zb<SID>(z3)
 nnoremap <script> <SID>(z3)f zz<SID>(z1)
@@ -437,7 +444,7 @@ augroup END
 
 autocmd vimrc VimEnter,DiffUpdated * set_diff_mode()
 
-def set_diff_mode()
+def set_diff_mode(): void
   if &diff
     setlocal nospell
     setlocal wrap<
@@ -482,21 +489,21 @@ augroup END
 #   autocmd InsertEnter * restore_ime()
 # augroup END
 
-def ime_off()
+def ime_off(): void
   job_start([ime_cmd, en_ime], {'stoponexit': ''})
 enddef
 
-def ime_on()
+def ime_on(): void
   job_start([ime_cmd, ja_ime], {'stoponexit': ''})
 enddef
 
-def restore_ime()
+def restore_ime(): void
   if prev_ime == ja_ime
     ime_on()
   endif
 enddef
 
-def save_ime_and_ime_off()
+def save_ime_and_ime_off(): void
   prev_ime = trim(system(ime_cmd))
   ime_off()
 enddef
@@ -511,16 +518,16 @@ augroup vimrc
   autocmd CmdlineLeave [:] set pumopt=height:20
 augroup END
 
+# -- Cmdline の補完候補が選択されているときには確定、
+#    選択されていないときには一番上の候補を選択して確定する
+cnoremap <expr> <Tab> <SID>cmdcomplete_selected() ? '<CR>' : '<C-n><CR>'
+
 # -- Cmdline の補完候補が選択されているかを判定する関数
-def cmdcomplete_selected()
+def cmdcomplete_selected(): bool
   var info = cmdcomplete_info()
   var unselected = info == {} || info['selected'] == -1
   return !unselected
 enddef
-
-# -- Cmdline の補完候補が選択されているときには確定、
-#    選択されていないときには一番上の候補を選択して確定する
-cnoremap <expr> <Tab> <SID>cmdcomplete_selected() ? '<CR>' : '<C-n><CR>'
 
 # }}}
 
@@ -653,7 +660,7 @@ enddef
 
 # Check Back Space (global) {{{
 
-def g:CheckBackSpace()
+def g:CheckBackSpace(): bool
   var col = col('.') - 1
   return !col || getline('.')[col - 1]  =~ '\s'
 enddef
@@ -676,17 +683,17 @@ var mode_map = {
   't':      ' TERMINAL '
 }
 
-def g:GetMode()
+def g:GetMode(): string
   return get(mode_map, mode(), '')
 enddef
 
-def g:SetStatusLine()
+def g:SetStatusLine(): string
   var fenc = &fileencoding != '' ? &fileencoding : &encoding
   var ft   = &filetype     != '' ? &filetype     : 'no ft'
 
-  var percentage = ''
-  var lines = ''
-  var cols = ''
+  var percentage: string
+  var lines: string
+  var cols: string
 
   # Percent
   var pct_num = line('.') * 100 / line('$')
@@ -747,10 +754,12 @@ enddef
 nnoremap <expr> go <SID>blank_below()
 nnoremap <expr> gO <SID>blank_above()
 
-def blank_below(type = '')
+def blank_below(type = ''): string
   if type == ''
-    set operatorfunc=function('blank_below')
+    &operatorfunc = blank_below
     return 'g@ '
+  else
+    return ''
   endif
 
   for i in range(v:count1)
@@ -758,10 +767,12 @@ def blank_below(type = '')
   endfor
 enddef
 
-def blank_above(type = '')
+def blank_above(type = ''): string
   if type == ''
-    set operatorfunc=function('blank_above')
+    &operatorfunc = blank_above
     return 'g@ '
+  else
+    return ''
   endif
 
   for i in range(v:count1)
@@ -773,20 +784,20 @@ enddef
 
 # Vertical Help {{{
 
-nnoremap gK <SID>help_vertical_cword()
-vnoremap gK <SID>help_vertical_selected()
+nnoremap gK <Cmd><SID>help_vertical_cword()<CR>
+xnoremap gK <Cmd><SID>help_vertical_selected()<CR>
 
-def help_vertical_cword()
+def help_vertical_cword(): void
   var word = expand('<cword>')
   if word != ''
-    execute 'vertical help' .. word
+    execute 'vertical help' word
   endif
 enddef
 
-def help_vertical_selected()
+def help_vertical_selected(): void
   execute 'silent normal! "vy'
   var word = @v
-  execute 'vertical help' .. word
+  execute 'vertical help' word
 enddef
 
 # }}}
@@ -795,7 +806,7 @@ enddef
 
 command! SyntaxInfo get_syn_info()
 
-def get_syn_id(transparent)
+def get_syn_id(transparent: bool): number
   var synid = synID('.', col('.'), 1)
   if transparent
     return synIDtrans(synid)
@@ -804,7 +815,7 @@ def get_syn_id(transparent)
   endif
 enddef
 
-def get_syn_attr(synid)
+def get_syn_attr(synid: number): dict<string>
   var name    = synIDattr(synid, 'name')
   var ctermfg = synIDattr(synid, 'fg', 'cterm')
   var ctermbg = synIDattr(synid, 'bg', 'cterm')
@@ -819,7 +830,7 @@ def get_syn_attr(synid)
   }
 enddef
 
-def get_syn_info()
+def get_syn_info(): void
   var baseSyn = get_syn_attr(get_syn_id(0))
   echo
     'name: '     .. baseSyn.name ..
@@ -842,16 +853,18 @@ enddef
 # Timestamp {{{
 
 augroup vimrc
-  autocmd FileType markdown nnoremap <buffer> <Leader>d <SID>timestamp_below()
-  autocmd FileType markdown nnoremap <buffer> <Leader>D <SID>timestamp_above()
+  autocmd FileType markdown
+        \ nnoremap <buffer> <Leader>d <Cmd><SID>timestamp_below()<CR>
+  autocmd FileType markdown
+        \ nnoremap <buffer> <Leader>D <Cmd><SID>timestamp_above()<CR>
 augroup END
 
-def set_timestamp()
+def set_timestamp(): string
   var timestamp = '## ' .. strftime('%Y-%m-%d %H:%M:%S')
   return timestamp
 enddef
 
-def timestamp_below()
+def timestamp_below(): void
   var timestamp = set_timestamp()
 
   if strlen(getline('.')) > 0
@@ -866,7 +879,7 @@ def timestamp_below()
   startinsert
 enddef
 
-def timestamp_above()
+def timestamp_above(): void
   var timestamp = set_timestamp()
 
   if strlen(getline('.')) > 0
@@ -883,13 +896,13 @@ enddef
 nnoremap <Leader>m <Nop>
 nnoremap [zk] <Nop>
 nmap <Leader>m [zk]
-nnoremap [zk]n <SID>open_journal_file()
-nnoremap [zk]j <SID>open_journal_dir()
+nnoremap [zk]n <Cmd><SID>open_journal_file()<CR>
+nnoremap [zk]j <Cmd><SID>open_journal_dir()<CR>
 
 var zk_dir = expand('$ZK_NOTEBOOK_DIR')
 var journal_dir = zk_dir .. '/journal'
 
-def open_journal_file()
+def open_journal_file(): void
   var file_name = strftime('%Y-%m-%d') .. '.md'
   var file_path_pattern = 'zk/journal/' .. file_name
   var win_id = bufwinid(file_path_pattern)
@@ -901,7 +914,7 @@ def open_journal_file()
   endif
 enddef
 
-def open_journal_dir()
+def open_journal_dir(): void
   execute 'edit' journal_dir
 enddef
 
@@ -915,10 +928,10 @@ command! CdCurrentFile lcd %:h
 
 # Print tabstop, shiftwidth, softtabstop {{{
 
-nnoremap <expr> <Leader>a <SID>print_indents()
+nnoremap <Leader>a <Cmd><SID>print_indents()<CR>
 command! PrintIndents print_indents()
 
-def print_indents()
+def print_indents(): void
   var ts = &tabstop
   var sw = &shiftwidth
   var sts = &softtabstop
@@ -931,7 +944,7 @@ enddef
 
 command! FillLine fill_line()
 
-def fill_line()
+def fill_line(): void
   var width = 50
   var str = substitute(getline('.'), ' \+$', '', '')
   var display_width = strdisplaywidth(str)
@@ -991,7 +1004,7 @@ enddef
 
 # Substitute with Last Search {{{
 
-def substitute_last_search()
+def substitute_last_search(): void
   var cmd = mode() =~# "[vV\<C-v>]" ? ':s/' : ':%s/'
   feedkeys(cmd .. @/ .. "//\<Left>", 'n')
 enddef
@@ -1005,7 +1018,7 @@ command! RestoreStatusLine restore_statusline()
 
 var saved_hl_statusline = {}
 
-def no_statusline()
+def no_statusline(): void
   saved_hl_statusline = hlget('StatusLine')
 
   highlight! link StatusLine VertSplit
@@ -1017,7 +1030,7 @@ def no_statusline()
   set noruler
 enddef
 
-def restore_statusline()
+def restore_statusline(): void
   hlset(saved_hl_statusline)
 
   set statusline=%!SetStatusLine()
@@ -1034,9 +1047,9 @@ enddef
 
 # Vim-Plug {{{
 
-var g:data_dir = has('nvim') ? stdpath('data') .. '/site' : '~/.vim'
-if empty(glob(data_dir .. '/autoload/plug.vim'))
-  silent execute '!curl -fLo ' .. data_dir .. '/autoload/plug.vim --create-dirs
+g:data_dir = has('nvim') ? stdpath('data') .. '/site' : '~/.vim'
+if empty(glob(g:data_dir .. '/autoload/plug.vim'))
+  silent execute '!curl -fLo ' .. g:data_dir .. '/autoload/plug.vim --create-dirs
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
@@ -1120,11 +1133,11 @@ endif
 
 if has('nvim')
   # Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
-  var g:polyglot_disabled = ['autoindent', 'sensible', 'csv', 'markdown', 'r-lang']
+  g:polyglot_disabled = ['autoindent', 'sensible', 'csv', 'markdown', 'r-lang']
   Plug 'sheerun/vim-polyglot'
   Plug 'R-nvim/R.nvim', { 'for': 'r'}
 else
-  var g:polyglot_disabled = ['autoindent', 'sensible', 'csv', 'markdown', 'r-lang']
+  g:polyglot_disabled = ['autoindent', 'sensible', 'csv', 'markdown', 'r-lang']
   Plug 'sheerun/vim-polyglot'
   Plug 'jalvesaq/Nvim-R', { 'for': 'r'}
 endif
@@ -1209,7 +1222,7 @@ endif
 setlocal comments=b:#,fb:-
 setlocal commentstring=#\ %s
 
-var b:current_syntax = "numbat"
+b:current_syntax = "numbat"
 
 # }}}
 
@@ -1243,7 +1256,7 @@ Plug 'prettier/vim-prettier', {
 # endif
 
 # -- Must be set before 'packadd comment'
-var g:comment_mappings = v:false
+g:comment_mappings = false
 
 packadd! comment
 packadd! matchit
@@ -1360,9 +1373,9 @@ plug#end()
 runtime! config/colorscheme.vim
 
 # -- Plugin Config
-var plugs = get(s:, 'plugs', get(g:, 'plugs', {}))
+var plugs = get(g:, 'plugs', {})
 
-def g:FindPlugin(name)
+def g:FindPlugin(name: string): number
   return has_key(plugs, name) ? isdirectory(plugs[name].dir) : 0
 enddef
 
