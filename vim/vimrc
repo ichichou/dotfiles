@@ -931,8 +931,9 @@ enddef
 
 # No/Restore Status Line {{{
 
-command! NoStatusLine NoStatusline()
+command! NoStatusLine      NoStatusline()
 command! RestoreStatusLine RestoreStatusline()
+command! ToggleStatusline  ToggleStatusline()
 
 var saved_hl_statusline: list<dict<any>>
 
@@ -955,6 +956,16 @@ def RestoreStatusline(): void
   set laststatus=2
   set fillchars=vert:│,fold:·,foldsep:│,eob:·
   set ruler
+
+  saved_hl_statusline = []
+enddef
+
+def ToggleStatusline(): void
+  if empty(saved_hl_statusline)
+    NoStatusline()
+  else
+    RestoreStatusline()
+  endif
 enddef
 
 # }}}
