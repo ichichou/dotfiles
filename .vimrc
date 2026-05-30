@@ -309,18 +309,21 @@ nmap <SID>ws <Nop>
 " .vimrc {{{
 
 nnoremap <Leader>, <Cmd>edit $MYVIMRC<CR>
+nnoremap <Leader>. <Cmd><SID>reload_vimrc()<CR>
 nnoremap <Leader>/ <Cmd>edit $HOME/dotfiles/vim/config<CR>
 
 if has('gui_running')
   nnoremap <Leader><lt> <Cmd>edit $MYGVIMRC<CR>
-  nnoremap <Leader>.
-        \ <Cmd>source $MYVIMRC <Bar> source $MYGVIMRC <Bar>
-        \ nohlsearch <Bar> redraw!<CR>
-else
-  nnoremap <Leader>.
-        \ <Cmd>source $MYVIMRC <Bar>
-        \ nohlsearch <Bar> redraw!<CR>
 endif
+
+function! s:reload_vimrc() abort
+  source $MYVIMRC
+  if has('gui_running')
+    source $MYGVIMRC
+  endif
+  nohlsearch
+  redraw!
+endfunction
 
 " }}}
 
@@ -345,9 +348,9 @@ nnoremap <script> <SID>(z3)z zz<SID>(z1)
 
 " f -> z {{{
 
-nnoremap f z
+nmap f z
 
-nmap zf zz<SID>(z1)
+nmap zf zz
 nnoremap <script> <SID>(z1)f zt<SID>(z2)
 nnoremap <script> <SID>(z2)f zb<SID>(z3)
 nnoremap <script> <SID>(z3)f zz<SID>(z1)
@@ -361,6 +364,12 @@ nnoremap <script> <SID>(z3)f zz<SID>(z1)
 
 " nnoremap <Space>w <Cmd>update<CR>
 " nnoremap <Space>q <Cmd>quit<CR>
+
+" -- 最後の検索結果で substitute コマンドを入力
+function! s:substitute_last_search() abort
+  let cmd = mode() =~# "[vV\<C-v>]" ? ':s/' : ':%s/'
+  call feedkeys(cmd .. @/ .. "//\<Left>", 'n')
+endfunction
 
 " }}}
 
@@ -509,16 +518,16 @@ augroup vimrc
   autocmd CmdlineLeave [:] set pumopt=height:20
 augroup END
 
+" -- Cmdline の補完候補が選択されているときには確定、
+"    選択されていないときには一番上の候補を選択して確定する
+cnoremap <expr> <Tab> <SID>cmdcomplete_selected() ? '<CR>' : '<C-n><CR>'
+
 " -- Cmdline の補完候補が選択されているかを判定する関数
 function! s:cmdcomplete_selected() abort
   let info = cmdcomplete_info()
   let unselected = info == {} || info['selected'] == -1
   return !unselected
 endfunction
-
-" -- Cmdline の補完候補が選択されているときには確定、
-"    選択されていないときには一番上の候補を選択して確定する
-cnoremap <expr> <Tab> <SID>cmdcomplete_selected() ? '<CR>' : '<C-n><CR>'
 
 " }}}
 
@@ -670,6 +679,10 @@ function! g:SetStatusLine() abort
   let fenc = &fileencoding != '' ? &fileencoding : &encoding
   let ft   = &filetype     != '' ? &filetype     : 'no ft'
 
+  let percentage = ''
+  let lines      = ''
+  let cols       = ''
+
   " Percent
   let pct_num = line('.') * 100 / line('$')
   if pct_num < 10
@@ -710,8 +723,21 @@ endfunction
 
 " DiffOrig (tweaked) {{{
 
-command! DiffOrig vertical new | set buftype=nofile filetype=diff
-      \ | read ++edit # | 0delete_ | diffthis | wincmd p | diffthis
+" command! DiffOrig vertical new | set buftype=nofile filetype=diff
+"       \ | read ++edit # | 0delete_ | diffthis | wincmd p | diffthis
+
+command! DiffOrig call s:diff_orig()
+
+function! s:diff_orig() abort
+  let orig_buf = bufnr('%')
+  vertical new
+  set buftype=nofile filetype=diff
+  execute 'read ++edit #' .. orig_buf
+  execute '0delete _'
+  diffthis
+  wincmd p
+  diffthis
+endfunction
 
 " }}}
 
@@ -729,6 +755,7 @@ function! s:blank_below(type = '') abort
   for i in range(v:count1)
     call append('.', '')
   endfor
+  return ''
 endfunction
 
 function! s:blank_above(type = '') abort
@@ -740,6 +767,7 @@ function! s:blank_above(type = '') abort
   for i in range(v:count1)
     call append(line('.') - 1, '')
   endfor
+  return ''
 endfunction
 
 " }}}
@@ -918,59 +946,6 @@ endfunction
 
 " }}}
 
-" Langmap for MTGAP {{{
-
-" Vim に入力される文字がすでに MTGAP になっていることが前提
-" Vim が Normal Mode で MTGAP の文字を Qwerty として解釈するためのマッピング
-
-" langmap には (1) 安定性の問題と、
-" (2) ユーザー定義のキーマップに対して利かない問題がある
-" あるいはプラグインで定義されたキーマップに対して利かない問題
-"
-" (1) 安定性の問題
-" 起動直後は langmap が利かなかったり、
-" 初めて打ったキーに利かなかったりする（発生条件は不明）
-"
-" (2) ユーザー定義のキーマップに対する問題
-" 例えば s を何かの機能にマッピングしている場合、langmap をオンにして
-" MTGAP の S 位置のキーを押したとき、本来なら l を押したと解釈されてほしいが、
-" そうはならず s が押され、s にマッピングした機能が発火してしまう
-" これを回避するにはキーマップをすべて MTGAP のキー位置で書き換える必要がある
-"
-" 上記の理由で、今のところ以下の langmap 関連設定はうまく動作しない
-
-" augroup vimrc
-"   autocmd VimEnter * call s:mtgap_langmap_on()
-" augroup END
-"
-" command! MtgapOn  call s:mtgap_langmap_on()
-" command! MtgapOff call s:mtgap_langmap_off()
-"
-" function! s:mtgap_langmap_on() abort
-"   execute 'set langmap='
-"      \ .. 'yq,pw,oe,ur,jt,ky,du,li,co,wp,'
-"      \ .. 'ia,ns,ed,af,\\,g,mh,hj,tk,sl,r\\;,'
-"      \ .. 'qz,zx,/c,.v,\\;b,bn,fm,g\\,,v.,x/,'
-"      \ .. 'YQ,PW,OE,UR,JT,KY,DU,LI,CO,WP,'
-"      \ .. 'IA,NS,ED,AF,<G,MH,HJ,TK,SL,R:,'
-"      \ .. 'QZ,ZX,?C,>V,:B,BN,FM,G<,V>,X?'
-" endfunction
-"
-" function! s:mtgap_langmap_off() abort
-"   set langmap=
-" endfunction
-
-" }}}
-
-" Substitute with Last Search {{{
-
-function! s:substitute_last_search() abort
-  let cmd = mode() =~# "[vV\<C-v>]" ? ':s/' : ':%s/'
-  call feedkeys(cmd .. @/ .. "//\<Left>", 'n')
-endfunction
-
-" }}}
-
 " No/Restore Status Line {{{
 
 command! NoStatusLine call s:no_statusline()
@@ -1047,7 +1022,7 @@ endif
 
 if has('nvim')
   " Plug 'neovim/nvim-lspconfig'
-  " Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+  " Plug 'neoclide/coc.nvim', #{ branch: 'release' }
 else
   " Plug 'prabirshrestha/vim-lsp'
   " Plug 'mattn/vim-lsp-settings'
@@ -1077,7 +1052,7 @@ endif
 " Fuzzy Finder {{{
 
 if has('nvim')
-  " Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
+  " Plug 'nvim-telescope/telescope.nvim', #{ tag: '0.1.1' }
   set runtimepath+=/opt/homebrew/opt/fzf
   Plug 'junegunn/fzf.vim'
 else
@@ -1092,36 +1067,36 @@ endif
 " Language Support {{{
 
 if has('nvim')
-  " Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+  " Plug 'nvim-treesitter/nvim-treesitter', #{ do: ':TSUpdate' }
   let g:polyglot_disabled = ['autoindent', 'sensible', 'csv', 'markdown', 'r-lang']
   Plug 'sheerun/vim-polyglot'
-  Plug 'R-nvim/R.nvim', { 'for': 'r'}
+  Plug 'R-nvim/R.nvim', #{ for: 'r'}
 else
   let g:polyglot_disabled = ['autoindent', 'sensible', 'csv', 'markdown', 'r-lang']
   Plug 'sheerun/vim-polyglot'
-  Plug 'jalvesaq/Nvim-R', { 'for': 'r'}
+  Plug 'jalvesaq/Nvim-R', #{ for: 'r'}
 endif
 
-Plug 'fladson/vim-kitty',          { 'for': 'kitty' }
-Plug 'kaarmu/typst.vim',           { 'for': 'typst' }
-Plug 'mechatroner/rainbow_csv',    { 'for': 'csv' }
-Plug 'rcmdnk/vim-markdown',        { 'for': 'markdown' }
-Plug 'vim-jp/syntax-vim-ex',       { 'for': 'vim' }
+Plug 'fladson/vim-kitty',       #{ for: 'kitty' }
+Plug 'kaarmu/typst.vim',        #{ for: 'typst' }
+Plug 'mechatroner/rainbow_csv', #{ for: 'csv' }
+Plug 'rcmdnk/vim-markdown',     #{ for: 'markdown' }
+Plug 'vim-jp/syntax-vim-ex',    #{ for: 'vim' }
 
 " Haskell {{{
 
-" Plug 'alx741/vim-hindent',         { 'for': 'haskell' }
-" Plug 'itchyny/vim-haskell-indent', { 'for': 'haskell' }
-Plug 'neovimhaskell/haskell-vim',  { 'for': 'haskell' }
+" Plug 'alx741/vim-hindent',         #{ for: 'haskell' }
+" Plug 'itchyny/vim-haskell-indent', #{ for: 'haskell' }
+Plug 'neovimhaskell/haskell-vim',  #{ for: 'haskell' }
 
 " }}}
 
 " Lisp {{{
 
-" Plug 'guns/vim-sexp',                              { 'for': ['scheme', 'clojure'] }
-" Plug 'liquidz/dps-parinfer',                       { 'for': ['scheme', 'clojure'] }
-" Plug 'luochen1990/rainbow',                        { 'for': ['scheme', 'clojure'] }
-" Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': ['scheme', 'clojure'] }
+" Plug 'guns/vim-sexp',                              #{ for: ['scheme', 'clojure'] }
+" Plug 'liquidz/dps-parinfer',                       #{ for: ['scheme', 'clojure'] }
+" Plug 'luochen1990/rainbow',                        #{ for: ['scheme', 'clojure'] }
+" Plug 'tpope/vim-sexp-mappings-for-regular-people', #{ for: ['scheme', 'clojure'] }
 
 " }}}
 
@@ -1206,9 +1181,9 @@ Plug 'rcmdnk/yankround.vim'
 Plug 'thinca/vim-quickrun'
 " Plug 'vimoutliner/vimoutliner'
 
-Plug 'prettier/vim-prettier', {
-      \ 'do': 'yarn install --frozen-lockfile --production',
-      \ 'for': ['html', 'css', 'less', 'scss'] }
+Plug 'prettier/vim-prettier', #{
+      \ do: 'yarn install --frozen-lockfile --production',
+      \ for: ['html', 'css', 'less', 'scss'] }
 
 " if has('nvim')
 "   Plug 'mickael-menu/zk-nvim'
