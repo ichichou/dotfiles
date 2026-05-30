@@ -311,14 +311,14 @@ nmap <SID>ws <Nop>
 # .vimrc {{{
 
 nnoremap <Leader>, <Cmd>edit $MYVIMRC<CR>
-nnoremap <Leader>. <Cmd><SID>reload_vimrc_gvimrc()<CR>
+nnoremap <Leader>. <Cmd><SID>ReloadVimrc()<CR>
 nnoremap <Leader>/ <Cmd>edit $HOME/dotfiles/vim/config<CR>
 
 if has('gui_running')
   nnoremap <Leader><lt> <Cmd>edit $MYGVIMRC<CR>
 endif
 
-def reload_vimrc_gvimrc(): void
+def ReloadVimrc(): void
   source $MYVIMRC
   if has('gui_running')
     source $MYGVIMRC
@@ -350,9 +350,9 @@ nnoremap <script> <SID>(z3)z zz<SID>(z1)
 
 # f -> z {{{
 
-nnoremap f z
+nmap f z
 
-nmap zf zz<SID>(z1)
+nmap zf zz
 nnoremap <script> <SID>(z1)f zt<SID>(z2)
 nnoremap <script> <SID>(z2)f zb<SID>(z3)
 nnoremap <script> <SID>(z3)f zz<SID>(z1)
@@ -442,9 +442,9 @@ augroup END
 
 # Diff Mode {{{
 
-autocmd vimrc VimEnter,DiffUpdated * set_diff_mode()
+autocmd vimrc VimEnter,DiffUpdated * SetDiffMode()
 
-def set_diff_mode(): void
+def SetDiffMode(): void
   if &diff
     setlocal nospell
     setlocal wrap<
@@ -474,8 +474,8 @@ var prev_ime = en_ime
 
 # -- Auto IME Off
 augroup vimrc
-  autocmd VimEnter,VimResume,FocusGained * ime_off()
-  autocmd InsertLeave * ime_off()
+  autocmd VimEnter,VimResume,FocusGained * ImeOff()
+  autocmd InsertLeave * ImeOff()
 augroup END
 
 # -- Auto IME On/Off
@@ -484,28 +484,28 @@ augroup END
 # これは system() の代わりに job_start() を使っても同じである
 #
 # augroup vimrc
-#   autocmd VimEnter,VimResume,FocusGained * ime_off()
-#   autocmd InsertLeave * save_ime_and_ime_off()
-#   autocmd InsertEnter * restore_ime()
+#   autocmd VimEnter,VimResume,FocusGained * ImeOff()
+#   autocmd InsertLeave * SaveImeAndImeOff()
+#   autocmd InsertEnter * RestoreIme()
 # augroup END
 
-def ime_off(): void
+def ImeOff(): void
   job_start([ime_cmd, en_ime], {'stoponexit': ''})
 enddef
 
-def ime_on(): void
+def ImeOn(): void
   job_start([ime_cmd, ja_ime], {'stoponexit': ''})
 enddef
 
-def restore_ime(): void
+def RestoreIme(): void
   if prev_ime == ja_ime
-    ime_on()
+    ImeOn()
   endif
 enddef
 
-def save_ime_and_ime_off(): void
+def SaveImeAndImeOff(): void
   prev_ime = trim(system(ime_cmd))
-  ime_off()
+  ImeOff()
 enddef
 
 # }}}
@@ -520,10 +520,10 @@ augroup END
 
 # -- Cmdline の補完候補が選択されているときには確定、
 #    選択されていないときには一番上の候補を選択して確定する
-cnoremap <expr> <Tab> <SID>cmdcomplete_selected() ? '<CR>' : '<C-n><CR>'
+cnoremap <expr> <Tab> <SID>CmdcompleteSelected() ? '<CR>' : '<C-n><CR>'
 
 # -- Cmdline の補完候補が選択されているかを判定する関数
-def cmdcomplete_selected(): bool
+def CmdcompleteSelected(): bool
   var info = cmdcomplete_info()
   var unselected = info == {} || info['selected'] == -1
   return !unselected
@@ -533,16 +533,16 @@ enddef
 
 # MTGAP Mappings {{{
 
-var saved_mappings = []
+var saved_mappings: list<dict<string>>
 
 # augroup vimrc
-#   autocmd VimEnter * mtgap_on()
+#   autocmd VimEnter * MtgapOn()
 # augroup END
 
-command! MtgapOn  mtgap_on()
-command! MtgapOff mtgap_off()
+command! MtgapOn  MtgapOn()
+command! MtgapOff MtgapOff()
 
-def mtgap_on()
+def MtgapOn()
   saved_mappings = maplist()
 
   # Normal Mode {{{
@@ -607,8 +607,6 @@ def mtgap_on()
   xnoremap T H
   xnoremap s l
   xnoremap S K
-
-  silent! xunmap f
   # }}}
   # Operator-pending Mode {{{
   omap y <Nop>
@@ -632,15 +630,13 @@ def mtgap_on()
   onoremap T H
   onoremap s l
   onoremap S K
-
-  silent! ounmap f
   # }}}
 enddef
 
-def mtgap_off()
+def MtgapOff()
   if empty(saved_mappings)
     echohl ErrorMsg
-    echomsg 'mtgap_off: 保存されたマッピングがありません'
+    echomsg 'MtgapOff: 保存されたマッピングがありません'
     echohl None
     return
   endif
@@ -723,20 +719,20 @@ def g:SetStatusLine(): string
     cols = '%c '
   endif
 
-  return g:GetMode()
-    .. '| %t %m'
-    .. '%='
-    .. '%{&fileformat}' .. ' | ' .. fenc .. ' | ' .. ft
-    .. percentage .. lines .. cols
+  return g:GetMode() ..
+    '| %t %m' ..
+    '%=' ..
+    '%{&fileformat}' .. ' | ' .. fenc .. ' | ' .. ft ..
+    percentage .. lines .. cols
 enddef
 
 # }}}
 
 # DiffOrig (tweaked) {{{
 
-command! DiffOrig g:DiffOrig()
+command! DiffOrig DiffOrig()
 
-def g:DiffOrig()
+def DiffOrig()
     var orig_buf = bufnr('%')
     vertical new
     set buftype=nofile filetype=diff
@@ -751,50 +747,48 @@ enddef
 
 # Insert Blank Lines {{{
 
-nnoremap <expr> go <SID>blank_below()
-nnoremap <expr> gO <SID>blank_above()
+nnoremap <expr> go <SID>BlankBelow()
+nnoremap <expr> gO <SID>BlankAbove()
 
-def blank_below(type = ''): string
+def BlankBelow(type = ''): string
   if type == ''
-    &operatorfunc = blank_below
+    &operatorfunc = BlankBelow
     return 'g@ '
-  else
-    return ''
   endif
 
   for i in range(v:count1)
     append('.', '')
   endfor
+  return ''
 enddef
 
-def blank_above(type = ''): string
+def BlankAbove(type = ''): string
   if type == ''
-    &operatorfunc = blank_above
+    &operatorfunc = BlankAbove
     return 'g@ '
-  else
-    return ''
   endif
 
   for i in range(v:count1)
     append(line('.') - 1, '')
   endfor
+  return ''
 enddef
 
 # }}}
 
 # Vertical Help {{{
 
-nnoremap gK <Cmd><SID>help_vertical_cword()<CR>
-xnoremap gK <Cmd><SID>help_vertical_selected()<CR>
+nnoremap gK <Cmd><SID>HelpVerticalCword()<CR>
+xnoremap gK <Cmd><SID>HelpVerticalSelected()<CR>
 
-def help_vertical_cword(): void
+def HelpVerticalCword(): void
   var word = expand('<cword>')
   if word != ''
     execute 'vertical help' word
   endif
 enddef
 
-def help_vertical_selected(): void
+def HelpVerticalSelected(): void
   execute 'silent normal! "vy'
   var word = @v
   execute 'vertical help' word
@@ -804,9 +798,9 @@ enddef
 
 # Syntax Info {{{
 
-command! SyntaxInfo get_syn_info()
+command! SyntaxInfo GetSynInfo()
 
-def get_syn_id(transparent: bool): number
+def GetSynId(transparent: bool): number
   var synid = synID('.', col('.'), 1)
   if transparent
     return synIDtrans(synid)
@@ -815,7 +809,7 @@ def get_syn_id(transparent: bool): number
   endif
 enddef
 
-def get_syn_attr(synid: number): dict<string>
+def GetSynAttr(synid: number): dict<string>
   var name    = synIDattr(synid, 'name')
   var ctermfg = synIDattr(synid, 'fg', 'cterm')
   var ctermbg = synIDattr(synid, 'bg', 'cterm')
@@ -830,15 +824,15 @@ def get_syn_attr(synid: number): dict<string>
   }
 enddef
 
-def get_syn_info(): void
-  var baseSyn = get_syn_attr(get_syn_id(0))
+def GetSynInfo(): void
+  var baseSyn = GetSynAttr(GetSynId(0))
   echo
     'name: '     .. baseSyn.name ..
     ' ctermfg: ' .. baseSyn.ctermfg ..
     ' ctermbg: ' .. baseSyn.ctermbg ..
     ' guifg: '   .. baseSyn.guifg ..
     ' guibg: '   .. baseSyn.guibg
-  var linkedSyn = get_syn_attr(get_syn_id(1))
+  var linkedSyn = GetSynAttr(GetSynId(1))
   echo 'link to'
   echo
     'name: '     .. linkedSyn.name ..
@@ -854,18 +848,18 @@ enddef
 
 augroup vimrc
   autocmd FileType markdown
-        \ nnoremap <buffer> <Leader>d <Cmd><SID>timestamp_below()<CR>
+        \ nnoremap <buffer> <Leader>d <Cmd><SID>TimestampBelow()<CR>
   autocmd FileType markdown
-        \ nnoremap <buffer> <Leader>D <Cmd><SID>timestamp_above()<CR>
+        \ nnoremap <buffer> <Leader>D <Cmd><SID>TimestampAbove()<CR>
 augroup END
 
-def set_timestamp(): string
+def SetTimestamp(): string
   var timestamp = '## ' .. strftime('%Y-%m-%d %H:%M:%S')
   return timestamp
 enddef
 
-def timestamp_below(): void
-  var timestamp = set_timestamp()
+def TimestampBelow(): void
+  var timestamp = SetTimestamp()
 
   if strlen(getline('.')) > 0
     append('.', ['', timestamp, ''])
@@ -879,8 +873,8 @@ def timestamp_below(): void
   startinsert
 enddef
 
-def timestamp_above(): void
-  var timestamp = set_timestamp()
+def TimestampAbove(): void
+  var timestamp = SetTimestamp()
 
   if strlen(getline('.')) > 0
     append(line('.') - 1, timestamp)
@@ -896,13 +890,13 @@ enddef
 nnoremap <Leader>m <Nop>
 nnoremap [zk] <Nop>
 nmap <Leader>m [zk]
-nnoremap [zk]n <Cmd><SID>open_journal_file()<CR>
-nnoremap [zk]j <Cmd><SID>open_journal_dir()<CR>
+nnoremap [zk]n <Cmd><SID>OpenJournalFile()<CR>
+nnoremap [zk]j <Cmd><SID>OpenJournalDir()<CR>
 
 var zk_dir = expand('$ZK_NOTEBOOK_DIR')
 var journal_dir = zk_dir .. '/journal'
 
-def open_journal_file(): void
+def OpenJournalFile(): void
   var file_name = strftime('%Y-%m-%d') .. '.md'
   var file_path_pattern = 'zk/journal/' .. file_name
   var win_id = bufwinid(file_path_pattern)
@@ -914,7 +908,7 @@ def open_journal_file(): void
   endif
 enddef
 
-def open_journal_dir(): void
+def OpenJournalDir(): void
   execute 'edit' journal_dir
 enddef
 
@@ -928,10 +922,10 @@ command! CdCurrentFile lcd %:h
 
 # Print tabstop, shiftwidth, softtabstop {{{
 
-nnoremap <Leader>a <Cmd><SID>print_indents()<CR>
-command! PrintIndents print_indents()
+nnoremap <Leader>a <Cmd><SID>PrintIndents()<CR>
+command! PrintIndents PrintIndents()
 
-def print_indents(): void
+def PrintIndents(): void
   var ts = &tabstop
   var sw = &shiftwidth
   var sts = &softtabstop
@@ -942,9 +936,9 @@ enddef
 
 # Fill Line {{{
 
-command! FillLine fill_line()
+command! FillLine FillLine()
 
-def fill_line(): void
+def FillLine(): void
   var width = 50
   var str = substitute(getline('.'), ' \+$', '', '')
   var display_width = strdisplaywidth(str)
@@ -958,53 +952,9 @@ enddef
 
 # }}}
 
-# Langmap for MTGAP {{{
-
-# Vim に入力される文字がすでに MTGAP になっていることが前提
-# Vim が Normal Mode で MTGAP の文字を Qwerty として解釈するためのマッピング
-
-# langmap には (1) 安定性の問題と、
-# (2) ユーザー定義のキーマップに対して利かない問題がある
-# あるいはプラグインで定義されたキーマップに対して利かない問題
-#
-# (1) 安定性の問題
-# 起動直後は langmap が利かなかったり、
-# 初めて打ったキーに利かなかったりする（発生条件は不明）
-#
-# (2) ユーザー定義のキーマップに対する問題
-# 例えば s を何かの機能にマッピングしている場合、langmap をオンにして
-# MTGAP の S 位置のキーを押したとき、本来なら l を押したと解釈されてほしいが、
-# そうはならず s が押され、s にマッピングした機能が発火してしまう
-# これを回避するにはキーマップをすべて MTGAP のキー位置で書き換える必要がある
-#
-# 上記の理由で、今のところ以下の langmap 関連設定はうまく動作しない
-
-# augroup vimrc
-#   autocmd VimEnter * mtgap_langmap_on()
-# augroup END
-#
-# command! MtgapOn  mtgap_langmap_on()
-# command! MtgapOff mtgap_langmap_off()
-#
-# def mtgap_langmap_on()
-#   execute 'set langmap=' ..
-#     'yq,pw,oe,ur,jt,ky,du,li,co,wp,' ..
-#     'ia,ns,ed,af,\\,g,mh,hj,tk,sl,r\\;,' ..
-#     'qz,zx,/c,.v,\\;b,bn,fm,g\\,,v.,x/,' ..
-#     'YQ,PW,OE,UR,JT,KY,DU,LI,CO,WP,' ..
-#     'IA,NS,ED,AF,<G,MH,HJ,TK,SL,R:,' ..
-#     'QZ,ZX,?C,>V,:B,BN,FM,G<,V>,X?'
-# enddef
-#
-# def mtgap_langmap_off()
-#   set langmap=
-# enddef
-
-# }}}
-
 # Substitute with Last Search {{{
 
-def substitute_last_search(): void
+def SubstituteLastSearch(): void
   var cmd = mode() =~# "[vV\<C-v>]" ? ':s/' : ':%s/'
   feedkeys(cmd .. @/ .. "//\<Left>", 'n')
 enddef
@@ -1013,12 +963,12 @@ enddef
 
 # No/Restore Status Line {{{
 
-command! NoStatusLine no_statusline()
-command! RestoreStatusLine restore_statusline()
+command! NoStatusLine NoStatusline()
+command! RestoreStatusLine RestoreStatusline()
 
-var saved_hl_statusline = {}
+var saved_hl_statusline: list<dict<any>>
 
-def no_statusline(): void
+def NoStatusline(): void
   saved_hl_statusline = hlget('StatusLine')
 
   highlight! link StatusLine VertSplit
@@ -1030,7 +980,7 @@ def no_statusline(): void
   set noruler
 enddef
 
-def restore_statusline(): void
+def RestoreStatusline(): void
   hlset(saved_hl_statusline)
 
   set statusline=%!SetStatusLine()
@@ -1087,7 +1037,7 @@ endif
 
 if has('nvim')
   # Plug 'neovim/nvim-lspconfig'
-  # Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+  # Plug 'neoclide/coc.nvim', #{ branch: 'release' }
 else
   # Plug 'prabirshrestha/vim-lsp'
   # Plug 'mattn/vim-lsp-settings'
@@ -1117,7 +1067,7 @@ endif
 # Fuzzy Finder {{{
 
 if has('nvim')
-  # Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
+  # Plug 'nvim-telescope/telescope.nvim', #{ tag: '0.1.1' }
   set runtimepath+=/opt/homebrew/opt/fzf
   Plug 'junegunn/fzf.vim'
 else
@@ -1132,36 +1082,36 @@ endif
 # Language Support {{{
 
 if has('nvim')
-  # Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+  # Plug 'nvim-treesitter/nvim-treesitter', #{ do: ':TSUpdate' }
   g:polyglot_disabled = ['autoindent', 'sensible', 'csv', 'markdown', 'r-lang']
   Plug 'sheerun/vim-polyglot'
-  Plug 'R-nvim/R.nvim', { 'for': 'r'}
+  Plug 'R-nvim/R.nvim', #{ for: 'r' }
 else
   g:polyglot_disabled = ['autoindent', 'sensible', 'csv', 'markdown', 'r-lang']
   Plug 'sheerun/vim-polyglot'
-  Plug 'jalvesaq/Nvim-R', { 'for': 'r'}
+  Plug 'jalvesaq/Nvim-R', #{ for: 'r' }
 endif
 
-Plug 'fladson/vim-kitty',          { 'for': 'kitty' }
-Plug 'kaarmu/typst.vim',           { 'for': 'typst' }
-Plug 'mechatroner/rainbow_csv',    { 'for': 'csv' }
-Plug 'rcmdnk/vim-markdown',        { 'for': 'markdown' }
-Plug 'vim-jp/syntax-vim-ex',       { 'for': 'vim' }
+Plug 'fladson/vim-kitty',       #{ for: 'kitty' }
+Plug 'kaarmu/typst.vim',        #{ for: 'typst' }
+Plug 'mechatroner/rainbow_csv', #{ for: 'csv' }
+Plug 'rcmdnk/vim-markdown',     #{ for: 'markdown' }
+Plug 'vim-jp/syntax-vim-ex',    #{ for: 'vim' }
 
 # Haskell {{{
 
-# Plug 'alx741/vim-hindent',         { 'for': 'haskell' }
-# Plug 'itchyny/vim-haskell-indent', { 'for': 'haskell' }
-Plug 'neovimhaskell/haskell-vim',  { 'for': 'haskell' }
+# Plug 'alx741/vim-hindent',         #{ for: 'haskell' }
+# Plug 'itchyny/vim-haskell-indent', #{ for: 'haskell' }
+Plug 'neovimhaskell/haskell-vim',  #{ for: 'haskell' }
 
 # }}}
 
 # Lisp {{{
 
-# Plug 'guns/vim-sexp',                              { 'for': ['scheme', 'clojure'] }
-# Plug 'liquidz/dps-parinfer',                       { 'for': ['scheme', 'clojure'] }
-# Plug 'luochen1990/rainbow',                        { 'for': ['scheme', 'clojure'] }
-# Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': ['scheme', 'clojure'] }
+# Plug 'guns/vim-sexp',                              { for: ['scheme', 'clojure'] }
+# Plug 'liquidz/dps-parinfer',                       { for: ['scheme', 'clojure'] }
+# Plug 'luochen1990/rainbow',                        { for: ['scheme', 'clojure'] }
+# Plug 'tpope/vim-sexp-mappings-for-regular-people', { for: ['scheme', 'clojure'] }
 
 # }}}
 
@@ -1246,10 +1196,10 @@ Plug 'rcmdnk/yankround.vim'
 Plug 'thinca/vim-quickrun'
 # Plug 'vimoutliner/vimoutliner'
 
-Plug 'prettier/vim-prettier', {
-  'do': 'yarn install --frozen-lockfile --production',
-  'for': ['html', 'css', 'less', 'scss']
-}
+Plug 'prettier/vim-prettier', #{
+      \ do: 'yarn install --frozen-lockfile --production',
+      \ for: ['html', 'css', 'less', 'scss'],
+      \ }
 
 # if has('nvim')
 #   Plug 'mickael-menu/zk-nvim'
@@ -1380,7 +1330,7 @@ def g:FindPlugin(name: string): number
 enddef
 
 command! -nargs=1 UsePlugin {
-  if !FindPlugin(<args>)
+  if !g:FindPlugin(<args>)
     finish
   endif
 }
@@ -1393,3 +1343,5 @@ endif
 # }}}
 
 # }}}
+
+defcompile
