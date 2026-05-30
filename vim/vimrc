@@ -22,10 +22,8 @@ augroup vimrc
   autocmd!
 augroup END
 
-if !has('nvim')
-  unlet! g:skip_defaults_vim
-  source $VIMRUNTIME/defaults.vim
-endif
+unlet! g:skip_defaults_vim
+source $VIMRUNTIME/defaults.vim
 
 g:no_vimrc_example  = 1
 g:no_gvimrc_example = 1
@@ -153,32 +151,24 @@ set shortmess+=cmrF
 set shortmess-=S
 
 set statusline=%!SetStatusLine()
-
-if has('nvim')
-  set cmdheight=0
-  set laststatus=3
-else
-  set laststatus=2
-  set fillchars=vert:│,fold:·,foldsep:│,eob:·
-endif
+set laststatus=2
+set fillchars=vert:│,fold:·,foldsep:│,eob:·
 
 set termguicolors
 
-if !has('nvim')
-  # True Color
-  &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+# -- True Color
+&t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+&t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
-  # Undercurl
-  &t_Cs = "\e[4:3m"
-  &t_Ce = "\e[4:0m"
+# -- Undercurl
+&t_Cs = "\e[4:3m"
+&t_Ce = "\e[4:0m"
 
-  if has('vim_starting')
-    # Corsor Style
-    &t_SI ..= "\e[6 q"
-    &t_SR ..= "\e[4 q"
-    &t_EI ..= "\e[2 q"
-  endif
+if has('vim_starting')
+  # -- Corsor Style
+  &t_SI ..= "\e[6 q"
+  &t_SR ..= "\e[4 q"
+  &t_EI ..= "\e[2 q"
 endif
 
 # }}}
@@ -281,11 +271,6 @@ inoremap <expr> <S-TAB> pumvisible() ? '<C-p>' : '<C-d>'
 
 cnoremap <expr> <Up>   wildmenumode() ? '<C-e><Up>'   : '<Up>'
 cnoremap <expr> <Down> wildmenumode() ? '<C-e><Down>' : '<Down>'
-
-if has('nvim')
-  cnoremap <expr> <Up>   pumvisible() ? '<C-p>' : '<Up>'
-  cnoremap <expr> <Down> pumvisible() ? '<C-n>' : '<Down>'
-endif
 
 # }}}
 
@@ -450,15 +435,6 @@ def SetDiffMode(): void
     setlocal wrap<
   endif
 enddef
-
-# }}}
-
-# Highlight on Yank {{{
-
-if has('nvim')
-  autocmd vimrc TextYankPost * silent! lua
-        \ vim.highlight.on_yank { higroup='Visual', timeout=200, on_visual=false }
-endif
 
 # }}}
 
@@ -997,18 +973,14 @@ enddef
 
 # Vim-Plug {{{
 
-g:data_dir = has('nvim') ? stdpath('data') .. '/site' : '~/.vim'
+g:data_dir = '~/.vim'
 if empty(glob(g:data_dir .. '/autoload/plug.vim'))
   silent execute '!curl -fLo ' .. g:data_dir .. '/autoload/plug.vim --create-dirs
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-if has('nvim')
-  plug#begin(stdpath('data') .. '/plugged')
-else
-  plug#begin('~/.vim/plugged')
-endif
+plug#begin('~/.vim/plugged')
 
 nnoremap <Leader>p <Nop>
 nnoremap [plug] <Nop>
@@ -1026,73 +998,41 @@ nnoremap [plug]g <Cmd>PlugUpgrade<CR>
 
 Plug 'vim-denops/denops.vim'
 
-if has('nvim')
-  Plug 'MunifTanjim/nui.nvim'
-  Plug 'nvim-lua/plenary.nvim'
-endif
-
 # }}}
 
 # LSP {{{
 
-if has('nvim')
-  # Plug 'neovim/nvim-lspconfig'
-  # Plug 'neoclide/coc.nvim', #{ branch: 'release' }
-else
-  # Plug 'prabirshrestha/vim-lsp'
-  # Plug 'mattn/vim-lsp-settings'
-  # Plug 'mattn/vim-lsp-icons'
-endif
+# Plug 'prabirshrestha/vim-lsp'
+# Plug 'mattn/vim-lsp-settings'
+# Plug 'mattn/vim-lsp-icons'
 
 # }}}
 
 # Completion {{{
 
-if has('nvim')
-  # Plug 'hrsh7th/cmp-buffer'
-  # Plug 'hrsh7th/cmp-cmdline'
-  # Plug 'hrsh7th/cmp-nvim-lsp'
-  # Plug 'hrsh7th/cmp-path'
-  # Plug 'hrsh7th/cmp-vsnip'
-  # Plug 'hrsh7th/nvim-cmp'
-else
-  # Plug 'prabirshrestha/asyncomplete.vim'
-  # Plug 'prabirshrestha/asyncomplete-buffer.vim'
-  # Plug 'prabirshrestha/asyncomplete-file.vim'
-  # Plug 'prabirshrestha/asyncomplete-lsp.vim'
-endif
+# Plug 'prabirshrestha/asyncomplete.vim'
+# Plug 'prabirshrestha/asyncomplete-buffer.vim'
+# Plug 'prabirshrestha/asyncomplete-file.vim'
+# Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
 # }}}
 
 # Fuzzy Finder {{{
 
-if has('nvim')
-  # Plug 'nvim-telescope/telescope.nvim', #{ tag: '0.1.1' }
-  set runtimepath+=/opt/homebrew/opt/fzf
-  Plug 'junegunn/fzf.vim'
-else
-  set runtimepath+=/opt/homebrew/opt/fzf
-  Plug 'junegunn/fzf.vim'
-  # Plug 'ctrlpvim/ctrlp.vim'
-  # Plug 'mattn/ctrlp-matchfuzzy'
-endif
+set runtimepath+=/opt/homebrew/opt/fzf
+Plug 'junegunn/fzf.vim'
+# Plug 'ctrlpvim/ctrlp.vim'
+# Plug 'mattn/ctrlp-matchfuzzy'
 
 # }}}
 
 # Language Support {{{
 
-if has('nvim')
-  # Plug 'nvim-treesitter/nvim-treesitter', #{ do: ':TSUpdate' }
-  g:polyglot_disabled = ['autoindent', 'sensible', 'csv', 'markdown', 'r-lang']
-  Plug 'sheerun/vim-polyglot'
-  Plug 'R-nvim/R.nvim', #{ for: 'r' }
-else
-  g:polyglot_disabled = ['autoindent', 'sensible', 'csv', 'markdown', 'r-lang']
-  Plug 'sheerun/vim-polyglot'
-  Plug 'jalvesaq/Nvim-R', #{ for: 'r' }
-endif
+g:polyglot_disabled = ['autoindent', 'sensible', 'csv', 'markdown', 'r-lang']
+Plug 'sheerun/vim-polyglot'
 
 Plug 'fladson/vim-kitty',       #{ for: 'kitty' }
+Plug 'jalvesaq/Nvim-R',         #{ for: 'r' }
 Plug 'kaarmu/typst.vim',        #{ for: 'typst' }
 Plug 'mechatroner/rainbow_csv', #{ for: 'csv' }
 Plug 'rcmdnk/vim-markdown',     #{ for: 'markdown' }
@@ -1201,10 +1141,6 @@ Plug 'prettier/vim-prettier', #{
       \ for: ['html', 'css', 'less', 'scss'],
       \ }
 
-# if has('nvim')
-#   Plug 'mickael-menu/zk-nvim'
-# endif
-
 # -- Must be set before 'packadd comment'
 g:comment_mappings = false
 
@@ -1235,14 +1171,8 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'rbtnn/vim-ambiwidth'
 
-if has('nvim')
-  Plug 'folke/noice.nvim'
-  Plug 'delphinus/auto-cursorline.nvim'
-  Plug 'lewis6991/gitsigns.nvim'
-else
-  Plug 'delphinus/vim-auto-cursorline'
-  Plug 'mhinz/vim-signify'
-endif
+Plug 'delphinus/vim-auto-cursorline'
+Plug 'mhinz/vim-signify'
 
 packadd! hlyank
 
@@ -1273,13 +1203,8 @@ Plug 'kana/vim-operator-user'
 Plug 'kana/vim-textobj-user'
 
 Plug 'kana/vim-operator-replace'
+Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-line'
-
-if has('nvim')
-  Plug 'chrisgrieser/nvim-various-textobjs'
-else
-  Plug 'kana/vim-textobj-entire'
-endif
 
 # }}}
 
@@ -1296,18 +1221,13 @@ Plug 'vim-jp/vimdoc-ja'
 
 # Colorscheme {{{
 
-# Plug 'cocopon/iceberg.vim'
+Plug 'cocopon/iceberg.vim'
+Plug 'nordtheme/vim'
+Plug 'rose-pine/vim'
 Plug 'sainnhe/edge'
 Plug 'sainnhe/everforest'
 Plug 'sainnhe/gruvbox-material'
 Plug 'sainnhe/sonokai'
-
-if has('nvim')
-  Plug 'shaunsingh/nord.nvim'
-else
-  # Plug 'nordtheme/vim'
-  Plug 'rose-pine/vim'
-endif
 
 # }}}
 
@@ -1336,9 +1256,6 @@ command! -nargs=1 UsePlugin {
 }
 
 runtime! config/config-*.vim
-if has('nvim')
-  runtime! config/config-*.lua
-endif
 
 # }}}
 
