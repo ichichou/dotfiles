@@ -1,6 +1,6 @@
 UsePlugin 'vim-lsp'
 
-" SETUP  =========================================
+" SETUP  {{{
 
 augroup lsp_install
   autocmd!
@@ -20,7 +20,9 @@ function! s:on_lsp_buffer_enabled() abort
   let g:lsp_format_sync_timeout = 1000
 endfunction
 
-" CONFIG =========================================
+" }}}
+
+" CONFIG {{{
 
 " DIAGNOSTICS ------------------------------------
 
@@ -47,9 +49,9 @@ let g:lsp_document_highlight_delay         = 200
 let g:lsp_semantic_enabled = 1
 " let g:lsp_semantic_delay   = 200
 
-" LANGUAGES ======================================
+" }}}
 
-" HASKELL ----------------------------------------
+" LANGUAGES {{{
 
 function! s:lsp_setup() abort
   if executable('haskell-language-server-wrapper')
@@ -60,8 +62,16 @@ function! s:lsp_setup() abort
           \ 'root_uri': { server_info->lsp#utils#path_to_uri(
           \   lsp#utils#find_nearest_parent_file_directory(
           \     lsp#utils#get_buffer_path(),
-          \     ['.cabal', 'stack.yaml', 'cabal.project', 'package.yaml', 'hie.yaml', '.git'],
-          \ ))},
+          \     [
+          \       '.cabal',
+          \       'stack.yaml',
+          \       'cabal.project',
+          \       'package.yaml',
+          \       'hie.yaml',
+          \       '.git'
+          \     ],
+          \   )
+          \ )},
           \ 'workspace_config': {
           \   'haskell': {
           \     'formattingProvider': 'fourmolu',
@@ -69,7 +79,13 @@ function! s:lsp_setup() abort
           \       'fourmolu': {
           \         'config': {
           \           'external': v:true,
-          \ }}}}},
+          \          }
+          \       }
+          \     }
+          \   }
+          \ },
           \ })
   endif
 endfunction
+
+" }}}
