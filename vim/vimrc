@@ -324,6 +324,7 @@ nnoremap <script> <SID>(z3)z zz<SID>(z1)
 # f -> z {{{
 
 nmap f z
+nnoremap F f
 
 nmap zf zz
 nnoremap <script> <SID>(z1)f zt<SID>(z2)
@@ -542,8 +543,8 @@ def MtgapOn()
   nnoremap s l
   nnoremap S K
 
-  silent! nunmap f
-  silent! nunmap zf
+  # silent! nunmap f
+  # silent! nunmap zf
   # }}}
   # Visual Mode {{{
   xmap y  gr
