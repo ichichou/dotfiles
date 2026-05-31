@@ -288,21 +288,17 @@ nmap <SID>ws <Nop>
 # .vimrc {{{
 
 nnoremap <Leader>, <Cmd>edit $MYVIMRC<CR>
-nnoremap <Leader>. <Cmd><SID>ReloadVimrc()<CR>
+nnoremap <Leader>. <Cmd>ReloadVimrc<CR>
 nnoremap <Leader>/ <Cmd>edit $HOME/dotfiles/vim/config<CR>
 
-if has('gui_running')
-  nnoremap <Leader><lt> <Cmd>edit $MYGVIMRC<CR>
-endif
-
-def ReloadVimrc(): void
+command! ReloadVimrc {
   source $MYVIMRC
   if has('gui_running')
     source $MYGVIMRC
   endif
   nohlsearch
   redraw!
-enddef
+}
 
 # }}}
 
@@ -419,14 +415,12 @@ augroup END
 
 # Diff Mode {{{
 
-autocmd vimrc VimEnter,DiffUpdated * SetDiffMode()
-
-def SetDiffMode(): void
+autocmd vimrc VimEnter,DiffUpdated * {
   if &diff
     setlocal nospell
     setlocal wrap<
   endif
-enddef
+}
 
 # }}}
 
@@ -541,9 +535,9 @@ def MtgapOn()
   nnoremap L D
 
   nnoremap m h
-  nnoremap h j
+  nnoremap h gj
   nnoremap H L
-  nnoremap t k
+  nnoremap t gk
   nnoremap T H
   nnoremap s l
   nnoremap S K
@@ -569,9 +563,9 @@ def MtgapOn()
   xnoremap L D
 
   xnoremap m h
-  xnoremap h j
+  xnoremap h gj
   xnoremap H L
-  xnoremap t k
+  xnoremap t gk
   xnoremap T H
   xnoremap s l
   xnoremap S K
@@ -592,9 +586,9 @@ def MtgapOn()
   onoremap L D
 
   onoremap m h
-  onoremap h j
+  onoremap h gj
   onoremap H L
-  onoremap t k
+  onoremap t gk
   onoremap T H
   onoremap s l
   onoremap S K
@@ -634,17 +628,17 @@ enddef
 # Set Status Line (global) {{{
 
 var mode_map = {
-  'n':      '  NORMAL ',
-  'i':      '  INSERT ',
-  'R':      ' REPLACE ',
-  'v':      '  VISUAL ',
-  'V':      '  V-LINE ',
-  "\<C-v>": ' V-BLOCK ',
-  'c':      ' COMMAND ',
-  's':      '  SELECT ',
-  'S':      '  S-LINE ',
-  "\<C-s>": ' S-BLOCK ',
-  't':      ' TERMINAL '
+  n:       '  NORMAL ',
+  i:       '  INSERT ',
+  R:       ' REPLACE ',
+  v:       '  VISUAL ',
+  V:       '  V-LINE ',
+  '<C-v>': ' V-BLOCK ',
+  c:       ' COMMAND ',
+  s:       '  SELECT ',
+  S:       '  S-LINE ',
+  '<C-s>': ' S-BLOCK ',
+  t:       ' TERMINAL '
 }
 
 def g:GetMode(): string
@@ -746,8 +740,8 @@ enddef
 
 # Vertical Help {{{
 
-nnoremap gK <Cmd><SID>HelpVerticalCword()<CR>
-xnoremap gK <Cmd><SID>HelpVerticalSelected()<CR>
+nnoremap gK <ScriptCmd>HelpVerticalCword()<CR>
+xnoremap gK <ScriptCmd>HelpVerticalSelected()<CR>
 
 def HelpVerticalCword(): void
   var word = expand('<cword>')
@@ -816,9 +810,9 @@ enddef
 
 augroup vimrc
   autocmd FileType markdown
-        \ nnoremap <buffer> <Leader>d <Cmd><SID>TimestampBelow()<CR>
+        \ nnoremap <buffer> <Leader>d <ScriptCmd>TimestampBelow()<CR>
   autocmd FileType markdown
-        \ nnoremap <buffer> <Leader>D <Cmd><SID>TimestampAbove()<CR>
+        \ nnoremap <buffer> <Leader>D <ScriptCmd>TimestampAbove()<CR>
 augroup END
 
 def SetTimestamp(): string
@@ -858,8 +852,8 @@ enddef
 nnoremap <Leader>m <Nop>
 nnoremap [zk] <Nop>
 nmap <Leader>m [zk]
-nnoremap [zk]n <Cmd><SID>OpenJournalFile()<CR>
-nnoremap [zk]j <Cmd><SID>OpenJournalDir()<CR>
+nnoremap [zk]n <ScriptCmd>OpenJournalFile()<CR>
+nnoremap [zk]j <ScriptCmd>OpenJournalDir()<CR>
 
 var zk_dir = expand('$ZK_NOTEBOOK_DIR')
 var journal_dir = zk_dir .. '/journal'
@@ -890,7 +884,7 @@ command! CdCurrentFile lcd %:h
 
 # Print tabstop, shiftwidth, softtabstop {{{
 
-nnoremap <Leader>a <Cmd><SID>PrintIndents()<CR>
+nnoremap <Leader>a <ScriptCmd>PrintIndents()<CR>
 command! PrintIndents PrintIndents()
 
 def PrintIndents(): void
@@ -1005,9 +999,12 @@ Plug 'vim-denops/denops.vim'
 
 # LSP {{{
 
-# Plug 'prabirshrestha/vim-lsp'
-# Plug 'mattn/vim-lsp-settings'
-# Plug 'mattn/vim-lsp-icons'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'mattn/vim-lsp-icons'
+
+Plug 'dense-analysis/ale'
+Plug 'rhysd/vim-lsp-ale'
 
 # }}}
 
@@ -1264,4 +1261,4 @@ runtime! config/config-*.vim
 
 # }}}
 
-# defcompile
+defcompile
