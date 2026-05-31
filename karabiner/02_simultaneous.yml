@@ -1,6 +1,6 @@
 title: "02. Simultaneous"
 
-# ALIASES ========================================
+# ALIASES {{{
 
 aliases:
 
@@ -26,6 +26,8 @@ aliases:
     # 全角英数
     - input_source_id: "^net\\.mtgto\\.inputmethod\\.macSKK\\.eisu$"
     - input_source_id: "^com\\.google\\.inputmethod\\.Japanese\\.FullWidthRoman$"
+
+# }}}
 
 # RULES ==========================================
 
@@ -296,22 +298,17 @@ rules:
       - shift
       repeat: false
 
-  # JN -> ; (英語)
-  # JN -> ? (日本語)
+  # JN -> ?
   - type: basic
     from:
       simultaneous:
       - key_code: j
       - key_code: "n"
     to:
-    - key_code: semicolon
-      repeat: false
-      conditions: *en
     - key_code: slash
       modifiers:
       - shift
       repeat: false
-      conditions: *ja
 
   # }}}
 
