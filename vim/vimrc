@@ -104,6 +104,7 @@ augroup vimrc
 augroup END
 
 set foldmethod=marker
+set foldopen-=block
 
 set diffopt=
       \algorithm:histogram,
@@ -496,11 +497,11 @@ enddef
 
 # MTGAP Mappings {{{
 
-var saved_mappings: list<dict<string>>
+var saved_mappings: list<dict<any>>
 
-# augroup vimrc
-#   autocmd VimEnter * MtgapOn()
-# augroup END
+augroup vimrc
+  autocmd VimEnter * MtgapOn()
+augroup END
 
 command! MtgapOn  MtgapOn()
 command! MtgapOff MtgapOff()
@@ -508,6 +509,19 @@ command! MtgapOff MtgapOff()
 def MtgapOn()
   saved_mappings = maplist()
 
+  # Unmap {{{
+  silent! unmap Y
+  silent! unmap j
+  silent! unmap <C-w>t
+  silent! unmap k
+  silent! unmap t
+  silent! unmap s
+  silent! unmap sd
+  silent! unmap sdb
+  silent! unmap sc
+  silent! unmap scb
+  silent! unmap S
+  # }}}
   # Normal Mode {{{
   nmap y gr
   nmap Y gR
@@ -536,19 +550,21 @@ def MtgapOn()
   nnoremap L D
 
   nnoremap m h
+  nnoremap M H
   nnoremap h gj
-  nnoremap H L
+  nnoremap H M
   nnoremap t gk
-  nnoremap T H
+  nnoremap T K
   nnoremap s l
-  nnoremap S K
+  nnoremap S L
 
-  # silent! nunmap f
-  # silent! nunmap zf
+  nnoremap zh zj
+  nnoremap zt zk
+  nnoremap zj zt
   # }}}
   # Visual Mode {{{
-  xmap y  gr
-  xmap Y  gR
+  xmap y gr
+  xmap Y gR
 
   xmap j t
   xmap J T
@@ -564,12 +580,13 @@ def MtgapOn()
   xnoremap L D
 
   xnoremap m h
+  xnoremap M H
   xnoremap h gj
-  xnoremap H L
+  xnoremap H M
   xnoremap t gk
-  xnoremap T H
+  xnoremap T K
   xnoremap s l
-  xnoremap S K
+  xnoremap S L
   # }}}
   # Operator-pending Mode {{{
   omap y <Nop>
@@ -587,12 +604,13 @@ def MtgapOn()
   onoremap L D
 
   onoremap m h
+  onoremap M H
   onoremap h gj
-  onoremap H L
+  onoremap H M
   onoremap t gk
-  onoremap T H
+  onoremap T K
   onoremap s l
-  onoremap S K
+  onoremap S L
   # }}}
 enddef
 
