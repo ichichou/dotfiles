@@ -499,9 +499,9 @@ enddef
 
 var saved_mappings: list<dict<any>>
 
-augroup vimrc
-  autocmd VimEnter * MtgapOn()
-augroup END
+# augroup vimrc
+#   autocmd VimEnter * MtgapOn()
+# augroup END
 
 command! MtgapOn  MtgapOn()
 command! MtgapOff MtgapOff()
@@ -1280,4 +1280,4 @@ runtime! config/config-*.vim
 
 # }}}
 
-defcompile
+# defcompile
