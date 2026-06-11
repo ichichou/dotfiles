@@ -324,10 +324,15 @@ nnoremap <script> <SID>(z3)z zz<SID>(z1)
 
 # f -> z {{{
 
+# z を f で完全に代替するなら、コメントアウトを反転させて、
+# 上の zz -> zz, zt, zb... をコメントアウトするといい
+
 nmap f z
+# nnoremap f z
 nnoremap F f
 
 nmap zf zz
+# nmap ff zz<SID>(z1)
 nnoremap <script> <SID>(z1)f zt<SID>(z2)
 nnoremap <script> <SID>(z2)f zb<SID>(z3)
 nnoremap <script> <SID>(z3)f zz<SID>(z1)
@@ -346,8 +351,8 @@ nnoremap <script> <SID>(z3)f zz<SID>(z1)
 
 # Nop {{{
 
-noremap ZZ    <Nop>
 noremap ZQ    <Nop>
+noremap ZZ    <Nop>
 noremap Q     <Nop>
 noremap gQ    <Nop>
 noremap <Del> <Nop>
@@ -495,7 +500,7 @@ enddef
 
 # }}}
 
-# MTGAP Mappings {{{
+# MTGAP Mapping {{{
 
 var saved_mappings: list<dict<any>>
 
@@ -627,6 +632,55 @@ def MtgapOff()
   for m in saved_mappings
     mapset(m)
   endfor
+enddef
+
+# }}}
+
+# New Mapping Test {{{
+
+augroup vimrc
+  autocmd VimEnter * NewMapping()
+augroup END
+
+def NewMapping()
+  # Unmap {{{
+  silent! unmap T
+  silent! unmap y
+  silent! unmap Y
+  silent! unmap m
+  silent! unmap M
+  silent! unmap z
+  silent! unmap zf
+  silent! unmap zz
+  silent! unmap f
+  # }}}
+  # Normal Mode {{{
+  nnoremap T M
+  nnoremap y gr
+  nnoremap Y gR
+  nnoremap m y
+  nnoremap M y$
+  nnoremap z m
+
+  nnoremap f z
+  nmap ff zz<SID>(z1)
+  # }}}
+  # Visual Mode {{{
+  xnoremap T M
+  xnoremap y gr
+  xnoremap Y gR
+  xnoremap m y
+  xnoremap M y$
+  xnoremap z m
+  # }}}
+  # Operator-pending Mode {{{
+  onoremap T M
+  onoremap y <Nop>
+  onoremap Y <Nop>
+  onoremap m y
+  onoremap M y$
+  onoremap z m
+  # }}}
 enddef
 
 # }}}
