@@ -1,59 +1,61 @@
-" Colorscheme Config {{{
+vim9script
 
-" Hybrid {{{
-let g:hybrid_custom_term_colors = 1
-" let g:lightline_hybrid_style = 'plain'
-" }}}
+# Colorscheme Config {{{
 
-" nordtheme/vim {{{
-let g:nord_italic    = 0
-let g:nord_underline = 1
-" }}}
+# Hybrid {{{
+g:hybrid_custom_term_colors = 1
+# g:lightline_hybrid_style = 'plain'
+# }}}
 
-" shaunsingh/nord.nvim {{{
-let g:nord_borders = 1
-" }}}
+# nordtheme/vim {{{
+g:nord_italic    = 0
+g:nord_underline = 1
+# }}}
 
-" Everforest {{{
-let g:everforest_background         = 'hard'
-let g:everforest_better_performance = 1
-" let g:everforest_enable_italic      = 1
-let g:everforest_disable_italic_comment = 1
-" }}}
+# shaunsingh/nord.nvim {{{
+g:nord_borders = 1
+# }}}
 
-" Edge {{{
-let g:edge_style              = 'default'
-let g:edge_better_performance = 1
-let g:edge_enable_italic      = 1
-" let g:edge_disable_italic_comment = 1
-" }}}
+# Everforest {{{
+g:everforest_background         = 'hard'
+g:everforest_better_performance = 1
+# g:everforest_enable_italic      = 1
+g:everforest_disable_italic_comment = 1
+# }}}
 
-" Sonokai {{{
-let g:sonokai_style              = 'maia'
-let g:sonokai_better_performance = 1
-let g:sonokai_enable_italic      = 1
-" let g:sonokai_disable_italic_comment = 1
-" }}}
+# Edge {{{
+g:edge_style              = 'default'
+g:edge_better_performance = 1
+g:edge_enable_italic      = 1
+# g:edge_disable_italic_comment = 1
+# }}}
 
-" Gruvbox-Material {{{
-let g:gruvbox_material_background         = 'medium'
-let g:gruvbox_material_foreground         = 'material'
-let g:gruvbox_material_better_performance = 1
-let g:gruvbox_material_enable_italic      = 1
-" let g:gruvbox_material_disable_italic_comment = 1
-" }}}
+# Sonokai {{{
+g:sonokai_style              = 'maia'
+g:sonokai_better_performance = 1
+g:sonokai_enable_italic      = 1
+# g:sonokai_disable_italic_comment = 1
+# }}}
 
-" }}}
+# Gruvbox-Material {{{
+g:gruvbox_material_background         = 'medium'
+g:gruvbox_material_foreground         = 'material'
+g:gruvbox_material_better_performance = 1
+g:gruvbox_material_enable_italic      = 1
+# g:gruvbox_material_disable_italic_comment = 1
+# }}}
 
-" Define Highlights {{{
+# }}}
+
+# Define Highlights {{{
 
 augroup def-highlights
   autocmd!
-  autocmd ColorScheme * call s:define_highlights()
-  autocmd ColorScheme *fox call s:define_highlights_nightfox()
+  autocmd ColorScheme * DefineHighlights()
+  autocmd ColorScheme *fox DefineHighlightsNightfox()
 augroup END
 
-function! s:define_highlights() abort
+def DefineHighlights(): void
   highlight! link htmlItalic LineNr
   highlight! link htmlBold WarningMsg
   highlight! link htmlBoldItalic ErrorMsg
@@ -61,16 +63,16 @@ function! s:define_highlights() abort
   highlight! link HighlightedyankRegion Visual
   highlight! link ExtraWhitespace Visual
 
-  " highlight! link StatusLine VertSplit
-  " highlight! link StatusLineNC VertSplit
-endfunction
+  # highlight! link StatusLine VertSplit
+  # highlight! link StatusLineNC VertSplit
+enddef
 
-function! s:define_highlights_nightfox() abort
+def DefineHighlightsNightfox(): void
   highlight CursorLine   cterm=NONE
   highlight CursorLineNr cterm=NONE
-endfunction
+enddef
 
-" }}}
+# }}}
 
 set background=dark
 colorscheme nordfox
