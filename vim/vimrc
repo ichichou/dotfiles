@@ -199,7 +199,7 @@ set wildoptions=pum,fuzzy
 
 # KEYMAPS {{{
 
-# :map Commands {{{
+# Map Command Table {{{
 
 #        Norm   Ins   Cmd   Vis   Sel   Opr   Term   Lang
 #       ------ ----- ----- ----- ----- ----- ------ ------
@@ -230,24 +230,25 @@ noremap gj j
 noremap gk k
 noremap x "_x
 noremap X "_X
-
-nnoremap Y y$
-nnoremap & :&&<CR>
-
-inoremap <C-u> <C-g>u<C-u>
-inoremap <C-w> <C-g>u<C-w>
-
 noremap + <C-a>
 noremap - <C-x>
 noremap g+ g<C-a>
 noremap g- g<C-x>
 
+nnoremap Y y$
 nnoremap U <C-r>
+nnoremap & :&&<CR>
 nnoremap <C-h> <C-^>
 nnoremap <BS>  <C-^>
-
 nnoremap <C-;> <Cmd>nohlsearch <Bar> redraw!<CR>
 
+onoremap j  _
+onoremap k  _
+onoremap gj j
+onoremap gk k
+
+inoremap <C-u> <C-g>u<C-u>
+inoremap <C-w> <C-g>u<C-w>
 inoremap <C-a> <Cmd>normal! ^<CR>
 inoremap <C-e> <Cmd>normal! $l<CR>
 
@@ -336,16 +337,6 @@ nmap zf zz
 nnoremap <script> <SID>(z1)f zt<SID>(z2)
 nnoremap <script> <SID>(z2)f zb<SID>(z3)
 nnoremap <script> <SID>(z3)f zz<SID>(z1)
-
-# }}}
-
-# <Space> Leader {{{
-
-# noremap <Space>l <Cmd>nohlsearch <Bar> redraw!<CR>
-# noremap <expr> <Space>s <SID>substitute_last_search()
-
-# nnoremap <Space>w <Cmd>update<CR>
-# nnoremap <Space>q <Cmd>quit<CR>
 
 # }}}
 
