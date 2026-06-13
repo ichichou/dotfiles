@@ -1294,6 +1294,7 @@ Plug 'vim-jp/vimdoc-ja'
 
 # Colorscheme {{{
 
+Plug 'EdenEast/nightfox.nvim'
 Plug 'cocopon/iceberg.vim'
 Plug 'nordtheme/vim'
 Plug 'rose-pine/vim'
