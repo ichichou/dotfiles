@@ -3,11 +3,11 @@ set -eu
 
 # Required parameters:
 # @raycast.schemaVersion 1
-# @raycast.title Morning Routine
+# @raycast.title Log
 # @raycast.mode silent
 # @raycast.currentDirectoryPath ~/Library/CloudStorage/Box-Box/Journal
 
 # Optional parameters:
 # @raycast.icon 🤖
 
-open -a "bike" "journal.bike" "log.bike"
+open -a "bike" "log.bike"
