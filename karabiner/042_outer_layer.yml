@@ -1,0 +1,142 @@
+title: "04-2. Outer Layer"
+
+# ALIASES {{{
+
+aliases:
+
+- from/modifiers: &any
+    optional:
+    - any
+
+- conditions: &en
+  - type: input_source_if
+    input_sources:
+    # 英数
+    - input_source_id: "^net\\.mtgto\\.inputmethod\\.macSKK\\.ascii$"
+    - input_source_id: "^com\\.google\\.inputmethod\\.Japanese\\.Roman$"
+    # 全角英数
+    - input_source_id: "^net\\.mtgto\\.inputmethod\\.macSKK\\.eisu$"
+    - input_source_id: "^com\\.google\\.inputmethod\\.Japanese\\.FullWidthRoman$"
+
+- conditions: &ja
+  - type: input_source_if
+    input_sources:
+    - language: "^ja$"
+  - type: input_source_unless
+    input_sources:
+    # 全角英数
+    - input_source_id: "^net\\.mtgto\\.inputmethod\\.macSKK\\.eisu$"
+    - input_source_id: "^com\\.google\\.inputmethod\\.Japanese\\.FullWidthRoman$"
+
+- conditions: &outer_qw
+  - type: variable_if
+    name: outer_qw
+    value: true
+  - type: device_if
+    identifiers:
+    # Apple Internal Keyboard
+    - is_built_in_keyboard: true
+
+- conditions: &outer_as
+  - type: variable_if
+    name: outer_as
+    value: true
+  - type: device_if
+    identifiers:
+    # Apple Internal Keyboard
+    - is_built_in_keyboard: true
+
+- conditions: &outer_op
+  - type: variable_if
+    name: outer_op
+    value: true
+  - type: device_if
+    identifiers:
+    # Apple Internal Keyboard
+    - is_built_in_keyboard: true
+
+- conditions: &outer_lscln
+  - type: variable_if
+    name: outer_lscln
+    value: true
+  - type: device_if
+    identifiers:
+    # Apple Internal Keyboard
+    - is_built_in_keyboard: true
+
+- parameters: &threshold_ms
+    basic.simultaneous_threshold_milliseconds: 40
+
+# }}}
+
+# RULES
+
+rules:
+- description: "4-2. Outer Layer"
+  manipulators:
+
+  # Hyper Layer Keys {{{
+
+  # Q + W -> Hyper Mode / Hyper-E
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: q
+      - key_code: w
+    to:
+    - key_code: right_shift
+      modifiers:
+      - right_control
+      - right_option
+      - right_command
+      lazy: true
+    to_if_alone:
+    - key_code: e
+      modifiers:
+      - right_shift
+      - right_control
+      - right_option
+      - right_command
+    parameters: *threshold_ms
+
+  # O + P -> Hyper Mode
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: o
+      - key_code: p
+    to:
+    - key_code: right_shift
+      modifiers:
+      - right_control
+      - right_option
+      - right_command
+    parameters: *threshold_ms
+
+  # }}}
+
+  # Ctrl Layer Keys {{{
+
+  # A + S -> LCtrl
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: a
+      - key_code: s
+    to:
+    - key_code: left_control
+      lazy: true
+    parameters: *threshold_ms
+
+  # L + ; -> RCtrl
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: l
+      - key_code: semicolon
+    to:
+    - key_code: right_control
+      lazy: true
+    parameters: *threshold_ms
+
+  # }}}
