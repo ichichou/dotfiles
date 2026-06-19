@@ -1085,6 +1085,9 @@ nnoremap [plug]g <Cmd>PlugUpgrade<CR>
 # Plug 'prabirshrestha/asyncomplete-file.vim'
 # Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
+# Plug 'hrsh7th/vim-vsnip'
+# Plug 'hrsh7th/vim-vsnip-integ'
+
 # }}}
 
 # Fuzzy Finder {{{
@@ -1126,8 +1129,6 @@ Plug 'neovimhaskell/haskell-vim',  #{ for: 'haskell' }
 # Edit {{{
 
 Plug 'cohama/lexima.vim'
-# Plug 'hrsh7th/vim-vsnip'
-# Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'kana/vim-niceblock'
 Plug 'kana/vim-repeat'
 Plug 'kana/vim-smartchr'
@@ -1136,6 +1137,11 @@ Plug 'machakann/vim-sandwich'
 Plug 'rcmdnk/yankround.vim'
 # Plug 'vimoutliner/vimoutliner'
 
+Plug 'prettier/vim-prettier', #{
+      \ do: 'yarn install --frozen-lockfile --production',
+      \ for: ['html', 'css', 'less', 'scss'],
+      \ }
+
 Plug 'AndrewRadev/linediff.vim', #{ on: 'Linediff' }
 Plug 'chrisbra/NrrwRgn',         #{ on: ['NR', 'NarrowRegion'] }
 Plug 'cocopon/vaffle.vim',       #{ on: 'Vaffle' }
@@ -1143,16 +1149,10 @@ Plug 'godlygeek/tabular',        #{ on: 'Tabularize' }
 Plug 'junegunn/goyo.vim',        #{ on: 'Goyo' }
 Plug 'thinca/vim-quickrun',      #{ on: 'QuickRun' }
 
-
 Plug 'tyru/caw.vim', #{ on: [
       \ '<Plug>(caw:hatpos:toggle)',
       \ '<Plug>(caw:hatpos:toggle:operator)'
       \ ] }
-
-Plug 'prettier/vim-prettier', #{
-      \ do: 'yarn install --frozen-lockfile --production',
-      \ for: ['html', 'css', 'less', 'scss'],
-      \ }
 
 packadd! matchit
 
