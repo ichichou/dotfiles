@@ -96,7 +96,7 @@ cask "font-source-code-pro"
 
 # App Store --------------------------------------
 
-mas "AdGuard for Safari",    id: 1440147259
 mas "Amphetamine",           id: 937984704
 mas "Bitwarden",             id: 1352778147
 mas "LINE",                  id: 539883307
+mas "uBlock Origin Lite",    id: 6745342698
