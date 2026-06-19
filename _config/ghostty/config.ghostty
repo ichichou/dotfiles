@@ -2,9 +2,9 @@
 
 # Theme {{{
 
-# theme = catppuccin-macchiato
-theme = Rose Pine Moon
-# theme = OneHalfDark
+theme = /Users/kazu/repos/everforest.ghostty/everforest-dark-hard.ghostty
+# theme = Catppuccin Macchiato
+# theme = Rose Pine Moon
 
 # }}}
 
