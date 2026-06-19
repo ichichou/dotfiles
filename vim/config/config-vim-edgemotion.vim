@@ -1,6 +1,11 @@
 UsePlugin 'vim-edgemotion'
 
-" map <C-n> <Plug>(edgemotion-j)
-" map <C-p> <Plug>(edgemotion-k)
+" -- Mapped in config-yankround.vim
+"
+" nmap <silent> <C-n> <Plug>(edgemotion-j)
+" nmap <silent> <C-p> <Plug>(edgemotion-k)
 
-" Mapped in config-yankround.vim
+xmap <silent> <C-n> <Plug>(edgemotion-j)
+xmap <silent> <C-p> <Plug>(edgemotion-k)
+omap <silent> <C-n> <Plug>(edgemotion-j)
+omap <silent> <C-p> <Plug>(edgemotion-k)
