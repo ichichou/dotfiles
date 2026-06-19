@@ -1,4 +1,4 @@
-# AZIK (US)
+# AZIK (US, Simple)
 
 # 仮名範囲外 {{{
 
@@ -796,60 +796,5 @@ wsl	うぉん
 tgh	とぅー
 dch	どぅー
 wsp	うぉー
-
-# }}}
-
-# 同指打鍵互換 {{{
-
-kf	き
-nf	ぬ
-hf	ふ
-mf	む
-yf	ゆ
-df	で
-cf	ちぇ
-jf	じゅ
-pf	ぽん
-
-# }}}
-
-# ざ行互換 {{{
-
-zc	ざ
-zf	ぜ
-zv	ざい
-zx	ぜい
-
-# }}}
-
-# 特殊拡張 {{{
-
-kt	こと
-st	した
-tt	たち
-ht	ひと
-wt	わた
-mn	もの
-ms	ます
-ds	です
-km	かも
-tm	ため
-dm	でも
-kr	から
-sr	する
-tr	たら
-nr	なる
-yr	よる
-rr	られ
-zr	ざる
-mt	また
-tb	たび
-nb	ねば
-bt	びと
-gr	がら
-gt	ごと
-nt	にち
-dt	だち
-wr	われ
 
 # }}}
