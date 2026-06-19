@@ -222,18 +222,85 @@ set wildoptions=pum,fuzzy
 g:mapleader = ','
 g:maplocalleader = '\'
 
-noremap ; :
-noremap : ;
-noremap j gj
-noremap k gk
-noremap gj j
-noremap gk k
-noremap x "_x
-noremap X "_X
-noremap + <C-a>
-noremap - <C-x>
-noremap g+ g<C-a>
-noremap g- g<C-x>
+# ; : {{{
+nnoremap ; :
+nnoremap : ;
+
+xnoremap ; :
+xnoremap : ;
+
+onoremap ; :
+onoremap : ;
+# }}}
+# j k {{{
+nnoremap j gj
+nnoremap k gk
+
+xnoremap j gj
+xnoremap k gk
+
+# onoremap j gj
+# onoremap k gk
+
+nnoremap gj j
+nnoremap gk k
+
+xnoremap gj j
+xnoremap gk k
+
+onoremap gj j
+onoremap gk k
+# }}}
+# x X {{{
+nnoremap x "_x
+nnoremap X "_X
+
+xnoremap x "_x
+xnoremap X "_X
+
+onoremap x "_x
+onoremap X "_X
+# }}}
+# C-a C-x -> + - {{{
+nnoremap + <C-a>
+nnoremap - <C-x>
+nnoremap g+ g<C-a>
+nnoremap g- g<C-x>
+
+xnoremap + <C-a>
+xnoremap - <C-x>
+xnoremap g+ g<C-a>
+xnoremap g- g<C-x>
+
+onoremap + <C-a>
+onoremap - <C-x>
+onoremap g+ g<C-a>
+onoremap g- g<C-x>
+# }}}
+# m M -> gr gR {{{
+nnoremap m gr
+nnoremap M gR
+
+xnoremap m gr
+xnoremap M gR
+
+onoremap m <Nop>
+onoremap M <Nop>
+# }}}
+# T -> M {{{
+nnoremap T M
+xnoremap T M
+onoremap T M
+# }}}
+# f -> z {{{
+nnoremap f z
+nnoremap F f
+# }}}
+# z -> m {{{
+nnoremap z m
+xnoremap z m
+onoremap z m
+# }}}
 
 nnoremap Y y$
 nnoremap U <C-r>
@@ -242,10 +309,9 @@ nnoremap <C-h> <C-^>
 nnoremap <BS>  <C-^>
 nnoremap <C-;> <Cmd>nohlsearch <Bar> redraw!<CR>
 
-onoremap j  _
-onoremap k  _
-onoremap gj j
-onoremap gk k
+onoremap j a
+onoremap k _
+onoremap d _
 
 inoremap <C-u> <C-g>u<C-u>
 inoremap <C-w> <C-g>u<C-w>
@@ -314,26 +380,14 @@ augroup END
 
 # }}}
 
-# zz -> zz, zt, zb... {{{
+# zz/ff -> zz, zt, zb... {{{
 
-nmap zz zz<SID>(z1)
-nnoremap <script> <SID>(z1)z zt<SID>(z2)
-nnoremap <script> <SID>(z2)z zb<SID>(z3)
-nnoremap <script> <SID>(z3)z zz<SID>(z1)
+# nmap zz zz<SID>(z1)
+# nnoremap <script> <SID>(z1)z zt<SID>(z2)
+# nnoremap <script> <SID>(z2)z zb<SID>(z3)
+# nnoremap <script> <SID>(z3)z zz<SID>(z1)
 
-# }}}
-
-# f -> z {{{
-
-# z を f で完全に代替するなら、コメントアウトを反転させて、
-# 上の zz -> zz, zt, zb... をコメントアウトするといい
-
-nmap f z
-# nnoremap f z
-nnoremap F f
-
-nmap zf zz
-# nmap ff zz<SID>(z1)
+nmap ff zz<SID>(z1)
 nnoremap <script> <SID>(z1)f zt<SID>(z2)
 nnoremap <script> <SID>(z2)f zb<SID>(z3)
 nnoremap <script> <SID>(z3)f zz<SID>(z1)
@@ -623,55 +677,6 @@ def MtgapOff()
   for m in saved_mappings
     mapset(m)
   endfor
-enddef
-
-# }}}
-
-# New Mapping Test {{{
-
-augroup vimrc
-  autocmd VimEnter * NewMapping()
-augroup END
-
-def NewMapping()
-  # Unmap {{{
-  silent! unmap T
-  silent! unmap y
-  silent! unmap Y
-  silent! unmap m
-  silent! unmap M
-  silent! unmap z
-  silent! unmap zf
-  silent! unmap zz
-  silent! unmap f
-  # }}}
-  # Normal Mode {{{
-  nnoremap T M
-  nnoremap y gr
-  nnoremap Y gR
-  nnoremap m y
-  nnoremap M y$
-  nnoremap z m
-
-  nnoremap f z
-  nmap ff zz<SID>(z1)
-  # }}}
-  # Visual Mode {{{
-  xnoremap T M
-  xnoremap y gr
-  xnoremap Y gR
-  xnoremap m y
-  xnoremap M y$
-  xnoremap z m
-  # }}}
-  # Operator-pending Mode {{{
-  onoremap T M
-  onoremap y <Nop>
-  onoremap Y <Nop>
-  onoremap m y
-  onoremap M y$
-  onoremap z m
-  # }}}
 enddef
 
 # }}}
