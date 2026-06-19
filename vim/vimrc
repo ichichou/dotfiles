@@ -91,7 +91,7 @@ augroup vimrc
   autocmd FileType python setlocal tabstop=4
   autocmd FileType rust   setlocal tabstop=4
   autocmd FileType go     setlocal tabstop=4 noexpandtab
-  autocmd BufRead,BufNewFile *.tsv setlocal tabstop=8 noexpandtab
+  autocmd FileType tsv    setlocal tabstop=8 noexpandtab
 augroup END
 
 set formatoptions+=jro
@@ -101,6 +101,7 @@ augroup vimrc
   autocmd FileType markdown setlocal comments=b:-,b:+,b:*,b:1.,nb:>
   autocmd FileType typst    setlocal comments=b:-,b:+
   autocmd FileType r        setlocal comments=b:#
+  autocmd FileType tsv      setlocal comments=b:#
 augroup END
 
 set foldmethod=marker
@@ -387,7 +388,7 @@ augroup END
 # nnoremap <script> <SID>(z2)z zb<SID>(z3)
 # nnoremap <script> <SID>(z3)z zz<SID>(z1)
 
-nmap ff zz<SID>(z1)
+nmap ff fz<SID>(z1)
 nnoremap <script> <SID>(z1)f zt<SID>(z2)
 nnoremap <script> <SID>(z2)f zb<SID>(z3)
 nnoremap <script> <SID>(z3)f zz<SID>(z1)
