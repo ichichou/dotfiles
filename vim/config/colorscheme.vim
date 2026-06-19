@@ -17,9 +17,10 @@ g:nord_borders = 1
 # }}}
 
 # Everforest {{{
-g:everforest_background         = 'hard'
+g:everforest_background = 'hard'
 g:everforest_better_performance = 1
-# g:everforest_enable_italic      = 1
+g:everforest_corsor = 'auto'
+# g:everforest_enable_italic = 1
 g:everforest_disable_italic_comment = 1
 # }}}
 
@@ -75,4 +76,4 @@ enddef
 # }}}
 
 set background=dark
-colorscheme nordfox
+colorscheme everforest
