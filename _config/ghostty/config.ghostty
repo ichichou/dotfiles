@@ -5,6 +5,7 @@
 theme = /Users/kazu/repos/everforest.ghostty/everforest-dark-hard.ghostty
 # theme = Catppuccin Macchiato
 # theme = Rose Pine Moon
+# -- Default: Catppuccin Frappe
 
 # }}}
 
@@ -22,6 +23,8 @@ font-family = Hiragino Kaku Gothic ProN
 # font-feature = -calt
 # font-feature = -liga
 font-feature = -dlig
+
+font-synthetic-style = true
 
 # }}}
 
