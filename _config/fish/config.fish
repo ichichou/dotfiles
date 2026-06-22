@@ -62,6 +62,7 @@ bind -e \cl
 # -- Abbr {{{
 
 # General
+abbr -a cl   clear
 abbr -a d    cd
 abbr -a e    exit
 abbr -a lns  ln -snfv
