@@ -109,12 +109,38 @@ rules:
 
   # Symbol Mode Key {{{
 
+  # Shift ありの場合
   - type: basic
     from:
       key_code: r
       modifiers:
-        optional:
+        mandatory:
         - shift
+    to_if_alone:
+    - key_code: r
+      modifiers:
+      - shift
+      halt: true
+    to_if_held_down:
+    - key_code: japanese_kana
+    - set_variable:
+        name: symbol
+        value: true
+        key_up_value: false
+    to_after_key_up:
+    - key_code: japanese_eisuu
+    to_delayed_action:
+      to_if_canceled:
+      - key_code: r
+        modifiers:
+        - shift
+    conditions: *en
+    parameters: *mod_tap_threshold_ms
+
+  # Shift なしの場合
+  - type: basic
+    from:
+      key_code: r
     to_if_alone:
     - key_code: r
       halt: true
