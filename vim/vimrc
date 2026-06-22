@@ -1107,7 +1107,7 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'alvan/vim-closetag',      #{ for: ['html', 'xml'] }
 Plug 'fladson/vim-kitty',       #{ for: 'kitty' }
-Plug 'jalvesaq/Nvim-R',         #{ for: 'r' }
+# Plug 'jalvesaq/Nvim-R',         #{ for: 'r' }
 Plug 'kaarmu/typst.vim',        #{ for: 'typst' }
 Plug 'mechatroner/rainbow_csv', #{ for: 'csv' }
 Plug 'rcmdnk/vim-markdown',     #{ for: 'markdown' }
