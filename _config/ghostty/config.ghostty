@@ -47,6 +47,8 @@ mouse-hide-while-typing = true
 resize-overlay = never
 macos-non-native-fullscreen = true
 
+copy-on-select = clipboard
+
 # }}}
 
 # Keybind {{{
