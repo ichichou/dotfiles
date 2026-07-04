@@ -126,6 +126,21 @@ rules:
     to:
     - key_code: delete_forward
 
+  # LShift-LCmd-M -> Opt-Cmd-M
+  # Google ドキュメントでのコメント用
+  - type: basic
+    from:
+      key_code: m
+      modifiers:
+        mandatory:
+        - left_shift
+        - left_command
+    to:
+    - key_code: m
+      modifiers:
+      - option
+      - command
+
   # }}}
 
   # LCmd-,. -> LCtrl-AE {{{
