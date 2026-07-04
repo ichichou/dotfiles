@@ -29,7 +29,7 @@ aliases:
 
 # }}}
 
-# RULES ==========================================
+# RULES
 
 rules:
 - description: "2. Simultaneous"
@@ -342,15 +342,15 @@ rules:
 
 # 特殊 {{{
 
-  # LCmd + Space -> Return
-  - type: basic
-    from:
-      simultaneous:
-      - key_code: left_command
-      - key_code: spacebar
-    to:
-    - key_code: return_or_enter
-      repeat: false
+  # # LCmd + Space -> Return
+  # - type: basic
+  #   from:
+  #     simultaneous:
+  #     - key_code: left_command
+  #     - key_code: spacebar
+  #   to:
+  #   - key_code: return_or_enter
+  #     repeat: false
 
   # Space + Return -> Ctrl-Return
   - type: basic
@@ -378,5 +378,25 @@ rules:
       - right_command
       - right_control
       - right_option
+
+  # Space + J -> Kana
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: spacebar
+      - key_code: j
+    to:
+    - key_code: japanese_kana
+      repeat: false
+
+  # Space + L -> Eisuu
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: spacebar
+      - key_code: l
+    to:
+    - key_code: japanese_eisuu
+      repeat: false
 
 # }}}
