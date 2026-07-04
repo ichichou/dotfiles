@@ -39,7 +39,7 @@ aliases:
 
 # }}}
 
-# RULES ==========================================
+# RULES
 
 rules:
 - description: "5. Symbol Layer"
