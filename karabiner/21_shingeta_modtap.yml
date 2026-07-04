@@ -1,4 +1,4 @@
-title: "21. 新下駄配列（Mod-Tap）"
+title: "21. 新下駄配列（改・Mod-Tap）"
 
 aliases:
 
@@ -33,12 +33,13 @@ aliases:
 - conditions: &base
   - type: input_source_if
     input_sources:
-    - language: "^ja$"
+    # macSKK でのみ有効
+    - input_source_id: "^net\\.mtgto\\.inputmethod\\.macSKK.*$"
   - type: input_source_unless
     input_sources:
-    # 全角英数
+    # ただし英数入力モードと全角英数入力モードを除く
+    - input_source_id: "^net\\.mtgto\\.inputmethod\\.macSKK\\.ascii$"
     - input_source_id: "^net\\.mtgto\\.inputmethod\\.macSKK\\.eisu$"
-    - input_source_id: "^com\\.google\\.inputmethod\\.Japanese\\.FullWidthRoman$"
   - type: variable_unless
     name: symbol
     value: true
@@ -67,7 +68,7 @@ aliases:
 # }}}
 
 rules:
-- description: "21. 新下駄配列（Mod-Tap）"
+- description: "21. 新下駄配列（改・Mod-Tap）"
   manipulators:
 
 # 中指シフト・右 {{{
