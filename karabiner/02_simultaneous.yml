@@ -342,17 +342,7 @@ rules:
 
 # 特殊 {{{
 
-  # # LCmd + Space -> Return
-  # - type: basic
-  #   from:
-  #     simultaneous:
-  #     - key_code: left_command
-  #     - key_code: spacebar
-  #   to:
-  #   - key_code: return_or_enter
-  #     repeat: false
-
-  # Space + Return -> Ctrl-Return
+  # Space + Return -> Ctrl-Space
   - type: basic
     from:
       simultaneous:
@@ -398,5 +388,20 @@ rules:
     to:
     - key_code: japanese_eisuu
       repeat: false
+
+  # A + H -> Delete, LCtrl
+  - type: basic
+    from:
+      simultaneous:
+      - key_code: a
+      - key_code: h
+      simultaneous_options:
+        key_down_order: strict
+        key_up_when: all
+    to:
+    - key_code: delete_or_backspace
+    - key_code: left_control
+    parameters:
+      basic.simultaneous_threshold_milliseconds: 100
 
 # }}}
