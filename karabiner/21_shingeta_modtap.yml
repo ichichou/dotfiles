@@ -2,7 +2,7 @@ title: "21. 新下駄配列（改・Mod-Tap）"
 
 aliases:
 
-# Aliases {{{
+# ALIASES {{{
 
 # Kana Shift Keys --------------------------------
 
@@ -66,6 +66,8 @@ aliases:
     # basic.to_delayed_action_delay_milliseconds: 150
 
 # }}}
+
+# RULES
 
 rules:
 - description: "21. 新下駄配列（改・Mod-Tap）"
