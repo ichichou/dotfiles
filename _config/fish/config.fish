@@ -132,7 +132,7 @@ abbr -a b    brew
 
 abbr -a bc   brew cleanup
 abbr -a bd   brew doctor
-abbr -a bg   brew upgrade
+abbr -a bg   brew upgrade --yes
 abbr -a bi   brew info
 abbr -a bin  brew install
 abbr -a bl   brew list
@@ -212,8 +212,8 @@ abbr -a --command git sw switch
 
 # Use $PWD
 function auto_ls --on-variable PWD
-  if test (ls -A | count) -gt 50
-    echo "(>50 items exist in $(basename $PWD)/)"
+  if test (ls -A | count) -gt 100
+    echo "(>100 items exist in $(basename $PWD)/)"
   else
     if test -e "/opt/homebrew/bin/eza"
       eza -a --group-directories-first
@@ -227,8 +227,8 @@ end
 # function cd
 #   builtin cd $argv
 #   if test $status -eq 0
-#     if test (ls -A | count) -gt 50
-#       echo "(>50 items exist in $(basename $PWD)/)"
+#     if test (ls -A | count) -gt 100
+#       echo "(>100 items exist in $(basename $PWD)/)"
 #     else
 #       if test -e "/opt/homebrew/bin/eza"
 #         eza -a --group-directories-first
