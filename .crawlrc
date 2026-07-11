@@ -2,14 +2,14 @@
 
 # フォント ---------------------------------------
 
-# オプション値には *.ttf ファイル名を指定する。
-# 指定する *.ttf ファイルを dat/tiles/ に配置しておく必要がある。
+# オプション値には *.ttf ファイル名を指定する
+# 指定する *.ttf ファイルを dat/tiles/ に配置しておく必要がある
 
 # crt  - 非マップ画面 (メニュー, メッセージ履歴等)
 # stat - ステータス欄 (HP, AC 等)
 # msg  - メッセージ欄
 # tip  - ツールチップ (マウスオーバー情報)
-# lbl  - インベントリ／メインマップのアイテム／ モンスター名
+# lbl  - インベントリ／メインマップのアイテム名／モンスター名
 
 # 1. JetBrains Mono + Inter
 # 2. JetBrains Mono + Crimson Pro
@@ -17,16 +17,16 @@
 # 4. IBM Plex Mono + Lora
 
 # Monospace:
-#   JetBrains Mono: JetBrainsMonoNL-Regular.ttf
-#   IBM Plex Mono:  IBMPlexMono-Regular.ttf
+#   JetBrains Mono NL: JetBrainsMonoNL-Regular.ttf
+#   IBM Plex Mono:     IBMPlexMono-Regular.ttf
 #
 # Sans Serif:
-#   Inter:          Inter_18pt-Regular.ttf
-#   IBM Plex Sans:  IBMPlexSans-Regular.ttf
+#   Inter:         Inter_18pt-Regular.ttf
+#   IBM Plex Sans: IBMPlexSans-Regular.ttf
 #
 # Serif:
-#   Crimson Pro:    CrimsonPro-Regular.ttf
-#   Lora:           Lora-Regular.ttf
+#   Crimson Pro: CrimsonPro-Regular.ttf
+#   Lora:        Lora-Regular.ttf
 
 # -- 1. JetBrains Mono + Inter
 tile_font_crt_file  = JetBrainsMonoNL-Regular.ttf
@@ -35,19 +35,19 @@ tile_font_msg_file  = JetBrainsMonoNL-Regular.ttf
 tile_font_tip_file  = Inter_18pt-Regular.ttf
 tile_font_lbl_file  = Inter_18pt-Regular.ttf
 
-# -- 2. JetBrains Mono + Crimson Pro
-# tile_font_crt_file  = JetBrainsMonoNL-Regular.ttf
-# tile_font_stat_file = JetBrainsMonoNL-Regular.ttf
-# tile_font_msg_file  = JetBrainsMonoNL-Regular.ttf
-# tile_font_tip_file  = CrimsonPro-Regular.ttf
-# tile_font_lbl_file  = CrimsonPro-Regular.ttf
-
-# -- 3. IBM Plex Mono + IBM Plex Sans
+# -- 2. IBM Plex Mono + IBM Plex Sans
 # tile_font_crt_file  = IBMPlexMono-Regular.ttf
 # tile_font_stat_file = IBMPlexMono-Regular.ttf
 # tile_font_msg_file  = IBMPlexMono-Regular.ttf
 # tile_font_tip_file  = IBMPlexSans-Regular.ttf
 # tile_font_lbl_file  = IBMPlexSans-Regular.ttf
+
+# -- 3. JetBrains Mono + Crimson Pro
+# tile_font_crt_file  = JetBrainsMonoNL-Regular.ttf
+# tile_font_stat_file = JetBrainsMonoNL-Regular.ttf
+# tile_font_msg_file  = JetBrainsMonoNL-Regular.ttf
+# tile_font_tip_file  = CrimsonPro-Regular.ttf
+# tile_font_lbl_file  = CrimsonPro-Regular.ttf
 
 # -- 4. IBM Plex Mono + Lora
 # tile_font_crt_file  = IBMPlexMono-Regular.ttf
@@ -58,7 +58,7 @@ tile_font_lbl_file  = Inter_18pt-Regular.ttf
 
 # フォントサイズ ---------------------------------
 
-# 0 に設定すると画面サイズに応じて自動決定される。
+# 0 に設定すると画面サイズに応じて自動決定される
 
 # tile_font_crt_size  = 15
 # tile_font_stat_size = 16
