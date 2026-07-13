@@ -10,17 +10,17 @@
 ;   [共通]
 ;     Space … Tap: Space   / Hold: LShift
 ;     LAlt  … Tap: IME Off / Hold: LCtrl  / hjkl: Arrows
-;     LCtrl … LAlt へリマップ (Tap/Hold とも LAlt)
 ;     RCtrl … RAlt へリマップ (Tap/Hold とも RAlt)
-;     Copilot キー (LShift+LWin+F23) を無効化
+;     Copilot キー (LShift+LWin+F23) を Backspace にリマップ
+;     ※ CapsLock はドライバ層で F13 に再マップ済み前提 (LCtrl は素のまま)
 ;
 ;   [ノーマル]
-;     CapsLock … Tap: Esc / Hold: LCtrl / Special: capsSpecialMap 有効
-;     RAlt     … Tap: Enter
+;     F13(旧Caps) … Tap: Esc / Hold: LCtrl / Special: capsSpecialMap 有効
+;     RAlt        … Tap: Enter
 ;
 ;   [ゲーム]
-;     CapsLock … Tap: Esc / Hold: LCtrl / Special: 無効
-;     RAlt     … Tap: IME On (vk16)
+;     F13(旧Caps) … Tap: Esc / Hold: LCtrl / Special: 無効
+;     RAlt        … Tap: IME On (vk16)
 ; ============================================================
 
 ; ---- 共通設定 ----
@@ -29,7 +29,7 @@ tapTimeout := 200  ; 単押し判定の閾値 (ms)。0 で時間無制限
 ; ---- 現在モード ("normal" / "game")。起動時はノーマル ----
 mode := "normal"
 
-; ---- CapsLock 押下中の特別マッピング (ノーマルのみ有効) ----
+; ---- F13 押下中の特別マッピング (ノーマルのみ有効) ----
 capsSpecialMap := Map(
     "h", "{Backspace}",
     "d", "{Delete}",
@@ -55,8 +55,7 @@ lAltTick  := 0
 rAltHeld  := false
 rAltTick  := 0
 
-SetCapsLockState "AlwaysOff"  ; CapsLock トグルを無効化
-UpdateTrayTip()               ; 起動時のツールチップを設定
+UpdateTrayTip()  ; 起動時のツールチップを設定
 
 ; ---- 共通ヘルパ: タップ判定 ----
 ; 直前キーが自分自身 = 間に他キーを挟んでいない、
@@ -106,24 +105,25 @@ UpdateTrayTip() {
 }
 
 ; ============================================================
-; CapsLock -> Tap: Esc / Hold: LCtrl
+; F13 (旧CapsLock) -> Tap: Esc / Hold: LCtrl
 ;   Special (capsSpecialMap) はノーマルモードのみ有効
 ; ============================================================
 
-; 「Caps 保持中 かつ ノーマルモード」のときだけ有効なホットキーとして動的登録。
-; HotIf のコールバックは押下ごとに評価されるため、mode を切り替えれば即反映される。
-HotIf (*) => capsHeld && mode = "normal"
+; 「F13 を物理的に保持中 かつ ノーマルモード」のときだけ有効なホットキーとして動的登録。
+; ゲートは物理 F13 キー自体 (Hold の LCtrl ではない) なので LAlt 側と干渉しない。
+; HotIf のコールバックは押下ごとに評価されるため、mode 切替も即反映される。
+HotIf (*) => GetKeyState("F13", "P") && mode = "normal"
 for key, output in capsSpecialMap
     Hotkey "*" key, capsSpecial.Bind(output)
 HotIf
 
 capsSpecial(output, *) {
-    Send "{Blind}{LCtrl Up}" output  ; Caps 由来の Ctrl を外して目的の入力を送出
-    if GetKeyState("CapsLock", "P")  ; まだ Caps 保持中なら Ctrl を戻す
+    Send "{Blind}{LCtrl Up}" output  ; F13 由来の Ctrl を外して目的の入力を送出
+    if GetKeyState("F13", "P")       ; まだ F13 保持中なら Ctrl を戻す
         Send "{Blind}{LCtrl Down}"
 }
 
-*CapsLock:: {
+*F13:: {
     global capsHeld, capsTick
     if !capsHeld {
         capsHeld := true
@@ -131,11 +131,11 @@ capsSpecial(output, *) {
         Send "{Blind}{LCtrl Down}"
     }
 }
-*CapsLock Up:: {
+*F13 Up:: {
     global capsHeld
     capsHeld := false
     Send "{Blind}{LCtrl Up}"
-    if isTap("CapsLock", capsTick)
+    if isTap("F13", capsTick)
         Send "{Esc}"
 }
 
@@ -143,8 +143,9 @@ capsSpecial(output, *) {
 ; LAlt -> Tap: IME Off / Hold: LCtrl / Special: lAltSpecialMap
 ; ============================================================
 
-; lAltSpecialMap の各キーを「LAlt 保持中のみ有効」なホットキーとして動的登録
-HotIf (*) => lAltHeld
+; lAltSpecialMap の各キーを「LAlt を物理的に保持中のみ有効」なホットキーとして動的登録。
+; caps 側と同様、ゲートは物理 LAlt キー自体 (Hold の LCtrl ではない)。
+HotIf (*) => GetKeyState("LAlt", "P")
 for key, output in lAltSpecialMap
     Hotkey "*" key, lAltSpecial.Bind(output)
 HotIf
@@ -194,18 +195,16 @@ lAltSpecial(output, *) {
 }
 
 ; ============================================================
-; LCtrl -> LAlt へリマップ (Tap/Hold とも LAlt)
 ; RCtrl -> RAlt へリマップ (Tap/Hold とも RAlt)
+;   ※ LCtrl はリマップせず素の Ctrl のまま
 ; ============================================================
-
-*LCtrl::Send "{Blind}{LAlt DownR}"
-*LCtrl Up::Send "{Blind}{LAlt Up}"
 
 *RCtrl::Send "{Blind}{RAlt DownR}"
 *RCtrl Up::Send "{Blind}{RAlt Up}"
 
 ; ============================================================
-; Copilot キー (LShift + LWin + F23) を無効化
+; Copilot キー (LShift + LWin + F23) を Backspace にリマップ
+;   Shift/Win を外して素の Backspace を送出 (AHK が LWin をマスク)。
 ; ============================================================
 
-#+F23::return
+#+F23::Send "{Backspace}"

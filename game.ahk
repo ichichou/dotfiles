@@ -4,11 +4,12 @@
 ; ============================================================
 ; Mod-Tap 設定 (ゲーム時)
 ;   Space    … Tap: Space   / Hold: LShift
-;   CapsLock … Tap: Esc     / Hold: LCtrl
+;   F13(旧Caps)… Tap: Esc  / Hold: LCtrl
 ;   LAlt     … Tap: IME Off / Hold: LCtrl  / Special: Map 参照
 ;   RAlt     … Tap: IME On  / Hold: RCtrl
-;   LCtrl    … LAlt へリマップ (Tap/Hold とも LAlt)
 ;   RCtrl    … RAlt へリマップ (Tap/Hold とも RAlt)
+;   Copilot  … Backspace へリマップ
+;   ※ CapsLock はドライバ層で F13 に再マップ済み前提 (LCtrl は素のまま)
 ; ============================================================
 
 ; ---- 共通設定 ----
@@ -31,8 +32,6 @@ lAltHeld  := false
 lAltTick  := 0
 rAltHeld  := false
 rAltTick  := 0
-
-SetCapsLockState "AlwaysOff"  ; CapsLock トグルを無効化
 
 ; ---- 共通ヘルパ: タップ判定 ----
 ; 直前キーが自分自身 = 間に他キーを挟んでいない、
@@ -63,10 +62,10 @@ isTap(keyName, downTick) {
 }
 
 ; ============================================================
-; CapsLock -> Tap: Esc / Hold: LCtrl
+; F13 (旧CapsLock) -> Tap: Esc / Hold: LCtrl
 ; ============================================================
 
-*CapsLock:: {
+*F13:: {
     global capsHeld, capsTick
     if !capsHeld {
         capsHeld := true
@@ -74,11 +73,11 @@ isTap(keyName, downTick) {
         Send "{Blind}{LCtrl Down}"
     }
 }
-*CapsLock Up:: {
+*F13 Up:: {
     global capsHeld
     capsHeld := false
     Send "{Blind}{LCtrl Up}"
-    if isTap("CapsLock", capsTick)
+    if isTap("F13", capsTick)
         Send "{Esc}"
 }
 
@@ -86,8 +85,9 @@ isTap(keyName, downTick) {
 ; LAlt -> Tap: IME Off / Hold: LCtrl / Special: lAltSpecialMap
 ; ============================================================
 
-; lAltSpecialMap の各キーを「LAlt 保持中のみ有効」なホットキーとして動的登録
-HotIf (*) => lAltHeld
+; lAltSpecialMap の各キーを「LAlt を物理的に保持中のみ有効」なホットキーとして動的登録。
+; ゲートは物理 LAlt キー自体 (Hold の LCtrl ではない)。
+HotIf (*) => GetKeyState("LAlt", "P")
 for key, output in lAltSpecialMap
     Hotkey "*" key, lAltSpecial.Bind(output)
 HotIf
@@ -137,18 +137,16 @@ lAltSpecial(output, *) {
 }
 
 ; ============================================================
-; LCtrl -> LAlt へリマップ (Tap/Hold とも LAlt)
 ; RCtrl -> RAlt へリマップ (Tap/Hold とも RAlt)
+;   ※ LCtrl はリマップせず素の Ctrl のまま
 ; ============================================================
-
-*LCtrl::Send "{Blind}{LAlt DownR}"
-*LCtrl Up::Send "{Blind}{LAlt Up}"
 
 *RCtrl::Send "{Blind}{RAlt DownR}"
 *RCtrl Up::Send "{Blind}{RAlt Up}"
 
 ; ============================================================
-; Copilot キー (LShift + LWin + F23) を無効化
+; Copilot キー (LShift + LWin + F23) を Backspace にリマップ
+;   Shift/Win を外して素の Backspace を送出 (AHK が LWin をマスク)。
 ; ============================================================
 
-#+F23::return
+#+F23::Send "{Backspace}"

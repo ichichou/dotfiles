@@ -4,17 +4,18 @@
 ; ============================================================
 ; Mod-Tap 設定 (通常時)
 ;   Space    … Tap: Space   / Hold: LShift
-;   CapsLock … Tap: Esc     / Hold: LCtrl  / Special: Map 参照
+;   F13(旧Caps)… Tap: Esc  / Hold: LCtrl  / Special: Map 参照
 ;   LAlt     … Tap: IME Off / Hold: LCtrl  / Special: Map 参照
 ;   RAlt     … Tap: Enter   / Hold: RCtrl
-;   LCtrl    … LAlt へリマップ (Tap/Hold とも LAlt)
 ;   RCtrl    … RAlt へリマップ (Tap/Hold とも RAlt)
+;   Copilot  … Backspace へリマップ
+;   ※ CapsLock はドライバ層で F13 に再マップ済み前提 (LCtrl は素のまま)
 ; ============================================================
 
 ; ---- 共通設定 ----
 tapTimeout := 200  ; 単押し判定の閾値 (ms)。0 で時間無制限
 
-; ---- CapsLock 押下中の特別マッピング ----
+; ---- F13 押下中の特別マッピング ----
 capsSpecialMap := Map(
     "h", "{Backspace}",
     "d", "{Delete}",
@@ -39,8 +40,6 @@ lAltHeld  := false
 lAltTick  := 0
 rAltHeld  := false
 rAltTick  := 0
-
-SetCapsLockState "AlwaysOff"  ; CapsLock トグルを無効化
 
 ; ---- 共通ヘルパ: タップ判定 ----
 ; 直前キーが自分自身 = 間に他キーを挟んでいない、
@@ -71,22 +70,24 @@ isTap(keyName, downTick) {
 }
 
 ; ============================================================
-; CapsLock -> Tap: Esc / Hold: LCtrl / Special: capsSpecialMap
+; F13 (旧CapsLock) -> Tap: Esc / Hold: LCtrl / Special: capsSpecialMap
 ; ============================================================
 
-; capsSpecialMap の各キーを「Caps 保持中のみ有効」なホットキーとして動的登録
-HotIf (*) => capsHeld
+; capsSpecialMap の各キーを「F13 を物理的に保持中のみ有効」なホットキーとして動的登録。
+; ゲート判定は物理 F13 キーそのもの。Hold が出す LCtrl ではないため、
+; 生の LCtrl + h 等では発火せず、LAlt 側スペシャルとも干渉しない。
+HotIf (*) => GetKeyState("F13", "P")
 for key, output in capsSpecialMap
     Hotkey "*" key, capsSpecial.Bind(output)
 HotIf
 
 capsSpecial(output, *) {
-    Send "{Blind}{LCtrl Up}" output  ; Caps 由来の Ctrl を外して目的の入力を送出
-    if GetKeyState("CapsLock", "P")  ; まだ Caps 保持中なら Ctrl を戻す
+    Send "{Blind}{LCtrl Up}" output  ; F13 由来の Ctrl を外して目的の入力を送出
+    if GetKeyState("F13", "P")       ; まだ F13 保持中なら Ctrl を戻す
         Send "{Blind}{LCtrl Down}"
 }
 
-*CapsLock:: {
+*F13:: {
     global capsHeld, capsTick
     if !capsHeld {
         capsHeld := true
@@ -94,11 +95,11 @@ capsSpecial(output, *) {
         Send "{Blind}{LCtrl Down}"
     }
 }
-*CapsLock Up:: {
+*F13 Up:: {
     global capsHeld
     capsHeld := false
     Send "{Blind}{LCtrl Up}"
-    if isTap("CapsLock", capsTick)
+    if isTap("F13", capsTick)
         Send "{Esc}"
 }
 
@@ -106,8 +107,9 @@ capsSpecial(output, *) {
 ; LAlt -> Tap: IME Off / Hold: LCtrl / Special: lAltSpecialMap
 ; ============================================================
 
-; lAltSpecialMap の各キーを「LAlt 保持中のみ有効」なホットキーとして動的登録
-HotIf (*) => lAltHeld
+; lAltSpecialMap の各キーを「LAlt を物理的に保持中のみ有効」なホットキーとして動的登録。
+; caps 側と同様、ゲートは物理 LAlt キー自体 (Hold の LCtrl ではない)。
+HotIf (*) => GetKeyState("LAlt", "P")
 for key, output in lAltSpecialMap
     Hotkey "*" key, lAltSpecial.Bind(output)
 HotIf
@@ -157,18 +159,16 @@ lAltSpecial(output, *) {
 }
 
 ; ============================================================
-; LCtrl -> LAlt へリマップ (Tap/Hold とも LAlt)
 ; RCtrl -> RAlt へリマップ (Tap/Hold とも RAlt)
+;   ※ LCtrl はリマップせず素の Ctrl のまま
 ; ============================================================
-
-*LCtrl::Send "{Blind}{LAlt DownR}"
-*LCtrl Up::Send "{Blind}{LAlt Up}"
 
 *RCtrl::Send "{Blind}{RAlt DownR}"
 *RCtrl Up::Send "{Blind}{RAlt Up}"
 
 ; ============================================================
-; Copilot キー (LShift + LWin + F23) を無効化
+; Copilot キー (LShift + LWin + F23) を Backspace にリマップ
+;   Shift/Win を外して素の Backspace を送出 (AHK が LWin をマスク)。
 ; ============================================================
 
-#+F23::return
+#+F23::Send "{Backspace}"
