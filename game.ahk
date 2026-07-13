@@ -146,3 +146,9 @@ lAltSpecial(output, *) {
 
 *RCtrl::Send "{Blind}{RAlt DownR}"
 *RCtrl Up::Send "{Blind}{RAlt Up}"
+
+; ============================================================
+; Copilot キー (LShift + LWin + F23) を無効化
+; ============================================================
+
+#+F23::return
