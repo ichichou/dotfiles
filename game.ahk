@@ -3,13 +3,14 @@
 
 ; ============================================================
 ; Mod-Tap 設定 (ゲーム時)
-;   Space    … Tap: Space   / Hold: LShift
-;   F13(旧Caps)… Tap: Esc  / Hold: LCtrl
-;   LAlt     … Tap: IME Off / Hold: LCtrl  / Special: Map 参照
-;   RAlt     … Tap: IME On  / Hold: RCtrl
-;   RCtrl    … RAlt へリマップ (Tap/Hold とも RAlt)
-;   Copilot  … Backspace へリマップ
-;   ※ CapsLock はドライバ層で F13 に再マップ済み前提 (LCtrl は素のまま)
+;   Space     … Tap: Space / Hold: LShift
+;   Caps Lock … Tap: Esc / Hold: LCtrl
+;   LAlt      … Tap: IME Off / Hold: LCtrl / Special: Map 参照
+;   RAlt      … Tap: IME On  / Hold: RCtrl
+;   RCtrl     … RAlt
+;   Copilot   … Backspace
+
+; ※Caps Lock はドライバ層で F13 に再マップ済み前提
 ; ============================================================
 
 ; ---- 共通設定 ----
@@ -62,7 +63,7 @@ isTap(keyName, downTick) {
 }
 
 ; ============================================================
-; F13 (旧CapsLock) -> Tap: Esc / Hold: LCtrl
+; Caps Lock (F13) -> Tap: Esc / Hold: LCtrl
 ; ============================================================
 
 *F13:: {
@@ -137,16 +138,14 @@ lAltSpecial(output, *) {
 }
 
 ; ============================================================
-; RCtrl -> RAlt へリマップ (Tap/Hold とも RAlt)
-;   ※ LCtrl はリマップせず素の Ctrl のまま
+; RCtrl -> RAlt
 ; ============================================================
 
 *RCtrl::Send "{Blind}{RAlt DownR}"
 *RCtrl Up::Send "{Blind}{RAlt Up}"
 
 ; ============================================================
-; Copilot キー (LShift + LWin + F23) を Backspace にリマップ
-;   Shift/Win を外して素の Backspace を送出 (AHK が LWin をマスク)。
+; Copilot (LShift + LWin + F23) -> Backspace
 ; ============================================================
 
 #+F23::Send "{Backspace}"
