@@ -33,8 +33,8 @@ mode := "normal"
 capsSpecialMap := Map(
     "h", "{Backspace}",
     "d", "{Delete}",
-    "j", "{vk1A}",
-    "l", "{vk16}"
+    "j", "{vk16}",
+    "l", "{vk1A}"
 )
 
 ; ---- LAlt 押下中の特別マッピング (両モード共通) ----

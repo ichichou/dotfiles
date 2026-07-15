@@ -20,8 +20,8 @@ tapTimeout := 200  ; 単押し判定の閾値 (ms)。0 で時間無制限
 capsSpecialMap := Map(
     "h", "{Backspace}",
     "d", "{Delete}",
-    "j", "{vk1A}",
-    "l", "{vk16}"
+    "j", "{vk16}",
+    "l", "{vk1A}"
 )
 
 ; ---- LAlt 押下中の特別マッピング ----
