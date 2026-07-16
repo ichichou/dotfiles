@@ -2,21 +2,24 @@
 #SingleInstance Force
 
 ; ============================================================
-; Mod-Tap 設定 (ゲーム時)
+; Mod-Tap 設定 (ゲーム用)
 ;   Space     … Tap: Space / Hold: LShift
 ;   Caps Lock … Tap: Esc / Hold: LCtrl
 ;   LAlt      … Tap: IME Off / Hold: LCtrl / Special: Map 参照
-;   RAlt      … Tap: IME On  / Hold: RCtrl
-;   RCtrl     … RAlt
-;   Copilot   … Backspace
-
-; ※Caps Lock はドライバ層で F13 に再マップ済み前提
+;   RAlt      … Tap: IME On  / Hold: RAlt
+;   Copilot   … 無効化
+;
+;   ※Caps Lock はドライバ層で F13 に再マップ済み前提
 ; ============================================================
 
 ; ---- 共通設定 ----
-tapTimeout := 200  ; 単押し判定の閾値 (ms)。0 で時間無制限
+tapTimeout := 200  ; 単押し判定の閾値 (ms)
 
-; ---- LAlt 押下中の特別マッピング ----
+; ---- IME On/Off のキーコード ----
+ime_on  := "{vk16}"
+ime_off := "{vk1A}"
+
+; ---- LAlt の特別マッピング ----
 lAltSpecialMap := Map(
     "h", "{Left}",
     "j", "{Down}",
@@ -48,7 +51,7 @@ isTap(keyName, downTick) {
 
 *Space:: {
     global spaceHeld, spaceTick
-    if !spaceHeld {                  ; オートリピートの2回目以降は無視
+    if !spaceHeld {
         spaceHeld := true
         spaceTick := A_TickCount
         Send "{Blind}{LShift Down}"
@@ -96,6 +99,7 @@ HotIf
 ; Hold は LCtrl。矢印はプレーンに出したいので、一度 LCtrl を外して送出し、
 ; まだ物理 LAlt を保持していれば Ctrl を戻す (Caps 版と同じ方式)。
 lAltSpecial(output, *) {
+    Critical
     Send "{Blind}{LCtrl Up}" output
     if GetKeyState("LAlt", "P")
         Send "{Blind}{LCtrl Down}"
@@ -114,11 +118,11 @@ lAltSpecial(output, *) {
     lAltHeld := false
     Send "{Blind}{LCtrl Up}"
     if isTap("LAlt", lAltTick)
-        Send "{vk1A}"
+        Send ime_off
 }
 
 ; ============================================================
-; RAlt -> Tap: IME On / Hold: RCtrl
+; RAlt -> Tap: IME On / Hold: RAlt
 ; ============================================================
 
 *RAlt:: {
@@ -126,26 +130,19 @@ lAltSpecial(output, *) {
     if !rAltHeld {
         rAltHeld := true
         rAltTick := A_TickCount
-        Send "{Blind}{RCtrl Down}"
+        Send "{Blind}{RAlt Down}"
     }
 }
 *RAlt Up:: {
     global rAltHeld
     rAltHeld := false
-    Send "{Blind}{RCtrl Up}"
+    Send "{Blind}{RAlt Up}"
     if isTap("RAlt", rAltTick)
-        Send "{vk16}"
+        Send ime_on
 }
 
 ; ============================================================
-; RCtrl -> RAlt
+; Copilot (LShift + LWin + F23) -> 無効化
 ; ============================================================
 
-*RCtrl::Send "{Blind}{RAlt DownR}"
-*RCtrl Up::Send "{Blind}{RAlt Up}"
-
-; ============================================================
-; Copilot (LShift + LWin + F23) -> Backspace
-; ============================================================
-
-#+F23::Send "{Backspace}"
+#+F23::return

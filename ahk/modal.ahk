@@ -2,47 +2,57 @@
 #SingleInstance Force
 
 ; ============================================================
-; Mod-Tap 設定 (モード切替式)
-;   Win + K でノーマル / ゲームをトグル。
-;   現在モードはトレイアイコンのツールチップと、
-;   切替時の画面ツールチップで表示する。
+; Mod-Tap 設定
+;   Win + K で Normal Mode / Game Mode を切り替え
+;   現在モードはトレイアイコンと画面中央のツールチップで表示する
 ;
 ;   [共通]
-;     Space … Tap: Space   / Hold: LShift
-;     LAlt  … Tap: IME Off / Hold: LCtrl  / hjkl: Arrows
-;     RCtrl … RAlt へリマップ (Tap/Hold とも RAlt)
-;     Copilot キー (LShift+LWin+F23) を Backspace にリマップ
-;     ※ CapsLock はドライバ層で F13 に再マップ済み前提 (LCtrl は素のまま)
+;     Space     … Tap: Space / Hold: LShift
+;     Caps Lock … (モード次第)
+;     LAlt      … Tap: IME Off / Hold: LCtrl / Special: Map 参照
+;     RAlt      … (モード次第)
+;     RCtrl     … (モード次第)
+;     Copilot   … (モード次第)
 ;
-;   [ノーマル]
-;     F13(旧Caps) … Tap: Esc / Hold: LCtrl / Special: capsSpecialMap 有効
-;     RAlt        … Tap: Enter
+;   [Normal Mode]
+;     Caps Lock … Tap: Esc / Hold: LCtrl / Special: Map 参照
+;     RAlt      … Tap: Enter
+;     RCtrl     … RAlt
+;     Copilot   … Backspace
 ;
-;   [ゲーム]
-;     F13(旧Caps) … Tap: Esc / Hold: LCtrl / Special: 無効
-;     RAlt        … Tap: IME On (vk16)
+;   [Game Mode]
+;     Caps Lock … Tap: Esc / Hold: LCtrl / Special: 無効
+;     RAlt      … Tap: IME On / Hold: RAlt
+;     RCtrl     … 変更なし
+;     Copilot   … 無効化
+;
+;   ※Caps Lock はドライバ層で F13 に再マップ済み前提
 ; ============================================================
 
 ; ---- 共通設定 ----
-tapTimeout := 200  ; 単押し判定の閾値 (ms)。0 で時間無制限
+tapTimeout := 200  ; 単押し判定の閾値 (ms)
 
-; ---- 現在モード ("normal" / "game")。起動時はノーマル ----
+; ---- 現在モード ----
 mode := "normal"
 
-; ---- F13 押下中の特別マッピング (ノーマルのみ有効) ----
-capsSpecialMap := Map(
-    "h", "{Backspace}",
-    "d", "{Delete}",
-    "j", "{vk16}",
-    "l", "{vk1A}"
-)
+; ---- IME On/Off のキーコード ----
+ime_on  := "{vk16}"
+ime_off := "{vk1A}"
 
-; ---- LAlt 押下中の特別マッピング (両モード共通) ----
+; ---- LAlt の特別マッピング (両モード共通) ----
 lAltSpecialMap := Map(
     "h", "{Left}",
     "j", "{Down}",
     "k", "{Up}",
     "l", "{Right}"
+)
+
+; ---- Caps Lock の特別マッピング (Normal Mode のみ) ----
+capsSpecialMap := Map(
+    "d", "{Delete}",
+    "h", "{Backspace}",
+    "j", ime_on,
+    "l", ime_off
 )
 
 ; ---- 内部状態 ----
@@ -54,6 +64,9 @@ lAltHeld  := false
 lAltTick  := 0
 rAltHeld  := false
 rAltTick  := 0
+rAltMod   := ""
+rCtrlHeld := false
+rCtrlMod  := ""
 
 UpdateTrayTip()  ; 起動時のツールチップを設定
 
@@ -74,14 +87,14 @@ isTap(keyName, downTick) {
     mode := (mode = "normal") ? "game" : "normal"
     UpdateTrayTip()
     ; 画面中央付近に現在モードを一瞬表示 (1 秒で自動消去)
-    ToolTip "モード: " (mode = "normal" ? "ノーマル" : "ゲーム")
+    ToolTip (mode = "normal" ? "Normal Mode" : "Game Mode")
     SetTimer () => ToolTip(), -1000
 }
 
 ; トレイアイコンのツールチップへ現在モードを反映
 UpdateTrayTip() {
     global mode
-    A_IconTip := "Mod-Tap [" (mode = "normal" ? "ノーマル" : "ゲーム") "]"
+    A_IconTip := (mode = "normal" ? "Normal Mode" : "Game Mode")
 }
 
 ; ============================================================
@@ -90,7 +103,7 @@ UpdateTrayTip() {
 
 *Space:: {
     global spaceHeld, spaceTick
-    if !spaceHeld {                  ; オートリピートの2回目以降は無視
+    if !spaceHeld {
         spaceHeld := true
         spaceTick := A_TickCount
         Send "{Blind}{LShift Down}"
@@ -105,11 +118,10 @@ UpdateTrayTip() {
 }
 
 ; ============================================================
-; F13 (旧CapsLock) -> Tap: Esc / Hold: LCtrl
-;   Special (capsSpecialMap) はノーマルモードのみ有効
+; Caps Lock (F13) -> Tap: Esc / Hold: LCtrl / Special: Map 参照
 ; ============================================================
 
-; 「F13 を物理的に保持中 かつ ノーマルモード」のときだけ有効なホットキーとして動的登録。
+; 「F13 を物理的に保持中かつ Normal Mode」のときだけ有効なホットキーとして動的登録。
 ; ゲートは物理 F13 キー自体 (Hold の LCtrl ではない) なので LAlt 側と干渉しない。
 ; HotIf のコールバックは押下ごとに評価されるため、mode 切替も即反映される。
 HotIf (*) => GetKeyState("F13", "P") && mode = "normal"
@@ -118,8 +130,9 @@ for key, output in capsSpecialMap
 HotIf
 
 capsSpecial(output, *) {
-    Send "{Blind}{LCtrl Up}" output  ; F13 由来の Ctrl を外して目的の入力を送出
-    if GetKeyState("F13", "P")       ; まだ F13 保持中なら Ctrl を戻す
+    Critical
+    Send "{Blind}{LCtrl Up}" output
+    if GetKeyState("F13", "P")
         Send "{Blind}{LCtrl Down}"
 }
 
@@ -140,7 +153,7 @@ capsSpecial(output, *) {
 }
 
 ; ============================================================
-; LAlt -> Tap: IME Off / Hold: LCtrl / Special: lAltSpecialMap
+; LAlt -> Tap: IME Off / Hold: LCtrl / Special: Map 参照
 ; ============================================================
 
 ; lAltSpecialMap の各キーを「LAlt を物理的に保持中のみ有効」なホットキーとして動的登録。
@@ -153,6 +166,7 @@ HotIf
 ; Hold は LCtrl。矢印はプレーンに出したいので、一度 LCtrl を外して送出し、
 ; まだ物理 LAlt を保持していれば Ctrl を戻す (Caps 版と同じ方式)。
 lAltSpecial(output, *) {
+    Critical
     Send "{Blind}{LCtrl Up}" output
     if GetKeyState("LAlt", "P")
         Send "{Blind}{LCtrl Down}"
@@ -171,40 +185,60 @@ lAltSpecial(output, *) {
     lAltHeld := false
     Send "{Blind}{LCtrl Up}"
     if isTap("LAlt", lAltTick)
-        Send "{vk1A}"
+        Send ime_off
 }
 
 ; ============================================================
-; RAlt -> Tap: (ノーマル) Enter / (ゲーム) IME On / Hold: RCtrl
+; RAlt ->
+;   [Normal Mode] Tap: Enter  / Hold: RCtrl
+;   [Game Mode]   Tap: IME On / Hold: RAlt
 ; ============================================================
 
 *RAlt:: {
-    global rAltHeld, rAltTick
+    global rAltHeld, rAltTick, rAltMod, mode
     if !rAltHeld {
         rAltHeld := true
         rAltTick := A_TickCount
-        Send "{Blind}{RCtrl Down}"
+        rAltMod := (mode = "normal") ? "RCtrl" : "RAlt"
+        Send "{Blind}{" rAltMod " Down}"
     }
 }
 *RAlt Up:: {
-    global rAltHeld, mode
+    global rAltHeld, rAltMod, mode
     rAltHeld := false
-    Send "{Blind}{RCtrl Up}"
+    Send "{Blind}{" rAltMod " Up}"
     if isTap("RAlt", rAltTick)
-        Send (mode = "normal") ? "{Enter}" : "{vk16}"
+        Send (mode = "normal") ? "{Enter}" : ime_on
 }
 
 ; ============================================================
-; RCtrl -> RAlt へリマップ (Tap/Hold とも RAlt)
-;   ※ LCtrl はリマップせず素の Ctrl のまま
+; RCtrl ->
+;   [Normal Mode] RAlt
+;   [Game Mode]   変更なし
 ; ============================================================
 
-*RCtrl::Send "{Blind}{RAlt DownR}"
-*RCtrl Up::Send "{Blind}{RAlt Up}"
+*RCtrl:: {
+    global rCtrlHeld, rCtrlMod, mode
+    if !rCtrlHeld {
+        rCtrlHeld := true
+        rCtrlMod := (mode = "normal") ? "RAlt" : "RCtrl"
+        Send "{Blind}{" rCtrlMod " Down}"
+    }
+}
+*RCtrl Up:: {
+    global rCtrlHeld, rCtrlMod
+    rCtrlHeld := false
+    Send "{Blind}{" rCtrlMod " Up}"
+}
 
 ; ============================================================
-; Copilot キー (LShift + LWin + F23) を Backspace にリマップ
-;   Shift/Win を外して素の Backspace を送出 (AHK が LWin をマスク)。
+; Copilot (LShift + LWin + F23) ->
+;   [Normal Mode] Backspace
+;   [Game Mode]   無効化
 ; ============================================================
 
-#+F23::Send "{Backspace}"
+#+F23:: {
+    global mode
+    if mode = "normal"
+        Send "{Backspace}"
+}

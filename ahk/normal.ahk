@@ -2,29 +2,33 @@
 #SingleInstance Force
 
 ; ============================================================
-; Mod-Tap 設定 (通常時)
+; Mod-Tap 設定 (通常時用)
 ;   Space     … Tap: Space / Hold: LShift
 ;   Caps Lock … Tap: Esc / Hold: LCtrl / Special: Map 参照
-;   LAlt      … Tap: IME Off / Hold: LCtrl  / Special: Map 参照
+;   LAlt      … Tap: IME Off / Hold: LCtrl / Special: Map 参照
 ;   RAlt      … Tap: Enter   / Hold: RCtrl
 ;   RCtrl     … RAlt
 ;   Copilot   … Backspace
 ;
-; ※Caps Lock はドライバ層で F13 に再マップ済み前提
+;   ※Caps Lock はドライバ層で F13 に再マップ済み前提
 ; ============================================================
 
 ; ---- 共通設定 ----
-tapTimeout := 200  ; 単押し判定の閾値 (ms)。0 で時間無制限
+tapTimeout := 200  ; 単押し判定の閾値 (ms)
 
-; ---- F13 押下中の特別マッピング ----
+; ---- IME On/Off のキーコード ----
+ime_on  := "{vk16}"
+ime_off := "{vk1A}"
+
+; ---- Caps Lock の特別マッピング ----
 capsSpecialMap := Map(
     "h", "{Backspace}",
     "d", "{Delete}",
-    "j", "{vk16}",
-    "l", "{vk1A}"
+    "j", ime_on,
+    "l", ime_off
 )
 
-; ---- LAlt 押下中の特別マッピング ----
+; ---- LAlt の特別マッピング ----
 lAltSpecialMap := Map(
     "h", "{Left}",
     "j", "{Down}",
@@ -56,7 +60,7 @@ isTap(keyName, downTick) {
 
 *Space:: {
     global spaceHeld, spaceTick
-    if !spaceHeld {                  ; オートリピートの2回目以降は無視
+    if !spaceHeld {
         spaceHeld := true
         spaceTick := A_TickCount
         Send "{Blind}{LShift Down}"
@@ -71,7 +75,7 @@ isTap(keyName, downTick) {
 }
 
 ; ============================================================
-; Caps Lock (F13) -> Tap: Esc / Hold: LCtrl / Special: capsSpecialMap
+; Caps Lock (F13) -> Tap: Esc / Hold: LCtrl / Special: Map 参照
 ; ============================================================
 
 ; capsSpecialMap の各キーを「F13 を物理的に保持中のみ有効」なホットキーとして動的登録。
@@ -83,8 +87,9 @@ for key, output in capsSpecialMap
 HotIf
 
 capsSpecial(output, *) {
-    Send "{Blind}{LCtrl Up}" output  ; F13 由来の Ctrl を外して目的の入力を送出
-    if GetKeyState("F13", "P")       ; まだ F13 保持中なら Ctrl を戻す
+    Critical
+    Send "{Blind}{LCtrl Up}" output
+    if GetKeyState("F13", "P")
         Send "{Blind}{LCtrl Down}"
 }
 
@@ -105,7 +110,7 @@ capsSpecial(output, *) {
 }
 
 ; ============================================================
-; LAlt -> Tap: IME Off / Hold: LCtrl / Special: lAltSpecialMap
+; LAlt -> Tap: IME Off / Hold: LCtrl / Special: Map 参照
 ; ============================================================
 
 ; lAltSpecialMap の各キーを「LAlt を物理的に保持中のみ有効」なホットキーとして動的登録。
@@ -118,6 +123,7 @@ HotIf
 ; Hold は LCtrl。矢印はプレーンに出したいので、一度 LCtrl を外して送出し、
 ; まだ物理 LAlt を保持していれば Ctrl を戻す (Caps 版と同じ方式)。
 lAltSpecial(output, *) {
+    Critical
     Send "{Blind}{LCtrl Up}" output
     if GetKeyState("LAlt", "P")
         Send "{Blind}{LCtrl Down}"
@@ -136,7 +142,7 @@ lAltSpecial(output, *) {
     lAltHeld := false
     Send "{Blind}{LCtrl Up}"
     if isTap("LAlt", lAltTick)
-        Send "{vk1A}"
+        Send ime_off
 }
 
 ; ============================================================
