@@ -3,6 +3,9 @@
 # この設定ファイルを有効化するには
 # DCSS ディレクトリの settings/ にシンボリックリンクを配置し
 # settings/init.txt の末尾に `include = .crawlrc` と記述する
+#
+# シンボリックリンクを貼るコマンド：
+# $ ln -snfv ~/dotfiles/.crawlrc /Applications/Dungeon\ Crawl\ Stone\ Soup\ -\ Tiles.app/Contents/Resources/settings/.
 
 # フォント ---------------------------------------
 
