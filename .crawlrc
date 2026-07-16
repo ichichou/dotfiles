@@ -1,21 +1,28 @@
 # vim: ft=conf
 
+# この設定ファイルを有効化するには
+# DCSS ディレクトリの settings/ にシンボリックリンクを配置し
+# settings/init.txt の末尾に `include = .crawlrc` と記述する
+
 # フォント ---------------------------------------
 
 # オプション値には *.ttf ファイル名を指定する
-# 指定する *.ttf ファイルを dat/tiles/ に配置しておく必要がある
-
+# 対象の *.ttf ファイルを settings/ に配置しておく必要がある
+#
+#
 # crt  - 非マップ画面 (メニュー, メッセージ履歴等)
 # stat - ステータス欄 (HP, AC 等)
 # msg  - メッセージ欄
 # tip  - ツールチップ (マウスオーバー情報)
 # lbl  - インベントリ／メインマップのアイテム名／モンスター名
-
+#
+#
 # 1. JetBrains Mono + Inter
 # 2. JetBrains Mono + Crimson Pro
 # 3. IBM Plex Mono + IBM Plex Sans
 # 4. IBM Plex Mono + Lora
-
+#
+#
 # Monospace:
 #   JetBrains Mono NL: JetBrainsMonoNL-Regular.ttf
 #   IBM Plex Mono:     IBMPlexMono-Regular.ttf
@@ -28,33 +35,34 @@
 #   Crimson Pro: CrimsonPro-Regular.ttf
 #   Lora:        Lora-Regular.ttf
 
-# -- 1. JetBrains Mono + Inter
+# 1. JetBrains Mono + Inter {{{
 tile_font_crt_file  = JetBrainsMonoNL-Regular.ttf
 tile_font_stat_file = JetBrainsMonoNL-Regular.ttf
 tile_font_msg_file  = JetBrainsMonoNL-Regular.ttf
 tile_font_tip_file  = Inter_18pt-Regular.ttf
 tile_font_lbl_file  = Inter_18pt-Regular.ttf
-
-# -- 2. IBM Plex Mono + IBM Plex Sans
+# }}}
+# 2. IBM Plex Mono  + IBM Plex Sans {{{
 # tile_font_crt_file  = IBMPlexMono-Regular.ttf
 # tile_font_stat_file = IBMPlexMono-Regular.ttf
 # tile_font_msg_file  = IBMPlexMono-Regular.ttf
 # tile_font_tip_file  = IBMPlexSans-Regular.ttf
 # tile_font_lbl_file  = IBMPlexSans-Regular.ttf
-
-# -- 3. JetBrains Mono + Crimson Pro
+# }}}
+# 3. JetBrains Mono + Crimson Pro {{{
 # tile_font_crt_file  = JetBrainsMonoNL-Regular.ttf
 # tile_font_stat_file = JetBrainsMonoNL-Regular.ttf
 # tile_font_msg_file  = JetBrainsMonoNL-Regular.ttf
 # tile_font_tip_file  = CrimsonPro-Regular.ttf
 # tile_font_lbl_file  = CrimsonPro-Regular.ttf
-
-# -- 4. IBM Plex Mono + Lora
+# }}}
+# 4. IBM Plex Mono  + Lora {{{
 # tile_font_crt_file  = IBMPlexMono-Regular.ttf
 # tile_font_stat_file = IBMPlexMono-Regular.ttf
 # tile_font_msg_file  = IBMPlexMono-Regular.ttf
 # tile_font_tip_file  = Lora-Regular.ttf
 # tile_font_lbl_file  = Lora-Regular.ttf
+# }}}
 
 # フォントサイズ ---------------------------------
 
@@ -65,3 +73,15 @@ tile_font_lbl_file  = Inter_18pt-Regular.ttf
 # tile_font_msg_size  = 14
 # tile_font_tip_size  = 15
 # tile_font_lbl_size  = 14
+
+# Auto Pickup ------------------------------------
+
+: if you.race() == "Ogre" or you.race() == "Troll" then
+  autopickup_exceptions ^= <large rock
+: end
+
+# その他 -----------------------------------------
+
+show_more = false
+hp_warning = 30
+default_manual_training = true
