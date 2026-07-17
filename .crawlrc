@@ -5,7 +5,11 @@
 # settings/init.txt の末尾に `include = .crawlrc` と記述する
 #
 # シンボリックリンクを貼るコマンド：
-# $ ln -snfv ~/dotfiles/.crawlrc /Applications/Dungeon\ Crawl\ Stone\ Soup\ -\ Tiles.app/Contents/Resources/settings/.
+# $ ln -snfv ~/dotfiles/.crawlrc ~/Applications/Dungeon\ Crawl\ Stone\ Soup\ -\ Tiles.app/Contents/Resources/settings/.
+#
+# DCSS のインストール方法:
+# 公式サイトからダウンロードした .app ファイルを ~/Applications/ に配置する
+# ※Homebrew は使わない。deprecated のため
 
 # フォント ---------------------------------------
 
