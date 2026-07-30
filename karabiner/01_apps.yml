@@ -604,7 +604,7 @@ rules:
 # Dia {{{
 
   # [Dia] LShift-LCmd-F -> Shift-Cmd-H
-  # スプレッドシートでの検索・置換
+  # Google スプレッドシートでの検索・置換
   - type: basic
     from:
       key_code: f
@@ -618,6 +618,25 @@ rules:
       - shift
       - command
       repeat: false
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "company.thebrowser.dia"
+
+  # LShift-LCmd-M -> Opt-Cmd-M
+  # Google ドキュメントでのコメント
+  - type: basic
+    from:
+      key_code: m
+      modifiers:
+        mandatory:
+        - left_shift
+        - left_command
+    to:
+    - key_code: m
+      modifiers:
+      - option
+      - command
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
