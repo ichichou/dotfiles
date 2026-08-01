@@ -6,7 +6,8 @@
 ;   Space     … Tap: Space / Hold: LShift
 ;   Caps Lock … Tap: Esc / Hold: LCtrl
 ;   LAlt      … Tap: IME Off / Hold: LCtrl / Special: Map 参照
-;   RAlt      … Tap: IME On  / Hold: RAlt
+;   RAlt      … Tap: IME On  / Hold: RCtrl
+;   LCtrl     … LAlt
 ;   Copilot   … 無効化
 ;
 ;   ※Caps Lock はドライバ層で F13 に再マップ済み前提
@@ -24,7 +25,11 @@ lAltSpecialMap := Map(
     "h", "{Left}",
     "j", "{Down}",
     "k", "{Up}",
-    "l", "{Right}"
+    "l", "{Right}",
+    "n", "{Backspace}",
+    "m", "{Delete}",
+    ",", "{Home}",
+    ".", "{End}"
 )
 
 ; ---- 内部状態 ----
@@ -122,7 +127,7 @@ lAltSpecial(output, *) {
 }
 
 ; ============================================================
-; RAlt -> Tap: IME On / Hold: RAlt
+; RAlt -> Tap: IME On / Hold: RCtrl
 ; ============================================================
 
 *RAlt:: {
@@ -130,16 +135,30 @@ lAltSpecial(output, *) {
     if !rAltHeld {
         rAltHeld := true
         rAltTick := A_TickCount
-        Send "{Blind}{RAlt Down}"
+        Send "{Blind}{RCtrl Down}"
     }
 }
 *RAlt Up:: {
     global rAltHeld
     rAltHeld := false
-    Send "{Blind}{RAlt Up}"
+    Send "{Blind}{RCtrl Up}"
     if isTap("RAlt", rAltTick)
         Send ime_on
 }
+
+; ============================================================
+; LCtrl -> LAlt
+; ============================================================
+
+*LCtrl::Send "{Blind}{LAlt DownR}"
+*LCtrl Up::Send "{Blind}{LAlt Up}"
+
+; ============================================================
+; RCtrl -> RAlt
+; ============================================================
+
+*RCtrl::Send "{Blind}{RAlt DownR}"
+*RCtrl Up::Send "{Blind}{RAlt Up}"
 
 ; ============================================================
 ; Copilot (LShift + LWin + F23) -> 無効化
