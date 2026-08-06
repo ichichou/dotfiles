@@ -1,9 +1,8 @@
 cask_args appdir: "/Applications"
+
 tap "homebrew/cask"
 tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
-tap "r-lib/rig"
-tap "laishulu/homebrew"
 
 # CLI Apps ---------------------------------------
 
@@ -11,6 +10,7 @@ brew "bash"
 brew "bat"
 brew "bat-extras"
 brew "coreutils"
+brew "csvkit"
 brew "csvlens"
 brew "duckdb"
 brew "eza"
@@ -23,9 +23,9 @@ brew "git"
 brew "gnu-sed"
 brew "hunk"
 brew "icu4c"
-brew "itchyny/tap/mmv"
+brew "itchyny/tap/mmv", trusted: true
+brew "laishulu/homebrew/macism", trusted: true
 brew "lua"
-brew "macism"
 brew "mas"
 brew "pandoc"
 brew "python"
@@ -58,7 +58,7 @@ cask "google-chrome"
 cask "jordanbaird-ice"
 cask "keka"
 cask "kekaexternalhelper"
-cask "mtgto/macskk/macskk"
+cask "mtgto/macskk/macskk", trusted: true
 cask "notion"
 cask "notion-calendar"
 cask "numi"
@@ -81,7 +81,7 @@ cask "logi-options+"
 cask "microsoft-excel"
 cask "microsoft-powerpoint"
 cask "microsoft-word"
-cask "rig"
+cask "r-lib/rig/rig", trusted: true
 cask "zoom"
 
 # Fonts -------------------------------------------
@@ -92,11 +92,13 @@ cask "font-jetbrains-mono"
 cask "font-lato"
 cask "font-noto-sans-jp"
 cask "font-noto-serif-jp"
+cask "font-roboto"
+cask "font-roboto-mono"
 cask "font-source-code-pro"
 
 # App Store --------------------------------------
 
-mas "Amphetamine",           id: 937984704
-mas "Bitwarden",             id: 1352778147
-mas "LINE",                  id: 539883307
-mas "uBlock Origin Lite",    id: 6745342698
+mas "Amphetamine",        id: 937984704
+mas "Bitwarden",          id: 1352778147
+mas "LINE",               id: 539883307
+mas "uBlock Origin Lite", id: 6745342698
