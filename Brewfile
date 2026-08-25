@@ -46,7 +46,6 @@ brew "zk"
 # GUI Apps ---------------------------------------
 
 cask "appcleaner"
-cask "bettertouchtool"
 cask "bike"
 cask "chatgpt"
 cask "claude"
