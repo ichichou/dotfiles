@@ -2063,45 +2063,45 @@ rules:
 
 # Mod-Tap {{{
 
-  # q -> ー/Hyper
-  - type: basic
-    from:
-      key_code: q
-      modifiers: *optional_shift
-    to_if_alone:
-    - key_code: quote
-      halt: true
-    to_if_held_down:
-    - key_code: right_shift
-      modifiers:
-      - right_control
-      - right_option
-      - right_command
-      halt: true
-    to_delayed_action:
-      to_if_canceled:
-      - key_code: quote
-    conditions: *base
-    parameters: *mod_tap_threshold_ms
+  # # q -> ー/Hyper
+  # - type: basic
+  #   from:
+  #     key_code: q
+  #     modifiers: *optional_shift
+  #   to_if_alone:
+  #   - key_code: quote
+  #     halt: true
+  #   to_if_held_down:
+  #   - key_code: right_shift
+  #     modifiers:
+  #     - right_control
+  #     - right_option
+  #     - right_command
+  #     halt: true
+  #   to_delayed_action:
+  #     to_if_canceled:
+  #     - key_code: quote
+  #   conditions: *base
+  #   parameters: *mod_tap_threshold_ms
 
-  # a -> の/LCtrl
-  - type: basic
-    from:
-      key_code: a
-      modifiers: *optional_shift
-    to_if_alone:
-    - key_code: "n"
-    - key_code: o
-      halt: true
-    to_if_held_down:
-    - key_code: left_control
-      halt: true
-    to_delayed_action:
-      to_if_canceled:
-      - key_code: "n"
-      - key_code: o
-    conditions: *base
-    parameters: *mod_tap_threshold_ms
+  # # a -> の/LCtrl
+  # - type: basic
+  #   from:
+  #     key_code: a
+  #     modifiers: *optional_shift
+  #   to_if_alone:
+  #   - key_code: "n"
+  #   - key_code: o
+  #     halt: true
+  #   to_if_held_down:
+  #   - key_code: left_control
+  #     halt: true
+  #   to_delayed_action:
+  #     to_if_canceled:
+  #     - key_code: "n"
+  #     - key_code: o
+  #   conditions: *base
+  #   parameters: *mod_tap_threshold_ms
 
   # z -> す/LShift
   - type: basic
@@ -2122,39 +2122,38 @@ rules:
     conditions: *base
     parameters: *mod_tap_threshold_ms
 
-  # ' -> げ/RCtrl
-  - type: basic
-    from:
-      key_code: quote
-      modifiers: *optional_shift
-    to_if_alone:
-    - key_code: g
-    - key_code: e
-      halt: true
-    to_if_held_down:
-    - key_code: right_control
-      halt: true
-    to_delayed_action:
-      to_if_canceled:
-      - key_code: g
-      - key_code: e
-    conditions: *base
-    parameters: *mod_tap_threshold_ms
+  # # ' -> げ/RCtrl
+  # - type: basic
+  #   from:
+  #     key_code: quote
+  #     modifiers: *optional_shift
+  #   to_if_alone:
+  #   - key_code: g
+  #   - key_code: e
+  #     halt: true
+  #   to_if_held_down:
+  #   - key_code: right_control
+  #     halt: true
+  #   to_delayed_action:
+  #     to_if_canceled:
+  #     - key_code: g
+  #     - key_code: e
+  #   conditions: *base
+  #   parameters: *mod_tap_threshold_ms
 
 # }}}
 
 # ベース {{{
 
-  # # q -> ー
-  # # QAZ で定義
-  # - type: basic
-  #   from:
-  #     key_code: q
-  #     modifiers: *optional_shift
-  #   to:
-  #   - key_code: quote
-  #     repeat: false
-  #   conditions: *base
+  # q -> ー
+  - type: basic
+    from:
+      key_code: q
+      modifiers: *optional_shift
+    to:
+    - key_code: quote
+      repeat: false
+    conditions: *base
 
   # w -> に
   - type: basic
@@ -2255,17 +2254,16 @@ rules:
       repeat: false
     conditions: *base
 
-  # # a -> の
-  # # QAZ で定義
-  # - type: basic
-  #   from:
-  #     key_code: a
-  #     modifiers: *optional_shift
-  #   to:
-  #   - key_code: "n"
-  #   - key_code: o
-  #     repeat: false
-  #   conditions: *base
+  # a -> の
+  - type: basic
+    from:
+      key_code: a
+      modifiers: *optional_shift
+    to:
+    - key_code: "n"
+    - key_code: o
+      repeat: false
+    conditions: *base
 
   # s -> と
   - type: basic
@@ -2365,17 +2363,16 @@ rules:
       repeat: false
     conditions: *base
 
-  # # ' -> げ
-  # # Quate and RCtrl で定義
-  # - type: basic
-  #   from:
-  #     key_code: quote
-  #     modifiers: *optional_shift
-  #   to:
-  #   - key_code: g
-  #   - key_code: e
-  #     repeat: false
-  #   conditions: *base
+  # ' -> げ
+  - type: basic
+    from:
+      key_code: quote
+      modifiers: *optional_shift
+    to:
+    - key_code: g
+    - key_code: e
+      repeat: false
+    conditions: *base
 
   # # z -> す
   # # QAZ で定義

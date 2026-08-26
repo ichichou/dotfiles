@@ -581,3 +581,31 @@ rules:
   # }}}
 
 # }}}
+
+# 10-5. Z for QAZ (en) {{{
+
+# 日本語入力時は新下駄配列で定義
+
+- description: "10-5. Mod-Tap: Z for QAZ (en)"
+  manipulators:
+
+  # Z -> Z/LShift
+  - type: basic
+    from:
+      key_code: z
+      modifiers:
+        optional:
+        - any
+    to_if_alone:
+    - key_code: z
+      halt: true
+    to_if_held_down:
+    - key_code: left_shift
+      halt: true
+    to_delayed_action:
+      to_if_canceled:
+      - key_code: z
+    conditions: *en
+    parameters: *mod_tap_threshold_ms
+
+# }}}
