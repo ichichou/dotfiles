@@ -104,9 +104,12 @@ HotIf
 ; Hold は LCtrl。矢印はプレーンに出したいので、一度 LCtrl を外して送出し、
 ; まだ物理 LAlt を保持していれば Ctrl を戻す (Caps 版と同じ方式)。
 lAltSpecial(output, *) {
+    global lAltHeld
     Critical
     Send "{Blind}{LCtrl Up}" output
-    if GetKeyState("LAlt", "P")
+    ; Hold の LCtrl は物理 LAlt 経路 (lAltHeld) でのみ張られる。
+    ; LCtrl→LAlt 経由 (lAltHeld=false) では張らないので Ctrl を戻さない。
+    if lAltHeld
         Send "{Blind}{LCtrl Down}"
 }
 

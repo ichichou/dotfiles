@@ -5,7 +5,7 @@ set -eu
 # @raycast.schemaVersion 1
 # @raycast.title ADR: Any Decision Records
 # @raycast.mode silent
-# @raycast.currentDirectoryPath ~/Library/CloudStorage/Box-Box/Notes
+# @raycast.currentDirectoryPath /Users/kazu/Library/CloudStorage/Box-Box/Journal
 
 # Optional parameters:
 # @raycast.icon 🤖
