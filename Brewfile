@@ -71,7 +71,6 @@ cask "slack"
 cask "superhuman"
 cask "thebrowsercompany-dia"
 cask "vlc"
-cask "workflowy"
 cask "zed"
 
 # Password input required
