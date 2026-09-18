@@ -56,7 +56,7 @@ cask "discord"
 cask "ghostty"
 cask "google-chrome"
 cask "google-japanese-ime"
-cask "jordanbaird-ice"
+# cask "jordanbaird-ice"
 cask "keka"
 cask "kekaexternalhelper"
 cask "mtgto/macskk/macskk", trusted: true
