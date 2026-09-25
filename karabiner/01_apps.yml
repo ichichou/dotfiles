@@ -562,7 +562,7 @@ rules:
       bundle_identifiers:
       - "com.anthropic.claudefordesktop"
 
-  # [Claude] LCmd-S -> LCmd-.
+  # [Claude] LCmd-S -> LCmd-B
   - type: basic
     from:
       key_code: s
@@ -570,7 +570,7 @@ rules:
         mandatory:
         - left_command
     to:
-    - key_code: period
+    - key_code: b
       modifiers:
       - left_command
     conditions:
