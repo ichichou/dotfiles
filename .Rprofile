@@ -27,6 +27,9 @@ load_if_available <- function(pkg, quiet_startup = FALSE) {
   }
 }
 
+# -- Tidyverse の起動メッセージは非対話セッションでは出力しない
+options(tidyverse.quiet = !interactive())
+
 # -- パッケージ読み込み
 load_if_available("conflicted")
 load_if_available("MASS", quiet_startup = TRUE)
