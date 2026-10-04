@@ -81,13 +81,13 @@ abbr -a mvr mv -ivr
 abbr -a R    R --quiet --no-save
 abbr -a a    bat
 abbr -a awk  gawk
-abbr -a csv  csvlens
 abbr -a diff batdiff
 abbr -a duck duckdb
 abbr -a grep batgrep
 abbr -a h    z
 abbr -a hs   ghci
 abbr -a j    z
+abbr -a len  csvlens
 abbr -a man  batman
 abbr -a n    numbat
 abbr -a nvi  nvim
