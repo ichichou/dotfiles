@@ -101,6 +101,10 @@ abbr -a yqy  yq eval -P
 
 abbr -a vi vim
 
+# reload fish
+abbr -a reload source ~/.config/fish/config.fish
+abbr -a re     source ~/.config/fish/config.fish
+
 # eza/ls
 if test -e "/opt/homebrew/bin/eza"
   abbr -a ls eza -a --group-directories-first
