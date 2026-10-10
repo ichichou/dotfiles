@@ -659,22 +659,23 @@ rules:
       bundle_identifiers:
       - "company.thebrowser.dia"
 
-  # [Dia] LCmd-I -> Shift-Cmd-I
-  - type: basic
-    from:
-      key_code: i
-      modifiers:
-        mandatory:
-        - left_command
-    to:
-    - key_code: i
-      modifiers:
-      - shift
-      - command
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "company.thebrowser.dia"
+  # # [Dia] LCmd-I -> Shift-Cmd-I
+  # # 無効化。拡張機能のショートカットで Cmd-I になるよう設定する。
+  # - type: basic
+  #   from:
+  #     key_code: i
+  #     modifiers:
+  #       mandatory:
+  #       - left_command
+  #   to:
+  #   - key_code: i
+  #     modifiers:
+  #     - shift
+  #     - command
+  #   conditions:
+  #   - type: frontmost_application_if
+  #     bundle_identifiers:
+  #     - "company.thebrowser.dia"
 
 # }}}
 
