@@ -96,6 +96,7 @@ abbr -a ra   ranger
 abbr -a sed  gsed
 abbr -a t    tig
 abbr -a ts   tig status
+abbr -a ua   unar_cd
 abbr -a yqj  yq eval -o=json
 abbr -a yqy  yq eval -P
 
@@ -267,6 +268,35 @@ function dsstore
     fd -H '^\.DS_Store$' -tf -X rm
   else
     find . -name '.DS_Store' -type f -delete
+  end
+end
+
+# unar & cd --------------------------------------
+
+function unar_cd --description 'unar で展開し、生成されたディレクトリへ移動'
+  if test (count $argv) -ne 1
+    echo "usage: unar_cd ARCHIVE" >&2
+    return 1
+  end
+
+  set -l archive $argv[1]
+  set -l dir (path dirname -- $archive)
+
+  # 展開前の一覧（隠しファイルも含む）
+  set -l before $dir/* $dir/.*
+
+  unar -o $dir -- $archive; or return
+
+  # 展開後の一覧と比較し、新しく増えたものを抽出
+  set -l after $dir/* $dir/.*
+  set -l created
+  for p in $after
+    contains -- $p $before; or set -a created $p
+  end
+
+  # 生成物がディレクトリ一つのときだけ移動
+  if test (count $created) -eq 1; and test -d $created[1]
+    cd -- $created[1]
   end
 end
 
