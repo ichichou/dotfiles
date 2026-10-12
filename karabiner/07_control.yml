@@ -117,4 +117,20 @@ rules:
       - control
       repeat: true
 
+  # LCtrl-Space -> Ctrl-Space, Eisuu
+  # Raycast 用の設定。
+  # Raycast 側の言語切替では確実性が低いため、こちらで対応する。
+  - type: basic
+    from:
+      key_code: spacebar
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: spacebar
+      modifiers:
+      - control
+    - key_code: japanese_eisuu
+      repeat: true
+
   # }}}
