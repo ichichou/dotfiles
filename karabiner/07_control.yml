@@ -127,6 +127,11 @@ rules:
         mandatory:
         - left_control
     to:
+    - key_code: left_shift
+      modifiers:
+      - control
+      repeat: false
+    to_if_alone:
     - key_code: spacebar
       modifiers:
       - control
