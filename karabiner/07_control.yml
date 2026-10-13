@@ -117,25 +117,32 @@ rules:
       - control
       repeat: true
 
-  # LCtrl-Space -> Ctrl-Space, Eisuu
-  # Raycast 用の設定。
-  # Raycast 側の言語切替では確実性が低いため、こちらで対応する。
-  - type: basic
-    from:
-      key_code: spacebar
-      modifiers:
-        mandatory:
-        - left_control
-    to:
-    - key_code: left_shift
-      modifiers:
-      - control
-      repeat: false
-    to_if_alone:
-    - key_code: spacebar
-      modifiers:
-      - control
-    - key_code: japanese_eisuu
-      repeat: true
+  # # LCtrl-Space -> Ctrl-Space, Eisuu
+  # # Raycast 用の設定。
+  # # Raycast 側の言語切替では切替精度が低いため、こちらで対応する。
+  #
+  # # 挙動に問題があるため無効化中。
+  # # 例えば Ctrl-J で日本語入力へ切替 -> すぐ Space を押しながら変換開始というときに、
+  # # Ctrl の離し際と Space の押し際が重なり、Ctrl-Space が誤爆してしまうようだ。
+  # # Ctrl -> Space のローリング打鍵のときは発火せず、Ctrl を離す前に Space を離したときだけ
+  # # 発火する実装にする必要があるかもしれない。
+  #
+  # - type: basic
+  #   from:
+  #     key_code: spacebar
+  #     modifiers:
+  #       mandatory:
+  #       - left_control
+  #   to:
+  #   - key_code: left_shift
+  #     modifiers:
+  #     - control
+  #     repeat: false
+  #   to_if_alone:
+  #   - key_code: spacebar
+  #     modifiers:
+  #     - control
+  #   - key_code: japanese_eisuu
+  #     repeat: true
 
   # }}}
