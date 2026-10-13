@@ -177,3 +177,45 @@ rules:
       conditions: *ja
 
 # }}}
+
+# 19-3. Others: Control-Space (only to) {{{
+
+- description: "19-3. Others: Control-Space (only to)"
+  manipulators:
+  - type: basic
+    from:
+      key_code: spacebar
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: spacebar
+      modifiers:
+      - control
+    - key_code: japanese_eisuu
+      repeat: true
+
+# }}}
+
+# 19-4. Others: Control-Space (to & to_if_alone) {{{
+
+- description: "19-4. Others: Control-Space (to & to_if_alone)"
+  manipulators:
+  - type: basic
+    from:
+      key_code: spacebar
+      modifiers:
+        mandatory:
+        - left_control
+    to:
+    - key_code: left_shift
+      modifiers:
+      - control
+      repeat: false
+    to_if_alone:
+    - key_code: spacebar
+      modifiers:
+      - control
+    - key_code: japanese_eisuu
+      repeat: true
+# }}}
