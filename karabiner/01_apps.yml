@@ -603,25 +603,28 @@ rules:
 
 # Dia {{{
 
-  # [Dia] LShift-LCmd-F -> Shift-Cmd-H
-  # Google スプレッドシートでの検索・置換
-  - type: basic
-    from:
-      key_code: f
-      modifiers:
-        mandatory:
-        - left_shift
-        - left_command
-    to:
-    - key_code: h
-      modifiers:
-      - shift
-      - command
-      repeat: false
-    conditions:
-    - type: frontmost_application_if
-      bundle_identifiers:
-      - "company.thebrowser.dia"
+  # # [Dia] LShift-LCmd-F -> Shift-Cmd-H
+  # # Google スプレッドシートでの検索・置換
+  #
+  # # 無効化。Google スライドなどでの全画面表示に差し支えるため。
+  #
+  # - type: basic
+  #   from:
+  #     key_code: f
+  #     modifiers:
+  #       mandatory:
+  #       - left_shift
+  #       - left_command
+  #   to:
+  #   - key_code: h
+  #     modifiers:
+  #     - shift
+  #     - command
+  #     repeat: false
+  #   conditions:
+  #   - type: frontmost_application_if
+  #     bundle_identifiers:
+  #     - "company.thebrowser.dia"
 
   # LShift-LCmd-M -> Opt-Cmd-M
   # Google ドキュメントでのコメント
