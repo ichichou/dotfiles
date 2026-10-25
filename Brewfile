@@ -27,7 +27,7 @@ brew "itchyny/tap/mmv", trusted: true
 brew "laishulu/homebrew/macism", trusted: true
 brew "lua"
 brew "mas"
-brew "mise"
+brew "node"
 brew "pandoc"
 brew "python"
 brew "ranger"
