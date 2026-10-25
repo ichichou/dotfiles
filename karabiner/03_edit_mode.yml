@@ -605,14 +605,15 @@ rules:
       repeat: false
     conditions: *edit_1
 
-  # [ -> Cmd-Up
+  # [ -> Shift-Ctrl-[
   - type: basic
     from:
       key_code: open_bracket
     to:
-    - key_code: up_arrow
+    - key_code: open_bracket
       modifiers:
-      - command
+      - shift
+      - control
       repeat: false
     conditions: *edit_1
 
@@ -683,14 +684,15 @@ rules:
       repeat: false
     conditions: *edit_1
 
-  # ' -> Cmd-Down
+  # ' -> Shift-Ctrl-]
   - type: basic
     from:
       key_code: quote
     to:
-    - key_code: down_arrow
+    - key_code: close_bracket
       modifiers:
-      - command
+      - shift
+      - control
       repeat: false
     conditions: *edit_1
 
@@ -745,15 +747,6 @@ rules:
   # }}}
 
   # Other Keys {{{
-
-  # Space -> Return
-  - type: basic
-    from:
-      key_code: spacebar
-    to:
-    - key_code: return_or_enter
-      repeat: false
-    conditions: *edit_1
 
   # 4 -> Fn-F4 (for Google Sheets)
   - type: basic
