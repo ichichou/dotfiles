@@ -2137,8 +2137,8 @@ rules:
       bundle_identifiers:
       - "com.tinyspeck.slackmacgap"
 
-  # [Slack] LShift-LCmd-C -> Ctrl-5
-  # 「後で」に移動
+  # [Slack] LShift-LCmd-C -> Ctrl-3
+  # 「To-Do」に移動
   - type: basic
     from:
       key_code: c
@@ -2147,7 +2147,7 @@ rules:
         - left_shift
         - left_command
     to:
-    - key_code: "5"
+    - key_code: "3"
       modifiers:
       - control
       repeat: false
