@@ -2,7 +2,7 @@
 
 [ -f "$HOME/.fzf.bash" ] && source "$HOME/.fzf.bash"
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
-. "$HOME/.cargo/env"
+[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
 # >>> juliaup initialize >>>
 
