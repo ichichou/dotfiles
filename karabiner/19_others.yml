@@ -32,6 +32,10 @@ rules:
 
 # 19-1. Alone Kana/Eisuu {{{
 
+# macOS では Kana/Eisuu を特定の修飾キーと組み合わせて押すと、余計な不可視文字が入力される不具合がある。
+# その回避のため、修飾キー + Kana/Eisuu が押されたときに Kana/Eisuu 単押しに変換する。
+# 不具合が起きない修飾キーもあるが、念のためすべての修飾キーとの組み合わせを無効化する。
+
 - description: "19-1. Others: Alone Kana/Eisuu"
   manipulators:
 
@@ -125,26 +129,23 @@ rules:
 
 # }}}
 
-# 19-2. Others: F15-F18 -> , . / : {{{
+# 19-2. Others: F15, F16, F17, F18 -> . / , : {{{
 
-- description: "19-2. Others: F15–F18 → , . / :"
+# QMK/ZMK Firmware で設定した SYM レイヤーの F15, F16, F17, F18 キーを半角記号に変換する。
+# 各キーの配置は以下のとおり。
+#
+#   * F15 * * * *    F16 * * * F17 *
+#   *  *  * * * *     *  * * * F18 *
+#   *  *  * * * *     *  * * *  *  *
+#   *  *  * * * *     *  * * *  *  *
+
+- description: "19-2. Others: F15, F16, F17, F18 → . / , :"
   manipulators:
 
-  # F15 -> ,
+  # F15 -> .
   - type: basic
     from:
       key_code: f15
-    to:
-    - key_code: japanese_eisuu
-      conditions: *ja
-    - key_code: comma
-    - key_code: japanese_kana
-      conditions: *ja
-
-  # F16 -> .
-  - type: basic
-    from:
-      key_code: f16
     to:
     - key_code: japanese_eisuu
       conditions: *ja
@@ -152,14 +153,25 @@ rules:
     - key_code: japanese_kana
       conditions: *ja
 
-  # F17 -> /
+  # F16 -> /
+  - type: basic
+    from:
+      key_code: f16
+    to:
+    - key_code: japanese_eisuu
+      conditions: *ja
+    - key_code: slash
+    - key_code: japanese_kana
+      conditions: *ja
+
+  # F17 -> ,
   - type: basic
     from:
       key_code: f17
     to:
     - key_code: japanese_eisuu
       conditions: *ja
-    - key_code: slash
+    - key_code: comma
     - key_code: japanese_kana
       conditions: *ja
 
