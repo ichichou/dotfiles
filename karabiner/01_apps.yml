@@ -562,7 +562,7 @@ rules:
       bundle_identifiers:
       - "com.anthropic.claudefordesktop"
 
-  # [Claude] LCmd-S -> LCmd-B
+  # [Claude] LCmd-S -> Cmd-B
   - type: basic
     from:
       key_code: s
@@ -572,7 +572,25 @@ rules:
     to:
     - key_code: b
       modifiers:
-      - left_command
+      - command
+    conditions:
+    - type: frontmost_application_if
+      bundle_identifiers:
+      - "com.anthropic.claudefordesktop"
+
+  # [Claude] LShift-LCmd-M -> Opt-Cmd-B
+  - type: basic
+    from:
+      key_code: m
+      modifiers:
+        mandatory:
+        - left_shift
+        - left_command
+    to:
+    - key_code: m
+      modifiers:
+      - option
+      - command
     conditions:
     - type: frontmost_application_if
       bundle_identifiers:
